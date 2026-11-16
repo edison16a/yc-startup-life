@@ -18,7 +18,7 @@ SECTIONS = [
     "One-liner and verdict", "Customer and pain", "Why now", "Product and MVP scope",
     "Pricing and business model", "Market size (bottom-up)", "Competition and whitespace evidence",
     "Technical complexity and takeover risk", "Fit with YC patterns", "Funding outlook (evaluator)",
-    "Go-to-market", "Founder profile needed", "First 30 days: experiments", "Risks",
+    "Name and brand", "Go-to-market", "Founder profile needed", "First 30 days: experiments", "Risks",
     "Investor / Doubter / Judge summary", "Runners-up and why they lost", "YC application draft",
     "Research limits", "Sources",
 ]

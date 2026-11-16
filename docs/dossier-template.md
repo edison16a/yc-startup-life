@@ -32,6 +32,9 @@ Which findings from the knowledge base this idea matches or violates. Comparable
 ## Funding outlook (evaluator)
 The YC acceptance estimate and the round-by-round table from the full evaluation (`evaluation/EVALUATION.md`), with the biggest reasons it could fail at each round.
 
+## Name and brand
+The chosen name with the `yc-name-creator` evaluation: score, name-check result, domain and handle options, trademark and connotation risks, the brand idea (mascot, voice, visual direction), and the shortlist of alternatives.
+
 ## Go-to-market
 First 10 customers: where they are and how to reach them. Then the scaling channel.
 
