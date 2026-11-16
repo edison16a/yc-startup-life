@@ -3,7 +3,7 @@
 Created by `scripts/new_eval.py`; turned into `EVALUATION.md` by `scripts/render_eval.py`. See `docs/eval-input-template.json` for the full shape. The agent supplies judgments; the scripts compute cumulative odds, labels and the report, and reject inconsistent input.
 
 ## Top level
-`mode` (`full` | `summary`), `startup`, `yc_acceptance`, `ladder`, `outcomes`, `analogs`, `killers`, `competition_now`, `technical_complexity`, `takeover_risk`, `market_need_now`, `narrative`, `assumptions`, `sources`.
+`mode` (`full` | `summary`), `startup`, `yc_acceptance`, `ladder`, `outcomes`, `analogs`, `killers`, `competition_now`, `technical_complexity`, `takeover_risk`, `market_need_now`, `brand`, `narrative`, `assumptions`, `sources`.
 
 ## Probabilities
 - `yc_acceptance.p`: chance this startup is accepted to YC (with `p_low`, `p_high`).
@@ -20,3 +20,7 @@ Cumulative odds if in YC and from today, and the labels (cut-offs in `config.jso
 
 ## Analogs
 Every `analogs[].slug` and every slug in `killers[].analogs` must exist in `data/companies.csv`. Find them with `scripts/comps.py`.
+
+## `brand`
+
+Required in both modes. Comes from the `yc-name-creator` skill in evaluate mode. `name`; `rating` (integer 1-5, 5 = iconic and a real growth driver); `effect_on_success` (`helps | neutral | hurts | unclear`); `name_check` (the `scripts/name_features.py --score` command run and its headline result); `strengths[]`; `weaknesses[]` (at least one in full mode); `rationale` (30+ words full, 12+ summary, citing past YC brand cases where relevant); `better_names[]` (optional). Brand is a factor in success but a secondary one: a weak name rarely sinks a good company, so it moves the ladder only through the stated adjustment reasons.

@@ -192,6 +192,23 @@ def validate(inp, slugs=None):
     if not isinstance(ev, list) or len(ev) < (2 if full else 1) or any(not (x.get("claim") and x.get("source_url")) for x in ev):
         err.append("market_need_now.evidence needs claims each with a source_url")
 
+    br = inp.get("brand")
+    if not isinstance(br, dict):
+        err.append("brand block missing (name and brand assessment from the yc-name-creator skill; see docs/eval-input-schema.md)")
+    else:
+        if not (isinstance(br.get("rating"), int) and 1 <= br["rating"] <= 5):
+            err.append("brand.rating must be an integer 1-5")
+        if not br.get("name"):
+            err.append("brand.name missing")
+        if words(br.get("rationale")) < (30 if full else 12):
+            err.append(f"brand.rationale must be >= {30 if full else 12} words")
+        if not br.get("name_check"):
+            err.append("brand.name_check must record the scripts/name_features.py --score command run and its headline result")
+        if full and (not isinstance(br.get("weaknesses"), list) or not br["weaknesses"]):
+            err.append("brand.weaknesses must list at least one concrete weakness in full mode")
+        if br.get("effect_on_success") not in ("helps", "neutral", "hurts", "unclear"):
+            err.append("brand.effect_on_success must be helps|neutral|hurts|unclear")
+
     nar = inp.get("narrative") or {}
     if not nar.get("headline"):
         err.append("narrative.headline missing")
@@ -284,6 +301,7 @@ def render(inp, comp, companies=None):
           "| Factor | Rating (1-5) | Notes |", "|---|---|---|",
           f"| Market need today (5 = urgent, paid) | {mn['rating']} | {len(mn['evidence'])} sourced evidence items |",
           f"| Technical complexity (5 = very hard) | {tc['rating']} | {tc['rationale'].strip()} |",
+          f"| Name and brand (5 = iconic, drives growth; effect on success: {inp['brand']['effect_on_success']}) | {inp['brand']['rating']} | {inp['brand']['name']}: {inp['brand']['rationale'].strip()} |",
           f"| Takeover/copy risk (5 = very likely) | {tr['rating']} | Could be built or absorbed by {', '.join(tr['who'])} within ~{tr['timeline_months']:g} months. {tr['rationale'].strip()} |", "",
           "### Competition today", "", "| Competitor | What they do | Traction | Source |", "|---|---|---|---|"]
     for c in inp["competition_now"]:
