@@ -131,7 +131,7 @@ def build_data(inp, comp, want_logos=True):
     acq = sum(1 for a in analogs if (a["end"] or {}).get("kind") in ("acquired", "ipo"))
     br = inp["brand"]
     return {
-        "mode": inp["mode"], "startup": inp["startup"], "headline": inp["narrative"]["headline"], "summary": inp["narrative"]["general_summary"],
+        "mode": inp["mode"], "startup": inp["startup"], "thresholds": evalcore.CFG["label_thresholds"], "headline": inp["narrative"]["headline"], "summary": inp["narrative"]["general_summary"],
         "yc": {**inp["yc_acceptance"], "label": comp["label_yc"]}, "stages": stages,
         "outcomes": [{"name": o["name"], "value": o.get("value_usd"), "failure": bool(o.get("is_failure")), "p_given_yc": o["p_given_yc"], "label_given_yc": o["label_given_yc"],
                       "p_today": o["p_from_today"], "label_today": o["label_from_today"]} for o in comp["outcomes"]],
@@ -140,7 +140,7 @@ def build_data(inp, comp, want_logos=True):
                    "takeover": inp["takeover_risk"]["rating"], "brand": br["rating"]},
         "insights": {"need": inp["market_need_now"], "competition": inp["competition_now"], "technical": inp["technical_complexity"], "takeover": inp["takeover_risk"],
                      "brand": br, "deep_dive": dd},
-        "pros": inp.get("pros", []), "cons": killers, "analogs": analogs,
+        "roadmap": inp.get("roadmap", []), "pros": inp.get("pros", []), "cons": killers, "analogs": analogs,
         "comp_summary": {"total": total, "dead": dead, "exited": acq, "active": total - dead - acq},
         "assumptions": inp["assumptions"], "sources": inp["sources"],
     }
