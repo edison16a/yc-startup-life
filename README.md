@@ -35,12 +35,12 @@ The numbers are anchored on past YC companies, not gut feel. Where data is missi
 
 <table>
   <tr>
-    <td width="50%"><img src="assets/screenshots/compare.png" alt="Comparison chart of similar YC companies with a draggable timeline"><br><sub>Compare: ten similar YC companies on one timeline. Drag to see who had died by then.</sub></td>
-    <td width="50%"><img src="assets/screenshots/path.png" alt="Funding path with odds and valuation bands per round"><br><sub>Funding path: odds, valuation bands and why it fails at each round.</sub></td>
+    <td width="50%"><img src="assets/screenshots/compare.png" alt="Comparison chart of similar YC companies with logos, smooth curves and a draggable timeline"><br><sub>Compare: similar YC companies on one timeline. Click one to highlight it, drag to see who had died by then.</sub></td>
+    <td width="50%"><img src="assets/screenshots/walkthrough.png" alt="Walkthrough: a simulated run that rises through each round and then crashes"><br><sub>Walkthrough: press the arrow and the startup rises or crashes at each step, using the evaluation's odds.</sub></td>
   </tr>
   <tr>
-    <td width="50%"><img src="assets/screenshots/pros.png" alt="Pros in green and cons in red with mitigations"><br><sub>Pros and cons: the honest strengths, and the killers with their mitigations.</sub></td>
-    <td width="50%"><img src="assets/screenshots/insights.png" alt="Insights tab in dark mode with research, competition, technical and brand cards"><br><sub>Insights, in dark mode: research, competition, technical risk, takeover risk and brand.</sub></td>
+    <td width="50%"><img src="assets/screenshots/possibilities.png" alt="Possibilities tree showing every path from YC acceptance to each funding round"><br><sub>Possibilities: a tree of every way it can go, with the odds on each branch.</sub></td>
+    <td width="50%"><img src="assets/screenshots/roadmap.png" alt="Roadmap in dark mode with goals, actions and proof for each step"><br><sub>Roadmap, in dark mode: what to do to reach each step, and how you know it worked.</sub></td>
   </tr>
 </table>
 
@@ -73,7 +73,7 @@ Rules the data follows:
 - Figures seen only in a search snippet or a single aggregator go in `notes` as unverified. They are not recorded as rounds.
 - Python only, standard library only. Run scripts as `python3 -I scripts/<name>.py`.
 
-The HTML report is one file with no dependencies. Data, styles, scripts and company logos are embedded. Logos are downloaded once from the public YC directory and cached in `data/logo_cache/`. If a logo cannot be fetched, the page shows a letter badge.
+The HTML report has eight tabs: Overview, Compare, Walkthrough, Possibilities, Funding, Roadmap, Insights, and Pros and cons. It is one file with no dependencies. Data, styles, scripts and company logos are embedded. Logos are downloaded once from the public YC directory and cached in `data/logo_cache/`. If a logo cannot be fetched, the page shows a letter badge.
 
 ## Status and limits
 
