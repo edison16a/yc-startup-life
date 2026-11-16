@@ -192,6 +192,20 @@ def validate(inp, slugs=None):
     if not isinstance(ev, list) or len(ev) < (2 if full else 1) or any(not (x.get("claim") and x.get("source_url")) for x in ev):
         err.append("market_need_now.evidence needs claims each with a source_url")
 
+    rm = inp.get("roadmap")
+    PH = ["before_yc", "seed", "series_a", "series_b", "series_c_plus"]
+    if not isinstance(rm, list) or len(rm) < (5 if full else 2):
+        err.append(f"roadmap needs {5 if full else 2} phases or more (before_yc, seed, series_a, series_b, series_c_plus), each with goal, actions and proof")
+    else:
+        seen = set()
+        for i, r in enumerate(rm):
+            if r.get("phase") not in PH:
+                err.append(f"roadmap[{i}].phase must be one of {PH}")
+            seen.add(r.get("phase"))
+            if not (r.get("goal") and r.get("proof") and isinstance(r.get("actions"), list) and len(r["actions"]) >= 2):
+                err.append(f"roadmap[{i}] needs goal, proof and at least 2 actions")
+        if full and seen != set(PH):
+            err.append("roadmap in full mode must cover all five phases")
     pros = inp.get("pros")
     if not isinstance(pros, list) or len(pros) < (3 if full else 2) or any(not (x.get("point") and x.get("evidence")) for x in pros):
         err.append(f"pros needs at least {3 if full else 2} items, each with point and evidence (the honest strengths, with sources where possible)")

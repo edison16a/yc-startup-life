@@ -3,7 +3,7 @@
 Created by `scripts/new_eval.py`; turned into `EVALUATION.md` by `scripts/render_eval.py`. See `docs/eval-input-template.json` for the full shape. The agent supplies judgments; the scripts compute cumulative odds, labels and the report, and reject inconsistent input.
 
 ## Top level
-`mode` (`full` | `summary`), `startup`, `yc_acceptance`, `ladder`, `outcomes`, `analogs`, `killers`, `competition_now`, `technical_complexity`, `takeover_risk`, `market_need_now`, `pros`, `brand`, `narrative`, `assumptions`, `sources`.
+`mode` (`full` | `summary`), `startup`, `yc_acceptance`, `ladder`, `outcomes`, `analogs`, `killers`, `competition_now`, `technical_complexity`, `takeover_risk`, `market_need_now`, `roadmap`, `pros`, `brand`, `narrative`, `assumptions`, `sources`.
 
 ## Probabilities
 - `yc_acceptance.p`: chance this startup is accepted to YC (with `p_low`, `p_high`).
@@ -28,3 +28,7 @@ Required in both modes. Comes from the `yc-name-creator` skill in evaluate mode.
 ## `pros`
 
 The honest strengths, shown in green on the report's Pros and cons tab (the cons are the `killers`). At least 3 in full mode, 2 in summary mode. Each has `point`, `evidence` and, where possible, `source_url`. Do not pad: a weak startup has few real pros.
+
+## `roadmap`
+
+What to do to reach each step, shown on the report's Roadmap tab and linked from the end of the Walkthrough. Each entry: `phase` (`before_yc`, `seed`, `series_a`, `series_b`, `series_c_plus`; the phase is the step you are trying to reach), `goal` (what must be true), `actions` (2 or more concrete actions, ordered), `proof` (the number or event that shows it worked). Full mode covers all five phases, summary mode at least two. Base each phase on the killers and the `why_it_fails` paragraph for that step: the roadmap is how to avoid that failure.
