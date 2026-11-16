@@ -46,6 +46,20 @@ Rules that apply to every field:
   "takeover_risk_then": {"rating": 4, "incumbents": ["BigCo"], "outcome": "what the incumbents actually did (copied it? bought it? ignored it?) and when"},
   "market_need_then": "evidence of demand at the time of founding: pain, spend, complaints, regulation, technology shift",
 
+  "branding": {
+    "name_origin": "where the name comes from and why it was chosen, if a source says (else null)",
+    "name_type": "real_word | invented | compound | descriptive | acronym | person_or_place | suffix_coinage | other",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say", "evocative", "distinctive", "friendly_tone"],
+    "name_problems": ["hard_to_spell", "generic", "confusable", "unpronounceable", "negative_connotation", "outgrown_by_pivot"],
+    "domain_note": "how they got their domain (exact .com, prefix/suffix, bought for $X) with date, or null",
+    "identity": {"logo": "short description", "mascot_or_character": null, "visual_style": "...", "voice_and_tone": "..."},
+    "brand_signature": "the one memorable brand asset (mascot, phrase, color, community ritual), or null",
+    "rebrands": [{"date": "2021-03", "from": "Old Name", "to": "New Name", "why": "reason, if sourced"}],
+    "community_and_virality": "evidence people talk about, meme, wear or share the brand (merch, fan accounts, press on the brand itself), or null",
+    "brand_strength": {"rating": 4, "rationale": "evidence for how strong the brand was at its peak and how much it helped or hurt (1 forgettable or damaging ... 5 iconic and a real driver of growth)"},
+    "brand_effect_on_outcome": "helped | neutral | hurt | unclear",
+    "sources": ["https://..."]
+  },
   "pivots": [{"date": "2019-06", "from": "original idea", "to": "new idea", "why": "reason"}],
   "success_factors": ["strong_pmf"],
   "failure_factors": [],
@@ -70,4 +84,5 @@ Rules that apply to every field:
 | `defensibility.rating` | 1 = copyable in weeks; 5 = structurally hard to replicate (data, regulation, network effects, deep integration). |
 | `takeover_risk_then.rating` | 1 = no one with resources cared; 5 = well-resourced players were already building or buying the same wedge. `outcome` records what really happened. |
 | `confidence` | `high` = founders, competition and funding all sourced; `medium` = two of three; `low` otherwise. Merge warns if `high` is claimed with gaps. |
+| `branding` | Required for new depth-2 records (older records get a merge warning until backfilled). Rate only what sources show: press about the brand, the company's own brand pages, founder interviews, community posts. `brand_strength` is 1-5 at the brand's peak; `brand_effect_on_outcome` is your judgment and must be `unclear` if no source supports a view. Never infer a name's origin: unknown is `null`. Name text features are computed separately by `scripts/name_features.py`, so do not spend research time counting letters. |
 | `success_factors` / `failure_factors` | Codes from `docs/taxonomy.md`. Failure factors for companies that shut down or stalled; success factors for companies that raised well or exited. May be empty for companies with no clear story. |
