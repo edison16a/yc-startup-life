@@ -1,0 +1,35 @@
+{
+  "extraction": {
+    "shard_size": 8,
+    "parallel_agents": 6,
+    "max_tool_calls_per_company": 14,
+    "calibration_fraction": 0.10,
+    "calibration_seed": "yc-engine-v1",
+    "audit_sample_per_100": 5,
+    "audit_max_error_rate": 0.10,
+    "advice_sources_min": 40,
+    "applicant_accounts_min": 10
+  },
+  "creator": {
+    "min_conviction": 8,
+    "max_cycles": 6,
+    "min_candidates": 25,
+    "finalists_per_cycle": 4,
+    "debate_rounds": 2
+  },
+  "evaluator": {
+    "label_thresholds": [
+      {"min": 0.65, "label": "Very likely"},
+      {"min": 0.45, "label": "Likely"},
+      {"min": 0.20, "label": "Reasonable"},
+      {"min": 0.05, "label": "Unlikely"},
+      {"min": 0.0,  "label": "Very unlikely"}
+    ],
+    "ladder_stages": ["seed", "series_a", "series_b", "series_c_plus"],
+    "min_killers_full": 5,
+    "min_killers_summary": 3,
+    "min_why_fail_words": 45,
+    "anchor_ratio_limit": 2.0,
+    "min_adjustment_words": 15
+  }
+}
