@@ -2,17 +2,19 @@
 """Validate <dir>/evaluation_input.json, compute odds and labels, write <dir>/EVALUATION.md and evaluation_computed.json.
 
   python3 -I scripts/render_eval.py evaluations/<name>
-Exit 1 and print every problem if the input is invalid. Never edit EVALUATION.md by hand: edit the JSON and re-run.
+Exit 1 and print every problem if the input is invalid. Also writes report.html (the standalone animated report; add --no-logos to skip logo downloads).
+Never edit EVALUATION.md or report.html by hand: edit the JSON and re-run.
 """
 import sys as _sys, pathlib as _pl; _sys.path.insert(0, str(_pl.Path(__file__).resolve().parent))  # work under python3 -I
 import json
-import evalcore
+import evalcore, render_html
 
 
 def main():
-    if len(_sys.argv) != 2:
+    args = [a for a in _sys.argv[1:] if not a.startswith("--")]
+    if len(args) != 1:
         print(__doc__); return 1
-    d = _pl.Path(_sys.argv[1])
+    d = _pl.Path(args[0])
     try:
         inp = evalcore.load_input(d)
     except Exception as e:
@@ -29,6 +31,8 @@ def main():
     (d / "evaluation_computed.json").write_text(json.dumps(comp, indent=1))
     (d / "EVALUATION.md").write_text(evalcore.render(inp, comp))
     print(f"wrote {d}/EVALUATION.md")
+    (d / "report.html").write_text(render_html.render_html(inp, comp, "--no-logos" not in _sys.argv), encoding="utf-8")
+    print(f"wrote {d}/report.html (standalone report; give this to the user with the text summary)")
     print(f"YC acceptance {evalcore.pf(comp['p_yc'])} ({comp['label_yc']})")
     for st in comp["stages"]:
         print(f"  {st['stage']:<14} reach|in YC {evalcore.pf(st['p_stage_given_yc']):>6}  from today {evalcore.pf(st['p_stage_from_today']):>6}")
