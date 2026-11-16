@@ -18,7 +18,8 @@ This skill turns the YC company directory (6,399 companies in `data/companies.cs
 7. **Paraphrase** advice and articles. Never paste article text; quote under 15 words at most, once per source.
 8. **Judgment fields are rated for the time of founding** (technical complexity, defensibility, takeover risk), using the scales in `docs/schema.md`, with a rationale that cites concrete facts.
 9. **Resumable.** One JSON per company at `data/enrichment/<slug>.json`. Finished companies are skipped. Never delete or overwrite a valid depth-2 record except to correct it.
-10. Commit only if the user asks.
+10. **Search budget.** WebSearch is limited per turn (about 200 calls, shared by every agent in the turn). One shard needs roughly 30 to 50 searches, so launch at most 4 shards per wave unless the environment raises the limit. A subagent whose searches are refused must not write depth-2 records from page fetches alone: it writes depth-1 records (set `depth: 1` and say why in `notes`) or nothing, and reports it. The orchestrator downgrades any depth-2 record written without the required searches to `depth: 1` so it is re-queued and kept out of the base rates.
+11. Commit only if the user asks.
 
 ## Progress and restarts
 
