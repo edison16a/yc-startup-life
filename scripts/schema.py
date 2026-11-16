@@ -19,6 +19,29 @@ def rating_ok(v):
     return v is None or (isinstance(v, int) and not isinstance(v, bool) and 1 <= v <= 5)
 
 
+NAME_TYPES = ["real_word", "invented", "compound", "descriptive", "acronym", "person_or_place", "suffix_coinage", "other"]
+BRAND_EFFECTS = ["helped", "neutral", "hurt", "unclear"]
+
+
+def validate_branding(b, err, warn):
+    if not isinstance(b, dict):
+        err.append("branding must be an object (see docs/schema.md)"); return
+    if b.get("name_type") not in NAME_TYPES:
+        err.append(f"branding.name_type must be one of {NAME_TYPES}")
+    for k in ("name_qualities", "name_problems", "rebrands", "sources"):
+        if not isinstance(b.get(k, []), list):
+            err.append(f"branding.{k} must be a list")
+    bs = b.get("brand_strength")
+    if not isinstance(bs, dict) or not rating_ok(bs.get("rating")) or not bs.get("rationale"):
+        err.append("branding.brand_strength needs rating (1-5 or null) and rationale")
+    if b.get("brand_effect_on_outcome") not in BRAND_EFFECTS:
+        err.append(f"branding.brand_effect_on_outcome must be one of {BRAND_EFFECTS}")
+    elif b.get("brand_effect_on_outcome") != "unclear" and not b.get("sources"):
+        warn.append("branding claims an effect on the outcome but lists no sources (use 'unclear' if unsupported)")
+    if b.get("name_origin") and not b.get("sources"):
+        warn.append("branding.name_origin has no supporting source")
+
+
 def validate_record(e, row=None):
     """Return (errors, warnings). Errors block the merge; warnings are reported."""
     err, warn = [], []
@@ -134,6 +157,11 @@ def validate_record(e, row=None):
     tr = e["takeover_risk_then"]
     if not isinstance(tr, dict) or not rating_ok(tr.get("rating")) or not isinstance(tr.get("incumbents"), list) or "outcome" not in tr:
         err.append("takeover_risk_then needs rating (1-5 or null), incumbents (list) and outcome")
+
+    if "branding" in e:
+        validate_branding(e["branding"], err, warn)
+    else:
+        warn.append("no branding block (required for new depth-2 records; see docs/schema.md)")
 
     for i, p in enumerate(e["pivots"]):
         if not isinstance(p, dict) or not p.get("to"):
