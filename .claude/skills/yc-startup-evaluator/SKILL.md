@@ -24,7 +24,7 @@ The user will describe the startup (or point to a repo, site or pitch). If the d
 
 ## Stage 0: Load the knowledge
 
-Read `references/` in this skill folder: `yc_acceptance.md`, `stage_benchmarks.md`, `patterns.md`, `failure_modes.md`, `incumbent_and_complexity.md`, the tables in `references/tables/`, and `knowledge/backtest.md` in the repo if it exists (lessons on over- and under-confidence). Check `references/_finalized.json`: if it is missing, the extraction is unfinished. Do not refuse: proceed with whatever data exists (run `python3 -I scripts/base_rates.py` and read `knowledge/coverage.md`), and state the coverage limits prominently in the assumptions. If the data is thin, widen your uncertainty.
+Read `references/` in this skill folder: `yc_acceptance.md`, `stage_benchmarks.md`, `patterns.md`, `failure_modes.md`, `incumbent_and_complexity.md`, `naming.md`, the tables in `references/tables/`, and `knowledge/backtest.md` in the repo if it exists (lessons on over- and under-confidence). Check `references/_finalized.json`: if it is missing, the extraction is unfinished. Do not refuse: proceed with whatever data exists (run `python3 -I scripts/base_rates.py` and read `knowledge/coverage.md`), and state the coverage limits prominently in the assumptions. If the data is thin, widen your uncertainty.
 
 ## Stage 1: Set up
 
@@ -38,6 +38,7 @@ Search the web and record sources for each:
 - **Competition now.** Direct competitors, adjacent products, incumbents, and the status quo (spreadsheets, services, doing nothing): what they do, traction, funding, source. At least 3 in full mode. What is this startup actually competing against, and why would a customer switch?
 - **Technical complexity.** What is genuinely hard, what a small team can and cannot build in 3 months, dependencies on models, data, hardware or licences. Rate 1-5 using the scale in `docs/schema.md`. Hard parts that a small team can solve are a moat; hard parts it cannot are a risk.
 - **Takeover and copy risk.** Which companies or platforms could build or absorb this, how many months a well-resourced rival would need, whether they have the incentive and distribution, and any platform dependency. Rate 1-5 (5 = very likely). Use the incumbent cases in `incumbent_and_complexity.md` for how this has played out for past YC companies.
+- **Name and brand.** Run the `yc-name-creator` skill in Mode A on the startup's name (summary form in `summary` mode). Fill the `brand` block: rating, `effect_on_success`, the `name_check` command and result, strengths and weaknesses, and a rationale that cites real past YC brand cases. Brand is a secondary success factor: let it move a probability only with a stated reason, and never let it outweigh need, competition or team.
 - **Funding climate.** Current typical seed / Series A / Series B / C raise sizes and valuations for this category, the latest YC acceptance rate and applicant figures, and the current YC deal. Cite them.
 
 ## Stage 3: Analogs and base rates
