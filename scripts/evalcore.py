@@ -192,6 +192,9 @@ def validate(inp, slugs=None):
     if not isinstance(ev, list) or len(ev) < (2 if full else 1) or any(not (x.get("claim") and x.get("source_url")) for x in ev):
         err.append("market_need_now.evidence needs claims each with a source_url")
 
+    pros = inp.get("pros")
+    if not isinstance(pros, list) or len(pros) < (3 if full else 2) or any(not (x.get("point") and x.get("evidence")) for x in pros):
+        err.append(f"pros needs at least {3 if full else 2} items, each with point and evidence (the honest strengths, with sources where possible)")
     br = inp.get("brand")
     if not isinstance(br, dict):
         err.append("brand block missing (name and brand assessment from the yc-name-creator skill; see docs/eval-input-schema.md)")
