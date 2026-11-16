@@ -1,9 +1,10 @@
 # YC Startup Engine: standing orders
 
-This repo researches every past YC company in depth and uses that to evaluate startups and create new startup ideas. It holds three skills in `.claude/skills/`:
+This repo researches every past YC company in depth and uses that to evaluate startups and create new startup ideas. It holds four skills in `.claude/skills/`:
 
 - `yc-knowledge-extractor`: researches all 6,399 companies, distills YC advice, derives base rates, and finalizes the other two skills.
-- `yc-startup-evaluator`: forecasts a startup's chance of getting into YC, then per-round odds, raises and valuations, and why it fails.
+- `yc-startup-evaluator`: forecasts a startup's chance of getting into YC, then per-round odds, raises and valuations, and why it fails. Delivers a text summary plus one standalone animated `report.html`.
+- `yc-name-creator`: creates and evaluates startup names and brand direction; used by the evaluator and creator.
 - `yc-startup-creator`: finds one strong startup idea and stress-tests it with an Investor, a Doubter, a Judge and the evaluator.
 
 ## On the first message in this repo
@@ -22,5 +23,7 @@ If the user asks for an evaluation or an idea instead, run that skill; if the ex
 - Historical facts are dated; competition is recorded **as of founding**, not as of today.
 - Run Python as `python3 -I scripts/<name>.py`.
 - `data/queue/` is generated and git-ignored; rebuild it with `scripts/make_work_queue.py`.
-- Never hand-edit `EVALUATION.md`; edit its `evaluation_input.json` and re-render.
+- UI rules for anything visual (the report, any page): minimalist and modern, rounded edges, no gradients, clean padding, full screen workspace, simple SVG icons.
+- Writing style: plain sentences, no em dashes or dashes as punctuation, no bullet characters inside sentences.
+- Never hand-edit `EVALUATION.md` or `report.html`; edit its `evaluation_input.json` and re-render.
 - Commit only when the user asks.
