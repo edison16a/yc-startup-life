@@ -1,0 +1,61 @@
+{
+  "slug": "teleport",
+  "depth": 2,
+  "confidence": "high",
+  "target_customer": "engineering and security teams at software companies and enterprises that need secure, auditable access to servers, Kubernetes clusters and databases",
+  "problem": "Engineers need secure, auditable access to cloud infrastructure without long-lived keys, VPNs and per-system credentials.",
+  "business_model": "open-core: open-source Teleport plus paid enterprise and managed offerings (subscription)",
+  "product_category": "infrastructure identity and access (open-source SSH/Kubernetes access, later unified identity)",
+  "founded_year": 2015,
+
+  "founders": [
+    {"name": "Ev Kontsevoy", "role": "CEO", "prior_employers": ["Rackspace (product)", "Mailgun"], "education": [],
+     "technical": true, "previous_startups": ["Mailgun (co-founder; acquired by Rackspace in 2012)"],
+     "age_at_founding": null, "age_source": null, "background_notes": "YC page lists software engineer background."},
+    {"name": "Alexander Klizhentas", "role": "CTO", "prior_employers": [], "education": [],
+     "technical": true, "previous_startups": [],
+     "age_at_founding": null, "age_source": null, "background_notes": "YC page says he builds distributed infrastructure and writes code."},
+    {"name": "Taylor Wakefield", "role": "COO", "prior_employers": ["Rackspace (director of product, 3 years)"], "education": ["Boston College"],
+     "technical": null, "previous_startups": ["Mailgun (co-founder; acquired by Rackspace in 2012)"],
+     "age_at_founding": null, "age_source": null, "background_notes": ""}
+  ],
+
+  "funding_data_coverage": "complete",
+  "rounds": [
+    {"stage": "seed", "date": "2016-05", "amount_usd": 4200000, "post_money_usd": null, "valuation_basis": null,
+     "investors": [], "source_url": "https://seedtable.com/companies/teleport/funding-rounds/seed-2016-05"},
+    {"stage": "series_a", "date": "2019-11", "amount_usd": 25000000, "post_money_usd": null, "valuation_basis": null,
+     "investors": ["Kleiner Perkins"], "source_url": "https://startupintros.com/news/teleport-series-a-2019-11"},
+    {"stage": "series_b", "date": "2021-08", "amount_usd": 30000000, "post_money_usd": null, "valuation_basis": null,
+     "investors": ["S28 Capital", "Kleiner Perkins"], "source_url": "https://futurumgroup.com/insights/teleport-raises-110-million-series-c-unicorn-valuation"},
+    {"stage": "series_c", "date": "2022-05", "amount_usd": 110000000, "post_money_usd": 1100000000, "valuation_basis": "reported",
+     "investors": ["Bessemer Venture Partners (lead)", "Insight Partners"], "source_url": "https://futurumgroup.com/insights/teleport-raises-110-million-series-c-unicorn-valuation"}
+  ],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/teleport"},
+
+  "competition_at_founding": {
+    "as_of": "2015-07",
+    "competitors": [
+      {"name": "ScaleFT", "what": "short-lived signed SSH keys for authenticated users via a client app", "traction_then": null,
+       "funding_then": "$800K seed in 2015 from Rackspace and angels", "source_date": "2018-07", "source_url": "https://siliconangle.com/2018/07/18/okta-acquires-security-startup-scaleft-advance-zero-trust-access/"}
+    ]
+  },
+  "technical_complexity": {"rating": 3, "rationale": "Certificate-based SSH and Kubernetes access with audit and RBAC is demanding security and distributed-systems engineering, but built on known primitives; the founders had infrastructure product experience from Mailgun/Rackspace."},
+  "defensibility": {"rating": 3, "moat_types": ["switching_costs"], "rationale": "Open-source release (2016) built community adoption, and deep integration into infrastructure access and audit gives switching costs; the core idea of short-lived credentials was copyable (ScaleFT, 2015)."},
+  "takeover_risk_then": {"rating": 3, "incumbents": ["Okta", "cloud providers"], "outcome": "Okta bought ScaleFT on 2018-07-13 for about $15.6M cash and built it into Advanced Server Access; Teleport stayed independent and raised $110M at $1.1B in May 2022."},
+  "market_need_then": "Cloud and Kubernetes adoption in 2015-16 increased the number of servers and clusters engineers had to reach securely; the founders positioned Teleport as open source for managing that access.",
+
+  "pivots": [],
+  "success_factors": ["strong_pmf", "product_led_growth", "enterprise_sales_engine", "founder_market_fit"],
+  "failure_factors": [],
+  "outcome_analysis": "Teleport, founded by Mailgun veterans, released its access tool as open source in 2016 and raised a $4.2M seed, a $25M Series A in 2019, $30M Series B in 2021 and a $110M Series C at a reported $1.1B valuation in May 2022, with total funding near $169M. The company said revenue nearly tripled and customers doubled from 2020 to 2021, with named customers such as Elastic, Snowflake, DoorDash and Nasdaq, and it now has about 255 staff and remains independent while competing against Okta's acquired ScaleFT.",
+  "sources": [
+    "https://www.ycombinator.com/companies/teleport",
+    "https://seedtable.com/companies/teleport/funding-rounds/seed-2016-05",
+    "https://startupintros.com/news/teleport-series-a-2019-11",
+    "https://futurumgroup.com/insights/teleport-raises-110-million-series-c-unicorn-valuation",
+    "https://techcrunch.com/2022/05/03/2309618/",
+    "https://siliconangle.com/2018/07/18/okta-acquires-security-startup-scaleft-advance-zero-trust-access/"
+  ],
+  "notes": "Seed amount of $4.2M is from an aggregator (seedtable) and is consistent with SiliconANGLE's $29.2M total after Series A; investors in seed not found. Batch conflict: YC page says Summer 2015, a timeline (YesPress) says YC W17 in 2016. Aggregator totals vary ($169M to $186M); Futurum states $169M. Series B lead investors differ by source (Kleiner Perkins vs S28 Capital and Kleiner). The only competitor found is dated 2018, three years after founding; ScaleFT was founded in 2015, so it is contemporaneous, but no 2015-16 competitor coverage was found. Founders' education other than Wakefield not found."
+}
