@@ -8,14 +8,17 @@ import sys as _sys, pathlib as _pl; _sys.path.insert(0, str(_pl.Path(__file__).r
 import datetime, json, shutil, subprocess
 from common import ROOT, KNOW, DATA, load_companies, load_enrichment, load_unresearchable
 
-REQUIRED_KNOWLEDGE = ["patterns.md", "failure_modes.md", "yc_acceptance.md", "stage_benchmarks.md", "incumbent_and_complexity.md"]
+REQUIRED_KNOWLEDGE = ["patterns.md", "failure_modes.md", "yc_acceptance.md", "stage_benchmarks.md", "incumbent_and_complexity.md", "naming.md"]
 SKILLS = ROOT / ".claude" / "skills"
 TARGETS = {
     "yc-startup-evaluator": {"knowledge": REQUIRED_KNOWLEDGE + ["coverage.md"],
                              "tables": "all", "extra": [("docs/taxonomy.md", "taxonomy.md"), ("knowledge/advice/sources.md", "advice_sources.md")]},
-    "yc-startup-creator": {"knowledge": ["patterns.md", "failure_modes.md", "yc_acceptance.md", "incumbent_and_complexity.md", "coverage.md"],
+    "yc-startup-creator": {"knowledge": ["patterns.md", "failure_modes.md", "yc_acceptance.md", "incumbent_and_complexity.md", "naming.md", "coverage.md"],
                            "tables": ["stage_progression.csv", "factor_outcomes.csv", "failure_factor_counts.csv", "success_factor_counts.csv", "status_mix.csv"],
                            "extra": [("docs/taxonomy.md", "taxonomy.md"), ("knowledge/advice/sources.md", "advice_sources.md")]},
+    "yc-name-creator": {"knowledge": ["naming.md", "patterns.md", "coverage.md"],
+                        "tables": ["name_outcomes.csv", "factor_outcomes.csv"],
+                        "extra": [("docs/taxonomy.md", "taxonomy.md")]},
 }
 
 
@@ -23,7 +26,7 @@ def main():
     missing = [f for f in REQUIRED_KNOWLEDGE if not (KNOW / f).exists() or not (KNOW / f).read_text().strip()]
     if missing:
         print("Cannot finalize. Missing knowledge files:", ", ".join(f"knowledge/{m}" for m in missing)); return 1
-    for cmd in (["merge_enrichment.py"], ["base_rates.py", "--write-tables"]):
+    for cmd in (["merge_enrichment.py"], ["base_rates.py", "--write-tables"], ["name_features.py", "--write", "--write-tables"]):
         r = subprocess.run([_sys.executable, "-I", str(ROOT / "scripts" / cmd[0])] + cmd[1:], capture_output=True, text=True)
         if r.returncode != 0:
             print(f"{cmd[0]} failed:\n{r.stdout[-1500:]}\n{r.stderr[-1500:]}"); return 1

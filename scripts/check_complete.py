@@ -12,9 +12,9 @@ import sys as _sys, pathlib as _pl; _sys.path.insert(0, str(_pl.Path(__file__).r
 import csv, json, re, subprocess
 from common import ROOT, DATA, KNOW, CONFIG, load_companies, load_enrichment, load_unresearchable
 
-KNOWLEDGE_FILES = ["patterns.md", "failure_modes.md", "yc_acceptance.md", "stage_benchmarks.md", "incumbent_and_complexity.md"]
+KNOWLEDGE_FILES = ["patterns.md", "failure_modes.md", "yc_acceptance.md", "stage_benchmarks.md", "incumbent_and_complexity.md", "naming.md"]
 TABLES = ["stage_progression.csv", "round_benchmarks.csv", "time_to_milestones.csv", "status_mix.csv",
-          "factor_outcomes.csv", "failure_factor_counts.csv", "success_factor_counts.csv"]
+          "factor_outcomes.csv", "failure_factor_counts.csv", "success_factor_counts.csv", "name_outcomes.csv"]
 
 
 def main():
@@ -55,7 +55,7 @@ def main():
     for t in TABLES:
         p = KNOW / "tables" / t
         add(f"tables/{t} present", p.exists() and p.stat().st_size > 0)
-    for skill in ("yc-startup-evaluator", "yc-startup-creator"):
+    for skill in ("yc-startup-evaluator", "yc-startup-creator", "yc-name-creator"):
         p = ROOT / ".claude" / "skills" / skill / "references" / "_finalized.json"
         if not p.exists():
             add(f"{skill} finalized", False, "run scripts/finalize_skills.py")
