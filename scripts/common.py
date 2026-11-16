@@ -16,14 +16,14 @@ SUCCESS_FACTORS = [
     "strong_pmf", "large_market_growth", "timing_tailwind", "distribution_advantage", "network_effects",
     "technical_moat", "regulatory_moat", "switching_costs", "proprietary_data", "founder_market_fit",
     "strong_team_execution", "capital_efficiency", "successful_pivot", "incumbent_weakness",
-    "product_led_growth", "enterprise_sales_engine", "other",
+    "product_led_growth", "enterprise_sales_engine", "brand_pull", "other",
 ]
 FAILURE_FACTORS = [
     "no_market_need", "weak_willingness_to_pay", "market_too_small", "market_timing_early",
     "market_timing_late", "ran_out_of_money", "could_not_raise_next_round", "competition_won",
     "incumbent_copied", "platform_dependency", "regulatory_blocked", "unit_economics",
     "distribution_failed", "tech_unsolved", "scaling_failed", "founder_conflict", "pivot_failed",
-    "acquihire_soft_landing", "fraud_or_legal", "macro_downturn", "other",
+    "acquihire_soft_landing", "fraud_or_legal", "macro_downturn", "brand_confusion", "other",
 ]
 
 SEASON = {"winter": (1, 15), "spring": (4, 1), "summer": (6, 15), "fall": (9, 15)}

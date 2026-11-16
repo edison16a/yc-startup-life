@@ -24,6 +24,7 @@ Controlled vocabulary for `success_factors` and `failure_factors` in enrichment 
 - `acquihire_soft_landing`: team absorbed by an acquirer without a real product outcome
 - `fraud_or_legal`: fraud, litigation or legal exposure
 - `macro_downturn`: funding or demand environment collapsed
+- `brand_confusion`: the name or identity was generic, confusable or hard to spell, and it cost customers or search traffic
 - `other`: none of the above (explain in outcome_analysis)
 
 ## success_factors
@@ -44,4 +45,5 @@ Controlled vocabulary for `success_factors` and `failure_factors` in enrichment 
 - `incumbent_weakness`: incumbents were slow, hated or unable to respond
 - `product_led_growth`: product spread through use
 - `enterprise_sales_engine`: repeatable high-value sales motion
+- `brand_pull`: the brand itself (name, mascot, voice, community) drove awareness, word of mouth or hiring
 - `other`: none of the above (explain in outcome_analysis)
