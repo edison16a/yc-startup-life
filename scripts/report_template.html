@@ -36,7 +36,7 @@ a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
 .spacer{flex:1}
 .main{overflow-y:auto;scroll-behavior:smooth}
 .page{max-width:1240px;margin:0 auto;padding:28px 32px 64px}
-.top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap}.chip{white-space:nowrap}.chartbox{overflow-x:auto}
 .top h1{margin:0;font-size:30px;line-height:1.15;letter-spacing:-.025em}
 .top p{margin:6px 0 0;color:var(--muted);max-width:760px}
 .chip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700;background:var(--soft);color:var(--muted);border:1px solid var(--line)}
@@ -121,7 +121,7 @@ details[open] summary{margin-bottom:8px}
   .nav{order:2;flex-direction:row;justify-content:space-around;border-right:0;border-top:1px solid var(--line);padding:6px 4px;background:var(--bg)}
   .brand,.spacer,.nav .icon-btn{display:none}.tab{width:auto;flex:1;padding:8px 0 6px}
   .page{padding:20px 16px 40px}.g4,.g2{grid-template-columns:1fr}.top h1{font-size:24px}
-  .step{grid-template-columns:90px 1fr 90px}.band{grid-template-columns:1fr}
+  .step{grid-template-columns:90px 1fr 90px}.band{grid-template-columns:1fr}.chart{min-width:640px}
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}.reveal{opacity:1;transform:none}.chart .ln{stroke-dashoffset:0}}
 </style>
@@ -241,13 +241,14 @@ BUILD.compare=function(root){
   chart.svg=sv("svg",{class:"chart",viewBox:"0 0 1000 460",role:"img","aria-label":"Funding history of similar YC companies compared with this startup, by months after the YC batch"});
   chart.read=h("div",{class:"readout",id:"readout","aria-live":"polite"});
   chart.range=h("input",{type:"range",class:"range-in",min:"0",max:"100",step:"1","aria-label":"Move along the timeline",oninput:function(e){setCursor(+e.target.value)}});
+  function lg(svgEl,t){return h("span",{},svgEl,t)}
   var legend=h("div",{class:"legend"},
-    h("span",{},h("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M3 3l8 8M11 3l-8 8",stroke:"#D64545","stroke-width":2,"stroke-linecap":"round"})),"Shut down"),
-    h("span",{},h("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M7 1l6 6-6 6-6-6z",fill:"#1E9E5A"})),"Acquired or public"),
-    h("span",{},h("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("circle",{cx:7,cy:7,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2})),"Still running"),
-    h("span",{},h("svg",{width:24,height:6,viewBox:"0 0 24 6"},sv("path",{d:"M0 3h24",stroke:"#F26625","stroke-width":3,"stroke-linecap":"round"})),"This startup, projected"));
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M3 3l8 8M11 3l-8 8",stroke:"#D64545","stroke-width":2,"stroke-linecap":"round"})),"Shut down"),
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M7 1l6 6-6 6-6-6z",fill:"#1E9E5A"})),"Acquired or public"),
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("circle",{cx:7,cy:7,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2})),"Still running"),
+    lg(sv("svg",{width:24,height:6,viewBox:"0 0 24 6"},sv("path",{d:"M0 3h24",stroke:"#F26625","stroke-width":3,"stroke-linecap":"round"})),"This startup, projected"));
   root.appendChild(reveal(h("div",{class:"card"},h("div",{class:"row",style:"justify-content:space-between;margin-bottom:6px;flex-wrap:wrap"},h("div",{},h("h2",{style:"margin:0",text:"Where similar companies went, and where this one stops"}),h("div",{class:"small muted",text:"Drag across the chart to move through time. Months are counted from each company's own YC batch."})),segs),note,
-    h("div",{class:"chart-wrap"},h("div",{},chart.svg,chart.range,legend),chart.read))));
+    h("div",{class:"chart-wrap"},h("div",{},h("div",{class:"chartbox"},chart.svg),chart.range,legend),chart.read))));
   var cards=h("div",{class:"grid g3",style:"margin-top:16px"});
   D.analogs.forEach(function(a){var k=(a.end||{}).kind;var col=k==="dead"?"var(--red)":k==="active"?"var(--blue)":"var(--green)";
     var statusTxt=k==="dead"?"Shut down":k==="acquired"?"Acquired":k==="ipo"?"Public":k==="active"?"Still running":a.status;
@@ -300,7 +301,9 @@ function drawChart(replay){
     var end=seg[seg.length-1],cx=X(end.m),cy=Y(end.v);
     svg.appendChild(sv("path",{d:"M"+(cx-7)+" "+(cy-7)+"l14 14M"+(cx+7)+" "+(cy-7)+"l-14 14",stroke:"#F26625","stroke-width":3,"stroke-linecap":"round"}));
     var lab=sv("text",{x:Math.min(cx,W-R-4),y:cy-16,"text-anchor":cx>W-200?"end":"middle",style:"fill:#F26625;font-weight:800;font-size:12px"});lab.textContent="Most likely stops here ("+pct(ml.stop_p)+")";svg.appendChild(lab)}
-  else{var cx0=X(D.stages[0].months/2),cy0=H-B-24;svg.appendChild(sv("path",{d:"M"+(cx0-7)+" "+(cy0-7)+"l14 14M"+(cx0+7)+" "+(cy0-7)+"l-14 14",stroke:"#F26625","stroke-width":3,"stroke-linecap":"round"}));
+  else{for(var q0=1;q0<ptsDraw.length;q0++){svg.appendChild(sv("path",{d:"M"+X(ptsDraw[q0-1].m)+" "+Y(ptsDraw[q0-1].v)+" L"+X(ptsDraw[q0].m)+" "+Y(ptsDraw[q0].v),stroke:"#F26625","stroke-width":3,"stroke-dasharray":"3 7","stroke-linecap":"round",opacity:.3}))}
+    ptsDraw.forEach(function(p){svg.appendChild(sv("circle",{cx:X(p.m),cy:Y(p.v),r:4,fill:"none",stroke:"#F26625","stroke-width":2,opacity:.45}))});
+    var cx0=X(D.stages[0].months/2),cy0=H-B-24;svg.appendChild(sv("path",{d:"M"+(cx0-7)+" "+(cy0-7)+"l14 14M"+(cx0+7)+" "+(cy0-7)+"l-14 14",stroke:"#F26625","stroke-width":3,"stroke-linecap":"round"}));
     var l2=sv("text",{x:cx0+14,y:cy0+4,style:"fill:#F26625;font-weight:800;font-size:12px"});l2.textContent="Most likely ends before a priced round ("+pct(ml.stop_p)+")";svg.appendChild(l2)}
   // cursor
   chart.cur=sv("g",{});chart.curLine=sv("line",{y1:T,y2:H-B,stroke:"var(--blue)","stroke-width":2});chart.curLab=sv("text",{y:H-B+34,"text-anchor":"middle",style:"fill:var(--blue);font-weight:800"});
@@ -381,7 +384,8 @@ BUILD.insights=function(root){
   if(keys.length){var T={market_need:"Is there real need today?",competition:"Competition now, and then",technical_complexity:"Technical complexity",takeover:"Who could take it over",economics_and_distribution:"Economics and distribution",team:"Team and founder fit",yc_specific:"Why YC may say no"};
     var box=h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Deep dive"}),h("h2",{text:"The detailed read"}));keys.forEach(function(k){box.appendChild(h("details",{},h("summary",{text:T[k]||k}),h("p",{class:"muted",style:"margin:0",text:dd[k]})))});root.appendChild(reveal(box))}
   root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Assumptions and limits"}),h("ul",{class:"list"},D.assumptions.map(function(a){return h("li",{},icon("link"),h("span",{text:a}))})),
-    h("h3",{style:"margin-top:18px",text:"Sources"}),h("ul",{class:"list"},D.sources.map(function(u){return h("li",{},icon("link"),ext(u))}))))))};
+    h("h3",{style:"margin-top:18px",text:"Sources"}),h("ul",{class:"list"},D.sources.map(function(u){return h("li",{},icon("link"),ext(u))})))));
+};
 
 // ---- pros and cons ----
 BUILD.pros=function(root){
