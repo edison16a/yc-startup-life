@@ -24,7 +24,7 @@ Settings are in `config.json` under `creator` (`min_conviction`, `max_cycles`, `
 ## Stage 0: Load the knowledge
 
 1. `python3 -I scripts/check_complete.py`. If `.claude/skills/yc-startup-creator/references/_finalized.json` does not exist, the extraction is unfinished: read `.claude/skills/yc-knowledge-extractor/SKILL.md` and carry it out until it is, then return. If it exists, continue (the data may have grown since).
-2. Read `references/` here (`patterns.md`, `failure_modes.md`, `yc_acceptance.md`, `incumbent_and_complexity.md`, `tables/`), `knowledge/coverage.md` and `knowledge/backtest.md`. Note the coverage limits.
+2. Read `references/` here (`patterns.md`, `failure_modes.md`, `yc_acceptance.md`, `incumbent_and_complexity.md`, `naming.md`, `tables/`), `knowledge/coverage.md` and `knowledge/backtest.md`. Note the coverage limits.
 3. `python3 -I scripts/new_run.py` creates `runs/<date>-<n>/`. Make a task list with one task per stage. All later files go in that run folder.
 
 ## Stage 1: Criteria
@@ -48,6 +48,8 @@ Write `criteria.md` containing: the user's requirements (a specific niche; a lar
    - Pass only if no funded or traction-bearing company serves this exact wedge.
 5. **Score** survivors on the rubric. Keep the top `finalists_per_cycle`. Write a one-page brief per finalist in `briefs/<idea-slug>.md`: customer, pain, product, MVP scope, pricing, bottom-up market size, wedge, named moat, technical complexity and what is hard, takeover analysis, go-to-market, why now, founder-market-fit assumptions, key risks. Every claim sourced.
 
+6. **Name.** Give each finalist a working name using the `yc-name-creator` skill (Mode B, short form) and note its Mode A score in the brief. A finalist whose best name scores below 3 for conflict or connotation needs a new name before review.
+
 ## Stage 3: Review
 
 For each finalist create `debate/<idea-slug>/` and run:
@@ -70,6 +72,7 @@ Update `state.json` and `progress.md` after every cycle.
 ## Stage 5: Dossier and verification
 
 1. Run the `yc-startup-evaluator` skill in **full** mode on the winner, output to `runs/<run-id>/evaluation/` (`new_eval.py ... --mode full --out runs/<run-id>/evaluation`). It must pass `check_eval.py`.
-2. Write `FINAL.md` with exactly the headings in `docs/dossier-template.md` (the checker looks for them), including full detail: the idea, who pays and why, product and MVP scope, pricing, market size with arithmetic, competition and whitespace evidence, technical complexity and takeover risk, fit with YC patterns and analog outcomes, the funding outlook from the evaluation (the round table), go-to-market, founder profile, 30-day experiments, the debate summary, runners-up, a draft YC application, research limits, sources.
-3. Verify: re-run the market-size arithmetic; re-open five sources behind key claims; then `python3 -I scripts/check_run.py runs/<run-id>` must print OK.
-4. Deliver `FINAL.md` (as a doc if the session offers one, otherwise as a file) and give the user a short message: the idea, the Judge's verdict and conviction, the YC odds, and the biggest open risk.
+2. Run the `yc-name-creator` skill (Mode B, full) for the winner and put the result in the dossier's "Name and brand" section; the evaluation's `brand` block must match it.
+3. Write `FINAL.md` with exactly the headings in `docs/dossier-template.md` (the checker looks for them), including full detail: the idea, who pays and why, product and MVP scope, pricing, market size with arithmetic, competition and whitespace evidence, technical complexity and takeover risk, fit with YC patterns and analog outcomes, the funding outlook from the evaluation (the round table), go-to-market, founder profile, 30-day experiments, the debate summary, runners-up, a draft YC application, research limits, sources.
+4. Verify: re-run the market-size arithmetic; re-open five sources behind key claims; then `python3 -I scripts/check_run.py runs/<run-id>` must print OK.
+5. Deliver `FINAL.md` (as a doc if the session offers one, otherwise as a file) and give the user a short message: the idea, the Judge's verdict and conviction, the YC odds, and the biggest open risk.
