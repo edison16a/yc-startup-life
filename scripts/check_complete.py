@@ -40,7 +40,8 @@ def main():
     r = subprocess.run([_sys.executable, "-I", str(ROOT / "scripts" / "merge_enrichment.py")], capture_output=True, text=True)
     add("all enrichment records valid", r.returncode == 0, "" if r.returncode == 0 else r.stderr.strip().splitlines()[0][:200] if r.stderr.strip() else "merge failed")
     audit = KNOW / "audit_log.md"
-    add("audit passed", audit.exists() and "AUDIT RESULT: PASS" in audit.read_text(), "knowledge/audit_log.md must end with 'AUDIT RESULT: PASS'")
+    _lines = [l.strip() for l in audit.read_text().splitlines() if l.strip()] if audit.exists() else []
+    add("audit passed", bool(_lines) and _lines[-1] == "AUDIT RESULT: PASS", "knowledge/audit_log.md must end with the exact line 'AUDIT RESULT: PASS'")
     advice = [p for p in (KNOW / "advice").glob("*.md") if p.name != "sources.md"]
     types = [re.search(r"(?mi)^type:\s*(\w+)", p.read_text()) for p in advice]
     n_app = sum(1 for m in types if m and m.group(1).lower() == "applicant_account")
