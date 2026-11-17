@@ -45,7 +45,8 @@ button{font:inherit}
 .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;color:#fff;white-space:nowrap}
 .view{display:none}.view.on{display:block;animation:viewin .5s var(--ease)}
 @keyframes viewin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.grid{display:grid;gap:16px}
+.grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}.grid>*,.chart-wrap>*,.walk>*{min-width:0}
+a{overflow-wrap:anywhere}.list li>*{min-width:0;overflow-wrap:anywhere}
 .g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
 .card h3{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
@@ -98,6 +99,26 @@ button{font:inherit}
 .ico img{width:100%;height:100%;object-fit:cover;display:block}
 .ico .sd{position:absolute;right:-2px;bottom:-2px;width:9px;height:9px;border-radius:50%;border:2px solid var(--card)}
 .acard{display:flex;flex-direction:column;gap:8px}
+.cards{align-items:start}
+.more{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;color:var(--blue);font-weight:700;font-size:13px;margin-top:2px;transition:color .2s var(--ease);align-self:flex-start}
+.more:hover{color:var(--orange)}.more:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:6px}
+.more svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease)}
+.more[aria-expanded="true"] svg{transform:rotate(180deg)}
+.xp{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.xp.open{grid-template-rows:1fr}
+.xp>.xpi{overflow:hidden;min-height:0}
+.detail{padding-top:6px}
+.dsec{margin-top:14px}
+.dsec h4{margin:0 0 6px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.tl li{display:grid;grid-template-columns:76px 1fr;gap:10px;font-size:13px}
+.tl li>span:first-child{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{padding:2px 9px;border-radius:999px;background:var(--soft);font-size:12px}
+.chips.good span{background:var(--green-soft)}.chips.bad span{background:var(--red-soft)}
+.detailpanel{border-top:1px solid var(--line);margin-top:16px;padding-top:12px;display:none}
+.dotb{all:unset;cursor:pointer;display:block;transition:transform .2s var(--ease)}
+.dotb:hover{transform:translateY(-2px)}.dotb:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
 .acard .head{display:flex;align-items:center;gap:10px}
 .list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .list li{display:grid;grid-template-columns:22px 1fr;gap:10px}
@@ -121,7 +142,8 @@ details{border-top:1px solid var(--line);padding:12px 0}summary{cursor:pointer;f
 .fadein{animation:viewin .6s var(--ease)}
 .link{all:unset;cursor:pointer;color:var(--blue);font-weight:700;font-size:14px;transition:color .2s}.link:hover{color:var(--orange)}
 .tree{position:relative;display:flex;gap:70px;overflow-x:auto;padding:6px 4px 18px;align-items:flex-start;min-height:340px}
-.tcol{display:flex;flex-direction:column;gap:14px;min-width:230px;max-width:250px;animation:viewin .5s var(--ease);flex:none}
+.tcol{display:flex;flex-direction:column;gap:14px;min-width:230px;max-width:250px;animation:fade .4s var(--ease);flex:none}
+@keyframes fade{from{opacity:0}to{opacity:1}}
 .tn{all:unset;cursor:pointer;display:block;box-sizing:border-box;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:border-color .25s var(--ease),transform .25s var(--ease)}
 .tn:hover{transform:translateY(-2px)}
 .tn:focus-visible{outline:2px solid var(--blue)}
@@ -139,13 +161,13 @@ details{border-top:1px solid var(--line);padding:12px 0}summary{cursor:pointer;f
 .rm-line{flex:1;width:2px;background:var(--line)}.rm-item:last-child .rm-line{display:none}
 .rm-item .card{margin-bottom:16px}
 .rm-item.focus .card h2{color:var(--orange)}
-@media (max-width:980px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:1fr}.chart-wrap,.walk{grid-template-columns:1fr}.readout{max-height:none}.cap{min-height:0}}
+@media (max-width:980px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:minmax(0,1fr)}.chart-wrap,.walk{grid-template-columns:minmax(0,1fr)}.readout{max-height:none}.cap{min-height:0}}
 @media (max-width:760px){
   .app{grid-template-columns:1fr;grid-template-rows:1fr auto}
   .nav{order:2;flex-direction:row;justify-content:space-around;border-right:0;border-top:1px solid var(--line);padding:6px 2px;background:var(--bg);overflow-x:auto}
   .brand,.spacer{display:none}.tab{width:auto;min-width:44px;flex:1;padding:8px 0 6px}.tab span{font-size:9px}
-  .page{padding:20px 16px 40px}.g4,.g2{grid-template-columns:1fr}.title{font-size:24px}
-  .step{grid-template-columns:90px 1fr 100px}.band{grid-template-columns:1fr}.chart{min-width:640px}.chartbox{overflow-x:auto}
+  .page{padding:20px 16px 40px}.g4,.g2{grid-template-columns:minmax(0,1fr)}.title{font-size:24px}
+  .step{grid-template-columns:90px 1fr 100px}.band{grid-template-columns:1fr}.chart{min-width:640px}.chartbox{overflow-x:auto}.tbl{display:block;overflow-x:auto;max-width:100%}.tbl td,.tbl th{white-space:nowrap}
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}.reveal{opacity:1;transform:none}.chart .ln{stroke-dashoffset:0}}
 </style>
@@ -172,7 +194,7 @@ var ICONS={
   pros:"M12 4v16 M6 8h12 M6 8l-3 7a3.5 2.5 0 0 0 6 0z M18 8l-3 7a3.5 2.5 0 0 0 6 0z",
   sun:"M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M4.9 19.1l1.4-1.4 M17.7 6.3l1.4-1.4",
   moon:"M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z",
-  check:"M5 12l5 5L20 7",x:"M6 6l12 12 M18 6L6 18",
+  check:"M5 12l5 5L20 7",x:"M6 6l12 12 M18 6L6 18",chev:"M6 9l6 6 6-6",
   arrow:"M5 12h14 M13 6l6 6-6 6",
   restart:"M4 4v6h6 M20 20v-6h-6 M5.5 15A8 8 0 0 0 20 14 M18.5 9A8 8 0 0 0 4 10",
   link:"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1 M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"
@@ -188,10 +210,12 @@ function rng(r){if(!r)return "n/a";return r[0]===r[1]?usd(r[0]):usd(r[0])+" to "
 function pct(p){if(p>0&&p<0.001)return "<0.1%";return p>=0.1?Math.round(p*100)+"%":(Math.round(p*1000)/10)+"%"}
 var LC={"Very likely":"#1E9E5A","Likely":"#5FAE62","Reasonable":"#D9A21B","Unlikely":"#E2793A","Very unlikely":"#D64545"};
 function labelFor(p){var t=D.thresholds.slice().sort(function(a,b){return b.min-a.min});for(var i=0;i<t.length;i++)if(p>=t[i].min)return t[i].label;return t[t.length-1].label}
+function npill(l){return h("span",{class:"pill",style:"background:var(--muted)",text:l})}
 function lpill(l){return h("span",{class:"pill",style:"background:"+(LC[l]||"#6B655C"),text:l})}
 function ext(u,t){var s=safeUrl(u);return s?h("a",{href:s,target:"_blank",rel:"noopener noreferrer",text:t||s}):h("span",{text:t||""})}
+function logoSrc(a){return a.logo||(a.logo_url&&/^https:\/\//i.test(a.logo_url)?a.logo_url:null)}
 function ico(a,size,status){var box=h("div",{class:"ico",title:a.name,style:"width:"+size+"px;height:"+size+"px;font-size:"+Math.round(size*.42)+"px"});var init=h("span",{text:(a.name||"?").charAt(0).toUpperCase()});box.appendChild(init);
-  var src=a.logo||a.logo_url;if(src){var img=h("img",{src:src,alt:"",loading:"lazy"});img.addEventListener("load",function(){init.remove()});img.addEventListener("error",function(){img.remove()});box.appendChild(img)}
+  var src=logoSrc(a);if(src){var img=h("img",{src:src,alt:"",loading:"lazy"});img.addEventListener("load",function(){init.remove()});img.addEventListener("error",function(){img.remove()});box.appendChild(img)}
   if(status){box.appendChild(h("i",{class:"sd",style:"background:"+status}))}return box}
 function statusColor(k){return k==="dead"?"#D64545":k==="active"?"#2F5BEA":"#1E9E5A"}
 function countUp(el,to,fmt,ms){var t0=null;ms=ms||1100;function f(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/ms);k=1-Math.pow(1-k,3);el.textContent=fmt(to*k);if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
@@ -206,6 +230,9 @@ var TABS=[["overview","Overview","overview"],["compare","Compare","compare"],["w
 var nav=document.getElementById("nav"),page=document.getElementById("page"),views={},tabs={},built={},cur=null,BUILD={};
 nav.appendChild(h("div",{class:"brand","aria-hidden":"true",text:"Y"}));
 TABS.forEach(function(t){var b=h("button",{class:"tab",role:"tab","aria-selected":"false","aria-controls":"v-"+t[0],onclick:function(){show(t[0])}},icon(t[2]),h("span",{text:t[1]}));tabs[t[0]]=b;nav.appendChild(b)});
+nav.addEventListener("keydown",function(e){if(!e.target.classList||!e.target.classList.contains("tab"))return;var ids=TABS.map(function(t){return t[0]}),i=ids.indexOf(cur);
+  if(e.key==="ArrowDown"||e.key==="ArrowRight")i=(i+1)%ids.length;else if(e.key==="ArrowUp"||e.key==="ArrowLeft")i=(i-1+ids.length)%ids.length;else if(e.key==="Home")i=0;else if(e.key==="End")i=ids.length-1;else return;
+  e.preventDefault();tabs[ids[i]].focus();show(ids[i])});
 nav.appendChild(h("div",{class:"spacer"}));
 var themeBtn=h("button",{class:"ibtn","aria-label":"Toggle light and dark theme",onclick:toggleTheme});nav.appendChild(themeBtn);
 function curTheme(){var t=document.documentElement.getAttribute("data-theme");if(t)return t;return matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}
@@ -230,10 +257,10 @@ BUILD.overview=function(root){
   var s1=reveal(h("div",{class:"card stat"},h("h3",{text:"Chance of getting into YC"}),h("div",{class:"row"},ring,h("div",{},pv,lpill(D.yc.label)))));
   onIn(s1,function(){countUp(pv,D.yc.p,function(v){return pct(v)});fg.style.strokeDashoffset=C*(1-Math.min(1,D.yc.p/0.35))});
   var sb=ml.stop_band;
-  var s2=reveal(h("div",{class:"card stat"},h("h3",{text:"Most likely ends at"}),h("div",{class:"big",text:ml.stop_name}),h("div",{class:"small",text:pct(ml.stop_p)+" of runs"+(sb?", typical value "+rng(sb.post):"")})));
+  var s2=reveal(h("div",{class:"card stat"},h("h3",{text:"If accepted, most likely ends at"}),h("div",{class:"big",text:ml.stop_name}),h("div",{class:"small",text:pct(ml.stop_p)+" chance"+(sb?", typical value "+rng(sb.post):"")})));
   var cb=ml.credible_band;
-  var s3=reveal(h("div",{class:"card stat"},h("h3",{text:"Furthest credible stage"}),h("div",{class:"big",text:ml.credible_name}),h("div",{class:"small",text:ml.credible_index?pct(ml.credible_p)+" of runs"+(cb?", typical value "+rng(cb.post):""):"No stage reaches 20%"})));
-  var dots=h("div",{class:"dots"});D.analogs.forEach(function(a){var k=(a.end||{}).kind;dots.appendChild(ico(a,26,statusColor(k)))});
+  var s3=reveal(h("div",{class:"card stat"},h("h3",{text:"If accepted, furthest credible stage"}),h("div",{class:"big",text:ml.credible_name}),h("div",{class:"small",text:ml.credible_index?pct(ml.credible_p)+" chance"+(cb?", typical value "+rng(cb.post):""):"No stage reaches 20%"})));
+  var dots=h("div",{class:"dots"});D.analogs.forEach(function(a,i){var k=(a.end||{}).kind;dots.appendChild(h("button",{class:"dotb","aria-label":a.name+", open in Compare",title:a.name,onclick:function(){show("compare",function(){selectComp(i,true)})}},ico(a,26,statusColor(k))))});
   var s4=reveal(h("div",{class:"card stat"},h("h3",{text:"Similar past YC companies"}),h("div",{class:"big",text:cs.dead+" of "+cs.total}),h("div",{class:"small",text:"shut down"}),dots));
   root.appendChild(h("div",{class:"grid g4"},s1,s2,s3,s4));
   root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h2",{text:D.headline}),h("p",{class:"muted",style:"margin:0",text:D.summary}))));
@@ -259,9 +286,9 @@ BUILD.compare=function(root){
   metric=withVal>=3?"valuation":"raised";
   var segs=h("div",{role:"group","aria-label":"Chart metric"});
   [["valuation","Valuation"],["raised","Total raised"]].forEach(function(m){segs.appendChild(h("button",{class:"tx","aria-pressed":m[0]===metric?"true":"false","data-m":m[0],onclick:function(){metric=m[0];segs.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.m===metric?"true":"false")});drawChart(true)}},m[1]))});
-  var note=h("div",{class:"small muted",id:"metric-note",style:"margin-top:2px"});
+  var note=h("div",{class:"small muted",id:"metric-note",style:"margin:2px 0 8px"});
   chart.svg=sv("svg",{class:"chart",viewBox:"0 0 1000 460",role:"img","aria-label":"Funding history of similar YC companies compared with this startup, by months after the YC batch"});
-  chart.read=h("div",{class:"readout",id:"readout","aria-live":"polite"});
+  chart.read=h("div",{class:"readout",id:"readout","aria-live":"polite"});chart.detail=h("div",{class:"detailpanel"});
   chart.range=h("input",{type:"range",class:"range-in",min:"0",max:"100",step:"1","aria-label":"Move along the timeline",oninput:function(e){setCursorM(+e.target.value/100*chart.xmax)}});
   function lg(svgEl,t){return h("span",{},svgEl,t)}
   var legend=h("div",{class:"legend"},
@@ -269,13 +296,9 @@ BUILD.compare=function(root){
     lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M7 1l6 6-6 6-6-6z",fill:"#1E9E5A"})),"Acquired or public"),
     lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("circle",{cx:7,cy:7,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2})),"Still running"));
   root.appendChild(reveal(h("div",{class:"card"},h("div",{class:"row",style:"justify-content:space-between;margin-bottom:6px;flex-wrap:wrap"},h("h2",{style:"margin:0",text:"Similar companies, and where this one stops"}),segs),note,
-    h("div",{class:"chart-wrap"},h("div",{},h("div",{class:"chartbox"},chart.svg),chart.range,legend),chart.read))));
-  var cards=h("div",{class:"grid g3",style:"margin-top:16px"});
-  D.analogs.forEach(function(a){var k=(a.end||{}).kind;var col=statusColor(k);
-    var statusTxt=k==="dead"?"Shut down":k==="acquired"?"Acquired":k==="ipo"?"Public":k==="active"?"Still running":a.status;
-    cards.appendChild(reveal(h("div",{class:"card acard"},h("div",{class:"head"},ico(a,40),h("div",{},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch}))),
-      h("span",{class:"pill",style:"background:"+col+";align-self:flex-start",text:statusTxt+(k&&!(a.end||{}).dated&&k!=="active"?" (date unknown)":"")}),
-      h("div",{class:"small",text:a.relevance}),h("div",{class:"small muted",text:a.summary}),a.url?ext(a.url,"YC page"):null)))});
+    h("div",{class:"chart-wrap"},h("div",{},h("div",{class:"chartbox"},chart.svg),chart.range,legend),chart.read),chart.detail)));
+  var cards=h("div",{class:"grid g3 cards",style:"margin-top:16px"});
+  D.analogs.forEach(function(a,i){cards.appendChild(companyCard(a,i))});
   root.appendChild(cards);
   setTimeout(function(){drawChart(true)},30);
 };
@@ -298,7 +321,7 @@ function drawChart(replay){
   for(var v=y0;v<=y1*1.01;v*=10){svg.appendChild(sv("line",{class:"grid-l",x1:L,x2:W-R,y1:Y(v),y2:Y(v)}));svg.appendChild(sv("text",{x:L-8,y:Y(v)+4,"text-anchor":"end"})).textContent=usd(v)}
   for(var m=0;m<=xmax;m+=12){svg.appendChild(sv("line",{class:"grid-l",x1:X(m),x2:X(m),y1:T,y2:H-B,"stroke-dasharray":"2 4"}));svg.appendChild(sv("text",{x:X(m),y:H-B+18,"text-anchor":"middle"})).textContent=m===0?"YC":(m/12)+"y"}
   D.stages.forEach(function(s){svg.appendChild(sv("text",{x:X(s.months),y:T-12,"text-anchor":"middle",style:"fill:var(--orange);font-weight:700"})).textContent=s.title});
-  function logoMark(a,x,y,size){var g=sv("g",{});var src=a.logo||a.logo_url;
+  function logoMark(a,x,y,size){var g=sv("g",{});var src=logoSrc(a);
     g.appendChild(sv("rect",{x:x-size/2,y:y-size/2,width:size,height:size,rx:size*.22,fill:"var(--soft)"}));
     if(src)g.appendChild(sv("image",{x:x-size/2,y:y-size/2,width:size,height:size,href:src,"clip-path":"url(#rr)",preserveAspectRatio:"xMidYMid slice"}));
     else{var t=sv("text",{x:x,y:y+4,"text-anchor":"middle",style:"font-weight:800;fill:var(--muted)"});t.textContent=(a.name||"?").charAt(0).toUpperCase();g.appendChild(t)}
@@ -338,12 +361,55 @@ function drawChart(replay){
   var drag=false;hit.addEventListener("pointerdown",function(e){drag=true;hit.setPointerCapture(e.pointerId);setCursorM(fromEvent(e))});
   hit.addEventListener("pointermove",function(e){if(drag||e.pointerType==="mouse")setCursorM(fromEvent(e))});
   hit.addEventListener("pointerup",function(){drag=false});
-  document.getElementById("metric-note").textContent=metric==="raised"?"Showing total raised. Valuation data is sparse for these companies."+(missing.length?" No data: "+missing.join(", ")+".":""):"Showing reported post-money valuation."+(missing.length?" No data: "+missing.join(", ")+".":"");
+  document.getElementById("metric-note").textContent=metric==="raised"?("Showing total raised. Valuation data is sparse for these companies."+(missing.length?" No data: "+missing.join(", ")+".":"")+" This startup's line uses the most likely band at each step and typical timing after YC."):("Showing reported post-money valuation."+(missing.length?" No data: "+missing.join(", ")+".":"")+" This startup's line uses the most likely band at each step and typical timing after YC.");
   if(!replay||cursor===0)cursor=D.stages[0].months;
   applySel();setCursorM(cursor)}
 function applySel(){D.analogs.forEach(function(a,i){var c=chart.groups&&chart.groups[i];if(!c)return;var on=selected===i;
     c.g.style.opacity=selected===null?0.55:(on?1:0.14);c.ln.setAttribute("stroke",on?"#2F5BEA":"var(--ink)");c.ln.setAttribute("stroke-width",on?4:2);if(on)chart.svg.insertBefore(c.g,chart.svg.querySelector(".me"))})}
-function selectComp(i){selected=selected===i?null:i;applySel();setCursorM(cursor)}
+function selectComp(i,force){selected=(force||selected!==i)?i:null;if(chart.groups){applySel();setCursorM(cursor)}showChartDetail()}
+function showChartDetail(){var box=chart.detail;if(!box)return;box.replaceChildren();
+  if(selected===null){box.style.display="none";return}
+  var a=D.analogs[selected];box.style.display="block";
+  box.appendChild(h("div",{class:"row",style:"justify-content:space-between"},h("div",{class:"row"},ico(a,36),h("div",{},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch+", "+statusText(a)}))),h("button",{class:"tx",onclick:function(){selectComp(selected)}},"Close")));
+  box.appendChild(companyDetail(a));box.classList.remove("fadein");void box.offsetWidth;box.classList.add("fadein")}
+function statusText(a){var e=a.end||{},k=e.kind;var t=k==="dead"?"Shut down":k==="acquired"?"Acquired":k==="ipo"?"Public":k==="active"?"Still running":a.status;
+  if(k&&k!=="active"){if(e.src==="directory")t+=" (per YC directory)";else if(!e.dated)t+=" (date unknown)"}return t}
+function sec(title,node){return h("div",{class:"dsec"},h("h4",{text:title}),node)}
+function chips(list,cls){return h("div",{class:"chips "+cls},list.map(function(x){return h("span",{text:String(x).replace(/_/g," ")})}))}
+function rate(n){return n===null||n===undefined?"not rated":n+" / 5"}
+function companyDetail(a){var d=a.detail,box=h("div",{class:"detail"});
+  if(!d){box.appendChild(h("p",{class:"small muted",style:"margin:6px 0",text:(a.one_liner?a.one_liner+". ":"")+"No researched record exists for this company yet, so the chart uses the YC directory status only."}));
+    if(a.website&&safeUrl(a.website))box.appendChild(ext(a.website,"Website"));return box}
+  box.appendChild(h("div",{class:"small muted",text:"Record confidence: "+(d.confidence||"unknown")+". Funding data: "+String(d.funding_coverage||"unknown").replace("_"," ")+(d.depth===1?". Shallow record: missing fields mean unknown, not zero.":".")}));
+  box.appendChild(sec("What happened",h("p",{class:"small",style:"margin:0",text:d.outcome||"Not recorded."})));
+  if(d.target_customer)box.appendChild(sec("What it does",h("p",{class:"small",style:"margin:0",text:d.target_customer.replace(/[.\s]+$/,"")+"."+(d.business_model?" Model: "+d.business_model.replace(/[.\s]+$/,"")+".":"")})));
+  var rl=h("ul",{class:"tl"});
+  d.rounds.forEach(function(r){var bits=[r.stage+(r.amount!=null?", "+usd(r.amount):", amount not reported")];if(r.post!=null)bits.push("post-money "+usd(r.post)+(r.basis?" ("+r.basis+")":""));if(r.investors&&r.investors.length)bits.push(r.investors.join(", "));
+    rl.appendChild(h("li",{},h("span",{text:r.date||"undated"}),h("span",{},bits.join(". ")+" ",r.url?ext(r.url,"source"):null)))});
+  box.appendChild(sec("Funding rounds on record",d.rounds.length?rl:h("p",{class:"small muted",style:"margin:0",text:d.funding_coverage==="none_found"?"None found. That means the data was not found, not that nothing was raised.":"None recorded."})));
+  var ex=d.exit||{},et=ex.type;
+  var exTxt=et==="acquisition"||et==="merger"?"Acquired"+(ex.acquirer?" by "+ex.acquirer:"")+(ex.date?" ("+ex.date+")":"")+(ex.amount?" for "+usd(ex.amount):""):et==="shutdown"?"Shut down"+(ex.date?" ("+ex.date+")":"")+(ex.reason?". Reason given: "+ex.reason:". Cause not public."):et==="ipo"||et==="spac"?"Went public"+(ex.date?" ("+ex.date+")":""):et==="none"?"No exit recorded (still operating as far as sources show).":"Outcome unknown in the record.";
+  box.appendChild(sec("Exit",h("p",{class:"small",style:"margin:0"},exTxt+" ",ex.url?ext(ex.url,"source"):null)));
+  if(d.founders.length){var fl=h("ul",{class:"tl"});d.founders.forEach(function(f){fl.appendChild(h("li",{},h("span",{text:f.role||"Founder"}),h("span",{},h("b",{text:f.name}),f.background?", "+f.background:"")))});box.appendChild(sec("Founders",fl))}
+  var cl=h("ul",{class:"tl"});d.competitors.forEach(function(c){cl.appendChild(h("li",{},h("span",{text:"Rival"}),h("span",{},h("b",{text:c.name}),c.what?", "+c.what:"",c.traction?" Traction then: "+c.traction:""," ",c.url?ext(c.url,"source"):null)))});
+  box.appendChild(sec("Competition at founding"+(d.competitors_as_of?" (as of "+d.competitors_as_of+")":""),d.competitors.length?cl:h("p",{class:"small muted",style:"margin:0",text:"No competitors with sources dated near the batch were found."})));
+  if(d.market_need)box.appendChild(sec("Demand at the time",h("p",{class:"small",style:"margin:0",text:d.market_need})));
+  var rt=h("ul",{class:"tl"});[["Technical",d.technical],["Moat",d.defensibility],["Takeover risk",d.takeover]].forEach(function(x){if(x[1]&&(x[1].rating!=null||x[1].text))rt.appendChild(h("li",{},h("span",{text:x[0]}),h("span",{},h("b",{text:rate(x[1].rating)}),x[1].text?". "+x[1].text:"")))});
+  if(rt.children.length)box.appendChild(sec("Ratings as of founding",rt));
+  if(d.success.length)box.appendChild(sec("What helped",chips(d.success,"good")));
+  if(d.failure.length)box.appendChild(sec("What hurt",chips(d.failure,"bad")));
+  if(d.pivots.length){var pl=h("ul",{class:"tl"});d.pivots.forEach(function(x){pl.appendChild(h("li",{},h("span",{text:x.date||"undated"}),h("span",{text:x.to+(x.why?". "+x.why:"")})))});box.appendChild(sec("Pivots",pl))}
+  if(d.brand){var b=d.brand,bt=["Brand "+rate(b.rating)];if(b.effect&&b.effect!=="unclear")bt.push("effect on outcome: "+b.effect);if(b.origin)bt.push("name origin: "+b.origin);if(b.signature)bt.push("signature: "+b.signature);if(b.rebrands&&b.rebrands.length)bt.push("renamed to "+b.rebrands.map(function(r){return r.to+(r.date?" ("+r.date+")":"")}).join(", "));
+    box.appendChild(sec("Name and brand",h("p",{class:"small",style:"margin:0",text:bt.join(". ")+"."})))}
+  if(d.notes)box.appendChild(sec("Caveats",h("p",{class:"small muted",style:"margin:0",text:d.notes})));
+  if(d.sources.length)box.appendChild(sec("Sources",h("div",{class:"small"},d.sources.map(function(u,i){return h("span",{},i?" ":"",ext(u,"["+(i+1)+"]"))}))));
+  return box}
+function companyCard(a,i){var k=(a.end||{}).kind;
+  var xp=h("div",{class:"xp",id:"xp-"+i}),inner=h("div",{class:"xpi"}),filled=false;xp.appendChild(inner);
+  var btn=h("button",{class:"more","aria-expanded":"false","aria-controls":"xp-"+i,onclick:function(){var open=xp.classList.toggle("open");btn.setAttribute("aria-expanded",open?"true":"false");btn.firstChild.nodeValue=open?"Hide details":"Details";if(open&&!filled){filled=true;inner.appendChild(companyDetail(a))}}},"Details",icon("chev"));
+  return reveal(h("div",{class:"card acard"},h("div",{class:"head"},ico(a,40),h("div",{style:"flex:1"},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch}))),
+    h("span",{class:"pill",style:"background:"+statusColor(k)+";align-self:flex-start",text:statusText(a)}),
+    h("div",{class:"small",text:a.relevance}),h("div",{class:"small muted",text:a.summary}),btn,xp))}
 function valueAt(a,m){var s=a[metric];if(!s.length)return null;var v=null;for(var i=0;i<s.length;i++){if(s[i][0]<=m+0.001)v=s[i]}return v}
 function setCursorM(m){cursor=m;var x=chart.X(m);chart.curLine.setAttribute("x1",x);chart.curLine.setAttribute("x2",x);chart.curLab.setAttribute("x",x);chart.curLab.textContent=m<1?"YC":(m/12).toFixed(1)+" years after YC";
   chart.range.value=Math.round(m/chart.xmax*100);
@@ -367,7 +433,7 @@ BUILD.walk=function(root){
   W.steps=steps;W.W=1000;W.H=560;W.L=70;W.R=40;W.T=30;W.B=48;
   W.svg=sv("svg",{class:"stage-chart",viewBox:"0 0 1000 560",role:"img","aria-label":"Simulated run of this startup through YC and each funding round"});
   W.capTitle=h("h3",{text:"Startup life"});W.num=h("div",{class:"num",text:"$0"});W.line=h("div",{class:"small muted"});W.res=h("div",{class:"res"});W.extra=h("div",{class:"small"});
-  W.next=h("button",{class:"ibtn big go","aria-label":"Next step",onclick:walkNext},icon("arrow"));
+  W.mode="next";W.next=h("button",{class:"ibtn big go","aria-label":"Next step",onclick:function(){if(W.mode==="reset")walkReset();else walkNext()}},icon("arrow"));
   W.again=h("button",{class:"ibtn","aria-label":"Start over",onclick:walkReset},icon("restart"));
   W.pips=h("div",{class:"pips"},steps.map(function(){return h("i")}));
   var ctl=h("div",{class:"ctl"},h("div",{class:"row"},W.again,W.pips),W.next);
@@ -380,9 +446,9 @@ BUILD.walk=function(root){
 function wx(i){return W.L+(i/W.steps.length)*(W.W-W.L-W.R)}
 function wy(v,range){var lo=Math.log10(range[0]),hi=Math.log10(range[1]);return W.T+(1-(Math.log10(Math.max(v,range[0]))-lo)/(hi-lo))*(W.H-W.T-W.B)}
 function walkReset(){W.i=0;W.pts=[{x:0,v:0}];W.range=[1e5,3e6];W.dead=false;W.busy=false;W.done=false;W.maxV=0;
-  W.capTitle.textContent="Startup life";W.num.textContent="$0";W.line.textContent="Press the arrow. Each step uses the odds from this evaluation.";W.res.textContent="";W.res.style.color="";W.extra.replaceChildren();
-  W.pips.querySelectorAll("i").forEach(function(i){i.className=""});W.next.disabled=false;W.next.onclick=null;W.next.replaceChildren(icon("arrow"));W.next.setAttribute("aria-label","Next step");W.chartCard.classList.remove("shake");
-  W.next.onclick=walkNext;drawWalk(null)}
+  W.mode="next";W.capTitle.textContent="Startup life";W.num.textContent="Idea";W.line.textContent="Press the arrow. Each step uses the odds from this evaluation.";W.res.textContent="";W.res.style.color="";W.extra.replaceChildren();
+  W.pips.querySelectorAll("i").forEach(function(i){i.className=""});W.next.disabled=false;W.next.replaceChildren(icon("arrow"));W.next.setAttribute("aria-label","Next step");W.chartCard.classList.remove("shake");
+  drawWalk(null)}
 function walkRange(maxV){var hi=Math.max(3e6,maxV*3);return [1e5,Math.pow(10,Math.ceil(Math.log10(hi)*4)/4)]}
 function drawWalk(head,rng){var svg=W.svg;svg.replaceChildren();var range=rng||W.range,color=W.dead?"#D64545":"#F26625";
   for(var v=1e5;v<=range[1]*1.01;v*=10){svg.appendChild(sv("line",{x1:W.L,x2:W.W-W.R,y1:wy(v,range),y2:wy(v,range),stroke:"var(--line)"}));svg.appendChild(sv("text",{x:W.L-8,y:wy(v,range)+4,"text-anchor":"end"})).textContent=usd(v)}
@@ -403,7 +469,7 @@ function walkAnim(target,kind,done){W.busy=true;var from=W.pts[W.pts.length-1];v
     var xk=ease(Math.min(1,k*1.15));var hx=fx+(tx-fx)*xk;
     var lo=Math.log10(Math.max(fromV,1e5)),hv=kind==="crash"?Math.pow(10,lo+(Math.log10(1e5)-lo)*ek):Math.pow(10,lo+(Math.log10(Math.max(target.v,1e5))-lo)*ek);
     var val=kind==="crash"?fromV*(1-ek):fromV+(target.v-fromV)*ek;
-    W.num.textContent=usd(Math.max(0,val));
+    W.num.textContent=target.noUsd?"In YC":(kind==="crash"&&!fromV?"Applying":usd(Math.max(0,val)));
     drawWalk({x:wx(hx),y:wy(hv,r)},r);
     if(k<1)requestAnimationFrame(frame);else{W.pts.push(target);W.range=newRange;W.busy=false;drawWalk(null);done&&done()}}
   requestAnimationFrame(frame)}
@@ -416,13 +482,13 @@ function walkNext(){if(W.busy||W.done)return;
   var pip=W.pips.querySelectorAll("i")[W.i];
   if(lucky){
     var target,txt;
-    if(s.key==="yc"){target={x:1,v:2e5};txt="You got into YC."}
+    if(s.key==="yc"){target={x:1,v:1.5e5,noUsd:true};txt="You got into YC."}
     else{var b=pickBand(s.stage.bands);var lo=Math.log10(Math.max(1,b.post[0])),hi=Math.log10(Math.max(1,b.post[1]));var val=Math.pow(10,lo+(hi-lo)*Math.random());target={x:W.i+1,v:val};txt="You raised at a "+usd(val)+" valuation."}
     W.maxV=Math.max(W.maxV,target.v);W.next.disabled=true;
     walkAnim(target,"up",function(){W.i++;pip.className="on";W.res.textContent=txt;W.res.style.color="var(--green)";W.next.disabled=false;if(W.i>=W.steps.length)walkFinish()})
   }else{
     W.dead=true;W.next.disabled=true;
-    walkAnim({x:W.i+1,v:1e5},"crash",function(){pip.className="bad";W.chartCard.classList.remove("shake");void W.chartCard.offsetWidth;W.chartCard.classList.add("shake");
+    walkAnim({x:W.i+1,v:1e5},"crash",function(){pip.className="bad";W.num.textContent=s.key==="yc"?"Not accepted":"Stalled";W.chartCard.classList.remove("shake");void W.chartCard.offsetWidth;W.chartCard.classList.add("shake");
       W.res.textContent=s.key==="yc"?"Not this time. YC said no.":"It stalled before "+s.title+".";W.res.style.color="var(--red)";
       W.extra.appendChild(h("div",{class:"callout red"},h("b",{text:"Why it fails here"}),s.why));
       walkEnd("See the roadmap for this step",s.roadmap)})
@@ -432,7 +498,7 @@ function walkFinish(){var outs=D.outcomes.filter(function(o){return !o.failure})
   W.res.textContent="End state: "+o.name+".";W.res.style.color="var(--green)";
   W.extra.appendChild(h("div",{class:"callout green"},h("b",{text:"You made it"}),"Among runs that get this far, this outcome comes up "+pct(o.p_given_yc/tot)+" of the time. Value: "+(o.value?rng(o.value):"n/a")+"."));
   walkEnd("See the roadmap for the late stage","series_c_plus")}
-function walkEnd(label,phase){W.done=true;W.next.disabled=false;W.next.replaceChildren(icon("restart"));W.next.setAttribute("aria-label","Run again");W.next.onclick=walkReset;
+function walkEnd(label,phase){W.done=true;W.next.disabled=false;W.next.replaceChildren(icon("restart"));W.next.setAttribute("aria-label","Run again");W.mode="reset";
   W.extra.appendChild(h("button",{class:"link",style:"margin-top:8px;text-align:left",onclick:function(){roadmapFocus=phase;show("roadmap",focusRoadmap)}},label))}
 
 var T={path:[]};
@@ -452,11 +518,11 @@ BUILD.tree=function(root){
   root.appendChild(reveal(h("div",{class:"card"},h("h2",{text:"Every way it can go"}),T.box)));root.appendChild(T.panel);
   window.addEventListener("resize",function(){if(cur==="tree")drawTree(true)})};
 function drawTree(quick){var box=T.box;if(!box)return;box.replaceChildren();var svgL=sv("svg",{class:"tlinks"});box.appendChild(svgL);
-  var rootCol=h("div",{class:"tcol"});if(quick)rootCol.style.animation="none";
+  var rootCol=h("div",{class:"tcol"});rootCol.style.animation="none";
   var rb=h("button",{class:"tn sel",onclick:function(){T.path=[T.root];drawTree();}},h("b",{text:"Today"}),h("div",{class:"small muted",style:"margin-top:6px",text:"Apply to YC"}));T.root.el=rb;rootCol.appendChild(rb);box.appendChild(rootCol);
-  T.path.forEach(function(n,depth){var next=T.path[depth+1];if(!n.kids.length)return;var col=h("div",{class:"tcol"});if(quick)col.style.animation="none";
+  T.path.forEach(function(n,depth){var next=T.path[depth+1];if(!n.kids.length)return;var col=h("div",{class:"tcol"});if(quick||depth<T.path.length-2)col.style.animation="none";
     n.kids.forEach(function(k){var sel=next===k;var lab=labelFor(k.cum);
-      var el=h("button",{class:"tn"+(sel?" sel":""),onclick:function(){selectNode(depth+1,k)}},h("b",{text:k.title}),h("div",{class:"small muted",style:"margin-top:8px",text:pct(k.p)+" from here"}),h("div",{class:"pr",style:"margin-top:4px"},h("span",{text:pct(k.cum)+" from today"}),lpill(lab)));
+      var el=h("button",{class:"tn"+(sel?" sel":""),onclick:function(){selectNode(depth+1,k)}},h("b",{text:k.title}),h("div",{class:"small muted",style:"margin-top:8px",text:pct(k.p)+" from here"}),h("div",{class:"pr",style:"margin-top:4px"},h("span",{text:pct(k.cum)+" from today"}),k.kind==="stop"?npill(lab):lpill(lab)));
       k.el=el;col.appendChild(el)});box.appendChild(col)});
   requestAnimationFrame(function(){var br=box.getBoundingClientRect();svgL.setAttribute("width",box.scrollWidth);svgL.setAttribute("height",box.scrollHeight);
     T.path.forEach(function(n,depth){var next=T.path[depth+1];n.kids.forEach(function(k){if(!k.el||!n.el)return;var a=n.el.getBoundingClientRect(),b=k.el.getBoundingClientRect();
@@ -466,7 +532,7 @@ function drawTree(quick){var box=T.box;if(!box)return;box.replaceChildren();var 
 function selectNode(depth,k){T.path=T.path.slice(0,depth);T.path.push(k);drawTree();setTimeout(function(){T.box.scrollTo({left:T.box.scrollWidth,behavior:"smooth"})},60)}
 function showDetail(n){var p=T.panel;p.replaceChildren();p.classList.remove("fadein");void p.offsetWidth;p.classList.add("fadein");
   var lab=labelFor(n.cum);
-  p.appendChild(h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:n.title}),h("div",{class:"row"},h("span",{class:"big",style:"font-size:30px",text:pct(n.cum)}),lpill(lab),h("span",{class:"small muted",text:"from today"}))));
+  p.appendChild(h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:n.title}),h("div",{class:"row"},h("span",{class:"big",style:"font-size:30px",text:pct(n.cum)}),n.kind==="stop"?npill(lab):lpill(lab),h("span",{class:"small muted",text:"from today"}))));
   var d=n.detail||{};
   if(d.text)p.appendChild(h("p",{class:"muted",text:d.text}));
   if(d.why)p.appendChild(h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it ends here"}),d.why));
@@ -533,7 +599,7 @@ BUILD.insights=function(root){
   var dd=I.deep_dive||{},keys=Object.keys(dd);
   if(keys.length){var TT={market_need:"Is there real need today?",competition:"Competition now, and then",technical_complexity:"Technical complexity",takeover:"Who could take it over",economics_and_distribution:"Economics and distribution",team:"Team and founder fit",yc_specific:"Why YC may say no"};
     var box=h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Deep dive"}));keys.forEach(function(k){box.appendChild(h("details",{},h("summary",{text:TT[k]||k}),h("p",{class:"muted",style:"margin:0",text:dd[k]})))});root.appendChild(reveal(box))}
-  root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Assumptions and limits"}),h("ul",{class:"list"},D.assumptions.map(function(a){return h("li",{},icon("link"),h("span",{text:a}))})),
+  root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Assumptions and limits"}),h("p",{class:"small muted",style:"margin:0 0 10px",text:"Evaluated as of "+D.startup.as_of+", "+(D.mode==="full"?"full":"summary")+" mode."}),h("ul",{class:"list"},D.assumptions.map(function(a){return h("li",{},icon("link"),h("span",{text:a}))})),
     h("h3",{style:"margin-top:18px",text:"Sources"}),h("ul",{class:"list"},D.sources.map(function(u){return h("li",{},icon("link"),ext(u))})))));
 };
 
