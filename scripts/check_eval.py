@@ -34,7 +34,7 @@ def check(d):
         want = render_html.build_data(inp, evalcore.compute(inp), want_logos=False)
         if not data:
             problems.append("report.html has no embedded data block: re-run scripts/render_eval.py")
-        elif abs(data["yc"]["p"] - want["yc"]["p"]) > 1e-9 or [s["p_given_yc"] for s in data["stages"]] != [s["p_given_yc"] for s in want["stages"]] or data["startup"]["name"] != want["startup"]["name"]:
+        elif any(data[k] != want[k] for k in ("yc", "stages", "outcomes", "roadmap", "pros", "cons", "scores", "most_likely")) or data["startup"]["name"] != want["startup"]["name"]:
             problems.append("report.html is out of sync with evaluation_input.json: re-run scripts/render_eval.py (never edit it by hand)")
     return problems
 

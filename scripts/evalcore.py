@@ -313,6 +313,12 @@ def render(inp, comp, companies=None):
         L += ["## Deep dive", ""]
         for k in DEEP_KEYS:
             L += [f"### {DEEP_TITLE[k]}", "", inp["narrative"]["deep_dive"][k].strip(), ""]
+    L += ["## Pros", ""] + [f"- **{x['point']}**: {x['evidence'].strip()}" + (f" ({x['source_url']})" if x.get("source_url") else "") for x in inp.get("pros", [])] + [""]
+    RM_T = {"before_yc": "Get into YC", "seed": "Reach Seed", "series_a": "Reach Series A", "series_b": "Reach Series B", "series_c_plus": "Reach Series C and beyond"}
+    order = list(RM_T)
+    L += ["## Roadmap", ""]
+    for r in sorted(inp.get("roadmap", []), key=lambda r: order.index(r["phase"]) if r.get("phase") in order else 99):
+        L += [f"### {RM_T.get(r['phase'], r['phase'])}", "", r["goal"].strip(), ""] + [f"{i}. {a}" for i, a in enumerate(r["actions"], 1)] + ["", f"You know it worked when: {r['proof'].strip()}", ""]
     tr, tc, mn = inp["takeover_risk"], inp["technical_complexity"], inp["market_need_now"]
     L += ["## Scorecard", "",
           "| Factor | Rating (1-5) | Notes |", "|---|---|---|",
