@@ -1,137 +1,48 @@
 {
- "slug": "lariat-data",
- "depth": 1,
- "confidence": "low",
- "target_customer": "Data engineering teams that need to monitor the quality of data from raw events to delivered data products",
- "problem": "Data bugs reach downstream consumers before engineers notice; Lariat offered continuous data quality monitoring with user-defined metrics extracted, stored and visualised automatically.",
- "business_model": "B2B SaaS for data quality monitoring (pricing not found)",
- "product_category": "Data observability and data quality",
- "founded_year": 2021,
- "founders": [
-  {
-   "name": "Aaditya Talwai",
-   "role": "Co-founder and CTO",
-   "prior_employers": [
-    "Datadog (software architect, helped launch APM)",
-    "Confluent",
-    "Bloomberg"
-   ],
-   "education": [],
-   "technical": true,
-   "previous_startups": [],
-   "age_at_founding": null,
-   "age_source": null,
-   "background_notes": "Per YC page, about 10 years building DevOps and developer infrastructure products."
+  "slug": "lariat-data",
+  "depth": 2,
+  "confidence": "low",
+  "target_customer": "Data engineering teams that run pipelines and deliver data products",
+  "problem": "Data bugs reach consumers because business logic, input data and infrastructure change without monitoring of data quality metrics.",
+  "business_model": "B2B SaaS data quality monitoring platform with an agent",
+  "product_category": "Data observability",
+  "founded_year": 2021,
+  "founders": [
+    {"name": "Aaditya Talwai", "role": "Co-founder and CTO", "prior_employers": ["Datadog (software architect, APM)", "Confluent", "Bloomberg"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page lists about 10 years in DevOps and developer infrastructure. The page has a Former Founders heading but shows only him."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "pre_seed", "date": "2021-09", "amount_usd": 1300000, "post_money_usd": null, "valuation_basis": null, "investors": ["Y Combinator", "468 Capital", "Hike Ventures"], "source_url": "https://www.vcbacked.co/company/lariat-data"}
+  ],
+  "exit": {"type": "unknown", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/lariat-data"},
+  "competition_at_founding": {
+    "as_of": "2021-06",
+    "competitors": [
+      {"name": "Monte Carlo", "what": "Data observability platform", "traction_then": null, "funding_then": "25M Series B in February 2021, then 60M Series C in August 2021", "source_date": "2021-02", "source_url": "https://www.businesswire.com/news/home/20210209005351/en/Monte-Carlo-Raises-25M-Series-B-to-Help-Companies-Achieve-More-Reliable-Data"}
+    ]
   },
-  {
-   "name": "Vikas Shanbhogue",
-   "role": "CEO",
-   "prior_employers": [],
-   "education": [],
-   "technical": null,
-   "previous_startups": [],
-   "age_at_founding": null,
-   "age_source": null,
-   "background_notes": "Not on the YC page; named as founder and CEO by CB Insights and Employbl snippets, and addressed alongside Aaditya in the Product Hunt launch thread."
-  }
- ],
- "funding_data_coverage": "partial",
- "rounds": [
-  {
-   "stage": "pre_seed",
-   "date": "2021-09-22",
-   "amount_usd": 1300000,
-   "post_money_usd": null,
-   "valuation_basis": null,
-   "investors": [
-    "Y Combinator",
-    "468 Capital",
-    "Hike Ventures"
-   ],
-   "source_url": "https://www.bouncewatch.com/explore/startup/lariat-data"
-  }
- ],
- "exit": {
-  "type": "unknown",
-  "date": null,
-  "amount_usd": null,
-  "acquirer": null,
-  "reason": null,
-  "source_url": "https://www.ycombinator.com/companies/lariat-data"
- },
- "competition_at_founding": {
-  "as_of": "2021-07",
-  "competitors": [
-   {
-    "name": "Monte Carlo",
-    "what": "Data observability platform for data pipeline reliability",
-    "traction_then": "not stated in the source",
-    "funding_then": "Raised $25M Series B in February 2021",
-    "source_date": "2021-02",
-    "source_url": "https://techcrunch.com/2021/02/09/monte-carlo-raises-25m-for-its-data-observability-service/"
-   }
-  ]
- },
- "technical_complexity": {
-  "rating": 3,
-  "rationale": "Metric extraction over event streams and warehouses with agents and storage is standard data infrastructure with hard scaling parts, built by a Datadog alumnus."
- },
- "defensibility": {
-  "rating": 2,
-  "moat_types": [
-   "switching_costs"
-  ],
-  "rationale": "Metrics and monitors defined in the tool create some lock in, but data observability vendors with more funding offered overlapping features."
- },
- "takeover_risk_then": {
-  "rating": 4,
-  "incumbents": [
-   "Monte Carlo",
-   "Datadog"
-  ],
-  "outcome": "No source shows incumbents copying or buying Lariat; Monte Carlo raised $60M more in August 2021."
- },
- "market_need_then": "In 2021 data observability was an emerging category with a $25M round at Monte Carlo (February 2021) and $60M (August 2021), indicating enterprise interest.",
- "branding": {
-  "name_origin": null,
-  "name_type": "real_word",
-  "name_qualities": [
-   "easy_to_spell",
-   "easy_to_say",
-   "evocative"
-  ],
-  "name_problems": [
-   "confusable"
-  ],
-  "domain_note": "Uses lariatdata.com, the name plus a descriptive suffix.",
-  "identity": {
-   "logo": null,
-   "mascot_or_character": null,
-   "visual_style": null,
-   "voice_and_tone": null
+  "technical_complexity": {"rating": 3, "rationale": "Extracting and storing metrics from raw event data and delivered datasets across batch and streaming pipelines is standard infrastructure engineering with hard scaling parts, led by an ex Datadog architect."},
+  "defensibility": {"rating": 2, "moat_types": ["switching_costs"], "rationale": "Metric definitions and agents deployed in customer pipelines add some lock in, but well funded rivals offered similar monitoring."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["Monte Carlo", "Datadog"], "outcome": "Funded observability vendors raised large rounds in 2021 and 2022; no source ties this to Lariat."},
+  "market_need_then": "Data observability was attracting large venture rounds in 2021, shown by Monte Carlo's Series B and C. No Lariat customer evidence was found beyond a 2024 GetApp review.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "real_word",
+    "name_qualities": ["easy_to_spell", "easy_to_say", "distinctive"],
+    "name_problems": ["confusable"],
+    "domain_note": "Site is lariatdata.com; a search snippet also mentioned lariat.co, not opened.",
+    "identity": {"logo": null, "mascot_or_character": null, "visual_style": null, "voice_and_tone": "Pitch line: discover data bugs before your consumers do."},
+    "brand_signature": null,
+    "rebrands": [],
+    "community_and_virality": null,
+    "brand_strength": {"rating": 1, "rationale": "No press or community found. Lariat is also the name of unrelated software products listed on Capterra and GetApp."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://www.ycombinator.com/companies/lariat-data", "https://www.capterra.com/p/10017269/Lariat/"]
   },
-  "brand_signature": null,
-  "rebrands": [],
-  "community_and_virality": "Product Hunt launch of an S3 data monitoring product; an open source lariat-agents repository on GitHub.",
-  "brand_strength": {
-   "rating": 1,
-   "rationale": "Brand search surfaced only profile pages and unrelated Lariat marks; no press about the brand itself."
-  },
-  "brand_effect_on_outcome": "unclear",
-  "sources": [
-   "https://www.producthunt.com/products/s3-data-monitoring-by-lariat"
-  ]
- },
- "pivots": [],
- "success_factors": [],
- "failure_factors": [],
- "outcome_analysis": "Lariat Data was a three person Summer 2021 company led by a former Datadog architect selling data quality monitoring into a category where Monte Carlo had already raised tens of millions. The YC directory marks it inactive, one aggregator calls it acquired, and the website returned nothing, but no shutdown post or acquisition announcement was found, so the cause is not public and no failure factor is assigned.",
- "sources": [
-  "https://www.ycombinator.com/companies/lariat-data",
-  "https://www.bouncewatch.com/explore/startup/lariat-data",
-  "https://www.cbinsights.com/company/lariat-data/financials",
-  "https://www.producthunt.com/products/s3-data-monitoring-by-lariat",
-  "https://techcrunch.com/2021/02/09/monte-carlo-raises-25m-for-its-data-observability-service/"
- ],
- "notes": "lariatdata.com returned an empty page. The pre-seed rests on a single database (Bouncewatch, $1.3M, 22 Sept 2021 with YC, 468 Capital, Hike Ventures); CB Insights instead lists a $130K seed on 3 Sept 2021, so the amount conflicts and one may be a data error. CB Insights search summary calls the company acquired, unverified. Vikas Shanbhogue is not on the YC page. Monte Carlo source came from a search result list, not an opened page. A TechTarget summary lists Bigeye, Acceldata and Datafold as rivals but is undated here so they are not recorded. Downgraded to depth 1: the researcher reported a required competitor search or funding cross-check was not run separately, so the record is redone."
+  "pivots": [],
+  "success_factors": [],
+  "failure_factors": [],
+  "outcome_analysis": "Lariat Data was a three person Summer 2021 data quality monitoring startup led by an ex Datadog architect that raised a small pre-seed of about 1.3 million dollars. YC marks it Inactive and the product still appeared on review sites in 2024, but no shutdown or acquisition notice was found, so the cause is not public and no failure factors are assigned. It competed in a category where Monte Carlo raised 25 million and then 60 million dollars within months of the batch.",
+  "sources": ["https://www.ycombinator.com/companies/lariat-data", "https://www.vcbacked.co/company/lariat-data", "https://www.businesswire.com/news/home/20210209005351/en/Monte-Carlo-Raises-25M-Series-B-to-Help-Companies-Achieve-More-Reliable-Data", "https://www.cbinsights.com/company/lariat-data", "https://www.getapp.com/security-software/a/lariat/"],
+  "notes": "The pre-seed rests on aggregators only (VCBacked, Bouncewatch, Employbl and an extruct listing); CB Insights shows 130K over 2 rounds, likely a figure error. Investors 468 Capital and Hike Ventures come from the same aggregators. lariatdata.com returned an empty page on fetch, so site status is unknown. CB Insights comparison pages show an ambiguous Acquired label that I could not tie to Lariat. Monte Carlo is a single competitor from a source dated February 2021; Series C August 2021 from TechTarget search results."
 }
