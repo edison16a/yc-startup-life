@@ -108,8 +108,8 @@ Soren is an AI-native engineering firm modernizing legacy systems for traditiona
 
 ## Pros
 
-- **Real demand for modernization**: Traditional companies carry large legacy backlogs and are budgeting for AI projects. (https://www.ycombinator.com/deal)
-- **Fast cash revenue possible**: Services start billing from the first project, which supports a bootstrapped path with no funding needed. (https://www.ycombinator.com/deal)
+- **Real demand for modernization**: Traditional companies carry large legacy backlogs and are budgeting for AI projects. (https://www.ciodive.com/news/accenture-generative-ai-spending-data-cloud-modernization/736066/)
+- **Fast cash revenue possible**: Services start billing from the first project, which supports a bootstrapped path with no funding needed. (https://ciodive.com/news/accenture-generative-ai-revenue-skills-training-data-modernization/761161)
 
 ## Roadmap
 
@@ -153,13 +153,13 @@ You know it worked when: Gross margin above 70 percent and net revenue retention
 
 | Competitor | What they do | Traction | Source |
 |---|---|---|---|
-| Accenture, Deloitte and large integrators | Enterprise AI transformation and legacy modernization at scale. | Billions in AI services bookings reported. | https://www.ycombinator.com/deal |
-| Offshore engineering firms | Low cost outsourced development for legacy modernization. | Entrenched status quo for traditional businesses. | https://www.ycombinator.com/deal |
-| In house teams with AI coding tools | Clients using coding agents to modernize themselves. | Rapid tool adoption by 2025. | https://www.ycombinator.com/deal |
+| Accenture, Deloitte and large integrators | Enterprise AI transformation and legacy modernization at scale. | Accenture reported fiscal 2025 generative AI bookings of $5.9B and revenue of $2.7B. | https://ciodive.com/news/accenture-generative-ai-revenue-skills-training-data-modernization/761161 |
+| Offshore engineering firms | Low cost outsourced development for legacy modernization. | Entrenched status quo for traditional businesses, with data and core system modernization still ongoing per Accenture. | https://www.ciodive.com/news/accenture-generative-ai-spending-data-cloud-modernization/736066/ |
+| In house teams with AI coding tools | Clients using coding agents to modernize themselves. | Rapid tool adoption by 2025. | https://ciodive.com/news/accenture-generative-ai-revenue-skills-training-data-modernization/761161 |
 
 ### Demand evidence
 
-- Traditional businesses are spending on AI projects and modernization, with services providers booking large AI work. (https://www.ycombinator.com/deal)
+- Traditional businesses are spending on AI projects and modernization, with services providers booking large AI work. (https://ciodive.com/news/accenture-generative-ai-revenue-skills-training-data-modernization/761161)
 - Cost pressure on engineering services is real as AI coding tools spread. (https://www.ycombinator.com/deal)
 
 ## Evidence from past YC companies
@@ -186,8 +186,10 @@ You know it worked when: Gross margin above 70 percent and net revenue retention
 - Blind forecast as of 2025-10-06; window of about 13 months to 2026-11-17.
 - Seed means a round above about $1M closing inside the window, excluding the YC deal.
 - Team size is not given in the input, so no lift for team size is applied.
-- Competitor sources are generic because the market search returned little; the YC deal page is cited for funding context only. Analog records may contain later facts; only founding era facts were used. No LEAK flags.
+- One market search on AI services demand (Accenture bookings) was used; the YC deal page is cited for funding context only. Analog records may contain later facts; only founding era facts were used. No LEAK flags.
 
 ## Sources
 
+- https://ciodive.com/news/accenture-generative-ai-revenue-skills-training-data-modernization/761161
+- https://www.ciodive.com/news/accenture-generative-ai-spending-data-cloud-modernization/736066/
 - https://www.ycombinator.com/deal
