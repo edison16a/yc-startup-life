@@ -42,3 +42,22 @@ Sample: 12 records from shards 2, 3, 6, 9, 10, 19, 20 (weav, gigster, airbyte, p
 | mocha | 5 | 1 | Seed (2023-09, YC and Soma, amount null) missing. |
 
 Totals: about 80 fields checked, 19 wrong (about 24%), limit 10%. Result: wave NOT accepted. Most errors are omissions (missing rounds, founders, investor leads) and weakly sourced competitors, not wrong amounts. Action: shards 2, 3, 6, 9, 10, 19 and 20 are queued for a correction pass with the strict prompt; the 12 audited records are corrected from these findings. Cause: researchers used 4 to 6 calls per company and shared searches across requirements.
+
+## Wave 2 (calibration shards, strict prompt), audit 3
+
+Sample: 10 records from 10 different shards (papa, flexport, wanderlog, candid-health, trella, imgix, jenfi, coub, daily, wibond). Two auditors. Fields checked are approximate counts.
+
+| Slug | Fields checked | Wrong | Notes |
+|---|---|---|---|
+| papa | 12 | 0 | Series D unverified (403). Competitor sourcing weak. |
+| flexport | 6 | 2 | 2022 round is dated 2022-02-07 and labelled Series E; investors Shopify, DST, Founders Fund missing; pre-2019 rounds omitted. |
+| wanderlog | 5 | 0 | Founder surname ambiguous in the source. |
+| candid-health | 8 | 1 | Co-founder Adam Reis and Series B investors rest on aggregators; seed and Series A omitted. |
+| trella | 8 | 1 | 2022 DFC debt facility and bridge round omitted. |
+| imgix | 6 | 1 | Series A extension (2016) omitted. |
+| jenfi | 8 | 1 | 2023 round is labelled pre-Series B by a source; $25M debt round omitted. |
+| coub | 7 | 1 | Possible third co-founder omitted; competitor source dead link. |
+| daily | 8 | 2 | Seed month 2016-08 unsupported (year only); Series B lead Renegade omitted. |
+| wibond | 6 | 1 | Co-founder conflict (Porta vs Silvestre) between low-quality sources. |
+
+Totals: about 74 fields checked, 11 wrong (about 15%), limit 10%. Result: wave NOT accepted. Improved from audit 2 (24%) after the strict prompt, but errors are still mostly omitted rounds and investor leads. The 10 audited records are corrected from these findings. Records from before the strict prompt (wave 1) and this wave need a further correction pass focused on completeness of funding rounds before the final audit.
