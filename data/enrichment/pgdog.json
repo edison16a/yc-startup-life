@@ -1,0 +1,49 @@
+{
+  "slug": "pgdog",
+  "depth": 2,
+  "confidence": "high",
+  "target_customer": "Engineering teams running large PostgreSQL databases on managed services such as AWS RDS",
+  "problem": "Postgres is hard to scale horizontally. Sharding usually means rewriting the application or schema.",
+  "business_model": "Open source core with commercial offering (license and pricing not stated on the site)",
+  "product_category": "PostgreSQL sharding, pooling and load balancing proxy",
+  "founded_year": 2025,
+  "founders": [
+    {"name": "Lev Kokotov", "role": "CEO", "prior_employers": ["Instacart"], "education": [], "technical": true, "previous_startups": ["PostgresML (co-founder)"], "age_at_founding": null, "age_source": null, "background_notes": "Started Instacart's storage infrastructure team and sharded Postgres there in 2020; creator of the PgCat pooler (YC page)."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "seed", "date": "2026-06-10", "amount_usd": 5500000, "post_money_usd": null, "valuation_basis": null, "investors": ["Basis Set", "Y Combinator", "Pioneer Fund"], "source_url": "https://pgdog.dev/blog/our-funding-announcement"}
+  ],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/pgdog"},
+  "competition_at_founding": {
+    "as_of": "2025-04",
+    "competitors": [
+      {"name": "Citus", "what": "Postgres extension for distributed tables, with a coordinator node", "traction_then": "Established open source option", "funding_then": "owned by Microsoft", "source_date": "2023-08", "source_url": "https://www.citusdata.com/blog/2023/08/04/understanding-partitioning-and-sharding-in-postgres-and-citus/"},
+      {"name": "Multigres", "what": "Vitess-style sharding layer for Postgres", "traction_then": "Early stage; repository created June 2025", "funding_then": "not stated", "source_date": "2025-06", "source_url": "https://awesome.ecosyste.ms/projects/github.com%2Fmultigres%2Fmultigres"}
+    ]
+  },
+  "technical_complexity": {"rating": 4, "rationale": "A proxy that parses SQL, routes across shards, handles cross-shard transactions and prepared statements in Rust is hard systems work, built on the founder's earlier PgCat."},
+  "defensibility": {"rating": 3, "moat_types": ["switching_costs", "technical_moat"], "rationale": "Open source code can be copied, but production trust and deep Postgres protocol compatibility take time, and funded rivals like Multigres exist."},
+  "takeover_risk_then": {"rating": 3, "incumbents": ["PlanetScale", "Supabase", "Microsoft"], "outcome": "Other Postgres sharding efforts appeared in 2025. No acquisition of PgDog found."},
+  "market_need_then": "The founder reports sharding Postgres at Instacart in 2020, and the company's customer logos include Coinbase, Ramp and Modal. A podcast notes many investors were backing Postgres sharding.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "compound",
+    "name_qualities": ["short", "easy_to_say", "distinctive", "friendly_tone"],
+    "name_problems": [],
+    "domain_note": "Uses pgdog.dev.",
+    "identity": {"logo": "logo image exists; text sources do not describe it", "mascot_or_character": null, "visual_style": "developer docs style", "voice_and_tone": "plain, technical, confident ('Does Postgres scale? It does now.')"},
+    "brand_signature": "The pairing with PgCat: a podcast guest joked he is a dog guy not a cat guy",
+    "rebrands": [],
+    "community_and_virality": "Discussed on Hacker News, Postgres FM and Scaling Postgres episodes, and a Product Hunt launch in 2026.",
+    "brand_strength": {"rating": 3, "rationale": "Memorable pet-name successor to PgCat, with podcast and community attention, but name origin and any mascot are not documented."},
+    "brand_effect_on_outcome": "helped",
+    "sources": ["https://pgdog.dev", "https://postgres.fm/people/lev-kokotov"]
+  },
+  "pivots": [],
+  "success_factors": ["founder_market_fit", "product_led_growth", "technical_moat"],
+  "failure_factors": [],
+  "outcome_analysis": "PgDog turned the founder's Instacart sharding experience and the PgCat open source project into a Postgres scaling proxy, collected named startup customers, and raised a $5.5M seed in June 2026, about a year after its Spring 2025 batch. The risk is that Multigres and other funded entrants compete for the same sharding wedge.",
+  "sources": ["https://www.ycombinator.com/companies/pgdog", "https://pgdog.dev", "https://pgdog.dev/blog/our-funding-announcement", "https://www.basisset.com/insights/pgdogs-5-5m-seed-and-scaling-postgres", "https://awesome.ecosyste.ms/projects/github.com%2Fmultigres%2Fmultigres", "https://postgres.fm/people/lev-kokotov"],
+  "notes": "Seed confirmed by the company blog and the lead investor's write-up (Basis Set says it led; the company post does not name a lead). Round dated 2026-06-10 by the blog. Team size three per the blog, four per YC. Pre-seed or YC standard deal amounts not found. Education not found. Name origin not found. License not stated on the pages read."
+}
