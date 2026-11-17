@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Cosmic Robotics",
+    "one_liner": "Autonomous construction on Earth and beyond",
+    "description": "Cosmic Robotics builds Cosmic-1, an autonomous heavy lift manipulation robot already used on large US solar farms, where it says it more than doubled labor productivity across tens of thousands of panel installs. It is expanding into data center construction and building lunar construction robots under a NASA contract. Team of eight in San Francisco.",
+    "as_of": "2026-07-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.15,
+    "p_low": 0.08,
+    "p_high": 0.3,
+    "basis": "Test assumes acceptance, so this is a note. Baseline acceptance is low single digits. Deployed hardware at utility scale solar farms, a NASA contract and a robotics hard tech story align with YC's interest in physical AI and lift the estimate to about 15 percent, though the Mars mission framing and several robotics peers temper it.",
+    "why_it_fails": "YC could say that heavy hardware robots are capital intensive and that AES, Terabase and Built Robotics already sell solar installation automation with traction. The claim of doubled productivity is self reported, and the pivot between solar, data centers and lunar work could signal lack of focus for an eight person team."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.8,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.68,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2013-2024 --calibration-only: seed 63/68/70 percent (n=28); 2020-2024 seed 73 percent (n=15)",
+        "adjustment_reason": "About 1.15 times the anchor: robotics and physical AI are favored in 2026, real field deployments and a NASA contract are unusual traction for a seed stage hardware team."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            8000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Hard tech seed with deployments and a NASA contract, above the $3.0M market median for robotics."
         },
         {
           "raise_usd": [
-            0,
-            0
+            9000000.0,
+            18000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Upside: a larger lead on field traction and data center demand, as Charge Robotics later raised larger sums."
+        },
+        {
+          "raise_usd": [
+            1000000.0,
+            3000000.0
+          ],
+          "post_money_usd": [
+            10000000.0,
+            20000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin band: smaller round plus NASA and SBIR money."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails if investors view the product as a services business with expensive custom hardware per site, or if solar construction demand falls with policy changes. An eight person team spread across solar, data centers and lunar work can look unfocused. Roin Technologies raised only a small seed and was acqui hired, and Laguna and Sunfolding show hardware construction ventures can end early."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.36,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.47,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2013-2024 --calibration-only: series_a cond 47 percent (n=19); 2020-2024 cond 27 percent (n=11)",
+        "adjustment_reason": "At 0.77 times the older anchor and above the recent one: deployed hardware helps but robot fleets need capital and Charge Robotics took three years to its A."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            12000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000.0,
+            110000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Robotics Series A near the $14M to $17M median in recent data."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            45000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Upside: robots as a service contracts with several large developers and data center builders."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            10000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            50000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin band: small A or venture debt for fleet financing."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if each robot needs expensive per site tuning and fleet economics do not scale, or if one or two solar developers account for all revenue. Charge Robotics needed until 2024 for its A, and robotics rivals with larger teams can take the same customers. Roin shows that a construction robotics company can end in a small acquisition."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.36,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only: series_b cond 44 percent (n=126); Industrials 2013-2024 cond 67 percent (n=9)",
+        "adjustment_reason": "At 0.8 times the overall anchor because fleet scaling and hardware cost raise the bar."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            55000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            180000000.0,
+            350000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Robotics Series B near the $37M to $39.5M median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            450000000.0,
+            900000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Upside: becomes the standard autonomous construction fleet for solar and data centers."
+        },
+        {
+          "raise_usd": [
+            15000000.0,
+            28000000.0
+          ],
+          "post_money_usd": [
+            70000000.0,
+            130000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin band: smaller B or structured financing after delays."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if the company cannot show fleet utilization and robot unit economics, or if the solar boom slows after tax credit changes. Hardware manufacturing and field service scale slowly, and AES and Terabase hold large developer relationships."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36 percent (n=55)",
+        "adjustment_reason": "Slightly below the anchor given high capital needs and small sample."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000.0,
+            100000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000.0,
+            800000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Series C near the $45M YC sample and $77M market median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            120000000.0,
+            250000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            1000000000.0,
+            2500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Upside: a broad autonomous construction platform spanning Earth and lunar work."
+        },
+        {
+          "raise_usd": [
+            25000000.0,
+            45000000.0
+          ],
+          "post_money_usd": [
+            150000000.0,
+            300000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin or debt heavy round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if construction robots stay a project business tied to a few developers and cyclical demand. Growth equity wants software like margins, and a fleet owner with heavy capex may instead be financed by debt or acquired by a large construction or equipment company."
     }
   ],
   "outcomes": {
@@ -164,167 +212,209 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.4
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.24
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Construction robotics fails to reach a large exit if fleet economics are weak, demand follows the cycle of solar and data center construction, or large equipment makers copy the design. Roin Technologies and Sunfolding show the downside of capital heavy construction hardware, with a small acquisition and a shutdown."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "charge-robotics",
+      "relevance": "Robots that build solar farms, the closest YC peer.",
+      "outcome_summary": "Summer 2021, $17M Series A in July 2024 and $22M more in March 2025; three years to its A."
+    },
+    {
+      "slug": "roin-technologies",
+      "relevance": "Construction robotics from YC.",
+      "outcome_summary": "Winter 2021, seed in 2021 and acquired by Built Robotics in January 2023 as a soft landing."
+    },
+    {
+      "slug": "sunfolding",
+      "relevance": "Hardware for solar farms that failed on cost.",
+      "outcome_summary": "Raised A, B and C and shut down in 2023 over steel costs and supply issues."
+    },
+    {
+      "slug": "instinct-space",
+      "relevance": "Lunar hardware seed company.",
+      "outcome_summary": "Winter 2025, building lunar landers, no round found yet."
+    },
+    {
+      "slug": "stoke-space",
+      "relevance": "Capital heavy hardware that scaled in space.",
+      "outcome_summary": "Winter 2021, seed to Series D and later large rounds."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Fleet unit economics and per site customization",
+      "p": 0.35,
+      "evidence": "Robots as a service needs high utilization, and solar sites vary widely in terrain and design.",
       "analogs": [
-        "TODO-company-slug"
+        "charge-robotics",
+        "sunfolding"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Standardize the robot, publish utilization and sign multi site master agreements."
+    },
+    {
+      "risk": "Customer concentration and cyclical solar demand",
+      "p": 0.3,
+      "evidence": "A few large developers buy utility scale solar installation and policy shifts can slow builds.",
+      "analogs": [
+        "sunfolding",
+        "roin-technologies"
+      ],
+      "mitigation": "Expand to data center and other heavy lift tasks and diversify buyers."
+    },
+    {
+      "risk": "Focus split between solar, data centers and lunar work",
+      "p": 0.3,
+      "evidence": "An eight person team is pursuing three very different markets with a Mars mission framing.",
+      "analogs": [
+        "instinct-space",
+        "roin-technologies"
+      ],
+      "mitigation": "Treat lunar work as funded R and D and focus sales on solar and data center sites."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "AES Maximo",
+      "what": "AES solar installation robot",
+      "traction": "About 10 MW installed, up to 5 GW planned over three years per company reports",
+      "source_url": "https://canarymedia.com/articles/solar/how-robots-could-dramatically-speed-up-solar-farm-construction"
+    },
+    {
+      "name": "Terabase",
+      "what": "Automated assembly line and rovers for solar farms",
+      "traction": "25 percent labor productivity gain on its first installation, field testing finished",
+      "source_url": "https://electrek.co/2026/03/20/a-24-7-solar-farm-building-robot-just-hit-the-market/"
+    },
+    {
+      "name": "Built Robotics and Sarcos",
+      "what": "Pile driving robots and robotic arms for module installation",
+      "traction": "Claims of 25 percent faster construction",
+      "source_url": "https://canarymedia.com/articles/solar/how-robots-could-dramatically-speed-up-solar-farm-construction"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Autonomous heavy lift manipulation outdoors, with perception, safety and reliability on uneven terrain, is very hard and costly to build. A small team can show a working robot but scaling a fleet with field service and safety certification is hard."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "AES",
+      "Terabase",
+      "Built Robotics",
+      "large EPC contractors"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 24,
+    "rationale": "Developers and engineering firms have their own robot programs and distribution to solar sites, and could build or buy similar capability within two years. A deployed fleet and field data are a head start."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Solar developers cite labor shortages and are deploying robots, with AES planning up to 5 GW of robot installs",
+        "source_url": "https://canarymedia.com/articles/solar/how-robots-could-dramatically-speed-up-solar-farm-construction"
+      },
+      {
+        "claim": "Commercial solar installation robots are reaching the market, showing paid demand",
+        "source_url": "https://electrek.co/2026/03/20/a-24-7-solar-farm-building-robot-just-hit-the-market/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show repeatable field productivity data.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Collect install rate data across three sites",
+        "Sign a master agreement with a second developer"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Documented 2x productivity at several sites"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Raise on fleet traction.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build the next five robots",
+        "Sign a data center pilot"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Five robots deployed and $1M contracted revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show fleet economics.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish utilization and margin per robot",
+        "Set up field service and safety certification"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue above $5M annualized and positive unit margin"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Real field deployment",
+      "evidence": "Cosmic-1 is claimed to have been deployed on some of the largest US solar farms across tens of thousands of panel installs.",
+      "source_url": "https://www.ycombinator.com/companies"
+    },
+    {
+      "point": "Clear labor shortage tailwind and paid demand",
+      "evidence": "Developers such as AES are buying robots to address installation labor shortages.",
+      "source_url": "https://canarymedia.com/articles/solar/how-robots-could-dramatically-speed-up-solar-farm-construction"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Cosmic Robotics",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Cosmic Robotics\" --era 2022+: 14 characters, 2 words, name plus descriptor",
     "strengths": [
-      "TODO"
+      "Memorable and fits the Mars mission"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic with a descriptor word and likely crowded names"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A name plus descriptor that signals space and robotics, similar to Charge Robotics. It fits the mission but is generic, so it is neutral for B2B buyers who care about field results."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Real deployments and a NASA link make a seed very likely; fleet economics and several rivals make Series A a near coin flip.",
+    "general_summary": "Cosmic Robotics builds a heavy lift autonomous robot already working on large solar farms and plans to expand to data centers and lunar construction. Few eight person teams show field deployments at this scale, so a seed above the YC deal is very likely in 2026's physical AI climate. The risks are economics and focus: fleet robots are capital intensive, AES and Terabase have real traction, demand depends on solar and data center build cycles, and the lunar story could distract. Industrials cohorts are small, so these numbers are anecdotal. The closest YC peer, Charge Robotics, needed three years to a Series A, which suggests that reaching a round is common but slow."
   },
   "assumptions": [
-    "TODO"
+    "Blind test: company assumed accepted to YC in Summer 2026; forecast date 2026-07-06.",
+    "Seed means a round above the $500K YC deal within about 12 months.",
+    "The input description reports deployments and a NASA contract that may be later claims, and are treated as given.",
+    "The Fall 2026 record of Libra Robotics names this company as a competitor; it was not used."
   ],
   "sources": [
-    "https://"
+    "https://canarymedia.com/articles/solar/how-robots-could-dramatically-speed-up-solar-farm-construction",
+    "https://electrek.co/2026/03/20/a-24-7-solar-farm-building-robot-just-hit-the-market/",
+    "https://www.equidam.com/?p=32620"
   ]
 }

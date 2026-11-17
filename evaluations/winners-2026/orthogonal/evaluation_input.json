@@ -1,330 +1,463 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Orthogonal",
+  "one_liner": "Agentic Payments for APIs",
+  "description": "Orthogonal is a marketplace and payment layer where AI agents discover, access and pay for APIs on a pay per use basis, with no subscriptions or sales calls. API providers list once and get paid each time an agent calls them. Two person team in San Francisco. Revenue would come from a take rate on API calls. Protocol work such as Coinbase x402 and Stripe machine payments is emerging as of the start date.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.99,
+  "p_low": 0.98,
+  "p_high": 0.9999,
+  "basis": "The company was accepted to YC, which is the premise of the test, so acceptance is near certainty. For reference the random applicant prior is about 1 percent, and agent infrastructure with a technical two person team is squarely in a hot YC theme, but the pitch has no stated traction or distribution.",
+  "why_it_fails": "YC would most plausibly say no because a two sided marketplace for API calls needs providers and agent developers at the same time, and protocol builders like Coinbase and Stripe were releasing agent payment standards that could make a neutral aggregator unnecessary. No traction or take rate evidence is stated in the input. The acceptance step is set from the premise that the company was admitted."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.62,
+   "anchors": {
+    "base_rate": 0.55,
+    "source": "python3 -I scripts/base_rates.py --years 2024-2025 --industry B2B --calibration-only: seed 48%/55%/61% (cond 55%, n=69), series_a 10%/12%/24% (cond 21%, n=38), series_b cond 25% (n=8), series_c cond 0% (n=2)",
+    "adjustment_reason": "Raised to 1.13x the B2B 2024 to 2025 anchor of 0.55. Agent infrastructure is the hottest YC theme and peers such as magic-2 raised a 3.4M seed in a related payments category, but a marketplace with no stated volume is harder. Seed means more than the YC 500K within about 12 months."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      6000000,
+      12000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small extension or angels if the volume is thin."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000,
+      4000000
+     ],
+     "post_money_usd": [
+      12000000,
+      25000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical 2022+ B2B seed of about 3.2M median."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Hot category lead round, as AI infrastructure peers have raised."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Outlier on early volume or a big name investor."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The most likely failure is that nobody can see real call volume. Agents mostly call a handful of big APIs with keys the developer already holds, so a marketplace of long tail APIs has little demand, and investors wait for proof. Stripe and Coinbase can offer the same pay per call primitives directly. Analogs: magic-2 raised a seed and then shut down, and plasticity, an API startup, was acquired after a small seed."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.24,
+   "anchors": {
+    "base_rate": 0.21,
+    "source": "python3 -I scripts/base_rates.py --years 2024-2025 --industry B2B --calibration-only: seed 48%/55%/61% (cond 55%, n=69), series_a 10%/12%/24% (cond 21%, n=38), series_b cond 25% (n=8), series_c cond 0% (n=2)",
+    "adjustment_reason": "Set at 1.14x the B2B 2024 to 2025 conditional anchor of 0.21 and slightly below the 0.26 of the wider B2B cohort. A hot theme supports it, while network effects and giant competitors argue against more."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      9000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin A on small volume. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      9000000,
+      16000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median recent B2B A is about 15M. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      16000000,
+      30000000
+     ],
+     "post_money_usd": [
+      100000000,
+      220000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong A if payments volume is growing quickly."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      50000000
+     ],
+     "post_money_usd": [
+      220000000,
+      400000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "A Series A needs meaningful gross transaction volume and a take rate that survives competition from free protocols. Agent API payments could stay a tiny market for a long time, and providers can simply use Stripe or Coinbase directly. Analog: exa, a search API for agents, reached a Series C but sells its own product rather than aggregating others."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.26,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2024-2025 --industry B2B --calibration-only: seed 48%/55%/61% (cond 55%, n=69), series_a 10%/12%/24% (cond 21%, n=38), series_b cond 25% (n=8), series_c cond 0% (n=2)",
+    "adjustment_reason": "Set at about the 0.25 B2B conditional anchor for B (n=8, right censored)."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      160000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest B. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      160000000,
+      350000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical recent B. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      50000000,
+      90000000
+     ],
+     "post_money_usd": [
+      350000000,
+      700000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Category leader round. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      90000000,
+      140000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1200000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "At B investors want real transaction volume and defensible network effects. The most likely miss is that standards commoditize the payment layer, so the take rate collapses toward zero, and the large payment companies bundle agent payments into existing accounts that developers already use, which leaves no room for a separate vendor at Series B scale."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.0,
+    "source": "python3 -I scripts/base_rates.py --calibration-only all cohorts: series_c cond 36% (n=55); B2B 2024-2025 cond 0% (n=2)",
+    "adjustment_reason": "Discounted from the 0.36 all cohort anchor to 0.20 because payments infrastructure is dominated by a few giants and this wedge is narrow."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      350000000,
+      800000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Growth round. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      800000000,
+      1800000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C for infrastructure winners. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1800000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Leader round. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "Late rounds need a business that large payment networks cannot absorb. The likely failure is that Stripe, Coinbase, Cloudflare or a model lab owns agent payments and API discovery, leaving little standalone value. A small take rate on a still small market may never justify a late stage valuation."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely end is a stall or a small acquihire by a payments, API gateway or agent infrastructure company. A large outcome needs agent API spend to grow enormously and this layer to stay independent of Stripe, Coinbase and the model vendors that set the protocols."
+ },
+ "analogs": [
+  {
+   "slug": "magic-2",
+   "relevance": "Pay by bank payments platform, S22, a payments startup that raised a seed.",
+   "outcome_summary": "Raised 3.4M seed in 2023 then shut down."
+  },
+  {
+   "slug": "plasticity",
+   "relevance": "APIs for developers, S17, a small developer API business.",
+   "outcome_summary": "Small seed then acquired, a soft landing."
+  },
+  {
+   "slug": "exa",
+   "relevance": "Web search rebuilt for agents and LLMs, S21, an API that agents call.",
+   "outcome_summary": "Reached Series C, shows the API for agents path works for a direct product."
+  },
+  {
+   "slug": "flowglad",
+   "relevance": "Billing and payments infrastructure for developers, W20 record.",
+   "outcome_summary": "Seed stage, active."
+  },
+  {
+   "slug": "pay-swifter",
+   "relevance": "Stripe for a niche, W20, payments for a vertical.",
+   "outcome_summary": "Seed then acquired."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Stripe, Coinbase or Cloudflare own agent payments",
+   "p": 0.4,
+   "evidence": "Coinbase created x402 and Stripe added an x402 preview and its own machine payments work, which cover pay per call directly.",
+   "analogs": [
+    "magic-2",
+    "flowglad"
+   ],
+   "mitigation": "Build on top of the standards and own API discovery and billing aggregation."
+  },
+  {
+   "risk": "Two sided cold start between API providers and agent developers",
+   "p": 0.35,
+   "evidence": "The marketplace needs listings and agents at the same time and no volume is stated.",
+   "analogs": [
+    "plasticity"
+   ],
+   "mitigation": "Seed supply with popular APIs and give agents free credits."
+  },
+  {
+   "risk": "Agent API spend stays small and concentrated",
+   "p": 0.3,
+   "evidence": "One analysis notes that agent payments have almost no real volume yet and developers already hold keys for major APIs.",
+   "analogs": [
+    "exa"
+   ],
+   "mitigation": "Focus on one agent framework with real usage."
+  },
+  {
+   "risk": "Take rate compresses",
+   "p": 0.25,
+   "evidence": "Open protocols make the payment layer a commodity and compress what a middle layer can charge.",
+   "analogs": [
+    "pay-swifter"
+   ],
+   "mitigation": "Sell discovery, monitoring and budgets rather than just payment."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Coinbase x402",
+   "what": "Open protocol reusing HTTP 402 for stablecoin payments in a web request.",
+   "traction": "Governed by a foundation co founded with Cloudflare in September 2025.",
+   "source_url": "https://www.theblock.co/learn/business/what-is-coinbases-x402-protocol-391983"
+  },
+  {
+   "name": "Stripe machine payments",
+   "what": "Preview letting developers charge agents for API and HTTP requests in USDC.",
+   "traction": "Preview launched with open source tooling.",
+   "source_url": "https://www.theblock.co/post/389352/stripe-adds-x402-integration-usdc-agent-payments"
+  },
+  {
+   "name": "Locus (YC F25)",
+   "what": "Payment infrastructure for AI agents.",
+   "traction": "YC check only found.",
+   "source_url": "https://www.cbinsights.com/company/paywithlocus/financials"
+  },
+  {
+   "name": "Status quo: API keys and monthly subscriptions",
+   "what": "Developers sign up and manage keys per vendor.",
+   "traction": "Default way agents access APIs.",
+   "source_url": "https://decrypt.co/382551/what-is-x402-how-ai-agents-pay-with-crypto"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A proxy, metering and billing layer plus a catalog is buildable by two strong engineers in a quarter. Harder parts are trust, fraud, refunds and compliance in payments, and integrating many APIs with different authentication schemes."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "Stripe",
+   "Coinbase",
+   "Cloudflare",
+   "OpenRouter style gateways"
+  ],
+  "timeline_months": 6,
+  "rationale": "Large payment and infrastructure players already ship pay per call primitives and have distribution to every developer. A rival can add API discovery within months, so independence depends on moving faster in discovery and supply."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Coinbase and Stripe are both backing HTTP 402 based protocols for agents paying for APIs.",
+    "source_url": "https://www.theblock.co/post/389352/stripe-adds-x402-integration-usdc-agent-payments"
+   },
+   {
+    "claim": "Agent payments are described as early with little volume so far.",
+    "source_url": "https://www.softwareseni.com/x402-machine-payments-protocol-and-the-card-versus-stablecoin-debate/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show real call volume and repeat agent developers.",
+   "actions": [
+    "Onboard fifty popular APIs and a few agent frameworks as launch partners.",
+    "Publish weekly paid calls and provider payouts."
+   ],
+   "proof": "Paid calls per week growing and repeat agent developers"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove a defensible take rate.",
+   "actions": [
+    "Add budgets, monitoring and discovery features beyond payment.",
+    "Sign enterprise agent builders."
+   ],
+   "proof": "Gross volume growing monthly with take rate above 5 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Hot theme with big companies validating the problem",
+   "evidence": "Coinbase and Stripe both launched pay per call protocols.",
+   "source_url": "https://www.theblock.co/post/389352/stripe-adds-x402-integration-usdc-agent-payments"
+  },
+  {
+   "point": "Simple pitch that removes sales calls and subscriptions for developers",
+   "evidence": "Pay per use API access for agents is clear to both sides."
+  }
+ ],
+ "brand": {
+  "name": "Orthogonal",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Orthogonal\" --era 2022+ gave kind invented_or_proper, 10 chars, 4 syllables",
+  "strengths": [
+   "Real word with an engineering feel",
+   "Distinctive among payments names"
+  ],
+  "weaknesses": [
+   "Does not signal payments or APIs",
+   "Common math word, likely other users"
+  ],
+  "rationale": "A real word with a technical connotation that suits developers, like other evocative names such as zapier. It does not say what the company does and will not decide the outcome.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A hot idea that big payment players are building directly, so seed is likely and later rounds depend on real volume.",
+  "general_summary": "Orthogonal lets agents discover and pay for APIs per call. The theme is hot and Coinbase and Stripe both launched agent payment protocols, which validates the need but also shows who the competition is. A seed above the YC check is slightly more likely than the B2B anchor because of the theme. Later rounds need real transaction volume, a defensible take rate and a neutral position against giants that can add the same features. The ladder follows the anchors with small adjustments, and most paths end in a stall or a small acquihire."
+ },
+ "assumptions": [
+  "No traction, volume or revenue were provided.",
+  "Only information before 2026-01-05 was used, later protocol launches were ignored.",
+  "B2B cohorts for 2024 to 2025 are right censored for later stages."
+ ],
+ "sources": [
+  "https://www.theblock.co/learn/business/what-is-coinbases-x402-protocol-391983",
+  "https://www.theblock.co/post/389352/stripe-adds-x402-integration-usdc-agent-payments",
+  "https://decrypt.co/382551/what-is-x402-how-ai-agents-pay-with-crypto",
+  "https://www.softwareseni.com/x402-machine-payments-protocol-and-the-card-versus-stablecoin-debate/",
+  "https://www.cbinsights.com/company/paywithlocus/financials"
+ ]
 }

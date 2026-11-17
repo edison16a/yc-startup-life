@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "General Legal",
+    "one_liner": "Elite AI law firm for high growth companies",
+    "description": "An AI enabled law firm for fast growing companies doing commercial, corporate and employment legal work at higher speed and lower prices than traditional firms. The listed team size is 40, which suggests an existing practice with lawyers and revenue. Clients are startups and growth companies that pay legal fees.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.01,
+    "p_low": 0.006,
+    "p_high": 0.02,
+    "basis": "Test mode: assumed accepted to YC for Winter 2026. The prior is about 1 percent with a 0.6 to 2 percent band, and no adjustment is made because acceptance is not forecast in this test.",
+    "why_it_fails": "Not scored in this blind test because the company was accepted, so the number shown is only the unadjusted prior. YC would most plausibly have questioned whether a services law firm scales like software, given law firm ownership rules and the failed example of Atrium, but a 40 person team with revenue is a strong signal."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.72,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (lower/known/upper; cond): seed 49% / 59% / 65%, cond 59% (n=126). Seed here is a round over $500K within about 12 months.",
+        "adjustment_reason": "1.2x above the anchor. A 40 person team already has revenue and AI legal startups drew $3.2B of legal tech venture money in 2025; the anchor is for typical early B2B companies."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            960000,
+            2400000
           ],
           "post_money_usd": [
-            0,
-            0
+            9600000,
+            19200000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small round if ownership structure limits what investors can buy. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3200000,
+            6400000
           ],
           "post_money_usd": [
-            0,
-            0
+            19200000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical AI services seed of $4M to $8M at a $25M to $50M post; the 2022+ B2B median raise is $3.2M, scaled up for AI legal heat."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            16000000
+          ],
+          "post_money_usd": [
+            48000000,
+            96000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside tied to 2025 precedents such as Crosby's $20M Series A and Eudia's large backing."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The main stop is structure. In most US states non lawyers cannot own a law firm or share fees, so investors must fund a separate technology or management company or use Arizona style rules, which complicates a deal and some funds will pass. Atrium, a startup law firm, raised $75M and still failed to improve efficiency. Spire Law stayed a small practice with only the YC check. Investors will want proof that margins beat a normal firm."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.35,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (lower/known/upper; cond): series_a 13% / 15% / 29%, cond 26% (n=74); 2018-2021 B2B cond 32% (n=56).",
+        "adjustment_reason": "1.35x above the anchor: existing revenue and a hot category justify it, and AI native law is receiving large rounds; kept under 2x."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            7500000,
+            13500000
           ],
           "post_money_usd": [
-            0,
-            0
+            37500000,
+            67500000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A if legal margins look like a services business. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            67500000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ B2B Series A around $15M to $20M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            375000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if revenue grows fast with software like margins, as the Crosby A in October 2025 shows investors will pay."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs software like gross margins and repeat clients. If each matter still needs senior lawyer hours, the firm grows like a services firm and investors compare it to law firm multiples. Atrium grew to a $65M B but never found efficiency, and a pivot hurt client trust. Malpractice, conflicts and quality control also limit speed."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (lower/known/upper; cond): series_b 2% / 2% / 18%, cond 16% (n=19); 2018-2021 B2B cond 39% (n=18).",
+        "adjustment_reason": "Between the B2B cohorts and below the older 39 percent, within 2x of the 16 percent 2022+ figure, because the recent cohort is right censored and the all company conditional for B is 44 percent."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            21000000,
+            42000000
           ],
           "post_money_usd": [
-            0,
-            0
+            112000000,
+            210000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat or down B if growth reverts to a services profile. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            42000000,
+            84000000
           ],
           "post_money_usd": [
-            0,
-            0
+            210000000,
+            560000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ B around $37M to $45M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            84000000,
+            168000000
+          ],
+          "post_money_usd": [
+            560000000,
+            1400000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for the category leader. Sized from the YC round medians and the 2026 public deal size benchmarks."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B needs a scalable model beyond one founder circle of clients. Law firm growth depends on hiring lawyers, and the better the AI, the more clients ask for lower prices. Atrium reached a B and then collapsed, so investors will test retention closely. If clients leave when prices fall or when the lawyers who know them leave, growth stalls below what a Series B needs."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (lower/known/upper; cond): series_c 0% / 0% / 16%, cond 0% (n=3); 2018-2021 B2B cond 57% (n=7); all company cond 36% (n=55).",
+        "adjustment_reason": "Anchored on the all company conditional of 36 percent, trimmed for the services model."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            52000000,
+            91000000
           ],
           "post_money_usd": [
-            0,
-            0
+            325000000,
+            650000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller C or growth round. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            91000000,
+            195000000
           ],
           "post_money_usd": [
-            0,
-            0
+            650000000,
+            1950000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ C around $45M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            195000000,
+            520000000
+          ],
+          "post_money_usd": [
+            1950000000,
+            6500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a category winner. Sized from the YC round medians and the 2026 public deal size benchmarks."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A C would need hundreds of millions in revenue as a law firm or a clean technology licensing business. Ownership rules cap how much of the economics investors can take, which limits valuations, and AI tools from software vendors are cheaper substitutes for the work."
     }
   ],
   "outcomes": {
@@ -164,167 +212,225 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.2
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The likeliest failure mode is a good small firm that never scales like software, or a firm that is acquired by a larger legal or professional services company. The services model, ownership rules and software substitutes cap value. A billion dollar outcome needs margins that look like software while staying within bar rules."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "atrium",
+      "relevance": "Startup law firm powered by technology, W18.",
+      "outcome_summary": "Raised $75.5M including a $65M B, then closed its software arm in 2020 after not improving efficiency."
+    },
+    {
+      "slug": "spire-law",
+      "relevance": "Tech enabled law firm, W19.",
+      "outcome_summary": "Stayed a small practice with about 10 people and only the YC check."
+    },
+    {
+      "slug": "blueshoe",
+      "relevance": "AI native law firm, S25.",
+      "outcome_summary": "$500K seed in 2025; early."
+    },
+    {
+      "slug": "pearson-labs",
+      "relevance": "AI for corporate transactions, F24.",
+      "outcome_summary": "Active, no outcome yet before the date."
+    },
+    {
+      "slug": "openintake",
+      "relevance": "AI front door for law firms, W25.",
+      "outcome_summary": "Active, no funding outcome known before the date."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Services economics: margins look like a law firm",
+      "p": 0.4,
+      "evidence": "Matters still need senior lawyer review, so revenue per lawyer rises only modestly and AI savings go to clients through lower prices.",
       "analogs": [
-        "TODO-company-slug"
+        "atrium",
+        "spire-law"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Productize standard matters at fixed fees and track gross margin per matter."
+    },
+    {
+      "risk": "Ownership and ethics rules limit investor returns",
+      "p": 0.3,
+      "evidence": "Non lawyers cannot own most US law firms; hybrid structures draw bar scrutiny and some commentators doubt them.",
+      "analogs": [
+        "atrium"
+      ],
+      "mitigation": "Use Arizona or Utah structures and a separate technology company."
+    },
+    {
+      "risk": "Quality failure or malpractice incident",
+      "p": 0.2,
+      "evidence": "AI generated errors in legal filings have drawn sanctions, and one bad outcome hurts trust.",
+      "analogs": [
+        "atrium"
+      ],
+      "mitigation": "Human lawyer sign off and insurance."
+    },
+    {
+      "risk": "Larger AI law entrants and legal software",
+      "p": 0.2,
+      "evidence": "Crosby raised $20M in 2025, Eudia up to $105M, and tools like Harvey sell to firms.",
+      "analogs": [
+        "blueshoe",
+        "pearson-labs"
+      ],
+      "mitigation": "Pick a client segment and own it."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Crosby",
+      "what": "Hybrid AI law firm with lawyers and engineers, mainly contracts.",
+      "traction": "$20M Series A in October 2025.",
+      "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
+    },
+    {
+      "name": "Eudia",
+      "what": "AI enterprise legal platform launched with General Catalyst, plus an Arizona firm.",
+      "traction": "Up to $105M of backing in February 2025.",
+      "source_url": "https://www.eudia.com/news/2025-sparked-a-legal-tech-funding-frenzy-here-were-some-of-the-notable-deals"
+    },
+    {
+      "name": "Traditional startup law firms",
+      "what": "Established firms that serve venture backed companies at fixed fees.",
+      "traction": "Deep client networks.",
+      "source_url": "https://www.globallegalpost.com/news/a-fancy-deck-and-a-round-of-funding-doesnt-make-a-law-firm-708945371"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "Drafting and review automation is available from model vendors. The hard part is legal quality control, workflow integration and trust, which depend on lawyers and process rather than new technology."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Large law firms",
+      "Harvey",
+      "Crosby",
+      "Eudia"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Big firms can adopt AI but sell on hours; AI native entrants with money copy the model quickly. Client relationships are the real defense."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Legal tech funding reached about $3.2B in 2025 as AI upstarts drew investors.",
+        "source_url": "https://www.law360.com/articles/2363506"
+      },
+      {
+        "claim": "Crosby and Eudia raised large rounds for AI native law practices in 2025, showing clients and investors back the model.",
+        "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove margins and structure.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Report gross margin per matter.",
+        "Fix the ownership structure with ethics counsel.",
+        "Sign top growth company clients on fixed fees."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Gross margin above 50 percent on fixed fee matters."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show software like scaling.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Standardize ten matter types.",
+        "Cap lawyer hours per matter.",
+        "Grow clients without linear hiring."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue per lawyer 2x a traditional firm."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Expand across practice areas.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add litigation and IP.",
+        "Sell the platform to other firms.",
+        "Build compliance."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Eight figure revenue with repeat clients."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "A team of 40 suggests existing revenue, unusual at YC",
+      "evidence": "The team size in the supplied listing is 40, far above the typical early team, and the firm sells a service customers already buy.",
+      "source_url": "https://www.law360.com/articles/2363506"
+    },
+    {
+      "point": "Hot category with proven investor appetite",
+      "evidence": "Crosby and Eudia raised large rounds in 2025.",
+      "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "General Legal",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"General Legal\" --era 2022+: 12 chars, compound words, flags long and 4+ syllables",
     "strengths": [
-      "TODO"
+      "Sounds authoritative",
+      "Says what it does"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic descriptor, hard to own or search",
+      "Long"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A generic descriptor name suits a law firm where trust matters, but it is hard to trademark and search. YC descriptor names such as Atrium style brands show that execution matters more. I did not move the ladder.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real services business in a hot category; funding is likely but it must prove software like margins.",
+    "general_summary": "General Legal is an AI enabled law firm for fast growing companies with a 40 person team, which means it likely has clients and revenue today. Investors paid for AI native law in 2025, with Crosby's $20M A and Eudia's large backing. The risks are services economics, law firm ownership rules and the Atrium precedent, which raised $75M and closed its software arm. I put seed above the B2B anchor of 59 percent for the revenue and the hot category, keep A within 1.35x of its anchor, and use older cohorts for B and C."
   },
   "assumptions": [
-    "TODO"
+    "Assumed accepted to YC Winter 2026; as_of 2026-01-05.",
+    "Team size 40 is read as an existing practice; the input gives no revenue.",
+    "Seed means over $500K within about 12 months.",
+    "No data after the as_of date used; Crosby Series B undated so ignored.",
+    "B2B cohorts right censored; no legal tag cohort of useful size."
   ],
   "sources": [
-    "https://"
+    "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/",
+    "https://www.eudia.com/news/2025-sparked-a-legal-tech-funding-frenzy-here-were-some-of-the-notable-deals",
+    "https://www.law360.com/articles/2363506",
+    "https://www.globallegalpost.com/news/a-fancy-deck-and-a-round-of-funding-doesnt-make-a-law-firm-708945371"
   ]
 }

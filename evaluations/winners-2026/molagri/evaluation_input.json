@@ -1,330 +1,461 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Molagri",
+  "one_liner": "Resistance free pesticides.",
+  "description": "Molagri develops biopesticides that hit a molecular target unique to pest insects, sparing pollinators and beneficial insects, and models how pests evolve to design against resistance. Biobased production is meant to cut emissions. Four person team of PhD lab mates from the University of Toronto who published in Nature Communications and Nature Microbiology. Farmers or agrochemical distributors would pay per treated acre, but the product needs efficacy trials and regulatory registration first.",
+  "as_of": "2026-07-06"
+ },
+ "yc_acceptance": {
+  "p": 0.99,
+  "p_low": 0.98,
+  "p_high": 0.9999,
+  "basis": "The company was accepted to YC, which is the premise of the test, so acceptance is near certainty. For reference the random applicant prior is about 1 percent, and a team of Nature published PhD scientists with a clear target ranks above that on technical credibility but lacks traction or a commercial founder.",
+  "why_it_fails": "YC would most plausibly say no because agrochemical products need years of field trials and registration before revenue, and a four person academic team has no sales or regulatory experience. Partners would ask how the company shows value inside a batch and whether the molecular target claim is validated in live pests. The acceptance step is set from the premise that the company was admitted."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.52,
+   "anchors": {
+    "base_rate": 0.7,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: seed 70% (n=23), series_a 17% known (cond 25%, n=16), series_b cond 50% (n=4), series_c cond 0% (n=2); anecdote level, only 23 researched; peers in the biotech and agriculture comps: acx raised only the 500K YC check, ohmic-biosciences only 500K",
+    "adjustment_reason": "Set at 0.74x the Industrials anchor of 0.70. The anchor cohort is small and mixed, and the closest peers acx and ohmic-biosciences stayed at the YC check. Strong science and climate interest keep it above those cases. Seed means more than 500K within about 12 months."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      6000000,
+      12000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small seed or a non dilutive grant paired with angels, common for biotech in early years."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000,
+      4000000
+     ],
+     "post_money_usd": [
+      12000000,
+      28000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical biotech seed to fund a lab and greenhouse trials."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      28000000,
+      55000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong seed from a climate or ag biotech fund."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      55000000,
+      100000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier on a major efficacy result. given the cohort anchors and the comparable companies above"
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The most likely failure is that investors cannot see efficacy on real pests within a year and treat it as a university project, so only the YC check and grants arrive. Ag biotech investors are few and wary of long registration timelines. Analogs: acx and ohmic-biosciences, both from recent batches in nearby fields, show only the 500K YC check found, and ovipost, a capital heavy agriculture startup, ran out of runway."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.24,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: seed 70% (n=23), series_a 17% known (cond 25%, n=16), series_b cond 50% (n=4), series_c cond 0% (n=2); anecdote level, only 23 researched",
+    "adjustment_reason": "Set at 0.96x the Industrials conditional anchor of 0.25. Peers such as entocycle and living-carbon reached a Series A in agriculture and climate, but biotech timelines are slow and the A may come years after the batch, which the ladder allows."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest A to fund greenhouse and field trials."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      25000000
+     ],
+     "post_money_usd": [
+      50000000,
+      130000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical A for ag biotech with efficacy data."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      130000000,
+      280000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Large A from strategic and climate funds. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      50000000,
+      80000000
+     ],
+     "post_money_usd": [
+      280000000,
+      450000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "A Series A requires field data showing efficacy and a path to a registered product, and many teams fail the translation from lab to field, where pests, weather and formulation matter. Resistance modelling is hard to prove until pests are exposed over seasons. Analogs: entocycle took years to raise a 5M Series A and many biotechs stall at seed when the field data are ambiguous."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.5,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: seed 70% (n=23), series_a 17% known (cond 25%, n=16), series_b cond 50% (n=4), series_c cond 0% (n=2); anecdote level, only 23 researched",
+    "adjustment_reason": "The Industrials B conditional anchor is 0.50 on four companies, so I use 0.30 for the long registration path and big capital need."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      100000000,
+      250000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Standard B to fund registration trials. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      250000000,
+      550000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical ag biotech B for manufacturing scale up."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      130000000
+     ],
+     "post_money_usd": [
+      550000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Strong B on registered product. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      130000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      1800000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "Series B needs a registered or nearly registered product and scaled biomanufacturing. Registration with regulators such as the EPA can take years and cost millions, and failure of a safety package or a poor yield in production can kill a round. Investors compare with funded RNAi players that reached registration first."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.0,
+    "source": "python3 -I scripts/base_rates.py --calibration-only all cohorts: series_c cond 36% (n=55); Industrials cond 0% (n=2)",
+    "adjustment_reason": "Discounted from the 0.36 all cohort anchor to 0.30 because commercial agrochemical launch is distribution heavy and few startups have done it."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Growth round for launch. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C for a commercial biologic. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      3500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Leader round. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "Late rounds require commercial revenue, which needs distribution, farmer trust and big agrochemical competitors not copying or blocking the product. Large incumbents control the sales channels and can buy or imitate a mode of action. Resistance may eventually appear anyway, undermining the core claim, and a slow launch can leave the company short of cash before sales ramp."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.18
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     4000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.07
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely outcome is a stall during field trials or registration, or an acquisition of the platform by a large agrochemical company for its target and team. A large result needs a registered product with strong efficacy and a distribution deal with incumbents who prefer to buy rather than partner."
+ },
+ "analogs": [
+  {
+   "slug": "acx",
+   "relevance": "Next generation biocides for sustainable agriculture, S24, the closest peer.",
+   "outcome_summary": "Only the 500K YC seed found, active."
+  },
+  {
+   "slug": "ohmic-biosciences",
+   "relevance": "Engineering plants for disease resistance, S23, similar science team.",
+   "outcome_summary": "500K from YC and a climate fund in 2023, active, no larger round found."
+  },
+  {
+   "slug": "entocycle",
+   "relevance": "Agriculture biotech with farm customers, S17.",
+   "outcome_summary": "Series A of 5M in 2023, six years after the batch, active."
+  },
+  {
+   "slug": "living-carbon",
+   "relevance": "Plant biotech for climate, W20.",
+   "outcome_summary": "Reached a Series A and active."
+  },
+  {
+   "slug": "ovipost",
+   "relevance": "Agriculture insect startup, W18.",
+   "outcome_summary": "Shut down with no later funding found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Field efficacy does not match lab results",
+   "p": 0.35,
+   "evidence": "Lab to field gaps are common in crop protection and no field data are cited in the description.",
+   "analogs": [
+    "acx",
+    "ovipost"
+   ],
+   "mitigation": "Run greenhouse and small plot trials in the first six months."
+  },
+  {
+   "risk": "Registration and regulatory timeline",
+   "p": 0.35,
+   "evidence": "Biopesticides still need regulatory approval, and the first foliar RNAi product only reached EPA registration after years.",
+   "analogs": [
+    "entocycle"
+   ],
+   "mitigation": "Engage regulators early and target markets with faster biopesticide paths."
+  },
+  {
+   "risk": "Incumbents and RNAi players win distribution",
+   "p": 0.3,
+   "evidence": "Agrochemical majors control farmer channels, and RNAi startups already raised tens of millions.",
+   "analogs": [
+    "acx"
+   ],
+   "mitigation": "Partner with a distributor on a narrow pest."
+  },
+  {
+   "risk": "Founders are scientists without commercial experience",
+   "p": 0.25,
+   "evidence": "The team is four PhD lab mates with publications and no listed business or sales background.",
+   "analogs": [
+    "ohmic-biosciences"
+   ],
+   "mitigation": "Add a commercial lead and a distributor advisor."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "GreenLight Biosciences",
+   "what": "RNA based crop protection with a registered foliar RNAi product.",
+   "traction": "Series C of 25M in March 2025 and first foliar RNAi registration by the EPA.",
+   "source_url": "https://www.techsciresearch.com/report/rnai-pesticides-market/25012.html"
+  },
+  {
+   "name": "AgroSpheres",
+   "what": "Biomanufacturing and delivery platform for biological crop protection.",
+   "traction": "37M Series B in September 2024.",
+   "source_url": "https://www.techsciresearch.com/report/rnai-pesticides-market/25012.html"
+  },
+  {
+   "name": "Conventional agrochemicals",
+   "what": "Synthetic insecticides from the large crop protection companies.",
+   "traction": "Dominant, but resistance is a main demand driver for alternatives.",
+   "source_url": "https://www.imarcgroup.com/rnai-pesticides-market"
+  },
+  {
+   "name": "ACX (YC S24)",
+   "what": "Next generation biocides for sustainable agriculture.",
+   "traction": "500K YC seed, active.",
+   "source_url": "https://startupintros.com/news/acx-seed-2024-09"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "Designing a molecule that hits an insect specific target, producing it by biomanufacturing at low cost, and proving efficacy and safety in the field are all hard. A small team cannot finish field validation or registration in 3 months, though the scientists may solve the target design."
+ },
+ "takeover_risk": {
+  "rating": 2,
+  "who": [
+   "Bayer",
+   "Syngenta",
+   "Corteva",
+   "GreenLight Biosciences"
+  ],
+  "timeline_months": 48,
+  "rationale": "Copying requires years of target discovery and regulatory work. Large agrochemical companies are more likely to acquire or license the platform than to copy it quickly, so takeover risk is low but exit via acquisition is a main path."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Insecticide resistance is named as the main demand driver for RNAi and biological alternatives and a new resistance group was created for RNAi.",
+    "source_url": "https://www.imarcgroup.com/rnai-pesticides-market"
+   },
+   {
+    "claim": "RNAi crop protection companies are raising money and one product has reached EPA registration.",
+    "source_url": "https://www.techsciresearch.com/report/rnai-pesticides-market/25012.html"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Prove efficacy on live pests and a clear commercial path.",
+   "actions": [
+    "Run greenhouse and small plot efficacy trials on one pest.",
+    "Add a commercial cofounder or advisor from an agrochemical company."
+   ],
+   "proof": "Kill rate above a conventional insecticide in a trial and a seed above 2M"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show field results and a registration plan.",
+   "actions": [
+    "Complete a field season with a partner grower.",
+    "File for registration or an exemption in one market."
+   ],
+   "proof": "Multi site field data and a signed distributor letter"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Strong scientific credentials",
+   "evidence": "Founders have published in Nature Communications and Nature Microbiology and worked together six years."
+  },
+  {
+   "point": "Resistance is a real and growing demand driver",
+   "evidence": "Resistance to conventional insecticides drives demand for new modes of action.",
+   "source_url": "https://www.imarcgroup.com/rnai-pesticides-market"
+  }
+ ],
+ "brand": {
+  "name": "Molagri",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Molagri\" --era 2022+ gave kind invented_or_proper, 7 chars, 3 syllables",
+  "strengths": [
+   "Blend of molecule and agriculture says what the company does",
+   "Short and easy to say"
+  ],
+  "weaknesses": [
+   "Descriptive coinage similar to many agtech names",
+   "Hard to trademark distinct from others"
+  ],
+  "rationale": "A short invented name that signals molecular agriculture. It is clear to a farmer or investor in the way that descriptive coinages like unsloth-ai are not, and will not decide the outcome of a science heavy company.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Credible science in a real market, but a long registration road makes the seed uncertain and later rounds slow.",
+  "general_summary": "Molagri is a four person team of published scientists building pest specific biopesticides to beat resistance. The market need is real and RNAi style competitors have raised money, but the closest YC peers in agricultural biotech stayed at the YC check, so a larger seed within a year is only about even odds. Later rounds depend on field data, registration and distribution against large incumbents. The ladder follows the Industrials anchors with small discounts and a high chance of stalling during trials."
+ },
+ "assumptions": [
+  "No customers, trial data or revenue were provided.",
+  "The Industrials cohort has 23 researched companies, which is anecdote level, and the biotech tag cohort has one.",
+  "Market size estimates for RNAi vary by orders of magnitude and are vendor reports."
+ ],
+ "sources": [
+  "https://www.techsciresearch.com/report/rnai-pesticides-market/25012.html",
+  "https://www.imarcgroup.com/rnai-pesticides-market",
+  "https://startupintros.com/news/acx-seed-2024-09"
+ ]
 }
