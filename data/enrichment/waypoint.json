@@ -1,49 +1,151 @@
 {
-  "slug": "waypoint",
-  "depth": 2,
-  "confidence": "low",
-  "target_customer": "Product and engineering teams at software companies that send data-rich transactional email such as receipts, order confirmations and alerts",
-  "problem": "Developers had to hand-code HTML email templates or accept rigid editors in legacy email APIs, which kept designers and product managers out of the loop and made deliverability and debugging opaque.",
-  "business_model": "usage-based email API with free tier and paid plans (listed from 20 USD per month by a third-party directory)",
-  "product_category": "transactional email API with visual template builder",
-  "founded_year": 2021,
-  "founders": [
-    {"name": "Jordan Isip", "role": "Founder", "prior_employers": [], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page describes a product designer with over 15 years of experience at large organizations and small startups. No employers or school named."},
-    {"name": "Carlos Rodriguez-Rosario", "role": "Founder", "prior_employers": [], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he is Puerto Rican and lives in Portland, with interests in payments, tax compliance, infrastructure and messaging. No employers or school named."}
+ "slug": "waypoint",
+ "depth": 2,
+ "confidence": "low",
+ "target_customer": "Product and engineering teams at software companies that send data-rich transactional email such as receipts, order confirmations and alerts",
+ "problem": "Developers had to hand-code HTML email templates or accept rigid editors in legacy email APIs, which kept designers and product managers out of the loop and made deliverability and debugging opaque.",
+ "business_model": "usage-based email API with free tier and paid plans (listed from 20 USD per month by a third-party directory)",
+ "product_category": "transactional email API with visual template builder",
+ "founded_year": 2021,
+ "founders": [
+  {
+   "name": "Jordan Isip",
+   "role": "Founder",
+   "prior_employers": [],
+   "education": [],
+   "technical": null,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page describes a product designer with over 15 years of experience at large organizations and small startups. No employers or school named."
+  },
+  {
+   "name": "Carlos Rodriguez-Rosario",
+   "role": "Founder",
+   "prior_employers": [],
+   "education": [],
+   "technical": null,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page says he is Puerto Rican and lives in Portland, with interests in payments, tax compliance, infrastructure and messaging. No employers or school named."
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "other",
+   "date": "2021-01",
+   "amount_usd": 500000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Y Combinator",
+    "Brickyard Capital"
+   ],
+   "source_url": "https://www.cbinsights.com/company/waypoint-3"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/waypoint"
+ },
+ "competition_at_founding": {
+  "as_of": "2021-01",
+  "competitors": [
+   {
+    "name": "SendGrid",
+    "what": "Incumbent transactional and marketing email API",
+    "traction_then": "Market leader with a very large customer base (YC page names it as the alternative target)",
+    "funding_then": "Public company (Twilio acquired it in 2019)",
+    "source_date": null,
+    "source_url": "https://www.ycombinator.com/companies/waypoint"
+   },
+   {
+    "name": "Mailgun",
+    "what": "Developer email API",
+    "traction_then": "Established developer email API",
+    "funding_then": "Owned by Sinch since 2021 (not verified in this research)",
+    "source_date": null,
+    "source_url": "https://www.ycombinator.com/companies/waypoint"
+   },
+   {
+    "name": "Postmark",
+    "what": "Transactional email API known for deliverability",
+    "traction_then": "Established transactional email provider",
+    "funding_then": "Bootstrapped under Wildbit (not verified in this research)",
+    "source_date": null,
+    "source_url": "https://www.ycombinator.com/companies/waypoint"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A block-based template builder, Liquid templating, workflow builder with delays and monitoring on top of AWS sending infrastructure. The company says it is built on AWS and an open source builder (emailbuilderjs), so the hard parts were deliverability and observability rather than research."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [
+   "switching_costs"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/waypoint"},
-  "competition_at_founding": {
-    "as_of": "2021-01",
-    "competitors": [
-      {"name": "SendGrid", "what": "Incumbent transactional and marketing email API", "traction_then": "Market leader with a very large customer base (YC page names it as the alternative target)", "funding_then": "Public company (Twilio acquired it in 2019)", "source_date": null, "source_url": "https://www.ycombinator.com/companies/waypoint"},
-      {"name": "Mailgun", "what": "Developer email API", "traction_then": "Established developer email API", "funding_then": "Owned by Sinch since 2021 (not verified in this research)", "source_date": null, "source_url": "https://www.ycombinator.com/companies/waypoint"},
-      {"name": "Postmark", "what": "Transactional email API known for deliverability", "traction_then": "Established transactional email provider", "funding_then": "Bootstrapped under Wildbit (not verified in this research)", "source_date": null, "source_url": "https://www.ycombinator.com/companies/waypoint"}
-    ]
+  "rationale": "Email APIs are interchangeable once templates are migrated, and the site itself offers comparison pages for SES and SendGrid users. Template libraries and workflows give mild lock-in only."
+ },
+ "takeover_risk_then": {
+  "rating": 4,
+  "incumbents": [
+   "SendGrid",
+   "Mailgun",
+   "Postmark",
+   "Amazon SES"
+  ],
+  "outcome": "Incumbents kept their position. Newer entrants such as Resend (React-template email API, 2023 per comparison sites) arrived later and are recorded here, not in the competitor list."
+ },
+ "market_need_then": "Transactional email was a mature spend category and a customer quote on the YC page describes moving from SendGrid for better deliverability and onboarding conversion. No dated 2021 demand source was found.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "real_word",
+  "name_qualities": [
+   "short",
+   "easy_to_spell",
+   "easy_to_say"
+  ],
+  "name_problems": [
+   "generic",
+   "confusable"
+  ],
+  "domain_note": "Uses usewaypoint.com with a use prefix, not the exact .com. Many unrelated companies share the Waypoint name.",
+  "identity": {
+   "logo": "not described by any source opened",
+   "mascot_or_character": null,
+   "visual_style": "simple product site",
+   "voice_and_tone": "Conversational and friendly; homepage letter opens with a wave emoji and short direct sentences."
   },
-  "technical_complexity": {"rating": 3, "rationale": "A block-based template builder, Liquid templating, workflow builder with delays and monitoring on top of AWS sending infrastructure. The company says it is built on AWS and an open source builder (emailbuilderjs), so the hard parts were deliverability and observability rather than research."},
-  "defensibility": {"rating": 2, "moat_types": ["switching_costs"], "rationale": "Email APIs are interchangeable once templates are migrated, and the site itself offers comparison pages for SES and SendGrid users. Template libraries and workflows give mild lock-in only."},
-  "takeover_risk_then": {"rating": 4, "incumbents": ["SendGrid", "Mailgun", "Postmark", "Amazon SES"], "outcome": "Incumbents kept their position. Newer entrants such as Resend (React-template email API, 2023 per comparison sites) arrived later and are recorded here, not in the competitor list."},
-  "market_need_then": "Transactional email was a mature spend category and a customer quote on the YC page describes moving from SendGrid for better deliverability and onboarding conversion. No dated 2021 demand source was found.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "real_word",
-    "name_qualities": ["short", "easy_to_spell", "easy_to_say"],
-    "name_problems": ["generic", "confusable"],
-    "domain_note": "Uses usewaypoint.com with a use prefix, not the exact .com. Many unrelated companies share the Waypoint name.",
-    "identity": {"logo": "not described by any source opened", "mascot_or_character": null, "visual_style": "simple product site", "voice_and_tone": "Conversational and friendly; homepage letter opens with a wave emoji and short direct sentences."},
-    "brand_signature": null,
-    "rebrands": [],
-    "community_and_virality": "Launched on Product Hunt on 2023-05-31 per Hunted and startupintros listings. No other community evidence found.",
-    "brand_strength": {"rating": 2, "rationale": "Generic name shared by many companies, no brand press found, small team of two. Friendly voice is the only distinctive asset."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://www.usewaypoint.com", "https://hunted.space/product/waypoint-2/launches/waypoint"]
+  "brand_signature": null,
+  "rebrands": [],
+  "community_and_virality": "Launched on Product Hunt on 2023-05-31 per Hunted and startupintros listings. No other community evidence found.",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "Generic name shared by many companies, no brand press found, small team of two. Friendly voice is the only distinctive asset."
   },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "outcome_analysis": "Waypoint is a two-founder email API company that is still operating with no public acquisition or shutdown found. Public information is thin: no confirmed funding round was found beyond an aggregator entry, and the public launch on Product Hunt came in May 2023, two years after the Winter 2021 batch. It competes with large incumbents on a mature category, so growth depends on the template builder and developer experience rather than structural advantages.",
-  "sources": ["https://www.ycombinator.com/companies/waypoint", "https://www.usewaypoint.com", "https://www.cbinsights.com/company/waypoint-3", "https://hunted.space/product/waypoint-2/launches/waypoint"],
-  "notes": "Funding: CB Insights alone lists a roughly 500K USD convertible note from Y Combinator and Brickyard Capital dated January 2021; seen only on one aggregator so not recorded as a round. Date conflicts: YC lists Winter 2021 but Product Hunt launch, startupintros and a Village profile point to 2023, and one Fondo post is dated February 2026. Founded year 2021 is inferred from the batch. A different company, Waypoint AI (raised 3.1M USD in 2025), shares the name and was excluded. Competitor entries come from the undated YC page and company site, so source_date is null. Founders list education and prior employers as empty because no opened source states them. Footer names Metaccountant, Inc. as copyright holder."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://www.usewaypoint.com",
+   "https://hunted.space/product/waypoint-2/launches/waypoint"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [],
+ "failure_factors": [],
+ "outcome_analysis": "Waypoint is a two-founder email API company that is still operating with no public acquisition or shutdown found. Public information is thin: no confirmed funding round was found beyond an aggregator entry, and the public launch on Product Hunt came in May 2023, two years after the Winter 2021 batch. It competes with large incumbents on a mature category, so growth depends on the template builder and developer experience rather than structural advantages.",
+ "sources": [
+  "https://www.ycombinator.com/companies/waypoint",
+  "https://www.usewaypoint.com",
+  "https://www.cbinsights.com/company/waypoint-3",
+  "https://hunted.space/product/waypoint-2/launches/waypoint"
+ ],
+ "notes": "Funding: CB Insights alone lists a roughly 500K USD convertible note from Y Combinator and Brickyard Capital dated January 2021; seen only on one aggregator so not recorded as a round. Date conflicts: YC lists Winter 2021 but Product Hunt launch, startupintros and a Village profile point to 2023, and one Fondo post is dated February 2026. Founded year 2021 is inferred from the batch. A different company, Waypoint AI (raised 3.1M USD in 2025), shares the name and was excluded. Competitor entries come from the undated YC page and company site, so source_date is null. Founders list education and prior employers as empty because no opened source states them. Footer names Metaccountant, Inc. as copyright holder. Completeness pass: the roughly 500K convertible note (2021-01, Y Combinator and Brickyard Capital) is recorded as other and rests on a single database (CB Insights); a cross-check search found nothing else. Waypoint AI (3.1M pre-seed, 2025) is a different company and was excluded."
 }

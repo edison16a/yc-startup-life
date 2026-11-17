@@ -1,45 +1,136 @@
 {
-  "slug": "nestybox",
-  "depth": 2,
-  "confidence": "low",
-  "target_customer": "Software engineering and platform teams at enterprises that want containers to behave like VMs for development, CI and system workloads",
-  "problem": "Containers could not safely run system level workloads such as systemd, Docker or Kubernetes without privileged mode, forcing teams onto heavier and costlier virtual machines.",
-  "business_model": "Open source container runtime (Sysbox) with a paid enterprise edition and support",
-  "product_category": "Container runtime and developer infrastructure",
-  "founded_year": 2019,
-  "founders": [
-    {"name": "Cesar Talledo", "role": "Co-founder", "prior_employers": ["VMware", "Integrated Device Technologies"], "education": ["UC Irvine", "Santa Clara University"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "20 plus years of engineering experience per the YC page."},
-    {"name": "Rodny Molina", "role": "Co-founder", "prior_employers": ["LinkedIn", "Ericsson", "Juniper Networks"], "education": ["University of Illinois, BS Computer Science"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "20 plus years in distributed network systems and cloud infrastructure per the YC page."}
+ "slug": "nestybox",
+ "depth": 2,
+ "confidence": "low",
+ "target_customer": "Software engineering and platform teams at enterprises that want containers to behave like VMs for development, CI and system workloads",
+ "problem": "Containers could not safely run system level workloads such as systemd, Docker or Kubernetes without privileged mode, forcing teams onto heavier and costlier virtual machines.",
+ "business_model": "Open source container runtime (Sysbox) with a paid enterprise edition and support",
+ "product_category": "Container runtime and developer infrastructure",
+ "founded_year": 2019,
+ "founders": [
+  {
+   "name": "Cesar Talledo",
+   "role": "Co-founder",
+   "prior_employers": [
+    "VMware",
+    "Integrated Device Technologies"
+   ],
+   "education": [
+    "UC Irvine",
+    "Santa Clara University"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "20 plus years of engineering experience per the YC page."
+  },
+  {
+   "name": "Rodny Molina",
+   "role": "Co-founder",
+   "prior_employers": [
+    "LinkedIn",
+    "Ericsson",
+    "Juniper Networks"
+   ],
+   "education": [
+    "University of Illinois, BS Computer Science"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "20 plus years in distributed network systems and cloud infrastructure per the YC page."
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "seed",
+   "date": "2020-08-25",
+   "amount_usd": 130000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Y Combinator"
+   ],
+   "source_url": "https://www.cbinsights.com/company/nestybox/financials"
+  }
+ ],
+ "exit": {
+  "type": "acquisition",
+  "date": "2022-05",
+  "amount_usd": null,
+  "acquirer": "Docker",
+  "reason": null,
+  "source_url": "https://www.docker.com/blog/docker-advances-container-isolation-and-workloads-with-acquisition-of-nestybox/"
+ },
+ "competition_at_founding": {
+  "as_of": "2020-06",
+  "competitors": []
+ },
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "Sysbox is a low level OCI runtime that adds user namespace isolation, syscall interception and filesystem emulation without hardware virtualization, which required deep Linux kernel expertise."
+ },
+ "defensibility": {
+  "rating": 3,
+  "moat_types": [
+   "technical_moat"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "acquisition", "date": "2022-05", "amount_usd": null, "acquirer": "Docker", "reason": null, "source_url": "https://www.docker.com/blog/docker-advances-container-isolation-and-workloads-with-acquisition-of-nestybox/"},
-  "competition_at_founding": {
-    "as_of": "2020-06",
-    "competitors": []
+  "rationale": "Deep kernel level engineering was hard to replicate, but the core was open source under Apache 2.0, which limited commercial lock in."
+ },
+ "takeover_risk_then": {
+  "rating": 3,
+  "incumbents": [
+   "Docker",
+   "Red Hat"
+  ],
+  "outcome": "Docker acquired Nestybox on May 10, 2022 and folded Sysbox Enterprise into Docker Desktop, with the open source project continuing."
+ },
+ "market_need_then": "Enterprises wanted VM like containers for CI and development environments without privileged containers; Nestybox cited enterprise adopters of Sysbox as evidence in its acquisition post.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "compound",
+  "name_qualities": [
+   "distinctive",
+   "friendly_tone"
+  ],
+  "name_problems": [
+   "hard_to_spell"
+  ],
+  "domain_note": "Owns nestybox.com; no acquisition story found. The site returned a 503 error when checked.",
+  "identity": {
+   "logo": null,
+   "mascot_or_character": null,
+   "visual_style": null,
+   "voice_and_tone": "Technical and plain, aimed at engineers; the founders wrote the acquisition note in a casual first person voice."
   },
-  "technical_complexity": {"rating": 5, "rationale": "Sysbox is a low level OCI runtime that adds user namespace isolation, syscall interception and filesystem emulation without hardware virtualization, which required deep Linux kernel expertise."},
-  "defensibility": {"rating": 3, "moat_types": ["technical_moat"], "rationale": "Deep kernel level engineering was hard to replicate, but the core was open source under Apache 2.0, which limited commercial lock in."},
-  "takeover_risk_then": {"rating": 3, "incumbents": ["Docker", "Red Hat"], "outcome": "Docker acquired Nestybox on May 10, 2022 and folded Sysbox Enterprise into Docker Desktop, with the open source project continuing."},
-  "market_need_then": "Enterprises wanted VM like containers for CI and development environments without privileged containers; Nestybox cited enterprise adopters of Sysbox as evidence in its acquisition post.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "compound",
-    "name_qualities": ["distinctive", "friendly_tone"],
-    "name_problems": ["hard_to_spell"],
-    "domain_note": "Owns nestybox.com; no acquisition story found. The site returned a 503 error when checked.",
-    "identity": {"logo": null, "mascot_or_character": null, "visual_style": null, "voice_and_tone": "Technical and plain, aimed at engineers; the founders wrote the acquisition note in a casual first person voice."},
-    "brand_signature": "Sysbox, the open source runtime name, was better known than the company name.",
-    "rebrands": [],
-    "community_and_virality": "Launched on Hacker News in August 2020 per the YC profile; the open source Sysbox repository built a developer following. No merch found.",
-    "brand_strength": {"rating": 2, "rationale": "The product name Sysbox carried more recognition than Nestybox among container users, and the sourced evidence is limited to a Hacker News launch and an open source repository."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://www.ycombinator.com/companies/nestybox", "https://www.docker.com/blog/docker-advances-container-isolation-and-workloads-with-acquisition-of-nestybox/"]
+  "brand_signature": "Sysbox, the open source runtime name, was better known than the company name.",
+  "rebrands": [],
+  "community_and_virality": "Launched on Hacker News in August 2020 per the YC profile; the open source Sysbox repository built a developer following. No merch found.",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "The product name Sysbox carried more recognition than Nestybox among container users, and the sourced evidence is limited to a Hacker News launch and an open source repository."
   },
-  "pivots": [],
-  "success_factors": ["technical_moat", "founder_market_fit"],
-  "failure_factors": [],
-  "outcome_analysis": "Two experienced systems engineers built Sysbox, an open source runtime that lets containers act like VMs, launched it on Hacker News in August 2020 during YC Summer 2020, and sold the company to Docker in May 2022 for undisclosed terms. The deep technical work and a clear Docker adjacent use case made it a natural tuck in, and the founders themselves said a low level technology would do better inside a larger platform.",
-  "sources": ["https://www.ycombinator.com/companies/nestybox", "https://www.docker.com/blog/docker-advances-container-isolation-and-workloads-with-acquisition-of-nestybox/", "https://www.docker.com/press-release/docker-accelerates-investment-in-container-security-with-acquisition-of-nestybox/", "https://cloudnativenow.com/topics/container-ecosystems/how-nestybox-aims-to-disrupt-container-runtimes-with-sysbox/"],
-  "notes": "Funding: CB Insights alone lists 130000 dollars over 2 rounds with a seed dated 2020-08-25 and Y Combinator as investor; aggregator only, so unverified and no round recorded. Docker's post thanks investors but names none. Competitor list left empty: a Container Journal article compares Sysbox with LXD and Kata but its date was not confirmed, and the redirect target was not fetched. The nestybox.com site returned HTTP 503. Sysbox Enterprise folded into Docker Desktop is from a secondary source."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://www.ycombinator.com/companies/nestybox",
+   "https://www.docker.com/blog/docker-advances-container-isolation-and-workloads-with-acquisition-of-nestybox/"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [
+  "technical_moat",
+  "founder_market_fit"
+ ],
+ "failure_factors": [],
+ "outcome_analysis": "Two experienced systems engineers built Sysbox, an open source runtime that lets containers act like VMs, launched it on Hacker News in August 2020 during YC Summer 2020, and sold the company to Docker in May 2022 for undisclosed terms. The deep technical work and a clear Docker adjacent use case made it a natural tuck in, and the founders themselves said a low level technology would do better inside a larger platform.",
+ "sources": [
+  "https://www.ycombinator.com/companies/nestybox",
+  "https://www.docker.com/blog/docker-advances-container-isolation-and-workloads-with-acquisition-of-nestybox/",
+  "https://www.docker.com/press-release/docker-accelerates-investment-in-container-security-with-acquisition-of-nestybox/",
+  "https://cloudnativenow.com/topics/container-ecosystems/how-nestybox-aims-to-disrupt-container-runtimes-with-sysbox/"
+ ],
+ "notes": "Funding: CB Insights alone lists 130000 dollars over 2 rounds with a seed dated 2020-08-25 and Y Combinator as investor; aggregator only, so unverified and no round recorded. Docker's post thanks investors but names none. Competitor list left empty: a Container Journal article compares Sysbox with LXD and Kata but its date was not confirmed, and the redirect target was not fetched. The nestybox.com site returned HTTP 503. Sysbox Enterprise folded into Docker Desktop is from a secondary source. Completeness pass: the seed (2020-08-25, 130K, Y Combinator) is recorded and rests on CB Insights; Employbl and Village list about 125K with Y Combinator and Open Opportunity Fund, so amounts conflict by a few thousand. Docker's May 2022 acquisition posts name no investors or price."
 }
