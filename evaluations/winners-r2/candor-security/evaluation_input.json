@@ -1,330 +1,456 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Candor",
+  "one_liner": "Protect your data and stop insider risk",
+  "description": "Agentic data loss prevention and insider risk management sold to lean security teams at fast moving companies that need to protect source code and customer data to close enterprise deals. AI agents judge both the data movement and the person behind it, which is meant to cut the false positives that legacy DLP produces. Pays: security budgets, likely per employee annual contracts.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.97,
+  "p_low": 0.95,
+  "p_high": 0.99,
+  "basis": "The input file places Candor in the Winter 2025 batch with the batch start as the as_of date, so acceptance is treated as already happened. The prior for a random applicant is about 1 percent (references/yc_acceptance.md), but conditional on being listed in the batch the residual doubt is only data error or a deferral. Seed odds below are conditional on being in YC.",
+  "why_it_fails": "The only way the YC step fails here is a clerical error in the batch listing or a deferral to a later batch. Candor was reported in the batch directory as of the as_of date, so the reason to say no has already been resolved in its favor."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.52,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025 (150 researched: seed 49% / 59% / 65%, series_a cond 26% n=74, series_b cond 16% n=19); seed cond known-only 59% (n=126); months_to_seed median 7 (p25 3, p75 15) from knowledge/tables/time_to_milestones.csv calibration sample",
+    "adjustment_reason": "The anchor is the ever rate for B2B companies from 2022 to 2025 (59 percent known-only, 65 percent upper). The window is 22 months from the Winter 2025 batch start to 2026-11-17, and by about 22 months most companies that eventually raise a seed have done so (median 7 months, p75 about 15 to 20), so about 85 percent of the ever rate is realized, giving about 0.50. The security cohort anchor is 72 percent (n=18) and a named analog (strac) raised an institutional seed, so I nudge to 0.52, under the 1.25 times cap. This number does not rank Candor against other companies."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typically angels and a micro fund. This is the second most common outcome for a 2 to 5 person team with early pilots and no scaled revenue, and it is more likely here than in the winners test sample because press favours big rounds. The plain YC deal of about $500K does not count as seed in this forecast."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M led by a seed fund. This is the center of the 2022 and later benchmark (median about $4.1M in our table) and of the 2026 confirmed raises (lower quartile $4.3M)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M. Reachable if a design partner or demo produces competitive tension, as in the 2026 winners where the median confirmed raise was $6.0M, a sample that leans high."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      110000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, reserved for a hot category with a standout team. Rare for a team this small and early."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Candor most likely misses the seed because three founders with a security product but no named enterprise logos in the batch listing look like a feature of Microsoft Purview or CrowdStrike Falcon Data Protection to a seed investor. Strac, Repacket and PromptArmor reached seed only with named customers and prior security credibility. If Candor cannot show paying design partners and a measured false positive reduction by demo day, the round is a small angel check or the YC deal only."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.12,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025 (150 researched: seed 49% / 59% / 65%, series_a cond 26% n=74, series_b cond 16% n=19); series_a cond 26% (n=74) (ever); months_to_series_a median 29 from batch start (B2B 2022 to 2025, n=19)",
+    "adjustment_reason": "The window is 22 months but only a minority of seed companies go on to a Series A within about 20 months of the seed (median 29 months from batch start to A in this cohort, n=19, right censored). The ever conditional rate is 26 percent for B2B and 38 percent for security (n=13). Within the window I put about 0.12, under half of the ever rate, because the seed itself has to land early for an A to also land."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000.0,
+      9000000.0
+     ],
+     "post_money_usd": [
+      25000000.0,
+      45000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or small Series A, close to a large seed, for a company with some revenue but unproven repeatability. Current 2022 and later YC Series A lower quartile is $10.0M, so this is the thin end."
+    },
+    {
+     "raise_usd": [
+      9000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      100000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series A of $9M to $18M, matching the 2022 and later YC median of $14.15M (n=52) and public market medians near $17M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      100000000.0,
+      250000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside Series A with a clear ARR ramp; AI native companies have printed larger A rounds in 2025 and 2026 but these remain the minority."
+    }
+   ],
+   "why_it_fails": "An A in under two years after the batch requires roughly $1M or more in annual recurring revenue from security buyers, who have long evaluation cycles and SOC 2 style procurement hurdles. Candor is likely to hold a seed and about 6 to 10 pilots with little paid conversion, and investors will ask why customers would swap a bundled Microsoft or Google DLP for a three person startup. Thinair reached A in a prior cycle and still died, which shows an A is not safety."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025: series_b cond 16% (n=19) ever, lower 2% known-only",
+    "adjustment_reason": "The window is 22 months, and Series B needs a median of 46 months from batch start (all eras, n=510 in time_to_milestones.csv; B2B 2022 to 2025 median 26 months on n=3, right censored). The probability is a floor for a fast outlier, far below the 16 percent ever rate, because only a company that raised both a seed and an A inside the window can get here."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series B or extension, near the 2022 and later lower quartile of $25M."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B, around the YC 2022 and later median of $37M (n=22)."
+    },
+    {
+     "raise_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      900000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B on breakout growth, in line with the few 2022 and later B valuations near $775M."
+    }
+   ],
+   "why_it_fails": "Reaching a Series B inside this window would need an A in the first half of the window and growth that doubles repeatedly. Security data products are slow to compound because each deployment needs endpoint agents and policy tuning, and large DLP rivals bundle price. The likely stop is at the A or earlier, so the B is a floor probability for an outlier ramp."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": 0.12,
+    "source": "Series C cond is 0% of n=3 in the B2B 2022 to 2025 cohort; the older all-era calibration sample gives about 30 to 35 percent of series_b reaching C, discounted here for the window",
+    "adjustment_reason": "The window ends 22 months after the as_of date and a Series C needs a median of 61 months from batch start (all eras, n=221 in time_to_milestones.csv). The probability is a small floor rather than an anchor ratio, because 3 companies in the recent cohort cannot support a rate."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      300000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Series C or growth round near the 2022 and later YC median of $45M (n=9), with a flat or modest step up."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      1500000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical growth round for a category leader."
+    },
+    {
+     "raise_usd": [
+      150000000.0,
+      300000000.0
+     ],
+     "post_money_usd": [
+      1500000000.0,
+      4000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round for a category winner; the sample of 2022 and later C rounds is tiny (n=9) so this band is judgment."
+    }
+   ],
+   "why_it_fails": "A Series C in the window is nearly impossible: it requires two prior rounds inside 22 months and a scale that no recent YC security company reached that fast. Past YC security companies that reached C needed 7 or more years. The floor reflects only an extreme outlier."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most paths end in a shutdown, a quiet stall, or a small acqui-hire because DLP is a mature category dominated by Microsoft, Forcepoint, Proofpoint and CrowdStrike, which can bundle a similar agent feature in under 18 months. A three person team must win a trust sale to security buyers who prefer incumbents, and the winner outcome needs a platform expansion to broader data security that the analogs (strac, unbound) have only partly achieved."
+ },
+ "analogs": [
+  {
+   "slug": "strac",
+   "relevance": "Closest wedge: DLP and data security for SaaS, same buyer and same incumbents, batch Winter 2022.",
+   "outcome_summary": "Raised a $3.5M seed in July 2022, stayed independent and expanded into DSPM and AI data governance; an alive survivor but not a runaway, which is the median good outcome for this wedge."
+  },
+  {
+   "slug": "repacket",
+   "relevance": "Small team employee security product from Winter 2023 selling to lean security teams.",
+   "outcome_summary": "Raised a seed in 2023 and is still active with a small team; no A reported, showing the plateau after seed."
+  },
+  {
+   "slug": "promptarmor",
+   "relevance": "AI security startup from Winter 2024 with named enterprise customers and a crowded field.",
+   "outcome_summary": "Alive with a seed as its highest round; the category consolidates through acquisitions, which raises both pressure and exit odds."
+  },
+  {
+   "slug": "thinair",
+   "relevance": "Data security for teams from Winter 2015, an older DLP style failure case.",
+   "outcome_summary": "Reached a Series A in 2016 per directory data but is now marked inactive; shows that an A does not rescue a crowded security category."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Incumbent bundling: Microsoft Purview and CrowdStrike ship agentic DLP inside suites",
+   "p": 0.35,
+   "evidence": "Gartner says the DLP market is mature and converging with insider risk, and large vendors already add AI classification to reduce false positives.",
+   "analogs": [
+    "thinair",
+    "strac"
+   ],
+   "mitigation": "Pick a wedge incumbents ignore, such as source code exfiltration at startups, and win on setup in minutes."
+  },
+  {
+   "risk": "Long security sales cycles and trust: buyers will not install an endpoint agent from three people",
+   "p": 0.3,
+   "evidence": "Past YC security companies needed named logos and certifications before seeds; Repacket and PromptArmor sold with proof of customers.",
+   "analogs": [
+    "repacket",
+    "promptarmor"
+   ],
+   "mitigation": "Land design partners through founder networks and obtain SOC 2 early."
+  },
+  {
+   "risk": "AI agent accuracy: if the agents hallucinate or miss exfiltration the product loses its one claim of fewer false positives",
+   "p": 0.2,
+   "evidence": "The company positioning rests entirely on lower noise than legacy tools, with no public benchmark in the input description.",
+   "analogs": [
+    "strac"
+   ],
+   "mitigation": "Publish a head to head false positive benchmark with a design partner."
+  },
+  {
+   "risk": "Team of 3 with no stated security leadership logos stalls before a seed",
+   "p": 0.25,
+   "evidence": "The listing shows a 3 person team and no customers; seeds in the cohort went to teams with product experience at Palo Alto Networks or Imperva.",
+   "analogs": [
+    "repacket",
+    "promptarmor"
+   ],
+   "mitigation": "Add a security advisor and show pilot data in the first 8 weeks."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Microsoft Purview",
+   "what": "Bundled DLP and insider risk management for Microsoft 365 customers.",
+   "traction": "Default for Microsoft shops; free or cheap inside E5 licenses.",
+   "source_url": "https://www.marketsandmarkets.com/ResearchInsight/size-and-share-of-data-loss-prevention-advanced-technologies-market.asp"
+  },
+  {
+   "name": "Forcepoint and Proofpoint DLP",
+   "what": "Legacy enterprise DLP with classification engines and insider risk modules.",
+   "traction": "Long tenured vendors named in Gartner DLP market overview; the incumbents the pitch positions against.",
+   "source_url": "https://www.forcepoint.com/resources/industry-analyst-reports/gartner-market-overview-data-loss-prevention"
+  },
+  {
+   "name": "Strac and Unbound style SaaS and AI DLP startups",
+   "what": "Newer startups selling data discovery, DLP and AI usage control.",
+   "traction": "Seed stage companies with public customers per YC directory records.",
+   "source_url": "https://www.crowdstrike.com/content/dam/crowdstrike/marketing/en-us/documents/pdfs/reports/DLP-Report.pdf"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Detecting data movement across email, cloud and endpoints needs integrations and an agent, and judging intent with LLMs needs careful evaluation, but a 3 person team can ship a narrow email and cloud storage version in three months. The hard part is trust and accuracy, not core research."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Microsoft",
+   "CrowdStrike",
+   "Palo Alto Networks",
+   "Forcepoint"
+  ],
+  "timeline_months": 12,
+  "rationale": "Large vendors already own the endpoint and email data and have both the incentive and distribution to add an AI triage layer. A well resourced rival could ship a similar agent feature in about 12 months, so the startup must be a faster, cheaper wedge at smaller companies."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "DLP is a multi billion dollar market with estimates from $2B to $4.7B in 2024, and analysts tie false positives to buyer pain.",
+    "source_url": "https://www.marketsandmarkets.com/ResearchInsight/size-and-share-of-data-loss-prevention-advanced-technologies-market.asp"
+   },
+   {
+    "claim": "Gartner says the line between data loss and insider risk is disappearing and cites false positives as friction between security and business teams.",
+    "source_url": "https://www.forcepoint.com/blog/insights/2025-gartner-market-guide-dlp"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show real security buyers will test it.",
+   "actions": [
+    "Sign 3 design partners from the founders' network",
+    "Ship an email and cloud drive exfiltration detector"
+   ],
+   "proof": "3 signed pilots and a measured false positive rate"
+  },
+  {
+   "phase": "seed",
+   "goal": "Prove paid conversion beyond pilots.",
+   "actions": [
+    "Convert pilots to paid annual contracts",
+    "Publish a false positive benchmark against legacy DLP"
+   ],
+   "proof": "$150K in annual contract value from at least 5 customers"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show a repeatable security sale.",
+   "actions": [
+    "Hire a first sales leader",
+    "Add SOC 2 and endpoint coverage"
+   ],
+   "proof": "$1M in recurring revenue with under 5 percent logo churn"
+  },
+  {
+   "phase": "series_b",
+   "goal": "Expand from DLP to broader data security.",
+   "actions": [
+    "Add DSPM and AI usage control modules",
+    "Build channel partners"
+   ],
+   "proof": "$8M in recurring revenue growing 2.5x"
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Become a category platform.",
+   "actions": [
+    "Move upmarket to enterprise",
+    "Add international coverage"
+   ],
+   "proof": "$30M in recurring revenue and a net retention above 120 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real, funded pain with an AI tailwind",
+   "evidence": "DLP spend runs in the billions and analysts cite false positives as the main complaint that agents can address.",
+   "source_url": "https://www.marketsandmarkets.com/ResearchInsight/size-and-share-of-data-loss-prevention-advanced-technologies-market.asp"
+  },
+  {
+   "point": "Nearby YC wedges (strac, repacket) reached seed",
+   "evidence": "Both are recorded in the YC data with seed rounds and no shutdown, so seed odds for this wedge are real."
+  }
+ ],
+ "brand": {
+  "name": "Candor",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Candor\" --era 2022+ : 6 chars, 1 word, 2 syllables, kind invented_or_proper, no suffix",
+  "strengths": [
+   "Short, easy to spell and say",
+   "The meaning, honesty, suits a security trust product"
+  ],
+  "weaknesses": [
+   "Generic English word that is hard to own in search",
+   "Does not signal security or data"
+  ],
+  "rationale": "Candor is short and pronounceable like other recent YC security names such as Strac, but it does not signal the category or give a distinct brand voice. A weak or neutral name rarely sinks a company, so it does not move the ladder."
+ },
+ "narrative": {
+  "headline": "Candor is a plausible seed candidate in a real but crowded market, and the odds do not rank it against others.",
+  "general_summary": "Candor sells AI agent based data loss prevention to lean security teams, a market with several billion dollars of spend and a well documented complaint about false positives. Near analogs in the YC data (strac, repacket, promptarmor) reached seed rounds in the $3M to $4M range but few reached a Series A, and the incumbents can bundle similar features. Over a 22 month window the seed probability is about half and the A is unlikely. The seed would most likely be $3M to $6M from a security focused fund if pilots convert."
+ },
+ "assumptions": [
+  "Window is 22 months from the 2025-01-06 as_of to 2026-11-17; seed means a round above about $1M from outside investors, excluding the YC deal.",
+  "Team of 3 and no customer data are known only from the input description.",
+  "Analog records were read as of their stored fields; their outcomes after the as_of date were not used for Candor.",
+  "Market web search found no result naming Candor."
+ ],
+ "sources": [
+  "https://www.marketsandmarkets.com/ResearchInsight/size-and-share-of-data-loss-prevention-advanced-technologies-market.asp",
+  "https://www.forcepoint.com/blog/insights/2025-gartner-market-guide-dlp",
+  "https://www.crowdstrike.com/content/dam/crowdstrike/marketing/en-us/documents/pdfs/reports/DLP-Report.pdf",
+  "https://www.forcepoint.com/resources/industry-analyst-reports/gartner-market-overview-data-loss-prevention"
+ ]
 }

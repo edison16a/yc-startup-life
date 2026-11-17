@@ -140,7 +140,7 @@ You know it worked when: $20K or more monthly recurring revenue from one role ac
 | Competitor | What they do | Traction | Source |
 |---|---|---|---|
 | 11x | Digital workers for go to market roles. | $24M Series A in September 2024 and $50M Series B in November 2024. | https://www.mi-3.com.au/12-11-2024/andreessen-horowitz-backed-11x-secures-50m-series-b-funding-help-develop-digital-workers |
-| Artisan (YC W24) | AI employees starting with sales. | Series A by late 2024 per the repo records. | https://www.intelligentcio.com/north-america/2024/09/17/11x-secures-24m-series-a-funding-to-create-the-future-of-digital-work/ |
+| Artisan (YC W24) | AI employees starting with sales. | Series A by late 2024 per the repo records. | https://www.artisan.co/ |
 | Hiring a human, or an offshore analyst | The status quo that the AI employee replaces. | Universal. | https://sifted.eu/articles/autonomous-companies-ai |
 
 ### Demand evidence

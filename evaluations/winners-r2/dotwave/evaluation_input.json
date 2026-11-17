@@ -1,330 +1,439 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": ".Wave",
+  "one_liner": "Inference for real-time AI",
+  "description": "Inference infrastructure for real-time AI from a two person Paris team in the Winter 2025 batch. It sells dedicated inference capacity for latency sensitive workloads, with capacity matched to a customer's traffic on an agreed schedule so users pay only for reserved windows rather than idle GPUs, plus serverless streaming models for speech recognition and full duplex voice served by the team's own inference engine.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.066,
+  "basis": "Already in the Winter 2025 batch, so this is the prior for a random applicant. YC cites about 1 percent acceptance with a third party range of 0.6 to 2 percent. I put it at 3 percent for a technical two person team building an inference engine in a hot infrastructure area, offset by the capital needs and by many applicants proposing GPU or inference products.",
+  "why_it_fails": "YC would most plausibly decline because inference infrastructure was among the most crowded and capital hungry categories in late 2024, with Together, Fireworks, Baseten and cloud vendors, and a two person team without public usage numbers must show why it beats them on latency and price, not only claim it."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.56,
+    "source": "python3 -I scripts/base_rates.py --tag Infrastructure --years 2022-2025 --calibration-only: seed 45% / 56% / 64% (n=9, thin); python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59% known-only (n=126). Timing from knowledge/tables/time_to_milestones.csv era 2022+: months_to_seed p25 3, p50 6, p75 14.2 (n=1146).",
+    "adjustment_reason": "Window is about 22 months (2025-01-06 to 2026-11-17). Roughly 80 percent of eventual seeds close within 22 months on the 2022 and later timing table, so the window anchor is about 0.45 from the 0.56 infrastructure figure. I keep it at 0.45 with no lift: a two person team in Paris with deep inference work is credible, but GPU heavy infrastructure needs capital that makes a seed more necessary and also harder to justify. The odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      22000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Seed means a round above $1M from outside investors within 22 months. It most likely fails if the dedicated capacity model reads as a GPU reseller with thin margins next to Together, Fireworks, Baseten and the clouds, and the speech API looks like one more voice model next to Deepgram and AssemblyAI. Pipeshift and Shadeform raised only small seeds, so investors may see few comparable breakouts."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.14,
+   "anchors": {
+    "base_rate": 0.2,
+    "source": "python3 -I scripts/base_rates.py --tag Infrastructure --years 2022-2025 --calibration-only: series_a cond 20% (n=5, thin); B2B 2022-2025 calibration only: series_a cond 26% (n=74). Timing, era 2022+: months_to_series_a p25 19.4, p50 28, p75 38.4 (n=216).",
+    "adjustment_reason": "The anchor is the chance of ever reaching Series A, with a median of 28 months after batch start; the window is 22 months so most Series As are still ahead, and a seed is needed first. I cut the anchor by about 30 percent, which stays inside the limit; infrastructure companies with real revenue from usage can raise an A within two years, as speech API leaders did."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      60000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or flat Series A under $10M, common when growth is real but revenue is early and the lead wants a smaller bet."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical 2022 and later Series A: the Developer Tools cohort median raise is $17.5M and the B2B cohort median $15.0M."
+    },
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      250000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside Series A led by a large fund when the product is a visible category leader with fast revenue, as seen for the best AI infrastructure and developer rounds of 2024 and 2025."
+    }
+   ],
+   "why_it_fails": "A Series A inside 22 months needs usage revenue large enough to show a path to tens of millions, in a market where Deepgram, AssemblyAI and the model labs set the price per minute and GPU costs eat margin. Vapi and Deepgram had product market fit with developers before their rounds; a two person team must show reserved capacity contracts that are recurring and profitable."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), range 2% to 18% across lower, known and upper.",
+    "adjustment_reason": "The anchor is the chance of ever reaching Series B. In a window that ends about 13 to 22 months after the batch starts, the time to milestone table gives a median of about 35 months for Series B in the 2022 and later era, so only a small share of eventual Series B companies get there inside the window; I cut the anchor roughly in half and say the number is a window number."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      220000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest Series B on steady growth, below the Developer Tools median of $50M because few companies in the cohort have reached this round."
+    },
+    {
+     "raise_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      220000000.0,
+      500000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022 and later Series B: $45M to $50M medians with valuations near $550M to $600M in the few cohort cases with data."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      500000000.0,
+      1200000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Breakout round for a category leader growing several times a year."
+    }
+   ],
+   "why_it_fails": "A Series B inside the window would need a Series A and rapid scaling of reserved capacity customers. Infrastructure companies with Series B rounds in the cohort had large revenue and GPU commitments, and a two person team would need to triple its headcount twice in two years while holding gross margin against hyperscalers."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.05,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_c 0% known-only, 16% upper (n=3), so there is no usable rate for the cohort.",
+    "adjustment_reason": "The cohort has almost no Series C companies, so I use a small number tied to the window length: reaching Series C within about two years of a YC batch has happened only for a handful of breakout companies in the 2022 and later era, and the time to milestone table shows a median of about 37 months."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      300000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Ordinary growth round for a company that has found a repeatable sales motion."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      2000000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Large growth round from crossover or late stage funds in a hot AI category."
+    },
+    {
+     "raise_usd": [
+      200000000.0,
+      500000000.0
+     ],
+     "post_money_usd": [
+      2000000000.0,
+      6000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Category defining round, seen only for the top few AI companies."
+    }
+   ],
+   "why_it_fails": "A Series C inside two years of a batch would require a breakout like the largest inference providers. Capital intensity and price competition from clouds and model labs make that very unlikely for a two person start, and only a handful of AI infrastructure companies have done it that fast."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.17
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.06
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The usual end is a GPU capacity business squeezed on margin: hyperscalers and funded inference clouds undercut reserved capacity, and model providers ship their own real-time APIs. Pipeshift raised a small seed and PlayAI sold into the voice model market, so a partial acquisition or acqui-hire is a more likely good result than a standalone win."
+ },
+ "analogs": [
+  {
+   "slug": "deepgram",
+   "relevance": "Speech recognition infrastructure and the incumbent in streaming ASR.",
+   "outcome_summary": "Winter 2016, reached Series C after years of enterprise and developer revenue; shows the scale and time needed."
+  },
+  {
+   "slug": "assemblyai",
+   "relevance": "Speech to text API company.",
+   "outcome_summary": "Summer 2017, reached Series C, a long path with heavy model investment."
+  },
+  {
+   "slug": "pipeshift",
+   "relevance": "Inference for real-time agents, Summer 2024, a very close wedge.",
+   "outcome_summary": "Raised a small seed by the as_of date, showing what peers raise."
+  },
+  {
+   "slug": "shadeform",
+   "relevance": "GPU cloud marketplace, a capacity reseller.",
+   "outcome_summary": "Summer 2023, a seed, shows capacity marketplaces raise small rounds."
+  },
+  {
+   "slug": "vapi",
+   "relevance": "Voice AI for developers, a likely customer.",
+   "outcome_summary": "Winter 2021, grew fast on developer demand and had a Series A and B; shows the voice pull for infrastructure."
+  },
+  {
+   "slug": "playai",
+   "relevance": "Voice AI models, Winter 2023.",
+   "outcome_summary": "Raised a seed; a model company that depended on selling into the voice market."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Margin squeeze from GPU clouds and inference rivals",
+   "p": 0.45,
+   "evidence": "Reserved GPU capacity is a commodity sold by hyperscalers and inference clouds, so a two person team has little pricing power unless its engine is much faster.",
+   "analogs": [
+    "shadeform",
+    "pipeshift"
+   ],
+   "mitigation": "Publish latency and cost benchmarks on streaming speech that beat the clouds and lock customers with scheduled capacity contracts."
+  },
+  {
+   "risk": "Speech and voice API competition from larger vendors",
+   "p": 0.35,
+   "evidence": "Deepgram and AssemblyAI each reached Series C selling speech APIs, and cloud providers and model labs sell streaming speech at low prices.",
+   "analogs": [
+    "deepgram",
+    "assemblyai"
+   ],
+   "mitigation": "Position as the infrastructure under voice agents and sell dedicated lanes, not per-minute transcription."
+  },
+  {
+   "risk": "Capital intensity before revenue",
+   "p": 0.3,
+   "evidence": "Dedicated inference needs GPU commitments before customers sign, so a seed is both required and harder to raise without revenue.",
+   "analogs": [
+    "shadeform",
+    "vapi"
+   ],
+   "mitigation": "Use customer prepayments and spot capacity partners to avoid owning GPUs."
+  },
+  {
+   "risk": "Two person team can't serve production customers",
+   "p": 0.25,
+   "evidence": "Real-time workloads need 24 hour support and operations, which a two person team in Paris cannot sustain at scale.",
+   "analogs": [
+    "pipeshift",
+    "playai"
+   ],
+   "mitigation": "Hire an infrastructure engineer and a sales lead after the first design partners."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Deepgram",
+   "what": "Streaming speech recognition and voice agent APIs.",
+   "traction": "Series C stage with a public price list per minute.",
+   "source_url": "https://deepgram.com/pricing"
+  },
+  {
+   "name": "AssemblyAI",
+   "what": "Speech to text API for developers.",
+   "traction": "Series C stage per the repo records.",
+   "source_url": "https://www.assemblyai.com/"
+  },
+  {
+   "name": "Cloud GPU and inference providers",
+   "what": "Shared and dedicated GPU endpoints from hyperscalers and inference clouds.",
+   "traction": "Vendors claim shared pools have tail latency problems that dedicated endpoints fix.",
+   "source_url": "https://www.gmicloud.ai/en/blog/low-latency-inference-for-speech-and-audio-applications"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "Building a custom inference engine for streaming speech and full duplex voice, scheduling capacity across lanes and keeping tail latency low is genuinely hard. A two person team with strong inference skills can build a demo in three months, but production grade reliability across customers and GPU supply is a risk."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Deepgram",
+   "AWS, Google and Azure speech services",
+   "OpenAI realtime API",
+   "Together and Fireworks"
+  ],
+  "timeline_months": 9,
+  "rationale": "Model labs and clouds already ship real-time voice APIs and could add reserved capacity pricing. A specialist needs about nine months to match a narrow offering, so the moat is engine performance and contract structure."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Real-time voice agents need low and predictable latency, and vendors argue shared GPU pools cannot bound tail latency, which supports demand for dedicated capacity.",
+    "source_url": "https://www.gmicloud.ai/en/blog/low-latency-inference-for-speech-and-audio-applications"
+   },
+   {
+    "claim": "Streaming speech recognition is sold per minute by Deepgram, showing paid demand and price pressure.",
+    "source_url": "https://deepgram.com/pricing"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a latency and cost advantage on a real voice workload.",
+   "actions": [
+    "Run a head to head benchmark against two cloud speech APIs.",
+    "Sign two voice agent companies as design partners."
+   ],
+   "proof": "Measured p99 latency and cost per hour better than cloud endpoints at a design partner."
+  },
+  {
+   "phase": "seed",
+   "goal": "Turn design partners into recurring reserved capacity contracts.",
+   "actions": [
+    "Sell scheduled capacity with a three month minimum.",
+    "Reach positive gross margin on each lane."
+   ],
+   "proof": "$40K or more monthly recurring revenue from reserved capacity with gross margin above 40 percent."
+  }
+ ],
+ "pros": [
+  {
+   "point": "A concrete pricing wedge",
+   "evidence": "Paying only for reserved windows removes idle GPU cost, which is a real pain for voice workloads with daily peaks."
+  },
+  {
+   "point": "Technical depth",
+   "evidence": "The team ships its own inference engine rather than wrapping a third party model, which gives room for a performance edge."
+  }
+ ],
+ "brand": {
+  "name": ".Wave",
+  "rating": 2,
+  "effect_on_success": "hurts",
+  "name_check": "python3 -I scripts/name_features.py --score \".Wave\" --era 2022+ : 4 characters, 1 syllable, real word; no outlier but a leading dot is unusual.",
+  "strengths": [
+   "Short and tied to sound and waveform",
+   "Memorable punctuation"
+  ],
+  "weaknesses": [
+   "The leading dot is hard to type, search and say",
+   "Wave is used by many unrelated companies"
+  ],
+  "rationale": "A short real word links to audio, which suits speech, but the leading dot hurts search, email and domain use and the word wave is crowded; dotwave.ai is the working domain. Short plain names such as Vapi worked because they are easy to say and type. A mild drag on discovery."
+ },
+ "narrative": {
+  "headline": "A credible two person inference team in a capital heavy category; seed in 22 months is near a coin flip.",
+  "general_summary": ".Wave offers dedicated and scheduled inference capacity for real time voice workloads, plus streaming speech models on its own engine, from a two person Paris team. The need is real since voice agents live and die on tail latency, but the field includes Deepgram, AssemblyAI, the clouds and funded inference providers, and GPU heavy models need capital. For the 22 month window I put the seed at 0.45, near the window adjusted anchor of about 0.45, with no lift because the winners test showed hot sectors did not separate outcomes. If it raises, a $3M to $6M seed is most likely. A Series A inside the window is 0.14 because 22 months is nearly the median time to an A. The key risks are margin squeeze and a two person team serving production traffic."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-01-06 for about 22 months to 2026-11-17; seed means above about $1M from outside investors.",
+  "Only the input file was used for the company; market searches returned pages after the as_of date and these were ignored.",
+  "The Infrastructure tag cohort has only 9 calibration companies, so I leaned on the B2B cohort and timing table.",
+  "Company already in YC; the YC odds are the prior for a random applicant.",
+  "The input description mentions dedicated lanes and a streaming API; I assume they were available around the as_of date."
+ ],
+ "sources": [
+  "https://deepgram.com/pricing",
+  "https://www.gmicloud.ai/en/blog/low-latency-inference-for-speech-and-audio-applications",
+  "https://www.assemblyai.com/"
+ ]
 }
