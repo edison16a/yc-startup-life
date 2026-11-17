@@ -1,0 +1,47 @@
+{
+  "slug": "keydb",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Engineering teams running Redis at scale who want more throughput per server, later Snap",
+  "problem": "Redis is single threaded, so scaling needs many instances. KeyDB forked Redis to add multithreading, active replication and flash persistence while staying protocol compatible.",
+  "business_model": "Open core database with paid enterprise features and managed offerings (features later merged into open source under BSD-3)",
+  "product_category": "In-memory key-value database (Redis fork)",
+  "founded_year": 2019,
+  "founders": [
+    {"name": "John Sully", "role": "Founder", "prior_employers": ["Microsoft (Excel performance and mobile grid rendering)"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he started programming at age 8, no stated age at founding."},
+    {"name": "Ben Schermel", "role": "Founder", "prior_employers": [], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Listed as founder of EQ Alpha Technology on Crunchbase; no further background found."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "seed", "date": "2021-04", "amount_usd": 1300000, "post_money_usd": null, "valuation_basis": null, "investors": ["Y Combinator"], "source_url": "https://docs.keydb.dev/news/2021/04/01/funding-update"}
+  ],
+  "exit": {"type": "acquisition", "date": "2022-05", "amount_usd": null, "acquirer": "Snap Inc.", "reason": null, "source_url": "https://docs.keydb.dev/news/2022/05/12/keydb-joins-snap/"},
+  "competition_at_founding": {
+    "as_of": "2019-12",
+    "competitors": []
+  },
+  "technical_complexity": {"rating": 4, "rationale": "Making a mature C codebase multithreaded while keeping Redis protocol compatibility and correctness is hard systems engineering."},
+  "defensibility": {"rating": 2, "moat_types": ["technical_moat"], "rationale": "BSD licensed fork that Redis and later Dragonfly, Valkey and Garnet could out-resource; the multithreading lead was narrow and not protected."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["Redis Labs", "AWS", "Microsoft"], "outcome": "Redis kept the single threaded core but later added I/O threads; Dragonfly and Valkey emerged. Snap adopted KeyDB internally and acquired it in May 2022."},
+  "market_need_then": "Teams ran large Redis fleets and paid for many instances because of the single thread limit; the company reported profit in Q1 2021 per its own funding update.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "compound",
+    "name_qualities": ["short", "easy_to_say", "easy_to_spell", "evocative"],
+    "name_problems": ["generic", "confusable"],
+    "domain_note": "Used keydb.dev; docs later moved to docs.keydb.dev and then to Snapchat GitHub.",
+    "identity": {"logo": "Standard logo available in PNG and SVG per Toolradar", "mascot_or_character": null, "visual_style": "Developer tool style", "voice_and_tone": "Performance focused, tagline The only database you will ever need"},
+    "brand_signature": "Drop-in Redis replacement positioning",
+    "rebrands": [],
+    "community_and_virality": "Open source community on GitHub with contributions and discussion; no merch or mascot.",
+    "brand_strength": {"rating": 3, "rationale": "Name tells developers it is a key value DB and rides on Redis recognition; known in the open source community but confusable with other KeyDB or Key named products."},
+    "brand_effect_on_outcome": "neutral",
+    "sources": ["https://keydb.dev", "https://toolradar.com/logo/keydb", "https://docs.keydb.dev/news/2022/05/12/keydb-joins-snap/"]
+  },
+  "pivots": [],
+  "success_factors": ["technical_moat", "product_led_growth", "founder_market_fit"],
+  "failure_factors": [],
+  "outcome_analysis": "KeyDB was a two person Toronto team that forked Redis for multithreading, grew through open source adoption, and reported profit in early 2021 after a 1.3 million dollar seed. Snap, a heavy user, acquired it in May 2022 and merged the paid features into open source. A single report says Snap later moved to Valkey after the Redis license change and the departure of the creator, and third parties call development stagnant, so the long run outcome was a soft landing inside a user company.",
+  "sources": ["https://www.ycombinator.com/companies/keydb", "https://docs.keydb.dev/news/2021/04/01/funding-update", "https://docs.keydb.dev/news/2022/05/12/keydb-joins-snap/", "https://www.gomomento.com/blog/why-snap-was-willing-to-fork-and-why-they-still-came-back/", "https://www.cbinsights.com/company/keydb/financials", "https://www.trysignalbase.com/news/funding/keydb-secures-13m-seed-funding"],
+  "notes": "Seed 1.3M is from the company's own post and Signalbase; CB Insights shows 130K total, treated as an error. Investors besides YC unverified. Snap's later move to Valkey is from one blog post and unverified. Competitor sources found (Dragonfly, Valkey, Garnet) are all from 2022 or later, so competition at founding is left empty. The company entity is EQ Alpha Technology Ltd. keydb.dev now only shows a docs move notice."
+}
