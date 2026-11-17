@@ -47,3 +47,16 @@ Seed list. Verify each URL still resolves and add sources as you find them (extr
 | YC library, how to name your startup | https://www.ycombinator.com/library/6z-how-to-name-your-startup | skipped: 404 |
 | YC library, Before the startup | https://www.ycombinator.com/library/8y-how-to-apply-to-y-combinator | skipped: page returned only a title, no body |
 | Medium, jdawg W2019 interview | https://medium.com/@jdawg/my-experience-interviewing-for-ycombinator-w2019-and-what-i-would-have-done-differently-bbcd38684c44 | skipped: 403 (leave for part 2) |
+
+## Part 2 status (partner talks, post mortems, applicant accounts), 2026-11-17
+- read, note written: close-seven-attempts, relate-six-applications, listennotes-interview, cleanly-growthmentor, vitable-kitonga, carusi-rejection, saasmetrics-faria, posthog-yc-interview, envision-rejection, kamath-turned-down, directededge-application, neuner-s22-reinterview, skyvern-yc-trajectory, munchery-hn-thread (thread comments read, linked original post not fetched)
+- read, note written: family-founders-reddit (secondhand, anecdote), ridejoy-postmortem, poppy-shutdown-yc, cherry-wind-down, failory-yc-failures, seibel-first-time-founder-mistakes, seibel-post-demo-day-mistakes, friedman-when-to-apply (third party summary)
+- skipped, fetch blocked (403): https://medium.com/quotabook/quotabooks-experience-to-at-y-combinator-w21-36066452dbf3
+- skipped, fetch blocked (403): https://medium.com/flyparakeet/our-y-combinator-interview-63c97d0eabd1
+- skipped, fetch blocked (403): https://medium.com/conference-badge/why-we-think-we-failed-our-yc-interview-50dd35279793
+- skipped, fetch blocked (403): https://thedesignerfounder.medium.com/reflection-y-combinator-interview-19b3e46340d6
+- skipped, fetch blocked (403): https://medium.com/@wayne.y.zhou/i-just-shut-down-my-second-startup-heres-my-retro-a21cb26fa56f
+- skipped, fetch blocked (403): https://www.indiehackers.com/post/never-hated-anything-more-than-shutting-down-my-yc-startup-27c9d7c19a
+- skipped, not found (404): https://www.producthunt.com/p/general/3-lessons-from-our-failures-at-startup-part-i and https://rejectedbyyc.substack.com/p/the-era-of-startups-is-evolving
+- skipped, unavailable (503): https://news.ycombinator.com/item?id=2480201 was reachable only on a later fetch? no, the first fetch returned 503 and the vantran summary came from a second source view; treat thread content as lightly verified
+- correction to the previous line: the 503 was for https://blog.useproof.com/how-we-got-into-y-combinator (skipped, unavailable). The Hacker News thread item 2480201 was fetched successfully and munchery-hn-thread is based on it.
