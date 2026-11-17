@@ -1,48 +1,148 @@
 {
-  "slug": "onecli",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Companies and developers running AI agents that need API access without exposing credentials",
-  "problem": "Agents given real API keys can leak or misuse them; OneCLI keeps keys in a gateway, applies per-agent policy and logs every call.",
-  "business_model": "Open source (Apache 2.0) self-hosted core with a paid cloud",
-  "product_category": "AI agent credential gateway and vault",
-  "founded_year": null,
-  "founders": [
-    {"name": "Jonathan Fishner", "role": "CEO", "prior_employers": ["Axis Security (zero trust network access, acquired by HPE)"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": null},
-    {"name": "Guy Ben Aharon", "role": "CTO", "prior_employers": ["Argon (first employee, acquired by Aqua Security)"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": null}
+ "slug": "onecli",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Companies and developers running AI agents that need API access without exposing credentials",
+ "problem": "Agents given real API keys can leak or misuse them; OneCLI keeps keys in a gateway, applies per-agent policy and logs every call.",
+ "business_model": "Open source (Apache 2.0) self-hosted core with a paid cloud",
+ "product_category": "AI agent credential gateway and vault",
+ "founded_year": null,
+ "founders": [
+  {
+   "name": "Jonathan Fishner",
+   "role": "CEO",
+   "prior_employers": [
+    "Axis Security (zero trust network access, acquired by HPE)"
+   ],
+   "education": [],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": null
+  },
+  {
+   "name": "Guy Ben Aharon",
+   "role": "CTO",
+   "prior_employers": [
+    "Argon (first employee, acquired by Aqua Security)"
+   ],
+   "education": [],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": null
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "seed",
+   "date": null,
+   "amount_usd": 125000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Y Combinator"
+   ],
+   "source_url": "https://app.dealroom.co/companies/onecli"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/onecli"
+ },
+ "competition_at_founding": {
+  "as_of": "2026-04",
+  "competitors": [
+   {
+    "name": "HashiCorp Vault",
+    "what": "Infrastructure secrets manager; OneCLI positions itself as complementary",
+    "traction_then": "widely used",
+    "funding_then": "n/a",
+    "source_date": "2026",
+    "source_url": "https://onecli.sh/compare/onecli-vs-hashicorp-vault"
+   },
+   {
+    "name": "Infisical Agent Vault",
+    "what": "Agent-facing broker from a secrets management platform",
+    "traction_then": "unknown",
+    "funding_then": "unknown",
+    "source_date": "2026",
+    "source_url": "https://aiindigo.com/alternatives/onecli-oss-credential-gateway-that-keeps-secrets-out-of-ai-agents"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A proxy gateway that swaps placeholder keys on outbound requests, with policy and logging; standard security engineering with some hard parts around trust."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [
+   "switching_costs"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/onecli"},
-  "competition_at_founding": {
-    "as_of": "2026-04",
-    "competitors": [
-      {"name": "HashiCorp Vault", "what": "Infrastructure secrets manager; OneCLI positions itself as complementary", "traction_then": "widely used", "funding_then": "n/a", "source_date": "2026", "source_url": "https://onecli.sh/compare/onecli-vs-hashicorp-vault"},
-      {"name": "Infisical Agent Vault", "what": "Agent-facing broker from a secrets management platform", "traction_then": "unknown", "funding_then": "unknown", "source_date": "2026", "source_url": "https://aiindigo.com/alternatives/onecli-oss-credential-gateway-that-keeps-secrets-out-of-ai-agents"}
-    ]
+  "rationale": "Open source and integrations with sandboxes and tools help adoption, but vault vendors can add the same feature."
+ },
+ "takeover_risk_then": {
+  "rating": 4,
+  "incumbents": [
+   "HashiCorp Vault",
+   "Infisical",
+   "Bitwarden"
+  ],
+  "outcome": "Bitwarden announced an integration with OneCLI in April 2026 per a launch summary; no copy documented."
+ },
+ "market_need_then": "Agent sandboxes proliferated in 2026 and the company cites developers putting live keys such as Stripe keys into agents; adoption claims of 2.5K GitHub stars come from aggregators.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "compound",
+  "name_qualities": [
+   "short",
+   "easy_to_say"
+  ],
+  "name_problems": [
+   "confusable",
+   "generic"
+  ],
+  "domain_note": "onecli.sh, a .sh developer domain",
+  "identity": {
+   "logo": "Lowercase onecli wordmark",
+   "mascot_or_character": null,
+   "visual_style": "Developer tool site",
+   "voice_and_tone": "Technical, tagline The vault for agents"
   },
-  "technical_complexity": {"rating": 3, "rationale": "A proxy gateway that swaps placeholder keys on outbound requests, with policy and logging; standard security engineering with some hard parts around trust."},
-  "defensibility": {"rating": 2, "moat_types": ["switching_costs"], "rationale": "Open source and integrations with sandboxes and tools help adoption, but vault vendors can add the same feature."},
-  "takeover_risk_then": {"rating": 4, "incumbents": ["HashiCorp Vault", "Infisical", "Bitwarden"], "outcome": "Bitwarden announced an integration with OneCLI in April 2026 per a launch summary; no copy documented."},
-  "market_need_then": "Agent sandboxes proliferated in 2026 and the company cites developers putting live keys such as Stripe keys into agents; adoption claims of 2.5K GitHub stars come from aggregators.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "compound",
-    "name_qualities": ["short", "easy_to_say"],
-    "name_problems": ["confusable", "generic"],
-    "domain_note": "onecli.sh, a .sh developer domain",
-    "identity": {"logo": "Lowercase onecli wordmark", "mascot_or_character": null, "visual_style": "Developer tool site", "voice_and_tone": "Technical, tagline The vault for agents"},
-    "brand_signature": "Tagline The vault for agents",
-    "rebrands": [],
-    "community_and_virality": "Open source repo adopted by NanoClaw and featured on Hacker News as a Show HN, per aggregator summaries.",
-    "brand_strength": {"rating": 2, "rationale": "Some developer community pull, but the name collides with Lenovo XClarity Essentials OneCLI, which dominates search results."},
-    "brand_effect_on_outcome": "hurt",
-    "sources": ["https://onecli.sh", "https://pubs.lenovo.com/lxce-onecli/onecli_c_technical_overview"]
+  "brand_signature": "Tagline The vault for agents",
+  "rebrands": [],
+  "community_and_virality": "Open source repo adopted by NanoClaw and featured on Hacker News as a Show HN, per aggregator summaries.",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "Some developer community pull, but the name collides with Lenovo XClarity Essentials OneCLI, which dominates search results."
   },
-  "pivots": [],
-  "success_factors": ["timing_tailwind", "product_led_growth"],
-  "failure_factors": [],
-  "outcome_analysis": "OneCLI is a Summer 2026 YC company with no outcome yet. Open source distribution and a timely agent security need give it early developer traction, while vault incumbents and a name that collides with a Lenovo product are risks.",
-  "sources": ["https://www.ycombinator.com/companies/onecli", "https://onecli.sh", "https://www.caplight.com/company/onecli", "https://aiindigo.com/alternatives/onecli-oss-credential-gateway-that-keeps-secrets-out-of-ai-agents", "https://onecli.sh/compare/onecli-vs-hashicorp-vault"],
-  "notes": "Caplight says $500K with YC lead; Dealroom says $125k seed; both unverified aggregators and consistent with the YC standard deal, so no round recorded. Founding year not stated by sources opened. Founder education not listed. License Apache-2.0 and star counts are from aggregator summaries."
+  "brand_effect_on_outcome": "hurt",
+  "sources": [
+   "https://onecli.sh",
+   "https://pubs.lenovo.com/lxce-onecli/onecli_c_technical_overview"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [
+  "timing_tailwind",
+  "product_led_growth"
+ ],
+ "failure_factors": [],
+ "outcome_analysis": "OneCLI is a Summer 2026 YC company with no outcome yet. Open source distribution and a timely agent security need give it early developer traction, while vault incumbents and a name that collides with a Lenovo product are risks.",
+ "sources": [
+  "https://www.ycombinator.com/companies/onecli",
+  "https://onecli.sh",
+  "https://www.caplight.com/company/onecli",
+  "https://aiindigo.com/alternatives/onecli-oss-credential-gateway-that-keeps-secrets-out-of-ai-agents",
+  "https://onecli.sh/compare/onecli-vs-hashicorp-vault"
+ ],
+ "notes": "Caplight says $500K with YC lead; Dealroom says $125k seed; both unverified aggregators and consistent with the YC standard deal, so no round recorded. Founding year not stated by sources opened. Founder education not listed. License Apache-2.0 and star counts are from aggregator summaries. Completeness pass: Dealroom's $125k seed is recorded and rests on that single database; Caplight's $500K figure conflicts and is not recorded or summed. No press release found. Standout lists Y Combinator as investor."
 }
