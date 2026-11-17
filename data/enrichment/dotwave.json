@@ -1,49 +1,155 @@
 {
-  "slug": "dotwave",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "AI developers and companies running real-time voice and speech products that need low latency inference",
-  "problem": "Real-time AI workloads need guaranteed latency and capacity, but dedicated GPU endpoints cost money while idle and serverless gives no guarantees.",
-  "business_model": "Dedicated inference capacity reserved on a schedule, plus usage-based serverless streaming speech APIs",
-  "product_category": "Real-time AI inference infrastructure",
-  "founded_year": null,
-  "founders": [
-    {"name": "Thomas Minassian", "role": "CEO", "prior_employers": ["Societe Generale"], "education": ["HEC Paris and University of Paris 7, Master's Applied Mathematics and Business"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Ex quant per YC page."},
-    {"name": "Paul-Henri Biojout", "role": "CTO", "prior_employers": [], "education": ["CentraleSupelec Computer Science, dropped out"], "technical": true, "previous_startups": ["Dollyglot (AI companion app, waitlist)"], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he built the Yumi Dialogue Engine with 1,000 paying users and co-built Parler-TTS Mini Multilingual."}
+ "slug": "dotwave",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "AI developers and companies running real-time voice and speech products that need low latency inference",
+ "problem": "Real-time AI workloads need guaranteed latency and capacity, but dedicated GPU endpoints cost money while idle and serverless gives no guarantees.",
+ "business_model": "Dedicated inference capacity reserved on a schedule, plus usage-based serverless streaming speech APIs",
+ "product_category": "Real-time AI inference infrastructure",
+ "founded_year": null,
+ "founders": [
+  {
+   "name": "Thomas Minassian",
+   "role": "CEO",
+   "prior_employers": [
+    "Societe Generale"
+   ],
+   "education": [
+    "HEC Paris and University of Paris 7, Master's Applied Mathematics and Business"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Ex quant per YC page."
+  },
+  {
+   "name": "Paul-Henri Biojout",
+   "role": "CTO",
+   "prior_employers": [],
+   "education": [
+    "CentraleSupelec Computer Science, dropped out"
+   ],
+   "technical": true,
+   "previous_startups": [
+    "Dollyglot (AI companion app, waitlist)"
+   ],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page says he built the Yumi Dialogue Engine with 1,000 paying users and co-built Parler-TTS Mini Multilingual."
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "seed",
+   "date": null,
+   "amount_usd": 125000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [],
+   "source_url": "https://app.dealroom.co/companies/wave_19"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/dotwave"
+ },
+ "competition_at_founding": {
+  "as_of": "2025-01",
+  "competitors": [
+   {
+    "name": "Deepgram",
+    "what": "Streaming speech to text with Nova models and a voice agent API",
+    "traction_then": "unknown",
+    "funding_then": "unknown",
+    "source_date": null,
+    "source_url": "https://deepgram.com/learn/low-latency-voice-ai-and-how-to-achieve-it"
+   },
+   {
+    "name": "Cartesia",
+    "what": "State space model based low latency text to speech and speech to text",
+    "traction_then": "unknown",
+    "funding_then": "unknown",
+    "source_date": null,
+    "source_url": "https://research.contrary.com/company/cartesia"
+   },
+   {
+    "name": "Kyutai",
+    "what": "Research lab behind Moshi real-time speech to speech model",
+    "traction_then": "unknown",
+    "funding_then": "nonprofit lab, unknown",
+    "source_date": null,
+    "source_url": "https://gradium.ai/content/deepgram-alternative-gradium-voice-ai"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "A custom streaming inference engine (WPK) that keeps models in step with live input and schedules GPU capacity is hard systems work for two people."
+ },
+ "defensibility": {
+  "rating": 3,
+  "moat_types": [
+   "technical_moat"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/dotwave"},
-  "competition_at_founding": {
-    "as_of": "2025-01",
-    "competitors": [
-      {"name": "Deepgram", "what": "Streaming speech to text with Nova models and a voice agent API", "traction_then": "unknown", "funding_then": "unknown", "source_date": null, "source_url": "https://deepgram.com/learn/low-latency-voice-ai-and-how-to-achieve-it"},
-      {"name": "Cartesia", "what": "State space model based low latency text to speech and speech to text", "traction_then": "unknown", "funding_then": "unknown", "source_date": null, "source_url": "https://research.contrary.com/company/cartesia"},
-      {"name": "Kyutai", "what": "Research lab behind Moshi real-time speech to speech model", "traction_then": "unknown", "funding_then": "nonprofit lab, unknown", "source_date": null, "source_url": "https://gradium.ai/content/deepgram-alternative-gradium-voice-ai"}
-    ]
+  "rationale": "An efficient inference engine and capacity scheduling are hard to copy quickly, but cloud and voice vendors offer substitutes."
+ },
+ "takeover_risk_then": {
+  "rating": 4,
+  "incumbents": [
+   "Deepgram",
+   "Cartesia",
+   "ElevenLabs",
+   "LiveKit"
+  ],
+  "outcome": "Several vendors bundled streaming speech and voice agent APIs, and LiveKit launched an inference product; the sources are undated vendor pages."
+ },
+ "market_need_then": "Voice agents were a fast growing use of AI with latency as the main complaint, per vendor and developer pages. The sources seen are mostly vendor material.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "other",
+  "name_qualities": [
+   "short",
+   "evocative"
+  ],
+  "name_problems": [
+   "hard_to_spell",
+   "generic"
+  ],
+  "domain_note": "Uses dotwave.ai rather than a .com, per YC page.",
+  "identity": {
+   "logo": "banner with the .wave wordmark mentioned by a directory, not described",
+   "mascot_or_character": null,
+   "visual_style": "not described in sources",
+   "voice_and_tone": "Technical, latency focused"
   },
-  "technical_complexity": {"rating": 4, "rationale": "A custom streaming inference engine (WPK) that keeps models in step with live input and schedules GPU capacity is hard systems work for two people."},
-  "defensibility": {"rating": 3, "moat_types": ["technical_moat"], "rationale": "An efficient inference engine and capacity scheduling are hard to copy quickly, but cloud and voice vendors offer substitutes."},
-  "takeover_risk_then": {"rating": 4, "incumbents": ["Deepgram", "Cartesia", "ElevenLabs", "LiveKit"], "outcome": "Several vendors bundled streaming speech and voice agent APIs, and LiveKit launched an inference product; the sources are undated vendor pages."},
-  "market_need_then": "Voice agents were a fast growing use of AI with latency as the main complaint, per vendor and developer pages. The sources seen are mostly vendor material.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "other",
-    "name_qualities": ["short", "evocative"],
-    "name_problems": ["hard_to_spell", "generic"],
-    "domain_note": "Uses dotwave.ai rather than a .com, per YC page.",
-    "identity": {"logo": "banner with the .wave wordmark mentioned by a directory, not described", "mascot_or_character": null, "visual_style": "not described in sources", "voice_and_tone": "Technical, latency focused"},
-    "brand_signature": "The leading dot in the .wave name",
-    "rebrands": [],
-    "community_and_virality": "Founders link to Parler-TTS, an open-source model with a reported 300,000 monthly downloads (self reported, unverified).",
-    "brand_strength": {"rating": 2, "rationale": "A leading punctuation mark makes the name distinctive but hard to type and search, and other brands named wave dominate results."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://www.ycombinator.com/companies/dotwave", "https://www.voiceaispace.com/tool/wave"]
+  "brand_signature": "The leading dot in the .wave name",
+  "rebrands": [],
+  "community_and_virality": "Founders link to Parler-TTS, an open-source model with a reported 300,000 monthly downloads (self reported, unverified).",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "A leading punctuation mark makes the name distinctive but hard to type and search, and other brands named wave dominate results."
   },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "outcome_analysis": "dotwave (.Wave) is a Winter 2025 YC company that is still active with two founders from finance and open-source speech work. No verified funding or exit was found and the YC page gives a founding year that conflicts with a directory, so no outcome can be assigned beyond continued operation.",
-  "sources": ["https://www.ycombinator.com/companies/dotwave", "https://dotwave.ai/", "https://www.voiceaispace.com/tool/wave", "https://gradium.ai/content/deepgram-alternative-gradium-voice-ai"],
-  "notes": "Unverified: Dealroom lists a 125k USD seed from a single paywalled page, not recorded as a round. Founding year conflicts (YC page says 2026 in one view, a directory says 2024). Competitor sources are undated vendor comparison pages; several competitors listed may have been present in 2025 but sources do not date them. Gradium raised a large seed in 2025 and is a different company."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://www.ycombinator.com/companies/dotwave",
+   "https://www.voiceaispace.com/tool/wave"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [],
+ "failure_factors": [],
+ "outcome_analysis": "dotwave (.Wave) is a Winter 2025 YC company that is still active with two founders from finance and open-source speech work. No verified funding or exit was found and the YC page gives a founding year that conflicts with a directory, so no outcome can be assigned beyond continued operation.",
+ "sources": [
+  "https://www.ycombinator.com/companies/dotwave",
+  "https://dotwave.ai/",
+  "https://www.voiceaispace.com/tool/wave",
+  "https://gradium.ai/content/deepgram-alternative-gradium-voice-ai"
+ ],
+ "notes": "Unverified: Dealroom lists a 125k USD seed from a single paywalled page, not recorded as a round. Founding year conflicts (YC page says 2026 in one view, a directory says 2024). Competitor sources are undated vendor comparison pages; several competitors listed may have been present in 2025 but sources do not date them. Gradium raised a large seed in 2025 and is a different company. Update: the $125K seed (undated, no investors) rests on a single paywalled database (Dealroom)."
 }
