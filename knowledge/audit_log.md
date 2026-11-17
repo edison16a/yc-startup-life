@@ -284,3 +284,11 @@ Two independent auditors, 8 records each: pronto, valo, gen1e-lifesciences, puls
 Batch A: 55 fields, strict 13, middle 6, lenient 1. Batch B: 46 fields, strict 19, middle 7, lenient 2.
 
 Totals: 101 fields checked. Strict: 32 wrong (31.7 percent). Middle: 13 wrong (12.9 percent). Lenient: 3 wrong (3.0 percent). The limit is 10 percent. Middle rose slightly from 11.4 percent (audit 12). Defects are mostly incomplete round lists (YC investment and seed rounds known only from aggregators or cited totals), one cumulative amount counted twice (corvus-robotics), one missed co-founder (upflow), inferred investors (rct-studio) and competitors not dated to the founding (embeddables, medpiper). Action: correct the flagged records. AUDIT RESULT is not PASS.
+
+## Audit 14 (records from waves 36 and 37)
+
+Two independent auditors, 8 records each: sleep-reset, protonet, 80-000-hours, hogaru, cocusocial, upcodes, rose-rocket, joy, beanstalk, instrumentl, forever-labs, fightcamp, tovala, mirror-ai, helium-health, pine-park-health.
+
+Batch A: 48 fields, strict 23, middle 10, lenient 0. Batch B: 64 fields, strict 15, middle 5, lenient 0.
+
+Totals: 112 fields checked. Strict: 38 wrong (33.9 percent). Middle: 15 wrong (13.4 percent). Lenient: 0 wrong (0 percent). The limit is 10 percent. Both auditors found no recorded fact contradicted by a source. Every middle defect is an omission: rounds that only databases such as CB Insights or Seedtable report were left out of rounds and kept in notes, totals that imply a missing round, null amounts where press gives them, and investors missing from a round. A few are weak competitor sources (mirror-ai, sleep-reset). Action: correct flagged records, and add prompt lesson 10 for later waves: a round reported by a named database or by two outlets is recorded in rounds with valuation_basis estimated where relevant and a note naming the single source, instead of being left only in notes. AUDIT RESULT is not PASS.
