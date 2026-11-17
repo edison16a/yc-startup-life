@@ -1,49 +1,159 @@
 {
-  "slug": "hopper",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Companies running latency sensitive voice agents, and developers wanting cheap coding model access",
-  "problem": "Voice agents need very low latency inference across speech to text, language model and text to speech. Hopper tunes and serves open models on customers' production calls.",
-  "business_model": "Usage-based inference and post-training services; the company site also sells monthly coding plans from 20 to 200 dollars",
-  "product_category": "Inference cloud for voice AI",
-  "founded_year": 2026,
-  "founders": [
-    {"name": "Pavan Katta", "role": "Founder and CEO", "prior_employers": ["Salient"], "education": ["Electrical Engineering, IIT Madras"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Ran voice inference at Salient per the YC page."},
-    {"name": "Jashwanth Pedapudi", "role": "Founder and CTO", "prior_employers": ["Meta Reality Labs"], "education": ["Electrical Engineering, IIT Madras"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Kernels engineer writing inference kernels for Quest 3."}
+ "slug": "hopper",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Companies running latency sensitive voice agents, and developers wanting cheap coding model access",
+ "problem": "Voice agents need very low latency inference across speech to text, language model and text to speech. Hopper tunes and serves open models on customers' production calls.",
+ "business_model": "Usage-based inference and post-training services; the company site also sells monthly coding plans from 20 to 200 dollars",
+ "product_category": "Inference cloud for voice AI",
+ "founded_year": 2026,
+ "founders": [
+  {
+   "name": "Pavan Katta",
+   "role": "Founder and CEO",
+   "prior_employers": [
+    "Salient"
+   ],
+   "education": [
+    "Electrical Engineering, IIT Madras"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Ran voice inference at Salient per the YC page."
+  },
+  {
+   "name": "Jashwanth Pedapudi",
+   "role": "Founder and CTO",
+   "prior_employers": [
+    "Meta Reality Labs"
+   ],
+   "education": [
+    "Electrical Engineering, IIT Madras"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Kernels engineer writing inference kernels for Quest 3."
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "seed",
+   "date": null,
+   "amount_usd": 125000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [],
+   "source_url": "https://app.dealroom.co/companies/hopper"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/hopper"
+ },
+ "competition_at_founding": {
+  "as_of": "2026-09",
+  "competitors": [
+   {
+    "name": "Cartesia",
+    "what": "Low latency text to speech models (Sonic)",
+    "traction_then": "Sonic Turbo about 40ms time to first audio per a roundup",
+    "funding_then": "not stated",
+    "source_date": "2026-04",
+    "source_url": "https://futureagi.com/blog/best-voice-ai-april-2026/"
+   },
+   {
+    "name": "Deepgram",
+    "what": "Streaming speech to text and Flux TTS with latency as low as 80ms",
+    "traction_then": "Flux TTS shipped 2026-08-12",
+    "funding_then": "not stated",
+    "source_date": "2026-08",
+    "source_url": "https://futureagi.com/blog/best-voice-ai-august-2026/"
+   },
+   {
+    "name": "LiveKit Inference",
+    "what": "Model gateway built for voice AI",
+    "traction_then": "not stated",
+    "funding_then": "not stated",
+    "source_date": "2026",
+    "source_url": "https://livekit.com/blog/introducing-livekit-inference"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Custom inference kernels and tuning of speech models to hit tens of milliseconds latency; founders have kernel and voice inference backgrounds."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [
+   "proprietary_data"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/hopper"},
-  "competition_at_founding": {
-    "as_of": "2026-09",
-    "competitors": [
-      {"name": "Cartesia", "what": "Low latency text to speech models (Sonic)", "traction_then": "Sonic Turbo about 40ms time to first audio per a roundup", "funding_then": "not stated", "source_date": "2026-04", "source_url": "https://futureagi.com/blog/best-voice-ai-april-2026/"},
-      {"name": "Deepgram", "what": "Streaming speech to text and Flux TTS with latency as low as 80ms", "traction_then": "Flux TTS shipped 2026-08-12", "funding_then": "not stated", "source_date": "2026-08", "source_url": "https://futureagi.com/blog/best-voice-ai-august-2026/"},
-      {"name": "LiveKit Inference", "what": "Model gateway built for voice AI", "traction_then": "not stated", "funding_then": "not stated", "source_date": "2026", "source_url": "https://livekit.com/blog/introducing-livekit-inference"}
-    ]
+  "rationale": "Post-training on customer calls could create data advantage, but providers like Together, Cerebras and Deepgram compete on latency and speed gains can be copied."
+ },
+ "takeover_risk_then": {
+  "rating": 4,
+  "incumbents": [
+   "Deepgram",
+   "Cartesia",
+   "Together AI",
+   "LiveKit"
+  ],
+  "outcome": "Not yet known; incumbents were shipping low latency voice inference in 2026."
+ },
+ "market_need_then": "Growth of voice agents in 2026 with latency as a key complaint; Salient's 60M dollar Series A (per the YC page) indicates the sector's funding.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "real_word",
+  "name_qualities": [
+   "short",
+   "easy_to_spell",
+   "easy_to_say"
+  ],
+  "name_problems": [
+   "confusable",
+   "generic"
+  ],
+  "domain_note": "Uses withhopper.com because the travel company Hopper owns the shorter name",
+  "identity": {
+   "logo": "not described",
+   "mascot_or_character": null,
+   "visual_style": "Developer focused terminal snippets",
+   "voice_and_tone": "Plain and understated"
   },
-  "technical_complexity": {"rating": 4, "rationale": "Custom inference kernels and tuning of speech models to hit tens of milliseconds latency; founders have kernel and voice inference backgrounds."},
-  "defensibility": {"rating": 2, "moat_types": ["proprietary_data"], "rationale": "Post-training on customer calls could create data advantage, but providers like Together, Cerebras and Deepgram compete on latency and speed gains can be copied."},
-  "takeover_risk_then": {"rating": 4, "incumbents": ["Deepgram", "Cartesia", "Together AI", "LiveKit"], "outcome": "Not yet known; incumbents were shipping low latency voice inference in 2026."},
-  "market_need_then": "Growth of voice agents in 2026 with latency as a key complaint; Salient's 60M dollar Series A (per the YC page) indicates the sector's funding.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "real_word",
-    "name_qualities": ["short", "easy_to_spell", "easy_to_say"],
-    "name_problems": ["confusable", "generic"],
-    "domain_note": "Uses withhopper.com because the travel company Hopper owns the shorter name",
-    "identity": {"logo": "not described", "mascot_or_character": null, "visual_style": "Developer focused terminal snippets", "voice_and_tone": "Plain and understated"},
-    "brand_signature": null,
-    "rebrands": [],
-    "community_and_virality": "Site claims use by developers in 44 countries",
-    "brand_strength": {"rating": 1, "rationale": "Name collides with the well known travel app Hopper; no brand press found."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://withhopper.com/code", "https://fondo.com/blog/hopper-tunes-smaller-models-to-shorten-the-pauses-in-voice-agents"]
+  "brand_signature": null,
+  "rebrands": [],
+  "community_and_virality": "Site claims use by developers in 44 countries",
+  "brand_strength": {
+   "rating": 1,
+   "rationale": "Name collides with the well known travel app Hopper; no brand press found."
   },
-  "pivots": [],
-  "success_factors": ["technical_moat"],
-  "failure_factors": [],
-  "outcome_analysis": "Hopper is a two person F26 company from IIT Madras founders with voice inference experience, selling latency optimized open model inference for voice agents. Competition from Deepgram, Cartesia and gateways is strong and funding is undisclosed. No outcome events found.",
-  "sources": ["https://www.ycombinator.com/companies/hopper", "https://withhopper.com/code", "https://fondo.com/blog/hopper-tunes-smaller-models-to-shorten-the-pauses-in-voice-agents", "https://futureagi.com/blog/best-voice-ai-august-2026/"],
-  "notes": "Dealroom lists a 125K seed (one paywalled aggregator, unverified, not recorded). Funding cross-check found nothing else. The company site currently emphasizes a coding plan product (DeepSeek served for coding agents), which differs from the YC voice inference description; no date for the shift."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://withhopper.com/code",
+   "https://fondo.com/blog/hopper-tunes-smaller-models-to-shorten-the-pauses-in-voice-agents"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [
+  "technical_moat"
+ ],
+ "failure_factors": [],
+ "outcome_analysis": "Hopper is a two person F26 company from IIT Madras founders with voice inference experience, selling latency optimized open model inference for voice agents. Competition from Deepgram, Cartesia and gateways is strong and funding is undisclosed. No outcome events found.",
+ "sources": [
+  "https://www.ycombinator.com/companies/hopper",
+  "https://withhopper.com/code",
+  "https://fondo.com/blog/hopper-tunes-smaller-models-to-shorten-the-pauses-in-voice-agents",
+  "https://futureagi.com/blog/best-voice-ai-august-2026/",
+  "https://app.dealroom.co/companies/hopper"
+ ],
+ "notes": "Dealroom lists a 125K seed (one paywalled aggregator, unverified, not recorded). Funding cross-check found nothing else. The company site currently emphasizes a coding plan product (DeepSeek served for coding agents), which differs from the YC voice inference description; no date for the shift. Round added: Dealroom lists a $125K seed with no date or investors; single paywalled database, no press release found. A funding search returned only an unrelated company named Hopper."
 }
