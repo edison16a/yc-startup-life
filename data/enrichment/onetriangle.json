@@ -1,47 +1,156 @@
 {
-  "slug": "onetriangle",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Teams running LLM inference on dedicated endpoints or their own GPUs",
-  "problem": "Time to first token is slow because of prefill; OneTriangle prefills on a small model and transfers the KV cache to a larger one.",
-  "business_model": "Usage-based inference optimization via SDK and endpoints",
-  "product_category": "LLM inference infrastructure",
-  "founded_year": 2026,
-  "founders": [
-    {"name": "Hannah Chung", "role": "CEO", "prior_employers": ["Virtu Financial"], "education": ["MIT, computer science and economics"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page says MIT CSAIL graduate."},
-    {"name": "Medha Venkatapathy", "role": "CTO", "prior_employers": [], "education": ["MIT, physics and computer science"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": null}
+ "slug": "onetriangle",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Teams running LLM inference on dedicated endpoints or their own GPUs",
+ "problem": "Time to first token is slow because of prefill; OneTriangle prefills on a small model and transfers the KV cache to a larger one.",
+ "business_model": "Usage-based inference optimization via SDK and endpoints",
+ "product_category": "LLM inference infrastructure",
+ "founded_year": 2026,
+ "founders": [
+  {
+   "name": "Hannah Chung",
+   "role": "CEO",
+   "prior_employers": [
+    "Virtu Financial"
+   ],
+   "education": [
+    "MIT, computer science and economics"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page says MIT CSAIL graduate."
+  },
+  {
+   "name": "Medha Venkatapathy",
+   "role": "CTO",
+   "prior_employers": [],
+   "education": [
+    "MIT, physics and computer science"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": null
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "other",
+   "date": "2026-06",
+   "amount_usd": 125000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Y Combinator"
+   ],
+   "source_url": "https://app.dealroom.co/companies/onetriangle"
+  },
+  {
+   "stage": "pre_seed",
+   "date": "2026-09",
+   "amount_usd": 500000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Y Combinator"
+   ],
+   "source_url": "https://www.vcbacked.co/company/onetriangle"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/onetriangle"
+ },
+ "competition_at_founding": {
+  "as_of": "2026-06",
+  "competitors": [
+   {
+    "name": "Tensormesh",
+    "what": "Distributed KV cache infrastructure for inference",
+    "traction_then": "unknown",
+    "funding_then": "$20M raised, reported May 2026",
+    "source_date": "2026-05",
+    "source_url": "https://www.vcaonline.com/news/2026052702/tensormesh-raises-20m-from-investors-including-amd-ventures-coreweave-nventures-launches-tensormesh-inference-to-fix-ai-s-most-expensive-problem/"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "KV cache transfer across models of different sizes needs research-level ML systems work; the company claims large TTFT gains that are not independently verified."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [
+   "technical_moat"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/onetriangle"},
-  "competition_at_founding": {
-    "as_of": "2026-06",
-    "competitors": [
-      {"name": "Tensormesh", "what": "Distributed KV cache infrastructure for inference", "traction_then": "unknown", "funding_then": "$20M raised, reported May 2026", "source_date": "2026-05", "source_url": "https://www.vcaonline.com/news/2026052702/tensormesh-raises-20m-from-investors-including-amd-ventures-coreweave-nventures-launches-tensormesh-inference-to-fix-ai-s-most-expensive-problem/"}
-    ]
+  "rationale": "Technique could be replicated by serving engines and funded inference vendors; moat rests on research lead."
+ },
+ "takeover_risk_then": {
+  "rating": 4,
+  "incumbents": [
+   "vLLM",
+   "SGLang",
+   "NVIDIA Dynamo",
+   "Together AI"
+  ],
+  "outcome": "Major engines already support prefill decode disaggregation in 2026 per tutorials; no outcome for OneTriangle yet."
+ },
+ "market_need_then": "Inference cost and latency are a major 2026 concern and cache-aware serving is widely researched and productized.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "compound",
+  "name_qualities": [
+   "short",
+   "easy_to_spell",
+   "easy_to_say"
+  ],
+  "name_problems": [
+   "generic"
+  ],
+  "domain_note": "onetriangle.ai",
+  "identity": {
+   "logo": "Wordmark",
+   "mascot_or_character": null,
+   "visual_style": "Clean technical site",
+   "voice_and_tone": "Technical; headline Faster inference, starting with prefill"
   },
-  "technical_complexity": {"rating": 4, "rationale": "KV cache transfer across models of different sizes needs research-level ML systems work; the company claims large TTFT gains that are not independently verified."},
-  "defensibility": {"rating": 2, "moat_types": ["technical_moat"], "rationale": "Technique could be replicated by serving engines and funded inference vendors; moat rests on research lead."},
-  "takeover_risk_then": {"rating": 4, "incumbents": ["vLLM", "SGLang", "NVIDIA Dynamo", "Together AI"], "outcome": "Major engines already support prefill decode disaggregation in 2026 per tutorials; no outcome for OneTriangle yet."},
-  "market_need_then": "Inference cost and latency are a major 2026 concern and cache-aware serving is widely researched and productized.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "compound",
-    "name_qualities": ["short", "easy_to_spell", "easy_to_say"],
-    "name_problems": ["generic"],
-    "domain_note": "onetriangle.ai",
-    "identity": {"logo": "Wordmark", "mascot_or_character": null, "visual_style": "Clean technical site", "voice_and_tone": "Technical; headline Faster inference, starting with prefill"},
-    "brand_signature": null,
-    "rebrands": [{"date": "2026", "from": "TrustAI", "to": "OneTriangle", "why": "not stated; a Dealroom summary says it was previously known as TrustAI"}],
-    "community_and_virality": null,
-    "brand_strength": {"rating": 1, "rationale": "No press about the brand; the name meaning is unexplained."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://onetriangle.ai/"]
+  "brand_signature": null,
+  "rebrands": [
+   {
+    "date": "2026",
+    "from": "TrustAI",
+    "to": "OneTriangle",
+    "why": "not stated; a Dealroom summary says it was previously known as TrustAI"
+   }
+  ],
+  "community_and_virality": null,
+  "brand_strength": {
+   "rating": 1,
+   "rationale": "No press about the brand; the name meaning is unexplained."
   },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "outcome_analysis": "OneTriangle is a Summer 2026 YC company with no outcome yet. The team has strong MIT credentials, but the prefill and KV cache space is crowded with serving engines and funded startups like Tensormesh.",
-  "sources": ["https://www.ycombinator.com/companies/onetriangle", "https://onetriangle.ai/", "https://app.dealroom.co/companies/onetriangle", "https://www.vcbacked.co/company/onetriangle"],
-  "notes": "Funding conflicts: Dealroom $125,000 YC June 2026, VCBacked $500K pre-seed September 2026; both unverified aggregators, no round recorded. The TrustAI former name is from Dealroom only. YC page lists team of 4 while founder Q&A says five engineers."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://onetriangle.ai/"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [],
+ "failure_factors": [],
+ "outcome_analysis": "OneTriangle is a Summer 2026 YC company with no outcome yet. The team has strong MIT credentials, but the prefill and KV cache space is crowded with serving engines and funded startups like Tensormesh.",
+ "sources": [
+  "https://www.ycombinator.com/companies/onetriangle",
+  "https://onetriangle.ai/",
+  "https://app.dealroom.co/companies/onetriangle",
+  "https://www.vcbacked.co/company/onetriangle"
+ ],
+ "notes": "Funding conflicts: Dealroom $125,000 YC June 2026, VCBacked $500K pre-seed September 2026; both unverified aggregators, no round recorded. The TrustAI former name is from Dealroom only. YC page lists team of 4 while founder Q&A says five engineers. Completeness pass: both aggregator rounds are now recorded (Dealroom $125K 2026-06, VCBacked $500K pre-seed 2026-09), each resting on a single database; they may describe the same YC deal and must not be summed. No press or filing found."
 }

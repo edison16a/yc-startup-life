@@ -1,47 +1,134 @@
 {
-  "slug": "hyrex",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Backend and AI engineers who run asynchronous background tasks in Python or TypeScript on Postgres",
-  "problem": "Existing task frameworks are hard to configure or debug, need code rewrites, or are unmaintained. Hyrex uses Postgres as a durable queue with an open-source core and a paid cloud.",
-  "business_model": "Open-source framework with Hyrex Cloud subscriptions (200 and 400 USD per month tiers per the YC page)",
-  "product_category": "Developer tools, task orchestration and queues",
-  "founded_year": 2024,
-  "founders": [
-    {"name": "Mark Dawson", "role": "CEO", "prior_employers": [], "education": [], "technical": true, "previous_startups": ["Described by YC as a second-time founder; earlier company not named"], "age_at_founding": null, "age_source": null, "background_notes": "YC page calls him a software engineer focused on AI and cloud infrastructure."},
-    {"name": "Trevor Reed", "role": "CTO", "prior_employers": ["NASA JPL", "Google"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page: Mars Rover driver at JPL and Google software engineer on YouTube data."}
+ "slug": "hyrex",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Backend and AI engineers who run asynchronous background tasks in Python or TypeScript on Postgres",
+ "problem": "Existing task frameworks are hard to configure or debug, need code rewrites, or are unmaintained. Hyrex uses Postgres as a durable queue with an open-source core and a paid cloud.",
+ "business_model": "Open-source framework with Hyrex Cloud subscriptions (200 and 400 USD per month tiers per the YC page)",
+ "product_category": "Developer tools, task orchestration and queues",
+ "founded_year": 2024,
+ "founders": [
+  {
+   "name": "Mark Dawson",
+   "role": "CEO",
+   "prior_employers": [],
+   "education": [],
+   "technical": true,
+   "previous_startups": [
+    "Described by YC as a second-time founder; earlier company not named"
+   ],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page calls him a software engineer focused on AI and cloud infrastructure."
+  },
+  {
+   "name": "Trevor Reed",
+   "role": "CTO",
+   "prior_employers": [
+    "NASA JPL",
+    "Google"
+   ],
+   "education": [],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page: Mars Rover driver at JPL and Google software engineer on YouTube data."
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "other",
+   "date": null,
+   "amount_usd": null,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Katapult Accelerator"
+   ],
+   "source_url": "https://www.cbinsights.com/company/hyrex/financials"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/hyrex"
+ },
+ "competition_at_founding": {
+  "as_of": "2024-06",
+  "competitors": [
+   {
+    "name": "Hatchet",
+    "what": "Open-source task queue with a cloud version, positioned against Celery and BullMQ, built on Postgres",
+    "traction_then": "Launch HN thread",
+    "funding_then": "YC W24 company",
+    "source_date": "2024-06",
+    "source_url": "https://hn.svelte.dev/item/40810986"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A Postgres-backed queue with scheduling, retries, observability and two language SDKs is standard but subtle distributed systems work."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [],
+  "rationale": "Many queues exist (Celery, Hatchet and others) and the open source core is easy to swap out. The cloud adds convenience only."
+ },
+ "takeover_risk_then": {
+  "rating": 3,
+  "incumbents": [
+   "Celery",
+   "Temporal",
+   "Hatchet"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/hyrex"},
-  "competition_at_founding": {
-    "as_of": "2024-06",
-    "competitors": [
-      {"name": "Hatchet", "what": "Open-source task queue with a cloud version, positioned against Celery and BullMQ, built on Postgres", "traction_then": "Launch HN thread", "funding_then": "YC W24 company", "source_date": "2024-06", "source_url": "https://hn.svelte.dev/item/40810986"}
-    ]
+  "outcome": "No incumbent action found. The market already had strong open-source incumbents and a YC peer."
+ },
+ "market_need_then": "Developers on Postgres want one fewer system to run. An HN commenter on the Hatchet launch noted many teams already use Postgres, and Celery's Postgres support issue had been open for years.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "invented",
+  "name_qualities": [
+   "short",
+   "distinctive"
+  ],
+  "name_problems": [
+   "confusable"
+  ],
+  "domain_note": "Uses hyrex.io; the site returned HTTP 402 when fetched, so it may be suspended or paywalled.",
+  "identity": {
+   "logo": "Not found",
+   "mascot_or_character": null,
+   "visual_style": "Developer docs oriented",
+   "voice_and_tone": "Confident, enthusiastic, first person plural with exclamation points"
   },
-  "technical_complexity": {"rating": 3, "rationale": "A Postgres-backed queue with scheduling, retries, observability and two language SDKs is standard but subtle distributed systems work."},
-  "defensibility": {"rating": 2, "moat_types": [], "rationale": "Many queues exist (Celery, Hatchet and others) and the open source core is easy to swap out. The cloud adds convenience only."},
-  "takeover_risk_then": {"rating": 3, "incumbents": ["Celery", "Temporal", "Hatchet"], "outcome": "No incumbent action found. The market already had strong open-source incumbents and a YC peer."},
-  "market_need_then": "Developers on Postgres want one fewer system to run. An HN commenter on the Hatchet launch noted many teams already use Postgres, and Celery's Postgres support issue had been open for years.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "invented",
-    "name_qualities": ["short", "distinctive"],
-    "name_problems": ["confusable"],
-    "domain_note": "Uses hyrex.io; the site returned HTTP 402 when fetched, so it may be suspended or paywalled.",
-    "identity": {"logo": "Not found", "mascot_or_character": null, "visual_style": "Developer docs oriented", "voice_and_tone": "Confident, enthusiastic, first person plural with exclamation points"},
-    "brand_signature": "The COLD acronym (Controllable, Observable, Large-scale, Durable)",
-    "rebrands": [],
-    "community_and_virality": "No sourced community activity beyond PyPI releases.",
-    "brand_strength": {"rating": 2, "rationale": "A short invented name with a memorable acronym but no sourced community or press about the brand."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://www.ycombinator.com/launches/OHP-hyrex-the-open-source-cold-task-framework"]
+  "brand_signature": "The COLD acronym (Controllable, Observable, Large-scale, Durable)",
+  "rebrands": [],
+  "community_and_virality": "No sourced community activity beyond PyPI releases.",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "A short invented name with a memorable acronym but no sourced community or press about the brand."
   },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "outcome_analysis": "Hyrex is a small team of three in a crowded task queue market. No funding, exit or shutdown is reported. The company site returned an HTTP 402 error on fetch, which may indicate a billing or hosting problem, but that is not confirmed and nothing else suggests distress.",
-  "sources": ["https://www.ycombinator.com/companies/hyrex", "https://www.ycombinator.com/launches/OHP-hyrex-the-open-source-cold-task-framework", "https://hn.svelte.dev/item/40810986", "https://www.vcbacked.co/company/hyrex", "https://pypi.org/project/hyrex/0.10.20/"],
-  "notes": "Company site https://www.hyrex.io returned HTTP 402 on fetch, so treated as unreachable for now. Funding: Seedtable lists one round with investor Katapult Accelerator and no amount; unverified aggregator, not recorded. The launch post is described as about a year old in 2026, startupintros dates it 2025-08-27; batch is S24 per YC directory. Trevor's surname comes from the launch post author line."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://www.ycombinator.com/launches/OHP-hyrex-the-open-source-cold-task-framework"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [],
+ "failure_factors": [],
+ "outcome_analysis": "Hyrex is a small team of three in a crowded task queue market. No funding, exit or shutdown is reported. The company site returned an HTTP 402 error on fetch, which may indicate a billing or hosting problem, but that is not confirmed and nothing else suggests distress.",
+ "sources": [
+  "https://www.ycombinator.com/companies/hyrex",
+  "https://www.ycombinator.com/launches/OHP-hyrex-the-open-source-cold-task-framework",
+  "https://hn.svelte.dev/item/40810986",
+  "https://www.vcbacked.co/company/hyrex",
+  "https://pypi.org/project/hyrex/0.10.20/"
+ ],
+ "notes": "Company site https://www.hyrex.io returned HTTP 402 on fetch, so treated as unreachable for now. Funding: Seedtable lists one round with investor Katapult Accelerator and no amount; unverified aggregator, not recorded. The launch post is described as about a year old in 2026, startupintros dates it 2025-08-27; batch is S24 per YC directory. Trevor's surname comes from the launch post author line. Completeness pass: recorded one accelerator round from CB Insights (investor Katapult Accelerator, no amount). CB Insights dates it 2022-01-01, which predates the 2024 founding, so the date is left null as unreliable. Single database, no press found."
 }
