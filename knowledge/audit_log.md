@@ -124,3 +124,28 @@ Sample: 16 records (nomi, brainbase-labs, norra, aminoanalytica, theora, bilanc,
 | waffle | 4 | 1 | Competitor list empty although risk notes name CapCut and Opus Clip. |
 
 Totals: 64 fields checked. Counting every empty or incomplete competitor list as wrong, 15 are wrong (23 percent). Counting only fields contradicted or shown missing by a named source, 6 are wrong (9.4 percent). The limit is 10 percent. Result: wave NOT accepted under the strict count, which is the standard used in audits 1 to 5. The lenient figure is recorded for transparency only and does not count toward a pass. Dominant error: competitor lists left empty because no source dated near the batch was found, plus a few omitted early rounds and co-founders. Action: the 8 records with wrong fields are being corrected, and the final audit must use the strict standard. AUDIT RESULT is not PASS.
+
+## Waves 21 and 22 (strict prompt with audit lessons), audit 7
+
+Sample: 16 records drawn at random from the 330 most recently written (domu-technology-inc, event-horizon-labs, ai-2, synsorybio, tandem-2, onegrep, kenley, deepsim-inc, diffusion-studio, humanlayer, integuru, general-learning, the-forecasting-company, healthspark, revyl, offstream). Two auditors, eight records each. Both auditors worked mostly from search results and could not open every page (several sources returned 403 or 404), so their counts are indicative.
+
+| Slug | Fields checked | Wrong (strict) | Wrong (lenient) | Notes |
+|---|---|---|---|---|
+| domu-technology-inc | 5 | 1 | 0 | Rounds empty; company site claims a Series A and aggregators show a YC seed, neither confirmed by press. |
+| event-horizon-labs | 4 | 1 | 0 | YC page lists no founder; search names Owen Colegrove. |
+| ai-2 | 5 | 0 | 0 | Seed confirmed. |
+| synsorybio | 5 | 1 | 0 | Pre-seed omitted. |
+| tandem-2 | 6 | 1 | 0 | Pre-seed double counted inside the 6.1M seed. |
+| onegrep | 5 | 1 | 0 | Rounds empty, sources conflict. |
+| kenley | 5 | 0 | 0 | Matches. |
+| deepsim-inc | 7 | 1 | 0 | Seed omitted although trade coverage reports it. |
+| diffusion-studio | 4 | 1 | 0 | Competitor Remotion omitted. |
+| humanlayer | 4 | 1 | 1 | Co-founder Kyle Mistele omitted; Factory announcement names him. |
+| integuru | 3 | 1 | 0 | Investor roles omit ZhenFund. |
+| general-learning | 5 | 1 | 0 | 3.4M seed omitted. |
+| the-forecasting-company | 4 | 1 | 0 | 500K convertible note omitted. |
+| healthspark | 3 | 1 | 0 | Co-founder Jonah Tuchow omitted. |
+| revyl | 5 | 1 | 0 | Competitors QA Wolf and Waldo omitted. |
+| offstream | 4 | 0 | 0 | Matches. |
+
+Totals: 74 fields checked. Strict count (omitted rounds, co-founders and competitors that secondary sources support): 13 wrong (17.6 percent). Lenient count (only fields contradicted by a source): 1 wrong (1.4 percent). The limit is 10 percent. Result: wave NOT accepted under the strict count, which is the standard used in audits 1 to 6. Down from 23 percent in audit 6. The dominant pattern is caution: researchers leave out rounds and co-founders that only aggregators or one outlet support, and leave competitor lists empty. A decision is needed for the final audit: recording well supported aggregator rounds with a clear unverified label would cut the strict error rate without fabricating data. The 12 records with wrong fields are being corrected. AUDIT RESULT is not PASS.
