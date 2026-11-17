@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Doe",
+    "one_liner": "The boring stuff, handled. Everything else, supercharged.",
+    "description": "Doe is a workspace where AI agents do your work: users connect their tools, describe what they need, and agents handle it, while Doe also helps with work done by hand. Tags are generative AI, SaaS, productivity and data visualization. Two founders in San Francisco, Summer 2025 batch. Forecast window runs 2025-07-07 to 2026-11-17, about 16.4 months.",
+    "as_of": "2025-07-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.015,
+    "p_low": 0.007,
+    "p_high": 0.04,
+    "basis": "Start from the roughly 1 percent prior (0.6 to 2 percent band). Two founders add a little, but a general purpose agent workspace is the most crowded idea type in 2025, a copyable idea with no wedge cuts the odds (defensibility 1 shut down 50 percent), and no traction is stated. The company is in the Summer 2025 batch, so the figure is for completeness.",
+    "why_it_fails": "YC would most plausibly say no because the pitch is a horizontal agent workspace with no named user, narrow wedge or measured traction, in a space where OpenAI, Notion, Zapier and dozens of funded startups ship the same promise. Partners prefer a specific painful job and a sharp reason this team wins."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.5,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.42,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Window of 16.4 months: about 70 percent of eventual seeds arrive by then, times about 0.60 reaching a round above $1M gives an anchor near 0.42.",
+        "adjustment_reason": "The estimate is 1.19 times the window anchor, inside the 1.25 times cap. The lift reflects that general agent startups drew many seeds in 2025 (Pokee $12M, Coworker.ai $13M, General Intelligence Company $8.7M), but those had named founders or labs, and the odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.28,
+          "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.37,
+          "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.27,
+          "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.08,
+          "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Doe most likely fails to raise above $1M in 16 months because a horizontal agent workspace has no wedge, and funds that backed Pokee and Coworker.ai already hold the category. Two person teams like dialtone, zuni and dart show no priced round after the YC deal while taking agent workspaces to market, and without a clear niche investors pass."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.1,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series A given seed 0.45 ever; inside 16.4 months only a quick company gets there.",
+        "adjustment_reason": "Window adjusted: about 0.45 ever times about 0.22 within window gives 0.10. More than 2 times below ever anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin Series A or extension on modest revenue, below the 2022 and later median of $13.5M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series A near the 2022 and later median of $13.5M to $14M with growth proof."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Upside Series A from a breakout AI product with fast revenue."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A inside the window would need rapid revenue growth in a category where free offerings from model vendors are expanding. Spine AI and Twine took longer than a year after batch with no Series A found, and Zapier needed years to turn small seed money into scale."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series B conditional 0.44, ever figure.",
+        "adjustment_reason": "Slightly below the anchor because the horizontal agent space faces fast commoditization."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller Series B or a down round after slower growth."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            400000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $37M median for 2022 and later rounds."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B for a category leader with fast revenue growth and a top tier lead, as seen in the 75th percentile near $57M for 2022 and later rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B would need durable usage and enterprise contracts. Agent workspaces compete on model quality that vendors control, and few such companies have shown retention strong enough for the roughly $37M median Series B of recent years."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series C 0.36 conditional, ever figure.",
+        "adjustment_reason": "Below the anchor because horizontal productivity tools face large incumbents."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000.0,
+            500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest Series C near the $42M to $45M median for 2022 and later."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000.0,
+            1500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a scaled company, in line with the 2022 and later Series C median of about $45M and the larger Series D plus rounds."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            4000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside growth round or a late stage mega round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Growth rounds require a clear category leader. Zapier is the success case and took a decade of steady growth with almost no outside capital, which is a different path from fast venture scaling. Most workspace entrants end in sale or stall before reaching Series C."
     }
   ],
   "outcomes": {
@@ -164,167 +224,236 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.72
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.18
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.08
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          10000000000.0
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end in shutdown or a small acquisition because model vendors and large workspace apps bundle agent features for free, leaving a two person company with no distribution advantage. Mindmesh and Dart show the usual result: small notes, long searches for a wedge, and quiet drift rather than a breakout."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "dart",
+      "relevance": "Work and agent management platform, W22.",
+      "outcome_summary": "Small pre seed, claims 100000 teams, no later rounds found."
+    },
+    {
+      "slug": "zapier",
+      "relevance": "Work automation across apps, S12.",
+      "outcome_summary": "One small seed then slow capital efficient growth to scale."
+    },
+    {
+      "slug": "dialtone",
+      "relevance": "Agents for enterprises, S23, two people.",
+      "outcome_summary": "No public funding found and positioning shifted."
+    },
+    {
+      "slug": "zuni",
+      "relevance": "Agents for professional work, S24, small team.",
+      "outcome_summary": "Minimal traction and no funding beyond aggregators."
+    },
+    {
+      "slug": "mindmesh",
+      "relevance": "Virtual desk for knowledge workers, S21.",
+      "outcome_summary": "Inactive or sold, conflicting records, no round."
+    },
+    {
+      "slug": "spine-ai",
+      "relevance": "Swarm of agents for real work, S23.",
+      "outcome_summary": "Active, no confirmed priced round in the researched record."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "No wedge: a horizontal agent workspace is bundled by model vendors and workspace apps",
+      "p": 0.55,
+      "evidence": "OpenAI, Notion, Zapier and others already ship agent features, and Doe sells a general promise to a general user.",
       "analogs": [
-        "TODO-company-slug"
+        "dart",
+        "zuni"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick one job such as finance close or recruiting ops and win it end to end."
+    },
+    {
+      "risk": "Agent reliability and trust: agents that act on connected tools make costly errors",
+      "p": 0.35,
+      "evidence": "Users hesitate to grant write access to email and calendars, and a few failures cause churn.",
+      "analogs": [
+        "dialtone"
+      ],
+      "mitigation": "Start with read and draft actions and add approvals."
+    },
+    {
+      "risk": "Fast follower funding: rivals with $8M to $13M seeds can outspend",
+      "p": 0.4,
+      "evidence": "Pokee, Coworker.ai and General Intelligence raised $8M to $13M seeds in 2025, giving them hiring and marketing power.",
+      "analogs": [
+        "spine-ai",
+        "mindmesh"
+      ],
+      "mitigation": "Reach profitability on a niche and use revenue as the signal."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Pokee AI",
+      "what": "General purpose agent over thousands of tools",
+      "traction": "$12M seed led by Point72 in 2025",
+      "source_url": "https://www.geekwire.com/2025/point72-ventures-leads-12m-seed-round-for-a-new-ai-agent-startup-founded-by-ex-meta-manager/"
+    },
+    {
+      "name": "Coworker.ai",
+      "what": "General purpose AI teammate",
+      "traction": "$13M seed in May 2025",
+      "source_url": "https://pulse2.com/coworker-ai-13-million-raised-for-ai-agent-research-company/"
+    },
+    {
+      "name": "Zapier Agents",
+      "what": "Automation giant adding agents",
+      "traction": "Millions of business users",
+      "source_url": "https://zapier.com/agents"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Wiring agents to many tools with reliable permissions and error handling is medium hard work that two engineers can prototype in months; the difficulty is in dependability at scale and model dependence on vendors."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 5,
     "who": [
-      "TODO"
+      "OpenAI",
+      "Notion",
+      "Zapier",
+      "Microsoft Copilot",
+      "Google"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 3,
+    "rationale": "Model vendors and workspace apps already ship agent features and could match any general workflow within months, with far larger distribution."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Agent startups raised $5M to $13M seeds in 2025 across Pokee, Coworker.ai and Composite, showing investor demand for the category.",
+        "source_url": "https://www.geekwire.com/2025/point72-ventures-leads-12m-seed-round-for-a-new-ai-agent-startup-founded-by-ex-meta-manager/"
+      },
+      {
+        "claim": "The General Intelligence Company raised $8.7M led by Union Square Ventures to automate businesses with agents.",
+        "source_url": "https://builtin.com/articles/general-intelligence-company-raises-8m-seed-20251212"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a user group that depends on it weekly",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Ship to 50 design partners",
+        "Track weekly agent tasks completed"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "30 percent weekly retention"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Pick a niche that pays",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Narrow to one workflow",
+        "Add pricing by outcome"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$20K monthly revenue and a lead investor"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove retention and expansion",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Land teams of 20 or more",
+        "Add integrations that raise switching costs"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M ARR and net revenue retention above 100 percent"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale to enterprise",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Security and admin controls",
+        "Sales team"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$10M ARR"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Platform leader",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Marketplace of agents",
+        "International expansion"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$40M ARR"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Investors are funding agent workspaces",
+      "evidence": "Several 2025 seeds of $5M to $13M in the category show appetite.",
+      "source_url": "https://pulse2.com/coworker-ai-13-million-raised-for-ai-agent-research-company/"
+    },
+    {
+      "point": "Two founders in San Francisco can iterate quickly with low costs",
+      "evidence": "Agent products rely on vendor models so capital needs are small at the start.",
+      "source_url": "https://builtin.com/articles/general-intelligence-company-raises-8m-seed-20251212"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Doe",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Doe\" --era 2022+ : invented_or_proper, 3 letters, 1 syllable, alive 92 percent in cohort",
     "strengths": [
-      "TODO"
+      "Very short",
+      "Echoes doing the work"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic word, hard to search",
+      "John Doe connotation"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A three letter name that echoes doing work is easy to say, like short YC names such as Rippling style brands need a story, but it is hard to search and carries the placeholder John Doe feeling, so brand is neutral.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A general agent workspace from two founders in a crowded and well funded category, with a middling chance of a seed above $1M in 16 months.",
+    "general_summary": "Doe promises agents that do your work across connected tools. Investor appetite in 2025 is real, with several seeds between $5M and $13M, but those rounds went to teams with named backgrounds, and the product here is horizontal with no wedge, vendor bundling risk and no stated traction. The 16.4 month window is long enough for a typical seed to land, so the number sits near the window adjusted cohort anchor with a small lift. The odds do not rank this company against others in the batch."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file and market searches were used; no revenue or investor data is known.",
+    "Seed means an outside round above about $1M closing between 2025-07-07 and 2026-11-17.",
+    "Series A given seed is for the same window; Series B and C are ever figures.",
+    "Coverage: 662 researched companies; funding data partial."
   ],
   "sources": [
-    "https://"
+    "https://www.geekwire.com/2025/point72-ventures-leads-12m-seed-round-for-a-new-ai-agent-startup-founded-by-ex-meta-manager/",
+    "https://pulse2.com/coworker-ai-13-million-raised-for-ai-agent-research-company/",
+    "https://builtin.com/articles/general-intelligence-company-raises-8m-seed-20251212",
+    "https://zapier.com/agents"
   ]
 }

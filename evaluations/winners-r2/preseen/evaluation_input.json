@@ -1,330 +1,470 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Preseen",
+  "one_liner": "The AI forecasting company for global macro events.",
+  "description": "Preseen builds forecasting agents that predict global macro events such as rate decisions, elections and economic releases. Buyers would be funds, corporates and analysts who pay for probabilistic forecasts. Solo founder, San Francisco, no tags or traction stated.",
+  "as_of": "2025-07-07"
+ },
+ "yc_acceptance": {
+  "p": 0.015,
+  "p_low": 0.0075,
+  "p_high": 0.033,
+  "basis": "Starting prior about 1 percent (0.6 to 2 percent, references/yc_acceptance.md). Up for a timely AI agents theme and a testable claim (forecast accuracy). Down for a solo founder, no traction, a one sentence description with no named buyer, and analogs in finance forecasting that failed. Net about 1.5 percent. Blind note: Summer 2025 batch, forward estimate only.",
+  "why_it_fails": "YC would most plausibly say that the founder has not named who pays for macro forecasts, that prediction markets and superforecasters already provide public forecasts, and that accuracy of an agent is hard to prove before launch. A one line description and a solo founder give partners little to hold onto."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, 49/59/65). Second cohort python3 -I scripts/base_rates.py --tag AI --years 2022-2025 --calibration-only: seed 61% (n=109). Window: time_to_milestones.csv era 2022+ months_to_seed 3 / 6 / 14.2, so a 16 month window captures about three quarters of eventual seeds.",
+    "adjustment_reason": "0.45 against 0.59 is 0.76x, within the floor. Down for a solo founder, no stated customers and an unclear buyer, and for the 16 month window cutting about a quarter of eventual seeds. Not lifted for the hot AI agent theme. The odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. Most plausible for a solo technical founder with a demo and a few paying funds, where angels and small funds lead."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A seed above $1M fails if no paying buyer appears. Forecasting products for finance have a history of weak willingness to pay: pit-ai and intelligent shut down with no post YC round, and payflow-2 did the same with AI forecasting for finance teams. A solo founder also has to prove accuracy against prediction markets and superforecasters, which is hard to demonstrate to investors in under a year."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_a cond 26% (n=74). Months to Series A median 28 (p25 19.4) in time_to_milestones.csv.",
+    "adjustment_reason": "0.08 versus 0.26 is 0.31x, below the floor. Justified by the window (p25 of time to Series A is 19.4 months, longer than the 16 month window, so under a quarter of eventual A rounds fit) and by named analogs pit-ai, intelligent and payflow-2 that never raised after YC."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A thin Series A near the 2018-2021 median of 12M or a bridge style A, when growth is steady but not explosive."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.4,
+     "rationale": "The typical Series A, near the 2022+ YC median of 15M (round_benchmarks.csv) and 17.4M US deal size."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A strong A of 18M to 30M led by a tier one fund after fast revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.1,
+     "rationale": "An outsized A in a hot AI category, as seen for a few 2024 and 2025 AI application companies."
+    }
+   ],
+   "why_it_fails": "A Series A inside 16 months requires recurring revenue from institutional buyers who trust a one person forecasting product. The analogs pit-ai, intelligent and payflow-2 all stalled with no round, and even accurate forecasts are hard to sell because buyers compare them to free prediction markets and their own analysts."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), known-only 2%, upper 18%. Cohort cond is among those with a Series A, ever.",
+    "adjustment_reason": "Window effect: the Series B median is 26 to 46 months after batch start (time_to_milestones.csv), so only a sliver can land inside the 16 month window. The ever anchor 0.16 is cut to 0.04 for the window, which is more than 2x below because the window ends well before the usual B timing."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "A small or flat Series B, common when growth slowed after the A."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.45,
+     "rationale": "The typical B, near the 2022+ YC median of 37M to 40M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A large Series B on strong revenue growth, led by a growth fund after the A round proved repeatable sales."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.1,
+     "rationale": "A breakout Series B at unicorn scale for a category leader, rare among YC companies and needing very fast growth."
+    }
+   ],
+   "why_it_fails": "A Series B inside this window would need a Series A within roughly a year and a doubling of revenue. No forecasting analog in the data reached a B, and the usual time from batch to B is about three years, so timing alone makes it very unlikely, as does the thin willingness to pay for forecasts."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all industries): series_c cond 36% (n=55) among those with Series B. Also stage_benchmarks.md.",
+    "adjustment_reason": "Window effect: Series C median is 61 to 66 months after batch start, far outside the 16 month window, so the ever anchor of 0.36 is cut to 0.04 here, more than 2x below it, by timing alone and not by a view on quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A modest growth round, near the 45M to 74M 2022+ YC medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A typical Series C or later in the 2022+ table (median 74M)."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A large growth round for a category leader."
+    },
+    {
+     "raise_usd": [
+      250000000,
+      600000000
+     ],
+     "post_money_usd": [
+      4000000000,
+      15000000000
+     ],
+     "p_band": 0.08,
+     "rationale": "A mega growth round for a breakout winner, seen only for a handful of YC companies in the 2022+ data."
+    }
+   ],
+   "why_it_fails": "A Series C inside this window is out of reach on timing: the median is over three years from batch start for the few companies that get there. Forecasting and analytics analogs such as inkling were small acquisitions, not growth round stories, so a growth round would need a pivot into a broader data or risk platform with large recurring contracts."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.68
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.08
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     20000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.02
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the product stays a demo or a newsletter style service with few paying clients, because forecast accuracy does not turn into a durable data business without distribution. A small acqui-hire by a data or fund tool company is the most likely exit. inkling and atmo ended as acquisitions, pit-ai and intelligent shut down."
+ },
+ "analogs": [
+  {
+   "slug": "pit-ai",
+   "relevance": "Machine intelligence for investment management, W17",
+   "outcome_summary": "Inactive with no post YC round found; investment AI struggled to show durable edge or sales."
+  },
+  {
+   "slug": "intelligent",
+   "relevance": "Demand forecasting as a service, S20",
+   "outcome_summary": "Shut down with no post YC round; forecasting sold as a service was hard to price."
+  },
+  {
+   "slug": "payflow-2",
+   "relevance": "AI forecasting agent for finance teams, S20",
+   "outcome_summary": "Shut down with no round found."
+  },
+  {
+   "slug": "atmo",
+   "relevance": "AI weather forecasting, W20",
+   "outcome_summary": "Acquired; forecasting with physical data and clear buyers can be sold."
+  },
+  {
+   "slug": "inkling",
+   "relevance": "Prediction markets for companies, W06",
+   "outcome_summary": "Acquired after years; corporate prediction markets stayed niche."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "No buyer pays for forecasts",
+   "p": 0.55,
+   "evidence": "Forecasting products for finance teams in the data (intelligent, payflow-2, pit-ai) shut down without a post YC round.",
+   "analogs": [
+    "intelligent",
+    "payflow-2",
+    "pit-ai"
+   ],
+   "mitigation": "Sell a narrow decision product to one buyer type such as macro funds with a pilot fee."
+  },
+  {
+   "risk": "Accuracy not distinguishable from public prediction markets",
+   "p": 0.45,
+   "evidence": "Benchmarks from the Forecasting Research Institute show LLMs close to but not above superforecasters, and prediction markets are free.",
+   "analogs": [
+    "inkling",
+    "pit-ai"
+   ],
+   "mitigation": "Publish a live track record against market consensus."
+  },
+  {
+   "risk": "Solo founder and no stated traction",
+   "p": 0.4,
+   "evidence": "The input lists a team of 1 and no revenue, users or customers.",
+   "analogs": [
+    "intelligent",
+    "payflow-2"
+   ],
+   "mitigation": "Recruit a go to market cofounder from the funds industry."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Good Judgment and superforecaster services",
+   "what": "Human forecasting teams selling forecasts to governments and corporates.",
+   "traction": "Established vendor with institutional customers.",
+   "source_url": "https://forecastingresearch.substack.com/p/ai-llm-forecasting-model-forecastbench-benchmark"
+  },
+  {
+   "name": "Prediction markets (Polymarket, Kalshi, Metaculus)",
+   "what": "Free public probabilities on macro events.",
+   "traction": "Large volume and public usage by 2024 to 2025.",
+   "source_url": "https://forecastingresearch.substack.com/p/ai-llm-forecasting-model-forecastbench-benchmark"
+  },
+  {
+   "name": "In house analysts and sell side research",
+   "what": "Banks and funds use economists and consensus surveys.",
+   "traction": "The status quo for macro buyers.",
+   "source_url": "https://forecastingresearch.substack.com/p/ai-llm-forecasting-model-forecastbench-benchmark"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Forecasting agents can be built on existing language models and news data, so a solo engineer can ship a demo. The hard part is calibrated accuracy on rare macro events and proving an edge over market prices, which is research grade and may not be solvable by a small team."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Frontier model labs with research agents",
+   "Prediction market platforms",
+   "Data vendors such as Bloomberg"
+  ],
+  "timeline_months": 9,
+  "rationale": "Large model providers and data vendors can add forecasting agents to existing terminals and chat products within months, and they own the distribution. A solo startup has no data or channel advantage."
+ },
+ "market_need_now": {
+  "rating": 2,
+  "evidence": [
+   {
+    "claim": "AI forecasting accuracy is improving toward superforecaster level, which creates interest but is not yet proven spend.",
+    "source_url": "https://forecastingresearch.substack.com/p/ai-llm-forecasting-model-forecastbench-benchmark"
+   },
+   {
+    "claim": "Public forecasts are available free from markets and benchmark projects, limiting willingness to pay.",
+    "source_url": "https://forecastingresearch.substack.com/p/ai-llm-forecasting-model-forecastbench-benchmark"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a track record and one paying buyer.",
+   "actions": [
+    "Publish live forecasts with scored accuracy",
+    "Sign one fund or corporate on a paid pilot"
+   ],
+   "proof": "A scored public track record and a first invoice"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeatable revenue from a defined buyer.",
+   "actions": [
+    "Package a subscription for macro funds",
+    "Add a cofounder for sales"
+   ],
+   "proof": "Recurring revenue above $300K annualized from 5 or more clients"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove an edge versus markets that clients pay for.",
+   "actions": [
+    "Show forecast value in client decisions",
+    "Expand to corporate risk teams"
+   ],
+   "proof": "Retention above 90 percent and net revenue retention above 110 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Timely AI research direction",
+   "evidence": "Studies show LLM forecasters improving quickly toward superforecaster accuracy.",
+   "source_url": "https://forecastingresearch.substack.com/p/ai-llm-forecasting-model-forecastbench-benchmark"
+  },
+  {
+   "point": "Testable claim",
+   "evidence": "Forecasts can be scored publicly, so the company can build a verifiable track record cheaply.",
+   "source_url": "https://forecastingresearch.substack.com/p/ai-llm-forecasting-model-forecastbench-benchmark"
+  }
+ ],
+ "brand": {
+  "name": "Preseen",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Preseen\" --era 2022+ : syllable_bucket=2, n=1326, alive 93.4 percent, exit 5.1 percent",
+  "strengths": [
+   "Suggests seeing ahead",
+   "Short and invented"
+  ],
+  "weaknesses": [
+   "Close to the word unforeseen, hard to spell"
+  ],
+  "rationale": "Preseen hints at foresight in two syllables and is an invented word that can be owned, a plus for trademarks. The spelling may confuse, and past YC names with similar made up forms show little link to outcomes. Small effect on the odds.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A solo founder building AI macro forecasting for an unnamed buyer, in a category where past YC forecasting companies stalled.",
+  "general_summary": "Preseen builds forecasting agents for global macro events. The seed estimate starts at the 59 percent B2B cohort anchor and is cut to 0.45 for a solo founder, no named buyer and a 16 month window. Analogs in forecasting for finance, pit-ai, intelligent and payflow-2, shut down without a post YC round, which supports a lower Series A number. Public prediction markets and benchmarks mean buyers can get probabilities free, so willingness to pay is the central question. The odds do not rank this company against others, and the data behind this niche is thin.",
+  "deep_dive": {}
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-07-07; window of about 16 months to 2026-11-17.",
+  "Seed means a round above about $1M closing inside the window, excluding the YC deal.",
+  "Series A odds fall below 0.75x the anchor because of the window and named failed analogs.",
+  "Analog records may contain later facts; only founding era facts were used. Some search results were dated after the as of date and ignored. No LEAK flags."
+ ],
+ "sources": [
+  "https://forecastingresearch.substack.com/p/ai-llm-forecasting-model-forecastbench-benchmark",
+  "https://www.ycombinator.com/deal"
+ ]
 }

@@ -1,330 +1,507 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Callab AI",
+  "one_liner": "Human-centered AI for contact centers.",
+  "description": "Callab AI sells an enterprise contact center platform where AI voice, chat and messaging agents work next to human agents. Supervisors can watch any AI conversation live, step in and hand back, and agents keep memory across channels. It runs its own telephony stack that connects to Cisco, Mitel, Avaya, SIP trunks and on-premises PBX so large companies need not move to the cloud first, claims SOC 2 controls, and serves finance, healthcare, hospitality and retail. The team builds and implements each agent for the customer, which is a services heavy delivery. Seven people, San Francisco.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.078,
+  "basis": "Start from the roughly 1 percent applicant prior (band 0.6 to 2 percent). Adjust up about 2x for a team of seven that has built its own carrier grade telephony stack and says it already serves regulated enterprise customers, and for the fit with YC's interest in AI voice. Adjust down for a very crowded voice AI field and a services heavy delivery model that looks less like a product. Net about 3 percent.",
+  "why_it_fails": "YC would most plausibly say this reads as a large feature list in a category with many funded voice agent companies, and that building and implementing every agent for each customer looks like consulting rather than software. Without named customers or revenue in the application, a partner cannot see why this team wins against Vapi style platforms or incumbent contact center vendors."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.64,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI: seed cond 64 percent (n=183). python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2026: seed cond 52 percent (n=163). Window is 7 months from 2026-04-06 to 2026-11-17; time_to_milestones.csv 2022+ months_to_seed p25 3, median 6, p75 14.2.",
+    "adjustment_reason": "Anchors are for ever reaching a seed; the 7 month window covers a bit over half of reachers by the median of 6 months, so about 0.64 times 0.58 gives about 0.37. No lift for team size or the enterprise claims, per the winners test. Seed means an outside round above about $1M, not the YC deal. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a micro fund. Common for a team of two to four before a customer logo is public; the 2022 and later seed row has p25 of $2.8M, so this is the lower quartile."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed at the center of the 2022 and later table (median $3.5M to $4.1M) shifted up a little for AI native B2B. Most likely if two or three paying design partners are visible."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Large AI seed. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers big rounds more, so this band is kept below the central one."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: a hot category plus fast revenue and a lead from a multi stage fund. Rare in the YC data."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Investors will likely see a services heavy enterprise deployment with long sales cycles and a crowded voice AI field, and want evidence of repeatable software revenue before a priced round. Retell, a Winter 2024 contact center voice company, raised a $4.6M seed only after strong early revenue, and SigmaMind with the same contact center pitch shows only a $500K YC check."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI: series_a cond 30 percent (n=117). time_to_milestones.csv 2022+ months_to_series_a median 28.0, p25 19.4.",
+    "adjustment_reason": "Window anchored: a 7 month window ends long before the 19 month p25 of time to Series A, so only a small tail makes A inside it. 0.30 times about 0.13 gives 0.04, more than 2x below the ever anchor because of time, not quality. Vapi went from seed in Nov 2023 to A in Dec 2024."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge style A under $10M, a down or flat round relative to the seed."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band: 2022 and later series A median $14.15M, with market medians near $17M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      160000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong A led by a top fund after clear revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside: breakout category leader, AI infrastructure style round."
+    }
+   ],
+   "why_it_fails": "A Series A inside the window would need a very fast seed and a revenue run rate well above $1M from enterprises, which usually need pilots of three to six months. The more likely path is a seed in 2026 and an A in 2027 or later, as Vapi's 13 months between seed and A shows even for the category's hottest company."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.31,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI: series_b cond 31 percent (n=35).",
+    "adjustment_reason": "Slightly above the anchor (1.13x) since enterprise contact center contracts can scale, but ever and not windowed."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      70000000,
+      130000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small or extension B: growth slowed after the A, so the round is modest or flat to the prior valuation."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical B, 2022 and later median about $37M to $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Large B for a category leader with strong revenue growth and a top tier lead investor."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside round if the company becomes the clear category winner with outsized growth."
+    }
+   ],
+   "why_it_fails": "The B stage fails if revenue depends on custom implementation per customer so margins stay near services levels, and if incumbents like Five9 or Genesys bundle AI agents at low prices. Investors then see growth that needs headcount and pass."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.45,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI: series_c cond 45 percent (n=11).",
+    "adjustment_reason": "Below the anchor (0.78x) because the AI cohort has only 11 cases and voice AI is likely to consolidate."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest C with a flat valuation to the B, reflecting slower growth and tougher market multiples."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or D, 2022 and later median $74M to $150M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Large growth round for a company with strong enterprise revenue and expanding margins."
+    },
+    {
+     "raise_usd": [
+      300000000,
+      600000000
+     ],
+     "post_money_usd": [
+      3000000000,
+      8000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Category winner raising a very large round on a premium valuation."
+    }
+   ],
+   "why_it_fails": "A C round needs category leadership across many verticals. The likely failure is acquisition by a contact center vendor at B stage prices, or flat growth after the early regulated customers are saturated, as with older conversational AI vendors."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.24
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.16
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     6000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Voice agent startups face foundation model labs and cheap API platforms, so many are acquired early or fade; Vocode raised $3.25M seed in February 2024 and is now listed as acquired with no public price. Large outcomes need a platform position rather than a custom build shop."
+ },
+ "analogs": [
+  {
+   "slug": "vapi",
+   "relevance": "Voice AI developer platform, the category leader sold to contact centers.",
+   "outcome_summary": "Seed $2.1M in Nov 2023 then $20M Series A in Dec 2024 after a pivot; shows fast rounds are possible but concentrated in the leader."
+  },
+  {
+   "slug": "retell-ai",
+   "relevance": "AI phone agents for contact center operations, Winter 2024.",
+   "outcome_summary": "Raised a $4.6M seed in Aug 2024 after reaching about $3M annualized revenue; revenue first, then the round."
+  },
+  {
+   "slug": "sigmamind-ai",
+   "relevance": "Voice AI platform built for contact centers, Summer 2022.",
+   "outcome_summary": "Only the $500K YC check is on record and about 12 staff; no public growth round, the near copy of the same pitch."
+  },
+  {
+   "slug": "vocode",
+   "relevance": "Open source voice AI framework, Winter 2023.",
+   "outcome_summary": "Raised $3.25M seed in Feb 2024 and was later listed as acquired, no price; early exit rather than independent scale."
+  },
+  {
+   "slug": "mosaicvoice",
+   "relevance": "Call center quality assurance automation, Winter 2022.",
+   "outcome_summary": "Seed of about $2.5M in Dec 2021 and a slow small private path of about 11 employees; call center budgets are real but sales are slow."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Services heavy delivery limits margins and growth",
+   "p": 0.4,
+   "evidence": "The description says the team studies each customer's workflows and builds, tests and implements the agent, which looks like forward deployed engineering that scales with headcount.",
+   "analogs": [
+    "mosaicvoice",
+    "sigmamind-ai"
+   ],
+   "mitigation": "Productize the AI builder so customers deploy without engineers and price on usage."
+  },
+  {
+   "risk": "Crowded voice AI with cheap developer platforms and contact center incumbents",
+   "p": 0.4,
+   "evidence": "Vapi and Retell already sell contact center voice agents, and incumbent vendors bundle AI into existing seats.",
+   "analogs": [
+    "vapi",
+    "retell-ai"
+   ],
+   "mitigation": "Own the human supervision and legacy PBX integration niche where cloud only rivals cannot go."
+  },
+  {
+   "risk": "Enterprise sales cycles outlast the seed money",
+   "p": 0.3,
+   "evidence": "Regulated buyers in finance and healthcare take months to pass security and procurement, and SOC 2 controls are claimed but not reported as complete.",
+   "analogs": [
+    "mosaicvoice",
+    "vocode"
+   ],
+   "mitigation": "Land one reference customer per vertical with a paid pilot of 60 days or less."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Vapi",
+   "what": "Developer voice AI platform with contact center use.",
+   "traction": "$20M Series A in December 2024 after a seed in November 2023.",
+   "source_url": "https://vapi.ai"
+  },
+  {
+   "name": "Retell AI",
+   "what": "AI phone agents for contact centers and BPOs.",
+   "traction": "$4.6M seed in August 2024 on about $3M annualized revenue per its record.",
+   "source_url": "https://www.retellai.com"
+  },
+  {
+   "name": "Observe.AI",
+   "what": "Contact center AI and voice agents sold to enterprises.",
+   "traction": "Reported funding of about $214M by 2026 per search coverage.",
+   "source_url": "https://www.observe.ai"
+  },
+  {
+   "name": "Five9, Genesys, NICE",
+   "what": "Incumbent contact center platforms adding AI agents.",
+   "traction": "Own the telephony seats and enterprise contracts Callab must integrate with or displace.",
+   "source_url": "https://www.five9.com"
+  },
+  {
+   "name": "Status quo: human agents and BPO",
+   "what": "Outsourced and in house call staff.",
+   "traction": "The labor budget AI is replacing; Gartner has projected large cost savings from conversational AI.",
+   "source_url": "https://enthu.ai/blog/voice-ai-agents-contact-centers/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Real time voice quality, latency, interruptions and telephony routing are hard, and running a carrier grade stack plus native Cisco, Avaya and Mitel connectors is a serious engineering load for seven people. Frontier voice models make the agent layer cheaper to build, so the hard part is integration and reliability, a moat only if it ships as product."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Five9",
+   "Genesys",
+   "NICE",
+   "Vapi",
+   "Retell AI",
+   "OpenAI realtime voice"
+  ],
+  "timeline_months": 9,
+  "rationale": "Incumbent contact center platforms and voice API companies can add supervision dashboards and memory in under a year, and model labs now ship realtime voice. The legacy PBX integration is the part rivals may not bother with."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Voice AI adoption in contact centers is moving from pilots to production, with large reported funding in voice AI.",
+    "source_url": "https://ringly.io/blog/voice-ai-statistics-2026"
+   },
+   {
+    "claim": "Voice AI is explicitly marketed for contact center cost reduction, and the labor cost is paid today.",
+    "source_url": "https://enthu.ai/blog/voice-ai-agents-contact-centers/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show paid enterprise deployments with measured containment and satisfaction.",
+   "actions": [
+    "Record call containment rate and human handoff rate for each live customer.",
+    "Obtain a written SOC 2 report or progress letter."
+   ],
+   "proof": "Two enterprise customers paying monthly with a stated cost per resolved call."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show software margins, not services revenue.",
+   "actions": [
+    "Make the AI builder usable by customer staff alone.",
+    "Price by usage or per seat of supervisor."
+   ],
+   "proof": "$30K or more monthly recurring revenue with gross margin above 60 percent."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Repeatable enterprise sales on legacy PBX estates.",
+   "actions": [
+    "Package the Cisco, Mitel and Avaya connectors as the wedge into on-premises customers.",
+    "Hire two enterprise account executives."
+   ],
+   "proof": "$1.5M annual recurring revenue across ten or more accounts."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Scale beyond custom implementation.",
+   "actions": [
+    "Build self serve onboarding for mid market.",
+    "Add channel partners such as telecom resellers."
+   ],
+   "proof": "$10M annual recurring revenue with net retention above 115 percent."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Be a platform that contact centers standardize on.",
+   "actions": [
+    "Expand to quality management and analytics.",
+    "Add international carrier coverage."
+   ],
+   "proof": "$40M or more annual recurring revenue."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Human in the loop supervision answers the main enterprise fear of unsupervised AI",
+   "evidence": "The product lets supervisors watch, take over and hand back, which regulated buyers ask for.",
+   "source_url": "https://enthu.ai/blog/voice-ai-agents-contact-centers/"
+  },
+  {
+   "point": "Legacy PBX connectors reach buyers cloud only rivals skip",
+   "evidence": "Native Cisco, Mitel, Avaya and SIP trunk support lets enterprises adopt without cloud migration, per the company description.",
+   "source_url": "https://callab.ai"
+  }
+ ],
+ "brand": {
+  "name": "Callab AI",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Callab AI\" --era 2022+: two words, name_plus_descriptor, descriptor word ai, 8 characters, 3 syllables",
+  "strengths": [
+   "Hints at calls and a lab",
+   "Short and easy to say"
+  ],
+  "weaknesses": [
+   "The AI descriptor suffix is generic and dates quickly",
+   "Call lab sounds like an experiment rather than an enterprise platform"
+  ],
+  "rationale": "Name plus AI descriptor names are common among 2024 and later voice companies and carry no brand memory; compared with one word brands like Vapi or Retell it is weaker but a name rarely decides outcomes, so effect is neutral."
+ },
+ "narrative": {
+  "headline": "A well specified enterprise voice platform in a crowded field; a seed inside 7 months is plausible but below even odds, and Series A in the window is very unlikely.",
+  "general_summary": "Callab AI is an enterprise contact center platform that pairs AI agents with live human supervision and its own telephony stack. Buyers already spend on contact center labor and voice AI funding is large, but Vapi, Retell and incumbents compete and the delivery model looks services heavy. For a 7 month window the seed odds are set to about 38 percent, derived from a 64 percent ever anchor for AI companies and the 6 month median time to seed; the odds do not rank this company against others. Series A inside the window is only about 4 percent. The largest risks are margins from custom implementation, voice platform crowding and long enterprise sales cycles. The path that would change the numbers is a named reference customer and software margins."
+ },
+ "assumptions": [
+  "Only the as of date input was used: description, team of 7, San Francisco, batch Spring 2026.",
+  "Window is 7 months from 2026-04-06 to 2026-11-17; seed means an outside round above about $1M, not the YC deal.",
+  "Customer sector and SOC 2 claims are unverified.",
+  "Comparable records dated after 2026-04-06 were ignored.",
+  "Funding data for 2022+ analogs is partial and right censored."
+ ],
+ "sources": [
+  "https://vapi.ai",
+  "https://www.retellai.com",
+  "https://www.observe.ai",
+  "https://www.five9.com",
+  "https://callab.ai",
+  "https://ringly.io/blog/voice-ai-statistics-2026",
+  "https://enthu.ai/blog/voice-ai-agents-contact-centers/"
+ ]
 }
