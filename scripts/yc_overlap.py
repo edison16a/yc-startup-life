@@ -8,7 +8,7 @@ matches if ANY keyword hits; with --all it needs every keyword. Uses data/compan
 """
 import sys as _sys, pathlib as _pl; _sys.path.insert(0, str(_pl.Path(__file__).resolve().parent))  # work under python3 -I
 import argparse, csv
-from common import DATA
+from common import DATA, test_blocklist
 
 
 def main():
@@ -16,8 +16,9 @@ def main():
     ap.add_argument("keywords", nargs="+")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--limit", type=int, default=30)
-    ap.add_argument("--exclude", nargs="*", default=[], help="slugs to leave out (use for backtests so a company does not see its own outcome)")
+    ap.add_argument("--exclude", nargs="*", action="extend", default=[], help="slugs to leave out (use for backtests so a company does not see its own outcome)")
     a = ap.parse_args()
+    a.exclude = set(a.exclude) | test_blocklist()
     path = DATA / "companies_enriched.csv"
     if not path.exists():
         path = DATA / "companies.csv"

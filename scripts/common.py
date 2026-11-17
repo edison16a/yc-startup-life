@@ -156,3 +156,10 @@ def derive(e, row):
         oc = "alive"
     return {"rounds": rounds, "highest_post_yc_rank": highest, "first_months_by_rank": first,
             "exit_months": exit_months, "outcome_class": oc, "batch_start": bs}
+
+
+def test_blocklist():
+    """Slugs listed in data/test_blocklist.txt (one per line). Present only while a blind test runs, so that
+    comps.py and yc_overlap.py never show those companies, however --exclude is written."""
+    p = DATA / "test_blocklist.txt"
+    return {l.strip() for l in p.read_text().splitlines() if l.strip()} if p.exists() else set()

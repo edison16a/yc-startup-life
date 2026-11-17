@@ -11,7 +11,7 @@ read the analog records (data/enrichment/<slug>.json) before relying on them.
 """
 import sys as _sys, pathlib as _pl; _sys.path.insert(0, str(_pl.Path(__file__).resolve().parent))  # work under python3 -I
 import argparse, collections, json, math, re
-from common import load_companies, load_enrichment, derive, RANK_NAME
+from common import load_companies, load_enrichment, derive, RANK_NAME, test_blocklist
 
 STOP = set("the and for with that this from are was our their they them its has have had will can all any into more most "
            "than then over out who how what when where which your you not but one two use used using new help helps make "
@@ -35,8 +35,9 @@ def main():
     ap.add_argument("--k", type=int, default=10)
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--json", action="store_true")
-    ap.add_argument("--exclude", nargs="*", default=[], help="slugs to leave out (use for backtests so a company is not its own analog)")
+    ap.add_argument("--exclude", nargs="*", action="extend", default=[], help="slugs to leave out (use for backtests so a company is not its own analog)")
     a = ap.parse_args()
+    a.exclude = set(a.exclude) | test_blocklist()
     companies = load_companies()
     enr = load_enrichment(min_depth=1)
     pool = [s for s in companies if s not in a.exclude and (a.all or (s in enr and enr[s]["depth"] == 2))]
