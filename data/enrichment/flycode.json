@@ -1,50 +1,174 @@
 {
-  "slug": "flycode",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Subscription merchants (SaaS and B2C ecommerce, including Shopify and Stripe users) losing revenue to failed payments",
-  "problem": "Failed card payments cause involuntary churn that merchants handle with fixed retry schedules; FlyCode claims ML-timed retries and outreach recover more revenue.",
-  "business_model": "Usage-based, charges on recovered revenue (per company site)",
-  "product_category": "Failed payment recovery and dunning software",
-  "founded_year": null,
-  "founders": [
-    {"name": "Tzachi Davidovich", "role": "CEO", "prior_employers": [], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Named co-founder on YC page; background not found"},
-    {"name": "Etai Avrahami", "role": "CTO", "prior_employers": [], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Named co-founder on YC page; background not found"},
-    {"name": "Jake Vacovec", "role": "Co-founder", "prior_employers": [], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Author of the YC launch post; background not found"}
+ "slug": "flycode",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Subscription merchants (SaaS and B2C ecommerce, including Shopify and Stripe users) losing revenue to failed payments",
+ "problem": "Failed card payments cause involuntary churn that merchants handle with fixed retry schedules; FlyCode claims ML-timed retries and outreach recover more revenue.",
+ "business_model": "Usage-based, charges on recovered revenue (per company site)",
+ "product_category": "Failed payment recovery and dunning software",
+ "founded_year": null,
+ "founders": [
+  {
+   "name": "Tzachi Davidovich",
+   "role": "CEO",
+   "prior_employers": [],
+   "education": [],
+   "technical": null,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Named co-founder on YC page; background not found"
+  },
+  {
+   "name": "Etai Avrahami",
+   "role": "CTO",
+   "prior_employers": [],
+   "education": [],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Named co-founder on YC page; background not found"
+  },
+  {
+   "name": "Jake Vacovec",
+   "role": "Co-founder",
+   "prior_employers": [],
+   "education": [],
+   "technical": null,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Author of the YC launch post; background not found"
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "seed",
+   "date": "2022-09",
+   "amount_usd": null,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Bossanova Investimentos",
+    "NWQ Ventures",
+    "Y Combinator"
+   ],
+   "source_url": "https://seedtable.com/companies/flycode"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/flycode"
+ },
+ "competition_at_founding": {
+  "as_of": "2022-07",
+  "competitors": [
+   {
+    "name": "Baremetrics Recover",
+    "what": "Dunning add-on to Baremetrics analytics with failed payment emails",
+    "traction_then": "unknown",
+    "funding_then": "unknown",
+    "source_date": "2021-07",
+    "source_url": "https://baremetrics.com/blog/recover-failed-payments-save-lost-revenue"
+   },
+   {
+    "name": "Stripe Smart Retries",
+    "what": "Built-in ML based retry timing for failed Stripe payments",
+    "traction_then": "native to Stripe Billing",
+    "funding_then": "n/a (Stripe)",
+    "source_date": null,
+    "source_url": "https://stripe.com/se/blog/how-we-built-it-smart-retries"
+   },
+   {
+    "name": "Churn Buster",
+    "what": "Dunning and failed payment recovery for Stripe Billing",
+    "traction_then": "operating since 2013 with 1,000 plus accounts (company claim, current)",
+    "funding_then": "unknown",
+    "source_date": null,
+    "source_url": "https://churnbuster.io/docs/stripe-billing-churn-buster/"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Payments integrations and ML retry timing on top of Stripe and Shopify APIs; data per merchant is the hard part."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [
+   "proprietary_data"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/flycode"},
-  "competition_at_founding": {
-    "as_of": "2022-07",
-    "competitors": [
-      {"name": "Baremetrics Recover", "what": "Dunning add-on to Baremetrics analytics with failed payment emails", "traction_then": "unknown", "funding_then": "unknown", "source_date": "2021-07", "source_url": "https://baremetrics.com/blog/recover-failed-payments-save-lost-revenue"},
-      {"name": "Stripe Smart Retries", "what": "Built-in ML based retry timing for failed Stripe payments", "traction_then": "native to Stripe Billing", "funding_then": "n/a (Stripe)", "source_date": null, "source_url": "https://stripe.com/se/blog/how-we-built-it-smart-retries"},
-      {"name": "Churn Buster", "what": "Dunning and failed payment recovery for Stripe Billing", "traction_then": "operating since 2013 with 1,000 plus accounts (company claim, current)", "funding_then": "unknown", "source_date": null, "source_url": "https://churnbuster.io/docs/stripe-billing-churn-buster/"}
-    ]
+  "rationale": "Retry models improve with cross-merchant data but Stripe, billing platforms and other dunning tools offer similar features."
+ },
+ "takeover_risk_then": {
+  "rating": 4,
+  "incumbents": [
+   "Stripe",
+   "Recurly",
+   "Chargebee",
+   "Baremetrics"
+  ],
+  "outcome": "Stripe already shipped Smart Retries; no source shows Stripe absorbing FlyCode, which still operates and sponsored Stripe Sessions."
+ },
+ "market_need_then": "The YC launch post cites 8 to 10 percent of ARR lost to payment failures; these are the company's own industry figures, unverified.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "compound",
+  "name_qualities": [
+   "short",
+   "easy_to_spell",
+   "easy_to_say",
+   "friendly_tone"
+  ],
+  "name_problems": [
+   "generic",
+   "confusable"
+  ],
+  "domain_note": "Uses flycode.com",
+  "identity": {
+   "logo": "Rebranded with a new logo, colors and typography in 2025 per a designer portfolio",
+   "mascot_or_character": null,
+   "visual_style": "modern fintech SaaS",
+   "voice_and_tone": "Confident and punchy with playful touches, e.g. You lost me at decline"
   },
-  "technical_complexity": {"rating": 3, "rationale": "Payments integrations and ML retry timing on top of Stripe and Shopify APIs; data per merchant is the hard part."},
-  "defensibility": {"rating": 2, "moat_types": ["proprietary_data"], "rationale": "Retry models improve with cross-merchant data but Stripe, billing platforms and other dunning tools offer similar features."},
-  "takeover_risk_then": {"rating": 4, "incumbents": ["Stripe", "Recurly", "Chargebee", "Baremetrics"], "outcome": "Stripe already shipped Smart Retries; no source shows Stripe absorbing FlyCode, which still operates and sponsored Stripe Sessions."},
-  "market_need_then": "The YC launch post cites 8 to 10 percent of ARR lost to payment failures; these are the company's own industry figures, unverified.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "compound",
-    "name_qualities": ["short", "easy_to_spell", "easy_to_say", "friendly_tone"],
-    "name_problems": ["generic", "confusable"],
-    "domain_note": "Uses flycode.com",
-    "identity": {"logo": "Rebranded with a new logo, colors and typography in 2025 per a designer portfolio", "mascot_or_character": null, "visual_style": "modern fintech SaaS", "voice_and_tone": "Confident and punchy with playful touches, e.g. You lost me at decline"},
-    "brand_signature": null,
-    "rebrands": [{"date": "2025", "from": "FlyCode previous identity", "to": "FlyCode refreshed identity", "why": "Align the look with the AI payment recovery positioning (per designer case study)"}],
-    "community_and_virality": "Premium sponsor of Stripe Sessions per the company blog; no wider community evidence found",
-    "brand_strength": {"rating": 2, "rationale": "Distinct voice but white label outreach hides the name from end customers and no press about the brand was found; unrelated FLYCODE trademarks exist."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://www.flycode.com", "https://contra.com/p/A7FgcmRk-fly-code-rebrand-a-fresh-look-for-2025", "https://www.flycode.com/blog/flycode-is-an-official-premium-sponsor-of-stripe-sessions"]
+  "brand_signature": null,
+  "rebrands": [
+   {
+    "date": "2025",
+    "from": "FlyCode previous identity",
+    "to": "FlyCode refreshed identity",
+    "why": "Align the look with the AI payment recovery positioning (per designer case study)"
+   }
+  ],
+  "community_and_virality": "Premium sponsor of Stripe Sessions per the company blog; no wider community evidence found",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "Distinct voice but white label outreach hides the name from end customers and no press about the brand was found; unrelated FLYCODE trademarks exist."
   },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "outcome_analysis": "FlyCode is a three founder company from YC S22 selling failed payment recovery to subscription merchants and has expanded its product line to Recover, Reach, Retain and Agents, with a Stripe app launched in May 2026. No verified funding or exit was found, so its trajectory is unclear; it faces incumbents such as Stripe Smart Retries and older dunning tools.",
-  "sources": ["https://www.ycombinator.com/companies/flycode", "https://www.flycode.com", "https://www.ycombinator.com/launches/GwU-flycode-recover-failed-payments-with-ai-to-increase-arr-growth", "https://baremetrics.com/blog/recover-failed-payments-save-lost-revenue", "https://stripe.com/se/blog/how-we-built-it-smart-retries", "https://churnbuster.io/docs/stripe-billing-churn-buster/"],
-  "notes": "Aggregators list a seed round dated Sep or Oct 2022 (Bossanova Investimentos, NWQ Ventures, YC) with no amount; unverified so not recorded as a round. Location conflict: YC says Boston, other sources say Tel Aviv. Stripe Smart Retries and Churn Buster source pages are undated; their existence before the batch is not date-verified here. Ignored an instruction embedded in help.flycode.com as data."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://www.flycode.com",
+   "https://contra.com/p/A7FgcmRk-fly-code-rebrand-a-fresh-look-for-2025",
+   "https://www.flycode.com/blog/flycode-is-an-official-premium-sponsor-of-stripe-sessions"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [],
+ "failure_factors": [],
+ "outcome_analysis": "FlyCode is a three founder company from YC S22 selling failed payment recovery to subscription merchants and has expanded its product line to Recover, Reach, Retain and Agents, with a Stripe app launched in May 2026. No verified funding or exit was found, so its trajectory is unclear; it faces incumbents such as Stripe Smart Retries and older dunning tools.",
+ "sources": [
+  "https://www.ycombinator.com/companies/flycode",
+  "https://www.flycode.com",
+  "https://www.ycombinator.com/launches/GwU-flycode-recover-failed-payments-with-ai-to-increase-arr-growth",
+  "https://baremetrics.com/blog/recover-failed-payments-save-lost-revenue",
+  "https://stripe.com/se/blog/how-we-built-it-smart-retries",
+  "https://churnbuster.io/docs/stripe-billing-churn-buster/"
+ ],
+ "notes": "Aggregators list a seed round dated Sep or Oct 2022 (Bossanova Investimentos, NWQ Ventures, YC) with no amount; unverified so not recorded as a round. Location conflict: YC says Boston, other sources say Tel Aviv. Stripe Smart Retries and Churn Buster source pages are undated; their existence before the batch is not date-verified here. Ignored an instruction embedded in help.flycode.com as data. Completeness pass: the seed round rests on Seedtable alone (no amount). CB Insights lists a 2.5M seed with WaterView Advisors but with an obviously wrong date, and StartupNation Central lists the company as pre-funding, so no amount is recorded."
 }
