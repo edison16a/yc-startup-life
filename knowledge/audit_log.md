@@ -316,3 +316,18 @@ Two independent auditors, 8 records each: vango, skylights, direct-match, anasen
 Batch A: 40 fields, strict 16, middle 9, lenient 2. Batch B: 45 fields, strict 13, middle 5, lenient 0.
 
 Totals: 85 fields checked. Strict: 29 wrong (34.1 percent). Middle: 14 wrong (16.5 percent). Lenient: 2 wrong (2.4 percent). The limit is 10 percent, so this audit is above it. The sample leaned toward small, inactive companies from 2015 to 2019 with thin public coverage, where co-founders and early rounds are hardest to find. Defects: missed co-founders (skylights, direct-match, elpha), missed or incomplete early rounds (frey, poppy, medinas-health, cambridge-cancer-genomics, torch, elpha), a merger left out of the exit (torch), and two clearly wrong facts (skylights founded_year contradicts YC, direct-match lists a sole founder who was a former founder). Action: correct the flagged records, then run the completeness pass described for the final audit. AUDIT RESULT is not PASS.
+
+## Final audit (Stage 5)
+
+A stratified random sample of 36 depth 2 records from batches 2005 to 2026, spread across eras and across shutdown, acquired and other outcomes, was audited by five independent auditors. They were told to open each company's YC page and own pages and the cited articles, and to use press totals and database round counts to find missing rounds. Records: forge-automation, osseus, evo-do, snapjoy, stripe, shinkei-systems, juno-college-of-technology, graffitigeo, ploomber, stackq, vibe-kanban, wundrbar, hello-chair, tipjoy, pagedraw, looklive, deepsource, assorted-bits, curious-fictions, deluux, flightcar, roomblocker, akudo, snapdocs, picwing, drip-capital, 42, pierre, smyte, fastpad, partnered-2, all-screen, localyze, vidpresso, twentytwo, torch.
+
+| Auditor batch | Fields checked | Strict wrong | Middle wrong | Lenient wrong |
+|---|---|---|---|---|
+| 1 | 42 | 16 | 4 | 3 |
+| 2 | 41 | 24 | 6 | 0 |
+| 3 | 41 | 26 | 5 | 2 |
+| 4 | 47 | 21 | 7 | 3 |
+| 5 | 53 | 28 | 3 | 0 |
+| Total | 224 | 115 (51.3 percent) | 25 (11.2 percent) | 8 (3.6 percent) |
+
+The limit is 10 percent. The middle count is 11.2 percent, so the final audit does not pass. It agrees with audits 13 to 17, which ran from 10.4 to 16.5 percent. Nearly all middle defects are missing rounds: rounds that a press release, a filing or several databases report but the record leaves in notes (stripe, shinkei-systems, snapdocs, drip-capital, flightcar, pierre, vibe-kanban, deepsource), plus missing co-founders (drip-capital, flightcar), a wrong round stage or investor list (flightcar), and weak competitor sources. Only 8 fields were clearly wrong facts. Records written before prompt lesson 10 (the first 35 waves) are the main source, because they left database-only rounds in notes instead of rounds. The audited records are being corrected, but a clean re-audit needs the same completeness pass over the older records. AUDIT RESULT is not PASS.
