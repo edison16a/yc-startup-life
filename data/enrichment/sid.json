@@ -1,116 +1,50 @@
 {
- "slug": "sid",
- "depth": 1,
- "confidence": "low",
- "target_customer": "AI application developers and companies that need retrieval over their own data sources, buying through an API, AWS Bedrock or self-hosting",
- "problem": "AI systems need accurate context from many data sources, and standard retrieval is slow and misses relevant information.",
- "business_model": "Usage-based API and licensed model deployment (waitlist access per the site)",
- "product_category": "AI research lab: agentic retrieval models",
- "founded_year": 2023,
- "founders": [
-  {
-   "name": "Maximilian-David Rumpf",
-   "role": "CEO",
-   "prior_employers": [
-    "ETH Zurich (researcher, AI accelerator design)"
-   ],
-   "education": [],
-   "technical": true,
-   "previous_startups": [],
-   "age_at_founding": null,
-   "age_source": null,
-   "background_notes": "YC page says he won a German national excellence scholarship; education not stated."
+  "slug": "sid",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Developers and companies building AI apps and agents that need retrieval over their own data (initially SID connected AI apps to customer data; now sells retrieval models)",
+  "problem": "AI systems need the right context from scattered data sources. SID first offered connectors to data such as email, Notion and Google Drive, then moved to training its own retrieval and agentic search models.",
+  "business_model": "Usage-based API and model access (SID-1 via waitlist)",
+  "product_category": "AI retrieval and agentic search models",
+  "founded_year": 2022,
+  "founders": [
+    {"name": "Maximilian-David Rumpf", "role": "CEO", "prior_employers": ["ETH Zurich (researcher)"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he researched AI accelerator design at ETH Zurich and received a German national excellence scholarship."},
+    {"name": "Lotte Seifert", "role": "COO", "prior_employers": [], "education": ["ETH Zurich, computer science", "University of St. Gallen, economics"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Per YC page; her title as COO comes from Crunchbase via search and is not on the YC page."}
+  ],
+  "funding_data_coverage": "none_found",
+  "rounds": [],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.sid.ai"},
+  "competition_at_founding": {
+    "as_of": "2023-07",
+    "competitors": [
+      {"name": "LlamaIndex", "what": "Open source data framework with connectors and retrieval for LLM apps", "traction_then": "Announced seed funding May 31, 2023", "funding_then": "$8.5M seed led by Greylock", "source_date": "2023-05", "source_url": "https://www.businesswire.com/news/home/20230531005251/en"},
+      {"name": "Dust", "what": "Platform to use large language models on internal company data", "traction_then": "Covered by TechCrunch June 27, 2023", "funding_then": "About 5M euro seed reported (figures vary by source)", "source_date": "2023-06", "source_url": "https://techcrunch.com/2023/06/27/dust-use-large-language-models-on-internal-data-to-improve-team-productivity"}
+    ]
   },
-  {
-   "name": "Lotte Seifert",
-   "role": "Co-founder",
-   "prior_employers": [],
-   "education": [
-    "ETH Zurich, degree in computer science",
-    "University of St. Gallen, degree in economics"
-   ],
-   "technical": true,
-   "previous_startups": [],
-   "age_at_founding": null,
-   "age_source": null,
-   "background_notes": null
-  }
- ],
- "funding_data_coverage": "none_found",
- "rounds": [],
- "exit": {
-  "type": "none",
-  "date": null,
-  "amount_usd": null,
-  "acquirer": null,
-  "reason": null,
-  "source_url": "https://www.sid.ai"
- },
- "competition_at_founding": {
-  "as_of": "2023-06",
-  "competitors": []
- },
- "technical_complexity": {
-  "rating": 4,
-  "rationale": "Training models that retrieve and reason over arbitrary data sources, later an agentic search model, is research heavy work for a small team, with compute and data needs well beyond standard application engineering."
- },
- "defensibility": {
-  "rating": 3,
-  "moat_types": [
-   "technical_moat"
-  ],
-  "rationale": "A trained model with benchmarked recall and speed is harder to copy than a wrapper, but foundation model labs and search infrastructure vendors can ship competing retrieval models."
- },
- "takeover_risk_then": {
-  "rating": 4,
-  "incumbents": [
-   "OpenAI",
-   "Google",
-   "Microsoft"
-  ],
-  "outcome": "Not established from sources opened; no acquisition found."
- },
- "market_need_then": "In 2023 the rise of LLM applications created demand for connecting models to private data; sources opened give no spend figures.",
- "branding": {
-  "name_origin": null,
-  "name_type": "other",
-  "name_qualities": [
-   "short",
-   "easy_to_say"
-  ],
-  "name_problems": [
-   "generic",
-   "confusable"
-  ],
-  "domain_note": "Uses sid.ai.",
-  "identity": {
-   "logo": "Brand colors listed on Brandfetch are blue and gold tones; no logo description from the company.",
-   "mascot_or_character": null,
-   "visual_style": "unknown",
-   "voice_and_tone": "Terse research lab voice with benchmark claims such as 1.9x better recall and 24x faster."
+  "technical_complexity": {"rating": 4, "rationale": "Training retrieval and reasoning models that beat frontier models on search tasks is research grade for a seven person team; the early connector product was easier."},
+  "defensibility": {"rating": 3, "moat_types": ["technical_moat"], "rationale": "A trained model can be a moat if it stays ahead, but the field moves quickly and larger labs and open source frameworks compete."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["OpenAI", "Glean", "Microsoft", "LlamaIndex"], "outcome": "Well funded players shipped retrieval and connector features. SID responded by moving to its own models; no acquisition was found as of 2026."},
+  "market_need_then": "In mid 2023 companies were rushing to connect LLM apps to private data, shown by seed rounds for LlamaIndex (May 2023) and Dust (June 2023). SID's own pitch says context needs retrieval.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "acronym",
+    "name_qualities": ["short", "easy_to_say"],
+    "name_problems": ["generic", "confusable"],
+    "domain_note": "Uses sid.ai.",
+    "identity": {"logo": "A simple S mark per a directory listing", "mascot_or_character": null, "visual_style": null, "voice_and_tone": "Technical research lab tone"},
+    "brand_signature": null,
+    "rebrands": [],
+    "community_and_virality": "A founder podcast titled how we got 12,000 developers building AI; GitHub organization with a personal data infrastructure repository. No brand press found.",
+    "brand_strength": {"rating": 2, "rationale": "Short name shared by many unrelated Sid companies; awareness comes from product and research claims, not from the brand."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://player.fm/series/dr-mirmans-accelerometer/how-we-got-12000-devs-building-ai-max-rumpf-ceo-sid-yc"]
   },
-  "brand_signature": null,
-  "rebrands": [],
-  "community_and_virality": null,
-  "brand_strength": {
-   "rating": 2,
-   "rationale": "Short name but a common name, and nothing was found about the brand itself. Research credibility rather than brand drives attention."
-  },
-  "brand_effect_on_outcome": "unclear",
-  "sources": [
-   "https://www.sid.ai",
-   "https://brandfetch.com/sid.ai"
-  ]
- },
- "pivots": [],
- "success_factors": [],
- "failure_factors": [],
- "outcome_analysis": "SID is active and positions itself as an AI research lab with its first agentic retrieval model, SID-1, on a waitlist. Its site lists Y Combinator, Canaan, Rebel and General Catalyst as backers, but no round sizes or dates were found, and no acquisition or shutdown was reported. There is not enough public evidence to judge traction.",
- "sources": [
-  "https://www.ycombinator.com/companies/sid",
-  "https://www.sid.ai",
-  "https://www.vcbacked.co/company/sid",
-  "https://seedtable.com/startups/sid-ai"
- ],
- "notes": "Funding seen only on aggregators (about 500K pre-seed or seed, dated Jan or May 2023, YC); the company site names Canaan, Rebel and General Catalyst as backers without amounts. Nothing recorded as a round. Many 'seed round' search hits were about ZeroEntropy, a different company. No dated competitor sources near the batch found. The company site mentions teams in San Francisco and Zurich. Team size is 7 per YC. Downgraded to depth 1 by orchestrator: the researcher reported no separate funding cross-check search."
+  "pivots": [
+    {"date": null, "from": "Connectors to bring user and customer data into AI apps (July 2023 launch)", "to": "Training agentic search and retrieval models (SID-1)", "why": "Not stated in sources; the YC page now frames the work as training models to provide context."}
+  ],
+  "success_factors": ["technical_moat"],
+  "failure_factors": [],
+  "outcome_analysis": "SID started as a data connector layer for AI apps in mid 2023, then repositioned as an AI research lab training retrieval models, releasing SID-1 via waitlist with claims of better recall and speed than frontier models. The site lists Canaan, Rebel and General Catalyst as backers, but amounts and dates are not confirmed by a press release, so the funding trajectory is unknown. No exit, shutdown or layoffs were found.",
+  "sources": ["https://www.ycombinator.com/companies/sid", "https://www.sid.ai", "https://startupintros.com/news/2023-07-11-sid-sid-ai-connect-ai-apps-to-your-customer-s-data-in-an-afternoon", "https://www.businesswire.com/news/home/20230531005251/en", "https://techcrunch.com/2023/06/27/dust-use-large-language-models-on-internal-data-to-improve-team-productivity"],
+  "notes": "Funding unverified: the company site names Y Combinator, Canaan, Rebel and General Catalyst as backers without amounts; aggregators say about $500K seed or pre-seed in 2023 (VCBacked, Seedtable); a CB Insights $30K figure likely belongs to another company named Sid. Dust seed amount and lead differ between outlets. No YC launch post was found. The COO title for Lotte Seifert is from an aggregator."
 }
