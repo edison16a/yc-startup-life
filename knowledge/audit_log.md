@@ -276,3 +276,11 @@ Sample: 16 records drawn at random from the 330 most recently written (stipop, a
 | modernbanc | 4 | 2 | 0 | 0 | Aggregator seed. |
 
 Totals: 79 fields checked. Strict: 39 wrong (49.4 percent). Middle: 9 wrong (11.4 percent). Lenient: 0 wrong (0 percent). The limit is 10 percent. Middle fell from 17.3 percent (audit 11) to 11.4 percent, still above the limit. The two auditors differed sharply (middle 8 of 40 versus 1 of 39), which shows the count depends on which pages an auditor opens. Remaining middle defects are real: co-founders on the company's own page, seed investors and stage taken from a cited article, totals that imply a missed round. Action: correct the flagged records. The final audit will use at least 25 records and a middle-style count with the auditors told to open the company's own pages and cited articles. AUDIT RESULT is not PASS.
+
+## Audit 13 (records from waves 33 to 35)
+
+Two independent auditors, 8 records each: pronto, valo, gen1e-lifesciences, pulse-active-stations-network, medpiper-technologies-inc, upflow, rct-studio, supertokens, keynua, treinta, corvus-robotics, excepgen, embeddables, taali-inc, signadot, circumvent.
+
+Batch A: 55 fields, strict 13, middle 6, lenient 1. Batch B: 46 fields, strict 19, middle 7, lenient 2.
+
+Totals: 101 fields checked. Strict: 32 wrong (31.7 percent). Middle: 13 wrong (12.9 percent). Lenient: 3 wrong (3.0 percent). The limit is 10 percent. Middle rose slightly from 11.4 percent (audit 12). Defects are mostly incomplete round lists (YC investment and seed rounds known only from aggregators or cited totals), one cumulative amount counted twice (corvus-robotics), one missed co-founder (upflow), inferred investors (rct-studio) and competitors not dated to the founding (embeddables, medpiper). Action: correct the flagged records. AUDIT RESULT is not PASS.
