@@ -1,0 +1,53 @@
+{
+  "slug": "superserve",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Teams building coding agents, autonomous workers and eval or RL environments that need isolated per-agent machines",
+  "problem": "Agents need their own persistent, secure computer that starts fast and sleeps cheaply; conventional cloud is built for one app serving many users.",
+  "business_model": "Usage-based cloud sandbox/VM platform with open-source SDKs and free trial credit",
+  "product_category": "Agent sandbox and microVM infrastructure",
+  "founded_year": 2025,
+  "founders": [
+    {"name": "Pavitra Bhalla", "role": "Founder and CEO", "prior_employers": ["Dosu", "Long-Term Stock Exchange"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Staff engineer at Dosu; earlier founding engineer and director of engineering at LTSE (YC S17)."},
+    {"name": "Alejandro (surname not listed)", "role": "Co-founder", "prior_employers": ["Oracle"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Led the Kubernetes platform at Oracle per the YC page."},
+    {"name": "Amit (surname not listed)", "role": "Co-founder", "prior_employers": [], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Built the copy-on-write storage engine in the company's Firecracker fork per the YC page."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/superserve"},
+  "competition_at_founding": {
+    "as_of": "2026-01",
+    "competitors": [
+      {"name": "Fly.io Sprites", "what": "Persistent-filesystem sandbox VMs for agents", "traction_then": "unknown", "funding_then": "unknown", "source_date": "2026-01", "source_url": "https://www.softwareseni.com/e2b-daytona-modal-and-sprites-dev-choosing-the-right-ai-agent-sandbox-platform"},
+      {"name": "E2B", "what": "Firecracker microVM sandboxes for code execution", "traction_then": "unknown", "funding_then": "unknown", "source_date": "2026", "source_url": "https://blog.logrocket.com/comparing-ai-agent-sandbox-platforms-e2b-modal-daytona-and-more/"},
+      {"name": "Daytona", "what": "Persistent agent workspaces; pivoted to agent infrastructure in early 2025", "traction_then": "unknown", "funding_then": "unknown", "source_date": "2026", "source_url": "https://www.morphllm.com/comparisons/daytona-alternative"},
+      {"name": "Modal Sandboxes", "what": "gVisor container sandboxes with GPU support", "traction_then": "advertises 100k+ concurrent sandboxes", "funding_then": "unknown", "source_date": "2026", "source_url": "https://modal.com/resources/best-code-execution-sandboxes-tool-calling-ai-agents"}
+    ]
+  },
+  "technical_complexity": {"rating": 4, "rationale": "Requires a forked Firecracker with copy-on-write storage, sub-50ms starts and snapshot/fork of memory state, which is deep systems engineering for a three-person team."},
+  "defensibility": {"rating": 2, "moat_types": ["technical_moat"], "rationale": "Low-level performance work helps, but many funded rivals offer similar sandboxes and developers can switch SDKs easily."},
+  "takeover_risk_then": {"rating": 5, "incumbents": ["Modal", "Fly.io", "Cloudflare", "Vercel"], "outcome": "Multiple well-funded platforms already shipped agent sandboxes by 2026; no outcome yet for Superserve."},
+  "market_need_then": "Coding agents and RL training created demand for per-session machines; the company claims 100K+ machines weekly with customers including Lindy and Y Combinator (company claim, unverified).",
+  "branding": {
+    "name_origin": "Started as RayAI, built on Ray. After the Ray trademark was raised by the Linux Foundation, renamed Superserve; the team says the name describes the purpose of serving agents in production.",
+    "name_type": "compound",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say", "evocative"],
+    "name_problems": ["generic", "outgrown_by_pivot"],
+    "domain_note": "Uses superserve.ai; older RayAI-era site at a vercel legacy host.",
+    "identity": {"logo": "unclear", "mascot_or_character": null, "visual_style": "unclear", "voice_and_tone": "Direct, technical and concise; the site is explicitly written for AI agents as readers."},
+    "brand_signature": "A site written for AI agents as well as people",
+    "rebrands": [{"date": "2025-11", "from": "RayAI", "to": "Superserve", "why": "Ray trademark constraint, per the company's launch post"}],
+    "community_and_virality": "Open-source SDKs (Apache-2.0) and integrations with Agno and ComputeSDK docs; no memes or merch found.",
+    "brand_strength": {"rating": 2, "rationale": "Clear descriptive name but early, little press about the brand, and an unrelated dead trademark and similar names exist."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://superserve-legacy.vercel.app/blog/introducing-superserve/", "https://www.opencoreventures.com/blog/rayai-extends-ray-oss-to-orchestrate-multi-agent-systems"]
+  },
+  "pivots": [
+    {"date": "2026-02", "from": "Production hosting platform for agents on Ray with gVisor isolation", "to": "Per-agent microVMs with pause, resume and fork", "why": "The launch post notes agents need hard isolation Ray is not designed for."}
+  ],
+  "success_factors": ["timing_tailwind", "technical_moat"],
+  "failure_factors": [],
+  "outcome_analysis": "Superserve is a Fall 2026 YC company still early, so no outcome exists yet. It rode the surge in coding agents and RL environments and moved from a Ray hosting layer to its own Firecracker based microVMs. Technical depth is a strength, but competition from Modal, Fly.io, E2B and Daytona is dense and funded. Customer claims are unverified and no priced round was found.",
+  "sources": ["https://www.ycombinator.com/companies/superserve", "https://superserve.ai", "https://superserve-legacy.vercel.app/blog/introducing-superserve/", "https://app.dealroom.co/companies/superserve"],
+  "notes": "Dealroom alone lists a $125k seed (investors and date not visible), kept out of rounds as unverified. An outcome search returned no news. The competitor sources are 2026 comparison pages, treated as current to the batch."
+}
