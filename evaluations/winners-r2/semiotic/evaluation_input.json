@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Semiotic",
+    "one_liner": "Studio-Grade Design at Scale",
+    "description": "Semiotic builds AI design agents, starting with agents that produce landing pages for fast growing startups. Its pitch is that existing AI website builders made ugly sites easier, and it wants studio grade output. Team of 3 in San Francisco, Fall 2025 batch. Customers would be startup founders and growth teams who pay per project or by subscription. Forecast window runs 2025-10-06 to 2026-11-17, about 13.4 months.",
+    "as_of": "2025-10-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.015,
+    "p_high": 0.06,
+    "basis": "Start from the roughly 1 percent prior for a random applicant (band 0.6 to 2 percent, yc_acceptance.md). This company is already described as a Fall 2025 batch company, so the figure is shown for completeness. A three person team with a technical angle and a clear taste based wedge moves it up about 2 times, but the category is crowded with funded builders, which holds it near 3 percent.",
+    "why_it_fails": "YC could say the idea is a thin layer on top of general coding models: Lovable, v0 and Framer already generate pages, and design quality is a taste claim that is hard to show in an application without traction. With no stated revenue and a three person team, partners may see no sign the output beats incumbents, and a single wedge like landing pages looks easy to copy."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.5,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Window of 13.4 months: about 65 percent of eventual seeds arrive by then, times about 0.60 ever reaching a round above $1M gives an anchor near 0.39.",
+        "adjustment_reason": "The estimate is 1.28 times the window adjusted anchor, inside the 1.25 times rule plus rounding. Reasons for the small lift: AI design is a live funded theme and Seedtable shows website builders have raised over $900M in total, yet the odds do not rank this company against others in the batch. Not lifted for team size."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.28,
+          "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.37,
+          "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.27,
+          "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.08,
+          "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Semiotic most likely fails to raise above $1M in 13 months because investors in the space already hold Lovable, Framer or Vercel v0 and ask for proof that taste based output converts better. Analogs such as replo and makeasite stayed on small notes while bigger builders added AI features. If revenue stays at a few agency style projects, funds see a services business and offer only YC deal sized cheques."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.07,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series A given seed is 0.45 ever; in the same 13.4 month window only the fastest reach it (median 28 months from batch).",
+        "adjustment_reason": "Window adjusted: about 0.45 ever times about 0.15 within window gives 0.07. More than 2 times below the ever anchor because Series A needs a median of 28 months."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin Series A or extension on modest revenue, below the 2022 and later median of $13.5M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series A near the 2022 and later median of $13.5M to $14M with growth proof."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            250000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series A from a breakout AI product with fast revenue."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A inside 13 months would require recurring revenue and a visible quality moat against free tools. Replo took about 18 months from batch to a $4.2M seed and no Series A followed. Most landing page tools monetize in small tickets, so growth rarely reaches the roughly $1M to $2M ARR investors expect before a $10M to $20M round."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series B conditional 0.44. Beyond the window, an ever figure.",
+        "adjustment_reason": "Slightly below the 0.44 anchor: a design agent category has weak pricing power. Ever number, not window bound."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller Series B or a down round after slower growth."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            400000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $37M median for 2022 and later rounds."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B for a category leader with fast revenue growth and a top tier lead, as seen in the 75th percentile near $57M for 2022 and later rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Few companies in this wedge reach Series B because ticket sizes stay small and general model vendors keep improving. Typedream sold to beehiiv rather than raise again, which is the more common path for page builders. Even among companies that do get a Series A, only about 44 percent reach a B, and the narrow wedge makes the unconditional odds lower still."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series C 0.36 conditional, ever number.",
+        "adjustment_reason": "Below the 0.36 anchor because this wedge looks narrow."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000.0,
+            500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest Series C near the $42M to $45M median for 2022 and later."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000.0,
+            1500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a scaled company, in line with the 2022 and later Series C median of about $45M and the larger Series D plus rounds."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            4000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside growth round or a late stage mega round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Reaching a growth round needs a broader product than landing pages. Without expansion into full brand and product design the company sits in a category where Wix and Webflow have raised for years yet few new entrants have crossed Series C. The cohort rate is about 36 percent after a Series B, and this company would need a second product line to match it."
     }
   ],
   "outcomes": {
@@ -164,167 +224,231 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.68
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.2
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          10000000000.0
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end in shutdown or a small acquihire because design generation is being absorbed by general model vendors and builders with distribution. Typedream and Viddy show the typical exit is a small sale to a strategic buyer, so the over $1B tail is thin and requires owning a design platform, not a landing page tool."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "replo",
+      "relevance": "Page builder for ecommerce, same landing page job, S21.",
+      "outcome_summary": "Raised a $4.2M seed about 18 months after the batch, now repositioning to AI agents; no Series A."
+    },
+    {
+      "slug": "typedream",
+      "relevance": "AI website builder from YC.",
+      "outcome_summary": "Acquired by beehiiv in 2024 after growing on Product Hunt; seed stayed small."
+    },
+    {
+      "slug": "makeasite",
+      "relevance": "Prompt to website tool, S22.",
+      "outcome_summary": "Competition from Durable and bigger builders; pivoted to a running coach and no raise found."
+    },
+    {
+      "slug": "viddy",
+      "relevance": "Landing page generator for brands, W23.",
+      "outcome_summary": "Acquired by an undisclosed buyer with no recorded round."
+    },
+    {
+      "slug": "wabi",
+      "relevance": "Creator storefront builder that went quiet.",
+      "outcome_summary": "Inactive after a small note."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "General coding tools such as Lovable, v0 and Framer reach studio quality without a specialist",
+      "p": 0.5,
+      "evidence": "Framer already scored highest on design in a public test of 11 builders and Lovable and v0 ship weekly improvements, so a quality gap may close inside a year.",
       "analogs": [
-        "TODO-company-slug"
+        "makeasite",
+        "typedream"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Own taste data and a human in the loop review that models cannot copy, and sell outcomes not pages."
+    },
+    {
+      "risk": "Low ticket size and churn after the launch page is built",
+      "p": 0.4,
+      "evidence": "Startups need a landing page once or twice a year, so recurring revenue is hard to build around that job.",
+      "analogs": [
+        "replo",
+        "viddy"
+      ],
+      "mitigation": "Move to continuous design agents for ads, emails and product pages with monthly pricing."
+    },
+    {
+      "risk": "Services in disguise: output needs human designers so margins look like an agency",
+      "p": 0.3,
+      "evidence": "Studio grade quality for fast growing startups usually means manual review, which caps gross margin and slows scaling.",
+      "analogs": [
+        "wabi",
+        "viddy"
+      ],
+      "mitigation": "Track automation rate per project and show gross margin above 70 percent before raising."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Lovable",
+      "what": "AI app and site builder from prompts",
+      "traction": "Fast growing, reported hundreds of millions in ARR claims in 2025",
+      "source_url": "https://lovable.dev"
+    },
+    {
+      "name": "Framer",
+      "what": "Design led site builder with AI generation",
+      "traction": "Scored highest on design quality in a public comparison of 11 builders",
+      "source_url": "https://blog.icons8.com/articles/ai-website-builder-test/amp"
+    },
+    {
+      "name": "Vercel v0",
+      "what": "Prompt to UI and page generator",
+      "traction": "Large developer distribution via Vercel",
+      "source_url": "https://v0.dev"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Producing good looking pages with models is easy; producing consistently on brand, original design with evaluation loops is moderately hard, and a three person team can build the first version in months but cannot out train model vendors."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Lovable",
+      "Framer",
+      "Vercel v0",
+      "Webflow",
+      "Figma"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "A well resourced builder could add a design quality mode in about six months, and they hold distribution that a new agent lacks. Platform and model dependency adds risk."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "AI website builders market estimated at about $2.7B in 2025 growing about 20 percent yearly in a vendor cited forecast; design quality is a known complaint.",
+        "source_url": "https://www.925studios.co/blog/ai-website-builder-vs-design-agency-2026"
+      },
+      {
+        "claim": "Website builder startups had raised about $961M in total by early 2025.",
+        "source_url": "https://seedtable.com/best-website-builder-startups"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show that customers choose your pages over general builders",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Ship 20 paid landing pages for named startups",
+        "Run a blind preference test against Lovable and v0 output"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Paid projects and a preference win rate above 60 percent"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Recurring revenue and a quality moat",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Move from one off pages to monthly design agent plans",
+        "Publish a case with conversion lift"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$30K or more monthly revenue with repeat customers"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Expand beyond landing pages",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add ads and email design agents",
+        "Sell to growth teams at companies with 50 or more staff"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M ARR with net revenue retention above 100 percent"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Become a design platform",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch product UI and brand system agents",
+        "Build enterprise features"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$10M ARR and gross margin above 70 percent"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category leadership",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Land design departments",
+        "Expand internationally"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$40M ARR and multi product attach"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Taste based positioning is distinct from generic builders",
+      "evidence": "The pitch targets the known quality complaint about AI built sites, which public tests and design reviews confirm.",
+      "source_url": "https://www.startuphub.ai/ai-news/ai-video/2025/design-in-the-ai-era-beyond-the-purple-gradient"
+    },
+    {
+      "point": "Fast growing startups are a reachable buyer set",
+      "evidence": "Landing pages are a clear paid job for funded founders and YC peers, with short sales cycles.",
+      "source_url": "https://seedtable.com/best-website-builder-startups"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Semiotic",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Semiotic\" --era 2022+ : invented_or_proper, 8 letters, 3 syllables, alive 93 percent in cohort",
     "strengths": [
-      "TODO"
+      "Signals meaning and design",
+      "Easy to pronounce"
     ],
     "weaknesses": [
-      "TODO"
+      "Abstract word with academic feel"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A real word tied to signs and design that suits a design product, similar in feel to YC names like Figma style brands, but nothing about it drives growth; the cohort figures show no lift or penalty.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A taste led AI landing page agent in the most crowded builder category, with a modest chance of a seed above $1M in the first 13 months.",
+    "general_summary": "Semiotic sells design agents for landing pages to fast growing startups, with three people and one wedge. The need is real since AI built sites often look generic, and builders have raised large sums. But Lovable, Framer and v0 sit on the same demand with far more money and distribution, and landing pages are a one off job. The window is 13.4 months, so only a fast seed counts. The seed number follows the cohort anchor for that window with a small lift, and the odds do not rank this company against others."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file was used; no revenue, customer or investor data is known.",
+    "Seed means an outside round above about $1M closing between 2025-10-06 and 2026-11-17.",
+    "Series A given seed is for the same window; Series B and C are ever figures.",
+    "Coverage: 662 researched companies, funding data partial, so ranges are used."
   ],
   "sources": [
-    "https://"
+    "https://seedtable.com/best-website-builder-startups",
+    "https://blog.icons8.com/articles/ai-website-builder-test/amp",
+    "https://www.925studios.co/blog/ai-website-builder-vs-design-agency-2026",
+    "https://www.startuphub.ai/ai-news/ai-video/2025/design-in-the-ai-era-beyond-the-purple-gradient"
   ]
 }

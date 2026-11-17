@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Verne Robotics",
+    "one_liner": "AI models that teach robots new skills in hours",
+    "description": "Verne builds general purpose physical AI: models that teach robots new skills quickly, and deploys robots to expand the productive capacity of the physical world. Buyers would be manufacturers and operators that deploy robots. Team of 8 in Sacramento, Summer 2025 batch.",
+    "as_of": "2025-07-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.008,
+    "p_high": 0.05,
+    "basis": "Already in the batch, so this is reported for completeness only. Start from the roughly 1 percent prior for a random applicant in references/yc_acceptance.md (band 0.6 to 2 percent), then adjust: physical AI fits current YC interest and lifts it about 1.5x, a team of 8 is neutral, and no stated pedigree, traction or deployments takes some back.",
+    "why_it_fails": "YC would most plausibly say no because general purpose robot models are dominated by lab teams with research pedigrees and huge funding, and the input gives no demo, customer or founder background that shows Verne can beat them with eight people. The acceptance estimate is a prior for a random applicant and does not rank this company, and since it is already in the batch it matters only as context for the ladder."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.35,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.55,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry Industrials: seed 51% / 55% / 59%, cond 55% (n=85). Timing: months_to_seed p25 4, p50 10, p75 24 (n=47).",
+        "adjustment_reason": "The anchor of 0.55 is the ever reached figure. The window is 16 months, which covers roughly 64 percent of Industrials seed raises by timing, giving about 0.35. Physical AI funding was very hot in 2025, but I do not lift for the theme or a team of 8, per the winners test rule, and this number does not rank Verne against other companies."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            18000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small post YC round of $1M to $3M from angels and micro funds, the YC deal alone (about $500K) is excluded by the seed definition. Physical AI labs can be bid up, so the upper bands stay populated, though a Sacramento team with no stated lab pedigree may sit lower."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            32000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal and reads low, so this band carries the most weight."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Larger institutional seed where press covered 2026 raises had a median of $6.0M (quartiles $4.3M and $10M, n=77, press leans to big rounds); needs live revenue or a standout team story."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside seed above $12M, seen in 2025 AI categories when several funds bid for a team with early enterprise traction."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Investors in robot foundation models back teams with research pedigrees and large data pipelines, and Physical Intelligence raised $400M in 2024, so a team of 8 in Sacramento with no stated models or deployments has to prove it beats well funded labs. Robotics seeds also need hardware spend before revenue. YC peers Innate (F24) and Proception (W25) took small seeds and no larger round is visible, which shows how selective the field is."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.08,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry Industrials: series_a cond 30% (n=47), ever 16% known-only. Timing: months_to_series_a p25 26, median 35 (n=14).",
+        "adjustment_reason": "The anchor is the ever reached figure. A 16 month window is short against a median of 35 months to Series A for Industrials, so only a small share of eventual raisers get there in time, giving 0.30 times about 0.3, which is near 0.08."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin or small Series A, common for vertical software with early but modest revenue. A robotics lab that wins a data or deployment deal can jump to a large Series A, which is why the upper bands stay populated."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band around the 2022 and later Series A median of $15M (p25 $11M, p75 $21M)."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            220000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Strong growth round led by a top tier fund."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside where the category is hot and revenue compounds fast."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A for a robotics company needs working deployments with a paying manufacturer, not a demo, and hardware integration is slow. Inside 16 months Verne would need to turn a seed into repeat deployments, and robotics companies in the data such as Perceptive Technologies (W20) needed years of hardware and regulatory work before a Series A. Better funded labs hire the same researchers."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.02,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.07,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry Industrials: series_b cond 7% (n=14), ever 1% known-only; small sample.",
+        "adjustment_reason": "The anchor is the ever reached rate given Series A. A Series B inside a window of 16 months is rare because months_to_series_b has a median of 32 to 47 months from the batch start in time_to_milestones.csv, so only a breakout gets there."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.1,
+          "rationale": "Thin Series B or bridge round of $10M to $20M, typical when growth is real but slower than the Series A story promised and investors want to see more revenue."
         },
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band; the 2022 and later Series B median is $40M."
+        },
+        {
+          "raise_usd": [
+            40000000,
+            70000000
+          ],
+          "post_money_usd": [
+            350000000,
+            700000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Hot company band; the 2022 and later post money median is $600M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            120000000
+          ],
+          "post_money_usd": [
+            700000000,
+            1500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Breakout upside above $70M at a valuation near $1B, reached only by the few companies that compound revenue quickly after a Series A."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B inside the window would need fleet scale deployments across several factories, which almost no company of this kind does in under two years. Perceptive Technologies (W20) took years from batch to a Series B in the researched data, and Nextera Robotics (S20) shows the same slow path, so the window is too short for this step unless the company breaks out early."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry Industrials: series_c cond 0% (n=1), ever 0% known-only; no usable sample.",
+        "adjustment_reason": "The anchor is conditional on Series B and ever reached, from a tiny sample. Inside the window almost nobody reaches Series C, so I keep a low nonzero figure for a breakout path with several fast rounds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.08,
+          "rationale": "Thin extension or flat round of $20M to $40M, used when a company needs more runway before it proves a Series C story."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band; the 2022 and later Series C median is $74M."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2000000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Strong growth round of $80M to $150M led by a growth fund, tied to a clear revenue ramp and category leadership."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            6000000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Category leader upside above $150M at a multibillion valuation, seen only for the few companies that win a large market outright."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window is close to impossible for an eight person robotics company, which would need several consecutive hypergrowth rounds. The researched Series C companies such as Perceptive Technologies (W20) took roughly four to five years from batch, and nothing visible today points to the category defining ramp that would be required."
     }
   ],
   "outcomes": {
@@ -164,167 +260,206 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely Verne stalls: well funded robot model labs such as Physical Intelligence out hire and out spend it, deployments prove harder than demos, and hardware costs consume the seed. Nextera Robotics (S20) and Relari (W24) remain small with no priced round found, and Sensei (S24) sells data with no funding beyond YC."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "innate",
+      "relevance": "Fall 2024 personal AI robots",
+      "outcome_summary": "Active with an early seed only; a peer robot software company that stayed small."
+    },
+    {
+      "slug": "perceptive-technologies",
+      "relevance": "Winter 2020 automated robotic procedure company",
+      "outcome_summary": "Reached a Series A after years of hardware work; shows how slow robotics scale is."
+    },
+    {
+      "slug": "nextera-robotics-didgeai",
+      "relevance": "Summer 2020 AI native robotics",
+      "outcome_summary": "Active with no priced round found; shows the stall outcome."
+    },
+    {
+      "slug": "relari",
+      "relevance": "Winter 2024 robotics research on dexterous manipulation after a pivot",
+      "outcome_summary": "Pivoted into robotics research with named backers and no verified priced round."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Funded labs win the model race",
+      "p": 0.5,
+      "evidence": "Physical Intelligence raised $400M in late 2024 and large labs and Nvidia are releasing robot foundation models.",
       "analogs": [
-        "TODO-company-slug"
+        "innate",
+        "relari"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Focus on one task family with real deployments and proprietary data."
+    },
+    {
+      "risk": "Deployments are harder and slower than demos",
+      "p": 0.45,
+      "evidence": "Industrial customers demand reliability and safety, and hardware integration takes months.",
+      "analogs": [
+        "perceptive-technologies",
+        "nextera-robotics-didgeai"
+      ],
+      "mitigation": "Sell a narrow outcome based service before general models."
+    },
+    {
+      "risk": "Capital intensity for a small team",
+      "p": 0.35,
+      "evidence": "Robot hardware and data collection cost far more than software, and a modest seed drains fast.",
+      "analogs": [
+        "innate",
+        "relari"
+      ],
+      "mitigation": "Use leased robots and customer sites to collect data."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Physical Intelligence",
+      "what": "Robot foundation models for any robot and task",
+      "traction": "$400M round in 2024",
+      "source_url": "https://www.therobotreport.com/physical-intelligence-raises-400m-for-foundation-models-for-robotics/"
+    },
+    {
+      "name": "Genesis AI",
+      "what": "Universal robotics foundation model",
+      "traction": "$105M raised",
+      "source_url": "https://www.therobotreport.com/genesis-ai-raises-105m-building-universal-robotics-foundation-model/"
+    },
+    {
+      "name": "Traditional integrators and fixed automation (status quo)",
+      "what": "Programmed robot cells built by integrators",
+      "traction": "Entrenched in manufacturing",
+      "source_url": "https://www.therobotreport.com/physical-intelligence-raises-400m-for-foundation-models-for-robotics/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "General purpose robot learning is an open research problem with sparse data; hardware reliability, safety and sim to real transfer add risk. A small team can show a narrow skill demo in three months but not a general model."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Physical Intelligence",
+      "Nvidia",
+      "Google DeepMind",
+      "Tesla"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Large labs have models, data and capital, but industrial deployment channels and task specific data are not yet captured, so absorption is slower than software."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Robot foundation model companies raised large rounds in 2024, showing investor demand",
+        "source_url": "https://www.therobotreport.com/physical-intelligence-raises-400m-for-foundation-models-for-robotics/"
+      },
+      {
+        "claim": "A $105M round for a universal robotics model confirms funding for general approaches, not factory demand",
+        "source_url": "https://www.therobotreport.com/genesis-ai-raises-105m-building-universal-robotics-foundation-model/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a robot learning a real task fast on real hardware",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Teach 3 distinct tasks in hours on one arm",
+        "Record success rates and data needs"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Task success above 90 percent on video"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Turn demos into a paying deployment",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Deploy at one manufacturer",
+        "Collect proprietary task data from the site"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A paid deployment of $100K or more"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable deployments across several customers",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Productize the training pipeline",
+        "Add safety and reliability testing"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Three live sites with recurring revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Investor appetite for physical AI",
+      "evidence": "Several nine figure rounds for robot model companies in 2024 and 2025 show capital for the theme.",
+      "source_url": "https://www.therobotreport.com/physical-intelligence-raises-400m-for-foundation-models-for-robotics/"
+    },
+    {
+      "point": "Deployment angle beyond a model lab",
+      "evidence": "Pairing models with deployments targets manufacturers directly and can generate revenue and data sooner than a pure lab.",
+      "source_url": ""
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Verne Robotics",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Verne Robotics\" --era 2022+ : 13 characters, 2 words, 4 syllables",
     "strengths": [
-      "TODO"
+      "Verne evokes science fiction ambition",
+      "Robotics states the category"
     ],
     "weaknesses": [
-      "TODO"
+      "Verne is a used name in drone and tech companies and the descriptive suffix limits reach"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "The name borrows a science fiction author and states the field, which is clear but generic. YC robotics cases such as Innate (F24) with a plain name show that the name will matter far less than model results."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A hot physical AI theme with a very small team; a priced seed inside 16 months is about one in three.",
+    "general_summary": "Verne builds general purpose physical AI and deploys robots. Investor money for robot foundation models is plentiful, but funded labs such as Physical Intelligence dominate and a team of 8 in Sacramento has to show real deployments. Inside a 16 month window the seed probability follows Industrials timing, not a lift for the theme. A Series A inside the window is unlikely. The odds do not rank Verne against other companies. The forecast window runs from the as of date to 2026-11-17, and later rounds are only counted if they close inside it."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file was used about the company; no site, directory page or news about it was read.",
+    "Window is 16 months from 2025-07-07 to 2026-11-17.",
+    "Seed means a round above about $1M from outside investors, not the standard YC deal of about $500K, that closes inside the window.",
+    "The company is already in YC, so the acceptance figure is reported for completeness only.",
+    "Web search covered the market only. Results dated after the as of date or naming the company were to be ignored; none named it.",
+    "Funding coverage in the repo data is incomplete (see base_rates.py ranges), so the anchors are lower to upper ranges and not exact."
   ],
   "sources": [
-    "https://"
+    "https://www.therobotreport.com/physical-intelligence-raises-400m-for-foundation-models-for-robotics/",
+    "https://www.therobotreport.com/genesis-ai-raises-105m-building-universal-robotics-foundation-model/"
   ]
 }

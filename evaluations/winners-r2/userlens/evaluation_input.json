@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Userlens",
+    "one_liner": "Let agents talk to your customers",
+    "description": "Companies today are growing faster than ever with smaller teams. The best AI-native companies don\u2019t just need more users - they need more of their users becoming power users. Userlens makes it possible for lean teams to drive product adoption proactively, at scale. Userlens is building the AI product adoption expert. Our goal is to help every user at every company get more value from the product they already use. Most teams still rely on onboarding flows, lifecycle emails, support docs, and reactive CSM outreach. Userlens breaks that ceiling. Lumi watches how users actually use your product, spots when they\u2019re ready for the next feature, workflow, or habit, and nudges them at exactly the right moment.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.015,
+    "p_high": 0.075,
+    "basis": "Start from about 1 percent with a band of 0.6 to 2 percent (references/yc_acceptance.md). Up: a team of four, a clear thesis about lean AI native companies needing proactive adoption, and a named product (Lumi). Down: the description gives no traction, the space is full of incumbents and YC analogs (Command AI, Frigade, Bento, Layup, Sero), and the pitch is easy to copy as a feature. Net about 3 percent.",
+    "why_it_fails": "YC would most plausibly say no because in-product guidance is a mature category with incumbents and several past YC entrants, and the pitch is a promise that an agent will nudge users at the right moment without any numbers on adoption lift. The Doubter question is whether a lean team buys another tool when their analytics vendor adds the same agent."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49% / 59% / 65%, cond 59% (n=126), months_to_seed 3 / 7 / 15 (n=74). Tag AI cohort: 50% / 61% / 67%. Nearest narrow cohort (in-product guidance, onboarding, adoption) has few researched companies, so the B2B cohort is used.",
+        "adjustment_reason": "The 59% anchor is for ever reaching seed. The forecast window is 11.4 months (from 2026-04-06 to 2026-11-17), and the cohort median time to seed is 7 months with a 75th percentile of 15 months, so about 60 to 70 percent of eventual seeds land inside it. That gives a window anchor near 0.37 to 0.42, and a round must also exceed $1M, which removes YC-deal-only cases. Set at 0.38, about the window anchor, with no lift for the AI label or the team of four. Product adoption and onboarding tools have a record of small rounds and early deaths among YC analogs."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Small post YC round of $1M to $3M, usually a pre-seed or angel led round that closes quickly. Cohort data for 2022 and later shows a 25th percentile near $2M, and a team this early often takes the first credible check."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.37,
+          "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median $3.2M to $3.5M, 75th percentile about $5M) lifted slightly because only rounds above $1M count here."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.16,
+          "rationale": "Hot sector seed of $6M to $12M. The 2026 winners test found 42 percent of confirmed raises here, but that sample leans to press covered rounds, so this band is held below that share."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            30000000
+          ],
+          "post_money_usd": [
+            70000000,
+            200000000
+          ],
+          "p_band": 0.07,
+          "rationale": "Upside band above $12M, reached only with fast revenue or a standout founder story. Rare for a team of this size."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Window: 11.4 months, to 2026-11-17. Window: 11.4 months, to 2026-11-17. Investors will compare Userlens with Pendo, Appcues, Userflow and past YC companies such as Command AI, Frigade, Bento and Layup. Frigade raised a seed, Layup raised a seed and shut down, and Bento died with no round, so the record is mixed. To raise above $1M inside a year, the team needs paying customers who show the nudges raise feature adoption, not only pilots with small startups."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.04,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_a cond 26% (n=74), months_to_series_a 22 / 29 / 38 (n=19). Tag AI: cond 23% (n=66).",
+        "adjustment_reason": "Same 11.4 month window as the seed step. The 26% anchor is for ever reaching Series A after a seed, but the cohort 25th percentile for reaching Series A is 22 months from batch start, so only about 10 to 15 percent of eventual Series A rounds close inside a window this short. Set at 0.04 because the closest analogs reached Series A only after two or more years."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or bridge Series A near the 2022 and later 25th percentile of $11M, taken when growth is real but the story is narrow."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series A, anchored on the 2022 and later median of $14M to $15M and public medians of $17M."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            120000000,
+            300000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series A of $20M or more for a category leader with fast ARR growth, as seen in the top AI cases."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A inside 11 months would need strong revenue growth. The closest successful analog, Command AI, reached a Series A and was acquired, and Frigade stopped at seed. Product adoption budgets are small and compete with customer success and marketing tools, so a Series A by November 2026 is very unlikely."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.14,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_b cond 16% (n=19); calibration sample all years: 44% (n=126).",
+        "adjustment_reason": "This step is for ever reaching a Series B given a Series A, with no time window, because recent cohorts are right censored. Set between the recent cohort figure of 16% (n=19, few years of follow up) and the all years figure of 44%, at 0.14 for a conservative read."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series B near the 25th percentile of the 2022 and later table ($25M to $27M), likely a flat or small step up."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B, median $37M to $40M with post money around $600M in the sparse data."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside Series B for a breakout. Few cohort examples, so the band is deliberately small."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B requires an enterprise scale adoption platform that beats Pendo and the customer success suites on revenue. Customer success and onboarding tools in the YC data have not reached a Series B, and incumbents that already hold the data and the in-app surface can add agents themselves."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55) across all years. The 2022 to 2025 B2B cohort has no Series C yet (n=3).",
+        "adjustment_reason": "Anchor taken from the all years calibration sample because recent cohorts have not had time. Set at 0.25, about 0.7 times the anchor, since most Series B companies in this category face a very crowded late stage market."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Series C near the 2022 and later 25th percentile ($35M to $50M), in a flat market."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000,
+            2000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series C or D, median $74M with post money about $1.2B."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            400000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            6000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Late stage breakout round. Very few researched cases, so this is a thin tail."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Late stage rounds need a category defining platform with hundreds of customers. Adoption tooling has no recent independent winner in the YC data, and acquirers such as larger product analytics or customer success vendors are the likelier destination before any Series C."
     }
   ],
   "outcomes": {
@@ -164,167 +224,213 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.57
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.16
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end small because adoption tooling is sold into a modest budget, incumbents add agents to existing in-app surfaces, and the end buyers are startups that churn. A larger outcome needs a move to enterprise accounts or a pivot to a broader customer lifecycle agent."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "command-ai",
+      "relevance": "AI user assistance and in-product guidance, the closest product.",
+      "outcome_summary": "Summer 2020 company that raised a Series A and was acquired."
+    },
+    {
+      "slug": "frigade",
+      "relevance": "AI product assistance for software teams.",
+      "outcome_summary": "Winter 2023 company, seed round, active."
+    },
+    {
+      "slug": "bento",
+      "relevance": "In product customer activation.",
+      "outcome_summary": "Summer 2020, no post YC round found, inactive."
+    },
+    {
+      "slug": "layup",
+      "relevance": "Guides users inside the product, same job.",
+      "outcome_summary": "Winter 2023, seed round, inactive."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Incumbents add agents to the in-app surfaces they already own",
+      "p": 0.45,
+      "evidence": "Pendo is adding an AI analytics layer with predictive adoption signals, and Userflow and Appcues are adding AI features.",
       "analogs": [
-        "TODO-company-slug"
+        "command-ai",
+        "layup"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Show measured adoption lift per customer and integrate with all analytics sources."
+    },
+    {
+      "risk": "Small and churning customer base among lean startups",
+      "p": 0.35,
+      "evidence": "The pitch targets lean AI native companies, which have small budgets and high failure rates.",
+      "analogs": [
+        "bento",
+        "layup"
+      ],
+      "mitigation": "Sell to growth stage SaaS with a defined adoption KPI and annual contracts."
+    },
+    {
+      "risk": "Nudging users erodes trust and can annoy them",
+      "p": 0.25,
+      "evidence": "Userflow reports 44 percent of product leaders call trust the top barrier to AI feature adoption, and excessive automation hurts loyalty.",
+      "analogs": [
+        "frigade",
+        "sero"
+      ],
+      "mitigation": "Make nudges opt in and show customers the precision of each trigger."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Pendo",
+      "what": "Analytics and in-app guidance with AI predictive adoption signals.",
+      "traction": "Established incumbent",
+      "source_url": "https://www.pendo.io/pendo-blog/the-top-8-in-app-guidance-tools/"
+    },
+    {
+      "name": "Userflow",
+      "what": "No code in-app flows with AI generation at a lower price.",
+      "traction": "Not stated in sources",
+      "source_url": "https://www.userflow.com/blog/best-product-adoption-software"
+    },
+    {
+      "name": "Appcues",
+      "what": "In-app messaging and onboarding with AI content features.",
+      "traction": "Established player",
+      "source_url": "https://www.guideflow.com/blog/in-app-guidance-software"
+    },
+    {
+      "name": "Status quo: lifecycle emails and CSM outreach",
+      "what": "Onboarding flows, emails, docs and reactive customer success.",
+      "traction": "Default practice at most SaaS companies",
+      "source_url": "https://www.userflow.com/blog/ai-agents-product-adoption-human-touch"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Detecting readiness from event streams and delivering the right nudge in product needs event integrations, an in-app SDK and good targeting. A team of four can ship a version in three months, but proving lift requires volume and experiments."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Pendo",
+      "Userflow",
+      "Appcues",
+      "Intercom"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "Incumbents hold the usage data and the in-app delivery surface and are already adding AI. A rival needs about six months for a comparable agent, and it has every incentive."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Product adoption platforms are a mature paid category, and all major vendors are adding AI features.",
+        "source_url": "https://www.pendo.io/pendo-blog/the-top-8-in-app-guidance-tools/"
+      },
+      {
+        "claim": "Product leaders cite trust as the top barrier to AI feature adoption, showing a real adoption problem.",
+        "source_url": "https://www.userflow.com/blog/why-ai-feature-adoption-is-stalling"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show measured adoption lift at a few customers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run pilots with five SaaS companies and report feature adoption change",
+        "Publish before and after numbers"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A named customer with a 20 percent lift in a target feature"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paid customers and a repeatable sale.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Convert pilots into annual contracts",
+        "Integrate with the main analytics tools"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$20K monthly recurring revenue across 10 customers"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show expansion and a defensible data advantage.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Use cross customer data to improve nudge timing",
+        "Hire sales for growth stage SaaS"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 120 percent and $1.5M annual recurring revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Real budget category with a clear owner",
+      "evidence": "Product adoption software is a paid category with established vendors, so buyers exist.",
+      "source_url": "https://www.pendo.io/pendo-blog/the-top-8-in-app-guidance-tools/"
+    },
+    {
+      "point": "Timing: small teams, AI products with hard to learn features",
+      "evidence": "Vendor and trade writing frames AI feature adoption as a stalled problem.",
+      "source_url": "https://www.userflow.com/blog/why-ai-feature-adoption-is-stalling"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Userlens",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Userlens\" --era 2022+: invented or proper, 8 characters, 3 syllables",
     "strengths": [
-      "TODO"
+      "Describes watching users, easy to understand"
     ],
     "weaknesses": [
-      "TODO"
+      "Compound of two generic words, similar to many analytics names"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "The name tells buyers it is about seeing users, which helps explanation, but compound names such as Heap or Mixpanel show the brand rarely decides the outcome. It is neutral against the weight of competition."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A reasonable adoption agent pitch in a mature category full of incumbents and past YC attempts.",
+    "general_summary": "Userlens builds Lumi, an agent that watches product usage and nudges users toward the next feature at the right moment. The need is real, but product adoption is an established category with Pendo, Appcues and Userflow, and past YC entrants such as Frigade, Bento and Layup raised little or died. Over an 11 month window the chance of a round above $1M is near the cohort window anchor, and a Series A inside the window is very unlikely. The odds do not rank this company against others."
   },
   "assumptions": [
-    "TODO"
+    "Team of four, no disclosed traction as of 2026-04-06.",
+    "Competition is recorded as of April 2026.",
+    "The seed probability is for a window of 11.4 months and a round above about $1M. It does not rank this company against others: in the 2026 winners test the average seed probability was 0.65 for companies that raised and 0.62 for companies confirmed to have raised nothing beyond the YC deal.",
+    "Series B and C plus steps are for ever reaching the round, not inside the window. Reaching a round years later is common for companies with paying customers.",
+    "Knowledge base coverage: calibration cohorts are 2022 to 2025 B2B (n=150 researched), with funding coverage partial for most, so known-only rates are biased low."
   ],
   "sources": [
-    "https://"
+    "https://www.pendo.io/pendo-blog/the-top-8-in-app-guidance-tools/",
+    "https://www.userflow.com/blog/why-ai-feature-adoption-is-stalling",
+    "https://www.userflow.com/blog/best-product-adoption-software",
+    "https://www.guideflow.com/blog/in-app-guidance-software",
+    "https://www.userflow.com/blog/ai-agents-product-adoption-human-touch"
   ]
 }

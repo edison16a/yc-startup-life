@@ -139,9 +139,9 @@ You know it worked when: $30K or more monthly recurring revenue and net revenue 
 
 | Competitor | What they do | Traction | Source |
 |---|---|---|---|
-| UiPath | Robotic process automation incumbent adding agents. | Public company with large enterprise base. | https://www.mi-3.com.au/12-11-2024/andreessen-horowitz-backed-11x-secures-50m-series-b-funding-help-develop-digital-workers |
+| UiPath | Robotic process automation incumbent adding agents. | Public company with a large enterprise base. | https://www.uipath.com/ |
 | 11x and Artisan style digital workers | Horizontal AI workers sold per role. | 11x $24M Series A in September 2024 and $50M Series B in November 2024. | https://www.intelligentcio.com/north-america/2024/09/17/11x-secures-24m-series-a-funding-to-create-the-future-of-digital-work/ |
-| Manual order entry by staff and email | The status quo of customer service reps retyping orders. | Universal in distribution. | https://www.intelligentcio.com/north-america/2024/09/17/11x-secures-24m-series-a-funding-to-create-the-future-of-digital-work/ |
+| Manual order entry by staff and email | The status quo of customer service reps retyping orders. | Universal in distribution; no vendor figure used. | https://sifted.eu/articles/autonomous-companies-ai |
 
 ### Demand evidence
 

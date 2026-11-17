@@ -1,162 +1,234 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Imagine AI",
+    "one_liner": "We reverse engineer B2B growth, starting with LinkedIn.",
+    "description": "AI content agent for B2B teams on LinkedIn: it decides what executives and the company page should post using data on over 1M people, drafts posts and graphics, schedules them and maps engagement to pipeline. Team of 5 in San Francisco with named customers such as Rippling and Slash, YC Fall 2025.",
+    "as_of": "2025-10-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.01,
+    "p_high": 0.06,
+    "basis": "Starting rate of about 1 percent from references/yc_acceptance.md. Up for named paying customers, a free public benchmark that shows distribution skill and AI native execution; down for a crowded space of LinkedIn tools and weak defensibility. Already listed in Fall 2025, so the ladder is the \"if accepted\" view.",
+    "why_it_fails": "YC would most plausibly say that LinkedIn content generation is a feature a dozen tools already offer, and that the claim of a connective layer between company agents is a vision with no evidence yet, while distribution depends on LinkedIn data that the company does not control."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.52,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 59% known only, 65% upper (n=126). Time to seed from batch start p25/median/p75 = 3/7/15 months (n=74).",
+        "adjustment_reason": "Window is 13.4 months, 2025-10-06 to 2026-11-17. About 70 percent of eventual seeds close within 13 months, so the ever anchor gives about 0.42, and I add less than 1.25 times for AI native product with named customers. This number does not rank the company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            20000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "LinkedIn content tools are many and cheap (Taplio, Oktopost, Vulse), and investors in B2B sales tech ask whether a post scheduling product is a feature, not a company. A five person team with named customers helps, but unless revenue and net retention are visible it ends with the YC deal and small angels, and the dependence on LinkedIn data and rules is a platform risk."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.08,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series A 15% known only, 29% upper, cond 26% (n=74)",
+        "adjustment_reason": "Window effect: at most about 6 to 10 months remain after a seed, and the Series A median is about 29 months from batch start, so the ever 0.26 scales to about 0.08."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000.0,
+            9000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin Series A or extended seed style round after slow revenue; sized like the lower quartile of 2022 and later rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            18000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Core Series A near the 2022 and later median of $14M with a pre money in the market range of $50M to $65M."
+        },
+        {
+          "raise_usd": [
+            18000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            200000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Strong round after fast growth and a competitive process."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.05,
+          "rationale": "Hot category outlier round, similar to the largest AI Series A rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs a believable path to $2M or more annual revenue beyond marketing teams, but LinkedIn content is a small budget line and buyers switch easily. Comparable sales and marketing tools such as HockeyStack took years and a stronger revenue story, so reaching A within about 13 months of the batch is unlikely."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "same command: series B 2% known only, 18% upper, cond 16% (n=19)",
+        "adjustment_reason": "Series B inside the window needs two more rounds in 13 months; the 0.16 conditional is cut by about two thirds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            25000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat or modest Series B because growth slowed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            45000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the 2022 and later median of $37M."
+        },
+        {
+          "raise_usd": [
+            45000000.0,
+            80000000.0
+          ],
+          "post_money_usd": [
+            300000000.0,
+            600000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B after strong growth, priced near the top of the 2022 and later table."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Reaching Series B inside this window would need hypergrowth in revenue far beyond content tools, and LinkedIn can restrict data access, which investors would price in as a platform risk."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series C 0% known only, 16% upper, cond 0% (n=3), too thin; used the all era calibration conditional of 36 percent (n=55) from references/stage_benchmarks.md and widened",
+        "adjustment_reason": "Window effect; three more rounds in 13 months is a breakout case only."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000.0,
+            70000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            600000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series C near the 2022 and later median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000.0,
+            1200000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a company with clear category leadership and rising revenue."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "post_money_usd": [
+            1200000000.0,
+            3000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Late stage upside round for a category leader, rare in the sample (n=9 since 2022)."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window would require a very large growth outcome; no comparable company in the data reached it so fast, and the product category does not support a large revenue ceiling by itself."
     }
   ],
   "outcomes": {
@@ -164,167 +236,216 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end with a stall or a small sale to a sales or marketing platform. Content and social tools have a modest revenue ceiling and are frequently acquired by larger marketing suites, as Warmly style outcomes show, so a very large exit needs the agent to agent vision to become real."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "rethoric",
+      "relevance": "LinkedIn content service and scheduler for founders, Winter 2021.",
+      "outcome_summary": "Reached $25K monthly revenue quickly but no round found, showing a ceiling for services style products."
+    },
+    {
+      "slug": "hockeystack",
+      "relevance": "Revenue attribution for B2B teams, Summer 2023.",
+      "outcome_summary": "Raised a $2.7M seed in November 2023 and a $20M Series A in January 2025 with enterprise logos."
+    },
+    {
+      "slug": "warmly",
+      "relevance": "Autonomous sales platform, Summer 2020.",
+      "outcome_summary": "Took years to grow; later acquired."
+    },
+    {
+      "slug": "souffle-club",
+      "relevance": "Professional network alternative to LinkedIn.",
+      "outcome_summary": "Shut down; competing with LinkedIn directly failed."
+    },
+    {
+      "slug": "banabo",
+      "relevance": "Marketing attribution startup, Summer 2022.",
+      "outcome_summary": "Domain redirects to another product and no funding found."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Feature commoditization by many LinkedIn and AI writing tools",
+      "p": 0.45,
+      "evidence": "Taplio, Oktopost, Vulse and other tools sell LinkedIn content features at $6 to $18 per user per month.",
       "analogs": [
-        "TODO-company-slug"
+        "rethoric"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Lean on the proprietary engagement dataset and attribution to pipeline, not drafting."
+    },
+    {
+      "risk": "LinkedIn restricts data access or enforces terms against scraped data",
+      "p": 0.3,
+      "evidence": "The data on over 1M people is the moat, and platform rules can change it overnight.",
+      "analogs": [
+        "souffle-club"
+      ],
+      "mitigation": "Use customer connected accounts and licensed data where possible."
+    },
+    {
+      "risk": "Small budget per customer limits revenue and a Series A story",
+      "p": 0.35,
+      "evidence": "Content tools price per seat at low amounts and marketing teams cut such budgets first.",
+      "analogs": [
+        "rethoric",
+        "banabo"
+      ],
+      "mitigation": "Move up to pipeline attribution priced on outcomes."
+    },
+    {
+      "risk": "Large B2B suites bundle similar features",
+      "p": 0.3,
+      "evidence": "HubSpot, Salesforce and employee advocacy vendors can add AI post generation.",
+      "analogs": [
+        "warmly",
+        "hockeystack"
+      ],
+      "mitigation": "Win mid market startups before suites react."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Taplio",
+      "what": "AI LinkedIn content and scheduling tool for individuals",
+      "traction": "Widely listed as a leading tool in 2025 roundups",
+      "source_url": "https://taplio.com/blog/employee-advocacy-tools"
+    },
+    {
+      "name": "Oktopost",
+      "what": "B2B social media and employee advocacy platform with an AI advocacy agent",
+      "traction": "Established vendor with attribution features",
+      "source_url": "https://www.oktopost.com"
+    },
+    {
+      "name": "Vulse",
+      "what": "LinkedIn employee advocacy for B2B teams with analytics",
+      "traction": "Priced $6 to $18 per user per month",
+      "source_url": "https://vulse.co/blog/best-linkedin-tools-for-b2b-marketing"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "Drafting posts and scheduling are easy to build; the hard parts are a clean engagement dataset of over 1M profiles, attribution to pipeline and staying inside LinkedIn rules. A small team can ship the core in three months."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "LinkedIn",
+      "HubSpot",
+      "Oktopost",
+      "Salesforce"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "A suite vendor could add AI drafting in months, and LinkedIn itself already offers AI writing help. The dataset and attribution take longer to copy."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Many AI LinkedIn tools and employee advocacy platforms exist with seat pricing of $6 to $18 per month, so paid demand exists but at low prices.",
+        "source_url": "https://vulse.co/blog/best-linkedin-tools-for-b2b-marketing"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove customers pay and engagement maps to pipeline.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign 10 paying B2B teams and record before and after engagement",
+        "Publish the benchmark dataset to attract inbound"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "10 paying customers and a public benchmark with inbound signups"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show repeatable revenue inside 13 months.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Price on outcomes tied to pipeline and measure net retention",
+        "Raise a seed from B2B sales tech investors on the customer logos"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$30K monthly recurring revenue and 100 percent logo retention"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Expand beyond LinkedIn content into a growth platform.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add other channels and agent to agent outreach",
+        "Hire a first sales lead for mid market"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$2M annual recurring revenue with net retention above 110 percent"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Named customers at launch",
+      "evidence": "Rippling, MarqVision, Slash, Corgi and Fondo are listed as users.",
+      "source_url": "https://useimagine.ai"
+    },
+    {
+      "point": "Free public benchmark shows data and distribution skill",
+      "evidence": "A benchmark of over 1,000 B2B companies on LinkedIn is public.",
+      "source_url": "https://benchmark.useimagine.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Imagine AI",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Imagine AI\" --era 2022+: 9 characters, 2 words, name plus descriptor kind.",
     "strengths": [
-      "TODO"
+      "Easy to say and spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic word plus AI descriptor",
+      "Does not hint at B2B growth"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A common English word with an AI suffix is hard to own in search and does not say what the product does, but many successful AI startups use similar names and it will not decide the outcome.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A credible early team with logos in a crowded, low price category; a seed above $1M is slightly more likely than not to need strong revenue.",
+    "general_summary": "Imagine AI sells an AI content agent for LinkedIn to B2B teams and says it has real customers including Rippling. The category has many tools at low seat prices, which limits revenue per customer and makes the company look like a feature. Comparable YC companies show a path through attribution (HockeyStack raised $2.7M then $20M) but also small outcomes (Rethoric). The window is 13.4 months and the seed probability sits just below the windowed cohort anchor; later rounds are unlikely in that time. The odds do not rank this company."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from the YC listing only.",
+    "Window is 13.4 months, 2025-10-06 to 2026-11-17.",
+    "Description claims of customers are taken as stated and unverified."
   ],
   "sources": [
-    "https://"
+    "https://vulse.co/blog/best-linkedin-tools-for-b2b-marketing",
+    "https://taplio.com/blog/employee-advocacy-tools",
+    "https://www.oktopost.com",
+    "https://useimagine.ai",
+    "https://benchmark.useimagine.ai"
   ]
 }

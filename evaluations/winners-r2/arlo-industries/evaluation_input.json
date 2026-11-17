@@ -1,162 +1,234 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Arlo Industries",
+    "one_liner": "Track drones and missiles without radars: accurate, passive, scalable",
+    "description": "A mesh of low cost passive sensors that tracks small drones and aerial threats over wide areas, sold to militaries and infrastructure operators. Team of 3 in New York with a founder who spent 6 years in the Israeli defense ecosystem, a drones PhD and military advisers, YC Spring 2026.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.04,
+    "p_low": 0.015,
+    "p_high": 0.08,
+    "basis": "Starting rate of about 1 percent from references/yc_acceptance.md. Up for a founder with direct experience of the threat, a PhD teammate and demos shown to Ukrainian operators, and for YC interest in defense hardware. Down for a three person team on a physically hard claim and for hardware capital needs. Already listed in Spring 2026, so the ladder is the \"if accepted\" view.",
+    "why_it_fails": "YC would most plausibly say the technical claim is unproven: tracking stealthy drones with passive sensors that beat radar is a bold statement, and without independent field data from the team or a paying military customer the partners cannot tell a real advance from a research idea, while hardware also requires more capital than a typical YC check."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.45,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.6,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 59% known only, 65% upper (n=126); Industrials seed median 6 months to seed from batch start in knowledge/tables/time_to_milestones.csv; Defense cohort has n=1 so it is only an anecdote.",
+        "adjustment_reason": "Window is only 7.4 months, 2026-04-06 to 2026-11-17. About 60 percent of eventual seeds close within 8 months of batch start (Industrials median 6 months, B2B 7). The ever anchor of 0.60 times that gives about 0.36, moved up by under 1.25 times because defense was the hottest hardware category in 2026 and several YC defense companies raised fast. This number does not rank the company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            20000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.28,
+          "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.17,
+          "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Hardware defense seeds need a working demo with field data, and a three person team claiming that accuracy rises exponentially with sensor count has a hard physics claim to prove. Investors may like the category but pass on a pre revenue sensor network without a government contract or a paid pilot, and the 7 month window leaves only one demo cycle. Counter drone rivals such as Milliray and larger radar startups raised more."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series A 15% known only, 29% upper, cond 26% (n=74)",
+        "adjustment_reason": "Series A inside 7.4 months of batch start is rare; the ever conditional of 0.26 is cut by about 5 times for the window and for hardware timelines."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000.0,
+            9000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin Series A or extended seed style round after slow revenue; sized like the lower quartile of 2022 and later rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            18000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Core Series A near the 2022 and later median of $14M with a pre money in the market range of $50M to $65M."
+        },
+        {
+          "raise_usd": [
+            18000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            200000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Strong round after fast growth and a competitive process."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.05,
+          "rationale": "Hot category outlier round, similar to the largest AI Series A rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A for defense hardware normally waits for a funded program of record or large paid deployments. Within months of a seed, a three person team will not have field validated tracking accuracy against stealth drones, so investors would wait for evidence from real tests."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.04,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "same command: series B 2% known only, 18% upper, cond 16% (n=19)",
+        "adjustment_reason": "Series B inside the window would need government production orders; the cohort conditional is cut roughly four fold."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            25000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat or modest Series B because growth slowed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            45000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the 2022 and later median of $37M."
+        },
+        {
+          "raise_usd": [
+            45000000.0,
+            80000000.0
+          ],
+          "post_money_usd": [
+            300000000.0,
+            600000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B after strong growth, priced near the top of the 2022 and later table."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B needs production scale revenue and certified products. Defense procurement takes years, and a company starting in April 2026 will not have contract revenue by November 2026."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series C 0% known only, 16% upper, cond 0% (n=3), too thin; used the all era calibration conditional of 36 percent (n=55) from references/stage_benchmarks.md and widened",
+        "adjustment_reason": "Window effect: three further rounds in under 8 months has no precedent in the data."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000.0,
+            70000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            600000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series C near the 2022 and later median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000.0,
+            1200000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a company with clear category leadership and rising revenue."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "post_money_usd": [
+            1200000000.0,
+            3000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Late stage upside round for a category leader, rare in the sample (n=9 since 2022)."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window would mean a breakout comparable to the largest defense unicorns, which raised after years of contracts and deployments, not months. It is very unlikely for a three person team."
     }
   ],
   "outcomes": {
@@ -164,167 +236,218 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most hardware defense companies at this stage stall when the sensor does not reach the accuracy buyers need or procurement is slow. Success cases such as the largest counter drone companies needed hundreds of millions, so a three person team has a small chance of reaching a large exit, while acquisition by a defense prime for sensor technology is the most plausible good result."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "milliray",
+      "relevance": "Counter drone detection and tracking from a radar research group, Winter 2026.",
+      "outcome_summary": "Early, no verified round yet; the closest peer in the same batch cycle."
+    },
+    {
+      "slug": "guardian-rf",
+      "relevance": "Passive RF drone detection for US defense, Summer 2024.",
+      "outcome_summary": "Still active; a direct example of a passive detection wedge."
+    },
+    {
+      "slug": "apolloshield",
+      "relevance": "Drone detection system from Summer 2016.",
+      "outcome_summary": "Active but small after ten years, showing the long timelines for the category."
+    },
+    {
+      "slug": "lumineye",
+      "relevance": "Through wall radar for first responders after a defense program, Summer 2019.",
+      "outcome_summary": "Inactive; won an Army prize but could not turn it into a business."
+    },
+    {
+      "slug": "ares-industries",
+      "relevance": "Defense hardware (cruise missiles), Summer 2024 and YC first defense investment.",
+      "outcome_summary": "Drew attention and flight tests but no verified round."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Accuracy claims fail in field tests against real drones",
+      "p": 0.45,
+      "evidence": "Passive mesh tracking of small and stealthy drones is unproven at scale and radar and acoustic competitors can show fielded results.",
       "analogs": [
-        "TODO-company-slug"
+        "milliray",
+        "lumineye"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Run independent field trials with a named military unit and publish results."
+    },
+    {
+      "risk": "Defense procurement is slow and gives no revenue inside the window",
+      "p": 0.4,
+      "evidence": "Lumineye won an Army prize but never converted it into sales.",
+      "analogs": [
+        "lumineye",
+        "apolloshield"
+      ],
+      "mitigation": "Seek paid pilots with Ukraine, European and homeland security buyers, which move faster."
+    },
+    {
+      "risk": "Well funded rivals dominate counter drone sensing",
+      "p": 0.35,
+      "evidence": "Radar and defense software companies raised very large rounds in 2025.",
+      "analogs": [
+        "milliray",
+        "guardian-rf"
+      ],
+      "mitigation": "Focus on the passive mesh niche and integrate with existing command software."
+    },
+    {
+      "risk": "Hardware capital and manufacturing needs outrun a small team",
+      "p": 0.3,
+      "evidence": "Sensor networks need production volume and field support.",
+      "analogs": [
+        "ares-industries"
+      ],
+      "mitigation": "Use off the shelf components and sell software plus sensors as a service."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Robin Radar and other radar vendors",
+      "what": "Active radar systems for drone detection",
+      "traction": "Fielded systems and large contracts",
+      "source_url": "https://www.robinradar.com"
+    },
+    {
+      "name": "Anduril",
+      "what": "Autonomous defense systems with sensor networks and the Lattice software",
+      "traction": "Multi billion valuation and large government contracts",
+      "source_url": "https://www.anduril.com"
+    },
+    {
+      "name": "Acoustic sensor networks in Ukraine",
+      "what": "Low cost passive acoustic detection of drones",
+      "traction": "Thousands of sensors reported by Ukrainian developers",
+      "source_url": "https://www.army.mil/article/292099/listening_to_the_sky_acoustic_drone_detection_systems_ukraine_emerging_technologies"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Multilateration and tracking with a sensor mesh needs signal processing, calibration, time synchronization and robust field operation under jamming. A three person team with a drones PhD can build a prototype in three months but not a fielded product, and certification adds years."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Anduril",
+      "Robin Radar",
+      "Lockheed Martin",
+      "Palantir"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Large defense companies can add passive sensors or buy the startup, and Ukraine based developers already field cheap acoustic networks. The risk is as much commoditization of the concept as absorption."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 5,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Ukraine fields thousands of passive sensors for drone detection and the US Army describes the approach in 2026 coverage, showing urgent paid demand for low cost wide area detection.",
+        "source_url": "https://www.army.mil/article/292099/listening_to_the_sky_acoustic_drone_detection_systems_ukraine_emerging_technologies"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show tracking accuracy on real drones.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run a field test with at least 20 sensors against known drone flights",
+        "Record the accuracy versus radar and share the data with two military contacts"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A written field report with positional error figures"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Turn demos into a paid pilot inside 7 months.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign a paid pilot with a Ukrainian, European or US end user",
+        "Raise a seed from defense focused investors using the pilot as proof"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A signed paid pilot above $100K and a seed round above $1M"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Move from pilot to recurring deployments.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Deliver a certified sensor kit at a repeatable unit cost",
+        "Win a program or framework contract with a government buyer"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Contract backlog above $5M"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Founder lived the threat and has direct access to operators",
+      "evidence": "Description cites 6 years in the Israeli defense ecosystem and demos to Ukrainian frontline units.",
+      "source_url": "https://arlo1.com/"
+    },
+    {
+      "point": "Defense funding was very strong in 2026",
+      "evidence": "Peers such as Guardian RF and Milliray joined YC and counter drone rounds were large.",
+      "source_url": "https://tech.eu/2026/08/04/monava-closes-funding-round-as-demand-for-passive-drone-detection-grows/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Arlo Industries",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Arlo Industries\" --era 2022+: 14 characters, 2 words, compound words kind.",
     "strengths": [
-      "TODO"
+      "Follows the Industries naming pattern of other defense startups",
+      "Short first word that is easy to say"
     ],
     "weaknesses": [
-      "TODO"
+      "Industries is generic",
+      "Shared with a consumer camera brand named Arlo"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The Industries suffix signals a defense hardware company, as with Ares Industries, but the first word collides with a known consumer security camera brand which hurts search. A defense buyer does not care about the name.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A hot category and a credible founder, but a hard physics claim and a short 7 month window make a seed above $1M roughly a coin flip below even.",
+    "general_summary": "Arlo Industries proposes a passive sensor mesh that tracks drones better than radar. Demand is real, as Ukraine and Europe pay for cheap wide area detection and defense investors were active in 2026. The company has three people and no stated revenue, and the claim that tracking accuracy rises exponentially with sensor count is unproven. Comparable YC defense companies such as Guardian RF and Milliray show the wedge is crowded and slow. The window from batch start to the outcome date is 7.4 months, so only a quick seed is possible, and later rounds are very unlikely inside it."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from the YC listing only.",
+    "Window is 7.4 months, 2026-04-06 to 2026-11-17.",
+    "Defense cohort has one researched company, so B2B and Industrials anchors were used with a stated adjustment."
   ],
   "sources": [
-    "https://"
+    "https://www.army.mil/article/292099/listening_to_the_sky_acoustic_drone_detection_systems_ukraine_emerging_technologies",
+    "https://tech.eu/2026/08/04/monava-closes-funding-round-as-demand-for-passive-drone-detection-grows/",
+    "https://www.robinradar.com",
+    "https://www.anduril.com",
+    "https://arlo1.com/"
   ]
 }

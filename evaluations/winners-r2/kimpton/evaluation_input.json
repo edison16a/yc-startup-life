@@ -1,330 +1,428 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Kimpton",
+  "one_liner": "Financial AI that answers to reality (one liner blank in input)",
+  "description": "Kimpton has three parts: Kimpton OS, an AI operating system for investment teams that reads a fund mandate and positions and returns structured trade proposals; EarningsBench, a public benchmark where models forecast quarterly earnings before companies report; and Koliseum, point in time financial environments sold to AI labs for training and evaluation. Team of five: two ex Goldman engineers and one ex SpaceX engineer, New York, Spring 2026 batch.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.05,
+  "p_low": 0.025,
+  "p_high": 0.09,
+  "basis": "Starting rate about 1 percent for a random applicant (0.6 to 2 percent range, yc_acceptance.md). Adjusted up about 5 times for technical founders with finance and engineering backgrounds, a built product and a public benchmark that shows execution, plus an angle (environments for labs) that fits current YC interest. Not higher because there are three products and no revenue is stated.",
+  "why_it_fails": "YC partners may say the pitch is three businesses at once: a fund software seller, a benchmark and a lab data supplier. Hedge funds buy slowly and want track records, and a benchmark has no direct revenue, so the weakest part is focus. With no stated revenue and a Spring 2026 field full of AI finance tools such as Standard Signal and KelAI, partners may also pass for lack of a single sharp customer."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.66,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry Fintech --years 2022-2025: seed 57% (n=23, anecdote only), series_a cond 23%; --tag AI --years 2022-2025: seed 61% (n=109), series_a cond 23%; time_to_milestones era 2022+: months_to_seed p50 6, p75 14.2",
+    "adjustment_reason": "Window is 7.4 months from 2026-04-06 to 2026-11-17. Applying the 2022 and later median of 6 months to seed and the fact that many seeds come later gives 0.33 against the 66 percent ever anchor. Team of five and AI sector heat are not used to lift the number, per the winners test."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      12000000,
+      20000000
+     ],
+     "p_band": 0.12,
+     "rationale": "YC deal only, about $500K; counted as no seed in this window."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels or fintech pre-seed funds."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      60000000
+     ],
+     "p_band": 0.43,
+     "rationale": "Institutional seed of $3M to $8M; AI research tools for funds raised $5M to $8M rounds before this window (Portrait, Multiplier, Pinegap)."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band: AI labs buying financial RL environments could make a competitive round, which is a hot area in 2026."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The likely miss is slow revenue: hedge funds run long pilots and data licensing reviews, while lab environments revenue depends on a few buyers that may build in house. In 7 months investors can write a seed on technical strength alone, but Trata and Constant show AI research desks often stay unfunded for long."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.05,
+   "anchors": {
+    "base_rate": 0.35,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry Fintech --years 2022-2025: seed 57% (n=23, anecdote only), series_a cond 23%; --tag AI --years 2022-2025: seed 61% (n=109), series_a cond 23%; time_to_milestones era 2022+: months_to_seed p50 6, p75 14.2",
+    "adjustment_reason": "Window is 7.4 months while 2022 and later months to Series A has p25 19.4, so about 0.05 given a seed in the window, over 2 times below the 35 percent ever anchor due to timing."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      7000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series A led by a seed fund or a small multi-stage fund, near the 2022 and later median of about $7M with limited revenue proof."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      14000000
+     ],
+     "post_money_usd": [
+      45000000,
+      80000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Standard Series A of $8M to $14M after clear revenue growth; the 2018 to 2021 median was $10M and 2022 and later is similar, with era inflation discounted."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside band for a breakout in 2025 to 2026 AI categories where rounds are larger than the historical median; a pivot-then-raise path also lands here."
+    }
+   ],
+   "why_it_fails": "A Series A within 7 months would need meaningful revenue from funds or labs, which is not plausible on the usual timeline; Greenboard and PointOne type analogs reached Series A after more than a year. The likely path is a seed first and an A after proven contracts."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.44,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_b cond 44% (n=126), ever not windowed.",
+    "adjustment_reason": "Near the anchor times 0.8."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      100000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or modest Series B after slower growth than the Series A plan assumed."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B of $20M to $40M on proven repeatable growth."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a category leader whose growth outpaces peers and attracts a competitive multi-stage process."
+    }
+   ],
+   "why_it_fails": "Series B needs a repeatable revenue engine. Fund software has long sales cycles and a small buyer set, and lab data buyers are concentrated, so growth may stall before scale. Investors will ask whether any one line reaches meaningful recurring revenue. Greenboard shows financial back office AI can reach A but later rounds are rarer."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55).",
+    "adjustment_reason": "Slightly under the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Smaller Series C or extension, close to a flat round."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Standard growth round for a company with real scale."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      250000000
+     ],
+     "post_money_usd": [
+      800000000,
+      2500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a market leader with strong growth and margins that can command a premium at late stage."
+    }
+   ],
+   "why_it_fails": "A growth round needs a large revenue base; the buy side software market is crowded with data vendors like Daloopa and Brightwave, and fund budgets are cyclical. Sliced Investing was acquired at a small scale, which is the more common exit in finance infrastructure. Reaching Series C would need a clear leader position in either fund software or lab data."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     1000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.17
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.06
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely outcome is a stall or small acquisition: fund software is a small, slow market, and the lab environment business may never exceed a few buyers. Sliced Investing sold small, Constant and Trata have no later rounds in the data, so even a good product in this niche often ends below $100M or simply stops growing."
+ },
+ "analogs": [
+  {
+   "slug": "trata",
+   "relevance": "AI research desk for hedge funds, Winter 2025.",
+   "outcome_summary": "Seed only so far, direct wedge competitor."
+  },
+  {
+   "slug": "greenboard",
+   "relevance": "Financial back office OS, Winter 2024.",
+   "outcome_summary": "Reached Series A."
+  },
+  {
+   "slug": "sliced-investing",
+   "relevance": "Crowdfunding for hedge funds, Summer 2014.",
+   "outcome_summary": "Acquired after a seed."
+  },
+  {
+   "slug": "constant",
+   "relevance": "AI analysts for the buy side, Winter 2023.",
+   "outcome_summary": "No round found beyond YC."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Slow, concentrated buyers",
+   "p": 0.4,
+   "evidence": "Funds run long pilots and data reviews, and the lab buyer set is a handful of labs.",
+   "analogs": [
+    "trata",
+    "constant"
+   ],
+   "mitigation": "Pick one paying use per segment and a design partner each."
+  },
+  {
+   "risk": "Lack of focus across three products",
+   "p": 0.3,
+   "evidence": "The pitch lists a fund OS, a benchmark and a lab environment business with different buyers.",
+   "analogs": [
+    "greenboard"
+   ],
+   "mitigation": "Choose one product as the revenue engine and use the others as marketing."
+  },
+  {
+   "risk": "Crowded financial AI vendors",
+   "p": 0.35,
+   "evidence": "Brightwave, Daloopa, Portrait and Multiplier raised rounds for similar research tools.",
+   "analogs": [
+    "trata",
+    "inferedge"
+   ],
+   "mitigation": "Differentiate on the point in time grading and trade output."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Brightwave",
+   "what": "AI financial research platform",
+   "traction": "Reported $15M raise in 2024",
+   "source_url": "https://siliconangle.com/2024/10/29/brightwave-raises-15m-accelerate-financial-research-ai/"
+  },
+  {
+   "name": "Daloopa",
+   "what": "Financial data extraction for funds",
+   "traction": "Reported funding in 2024",
+   "source_url": "https://techcrunch.com/2024/05/07/daloopa-trains-ai-to-automate-financial-analysts-workflows/"
+  },
+  {
+   "name": "Portrait Analytics",
+   "what": "Generative AI for investment research",
+   "traction": "$7M raise, $10M total",
+   "source_url": "https://builtin.com/articles/portrait-analytics-raises-7m"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Point in time data, trade proposals that respect mandates, and credible earnings forecasting are hard, and need institutional data feeds. The team has the engineering background, but building three products in three months is more than a small team can do well."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Bloomberg",
+   "Large model labs",
+   "Brightwave and Daloopa"
+  ],
+  "timeline_months": 18,
+  "rationale": "Data vendors and labs could add similar products, but the point in time training environments need data discipline that takes time. Bloomberg can bundle AI but moves slowly."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Funds buy AI research tools and several raised $5M to $15M rounds",
+    "source_url": "https://siliconangle.com/2024/10/29/brightwave-raises-15m-accelerate-financial-research-ai/"
+   },
+   {
+    "claim": "Investors fund tools for hedge funds, such as a $6M round for AI tools serving funds",
+    "source_url": "https://dealroom.co/news/145809-multiplier-raises-6m-for-ai-tools-serving-hedge-funds/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a funded design partner and a live benchmark.",
+   "actions": [
+    "Publish EarningsBench results for one quarter",
+    "Sign one fund pilot"
+   ],
+   "proof": "One live fund user and benchmark ranking"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show paying funds or labs.",
+   "actions": [
+    "Convert the pilot to a paid contract",
+    "Sell one environment dataset to a lab"
+   ],
+   "proof": "First recurring revenue from funds or labs"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Strong technical backgrounds",
+   "evidence": "Two ex Goldman engineers and an ex SpaceX engineer built the stack inside a fund.",
+   "source_url": "https://kimpton.ai"
+  },
+  {
+   "point": "Benchmark creates distribution",
+   "evidence": "A public earnings benchmark can attract attention from labs and funds.",
+   "source_url": "https://kimpton.ai"
+  }
+ ],
+ "brand": {
+  "name": "Kimpton",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Kimpton\" --era 2022+: 7 characters, 2 syllables, invented or proper name",
+  "strengths": [
+   "Memorable and easy to say",
+   "Premium sound"
+  ],
+  "weaknesses": [
+   "Strongly associated with the Kimpton hotel chain",
+   "Product names (Koliseum, EarningsBench) add confusion"
+  ],
+  "rationale": "A proper noun like Kimpton is memorable but shares its name with a hotel brand, which hurts searchability. YC brands such as Stripe and Ramp are short and ownable, but this one needs a clear category line.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Technically strong team with three products; a seed above $1M in 7 months is plausible but below even.",
+  "general_summary": "Kimpton sells AI for investment teams and, through a public benchmark, environments for AI labs. The team has the right technical background and the benchmark shows execution, which supports a higher YC chance than average. The window of 7.4 months is short, so a seed above $1M is possible but a Series A is very unlikely. The odds do not rank this company against peers. The main risks are slow buyers, three products and crowded financial AI. The benchmark is a clever distribution tool, but it is not revenue, and labs may build their own financial environments. The seed bands assume the company converts one fund pilot or one lab sale by the end of the window.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Only the input file and market searches were used; results dated after 2026-04-06 were ignored.",
+  "Window is 2026-04-06 to 2026-11-17, 7.4 months.",
+  "The one liner is blank in the input, so the first sentences of the description were used."
+ ],
+ "sources": [
+  "https://siliconangle.com/2024/10/29/brightwave-raises-15m-accelerate-financial-research-ai/",
+  "https://techcrunch.com/2024/05/07/daloopa-trains-ai-to-automate-financial-analysts-workflows/",
+  "https://builtin.com/articles/portrait-analytics-raises-7m",
+  "https://dealroom.co/news/145809-multiplier-raises-6m-for-ai-tools-serving-hedge-funds/"
+ ]
 }

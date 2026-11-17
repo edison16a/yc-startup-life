@@ -1,162 +1,234 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "truthsystems",
+    "one_liner": "Automatically blocking risky behavior with real-time governance agents",
+    "description": "A compliance agent that turns company policies into real-time guardrails on employee use of generative AI, blocking non-compliant actions and matching tool access to user competency. Team of 6 in San Francisco, YC Summer 2025.",
+    "as_of": "2025-07-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.01,
+    "p_high": 0.06,
+    "basis": "Starting rate of about 1 percent from references/yc_acceptance.md. Up for a timely enterprise problem (shadow AI use was reported by 69 percent of surveyed security leaders) and AI security being a YC interest; down for a crowded field and no stated customers or security founder pedigree. Already listed in Summer 2025, so the ladder is the \"if accepted\" view.",
+    "why_it_fails": "YC would most plausibly say the pitch is generic: AI governance and guardrails are already offered by funded startups and by large security vendors, and the description names no customers or proof that policy translation into real time guardrails works better than rules based data loss prevention."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.48,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 59% known only, 65% upper (n=126). Time to seed p25/median/p75 = 3/7/15 months from batch start (n=74).",
+        "adjustment_reason": "Window is 16.3 months, 2025-07-07 to 2026-11-17. About 75 percent of eventual seeds land inside that window, so the ever anchor gives about 0.44, and I add under 1.25 times for an AI security category where the closest analogs (Unbound $4M, Credal $4.8M, Dynamo AI $4.15M) all raised institutional seeds. This number does not rank the company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            20000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Enterprise AI governance sells to security and compliance teams with long cycles, and a six person team without named customers will struggle to show revenue. Investors were funding the category, but the analogs that raised were led by founders with security product pedigrees (Palo Alto, Imperva), which this description does not claim, so the likely failure is an inconclusive pilot phase and a small round."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.08,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series A 15% known only, 29% upper, cond 26% (n=74)",
+        "adjustment_reason": "Window effect: only a few months remain after a seed, and Dynamo AI, the one close analog with a Series A, took about 11 months from seed to A with strong enterprise sales. The ever 0.26 scales to about 0.08."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000.0,
+            9000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin Series A or extended seed style round after slow revenue; sized like the lower quartile of 2022 and later rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            18000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Core Series A near the 2022 and later median of $14M with a pre money in the market range of $50M to $65M."
+        },
+        {
+          "raise_usd": [
+            18000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            200000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Strong round after fast growth and a competitive process."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.05,
+          "rationale": "Hot category outlier round, similar to the largest AI Series A rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs proof of enterprise contracts above $100K and a distinct product from the secure browser and data loss prevention vendors. Credal and Unbound pivoted or repositioned within two years, and Galini moved toward consulting, so many analogs did not reach a Series A."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "same command: series B 2% known only, 18% upper, cond 16% (n=19)",
+        "adjustment_reason": "Series B inside the window would need two more rounds in 16 months; the 0.16 conditional is cut by about two thirds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            25000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat or modest Series B because growth slowed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            45000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the 2022 and later median of $37M."
+        },
+        {
+          "raise_usd": [
+            45000000.0,
+            80000000.0
+          ],
+          "post_money_usd": [
+            300000000.0,
+            600000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B after strong growth, priced near the top of the 2022 and later table."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B demands scaled enterprise revenue, and AI governance may be bundled into cloud security suites; the analogs show no Series B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series C 0% known only, 16% upper, cond 0% (n=3), too thin; used the all era calibration conditional of 36 percent (n=55) from references/stage_benchmarks.md and widened",
+        "adjustment_reason": "Window effect; three more rounds in 16 months is an outlier."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000.0,
+            70000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            600000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series C near the 2022 and later median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000.0,
+            1200000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a company with clear category leadership and rising revenue."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "post_money_usd": [
+            1200000000.0,
+            3000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Late stage upside round for a category leader, rare in the sample (n=9 since 2022)."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window is very unlikely: no AI governance analog has reached it and large security platforms buy such products before they scale."
     }
   ],
   "outcomes": {
@@ -164,167 +236,216 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.57
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.27
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.13
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end in a stall or a quick acquisition by a security or cloud vendor, which is how security tooling categories usually consolidate. The company would need to become the standard control layer for enterprise AI use before large suites copy it, and that is a narrow path for six people."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "unbound",
+      "relevance": "AI tool use without data leakage, Summer 2024, security founders.",
+      "outcome_summary": "Raised a $4M seed in May 2025 led by Race Capital, about a year after batch."
+    },
+    {
+      "slug": "credal-ai",
+      "relevance": "Enterprise AI security and governance, Winter 2023.",
+      "outcome_summary": "Raised a $4.8M seed in October 2023, then repositioned around agents."
+    },
+    {
+      "slug": "dynamo-ai",
+      "relevance": "Compliance ready AI and guardrails, Winter 2022.",
+      "outcome_summary": "$4.15M seed in 2022 and $15.1M Series A in August 2023, the best case."
+    },
+    {
+      "slug": "galini",
+      "relevance": "Compliance guardrails as a service, Fall 2024, two person team.",
+      "outcome_summary": "No round found; website shifted to AI transformation consulting."
+    },
+    {
+      "slug": "swif-ai",
+      "relevance": "Device compliance moving into AI agent governance, Summer 2020.",
+      "outcome_summary": "Active with a seed and slow progress over five years."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Large security vendors bundle AI governance",
+      "p": 0.4,
+      "evidence": "Palo Alto, Microsoft and Zscaler sell AI usage controls and data loss prevention to the same buyer.",
       "analogs": [
-        "TODO-company-slug"
+        "unbound",
+        "credal-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Move faster on policy translation and win mid market first."
+    },
+    {
+      "risk": "Long enterprise sales cycles and no early revenue",
+      "p": 0.4,
+      "evidence": "Security buyers need pilots and reviews; a six person team has few sales people.",
+      "analogs": [
+        "galini",
+        "dynamo-ai"
+      ],
+      "mitigation": "Sell to compliance heavy mid market firms with short pilots."
+    },
+    {
+      "risk": "Product is not meaningfully better than rule based blocking",
+      "p": 0.3,
+      "evidence": "Blocking tools alone are widely seen as insufficient, but monitoring and sanctioned tool lists cover much of the need.",
+      "analogs": [
+        "galini"
+      ],
+      "mitigation": "Publish measured false block rates."
+    },
+    {
+      "risk": "Category pivots away from this form",
+      "p": 0.25,
+      "evidence": "Credal and Galini both repositioned within two years.",
+      "analogs": [
+        "credal-ai",
+        "galini"
+      ],
+      "mitigation": "Keep the policy engine reusable across agents."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Unbound",
+      "what": "Prevents data leakage when employees use AI tools",
+      "traction": "$4M seed in May 2025",
+      "source_url": "https://www.getunbound.ai"
+    },
+    {
+      "name": "Credal",
+      "what": "Enterprise AI security and governance platform",
+      "traction": "$4.8M seed from Spark Capital in 2023",
+      "source_url": "https://www.credal.ai"
+    },
+    {
+      "name": "Large security vendors",
+      "what": "Data loss prevention and AI usage controls inside existing suites",
+      "traction": "Existing enterprise contracts",
+      "source_url": "https://www.techtarget.com/cybersecurity/tip/Shadow-AI-How-CISOs-can-regain-control-in-2025-and-beyond"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Intercepting AI interactions through browser or network agents and judging policy compliance with a model is buildable by a small team in three months. The hard parts are low false block rates, latency, enterprise integration and deployment inside corporate security stacks."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Microsoft",
+      "Palo Alto Networks",
+      "Zscaler",
+      "Cloudflare"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Security vendors can add policy based AI controls to existing agents and already sell to the same buyers. The startup would be absorbed or squeezed unless it owns a distinct workflow such as competency based access."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "A Gartner survey of 302 security leaders found 69 percent suspect or have evidence of staff using prohibited generative AI, and IBM says shadow AI adds about $670,000 per breach.",
+        "source_url": "https://www.techtarget.com/cybersecurity/tip/Shadow-AI-How-CISOs-can-regain-control-in-2025-and-beyond"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove the policy engine works on real company policies.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run pilots with 3 regulated mid market firms",
+        "Measure blocked risky actions versus false blocks"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Three pilots with logged block and false block rates"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert pilots into paid contracts inside the window.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign 3 paid annual contracts above $30K",
+        "Raise a seed on pilot to contract conversion data"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$100K annual recurring revenue and a seed above $1M"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show enterprise repeatability.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Win first contract above $150K and finish SOC 2",
+        "Hire a security sales lead and build partner channels"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1.5M or more annual recurring revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Timely enterprise problem with measured demand",
+      "evidence": "Gartner reports 69 percent of security leaders suspect prohibited generative AI use.",
+      "source_url": "https://www.techtarget.com/cybersecurity/tip/Shadow-AI-How-CISOs-can-regain-control-in-2025-and-beyond"
+    },
+    {
+      "point": "Close analogs raised institutional seeds",
+      "evidence": "Unbound, Credal and Dynamo AI raised $4M to $4.8M seeds.",
+      "source_url": "https://www.credal.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "truthsystems",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"truthsystems\" --era 2022+: 12 characters, 1 word, invented or proper kind.",
     "strengths": [
-      "TODO"
+      "Signals trust and compliance"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic Systems suffix",
+      "Run together lowercase is hard to read",
+      "Truth is a crowded word in AI and media"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The word truth signals trust, which fits compliance, but Systems naming is generic and similar to many security companies. Names like Okta or Wiz are more distinctive, though governance buyers rely on references more than names.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A timely problem in an AI security category where close analogs raised seeds, but an unproven six person team in a bundling prone field.",
+    "general_summary": "Truth Systems builds a compliance agent that enforces company policy on employee AI use in real time. The need is measured, with most security leaders suspecting prohibited AI use. Close analogs Unbound, Credal and Dynamo AI raised seeds of $4M to $4.8M, while Galini and others went quiet or repositioned. Large security vendors can bundle similar controls. For the 16.3 month window the seed probability is near the windowed cohort anchor and later rounds are unlikely. The odds do not rank this company."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from the YC listing only.",
+    "Window is 16.3 months, 2025-07-07 to 2026-11-17.",
+    "Analog rounds used are only those dated before the as of date."
   ],
   "sources": [
-    "https://"
+    "https://www.techtarget.com/cybersecurity/tip/Shadow-AI-How-CISOs-can-regain-control-in-2025-and-beyond",
+    "https://www.getunbound.ai",
+    "https://www.credal.ai"
   ]
 }

@@ -102,7 +102,7 @@ Relaw offers an AI legal OS to AI native law firms. Legal AI funding is hot, whi
 
 ## Pros
 
-- **Hot sector with active investors**: Legal tech funding rose strongly in 2025. (https://law360.com/articles/2321847/legal-tech-funding-surge-amid-ai-boom)
+- **Hot sector with active investors**: Legal tech funding rose strongly in 2025. (https://law360.com/articles/2321847/legal-tech-sees-80-funding-surge-amid-ai-boom)
 - **Customers pay for software**: Law firms spend heavily on tools and AI native firms are early adopters. (https://letsdatascience.com/news/moritz-raises-9-million-for-ai-native-law-firm-2d0b28eb)
 
 ## Roadmap
@@ -144,7 +144,7 @@ You know it worked when: Recurring revenue and expansion in firms
 
 ### Demand evidence
 
-- Legal tech funding rose strongly in 2025 amid the AI boom, which signals buyer and investor interest (https://law360.com/articles/2321847/legal-tech-funding-surge-amid-ai-boom)
+- Legal tech funding rose strongly in 2025 amid the AI boom, which signals buyer and investor interest (https://law360.com/articles/2321847/legal-tech-sees-80-funding-surge-amid-ai-boom)
 - AI native law firms raised seed rounds of $2.5M to $9M (https://letsdatascience.com/news/moritz-raises-9-million-for-ai-native-law-firm-2d0b28eb)
 
 ## Evidence from past YC companies
@@ -173,7 +173,7 @@ You know it worked when: Recurring revenue and expansion in firms
 
 ## Sources
 
-- https://law360.com/articles/2321847/legal-tech-funding-surge-amid-ai-boom
+- https://law360.com/articles/2321847/legal-tech-sees-80-funding-surge-amid-ai-boom
 - https://letsdatascience.com/news/moritz-raises-9-million-for-ai-native-law-firm-2d0b28eb
 - https://dealroom.co/news/169200-legora-alumni-raise-2-5m-to-build-an-ai-native-law-firm/
 - https://www.eudia.com/news/2025-sparked-a-legal-tech-funding-frenzy-here-were-some-of-the-notable-deals

@@ -1,162 +1,234 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Ruvo",
+    "one_liner": "The Global Dollar App for Brazil",
+    "description": "A global account for Brazilians to receive, hold and move money between USD and BRL, linking Pix, crypto and Visa. Personal (CPF) and business (CNPJ) accounts, yield on digital dollars. Team of 11 in Sao Paulo, formerly named Cacao, YC Summer 2025.",
+    "as_of": "2025-07-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.01,
+    "p_high": 0.06,
+    "basis": "Starting rate of about 1 percent from references/yc_acceptance.md. Up for a team of 11 and a large local market with a clear cross border pain (dollar income, IOF tax, slow banks); down for a crowded neobank field and regulatory risk with no stated traction. Already listed in Summer 2025, so the ladder is the \"if accepted\" view.",
+    "why_it_fails": "YC would most plausibly say that dollar accounts for Latin America are a well worn idea with many funded rivals, and that the founders have not shown why they win against Wise, crypto exchanges and Nubank, nor how they handle Brazil banking rules around crypto."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.42,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only: seed 57% known only, 62% upper (n=23, anecdotal); B2B 2022-2025 seed 59% known only (n=126). Fintech median 10 months to seed.",
+        "adjustment_reason": "Window is 16.3 months, 2025-07-07 to 2026-11-17. About 75 percent of eventual seeds land in that window, so the ever anchor of 0.57 gives about 0.43. I keep it flat: a team of 11 and a clear corridor help, while crypto rails in Brazil face regulatory uncertainty and many Latin American fintech seeds are under $1M or come from local funds. This number does not rank the company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            20000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.28,
+          "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.17,
+          "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A consumer and small business fintech needs licenses, banking partners and compliance in Brazil, and the central bank was tightening rules on stablecoin cross border use through 2025 and 2026. Latin American stablecoin neobanks (Pana, Coco Wallet, Karsa) mostly raised small rounds or none that were public. Investors want a user and volume story, so without clear growth the company ends with the YC deal and small angel money below $1M."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.07,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series A 15% known only, 29% upper, cond 26% (n=74)",
+        "adjustment_reason": "Window effect: Series A in fintech is late (about 16 months median from batch for those that reach it, with cond 23 percent in the Fintech cohort), and few months remain after a seed. The ever 0.23 to 0.26 scales to about 0.07."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000.0,
+            9000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin Series A or extended seed style round after slow revenue; sized like the lower quartile of 2022 and later rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            18000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Core Series A near the 2022 and later median of $14M with a pre money in the market range of $50M to $65M."
+        },
+        {
+          "raise_usd": [
+            18000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            200000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Strong round after fast growth and a competitive process."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.05,
+          "rationale": "Hot category outlier round, similar to the largest AI Series A rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs real transaction volume and regulatory clarity. Brazil is a competitive market with Nubank, Wise, Revolut and crypto exchanges all going after dollar accounts, and Latin American stablecoin neobanks such as Pana raised only seeds. Investors would likely wait for evidence that users keep dollars in the app."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.04,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "same command: series B 2% known only, 18% upper, cond 16% (n=19)",
+        "adjustment_reason": "Series B inside the window would need two more rounds in 16 months; the 0.16 conditional is cut by about three quarters."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            25000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat or modest Series B because growth slowed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            45000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the 2022 and later median of $37M."
+        },
+        {
+          "raise_usd": [
+            45000000.0,
+            80000000.0
+          ],
+          "post_money_usd": [
+            300000000.0,
+            600000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B after strong growth, priced near the top of the 2022 and later table."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B requires proof that unit economics work at scale in a market with low take rates; only Aspora in the comparable set reached B and it did so with the Indian remittance corridor over about four years."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.02,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series C 0% known only, 16% upper, cond 0% (n=3), too thin; used the all era calibration conditional of 36 percent (n=55) from references/stage_benchmarks.md and widened",
+        "adjustment_reason": "Window effect; no comparable fintech reached Series C inside two years."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000.0,
+            70000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            600000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series C near the 2022 and later median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000.0,
+            1200000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a company with clear category leadership and rising revenue."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "post_money_usd": [
+            1200000000.0,
+            3000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Late stage upside round for a category leader, rare in the sample (n=9 since 2022)."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window would mean a breakout like the largest remittance companies, and licensing, FX costs and regulation make that path slow even for strong teams."
     }
   ],
   "outcomes": {
@@ -164,167 +236,217 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end in a stall or a small acquisition by an exchange or neobank. Regulatory change in Brazil, thin margins on FX and the need for local licenses make a large independent outcome unlikely, while a regional acquirer could buy the user base."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "ping",
+      "relevance": "Global neobank for freelancers, Summer 2022, LatAm crypto investors.",
+      "outcome_summary": "Raised a $15M seed in November 2022; no later round found, so a large seed did not lead to a visible Series A."
+    },
+    {
+      "slug": "pana",
+      "relevance": "Stablecoin neobank for Latinos, Summer 2022.",
+      "outcome_summary": "Raised a seed and has 14 staff; no later priced round found."
+    },
+    {
+      "slug": "coco-wallet",
+      "relevance": "Global dollar account on stablecoins, Summer 2019.",
+      "outcome_summary": "Still active after years with little public funding."
+    },
+    {
+      "slug": "broad",
+      "relevance": "Multicurrency account and card for Brazilians, Winter 2021.",
+      "outcome_summary": "Shut down, the closest same market failure."
+    },
+    {
+      "slug": "aspora",
+      "relevance": "Cross border account for the Indian diaspora, Winter 2022.",
+      "outcome_summary": "Strong traction led to Series A and B, the best case for the idea."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Brazil central bank rules restrict crypto and stablecoin cross border flows",
+      "p": 0.35,
+      "evidence": "The central bank was publishing rules on virtual asset providers in 2025, and Broad shut down while pursuing a similar Brazilian multicurrency product.",
       "analogs": [
-        "TODO-company-slug"
+        "broad"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Use licensed partners and keep the fiat path through Pix and Visa as the core."
+    },
+    {
+      "risk": "Strong incumbents and exchanges offer dollar accounts in Brazil",
+      "p": 0.4,
+      "evidence": "OKX launched a Pix linked stablecoin card in Brazil and Nubank and Wise serve the same users.",
+      "analogs": [
+        "coco-wallet",
+        "ping"
+      ],
+      "mitigation": "Focus on freelancers and small businesses who earn in dollars."
+    },
+    {
+      "risk": "Thin margins and fraud and compliance costs",
+      "p": 0.3,
+      "evidence": "Remittance fees fall as competition grows (stablecoins cut cost by about 40 percent according to market sources).",
+      "analogs": [
+        "pana",
+        "broad"
+      ],
+      "mitigation": "Add yield and card interchange revenue."
+    },
+    {
+      "risk": "Seed investors treat Latin American fintech cautiously",
+      "p": 0.25,
+      "evidence": "Pana, Coco Wallet and Karsa show no large seeds despite years of operation.",
+      "analogs": [
+        "pana",
+        "coco-wallet"
+      ],
+      "mitigation": "Raise from LatAm and crypto funds that know the corridor."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Wise",
+      "what": "Global multicurrency accounts and transfers",
+      "traction": "Large global base and Brazil coverage",
+      "source_url": "https://wise.com"
+    },
+    {
+      "name": "OKX Pay and Card in Brazil",
+      "what": "Pix linked conversion to USD stablecoins with a card",
+      "traction": "Launched in Brazil with Pix integration",
+      "source_url": "https://thepaypers.com/crypto-web3-and-cbdc/news/okx-expands-stablecoin-payments-and-debit-card-services-in-brazil"
+    },
+    {
+      "name": "Nubank",
+      "what": "Largest Brazilian digital bank with dollar features",
+      "traction": "Tens of millions of customers",
+      "source_url": "https://international.nubank.com.br"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Pix integration, stablecoin custody, card issuing and KYC are all available through partners, so a small team can assemble the product in three months. The hard parts are licenses, fraud control, FX liquidity and compliance."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Nubank",
+      "Wise",
+      "Binance",
+      "Mercado Pago"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Large players can add a dollar account in months but have been slow to; the startup depends on partner banks and on Brazilian rules, which creates a platform dependency."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Brazil received about $318.8B in crypto flows from July 2024 to June 2025, mostly stablecoins, and freelancers use USDT to avoid the IOF tax on dollar inflows.",
+        "source_url": "https://www.jb.com.br/economia/criptomoedas/2025/07/1056272-segundo-pesquisas-brasil-e-um-dos-principais-mercados-de-stablecoins.html"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove users keep dollars in the account.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Reach thousands of active freelancer accounts",
+        "Track average USD balances and repeat conversions"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Monthly active accounts and balance per user growing"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Raise a round above $1M within 16 months.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Show monthly volume growth of 20 percent or more",
+        "Pitch LatAm fintech and crypto funds using volume and revenue per user"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$5M or more monthly volume with positive take rate"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a durable regulatory and unit economics position.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Secure licenses or tier one partner banks in Brazil",
+        "Expand business (CNPJ) accounts for higher revenue per customer"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M or more annual revenue at positive contribution margin"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large real corridor with a tax and fee pain",
+      "evidence": "Dollar income earners in Brazil use stablecoins to avoid IOF and bank fees.",
+      "source_url": "https://www.jb.com.br/economia/criptomoedas/2025/07/1056272-segundo-pesquisas-brasil-e-um-dos-principais-mercados-de-stablecoins.html"
+    },
+    {
+      "point": "Large team for a YC company",
+      "evidence": "Eleven people suggest a funded or revenue backed operation already.",
+      "source_url": "https://ruvo.com/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Ruvo",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Ruvo\" --era 2022+: 4 characters, 1 word, invented or proper kind.",
     "strengths": [
-      "TODO"
+      "Short and easy to say",
+      "Works in Portuguese and English"
     ],
     "weaknesses": [
-      "TODO"
+      "Says nothing about dollars or Brazil",
+      "Renamed from Cacao, which hints at a repositioning"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Short invented names are common among successful fintechs such as Nubank and Wise style brands, and a rename after YC shows the team is willing to fix brand issues. The name will not drive growth but does not hurt.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real corridor and a larger team than typical, but crowded and regulated; seed above $1M within 16 months is about the windowed base rate.",
+    "general_summary": "Ruvo is a dollar account for Brazilians that connects Pix, stablecoins and Visa. Demand is clear: Brazil sees very large stablecoin flows and dollar earners pay fees and taxes. Competition is heavy, from Wise and Nubank to exchanges such as OKX that offered Pix linked cards. Comparable YC companies split: Aspora grew to Series B, Ping raised a large seed and went quiet, and Broad shut down. The window is 16.3 months so seed is the realistic outcome and later rounds are unlikely. The odds do not rank this company."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from the YC listing only.",
+    "Window is 16.3 months, 2025-07-07 to 2026-11-17. Local rounds in Brazil can be hard to find, which lowers confirmed seeds.",
+    "Fintech cohort has only 26 companies, so I also used the B2B anchor."
   ],
   "sources": [
-    "https://"
+    "https://www.jb.com.br/economia/criptomoedas/2025/07/1056272-segundo-pesquisas-brasil-e-um-dos-principais-mercados-de-stablecoins.html",
+    "https://thepaypers.com/crypto-web3-and-cbdc/news/okx-expands-stablecoin-payments-and-debit-card-services-in-brazil",
+    "https://wise.com",
+    "https://ruvo.com/"
   ]
 }
