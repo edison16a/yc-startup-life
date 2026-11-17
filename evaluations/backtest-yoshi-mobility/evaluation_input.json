@@ -1,330 +1,464 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Yoshi Mobility",
+  "one_liner": "Making car ownership and management frictionless.",
+  "description": "A Nashville startup that sells car owners a membership for mobile fueling and vehicle maintenance: a van comes to the car (home or work) to fill the tank and do routine servicing such as oil changes, booked through an app. Payers are consumer car owners, and later possibly fleets and employers. Launched in spring 2016, so it enters the Summer 2016 batch with a live but early service in one metro. Described only from facts available at the start of the batch.",
+  "as_of": "2016-06-01"
+ },
+ "yc_acceptance": {
+  "p": 0.012,
+  "p_low": 0.005,
+  "p_high": 0.03,
+  "basis": "Start from the roughly 1 percent prior in yc_acceptance.md (band 0.6 to 2 percent). Up a little: the service is live with early paying members, the pain is real and universal, and the one-liner and mission are clear. Down a little: the team is based in Nashville with no obvious YC network, the model is asset heavy (vans, fuel, technicians) which YC partners often distrust in consumer services, and two or more funded rivals (WeFuel, Filld, Purple) were already in on-demand fueling. Net about 1.2 percent, inside the 0.3 to 15 percent guardrail.",
+  "why_it_fails": "YC would most plausibly pass because mobile fueling and maintenance looks like a low margin logistics business with regulatory exposure: California officials publicly called gas delivery unsafe and illegal in 2016, fuel is a commodity with thin spreads, and convenience is the only wedge. The application shows no evidence yet of repeat usage, unit economics per visit, or a path to a dense multi-city network, and consumer on-demand services had a poor record in the data (consumer cohort 2010 to 2015 had 50 percent shutdowns)."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.78,
+   "anchors": {
+    "base_rate": 0.82,
+    "source": "python3 -I scripts/base_rates.py --years 2010-2015 --calibration-only (n=83 researched, cohorts ending before 2016; the Consumer-only cohort had just 18 so it was widened to all industries): seed lower/known/upper 51%/82%/89%, cond 82% (n=51); Consumer 2010-2015 n=18 gave cond 89%",
+    "adjustment_reason": "Slightly below the 82 percent anchor because the early metro is capital intensive and the 2016 climate for on-demand consumer services was cooling, but a YC logo and a live service keep a seed likely. Within 2x of the anchor."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      2500000
+     ],
+     "post_money_usd": [
+      6000000,
+      12000000
+     ],
+     "p_band": 0.6,
+     "rationale": "Typical 2013 to 2017 seed was a median 2.0M (p25 1.7M, p75 2.5M) in the cohort; a membership service with real vans needs the upper half."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      300000,
+      1000000
+     ],
+     "post_money_usd": [
+      3000000,
+      6000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin seed or angel round from regional investors in Nashville and Southeast, enough for one more metro."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      2500000,
+      5000000
+     ],
+     "post_money_usd": [
+      12000000,
+      25000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside if early member retention is strong and a strategic (automotive or energy) investor joins."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed most likely fails to close if the early cohorts show customers who try one fill up and do not return, so the monthly membership never proves retention. Investors in 2016 had seen on-demand fuel and car care startups burn cash on vans and technicians, and analogs such as carlypso and drive-pulse never got past a small first round, so a one-metro service without margin per visit can stall at seed."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.67,
+    "source": "python3 -I scripts/base_rates.py --years 2010-2015 --calibration-only (n=83 researched, cohorts ending before 2016; the Consumer-only cohort had just 18 so it was widened to all industries): series_a lower/known/upper 34%/55%/72%, cond 67% (n=42); Consumer cohort cond 50% (n=8)",
+    "adjustment_reason": "Well below the 67 percent known-only anchor (lower bound is about 0.67 of seed reachers only when funding is findable; consumer cohort gives 50 percent). Cut further for asset heavy economics, regulatory risk on fuel delivery and visible rivals; about 1.8x below the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Cohort 2013 to 2017 Series A median 7.0M (p25 5.7M, p75 10.0M)."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      5000000
+     ],
+     "post_money_usd": [
+      10000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small bridge or flat Series A led by strategics or insiders when growth is slow."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside if multi-metro growth is proven and an auto or energy partner leads."
+    }
+   ],
+   "why_it_fails": "Series A is likely missed because the model needs proof of contribution margin per van and per member across at least two metros, and a single Southeast metro will not show that. Rivals WeFuel, Filld and Purple, and mobile mechanics like yourmechanic with 24M in early 2016, set a high bar, while analogs such as fiix and cardash stayed local and ended with small seed rounds and sales to larger rivals."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.4,
+   "anchors": {
+    "base_rate": 0.57,
+    "source": "python3 -I scripts/base_rates.py --years 2010-2015 --calibration-only (n=83 researched, cohorts ending before 2016; the Consumer-only cohort had just 18 so it was widened to all industries): series_b lower/known/upper 19%/31%/58%, cond 57% (n=28)",
+    "adjustment_reason": "Below the 57 percent known-only anchor because logistics heavy consumer services have to show repeat revenue and unit economics at scale, and the bar rises sharply at Series B. Within 2x of the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical growth round for a service business that has proven a few metros."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat or modest round with asset financing, needed because vans and equipment are capital heavy."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      70000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside if the platform becomes a fleet, OEM or insurer channel."
+    }
+   ],
+   "why_it_fails": "Series B would be missed if growth depends on buying more vans and technicians faster than margin improves, so each new metro burns cash and investors see a service company valued like a logistics company. Analogs drivezy (asset heavy, cash strain) and carwoo (could not raise 50M against a larger rival) show how this stage ends, and a larger fuel or auto services player could copy the model with more capital."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.44,
+    "source": "python3 -I scripts/base_rates.py --years 2010-2015 --calibration-only (n=83 researched, cohorts ending before 2016; the Consumer-only cohort had just 18 so it was widened to all industries): series_c lower/known/upper 8%/14%/47%, cond 44% (n=16); maps to series_c_plus",
+    "adjustment_reason": "Below the 44 percent known-only anchor because few asset heavy consumer services reached Series C in the cohort and the data is thin; within 2x of the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      150000000,
+      350000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Standard late growth round for a scaled services business."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      70000000,
+      150000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Down or flat round or debt heavy financing if growth slows."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      150000000
+     ],
+     "post_money_usd": [
+      400000000,
+      900000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside only if autonomy or electrification service networks make it a strategic asset."
+    }
+   ],
+   "why_it_fails": "A Series C is unlikely because by then the company must show a profitable, repeatable network and a defense against OEMs, dealers and large fuel retailers, and by 2016 the industry expected electric and later autonomous vehicles to change both fueling and servicing demand. Without a clear lead, investors would see a regional service operator with capital needs and limited upside, as with the later stages of kovi style asset heavy models."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     3000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.02
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company stalls or sells small because mobile fueling and servicing is a low margin, asset heavy business whose convenience wedge is easy to copy and capital hungry to scale. The cohort of YC consumer companies 2010 to 2015 shut down 50 percent of the time, and analogs like carwoo, fiix and cardash ended with sales or closures after local growth. A large exit would need a national network that incumbents and automakers cannot replicate, which looks unlikely from a single metro in 2016."
+ },
+ "analogs": [
+  {
+   "slug": "yourmechanic",
+   "relevance": "Mobile mechanic that comes to the customer, closest service model and a well funded rival in 2016.",
+   "outcome_summary": "Raised 24M in early 2016, later acquired; shows the model can scale but needed large capital."
+  },
+  {
+   "slug": "carwoo",
+   "relevance": "Consumer auto services startup facing a larger rival.",
+   "outcome_summary": "Raised a Series A but could not raise 50M more and shut down, assets to TrueCar."
+  },
+  {
+   "slug": "drivezy",
+   "relevance": "Same batch, asset heavy vehicle business with debt financed assets.",
+   "outcome_summary": "Raised large rounds on assets but cash strain followed; recorded as inactive."
+  },
+  {
+   "slug": "carlypso",
+   "relevance": "Auto consumer service from the 2014 batch with a small seed.",
+   "outcome_summary": "Acquired by a larger player after only a seed round."
+  },
+  {
+   "slug": "drive-pulse",
+   "relevance": "Consumer car product from 2014 with no later funding.",
+   "outcome_summary": "Inactive without raising beyond YC."
+  },
+  {
+   "slug": "ohm",
+   "relevance": "2015 batch car product, a consumer auto hardware attempt.",
+   "outcome_summary": "Inactive, no later round found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Thin unit economics on vans, fuel spread and technicians",
+   "p": 0.35,
+   "evidence": "Fuel is a commodity with thin margin and every visit needs a van and driver; comparable asset heavy models such as drivezy needed heavy financing and strained cash.",
+   "analogs": [
+    "drivezy",
+    "carwoo"
+   ],
+   "mitigation": "Sell memberships with maintenance attached, batch visits by route, and track contribution margin per visit before opening a second metro."
+  },
+  {
+   "risk": "Regulatory block on mobile fuel delivery",
+   "p": 0.2,
+   "evidence": "In 2016 California officials called gas delivery unsafe and illegal and fire codes in many cities restrict it, per Bloomberg and SiliconANGLE coverage.",
+   "analogs": [
+    "ohm",
+    "drive-pulse"
+   ],
+   "mitigation": "Operate first in permissive states like Tennessee, work with fire marshals, and lead with maintenance services when fueling is limited."
+  },
+  {
+   "risk": "Funded rivals and incumbents copy the service",
+   "p": 0.25,
+   "evidence": "WeFuel, Filld and Purple already offer app ordered fueling and yourmechanic raised 24M in March 2016 for mobile repair; Jiffy Lube and dealers can add pickup services.",
+   "analogs": [
+    "yourmechanic",
+    "carlypso"
+   ],
+   "mitigation": "Win a dense local network first and lock in memberships and fleet or employer contracts."
+  },
+  {
+   "risk": "Low repeat usage and single metro limits",
+   "p": 0.25,
+   "evidence": "Consumer and on-demand services in the data stay local and end small; fiix and cardash never grew past one region.",
+   "analogs": [
+    "fiix",
+    "cardash"
+   ],
+   "mitigation": "Price memberships to drive monthly use and prove retention cohorts above 60 percent."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "WeFuel",
+   "what": "On-demand gas delivery in Palo Alto and Menlo Park by app.",
+   "traction": "Launched in 2016 with plans for San Francisco.",
+   "source_url": "https://siliconangle.com/2016/05/04/killing-an-american-icon-fuel-delivery-start-ups-could-downsize-u-s-gas-stations/"
+  },
+  {
+   "name": "Filld",
+   "what": "App ordered mobile fueling in the Bay Area.",
+   "traction": "Over 3M in seed funding and plans to expand nationally.",
+   "source_url": "https://www.thedrive.com/news/3428/the-wild-frontier-of-fuel-delivery-startups"
+  },
+  {
+   "name": "Purple",
+   "what": "On-demand fueling in Los Angeles, San Diego, Orange County and Seattle.",
+   "traction": "Operating in several metros in 2016.",
+   "source_url": "https://www.newswire.com/news/startup-purple-offers-on-demand-fuel-service-9659508"
+  },
+  {
+   "name": "YourMechanic",
+   "what": "Mobile mechanics who come to the customer.",
+   "traction": "Raised 24M Series B in March 2016, 32M total.",
+   "source_url": "https://fortune.com/2016/03/01/yourmechanic-24-million/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "The software is a booking app and dispatch; the hard parts are operational: safe fuel handling on vans, permits, technician quality and routing. A small team can build the app in three months, but cannot quickly solve regulation or physical operations."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Jiffy Lube and dealer service networks",
+   "Fuel retailers",
+   "Funded fueling startups"
+  ],
+  "timeline_months": 12,
+  "rationale": "Incumbents have locations and customers but little incentive to cannibalize them, while funded startups can copy the app quickly. Distribution and permits are the real moats, so copy risk is moderate."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Several venture backed startups launched on-demand fueling in 2015 and 2016, showing investor and customer interest.",
+    "source_url": "https://www.bloomberg.com/news/articles/2016-05-02/gas-delivery-startups-want-to-fill-up-your-car-anywhere-is-that-allowed"
+   },
+   {
+    "claim": "Mobile car repair attracted a 24M round from SoftBank, a16z and corporate investors in March 2016.",
+    "source_url": "https://fortune.com/2016/03/01/yourmechanic-24-million/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show real repeat demand in the first metro.",
+   "actions": [
+    "Collect retention data on the first members",
+    "Get permits and a safety record in writing"
+   ],
+   "proof": "Monthly repeat rate above 50 percent"
+  },
+  {
+   "phase": "seed",
+   "goal": "Prove membership retention and positive margin per visit.",
+   "actions": [
+    "Cut cost per visit with route batching",
+    "Launch the second tier of services such as tire and battery"
+   ],
+   "proof": "Contribution margin positive per visit"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove the model in a second metro with route density.",
+   "actions": [
+    "Open a second metro with the same playbook",
+    "Sign fleet or employer contracts"
+   ],
+   "proof": "Second metro reaches the first metro's density in under 6 months"
+  },
+  {
+   "phase": "series_b",
+   "goal": "Show a repeatable multi-metro playbook with improving margins.",
+   "actions": [
+    "Add asset financing for vans",
+    "Build partnerships with insurers or automakers"
+   ],
+   "proof": "Three or more metros with positive margin"
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Own a defensible network and a fleet or partner channel.",
+   "actions": [
+    "Expand to multiple regions with local density",
+    "Prepare for electric vehicle charging and service demand"
+   ],
+   "proof": "Network profitability and partner revenue share"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large, universal spend on fuel and maintenance",
+   "evidence": "The long description notes fuel and maintenance can more than double lifetime ownership cost, a huge market.",
+   "source_url": "https://www.ycombinator.com/companies/yoshi-mobility"
+  },
+  {
+   "point": "Live service and a clear mission",
+   "evidence": "The service launched in April 2016 per the directory and has a defined membership pitch.",
+   "source_url": "https://www.ycombinator.com/companies/yoshi-mobility"
+  }
+ ],
+ "brand": {
+  "name": "Yoshi Mobility",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Yoshi Mobility\" --era 2013-2017: 13 chars, 2 words, compound_words kind; cohort alive 71.4 percent (n=245), flags long and 4+ syllables.",
+  "strengths": [
+   "Friendly, memorable first word"
+  ],
+  "weaknesses": [
+   "Two words and 13 characters, long to type",
+   "Mobility is generic"
+  ],
+  "rationale": "Yoshi is friendly and easy to say but the two word name is long and generic, similar to many mobility brands. Past YC brand cases such as airbnb show distinctive short names help, but naming rarely decides outcomes here, so the effect is neutral.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A live but asset heavy car care membership in Nashville: low odds of YC and a likely stall at seed or Series A.",
+  "general_summary": "Yoshi Mobility offers car owners a membership for mobile fueling and maintenance, an idea with a very large market but thin margins and heavy operations. In mid 2016 several funded rivals existed, regulators were skeptical of fuel delivery, and the team sits outside the main startup hubs. The base rate for 2010 to 2015 YC companies shows a good chance of seed and a moderate chance of Series A, but asset heavy consumer services did worse than average. We therefore put the odds of YC acceptance near one percent, give a modest chance of Series A and treat shutdown or a small sale as the most likely end."
+ },
+ "assumptions": [
+  "Described only from facts available at the start of Summer 2016; no post batch information used.",
+  "Team size, founders and traction at application are unknown; assumed an early live service in one metro.",
+  "Base rates use 2010 to 2015 cohorts (n=83 researched) because Consumer-only and Automotive-only cohorts had 18 and 1 companies; data coverage is partial for many companies, so rates carry wide uncertainty.",
+  "Analog records come from the repo dataset, which may include later outcomes; they were used only as examples of how this class of company ends.",
+  "Round sizes are from the 2013 to 2017 era."
+ ],
+ "sources": [
+  "https://siliconangle.com/2016/05/04/killing-an-american-icon-fuel-delivery-start-ups-could-downsize-u-s-gas-stations/",
+  "https://www.bloomberg.com/news/articles/2016-05-02/gas-delivery-startups-want-to-fill-up-your-car-anywhere-is-that-allowed",
+  "https://www.thedrive.com/news/3428/the-wild-frontier-of-fuel-delivery-startups",
+  "https://www.newswire.com/news/startup-purple-offers-on-demand-fuel-service-9659508",
+  "https://fortune.com/2016/03/01/yourmechanic-24-million/",
+  "https://www.ycombinator.com/companies/yoshi-mobility"
+ ]
 }

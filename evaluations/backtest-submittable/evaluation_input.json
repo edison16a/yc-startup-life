@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Submittable",
+    "one_liner": "Online submission management for literary magazines, publishers and contests (currently called Submishmash).",
+    "description": "A hosted web app, built in Missoula, Montana, that lets literary magazines, publishers, contests and universities receive, track, review and answer manuscript and entry submissions online instead of by mail or email. Organizations pay a subscription or a per submission fee, and writers submit for free or pay a small reading fee. It reportedly serves over 2,000 publishers and universities by its own count, with paying customers already and little outside capital.",
+    "as_of": "2012-06-01"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.05,
+    "p_low": 0.02,
+    "p_high": 0.1,
+    "basis": "Start from the reported Summer 2012 acceptance rate of about 2 percent (TechCrunch, May 2012, which called it the most selective class yet). Adjust upward by about 2.5x because the company already has paying customers and a claimed 2,000 plus organizations, a product live for two years and sells a boring but real need, which Graham favours. Adjust slightly down for a tiny addressable market (literary magazines) and no stated technical or venture scale story. Net about 5 percent, range 2 to 10 percent.",
+    "why_it_fails": "YC would most plausibly say the market is too small and too slow: literary magazines are mostly nonprofit and have little money, so a venture return needs a leap into broader submission workflows such as contests, grants, universities and HR, which the application does not yet show. The product is also easy to copy by an established competitor or a small team, and the company is already growing without YC, so partners may see little need for the program."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.65,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.8,
+        "source": "python3 -I scripts/base_rates.py --years 2005-2011 --industry B2B : seed cond 80% (n=93), lower/known/upper 52%/80%/87%. Narrow SaaS tag cohort (--tag SaaS --years 2005-2011) had only 25 researched companies so it was widened to B2B (141).",
+        "adjustment_reason": "Slightly below the cohort because the company is already revenue funded and may never need a seed round, and a small niche reduces investor appetite. Within 2x of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            100000.0,
+            500000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            2000000.0,
+            4000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin or small angel round or a minor convertible note, typical for bootstrapped teams in 2012."
         },
         {
           "raise_usd": [
-            0,
-            0
+            500000.0,
+            1500000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            4000000.0,
+            8000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2005-2012 seed raise is about $1M in the B2B cohort."
+        },
+        {
+          "raise_usd": [
+            1500000.0,
+            3000000.0
+          ],
+          "post_money_usd": [
+            8000000.0,
+            15000000.0
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if growth beyond literary publishing is shown."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The most likely failure to raise a seed is that the company grows on subscription revenue and never needs or attracts one, or investors judge literary magazine submissions a niche with little money. ContestMachine (Summer 2007) built contest tools and shut down without a visible round, and Jamglue also never raised after YC. Investors will ask what the market beyond publishers is."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.55,
+        "source": "python3 -I scripts/base_rates.py --years 2005-2011 --industry B2B : series_a cond 55% (n=74), 29%/44%/63%",
+        "adjustment_reason": "Below the anchor by about 1.8x: literary magazine revenue is capped and small, so the jump to Series A scale needs a new, larger customer segment that is unproven in 2012."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1500000.0,
+            4000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Small or bridge A at a modest valuation, as with slower SaaS companies."
         },
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            8000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            18000000.0,
+            40000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Cohort 2005-2012 median raise about $4M, 2013-2017 about $7M."
+        },
+        {
+          "raise_usd": [
+            8000000.0,
+            15000000.0
+          ],
+          "post_money_usd": [
+            40000000.0,
+            80000000.0
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if recurring revenue grows quickly across segments."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A investors will want proof of repeatable revenue past literary journals, which are small and often nonprofit. Without a clear second segment such as grants, contests, universities or corporate intake, growth plateaus at a lifestyle business. Balto and Eduflow show contest and education tooling that stayed in small markets and were later acquired without large rounds."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.45,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.66,
+        "source": "python3 -I scripts/base_rates.py --years 2005-2011 --industry B2B : series_b cond 66% (n=41), 19%/29%/53%",
+        "adjustment_reason": "Survivors of Series A with recurring SaaS revenue tend to be efficient, but the cohort conditional is partly inflated by incomplete data, so a modest discount."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000.0,
+            60000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower Series B, below the 2005-2012 cohort median of about $10M, for slower niche growth."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "Typical Series B for the B2B cohort, where median raises ran $10M to $16M by era."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            35000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside growth round if the company broke out of the literary niche into broad intake workflows."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B requires scaling sales beyond inbound and self serve, which a small Montana team with little capital may not manage. A well funded competitor or a generic form and workflow platform could compress pricing, and net retention may be weak if customers are tiny. Analogs such as Giveffect, nonprofit SaaS with a small market, stalled before bigger rounds."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.4,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.56,
+        "source": "python3 -I scripts/base_rates.py --years 2005-2011 --industry B2B : series_c cond 56% (n=27), 11%/16%/45%",
+        "adjustment_reason": "Discounted because only strong breakouts reach Series C and a niche origin lowers the odds of a $100M plus outcome."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            25000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000.0,
+            250000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Flat or modest late round, as a profitable SaaS company might take for expansion."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000.0,
+            600000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a profitable SaaS company that has found a larger segment."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "post_money_usd": [
+            600000000.0,
+            1500000000.0
+          ],
+          "p_band": 0.15,
+          "rationale": "Breakout upside round if enterprise and government adoption scales strongly."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Reaching Series C needs a large enterprise or government segment and a strong sales engine, and most niche workflow SaaS companies are acquired earlier or plateau. The risk is that growth slows under heavy competition, and private equity or strategic buyers become the better exit than another venture round, as with Onederful and Eduflow."
     }
   ],
   "outcomes": {
@@ -164,167 +212,210 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.36
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.41
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.19
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          3000000000.0
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the company stays a small, profitable but venture sized niche tool, or is acquired for under $100M by a publishing or workflow platform. Reaching a larger exit needs the leap from literary submissions to broad intake workflows, where generic form tools and enterprise software already compete. The B2B 2005-2011 cohort shows 30 percent shutdowns and 48 percent acquisitions, mostly small."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "contestmachine",
+      "relevance": "Contest and giveaway tool for small organizations; same small-market, easy to copy shape.",
+      "outcome_summary": "Summer 2007, shut down with no visible post-YC round."
+    },
+    {
+      "slug": "jamglue",
+      "relevance": "Contest driven web product from an early batch that grew users without a business model.",
+      "outcome_summary": "Over a million users but went dark in 2010, with unit economics the issue; shows traffic without revenue fails. Submittable differs by charging."
+    },
+    {
+      "slug": "balto",
+      "relevance": "Contest automation software, a niche workflow tool.",
+      "outcome_summary": "Later batch, acquired by FuboTV with no major round."
+    },
+    {
+      "slug": "eduflow",
+      "relevance": "Niche workflow software that reached most of a small market on little money.",
+      "outcome_summary": "Acquired after linear growth in a small market, raised under $2M."
+    },
+    {
+      "slug": "giveffect",
+      "relevance": "SaaS for nonprofits, the same customer budget constraint.",
+      "outcome_summary": "Active but no recorded round after YC."
+    },
+    {
+      "slug": "zapier",
+      "relevance": "Same Summer 2012 batch, bootstrapped revenue first B2B SaaS that grew slowly on revenue.",
+      "outcome_summary": "Alive and revenue funded, with only a seed raised; shows the revenue first path is viable."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Tiny market: literary magazines and similar publishers are mostly nonprofit and spend little",
+      "p": 0.35,
+      "evidence": "Customers are small journals with volunteer editors, so revenue per customer is low and the cohort of venture scale outcomes needs a larger segment.",
       "analogs": [
-        "TODO-company-slug"
+        "eduflow",
+        "giveffect"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Expand to contests, grants, universities and corporate intake early and show revenue per account rising."
+    },
+    {
+      "risk": "Copyable product and low switching costs; competitors and generic form tools undercut price",
+      "p": 0.25,
+      "evidence": "Several submission tools appeared in 2010 and a basic submission form is a short build for a small team or a larger platform.",
+      "analogs": [
+        "contestmachine",
+        "balto"
+      ],
+      "mitigation": "Build workflow depth, integrations, payments and a writer side network so that data and habits lock in."
+    },
+    {
+      "risk": "Founders and capital: small remote team with little capital and no stated sales engine",
+      "p": 0.2,
+      "evidence": "Based in Missoula with no outside round and an unproven ability to sell beyond inbound literary customers.",
+      "analogs": [
+        "jamglue",
+        "zapier"
+      ],
+      "mitigation": "Raise a modest seed, hire a sales lead, and use YC's network for enterprise introductions."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Other submission managers (2010 entrants)",
+      "what": "Several new hosted submission tools for literary magazines launched around 2010 alongside Submishmash.",
+      "traction": "Small, crowded niche; each claims dozens to hundreds of journals.",
+      "source_url": "https://www.pw.org/content/new_treefree_submission_services"
+    },
+    {
+      "name": "One Story submission manager",
+      "what": "A submission manager licensed to journals through a literary council.",
+      "traction": "Used by independent literary presses.",
+      "source_url": "https://cmscritic.com/3-submission-management-systems-for-literary-journals-an-overview"
+    },
+    {
+      "name": "Email, post and spreadsheets",
+      "what": "The status quo: paper submissions with SASE and email inboxes.",
+      "traction": "Still the default at many magazines, but writers and editors are moving online.",
+      "source_url": "https://www.pw.org/content/writers_editors_say_adios_sases?cmnt_all=1"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "A web app for forms, file uploads, review workflow, email templates and payments is within reach of a small team in three months. The hard parts are reliability, deliverability and breadth of workflow features, not research problems, so there is little technical moat."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Existing submission tools",
+      "Generic form and workflow platforms",
+      "Publishing software vendors"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "A rival could replicate core features in under a year, but the niche is small so large firms have little incentive. Risk comes mainly from small direct competitors and from generic form products rather than a platform shutting it out."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Writers and editors are moving from paper submissions to online managers in 2010 to 2012.",
+        "source_url": "https://www.pw.org/content/writers_editors_say_adios_sases?cmnt_all=1"
+      },
+      {
+        "claim": "The company claimed over 2,000 publishers and universities as users by 2011 (self reported).",
+        "source_url": "https://htmlgiant.com/tag/submishmash/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show paying customers and growth beyond literary magazines.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish monthly revenue and active organizations in the application",
+        "Add a second segment such as contests or grants and show first customers"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Recurring revenue and at least a few non literary customers."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert YC and revenue into a seed or stay profitable.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Raise a small seed on revenue growth",
+        "Hire a first salesperson and build integrations and payments depth"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 100 percent and a consistent monthly growth rate."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Real paying customers and revenue before YC",
+      "evidence": "Self reported over 2,000 publishers and universities and a live product for two years.",
+      "source_url": "https://htmlgiant.com/tag/submishmash/"
+    },
+    {
+      "point": "Capital efficient boring B2B workflow with a clear pain",
+      "evidence": "Replaces postal and email intake, a documented shift among literary magazines.",
+      "source_url": "https://www.pw.org/content/writers_editors_say_adios_sases?cmnt_all=1"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Submittable",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Submittable\" --era 2005-2012 : invented or proper name, 4 plus syllables, cohort alive rate about 50 to 53 percent, no outlier.",
     "strengths": [
-      "TODO"
+      "Describes the action in one word",
+      "Clear to writers and editors"
     ],
     "weaknesses": [
-      "TODO"
+      "Long, four syllables",
+      "Descriptive adjective style name, hard to trademark broadly"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The company renamed from Submishmash, which was playful but hard to spell, to a clearer descriptive name. Descriptive names rarely help or hurt; brand cases like Dropbox show clarity helps but the name is secondary to need and traction here.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A small but real revenue business in a niche market with a low chance of YC and a mid chance of becoming a durable SaaS company.",
+    "general_summary": "Submittable, formerly Submishmash, sells a hosted workflow for receiving and reviewing manuscript and contest submissions. It is capital efficient and already has paying customers, which is rare among applicants, but the market of literary magazines is small and mostly nonprofit. The reported Summer 2012 acceptance rate is about 2 percent, so even with traction the chance of getting in is low. If accepted, the most likely path is a small seed or none, then slow revenue growth, and the upside depends entirely on expanding to larger segments such as contests, grants and universities. Analogs in niche contest and nonprofit tooling mostly stayed small."
   },
   "assumptions": [
-    "TODO"
+    "Description is based only on the 2010 to 2012 facts: product, location, self reported customer count and the 2 percent acceptance rate. Later changes in scope and name are ignored.",
+    "Team background and revenue amounts are unknown as of 2012 and assumed modest.",
+    "The company row description in companies.csv is from today and was not used.",
+    "B2B 2005-2011 cohort (n=141) used for anchors since the SaaS narrow cohort had only 25; calibration-only cohort has 36 companies with similar numbers (seed 88%, A 67%, B 50%, C 40%).",
+    "Valuations for 2012 are scarce in the data, so bands rely on the benchmarks and general 2012 climate."
   ],
   "sources": [
-    "https://"
+    "https://www.pw.org/content/new_treefree_submission_services",
+    "https://cmscritic.com/3-submission-management-systems-for-literary-journals-an-overview",
+    "https://www.pw.org/content/writers_editors_say_adios_sases?cmnt_all=1",
+    "https://htmlgiant.com/tag/submishmash/",
+    "https://techcrunch.com/2012/05/22/ycombinator-80-strong"
   ]
 }

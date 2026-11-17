@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Assorted Bits",
+    "one_liner": "A mobile calendar for all the fun stuff you do with friends.",
+    "description": "A consumer iPhone calendar app (product name YouThere) where people see and plan social events with friends, such as parties, dinners and shows, in one place instead of scattered across Facebook Events, text threads and a personal calendar. Users are friends and young adults, nobody pays at launch, and revenue would come later from ads, event partners or ticketing. Team size and traction at application are not known.",
+    "as_of": "2012-06-01"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.012,
+    "p_low": 0.004,
+    "p_high": 0.03,
+    "basis": "Start from the roughly 1 percent prior for a random applicant (band 0.6 to 2 percent, yc_acceptance.md). Adjustments: consumer apps with no repeat usage push down, a social calendar for friends has no visible wedge and the closest predecessor Plancast announced a post-mortem for low adoption; YC in 2012 did fund many mobile consumer apps and the idea is simple and personal, which pushes up slightly. No traction or team facts are known, so the result stays near the prior, a little above it.",
+    "why_it_fails": "YC would most plausibly say that a friends calendar is a feature, not a company. Facebook Events, Google Calendar, iMessage threads and Plancast already cover the need in a loose way, and Plancast's own founder explained that users had no plans worth sharing, so usage would not repeat. Without strong early retention numbers or a founder with a clear angle on how a social graph gets bootstrapped, the interview would likely end in rejection."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.55,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.66,
+        "source": "python3 -I scripts/base_rates.py --years 2005-2011 --industry Consumer (142 researched companies): seed cond 66% (n=96), lower/known/upper 44/66/77%",
+        "adjustment_reason": "Slightly below the 66 percent anchor, within 2x: the team and traction are unknown and the category is crowded with failed social planning apps, but YC demo day in 2012 made seed money for consumer mobile easy to find."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000,
+            300000
           ],
           "post_money_usd": [
-            0,
-            0
+            2000000,
+            3500000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Convertible notes from angels and the YC demo day crowd; consumer seed median in 2005-2012 raise was about $592K."
         },
         {
           "raise_usd": [
-            0,
-            0
+            300000,
+            1200000
           ],
           "post_money_usd": [
-            0,
-            0
+            3500000,
+            6000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical post demo day round of about $1M on a $4M cap."
+        },
+        {
+          "raise_usd": [
+            1500000,
+            3000000
+          ],
+          "post_money_usd": [
+            8000000,
+            15000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if early usage looks viral among students."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The product must show repeat weekly use among friends before investors fund it, and calendars are a low frequency habit with a cold start problem, since the app is empty until friends join. Plancast and Plurchase both launched with press and then failed to retain users. If demo day metrics show installs but no repeat planning, investors pass and the company runs out of YC money."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.49,
+        "source": "python3 -I scripts/base_rates.py --years 2005-2011 --industry Consumer (142 researched companies): series_a cond 49% (n=63), lower/known/upper 22/32/54%",
+        "adjustment_reason": "Below the 49 percent anchor by less than 2x: social apps without a clear monetization path rarely clear the Series A bar, and the 2012 consumer funding climate had already cooled for pure apps."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Thin round near the low end of consumer Series A in 2005-2012 (p25 raise $3.2M)."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median consumer Series A of $4.4M."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside with strong growth numbers."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A requires millions of active users or a revenue model, and a calendar for fun events has neither a built in monetization nor a natural network effect outside friend groups. Facebook can add event discovery and mobile planning inside an app that already holds the friend graph, and Kiko lost to Google Calendar in the same way. Investors would likely pass for lack of growth."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.45,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.68,
+        "source": "python3 -I scripts/base_rates.py --years 2005-2011 --industry Consumer (142 researched companies): series_b cond 68% (n=31), lower/known/upper 15/22/47%",
+        "adjustment_reason": "Below the 68 percent anchor: survivors of a Series A in consumer social usually have strong growth, but this category has a poor record for durable retention and platform control."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Thin round, p25 consumer Series B raise was $8.1M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            9000000,
+            16000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            120000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median consumer Series B raise was $10M."
+        },
+        {
+          "raise_usd": [
+            16000000,
+            30000000
+          ],
+          "post_money_usd": [
+            120000000,
+            400000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if the app became a daily social habit."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "To raise a Series B the company needs tens of millions of users or proven revenue, and social calendars have a ceiling because most people schedule only a few social events a week. A larger player like Facebook, Apple or Google can copy the planning feature and bundle it. Loopt reached Series B with millions of users and still sold for under what it had raised, which is the likely shape of this risk."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --years 2005-2011 --industry Consumer (142 researched companies): series_c cond 33% (n=21), lower/known/upper 5/7/37%",
+        "adjustment_reason": "Close to the 33 percent anchor, slightly lower because few consumer social apps in this cohort reached Series C and those that did had large audiences."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Thin Series C by 2013-2017 standards, consumer Series C raises were modest."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical growth round for a breakout consumer app."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside only if the app became a platform."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A growth round requires clear scale and a durable business, and a social calendar that got this far would still face platform dependency on Facebook and Apple and ads based monetization that grows slowly. Investors may stall because the market for planning apps is small compared with the funding needed, as Loopt and Socialcam showed when they were sold below their growth capital needs."
     }
   ],
   "outcomes": {
@@ -164,167 +212,234 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.72
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          500000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.21
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.065
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.005
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the app never reaches repeat usage: a friend-centered calendar needs many friends in the same network before it is useful, and Plancast, Kiko and Plurchase all show that attention for such tools fades quickly. The best case is a small acquihire by a larger social or calendar company, but the exit would be small and the founders unlikely to find a large independent business."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "kiko",
+      "relevance": "A YC calendar startup that ran into Google Calendar.",
+      "outcome_summary": "Acquired for a small price in 2006 via eBay after Google Calendar matched its features."
+    },
+    {
+      "slug": "plurchase",
+      "relevance": "A consumer social product from YC with no repeat usage.",
+      "outcome_summary": "Shut down with no later round."
+    },
+    {
+      "slug": "loopt",
+      "relevance": "A mobile social app for friends and location that Facebook-era platforms absorbed.",
+      "outcome_summary": "Raised Series B and was sold to Green Dot in March 2012 for about $43M."
+    },
+    {
+      "slug": "socialcam",
+      "relevance": "A consumer mobile app that grew on Facebook and sold quickly.",
+      "outcome_summary": "Acquired by Autodesk for about $60M in 2012 after a seed only path."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "No repeat usage because a social calendar has a cold start problem",
+      "p": 0.45,
+      "evidence": "Plancast's founder published a post-mortem saying users had few plans to share, and Plurchase also failed to retain users.",
       "analogs": [
-        "TODO-company-slug"
+        "plurchase",
+        "kiko"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Launch in one tight group such as one campus and measure weekly planning among at least 10 friends per user."
+    },
+    {
+      "risk": "Facebook, Apple or Google add the feature to their own apps",
+      "p": 0.35,
+      "evidence": "Facebook Events and Google Calendar already hold the friend graph and the calendar, and Kiko lost to Google Calendar after 2006.",
+      "analogs": [
+        "kiko",
+        "loopt"
+      ],
+      "mitigation": "Be the neutral layer that works across Facebook, Google and phone contacts."
+    },
+    {
+      "risk": "No monetization path for a free consumer app",
+      "p": 0.3,
+      "evidence": "No paid behavior is evidenced and consumer apps in the 2005-2011 cohort shut down 51 percent of the time.",
+      "analogs": [
+        "socialcam",
+        "plurchase"
+      ],
+      "mitigation": "Test ticketing or event partner revenue in the first six months."
+    },
+    {
+      "risk": "Team and traction unknown, likely a small team with a weak founder story",
+      "p": 0.2,
+      "evidence": "The data holds no facts on the team, and acceptance relies on founder quality.",
+      "analogs": [
+        "loopt"
+      ],
+      "mitigation": "Show shipped product and usage numbers in the application."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Plancast",
+      "what": "Social event sharing site started by a former TechCrunch writer.",
+      "traction": "Founder announced he would stop working on it full time, citing low adoption.",
+      "source_url": "https://techcrunch.com/?p=483633"
+    },
+    {
+      "name": "UpTo",
+      "what": "Mobile app that makes the calendar social, launched March 2012.",
+      "traction": "Early launch coverage in TechCrunch, small user base.",
+      "source_url": "https://techcrunch.com/2012/03/21/upto-launch/amp/"
+    },
+    {
+      "name": "Facebook Events and Google Calendar",
+      "what": "The default places where friends invite each other and where people keep schedules.",
+      "traction": "Hundreds of millions of users on each.",
+      "source_url": "https://legacy.xconomy.com/?p=183990"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "A calendar app that reads the phone calendar and Facebook events and syncs with friends is within reach of a two person team in three months. The hard parts are calendar sync across providers and bootstrapping a friend graph, which are product problems more than engineering ones."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Facebook",
+      "Google",
+      "Apple"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Each platform owns either the social graph or the calendar and could add friend event planning in a few months. They have strong incentive to keep social planning inside their own apps, and the startup depends on their data access."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 2,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Plancast, an earlier social events service, announced a post-mortem pointing to low adoption, so demand for a dedicated app is unproven.",
+        "source_url": "https://techcrunch.com/?p=483633"
+      },
+      {
+        "claim": "New entrants like UpTo in March 2012 show founders believe in the idea, yet no paid demand is shown.",
+        "source_url": "https://techcrunch.com/2012/03/21/upto-launch/amp/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a working iPhone app with weekly repeat planning in one friend group.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Ship the app to one campus or friend network and measure weekly active use",
+        "Interview 30 users on how they plan outings today and what they use"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "At least 30 percent of users create or join an event every week."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Demonstrate growth on a clear loop at demo day.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add invite loops that bring friends in through each event",
+        "Report weekly retention and invites per user at demo day"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Month over month growth above 20 percent with retention above 25 percent."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove a monetization path and a network that scales beyond one group.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Test ticketing or event partner revenue",
+        "Expand to three more networks and show similar retention"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Over 500K monthly active users or meaningful revenue per event."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Become a daily habit that platforms cannot easily copy.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add features such as chat and discovery that raise frequency",
+        "Sign partnerships with venues and ticketing firms"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Daily active to monthly active above 30 percent."
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale revenue and defensibility.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build a revenue engine on ads or ticketing",
+        "Expand internationally"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue run rate of tens of millions with a path to profit."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "A simple product a small team can build fast.",
+      "evidence": "Technical complexity is low, so iteration is cheap.",
+      "source_url": "https://techcrunch.com/2012/03/21/upto-launch/amp/"
+    },
+    {
+      "point": "Mobile consumer apps were well funded in 2012.",
+      "evidence": "Cohort data show 66 percent of consumer YC companies in 2005-2011 raised a seed round.",
+      "source_url": "https://legacy.xconomy.com/?p=183990"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Assorted Bits",
+    "rating": 2,
+    "effect_on_success": "hurts",
+    "name_check": "python3 -I scripts/name_features.py --score \"Assorted Bits\" --era 2005-2012 : 12 chars, 4 syllables, compound words; 12+ chars cohort n=46 alive 47.8% vs 55.0% overall",
     "strengths": [
-      "TODO"
+      "The product name YouThere is short and describes the use."
     ],
     "weaknesses": [
-      "TODO"
+      "Company name is long and vague and does not say calendar or friends"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "The company name is long and generic while the app name YouThere is better, creating a split identity. Past consumer YC brands that stuck, such as Dropbox, were short and clear; length 12+ names have slightly lower survival in the 2005-2012 cohort, so brand is a mild negative.",
+    "better_names": [
+      "YouThere"
+    ]
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A social calendar for friends has a low chance of YC and a weaker chance of a durable company.",
+    "general_summary": "This is a consumer mobile calendar for planning fun events with friends, built in the era when mobile apps were easy to fund but hard to keep. The idea is simple and relatable, yet the nearest predecessor, Plancast, failed on adoption, and platforms like Facebook and Google hold the social graph and the calendar. Base rates for consumer YC companies from 2005 to 2011 show a large majority raising a seed, but only about half of those reach Series A and survival is near 49 percent. With no known team or traction, the forecast sits close to the cohort rates, lowered a little for the weak wedge and high copy risk. Most likely outcome is a seed round followed by a quiet shutdown or small acquihire."
   },
   "assumptions": [
-    "TODO"
+    "Backtest as of the start of Summer 2012 using only facts then known: one liner, product name, and 2012 web sources. Team and traction are unknown.",
+    "Base rates use cohort 2005-2011 (industry Consumer, n=142 researched, above 30), which ends before the batch year. Tag cohort Consumer returned no companies.",
+    "Analogs kiko, plurchase and loopt had known outcomes before 2012; socialcam was acquired in August 2012, during the batch, so only its early traction was considered.",
+    "During research a yc_overlap listing displayed the company's own status, which I ignored when forecasting.",
+    "Data coverage limits: money amounts are sparse for 2005-2012 rounds."
   ],
   "sources": [
-    "https://"
+    "https://techcrunch.com/?p=483633",
+    "https://techcrunch.com/2012/03/21/upto-launch/amp/",
+    "https://legacy.xconomy.com/?p=183990"
   ]
 }
