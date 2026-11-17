@@ -1,0 +1,49 @@
+{
+  "slug": "lantern-2",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Developers and startups building AI applications on Postgres who need vector search and embedding generation",
+  "problem": "Teams wanted vector search for AI apps without adopting a separate and costly vector database; Lantern offered an HNSW based Postgres extension and managed cloud.",
+  "business_model": "Open source extension plus managed cloud with free tier and paid plans (Production from $44 per month)",
+  "product_category": "Vector database, Postgres extension",
+  "founded_year": 2023,
+  "founders": [
+    {"name": "Di Qi", "role": "Founder", "prior_employers": ["Y Combinator (software engineer)", "Facebook (Ads Ranking)"], "education": ["Princeton, computer science"], "technical": true, "previous_startups": ["Co-founder of a YC backed 15 minute delivery startup (name not given)"], "age_at_founding": null, "age_source": null, "background_notes": "Source: YC company page."},
+    {"name": "Narek Galstyan", "role": "Founder", "prior_employers": ["Timescale (early engineer)"], "education": ["Princeton, undergraduate degree", "UC Berkeley PhD student in distributed systems"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Source: YC company page."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "pre_seed", "date": null, "amount_usd": 1600000, "post_money_usd": null, "valuation_basis": null, "investors": ["The House Fund", "Y Combinator", "Wayfinder Ventures", "Founders of Citus Data"], "source_url": "https://lantern-db.notion.site/Lantern-is-hiring-Engineering-Interns-2ef23b0109f047368c41da83804295cd"}
+  ],
+  "exit": {"type": "unknown", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/lantern-2"},
+  "competition_at_founding": {
+    "as_of": "2023-09",
+    "competitors": [
+      {"name": "Pinecone", "what": "Standalone managed vector database that the launch post says Lantern undercuts on price", "traction_then": "Leading managed vector database by mindshare", "funding_then": "Not stated in the source", "source_date": "2023-09", "source_url": "https://ycombinator.com/launches/KZX-lantern-postgres-vector-database"}
+    ]
+  },
+  "technical_complexity": {"rating": 4, "rationale": "Building an HNSW index inside Postgres with fast index creation, embedding generation and cloud scaling required database internals work; launch post claims up to 2 million embeddings per hour."},
+  "defensibility": {"rating": 2, "moat_types": [], "rationale": "pgvector became the default Postgres vector option and is supported by nearly all managed Postgres hosts; independent Tembo benchmarks showed Lantern not clearly ahead."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["pgvector", "Pinecone", "Supabase", "Neon"], "outcome": "Managed Postgres hosts bundled pgvector, which became the default choice; no source reports an acquisition of Lantern."},
+  "market_need_then": "Demand for vector search exploded after ChatGPT in 2023, and many teams already ran Postgres. The launch post says several customers used Lantern in production without figures.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "real_word",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say", "evocative"],
+    "name_problems": ["generic"],
+    "domain_note": "Used lantern.dev, a .dev domain, with the GitHub organization lanterndata and a lanterndata npm package.",
+    "identity": {"logo": null, "mascot_or_character": null, "visual_style": "Developer docs and blog heavy site", "voice_and_tone": "Technical, benchmark driven blog posts such as 90x faster index creation than pgvector (vendor claim)"},
+    "brand_signature": null,
+    "rebrands": [],
+    "community_and_virality": "Hacker News launch thread and open source repo on GitHub; no merch found",
+    "brand_strength": {"rating": 2, "rationale": "Common word name shared with other products, modest developer awareness through content and open source, no evidence it drove adoption."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://lantern.dev/blog/postgres-vs-pinecone", "https://github.com/lanterndata/lantern"]
+  },
+  "pivots": [],
+  "success_factors": [],
+  "failure_factors": [],
+  "outcome_analysis": "Lantern joined YC in Winter 2024 with an open source Postgres vector extension and a cloud product and raised a pre seed round the company put at $1.6M. YC lists it inactive although lantern.dev still showed a live product with a 2024 footer. No source explains the status or a shutdown, so the cause is not public; pgvector's status as the default Postgres option is context, not a sourced cause.",
+  "sources": ["https://www.ycombinator.com/companies/lantern-2", "https://ycombinator.com/launches/KZX-lantern-postgres-vector-database", "https://lantern-db.notion.site/Lantern-is-hiring-Engineering-Interns-2ef23b0109f047368c41da83804295cd", "https://www.vcbacked.co/company/lantern", "https://tembo.io/blog/postgres-vector-search-pgvector-and-lantern"],
+  "notes": "The $1.6M pre seed comes from the company's own hiring page; VCBacked lists only $500K, and StartupIntros lists a $7M seed (2023-07), $6.8M led by Moxxie Ventures, and a $3.1M seed (2025-10); these may belong to a different company named Lantern and are unverified, so they are not recorded as rounds. Round date unknown (hiring page says it was raised around the early W24 acceptance). Exit unknown: YC says Inactive but the website was live. Launch post date from YC is shown as over 2 years ago; the 2023-09 date comes from a StartupIntros mirror."
+}

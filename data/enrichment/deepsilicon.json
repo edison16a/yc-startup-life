@@ -1,0 +1,51 @@
+{
+  "slug": "deepsilicon",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Edge AI and embedded developers who need to run transformer models on constrained hardware such as NVIDIA Jetson boards",
+  "problem": "Running transformer models needs lots of memory and floating point compute. The founders argued that ternary weights reduce this to additions and subtractions.",
+  "business_model": "Software plus custom chip (ASIC or chiplet) for efficient inference; pricing not found",
+  "product_category": "Ternary neural network software and hardware for inference",
+  "founded_year": 2024,
+  "founders": [
+    {"name": "Abhinav Reddy", "role": "CEO", "prior_employers": [], "education": ["Computer science and electrical engineering background per YC page; Dartmouth research per Launch HN post (degree not stated)"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page lists him as the founder. In the Launch HN post he describes ML and model architecture research at Dartmouth."},
+    {"name": "Alexander Nanda", "role": "Co-founder", "prior_employers": [], "education": ["Dartmouth research (degree not stated)"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Launch HN post names Alex as co-founder working on randNLA CUDA kernels at Dartmouth. Surname comes from an aggregator archive."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "pre_seed", "date": "2024-09", "amount_usd": 500000, "post_money_usd": null, "valuation_basis": null, "investors": ["Y Combinator"], "source_url": "https://dead-startups-neon.vercel.app/companies/deepsilicon"}
+  ],
+  "exit": {"type": "unknown", "date": null, "amount_usd": null, "acquirer": null, "reason": "YC lists Inactive; an aggregator reports no public shutdown announcement; CB Insights lists it as alive.", "source_url": "https://dead-startups-neon.vercel.app/companies/deepsilicon"},
+  "competition_at_founding": {
+    "as_of": "2024-09",
+    "competitors": [
+      {"name": "Microsoft BitNet (1.58 bit LLMs)", "what": "Research line on ternary weight transformers that inspired the founders", "traction_then": "research paper and released code, no product", "funding_then": "n/a", "source_date": "2024-09", "source_url": "https://hn.svelte.dev/item/41490196"},
+      {"name": "Etched", "what": "Transformer-specific chip company named in the Launch HN thread", "traction_then": "unknown", "funding_then": "unknown", "source_date": "2024-09", "source_url": "https://hn.svelte.dev/item/41490196"},
+      {"name": "NVIDIA Jetson", "what": "Incumbent edge AI hardware and CUDA software, the founders' initial target platform", "traction_then": "dominant incumbent", "funding_then": "n/a", "source_date": "2024-09", "source_url": "https://hn.svelte.dev/item/41490196"}
+    ]
+  },
+  "technical_complexity": {"rating": 5, "rationale": "Combines new low-precision model training, custom kernels and a proposed custom chip with a chiplet design, which is hard for a two person team with about $500K."},
+  "defensibility": {"rating": 2, "moat_types": [], "rationale": "Ternary methods were published research (BitNet and others). A commenter noted ternary transformers existed before, so the edge would have had to be execution and hardware."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["NVIDIA", "Microsoft", "Qualcomm"], "outcome": "No incumbent move against the company was found; the Launch HN thread notes incumbents could adopt ternary techniques."},
+  "market_need_then": "Demand for cheaper LLM inference at the edge was strong in 2024, and the founders cited memory limits on boards like Jetson; the Reddit thread reporting the 5x less RAM and 20x faster claim was disputed by a commenter as an unfair comparison.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "compound",
+    "name_qualities": ["evocative"],
+    "name_problems": ["generic"],
+    "domain_note": "Website at deepsilicon.net, not .com; page showed only Loading when fetched.",
+    "identity": {"logo": "unclear", "mascot_or_character": null, "visual_style": "unclear", "voice_and_tone": "Technical, research-forward launch post"},
+    "brand_signature": null,
+    "rebrands": [],
+    "community_and_virality": "Launch HN post on 2024-09-12 and a LocalLLaMA Reddit thread discussed the claims.",
+    "brand_strength": {"rating": 2, "rationale": "Some discussion on Hacker News and Reddit, but no press about the brand itself and no evidence it affected adoption."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://hn.svelte.dev/item/41490196", "https://www.ycombinator.com/companies/deepsilicon"]
+  },
+  "pivots": [],
+  "success_factors": [],
+  "failure_factors": [],
+  "outcome_analysis": "Deepsilicon joined YC in Summer 2024 to build ternary transformer software and a custom chip, launched on Hacker News in September 2024 and shows no public activity afterward. The cause of the Inactive status is not public. An aggregator argues about $500K was small for full-stack hardware work, but that is its opinion and not a sourced shutdown reason, so no failure factors are assigned.",
+  "sources": ["https://www.ycombinator.com/companies/deepsilicon", "https://hn.svelte.dev/item/41490196", "https://dead-startups-neon.vercel.app/companies/deepsilicon", "https://www.cbinsights.com/company/deepsilicon"],
+  "notes": "The $500K pre-seed in 2024-09 rests on a single aggregator (dead-startups archive, citing Crunchbase); CB Insights separately lists the company as Pre-Seed. Status conflict: YC Inactive versus CB Insights Alive. Alexander Nanda surname and later move to another company come from an aggregator only. The ternary comparison claims were disputed in the Reddit thread."
+}
