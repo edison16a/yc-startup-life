@@ -1,0 +1,452 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Eden",
+  "one_liner": "AI and infrastructure that turn diagnostic data into clinical answers for healthcare providers.",
+  "description": "As of the start of Summer 2018: a healthcare diagnostics AI company (tags Digital Health, Healthcare, AI). The 2018 product is not described in the facts available to this backtest, so it is assumed to be software that applies machine learning to diagnostic data and sells to clinics and health systems. Payers are providers or labs. Team size and traction at batch start are unknown.",
+  "as_of": "2018-06-01"
+ },
+ "yc_acceptance": {
+  "p": 0.015,
+  "p_low": 0.005,
+  "p_high": 0.035,
+  "basis": "Prior is about 1 percent per knowledge/yc_acceptance.md (range 0.6 to 2 percent, 2018 batches had roughly 8,000 to 9,000 applicants and about 150 accepted per the Listen Notes W18 estimate). Adjusted up slightly because medical AI was a hot theme in 2018 and YC accepted several diagnostics companies in 2016 to 2018, and left near the prior because team, founder market fit and traction are unknown. Capped low because regulated healthcare with no stated customer evidence is a harder pitch.",
+  "why_it_fails": "YC would most plausibly pass because a diagnostics AI pitch with no named hospital customers, no clinical validation and no clear regulatory path looks like a technology looking for a buyer. Healthcare is slow to seed and A in the data, and past YC diagnostics companies such as Unima and Bikanta stalled on clinical and capital needs. Without a founding team with clinical credibility the interview would likely end there."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.72,
+   "anchors": {
+    "base_rate": 0.79,
+    "source": "python3 -I scripts/base_rates.py --years 2012-2017 --calibration-only: seed cond 79% (n=72), range 50/79/87 lower/known/upper; Healthcare only 2012-2017 has n=7 (cond 83%, n=6) so widened to all industries, B2B 2012-2017 gave 89% (n=36).",
+    "adjustment_reason": "Slightly below the broad cohort because Healthcare median months to seed is the slowest of the industries in knowledge/stage_benchmarks.md and diagnostics need validation before investors commit."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      2000000.0
+     ],
+     "post_money_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical 2018 YC seed for a pre-revenue AI health company; cohort 2013-2017 seed median $2.1M, 2018-2021 $2.55M."
+    },
+    {
+     "raise_usd": [
+      2000000.0,
+      4500000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Healthcare AI was favoured by specialist funds in 2018, so a larger seed is plausible if a pilot exists."
+    },
+    {
+     "raise_usd": [
+      400000.0,
+      1000000.0
+     ],
+     "post_money_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Thin bridge or angel round while waiting for clinical data."
+    }
+   ],
+   "why_it_fails": "The most likely miss is a seed that never closes because hospital pilots take a year to turn into data. Healthcare medians to seed run slow in the cohort, and analogs like Unima and AlemHealth show tiny 2016 to 2017 seeds with no follow up. Investors want validation on real patient data and a regulatory plan, and a three month YC sprint rarely produces either."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.63,
+    "source": "base_rates.py --years 2012-2017 --calibration-only: series_a cond 63% (n=57), range 32/50/68; Healthcare 2012-2017 cond 60% (n=5), anecdotal.",
+    "adjustment_reason": "Discounted from 63% to 45% (within 2x) for slow healthcare sales cycles, clinical validation and FDA clearance risk that the average B2B software company does not face."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000.0,
+      9000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Cohort series A 2013-2017 median $6.5M, 2018-2021 $10M; 2018 healthcare AI A rounds ran $8M to $15M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside if hospital contracts and a clearance show traction."
+    },
+    {
+     "raise_usd": [
+      2000000.0,
+      5000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Flat or small A led by a strategic or existing seed investors."
+    }
+   ],
+   "why_it_fails": "It stalls before a real A because revenue is pilot based, sales cycles to health systems are long, and no clearance or published validation exists by the 18 to 30 month mark. Cohort medians put series A near 28 months, long enough for a runway gap. Biocogniv style companies show seed money lasting a long time without product revenue."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.67,
+    "source": "base_rates.py --years 2012-2017 --calibration-only: series_b cond 67% (n=36), range 21/33/58; Healthcare n=3 cond 33%.",
+    "adjustment_reason": "Discounted from 67% to 45% because survivors of A in the broad cohort skew toward software with fast growth, while diagnostics AI scales through slow health system rollouts."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      180000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B for the 2018-2021 era in the researched cohort, with a median raise near $30M and a post money in the low hundreds of millions."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      200000000.0,
+      450000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside with multi-system rollout and rapid revenue growth."
+    },
+    {
+     "raise_usd": [
+      8000000.0,
+      15000000.0
+     ],
+     "post_money_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Flat or extension round when growth is slower than plan, sized small because revenue per hospital stays low."
+    }
+   ],
+   "why_it_fails": "Series B fails when revenue per hospital stays small and each deployment needs custom integration with imaging or lab systems. Investors would see a services-heavy business with unproven expansion, a pattern seen in Bikanta and AlemHealth style stories where promised scale did not appear in time. Competing well-funded medical AI vendors can also win the large health system accounts first."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.46,
+    "source": "base_rates.py --years 2012-2017 --calibration-only: series_c cond 46% (n=24), range 10/15/46; B2B 2012-2017 cond 57% (n=14).",
+    "adjustment_reason": "Modestly below the broad cohort because the sample is small and healthcare AI faces a reimbursement ceiling."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      250000000.0,
+      600000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Cohort C 2018-2021 median about $62M raise with $0.7B to $1.4B posts."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "post_money_usd": [
+      600000000.0,
+      1500000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Category leader outcome with a large growth round after multi-system rollout and clear regulatory moat in its niche."
+    },
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      250000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or down round when growth slows or reimbursement stays unsettled, sized below the cohort median raise."
+    }
+   ],
+   "why_it_fails": "At Series C the company must show repeatable large contracts and a path to profitability. Reimbursement for AI diagnostics was not settled in 2018, and a regulated product can be copied or bundled by imaging incumbents. Analogs show that few diagnostics companies in the data reached C, and the ones that did had a clear regulatory moat."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
+    ],
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
+    ],
+    "p": 0.19
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
+    ],
+    "p": 0.06
+   }
+  ],
+  "why_it_fails": "The company fails to reach a meaningful exit if clinical validation, regulatory clearance and hospital sales cycles consume capital faster than revenue grows. The 2012 to 2017 cohort shows about a third shut down and a third still alive without exit, and healthcare analogs such as Unima, Bikanta and Kenota stalled on capital and clinical timelines."
+ },
+ "analogs": [
+  {
+   "slug": "alemhealth",
+   "relevance": "AI radiology software sold to providers, Winter 2017.",
+   "outcome_summary": "Alive but small, tiny seed and no later credible round found."
+  },
+  {
+   "slug": "unima",
+   "relevance": "Low cost diagnostics, Winter 2016.",
+   "outcome_summary": "Raised about $2.6M then went inactive; clinical and regulatory work outran capital."
+  },
+  {
+   "slug": "bikanta",
+   "relevance": "Cancer detection diagnostics, Summer 2014.",
+   "outcome_summary": "Shut down after investors left diagnostics post Theranos and it could not fund trials."
+  },
+  {
+   "slug": "medxt",
+   "relevance": "Cloud radiology data platform, Winter 2013.",
+   "outcome_summary": "Acquired, showing a diagnostics software path to a small exit."
+  },
+  {
+   "slug": "agilemd",
+   "relevance": "Clinical pathways and analytics for hospitals, Summer 2011.",
+   "outcome_summary": "Alive with slow growth and a seed only record, typical of hospital software sales cycles."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Slow hospital sales and validation consume the seed before revenue",
+   "p": 0.35,
+   "evidence": "Healthcare has the slowest months to seed and A in the cohort and past diagnostics companies stalled between pilot and contract.",
+   "analogs": [
+    "agilemd",
+    "alemhealth"
+   ],
+   "mitigation": "Land one paid pilot per quarter with a named clinical champion and publish validation early."
+  },
+  {
+   "risk": "Regulatory and clinical proof needed for diagnostics outpaces capital",
+   "p": 0.3,
+   "evidence": "Unima and Bikanta both stalled on clinical and regulatory costs after small raises.",
+   "analogs": [
+    "unima",
+    "bikanta"
+   ],
+   "mitigation": "Choose a decision-support wedge needing less clearance first and raise against validated milestones."
+  },
+  {
+   "risk": "Better funded medical AI vendors and imaging incumbents win accounts",
+   "p": 0.25,
+   "evidence": "In 2018 radiology and diagnostics AI already had funded players and large device vendors with hospital distribution.",
+   "analogs": [
+    "medxt",
+    "alemhealth"
+   ],
+   "mitigation": "Own a narrow data or workflow niche and integrate with existing systems rather than compete head on."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Zebra Medical Vision",
+   "what": "Imaging AI analytics sold to hospitals, Israeli, founded 2014.",
+   "traction": "Hospital deployments and venture funding as of 2018.",
+   "source_url": "https://www.zebra-med.com"
+  },
+  {
+   "name": "Aidoc",
+   "what": "Radiology AI triage of acute findings, founded 2016.",
+   "traction": "Raised venture rounds and early hospital customers in 2018.",
+   "source_url": "https://www.aidoc.com"
+  },
+  {
+   "name": "IDx",
+   "what": "Autonomous diabetic retinopathy detection, first FDA authorised AI diagnostic in April 2018.",
+   "traction": "FDA De Novo grant shows a regulatory path exists.",
+   "source_url": "https://www.idx.ai"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Medical AI needs labelled clinical data, validation across sites and integration with hospital systems. A small team can build a prototype in three months but cannot finish clinical validation or clearance in that time."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "GE Healthcare",
+   "Philips",
+   "Siemens Healthineers",
+   "Google"
+  ],
+  "timeline_months": 24,
+  "rationale": "Large imaging vendors and cloud companies had distribution and incentive, but clinical validation and integration slow them. They typically buy or partner rather than build quickly."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "FDA authorised the first autonomous AI diagnostic in April 2018, showing regulators and buyers were opening to AI diagnostics.",
+    "source_url": "https://www.fda.gov/news-events/press-announcements/fda-permits-marketing-artificial-intelligence-based-device-detect-certain-diabetes-related-eye"
+   },
+   {
+    "claim": "Radiologist shortages and growing imaging volume were widely reported as drivers of AI interest in 2018.",
+    "source_url": "https://www.zebra-med.com"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a credible team and one paying or committed clinical partner.",
+   "actions": [
+    "Secure a letter of intent from one clinic or lab.",
+    "Build a working demo on real, de-identified data."
+   ],
+   "proof": "One signed pilot agreement before applying."
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert pilots into a validated result that closes a seed.",
+   "actions": [
+    "Run a retrospective validation study with a clinical partner.",
+    "Pitch healthcare specialist funds at demo day."
+   ],
+   "proof": "Published validation metric and a closed seed round."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Reach repeatable revenue across several providers.",
+   "actions": [
+    "Convert pilots to annual contracts.",
+    "Start the clearance path with the FDA if required."
+   ],
+   "proof": "Recurring revenue from five or more providers."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Show multi-system rollout and expansion revenue.",
+   "actions": [
+    "Standardise integrations with major imaging and lab systems.",
+    "Hire an enterprise sales lead."
+   ],
+   "proof": "Net revenue retention above 120 percent."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Prove category leadership and path to profit.",
+   "actions": [
+    "Expand to adjacent diagnostic areas.",
+    "Secure reimbursement or a pricing model that scales."
+   ],
+   "proof": "Contracts across dozens of systems with positive gross margin."
+  }
+ ],
+ "pros": [
+  {
+   "point": "AI diagnostics were a funded, validated theme in 2018",
+   "evidence": "FDA authorised an autonomous AI diagnostic in April 2018.",
+   "source_url": "https://www.fda.gov/news-events/press-announcements/fda-permits-marketing-artificial-intelligence-based-device-detect-certain-diabetes-related-eye"
+  },
+  {
+   "point": "Healthcare buyers have budget and recurring need",
+   "evidence": "Imaging and lab volumes grow yearly and radiologist shortages raise demand for automation.",
+   "source_url": "https://www.zebra-med.com"
+  }
+ ],
+ "brand": {
+  "name": "Eden",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Eden\" --era 2018-2021: 4 chars, 2 syllables, invented_or_proper, no flags",
+  "strengths": [
+   "Short, easy to say and spell",
+   "Evokes health and renewal"
+  ],
+  "weaknesses": [
+   "Common word with weak search distinctiveness",
+   "Not descriptive of diagnostics"
+  ],
+  "rationale": "A short proper-noun name that is easy to remember but generic and hard to search, similar to many successful short YC names. It neither helps nor hurts a healthcare diagnostics company much.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A hard, slow healthcare AI bet with a low chance of YC acceptance and a roughly one in three chance of a seed that leads to a Series A.",
+  "general_summary": "Medical diagnostics AI in mid 2018 was a real and funded opportunity, but it is capital intensive, slow to sell and regulated. For a company whose 2018 product and team are only thinly known, the honest forecast is the cohort base rate discounted for healthcare. Most similar YC companies in the data either stalled or stayed small, with a minority reaching an acquisition. Upside exists only if the team lands real clinical data and a regulatory path early. The cumulative odds from acceptance are low in absolute terms because each stage is discounted for slow hospital sales cycles and clinical validation, and the starting acceptance rate is only about one percent. Treat the figures as wide priors given thin facts about the 2018 team.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Only the tags and a later one-liner were available, so the 2018 product, team and traction are assumed and unknown.",
+  "Healthcare only cohort 2012-2017 has n=7 researched, so the broad all-industry 2012-2017 cohort (n=114) was used as the main anchor.",
+  "Web search was not run; competitor facts come from general 2018 knowledge and cited public pages that were not re-verified.",
+  "Round sizes are 2018 era values and not adjusted to today.",
+  "Calibration-only cohort data used; funding coverage is partial so rates carry the lower to upper range."
+ ],
+ "sources": [
+  "https://www.fda.gov/news-events/press-announcements/fda-permits-marketing-artificial-intelligence-based-device-detect-certain-diabetes-related-eye",
+  "https://www.zebra-med.com",
+  "https://www.aidoc.com",
+  "https://www.idx.ai"
+ ]
+}

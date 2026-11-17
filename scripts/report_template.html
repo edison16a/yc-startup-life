@@ -50,6 +50,9 @@ a{overflow-wrap:anywhere}.list li>*{min-width:0;overflow-wrap:anywhere}
 .g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
 .card h3{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.rc-row{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}.rc-f{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
+.rc-in{font:inherit;font-size:18px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%;box-sizing:border-box}
+.rc-in:focus-visible{outline:2px solid var(--blue);outline-offset:2px}.rc-out{margin-top:6px}
 .card h2{margin:0 0 14px;font-size:19px;letter-spacing:-.015em}
 .big{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
 .muted{color:var(--muted)}.small{font-size:13px}
@@ -542,8 +545,26 @@ function showDetail(n){var p=T.panel;p.replaceChildren();p.classList.remove("fad
     h("tbody",{},d.outcomes.map(function(o){return h("tr",{},h("td",{text:o.name}),h("td",{text:o.failure?"n/a":rng(o.value)}),h("td",{},lpill(o.label_given_yc),h("span",{class:"small muted",text:" "+pct(o.p_given_yc)})),h("td",{},lpill(o.label_today),h("span",{class:"small muted",text:" "+pct(o.p_today)})))}))));
     p.appendChild(h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it fails at the end"}),D.outcomes_why))}}
 
+function parseMoney(t){t=String(t||"").trim().toLowerCase().replace(/[$,\s]/g,"");var m=t.match(/^([0-9]*\.?[0-9]+)(k|m|b)?$/);if(!m)return null;var v=parseFloat(m[1]);if(m[2]==="k")v*=1e3;else if(m[2]==="m")v*=1e6;else if(m[2]==="b")v*=1e9;return v>0?v:null}
+function raiseCalc(){
+  var amt=h("input",{type:"text",inputmode:"decimal",class:"rc-in",value:"50k","aria-label":"Amount you want to raise",autocomplete:"off"});
+  var cap=h("input",{type:"text",inputmode:"decimal",class:"rc-in",value:"1m","aria-label":"Valuation cap",autocomplete:"off"});
+  var out=h("div",{class:"rc-out","aria-live":"polite"});
+  function upd(){var a=parseMoney(amt.value),c=parseMoney(cap.value);out.replaceChildren();
+    if(a===null||c===null){out.appendChild(h("div",{class:"small muted",text:"Enter amounts like 50k or 1m."}));return}
+    var sold=a/c;
+    out.appendChild(h("div",{class:"row",style:"align-items:baseline;gap:10px;flex-wrap:wrap"},h("span",{class:"big",text:(sold>=0.1?Math.round(sold*1000)/10:Math.round(sold*10000)/100)+"%"}),h("span",{class:"muted",text:"of the company sold for "+usd(a)+" on a "+usd(c)+" cap"})));
+    if(sold>=1){out.appendChild(h("div",{class:"callout red"},h("b",{text:"Check the numbers"}),"The raise is as large as the cap, which would sell the whole company."));return}
+    out.appendChild(h("div",{class:"small muted",style:"margin-top:8px",text:"You keep about "+(Math.round((1-sold)*1000)/10)+"% before any other dilution. This treats the cap as a post-money cap, so the percentage is the amount divided by the cap."}));
+    var st=D.stages&&D.stages[0];if(st&&st.bands&&st.bands.length){var lo=Math.min.apply(null,st.bands.map(function(b){return b.post[0]})),hi=Math.max.apply(null,st.bands.map(function(b){return b.post[1]}));
+      var where=c<lo?"below":c>hi?"above":"inside";
+      out.appendChild(h("div",{class:"small",style:"margin-top:8px",text:"This report's seed range is "+usd(lo)+" to "+usd(hi)+" post-money. Your cap is "+where+" that range."}))}}
+  amt.addEventListener("input",upd);cap.addEventListener("input",upd);upd();
+  return h("div",{class:"card",id:"raise-calc"},h("h2",{text:"Raise calculator"}),h("p",{class:"muted",style:"margin-top:0",text:"Say how much you want to raise and the valuation cap. It shows the share of the company you sell."}),
+    h("div",{class:"rc-row"},h("label",{class:"rc-f"},h("span",{class:"small muted",text:"Amount to raise"}),amt),h("label",{class:"rc-f"},h("span",{class:"small muted",text:"Valuation cap"}),cap)),out)}
 BUILD.path=function(root){
   var wrap=h("div",{class:"grid snap"});
+  wrap.appendChild(reveal(raiseCalc()));
   wrap.appendChild(reveal(h("div",{class:"card",id:"stage-yc"},h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:"Getting into YC"}),h("div",{class:"row"},h("span",{class:"big",text:pct(D.yc.p)}),lpill(D.yc.label))),
     h("p",{class:"muted",text:D.yc.basis}),h("div",{class:"callout red"},h("b",{text:"Why it fails here"}),D.yc.why_it_fails))));
   var y0=1e5,y1=1e10;function pos(v){return (Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0))*100}
