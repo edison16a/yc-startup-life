@@ -99,3 +99,28 @@ Sample: 8 records (armory, metaplane, humi, embrace, gaiia, mono, kovi, pachama)
 | pachama | 7 | 1 | About $9M of earlier funding not itemised as rounds. |
 
 Totals: about 63 fields checked, 14 wrong or incomplete (22 percent), limit 10 percent. Result: wave NOT accepted. Down from 42 percent in audit 4 after the prompt change, but still over the limit. Remaining error types: co-founders and CEOs named in press but not on the YC page, early rounds not itemised, exit amounts left null when a source states them, and small date errors. AUDIT RESULT is not PASS.
+
+## Waves 19 and 20 (strict prompt with audit lessons), audit 6
+
+Sample: 16 records (nomi, brainbase-labs, norra, aminoanalytica, theora, bilanc, abel-police, conductor, cloudglue, splash-inc, wafer, paraquery, verbiflow, quotain, parrot, waffle), drawn at random from the 320 records written in these two waves. Two auditors, eight records each. A field is one founder entry, one round, the exit or the competitor list.
+
+| Slug | Fields checked | Wrong | Notes |
+|---|---|---|---|
+| nomi | 4 | 1 | Co-founder Ethan Safar recorded as unconfirmed, but the launch post and Round Funded name him co-founder. |
+| brainbase-labs | 3 | 0 | Matches the YC page. |
+| norra | 4 | 0 | Matches. |
+| aminoanalytica | 4 | 0 | Matches; aggregator-only funding correctly left unrecorded. |
+| theora | 3 | 0 | Matches; the YC page lists one founder. |
+| bilanc | 4 | 0 | Seed matches Nordic9. |
+| abel-police | 4 | 2 | Competitor Policereports.ai omitted; AI Grant investor unsourced. |
+| conductor | 5 | 1 | Matrix-led seed round omitted. |
+| cloudglue | 3 | 1 | Competitor entry cites a figure the source page does not support. |
+| splash-inc | 4 | 0 | Matches. |
+| wafer | 6 | 2 | Seed of about 4M omitted; competitor list empty. |
+| paraquery | 3 | 0 | Matches. |
+| verbiflow | 4 | 1 | Competitor list empty in a crowded category. |
+| quotain | 4 | 1 | Competitor list empty; former name Eden not mentioned. |
+| parrot | 5 | 1 | Competitor list empty. |
+| waffle | 4 | 1 | Competitor list empty although risk notes name CapCut and Opus Clip. |
+
+Totals: 64 fields checked. Counting every empty or incomplete competitor list as wrong, 15 are wrong (23 percent). Counting only fields contradicted or shown missing by a named source, 6 are wrong (9.4 percent). The limit is 10 percent. Result: wave NOT accepted under the strict count, which is the standard used in audits 1 to 5. The lenient figure is recorded for transparency only and does not count toward a pass. Dominant error: competitor lists left empty because no source dated near the batch was found, plus a few omitted early rounds and co-founders. Action: the 8 records with wrong fields are being corrected, and the final audit must use the strict standard. AUDIT RESULT is not PASS.
