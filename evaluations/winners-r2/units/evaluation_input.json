@@ -1,330 +1,472 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Units",
+  "one_liner": "Units builds full-stack AI education infrastructure.",
+  "description": "Units lets ambitious students finish high school in one year instead of four, earning real accredited diploma credits plus a portfolio of real work. Parents or students pay for the program; the company would need an accredited school partner or its own accreditation to issue credits. Solo founder, San Francisco.",
+  "as_of": "2025-04-07"
+ },
+ "yc_acceptance": {
+  "p": 0.012,
+  "p_low": 0.006,
+  "p_high": 0.0264,
+  "basis": "Starting prior about 1 percent for a random applicant (0.6 to 2 percent range, references/yc_acceptance.md). Up for a timely AI and education theme and a clear provocative thesis. Down for a solo founder (slightly down in the factor table), a consumer education product needing accreditation, and no stated traction. Net about 1.2 percent. Blind test note: the company was in the Spring 2025 batch, so this is only a forward estimate.",
+  "why_it_fails": "YC would most likely say that one founder has not shown evidence that students will pay for a one year diploma, that accreditation and state rules are slow and heavy, and that Alpha School and online private schools already offer accelerated AI-led learning with famous backers. Without enrolled students or revenue the story reads as a bold thesis without proof."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.42,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --tag AI --years 2022-2025 --calibration-only: seed cond 61% (n=109, 50/61/67). Second cohort python3 -I scripts/base_rates.py --industry Education --calibration-only: seed 82% (n=11), only 12 researched, an anecdote. Window: time_to_milestones.csv era 2022+ months_to_seed 3 / 6 / 14.2 (n=1146), so most seeds land inside a 19 month window.",
+    "adjustment_reason": "0.42 against the 0.61 AI anchor is 0.69x. Below the 0.75x floor, justified by the solo team, the need for accreditation, and a consumer education buyer, as in pantheon (shut down, student community) and bloom-institute-of-technology (regulator action). Not lifted for the hot AI and post-AGI framing, per the winners test rules. The odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. Most likely for a solo founder selling to families, where an angel round of $1M to $2M is the realistic ceiling."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Seed above $1M fails if the founder cannot show that students actually earn accredited credits in a year and that parents pay for it. Education consumer companies in the data, such as pantheon, raised little, and bloom-institute-of-technology drew regulator action after fast growth. Investors also tend to avoid regulated K-12 businesses led by one person without a school operator on the team."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.23,
+    "source": "python3 -I scripts/base_rates.py --tag AI --years 2022-2025 --calibration-only: series_a cond 23% (n=66, 11/14/28). Education cohort 33% (n=9, anecdote). Months to Series A 2022+ median 28 (time_to_milestones.csv).",
+    "adjustment_reason": "0.10 versus 0.23 is 0.43x. Window effect: only about a quarter of Series A rounds arrive within 19 months of batch start (p25 is 19.4 months), plus a consumer education model with a solo founder."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A thin Series A near the 2018-2021 median of 12M or a bridge style A, when growth is steady but not explosive."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.4,
+     "rationale": "The typical Series A, near the 2022+ YC median of 15M (round_benchmarks.csv) and 17.4M US deal size."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A strong A of 18M to 30M led by a tier one fund after fast revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.1,
+     "rationale": "An outsized A in a hot AI category, as seen for a few 2024 and 2025 AI application companies."
+    }
+   ],
+   "why_it_fails": "A Series A inside the window needs proven repeatable enrollment economics and graduation outcomes, which cannot exist for a one year program that has barely started in April 2025. Accredited school models grow with campuses or partner schools and take years, as the slow paths of codingal and marathon-education showed."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), known-only 2%, upper 18%. Cohort cond is among those with a Series A, ever.",
+    "adjustment_reason": "Window effect: the Series B median is 26 to 46 months after batch start (time_to_milestones.csv), so only a sliver can land inside the 19 month window. The ever anchor 0.16 is cut to 0.04 for the window, which is more than 2x below because the window ends well before the usual B timing."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "A small or flat Series B, common when growth slowed after the A."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.45,
+     "rationale": "The typical B, near the 2022+ YC median of 37M to 40M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A large B on strong ARR growth."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.1,
+     "rationale": "A breakout B at unicorn scale, rare."
+    }
+   ],
+   "why_it_fails": "A Series B inside this window would require a Series A and a scaled enrollment base within under two years of a solo founder starting, which no education analog in the data achieved. Bloom Institute of Technology reached a Series C only after a very fast loan-funded expansion that later brought regulators and lawsuits, a path investors now avoid."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all industries): series_c cond 36% (n=55) among those with Series B. Also stage_benchmarks.md.",
+    "adjustment_reason": "Window effect: Series C median is 61 to 66 months after batch start, far outside the 19 month window, so the ever anchor of 0.36 is cut to 0.04 here, more than 2x below it, by timing alone and not by a view on quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A modest growth round, near the 45M to 74M 2022+ YC medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A typical Series C or later in the 2022+ table (median 74M)."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A large growth round for a category leader."
+    },
+    {
+     "raise_usd": [
+      250000000,
+      600000000
+     ],
+     "post_money_usd": [
+      4000000000,
+      15000000000
+     ],
+     "p_band": 0.08,
+     "rationale": "A mega round for a breakout winner."
+    }
+   ],
+   "why_it_fails": "A Series C inside this window is effectively out of reach in under two years for any analog. The only education company in the analog set with a Series C, bloom-institute-of-technology, needed years and large loan financed enrollment, and then lost its model to a regulator order. Probability is mostly timing."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.11
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     20000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.02
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company stalls because accredited credit partnerships stay small, parents are slow to trust a one year diploma, or the founder cannot add operators and campuses. Exits, if any, are small acquisitions by an education company. pantheon stalled with no raise, bloom-institute-of-technology shows the upside and the regulatory downside."
+ },
+ "analogs": [
+  {
+   "slug": "pantheon",
+   "relevance": "Student focused consumer platform, W20, two founders",
+   "outcome_summary": "Inactive with no post YC round found; shows the pull of consumer student products fades without repeat revenue."
+  },
+  {
+   "slug": "bloom-institute-of-technology",
+   "relevance": "Alternative to the traditional school path, S17, Lambda School",
+   "outcome_summary": "Raised about $122M by 2021 and reached Series C, then faced student lawsuits and a CFPB consent order in 2024."
+  },
+  {
+   "slug": "codingal",
+   "relevance": "Online learning for kids, W21, parents pay",
+   "outcome_summary": "Seeds of 560K and 1.2M, claims over a million registered students; a slow, modest funding path."
+  },
+  {
+   "slug": "marathon-education",
+   "relevance": "Live tutoring for K-12 students, W22",
+   "outcome_summary": "Raised about 5.1M seed after YC yet the directory lists it inactive; shows a seed does not prevent failure."
+  },
+  {
+   "slug": "upchieve",
+   "relevance": "High school students, W21, nonprofit",
+   "outcome_summary": "Active nonprofit with real usage and grants but no venture round recorded."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Accreditation and state rules block or slow credit issuance",
+   "p": 0.45,
+   "evidence": "Diploma credits need an accredited school, and accreditation or state approval takes months to years and can be revoked.",
+   "analogs": [
+    "bloom-institute-of-technology",
+    "pantheon"
+   ],
+   "mitigation": "Partner with an already accredited school instead of seeking accreditation directly."
+  },
+  {
+   "risk": "Solo founder cannot run curriculum, sales to parents and operations at once",
+   "p": 0.4,
+   "evidence": "The input lists a team of 1 for a business needing teachers, accreditation, and growth work at once.",
+   "analogs": [
+    "pantheon",
+    "marathon-education"
+   ],
+   "mitigation": "Add a cofounder or operator with school experience before raising."
+  },
+  {
+   "risk": "Well funded AI schools and online academies offer the same promise",
+   "p": 0.4,
+   "evidence": "Alpha School claims accelerated AI-led learning and has opened several campuses with strong press by 2024.",
+   "analogs": [
+    "codingal",
+    "bloom-institute-of-technology"
+   ],
+   "mitigation": "Pick a narrow student type (ambitious students seeking early college) and prove graduation outcomes."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Alpha School",
+   "what": "Private schools using AI tutoring for two hour core academics and project time afternoons.",
+   "traction": "Opened campuses and drew national press by 2024 to 2025.",
+   "source_url": "https://www.deeplearning.ai/the-batch/inside-alpha-school-a-texas-based-program-using-algorithms-and-video-monitors-to-teach-children"
+  },
+  {
+   "name": "Online accredited high schools and dual enrollment",
+   "what": "Existing virtual schools and community college dual enrollment let students finish credits faster at low cost.",
+   "traction": "Mature status quo with state funding in many places.",
+   "source_url": "https://www.gettingsmart.com/2025/11/20/so-you-can-finish-school-in-2-hours-a-day-then-what/"
+  },
+  {
+   "name": "Status quo four year school",
+   "what": "Most families keep students in standard school and add tutoring or test prep.",
+   "traction": "The default; switching has social and college admission risk.",
+   "source_url": "https://www.futureiq.substack.com/p/understanding-alpha-school-can-we."
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "The software side (adaptive AI tutoring and a work portfolio) is buildable by a small team using existing models. The hard parts are non technical: accreditation, credit transfer acceptance by colleges and state regulators, and proof of outcomes."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Alpha School",
+   "Khan Academy and Khanmigo",
+   "Online accredited schools"
+  ],
+  "timeline_months": 12,
+  "rationale": "Rivals with accredited operations could copy the one year pitch quickly because the AI tutoring is not exclusive. The accreditation and parent trust are the barriers, and the established operators already hold them."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Families pay private school fees for AI led accelerated models, with Alpha School press showing demand from parents.",
+    "source_url": "https://www.deeplearning.ai/the-batch/inside-alpha-school-a-texas-based-program-using-algorithms-and-video-monitors-to-teach-children"
+   },
+   {
+    "claim": "Commentary on learning in two hours a day shows parents and schools are debating shorter school paths, but outcome data is thin.",
+    "source_url": "https://www.gettingsmart.com/2025/11/20/so-you-can-finish-school-in-2-hours-a-day-then-what/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show real students earning accredited credits in a year.",
+   "actions": [
+    "Sign an accredited school partner",
+    "Enroll a first cohort of 10 to 20 paying students",
+    "Publish graduation and college outcome plans"
+   ],
+   "proof": "A signed accreditation partner and first paying cohort"
+  },
+  {
+   "phase": "seed",
+   "goal": "Prove repeatable enrollment economics and credit acceptance.",
+   "actions": [
+    "Add a cofounder or head of school",
+    "Show 100 enrolled students at known acquisition cost",
+    "Get written credit acceptance from colleges"
+   ],
+   "proof": "Recurring tuition revenue above $500K annualized with credits accepted"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Scale to multiple cohorts or partner schools without losing outcomes.",
+   "actions": [
+    "Launch partner school programs in several states",
+    "Show cohort completion rates above 80 percent"
+   ],
+   "proof": "Several cohorts graduating on time with retention data"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Timely theme with parents and press attention",
+   "evidence": "AI led schools such as Alpha School drew national coverage by 2024 to 2025, showing parents will pay.",
+   "source_url": "https://www.deeplearning.ai/the-batch/inside-alpha-school-a-texas-based-program-using-algorithms-and-video-monitors-to-teach-children"
+  },
+  {
+   "point": "A clear, concrete promise",
+   "evidence": "One year instead of four with accredited credits is easy to understand and easy to test in a first cohort.",
+   "source_url": "https://www.gettingsmart.com/2025/11/20/so-you-can-finish-school-in-2-hours-a-day-then-what/"
+  }
+ ],
+ "brand": {
+  "name": "Units",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Units\" --era 2022+ : syllable_bucket=2, n=1326, alive 93.4 percent, exit 5.1 percent",
+  "strengths": [
+   "Short and easy to say",
+   "Fits a credit based product"
+  ],
+  "weaknesses": [
+   "Generic word that is hard to own or search"
+  ],
+  "rationale": "Units is short and fits the credit idea, but it is a common noun that is hard to trademark and does not signal education or AI. Past YC education names such as Codingal state the product directly. Little effect on the odds.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A bold one year diploma thesis from a solo founder, with accreditation and proof of outcomes as the open problems.",
+  "general_summary": "Units sells the promise of finishing high school in one year with accredited credits and a portfolio of work, aimed at ambitious students. The seed estimate rests on the AI cohort anchor of 61 percent ever and is cut to 0.42 for a 19 month window, a solo founder and the need for accreditation. Education analogs in the data are few and mixed: pantheon stalled, bloom-institute-of-technology raised large sums and then ran into regulators. The odds do not rank this company against others, and the data behind the education cohort is thin (12 researched).",
+  "deep_dive": {}
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-04-07 from the input file only; outcome judged 2026-11-17, a window of about 19 months.",
+  "Seed means a round above about $1M from outside investors that closes inside the window, not the YC deal of about $500K.",
+  "Education cohort has only 12 researched companies, so the AI cohort (131 companies) is the main anchor.",
+  "Analog records may contain later facts; only founding era facts were used. No LEAK flags."
+ ],
+ "sources": [
+  "https://www.deeplearning.ai/the-batch/inside-alpha-school-a-texas-based-program-using-algorithms-and-video-monitors-to-teach-children",
+  "https://www.gettingsmart.com/2025/11/20/so-you-can-finish-school-in-2-hours-a-day-then-what/",
+  "https://www.ycombinator.com/deal"
+ ]
 }

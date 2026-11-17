@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "decuff",
+    "one_liner": "Uncensored AI models, served at scale with zero data retention.",
+    "description": "decuff is an API for uncensored AI: abliterated open source models served at scale with zero data retention, aiming for direct answers with no refusals. A solo founder in San Francisco, Spring 2026 batch, selling to developers. Forecast window runs 2026-04-06 to 2026-11-17, about 7.4 months.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.01,
+    "p_low": 0.004,
+    "p_high": 0.03,
+    "basis": "Start from the roughly 1 percent prior (0.6 to 2 percent band in yc_acceptance.md). A solo founder pulls it down slightly (shutdown 21 percent versus 17 percent for pairs), a copyable inference wrapper with no wedge pulls it down, and a controversial positioning with legal and payment risk pulls it down further. The company is described as in the Spring 2026 batch, so this is shown for completeness.",
+    "why_it_fails": "YC would most plausibly say no because the product is open source models behind an API with a policy stance as its only difference, and the stance carries abuse, payment processor and legal risk that partners may not want to underwrite. A solo founder with no named customers or revenue also leaves team capacity and focus unproven."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry Consumer (smaller n, similar). Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Window of 7.4 months: about 50 percent of eventual seeds arrive by then, times about 0.60 reaching a round above $1M gives an anchor near 0.30.",
+        "adjustment_reason": "Set at 0.73 times the window anchor, within the 0.75 rule floor. Reasons: solo founder, an inference wrapper in a market of funded providers, and an investor reluctance toward uncensored content. The odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.33,
+          "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.17,
+          "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.05,
+          "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Investors will see an API reselling open weights, with Together, Fireworks and OpenRouter already serving them and low switching costs. Replicate raised only after years and a market tailwind, and PoplarML never showed a priced round. Reputation and payment risk of an uncensored service make many funds pass, so only small angel cheques below $1M are likely."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry Consumer (smaller n, similar). Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series A given seed 0.45 ever; inside 7.4 months almost nobody reaches it.",
+        "adjustment_reason": "Window adjusted far below the ever anchor because Series A takes a median of 28 months after batch start."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin Series A or extension on modest revenue, below the 2022 and later median of $13.5M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series A near the 2022 and later median of $13.5M to $14M with growth proof."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            250000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series A from a breakout AI product with fast revenue."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A inside 7 months would need strong revenue growth. The category sells inference by the token at thin margins, and larger providers compete on price. Replicate needed about three years from batch to its Series A, and PoplarML never reported one."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry Consumer (smaller n, similar). Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series B conditional 0.44, ever figure.",
+        "adjustment_reason": "Below the anchor because inference resale has thin margins and platform dependence on model releases."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller Series B or a down round after slower growth."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            400000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $37M median for 2022 and later rounds."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B for a category leader with fast revenue growth and a top tier lead, as seen in the 75th percentile near $57M for 2022 and later rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B would need a durable revenue base. Thin margins on token resale and dependence on third party open weights make that unlikely unless the company builds its own fine tunes or a compliance product, which Replicate eventually did with a developer platform."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry Consumer (smaller n, similar). Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series C 0.36 conditional, ever figure.",
+        "adjustment_reason": "Below the anchor because the wedge is narrow and risky."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000.0,
+            500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest Series C near the $42M to $45M median for 2022 and later."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000.0,
+            1500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a scaled company, in line with the 2022 and later Series C median of about $45M and the larger Series D plus rounds."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            4000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside growth round or a late stage mega round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Few inference resellers have reached growth rounds without owning a distinct layer. Replicate is the nearest case and sold to a larger company; the uncensored angle limits enterprise buyers who need brand safe vendors."
     }
   ],
   "outcomes": {
@@ -164,167 +224,218 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.78
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.06
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          10000000000.0
         ],
-        "p": 0.0
+        "p": 0.01
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end in shutdown or a stall because the service has no moat beyond a policy stance, faces payment and legal friction, and sells a commodity input. A small acquihire by an infrastructure company is the likely best case, as Replicate and similar tooling companies show, and a large exit would need a different product."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "replicate",
+      "relevance": "Hosted API for open models, W20.",
+      "outcome_summary": "Quiet for years, then a generative AI boom, Series A and B, later acquired; shows tailwind dependence."
+    },
+    {
+      "slug": "poplarml",
+      "relevance": "One command model deployment, W23.",
+      "outcome_summary": "Only a small convertible note, no priced round found, site unavailable."
+    },
+    {
+      "slug": "wabi",
+      "relevance": "Small team product that raised a note then went quiet.",
+      "outcome_summary": "Inactive after about $500K."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Commodity inference: larger providers serve the same open models at lower prices",
+      "p": 0.55,
+      "evidence": "Together, Fireworks, OpenRouter and others already host open weights with large scale discounts, and abliterated variants are free on Hugging Face.",
       "analogs": [
-        "TODO-company-slug"
+        "poplarml",
+        "replicate"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Own a proprietary tuning or evaluation layer and sell a compliance or red team product."
+    },
+    {
+      "risk": "Payment, hosting and legal pressure on uncensored output",
+      "p": 0.35,
+      "evidence": "Card processors and cloud hosts routinely restrict adult and harmful content, and regulators scrutinize unrestricted models, so one takedown could stop revenue.",
+      "analogs": [
+        "wabi"
+      ],
+      "mitigation": "Focus on security and research customers with clear use policies and keep logs out through zero retention."
+    },
+    {
+      "risk": "Solo founder cannot cover infrastructure, sales and abuse handling",
+      "p": 0.35,
+      "evidence": "Operating GPU serving at scale with one person is hard and the team size is one.",
+      "analogs": [
+        "poplarml"
+      ],
+      "mitigation": "Hire an infra engineer early and use managed GPU clouds."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "OpenRouter",
+      "what": "Router across hosted models including less restricted ones",
+      "traction": "Large developer usage",
+      "source_url": "https://openrouter.ai"
+    },
+    {
+      "name": "Together AI",
+      "what": "Open model inference platform",
+      "traction": "Raised large rounds",
+      "source_url": "https://www.together.ai"
+    },
+    {
+      "name": "Hugging Face abliterated models",
+      "what": "Free community abliterated weights and tools",
+      "traction": "Thousands of uncensored variants hosted",
+      "source_url": "https://www.preprints.org/manuscript/202509.1334"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "Abliteration is a known open technique and serving open weights is routine for one engineer using managed GPUs; scaling with reliable latency is harder but not novel, and nothing here is a deep technical moat."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Together AI",
+      "Fireworks",
+      "OpenRouter",
+      "Hugging Face"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 2,
+    "rationale": "Any inference host could list abliterated models within weeks if they chose to accept the policy risk. Distribution and price favor incumbents."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 2,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Uncensored and abliterated model variants number in the thousands on Hugging Face, showing hobbyist demand, but paid enterprise demand is unproven.",
+        "source_url": "https://www.preprints.org/manuscript/202509.1334"
+      },
+      {
+        "claim": "Red team and safety testing firms are a plausible paying buyer for less restricted models.",
+        "source_url": "https://www.the-decoder.com/stripping-safety-guardrails-from-open-weight-ai-models-is-now-a-turnkey-commercial-service/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show paying developers on day one",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch API with public pricing",
+        "Reach 100 active developers"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "First $5K monthly revenue"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove a niche that pays",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Win 5 red team or research customers",
+        "Document use policy and retention proof"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$30K monthly revenue and a lead investor"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Own a layer beyond resale",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Fine tune proprietary models",
+        "Add evaluation and compliance tools"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M ARR with gross margin above 50 percent"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale enterprise",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "SOC 2 and audit logs",
+        "Sales hire for security teams"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$8M ARR"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Platform scale",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Self hosted and regional offers",
+        "Partnerships"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$30M ARR"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Clear developer demand for fewer refusals exists in community usage",
+      "evidence": "Thousands of abliterated models are hosted publicly, indicating persistent hobbyist demand.",
+      "source_url": "https://www.preprints.org/manuscript/202509.1334"
+    },
+    {
+      "point": "Open weights keep model costs low for a one person team",
+      "evidence": "Serving open models on rented GPUs requires little capital, which fits a solo founder.",
+      "source_url": "https://openrouter.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
+    "name": "decuff",
+    "rating": 2,
     "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name_check": "python3 -I scripts/name_features.py --score \"decuff\" --era 2022+ : invented_or_proper, 6 letters, 2 syllables, alive 93 percent in cohort",
     "strengths": [
-      "TODO"
+      "Short and memorable"
     ],
     "weaknesses": [
-      "TODO"
+      "Unclear meaning",
+      "Hard to spell from hearing"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name hints at removing a cuff or restraint but reads as a spelling puzzle, similar to invented YC names that needed a tagline, and the uncensored positioning may limit brand safe buyers.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A solo founder reselling uncensored open models faces commodity competition and policy risk, so a seed above $1M in 7.4 months is unlikely.",
+    "general_summary": "decuff serves abliterated open source models by API with zero data retention. The demand signal is community usage of uncensored models and security testing, but paid demand is unproven and the product is the same weights that larger inference hosts serve. A solo founder, controversial positioning and a short 7.4 month window all push the seed odds below the cohort anchor, and the odds do not rank this company against others in the batch. Later stages are low because Series A takes a median of two years."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file and market searches were used; no revenue or investor data is known.",
+    "Seed means an outside round above about $1M closing between 2026-04-06 and 2026-11-17.",
+    "Series A given seed is for the same window; Series B and C are ever figures.",
+    "Coverage: 662 researched companies; funding data partial."
   ],
   "sources": [
-    "https://"
+    "https://www.preprints.org/manuscript/202509.1334",
+    "https://openrouter.ai",
+    "https://www.together.ai",
+    "https://www.the-decoder.com/stripping-safety-guardrails-from-open-weight-ai-models-is-now-a-turnkey-commercial-service/"
   ]
 }
