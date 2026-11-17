@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Aseon Labs",
+    "one_liner": "Robotic pitstops for self-driving cars",
+    "description": "Aseon Labs builds robotic micro-depots (Aseon Pods) placed inside operating zones so that autonomous vehicle fleets can charge, clean and service vehicles without depot trips. The company says operations are about 70 percent of robotaxi service cost, and claims a 50 percent cut in reset cost. The founders previously built Pushme, which deployed 5,000 mobility infrastructure locations in 40 cities before its acquisition by TIER-Dott. Five people in the Bay Area, funded, building product toward pilots with major AV operators. Customers would be a handful of robotaxi operators paying per pod or per service.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.08,
+    "p_low": 0.03,
+    "p_high": 0.15,
+    "basis": "Starting rate about 1 percent (YC investor line, third party range 0.6 to 2 percent). Test setup: already accepted, reference only. Up for repeat founders with an exit and deep domain experience in mobility infrastructure, and a timely AV scaling problem. Down for hardware risk, few buyers, no pilot yet. Net about 8 percent as a plain applicant.",
+    "why_it_fails": "YC would most plausibly worry about the customer base and the hardware: only a few robotaxi operators exist, they build depots themselves or with large partners, and a pod needs to be approved on private and public land before it generates revenue. A team of five with no pilot signed has to build robots, permits and unit economics at once, which makes timelines long."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.72,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.63,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2018-2025: seed cond 63% (lower 59, known 63, upper 66, n=247), series_a cond 38% (n=156), series_b cond 23% (n=60), series_c cond 29% (n=14). Seed raise 2022+ median 4.5M (n=66).",
+        "adjustment_reason": "Anchor 63 percent, ours 72 percent. Repeat founders with an exit and a stated funded status support a seed above 500K, and Industrials seeds come fast (median 6 months to seed, n=156); within 1.2x of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            4000000
           ],
           "post_money_usd": [
-            0,
-            0
+            12000000,
+            24000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Industrials 2022+ seed p25 to median of 2.5M to 4.5M; funded repeat founders fit here."
         },
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            24000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Industrials seed p75 6.8M; strong AV infrastructure story can price above the median."
+        },
+        {
+          "raise_usd": [
+            800000,
+            2000000
+          ],
+          "post_money_usd": [
+            6000000,
+            14000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Small round or strategic investment, as AmpUp raised undisclosed strategic money in its early years."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            15000000
+          ],
+          "post_money_usd": [
+            50000000,
+            100000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside with a signed pilot from a major AV operator."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if investors judge that robotaxi operators will not pay a startup for pods and that the customer list is too small, or that hardware timelines are too long. Passenger AI served the same robotaxi operators and became inactive with no funding found. Aseon needs a signed pilot with a major operator within a year, which the AV companies control, and many investors avoid asset heavy robotics."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.29,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.38,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2018-2025: seed cond 63% (lower 59, known 63, upper 66, n=247), series_a cond 38% (n=156), series_b cond 23% (n=60), series_c cond 29% (n=14). Seed raise 2022+ median 4.5M (n=66).",
+        "adjustment_reason": "Anchor 38 percent, ours 29 percent. Below the anchor within 0.75x because the buyer list is tiny and pilots are slow; Faction, a driverless startup, reached A but is listed inactive."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            14000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Hardware A rounds are often smaller; AmpUp took a 15M Series A years after its batch."
         },
         {
           "raise_usd": [
-            0,
-            0
+            14000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            160000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Median B2B and Industrials A around 15M to 17M."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            8000000
+          ],
+          "post_money_usd": [
+            15000000,
+            40000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Small A or extension after a pilot delay. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            45000000
+          ],
+          "post_money_usd": [
+            160000000,
+            300000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if several operators commit. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs paid pilots that show lower reset cost per vehicle and a path to dozens of pods. The buyer pool is a handful of operators and some build depots in house or use partners such as large fleet service companies. AmpUp took five years from its batch to a Series A, and Faction, a driverless startup that raised a seed and A, still ended up listed as inactive."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.23,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2018-2025: seed cond 63% (lower 59, known 63, upper 66, n=247), series_a cond 38% (n=156), series_b cond 23% (n=60), series_c cond 29% (n=14). Seed raise 2022+ median 4.5M (n=66).",
+        "adjustment_reason": "Anchor 23 percent, ours 20 percent. Hardware needs more capital per step and each deployment is costly, so slightly below the cohort."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Hardware scale ups raise less than software at B; cohort B median 37M to 42M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Cohort median for recent Series B. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            50000000,
+            150000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Down or small B. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1200000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if it becomes the standard AV servicing network."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs a repeatable deployment across cities and multiple operators, with permitting and manufacturing at scale. Hardware capital needs and the concentration of customers make this hard, and operators may build their own servicing. Yoshi Mobility reached B only after broadening beyond one service, and many mobility infrastructure companies stall."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.29,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2018-2025: seed cond 63% (lower 59, known 63, upper 66, n=247), series_a cond 38% (n=156), series_b cond 23% (n=60), series_c cond 29% (n=14). Seed raise 2022+ median 4.5M (n=66).",
+        "adjustment_reason": "Anchor 29 percent, ours 25 percent. Few companies reach scale in AV infrastructure, so near the cohort."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            90000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower end of Series C, since few hardware companies raise at large size."
         },
         {
           "raise_usd": [
-            0,
-            0
+            90000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            700000000,
+            1400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Cohort p25 to p75 for recent Series C. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            50000000
+          ],
+          "post_money_usd": [
+            150000000,
+            400000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Extension or down. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1400000000,
+            3500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside with global AV growth. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C needs a large footprint and real operating margin across several AV networks. This depends on the AV industry scaling to thousands of vehicles per city, and on competing depot automation and fleet servicing companies not winning the contracts. Few hardware infrastructure companies in the cohort reach this stage."
     }
   ],
   "outcomes": {
@@ -164,167 +260,236 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          4000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The most likely failure is that the AV operators keep servicing inside their own depots or with large partners, so Aseon never gets beyond pilots, while each pod costs more to build and permit than expected. The founders' earlier exit shows they can sell infrastructure, but a small buyer pool and slow AV scaling push the company toward an acquisition by a fleet services or charging firm under 100M."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "ampup",
+      "relevance": "EV charging hardware and software for fleets, strategic backed.",
+      "outcome_summary": "Strategic funding in 2020 and 2021, a 15M Series A in September 2024, about 45 people, slow path."
+    },
+    {
+      "slug": "yoshi-mobility",
+      "relevance": "Vehicle servicing and fuel delivery that broadened across fleets.",
+      "outcome_summary": "Seed 2017, A 2018, B 2020, C 2024, about 65M raised."
+    },
+    {
+      "slug": "passenger-ai",
+      "relevance": "Software for robotaxi operations, same buyers.",
+      "outcome_summary": "Five person team in 2018, no funding found, inactive; early for the market."
+    },
+    {
+      "slug": "faction",
+      "relevance": "Driverless vehicles, a hardware heavy AV company.",
+      "outcome_summary": "4.3M seed 2021, TDK led Series A 2023, listed inactive though sources show activity."
+    },
+    {
+      "slug": "polymath-robotics",
+      "relevance": "Autonomy for industrial vehicles, small robotics team.",
+      "outcome_summary": "Small angel seed in 2022, no priced later round found."
+    },
+    {
+      "slug": "statiq",
+      "relevance": "EV charging network with infrastructure deployment.",
+      "outcome_summary": "Grew a network of thousands of chargers, raised capital years after the batch."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Tiny buyer pool: a few AV operators who build or outsource depots themselves",
+      "p": 0.45,
+      "evidence": "Robotaxi operators reportedly contract depot work to fleet service partners and plan large own depots, leaving few buyers for a startup.",
       "analogs": [
-        "TODO-company-slug"
+        "passenger-ai",
+        "yoshi-mobility"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Sign one anchor operator as a paid design partner early and also serve delivery and rideshare fleets."
+    },
+    {
+      "risk": "Hardware execution and cost: pods need manufacturing, permits and site rights",
+      "p": 0.4,
+      "evidence": "Asset heavy infrastructure has slow cycles and high capital needs; AmpUp took years to reach a Series A.",
+      "analogs": [
+        "ampup",
+        "faction"
+      ],
+      "mitigation": "Start with a leased or retrofit design and few sites with a clear unit economics test."
+    },
+    {
+      "risk": "AV scaling slower than expected, so demand for servicing is delayed",
+      "p": 0.3,
+      "evidence": "Autonomy timelines have slipped repeatedly and Passenger AI was early for robotaxi operations in 2018.",
+      "analogs": [
+        "passenger-ai",
+        "faction"
+      ],
+      "mitigation": "Support human driven electric fleets as a bridge."
+    },
+    {
+      "risk": "Depot automation competitors and fleet service companies copy the idea",
+      "p": 0.3,
+      "evidence": "Charging and fleet service firms already operate with the AV companies and could add robotics.",
+      "analogs": [
+        "ampup",
+        "statiq"
+      ],
+      "mitigation": "Lock in operator contracts and use the founders' site network experience."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Waymo and other AV operators' own depots",
+      "what": "Large centralized depots with human workers for charging, cleaning and service.",
+      "traction": "Reported staffing of dozens of workers per depot at the largest operator.",
+      "source_url": "https://www.therobotreport.com/from-14-cities-to-15000-what-it-will-take-to-scale-robotaxis/"
+    },
+    {
+      "name": "Fleet service partners (Moove, Avis, Flexdrive and similar)",
+      "what": "Contractors who run charging and servicing for AV fleets.",
+      "traction": "Reported contracts with major robotaxi operators.",
+      "source_url": "https://avfleettech.beehiiv.com/p/uber-just-quantified-what-an-av-depot-actually-costs"
+    },
+    {
+      "name": "Robotic charging startups",
+      "what": "Mobile charging robots and inspection for depots with claimed large labor cuts.",
+      "traction": "Vendor claims of up to 70 percent depot labor reduction, unverified.",
+      "source_url": "https://www.pulse.bot/autonomy/news/robodock-autonomous-depots-for-robotaxis-9b86149b-11d3-4361-a84e-abbb27f7637f/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "A pod must robotically charge, clean and inspect different vehicle models outdoors and reliably, which combines robotics, manipulation, vehicle integration and safety. A small team can build a prototype in three months but a deployable unit across vehicle types takes much longer and needs partnership with operators for access to vehicles."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Waymo and other AV operators",
+      "Fleet service contractors",
+      "Charging network companies"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 24,
+    "rationale": "Operators could build depot automation in house but have a strong incentive to focus on driving and use partners. Hardware gives a slower copy cycle than software, about two years, so the main risk is the customers insourcing, not a rival startup."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Depot labor for charging, cleaning and inspection is reported as a bottleneck and cost driver for robotaxi fleets.",
+        "source_url": "https://www.therobotreport.com/from-14-cities-to-15000-what-it-will-take-to-scale-robotaxis/"
+      },
+      {
+        "claim": "Large platforms plan hundreds of millions in AV depot spend, showing budgets exist.",
+        "source_url": "https://avfleettech.beehiiv.com/p/uber-just-quantified-what-an-av-depot-actually-costs"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A working pod prototype and an operator conversation.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build a prototype that charges and cleans a single vehicle type.",
+        "Secure a letter of intent from an AV operator or fleet service partner."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Prototype demo and a signed LOI."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A paid pilot that justifies a round above 500K.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Install a first pod in an operating zone with a partner.",
+        "Measure reset cost and uptime against the depot baseline."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A pilot showing a cost per reset reduction near the claimed 50 percent."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Multiple pods and a second customer.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Deploy a small network of pods in one city with site agreements.",
+        "Design for manufacturing and sign a contract manufacturer."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Several pods in daily use and recurring service revenue."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A repeatable multi city rollout.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Standardize permitting and site acquisition.",
+        "Support multiple vehicle platforms."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Dozens of pods across three cities with positive unit economics."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Repeat founders with a relevant exit",
+      "evidence": "The team built Pushme, which deployed 5,000 mobility infrastructure locations before an acquisition by TIER-Dott, per the company description."
+    },
+    {
+      "point": "A real, large cost problem",
+      "evidence": "Depot operations are reported as a bottleneck for robotaxi scaling, with large spend on depots.",
+      "source_url": "https://www.therobotreport.com/from-14-cities-to-15000-what-it-will-take-to-scale-robotaxis/"
+    },
+    {
+      "point": "Already funded with a pilot plan",
+      "evidence": "The description says the company is funded and building for pilots with major operators."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Aseon Labs",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Aseon Labs\" --era 2022+: 9 characters, 3 syllables, kind name_plus_descriptor (Labs).",
     "strengths": [
-      "TODO"
+      "Distinctive invented word that is easy to trademark",
+      "Pronounceable"
     ],
     "weaknesses": [
-      "TODO"
+      "Labs descriptor is generic and the name says nothing about robotics or vehicles"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "An invented word is ownable and pronounceable, like many past YC hardware names, but Labs suggests research rather than a deployed service. For a business sold to a few operators, brand matters little, so the effect is neutral."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Experienced founders attack a real cost problem, but a tiny buyer pool and hardware timelines make later rounds hard.",
+    "general_summary": "Aseon Labs targets the servicing bottleneck as robotaxi fleets grow, with founders who already deployed thousands of mobility infrastructure sites and sold the company. That supports a seed above 500K in a category where industrials seeds come quickly. The risk shows in the analogs: Passenger AI served the same operators and went inactive, AmpUp needed years to reach an A, and Faction raised a seed and A but is listed inactive. The buyer list is a handful of operators who can build or outsource depots, so Series A odds are set below the Industrials anchor. Customer and pilot claims are unverified."
   },
   "assumptions": [
-    "TODO"
+    "Seed means a round above about 500K within about 12 months of the batch start.",
+    "The statement that the company is funded and the Pushme history come from the company description and are unverified.",
+    "Industrials 2018 to 2025 cohort used because 2022 plus alone is smaller.",
+    "Web results dated after 2026-04-06 were ignored; the market cost figures are from secondary blogs and estimates."
   ],
   "sources": [
-    "https://"
+    "https://www.therobotreport.com/from-14-cities-to-15000-what-it-will-take-to-scale-robotaxis/",
+    "https://avfleettech.beehiiv.com/p/uber-just-quantified-what-an-av-depot-actually-costs",
+    "https://www.pulse.bot/autonomy/news/robodock-autonomous-depots-for-robotaxis-9b86149b-11d3-4361-a84e-abbb27f7637f/"
   ]
 }

@@ -165,7 +165,7 @@ You know it worked when: Net revenue retention above 120 percent.
 |---|---|---|---|
 | Marketing clouds (HubSpot, Salesforce Marketing Cloud, Adobe) | Platforms adding AI assistants for campaign building. | Dominant installed base in enterprise marketing. | https://www.hubspot.com |
 | Agencies and freelancers | Humans who deploy campaigns in customers' tools. | The status quo; the description says companies pay millions and wait weeks. | https://www.hubspot.com |
-| AI marketing agent startups (YC peers) | Companies building AI for advertising and campaign operations. | Several early stage entrants, funding mostly seed. | https://neuronfeed.com/category/ai-testing?page=2 |
+| AI marketing agent startups (YC peers) | Companies building AI for advertising and campaign operations. | Several early stage entrants, funding mostly seed. | https://www.ycombinator.com/companies |
 
 ### Demand evidence
 
@@ -201,4 +201,4 @@ You know it worked when: Net revenue retention above 120 percent.
 ## Sources
 
 - https://www.hubspot.com
-- https://neuronfeed.com/category/ai-testing?page=2
+- https://www.ycombinator.com/companies
