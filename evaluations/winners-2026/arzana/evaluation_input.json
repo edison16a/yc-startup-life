@@ -1,0 +1,434 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Arzana",
+  "one_liner": "Adaptive AI built for manufacturers",
+  "description": "Arzana trains custom models on a manufacturer's operational data to automate quoting, order entry, invoicing and other repetitive office work, sold to manufacturers who pay to avoid staff cost. It reports $1.5M of avoided staff cost for customers and plans to move into shop-floor automation later. Team of 13 in New York.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.05,
+  "p_low": 0.02,
+  "p_high": 0.12,
+  "basis": "Accepted to YC in this test, so this note is only for completeness. Starting from roughly 1 percent for a random applicant, the factors that lift it are a large team of 13, stated customer savings of $1.5M which is real traction, and a clear painful back office problem. Factors that cut it are a crowded AI quoting space and no named founder background in the description.",
+  "why_it_fails": "YC would most plausibly pass because AI quoting and order entry for manufacturers and distributors already had several YC peers in 2025 and 2026, and the pitch as written does not show a specific wedge or founder background that a copycat could not match quickly."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.68,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (n=126), range 49 / 59 / 65%. B2B median months to seed 7.",
+    "adjustment_reason": "Raised above the anchor because the company already shows $1.5M of customer savings, a team of 13, and AI back office automation is a funded category in 2026."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or small-check round, close to the standard YC deal plus a small angel or pre-seed extension, typical when traction is slow."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ seed medians in the researched cohort are about $3.2M raised, and 2026 public seed pre money medians are near $18M."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside: a hot-category seed led by a top seed fund after quick early revenue or usage."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier large seed, seen in the hottest AI categories only and rare overall."
+    }
+   ],
+   "why_it_fails": "The seed round fails to clear $500K within 12 months if the savings claim turns out to be one or two pilots that do not repeat, or if investors see the quoting and order entry space as crowded with well funded seed peers such as Comena, Avent and Trelium from the 2025 cohort. Long custom model deployments per factory also slow the revenue curve investors want to see."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.32,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave series_a cond 26% (n=74); calibration cohort overall cond 45% among those known to reach seed.",
+    "adjustment_reason": "Slightly above the 2022+ B2B anchor because manufacturers pay real money and the wedge has a clear ROI, but kept near the anchor because the cohort is young."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Modest A or a down-leaning round after a slow year of growth."
+    },
+    {
+     "raise_usd": [
+      11000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series A medians are about $15M raised, public series A pre money near $60M."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside A led by a large fund after strong, fast revenue growth."
+    }
+   ],
+   "why_it_fails": "Series A is missed if each customer needs a bespoke trained model, which makes gross margin look like services and growth linear in headcount. Investors also compare against better capitalised rivals in AI quoting, and a factory sales cycle of six to twelve months can leave revenue under the roughly $1M to $2M annual run rate that Series A investors expect. Capuchin shows a manufacturing AI company can stay small for years."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave series_b cond 16% (n=19); all researched companies cond 44% (n=126) in stage_benchmarks.md.",
+    "adjustment_reason": "Between the young B2B cohort anchor and the full-sample conditional, because B2B with paying customers tends to survive and raise later."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Smaller or flat B, often an extension for a company that is profitable but growing slower."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      55000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series B medians are about $37M to $45M raised."
+    },
+    {
+     "raise_usd": [
+      55000000,
+      100000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B on fast growth in a large category, led by a major growth fund."
+    }
+   ],
+   "why_it_fails": "Series B fails if the company never moves past office automation into a defensible product. ERP and CPQ vendors add agents of their own, price per seat falls, and the planned shop-floor expansion is a hardware and integration problem that may not scale. Growth of 3x a year is hard to hold when each factory is a custom deployment."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "stage_benchmarks.md: conditional C rate 36% (n=55) over the calibration sample; the B2B 2022-2025 cohort has n=3 so is not usable.",
+    "adjustment_reason": "Near the full-sample conditional; later years are common for companies with paying customers."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Smaller late round or a growth extension, likely when growth has slowed but revenue is solid."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series C medians are about $45M raised, public series C deal size near $77M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside late round for a category leader with fast growth and strong retention."
+    }
+   ],
+   "why_it_fails": "A later round fails if net retention is weak, if the ambition of automating 10,000 factories stalls at a few dozen sites, or if a platform such as an ERP vendor absorbs the quoting workflow. Companies in the cohort that reached later rounds usually had a product that scaled without custom work per customer."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
+    ],
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.17
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.03
+   }
+  ],
+  "why_it_fails": "Most likely outcome is a stall or small acquisition because custom model deployments limit margin and larger ERP and automation vendors can bundle similar agents. A result above $1B would need Arzana to become the operating layer of factories, which requires robotics and machinery integrations that are hard for a small team."
+ },
+ "analogs": [
+  {
+   "slug": "capuchin",
+   "relevance": "Search and automation for engineer-to-order manufacturers, Winter 2022.",
+   "outcome_summary": "One founder company, active in 2026 and pivoted, with no priced round found, showing how slow manufacturing software can be."
+  },
+  {
+   "slug": "avent",
+   "relevance": "AI quoting and order entry for industrial distributors, Summer 2025.",
+   "outcome_summary": "Active, no priced funding found in the record; a direct peer in the same wedge."
+  },
+  {
+   "slug": "comena",
+   "relevance": "AI agents for order entry at distributors and manufacturers, Summer 2025.",
+   "outcome_summary": "Active Munich company with named customers, outcome unresolved; a direct peer."
+  },
+  {
+   "slug": "trelium",
+   "relevance": "AI agents for back office operations, Fall 2025.",
+   "outcome_summary": "Active with a handful of customers, outcome unresolved; a peer that pivoted into back office work."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Custom model per factory makes the business a services company with weak gross margin",
+   "p": 0.35,
+   "evidence": "Training custom models on each customer's data requires data cleaning and integration work per site, which usually keeps margins and growth near services levels.",
+   "analogs": [
+    "capuchin"
+   ],
+   "mitigation": "Productise a shared base model and a repeatable onboarding so new factories take weeks, not quarters."
+  },
+  {
+   "risk": "Crowded AI quoting and order entry category with better funded seed peers",
+   "p": 0.4,
+   "evidence": "Several YC companies from 2025 and 2026 target the same quoting and order entry workflow, and the market search shows multiple seed rounds in AI quoting for manufacturers.",
+   "analogs": [
+    "avent",
+    "comena",
+    "trelium"
+   ],
+   "mitigation": "Win a named vertical and depth of ERP integration, and show customer outcomes before peers do."
+  },
+  {
+   "risk": "ERP and CPQ incumbents bundle agents and commoditise office automation",
+   "p": 0.3,
+   "evidence": "NetSuite, SAP and CPQ vendors are integration points and have incentive to add AI quoting, and the document processing vendors already sell order automation.",
+   "analogs": [
+    "capuchin"
+   ],
+   "mitigation": "Sit above ERPs as a neutral layer and keep the data advantage from trained models per customer."
+  },
+  {
+   "risk": "Shop-floor expansion is a different hardware and safety problem that a 13 person team cannot execute",
+   "p": 0.3,
+   "evidence": "Sending instructions to machinery and robots needs machine integrations and safety certification, which is slower than software and has few YC precedents of success.",
+   "analogs": [
+    "capuchin"
+   ],
+   "mitigation": "Treat shop-floor work as a later bet and prove the office agents reach strong net retention first."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Conexiom, WizCommerce, Rundoo",
+   "what": "AI order and invoice processing for distributors and manufacturers.",
+   "traction": "Established vendors selling order desk automation; counts not verified.",
+   "source_url": "https://distributionstrategy.com/2026/09/ai-moves-into-the-distributor-order-desk-as-new-tools-target-manual-work/"
+  },
+  {
+   "name": "Uptool and Corbel",
+   "what": "AI quoting and sales intelligence for small and mid size manufacturers.",
+   "traction": "Each reported seed rounds of about $6M to $7M.",
+   "source_url": "https://pulse2.com/uptool-6-million-seed-funding-closed-for-helping-u-s-shops-quote-10x-faster/amp/"
+  },
+  {
+   "name": "Mercura (YC W25)",
+   "what": "B2B SaaS automating the quote and order workflow with integrations to existing systems.",
+   "traction": "Reported a seed round of about $2.1M in late 2025.",
+   "source_url": "https://yespress.io/mercura-yc-w25"
+  },
+  {
+   "name": "Status quo: staff plus ERP and spreadsheets",
+   "what": "Office staff key orders and quotes by hand into an ERP.",
+   "traction": "The default way every target factory works today.",
+   "source_url": "https://www.threekit.com/blog/ai-proposal-generation-for-manufacturers-what-it-is-how-it-works-and-how-fast-you-can-deploy-it"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Reading messy documents and writing into ERPs is doable for a small team using current models, but training custom models per customer and later driving machinery is much harder and depends on data access."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "NetSuite, SAP and CPQ vendors",
+   "Document automation vendors such as Conexiom",
+   "Well funded AI quoting startups"
+  ],
+  "timeline_months": 12,
+  "rationale": "Incumbents have the distribution and a reason to add agents, and a funded rival can copy a quoting agent within a year, though deep integrations take longer."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Several startups raised seed rounds in 2025 and 2026 to automate quoting for manufacturers, which shows buyers and investors see the pain.",
+    "source_url": "https://thenextweb.com/news/forgepoint-9-8m-seed-ai-quoting-manufacturers-frank"
+   },
+   {
+    "claim": "Distributors and manufacturers are adopting AI at the order desk to cut manual work.",
+    "source_url": "https://distributionstrategy.com/2026/09/ai-moves-into-the-distributor-order-desk-as-new-tools-target-manual-work/"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show that the $1.5M savings claim repeats across several paying factories.",
+   "actions": [
+    "List each paying customer with contract value and hours saved.",
+    "Document the onboarding time for a new factory."
+   ],
+   "proof": "Three or more paid factories with a measured saving each."
+  },
+  {
+   "phase": "seed",
+   "goal": "Reach a repeatable product and about $1M in annual recurring revenue pace.",
+   "actions": [
+    "Cut per factory onboarding to a few weeks with a shared base model.",
+    "Pick one vertical and win it before expanding."
+   ],
+   "proof": "A seed over $500K from a lead fund and a revenue run rate near $1M."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Stated customer savings of $1.5M and a team of 13 at batch start.",
+   "evidence": "Description says over $1.5M in avoided staff cost; team size is 13, large for a new YC company.",
+   "source_url": "https://www.arzana.com/"
+  },
+  {
+   "point": "Boring B2B customers with a clear budget line.",
+   "evidence": "Quoting and order entry staff costs are a direct, measurable spend; the B2B cohort survives longer than average.",
+   "source_url": "https://distributionstrategy.com/2026/09/ai-moves-into-the-distributor-order-desk-as-new-tools-target-manual-work/"
+  }
+ ],
+ "brand": {
+  "name": "Arzana",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Arzana\" --era 2022+ gave kind invented_or_proper, 6 chars, 3 syllables, no descriptor words.",
+  "strengths": [
+   "Short, easy to say and spell",
+   "Invented word with no baggage"
+  ],
+  "weaknesses": [
+   "Says nothing about manufacturing or AI"
+  ],
+  "rationale": "A short invented name is the common pattern among YC companies and is neutral for outcomes; it carries no meaning but is easy to own, like many B2B names that grew on product strength."
+ },
+ "narrative": {
+  "headline": "A well staffed AI office automation company in a crowded 2026 category that should raise a seed but faces a custom deployment margin problem.",
+  "general_summary": "Arzana sells AI agents that take over quoting, order entry and invoicing for manufacturers. It starts with a 13 person team and a claim of $1.5M in saved staff cost, which is stronger than most companies at batch start. The category is hot, with several seed funded peers, so a seed above the standard YC deal is likely, but a repeatable product, not custom models per factory, decides whether it reaches Series A. B2B companies with paying customers tend to survive, so a stall is more likely than a quick death."
+ },
+ "assumptions": [
+  "Forecast made blind from the batch start date 2026-04-06 using only the input file and market searches.",
+  "Seed in this test means a round above about $500K within about 12 months of the batch start.",
+  "Cohort data for 2022 to 2025 batches is young, so later stage anchors are weak (n=3 at Series C).",
+  "Era: 2026 round sizes use current public benchmarks cited in stage_benchmarks.md."
+ ],
+ "sources": [
+  "https://thenextweb.com/news/forgepoint-9-8m-seed-ai-quoting-manufacturers-frank",
+  "https://distributionstrategy.com/2026/09/ai-moves-into-the-distributor-order-desk-as-new-tools-target-manual-work/",
+  "https://pulse2.com/uptool-6-million-seed-funding-closed-for-helping-u-s-shops-quote-10x-faster/amp/",
+  "https://yespress.io/mercura-yc-w25",
+  "https://www.threekit.com/blog/ai-proposal-generation-for-manufacturers-what-it-is-how-it-works-and-how-fast-you-can-deploy-it"
+ ]
+}

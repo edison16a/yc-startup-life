@@ -1,0 +1,422 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Janeen",
+    "one_liner": "Prior auths and benefits investigation for infusion clinics",
+    "description": "Janeen sells to infusion clinics that buy expensive biologics up front and are reimbursed through patient insurance. It handles prior authorizations and benefit investigations end to end, claims to have removed 95 percent of the manual work, and says insurers deny these drugs often. The team is five people in San Francisco.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.14,
+    "p_low": 0.08,
+    "p_high": 0.3,
+    "basis": "Test assumes the company was accepted, so this is a note only. The published acceptance rate is low single digits, and a five person healthcare AI team with a narrow, paid wedge (infusion clinics) and claimed live customers would sit above that (an estimate of about 14 percent, three to five times the baseline), though the AI prior auth category was already crowded in W26 with several sibling YC companies.",
+    "why_it_fails": "YC could say the infusion clinic wedge is too small and that AI prior authorization has many funded rivals including Infinitus and Cohere Health, with no clear reason this team wins. Claims of 95 percent labor removal and clinics across the country are founder statements that cannot be verified, and healthcare services style businesses with heavy human review can look like low margin outsourcing rather than software."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.58,
+      "anchors": {
+        "base_rate": 0.65,
+        "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2020-2024 --calibration-only: seed 62/65/66 percent (n=31); median 19 months to seed for Healthcare in stage_benchmarks.md",
+        "adjustment_reason": "The test asks for a round above the $500K YC deal within about 12 months, which is stricter than any post-YC round and healthcare is slow to seed, so I sit at 0.9 times the anchor. Hot AI revenue cycle category and real clinic revenue offset this."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            2000000.0,
+            3000000.0
+          ],
+          "post_money_usd": [
+            15000000.0,
+            22000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical 2026 seed for healthcare AI with early revenue: $2M to $3M at roughly $15M to $22M post, close to the current $3.0M market median deal size."
+        },
+        {
+          "raise_usd": [
+            3500000.0,
+            6000000.0
+          ],
+          "post_money_usd": [
+            25000000.0,
+            40000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside: a lead from a name healthcare fund after showing denial rates falling at several clinics, as Ember and Trellis raised in this category."
+        },
+        {
+          "raise_usd": [
+            750000.0,
+            1800000.0
+          ],
+          "post_money_usd": [
+            8000000.0,
+            14000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin band: small pre-seed or angel extension just over the YC check, as Lamar Health and Delfino AI did."
+        }
+      ],
+      "why_it_fails": "The seed most likely fails because the evidence is a narrow vertical, five people and self reported labor savings. Investors in this category have seen many AI prior auth pitches and will ask why infusion clinics are a venture sized market and whether human review hides weak margins. Lamar Health stayed at seed after YC and Delfino AI showed no round above $500K, so a bigger round needs hard proof of denial rate reduction and paid contracts."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.32,
+      "anchors": {
+        "base_rate": 0.4,
+        "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2020-2024 --calibration-only: series_a cond 40 percent (n=20); 2018-2022 cohort cond 52 percent (n=25)",
+        "adjustment_reason": "I set 0.8 times the cohort anchor because the wedge is narrow and a payer or EHR vendor can bundle the feature. This stays above the 0.75 floor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000.0,
+            15000000.0
+          ],
+          "post_money_usd": [
+            50000000.0,
+            80000000.0
+          ],
+          "p_band": 0.4,
+          "rationale": "Median healthcare Series A 2022+ is about $19.5M in our sample and $17.4M market; infusion focused company likely at the lower end."
+        },
+        {
+          "raise_usd": [
+            18000000.0,
+            28000000.0
+          ],
+          "post_money_usd": [
+            90000000.0,
+            150000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: expands from infusion to all specialty drug access and pivots into a broader platform, as Camber did with admin automation."
+        },
+        {
+          "raise_usd": [
+            5000000.0,
+            9000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            45000000.0
+          ],
+          "p_band": 0.4,
+          "rationale": "Thin band: small Series A or a large seed extension, common for narrow healthcare automation with slow sales cycles."
+        }
+      ],
+      "why_it_fails": "Series A is missed if revenue stays concentrated in a handful of clinics and growth is limited by the number of infusion centers it can reach. Healthcare median to Series A is about 30 months, and slow clinic sales cycles plus payer rule changes can stall momentum. Float Health reached A only with a clear staffing scale story, while Delfino AI and Health Harbor did not."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.36,
+      "anchors": {
+        "base_rate": 0.38,
+        "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2020-2024 --calibration-only: series_b cond 38 percent (n=8)",
+        "adjustment_reason": "Close to the cohort anchor; paying customers keep B2B healthcare companies alive and reaching a round later is common."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            25000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "p_band": 0.5,
+          "rationale": "Median Series B 2022+ in our sample is $37M; market deal size $39.5M."
+        },
+        {
+          "raise_usd": [
+            45000000.0,
+            70000000.0
+          ],
+          "post_money_usd": [
+            300000000.0,
+            500000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the system of record for specialty infusion drug access."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            22000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            110000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin band: smaller B or flat valuation after slower growth."
+        }
+      ],
+      "why_it_fails": "Series B fails when the company is a point solution for a niche and cannot show net revenue retention or a second product. Larger revenue cycle vendors and payer portals compress pricing, and the market for infusion only automation is capped. Camber needed four years and a broader admin platform before its B."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2020-2024 --calibration-only: series_c cond 33 percent (n=3); calibration sample overall cond 36 percent (n=55)",
+        "adjustment_reason": "Slightly below the anchor because the sample is tiny and niche scope limits scale."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            45000000.0,
+            70000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            450000000.0
+          ],
+          "p_band": 0.5,
+          "rationale": "Median Series C 2022+ is $45M in our sample, market $77M."
+        },
+        {
+          "raise_usd": [
+            80000000.0,
+            150000000.0
+          ],
+          "post_money_usd": [
+            500000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: broad healthcare access platform with large health system contracts."
+        },
+        {
+          "raise_usd": [
+            25000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            220000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin or flat round after growth slows, typical when a niche platform has to raise on modest metrics."
+        }
+      ],
+      "why_it_fails": "Series C needs several million in recurring revenue and a story beyond infusion. Healthcare administration companies commonly stop at a profitable Series B scale or sell to a revenue cycle consolidator. Without a second large segment the company is more likely to be acquired than to raise growth equity."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.4
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          10000000.0,
+          100000000.0
+        ],
+        "p": 0.35
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000.0,
+          1000000000.0
+        ],
+        "p": 0.21
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000.0,
+          3000000000.0
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "The company fails to reach a meaningful exit if prior authorization automation becomes a bundled feature of EHRs, revenue cycle vendors and payer portals, leaving a narrow infusion niche with thin pricing power. Small healthcare AI teams in this niche (Pledge Health, Sample, Delfino AI) mostly ended in small deals or stayed tiny, and few reached venture scale."
+  },
+  "analogs": [
+    {
+      "slug": "lamar-health",
+      "relevance": "Prior auth paperwork for expensive specialty drugs, same buyer pain.",
+      "outcome_summary": "Winter 2021, grew software used by specialty pharmacies, highest post-YC round was seed; slow venture path but alive."
+    },
+    {
+      "slug": "float-health",
+      "relevance": "Specialty and home infusion focus with a nurse founder.",
+      "outcome_summary": "Winter 2022, raised a $10M Series A in March 2024, showing the infusion niche can reach A."
+    },
+    {
+      "slug": "trellis-ai",
+      "relevance": "AI medication access and prior authorization.",
+      "outcome_summary": "Winter 2024, grew to dozens of staff and raised seed; focused on prior auth after a pivot."
+    },
+    {
+      "slug": "delfino-ai",
+      "relevance": "Generative AI healthcare admin automation, tiny team, crowded with Infinitus.",
+      "outcome_summary": "Summer 2022, still a two person team with no disclosed round above $500K."
+    },
+    {
+      "slug": "camber-2",
+      "relevance": "Healthcare admin automation that scaled after years.",
+      "outcome_summary": "Winter 2021, $30M Series B in February 2025 after a long quiet period."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Narrow infusion wedge cannot support venture scale",
+      "p": 0.35,
+      "evidence": "Infusion clinics number in the thousands, not tens of thousands, and AI prior auth peers target all specialties.",
+      "analogs": [
+        "lamar-health",
+        "delfino-ai"
+      ],
+      "mitigation": "Expand to all specialty drug access and add reimbursement and inventory workflows."
+    },
+    {
+      "risk": "Heavy human review means low gross margin, not software margin",
+      "p": 0.3,
+      "evidence": "Claims of removing 95 percent of labor imply remaining manual work; investors discount service heavy AI.",
+      "analogs": [
+        "health-harbor",
+        "delfino-ai"
+      ],
+      "mitigation": "Publish automation rates and gross margin by customer, and automate the remaining steps."
+    },
+    {
+      "risk": "Bundling by EHRs, payer portals and larger revenue cycle vendors",
+      "p": 0.3,
+      "evidence": "Infinitus, Cohere Health and Innovaccer already sell prior auth automation with more funding.",
+      "analogs": [
+        "trellis-ai",
+        "float-health"
+      ],
+      "mitigation": "Win on depth of infusion workflow and reimbursement outcomes, and lock in via inventory data."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "SamaCare",
+      "what": "Electronic prior authorization software used by specialty brands and practices",
+      "traction": "Reports a 29 percent PA approval lift on its own platform (vendor claim)",
+      "source_url": "https://samacare.com/live-sciences"
+    },
+    {
+      "name": "Mandolin",
+      "what": "AI benefits verification for specialty and infusion",
+      "traction": "Publishes case content on specialty carve outs, funded vendor",
+      "source_url": "https://www.mandolin.com/post/claim-denials"
+    },
+    {
+      "name": "eBlu Solutions",
+      "what": "Single portal for high cost infusion and injection therapies",
+      "traction": "Established vendor in the infusion niche",
+      "source_url": "https://eblusolutions.com"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Payer portals, faxes and phone calls vary by plan, so the hard part is reliable end to end automation and clinical document handling with HIPAA controls. A small team can ship agents on top of foundation models in three months, but reaching high first pass approval rates takes data and human in the loop operations."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "EHR vendors",
+      "Infinitus",
+      "Cohere Health",
+      "revenue cycle vendors"
+    ],
+    "timeline_months": 12,
+    "rationale": "Large revenue cycle and prior auth vendors already sell similar features and could add infusion specific flows within a year. Distribution advantage sits with incumbents, so the startup must win on depth in one segment."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Centralizing prior authorization and benefits verification at infusion clinics reduced preventable denials in a published two clinic study",
+        "source_url": "https://academic.oup.com/ajhp/article/82/15/e710/7990644"
+      },
+      {
+        "claim": "Vendors such as SamaCare, Mandolin and eBlu sell paid prior auth and benefits verification tools to infusion and specialty providers",
+        "source_url": "https://samacare.com/live-sciences"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show paying clinics and a measurable denial reduction.",
+      "actions": [
+        "Collect before and after denial rates from each live clinic",
+        "Publish the share of cases fully automated"
+      ],
+      "proof": "Three or more paying clinics with documented denial rate reduction"
+    },
+    {
+      "phase": "seed",
+      "goal": "Raise above the standard YC deal on proof of savings.",
+      "actions": [
+        "Convert clinics to annual contracts priced on collected reimbursement",
+        "Build gross margin reporting showing software like margins"
+      ],
+      "proof": "At least $30K monthly recurring revenue and 80 percent automation"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Show a repeatable motion beyond infusion.",
+      "actions": [
+        "Add a second specialty drug workflow",
+        "Hire a healthcare sales lead and integrate with the top EHRs"
+      ],
+      "proof": "Revenue over $1.5M annualized and net retention above 110 percent"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Concrete pain with money attached",
+      "evidence": "Biologics cost $80K to $150K per patient per year and denials leave clinics holding the cost, which gives a clear ROI.",
+      "source_url": "https://academic.oup.com/ajhp/article/82/15/e710/7990644"
+    },
+    {
+      "point": "Healthcare AI admin is a funded, active category",
+      "evidence": "Several YC peers such as Trellis and Ember raised seed rounds in this space.",
+      "source_url": "https://www.ycombinator.com/companies"
+    }
+  ],
+  "brand": {
+    "name": "Janeen",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Janeen\" --era 2022+: 6 characters, 2 syllables, invented or proper name",
+    "strengths": [
+      "Short and easy to spell"
+    ],
+    "weaknesses": [
+      "Sounds like a person's name, says nothing about infusion or prior auth"
+    ],
+    "rationale": "A short personal name is easy to say and neutral for B2B healthcare, like Trellis or Camber, which are also non descriptive. It will not drive growth and does not hurt a sales led product."
+  },
+  "narrative": {
+    "headline": "A real revenue pain in a narrow niche with many funded AI prior auth rivals; a seed above the YC check is plausible but not assured.",
+    "general_summary": "Janeen automates prior authorizations and benefits investigation for infusion clinics, a segment where drug costs are high and denials directly hit clinic cash. The pain is real and payers' complexity gives a software opening. The risks are scale and structure: infusion clinics are a bounded market, the category is crowded with better funded AI prior auth companies, and the claim of removing 95 percent of manual work needs proof that margins look like software. Cohort data for healthcare shows slow seed timing and about 40 percent conditional odds of a Series A. I expect a modest seed and a coin flip or worse beyond that, with an acquisition by a revenue cycle or specialty pharmacy platform as a common ending."
+  },
+  "assumptions": [
+    "Blind test: the company is assumed accepted to YC in Winter 2026 and the forecast date is the batch start of 2026-01-05.",
+    "Seed here means a round above the $500K YC deal within about 12 months of the batch start.",
+    "Only the input description was used about the company. Peer YC records from batches after the as_of date were not used for outcomes.",
+    "Research coverage is 10 percent of YC companies, so cohorts for Healthcare 2020 to 2024 have n of about 32."
+  ],
+  "sources": [
+    "https://academic.oup.com/ajhp/article/82/15/e710/7990644",
+    "https://samacare.com/live-sciences",
+    "https://www.mandolin.com/post/claim-denials",
+    "https://eblusolutions.com",
+    "https://www.equidam.com/?p=32620"
+  ]
+}

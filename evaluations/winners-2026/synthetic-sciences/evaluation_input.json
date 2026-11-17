@@ -1,0 +1,428 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Synthetic Sciences",
+  "one_liner": "Infrastructure for Autonomous Science",
+  "description": "Synthetic Sciences is a research lab building infrastructure for scientific superintelligence. Empirical science is bottlenecked by verification that is slow, expensive, and imperfect. We work on tooling, evals, training environments, algorithms, and labs that make autonomous science possible.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.025,
+  "p_low": 0.0125,
+  "p_high": 0.045000000000000005,
+  "basis": "Test note: this company was accepted to YC, so this is only the forward estimate. Starting prior is about 1 percent for a random applicant (0.6 to 2 percent third party range, per references/yc_acceptance.md). Research lab on RL and verification for science is a priority topic for YC and AI labs (up), four person team with research ambitions (neutral to up), vague product with no revenue and a very broad scope (down), hot but crowded RL environment space (down). Net about 2.5 percent.",
+  "why_it_fails": "YC would most likely say the scope is too broad for four people, spanning tooling, evals, training environments, algorithms and labs, with no customer or product. The RL environment market is crowded with funded vendors, and a research lab without revenue is hard to evaluate in an interview."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.62,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --tag \"Reinforcement Learning\" (53 researched, not calibration only, mostly 2024+): seed known 26% (lower 17, upper 51), series_a cond 33% (n=9), B 0% (n=3). Recent batches are right censored so known-only is biased low. Broader anchor python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59%, A 26%, B 16%, C 0% (n=3; upper 16%). Calibration rule: stay at or above 0.75 times anchor.",
+    "adjustment_reason": "Seed 1.05x the 59 percent anchor: hot AI research category but RL tag known-only is 26 percent, so uncertainty is wide."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Small pre-seed of about 600K to 1.5M on a SAFE, barely above the YC deal. If no product emerges, a small round follows."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical 2026 seed near the 3.0M US median deal size and 18M pre money from PitchBook NVCA via Equidam (see stage_benchmarks.md). A defined eval or environment product leads to a typical seed."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong seed led by a known fund, near the YC 2022+ announced median of 4.1M or above. Research credentials and AI lab interest give a strong seed."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside seed or large first round if usage or revenue spikes, common for hot AI categories in 2026. Lab research funding in 2026 can mean very large seeds."
+    }
+   ],
+   "why_it_fails": "The seed step above 500K fails if the lab cannot name a product, customer or result within 12 months. Vibrant Labs and Cartpole sell RL environments with no verified round, and large vendors with lab relationships dominate. Investors may fund a research thesis only if the team has strong credentials."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --tag \"Reinforcement Learning\" (53 researched, not calibration only, mostly 2024+): seed known 26% (lower 17, upper 51), series_a cond 33% (n=9), B 0% (n=3). Recent batches are right censored so known-only is biased low. Broader anchor python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59%, A 26%, B 16%, C 0% (n=3; upper 16%). Calibration rule: stay at or above 0.75 times anchor.",
+    "adjustment_reason": "0.28 is above the 26 percent B2B anchor but near the RL tag A cond 33 percent (n=9)."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small or bridge style A, or a down-ish A after a slow year. Few lab customers pay."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Median 2022+ YC Series A raise is 14.15M, market 17.4M. Needs paying lab or pharma customers."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Hot-category A led by a top fund, 62M pre money median market. Needs breakout adoption."
+    }
+   ],
+   "why_it_fails": "Series A needs paying customers or a clear technical result. It fails if the company stays a research effort without revenue, or if frontier labs build science verification in house. Symplex, an RL lab, was acquired after a seed rather than raising an A, showing the common path for small RL labs."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --tag \"Reinforcement Learning\" (53 researched, not calibration only, mostly 2024+): seed known 26% (lower 17, upper 51), series_a cond 33% (n=9), B 0% (n=3). Recent batches are right censored so known-only is biased low. Broader anchor python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59%, A 26%, B 16%, C 0% (n=3; upper 16%). Calibration rule: stay at or above 0.75 times anchor.",
+    "adjustment_reason": "Anchor 16 percent B2B; 0.22 is 1.4x, within 2x, as labs with strong results raise larger rounds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin B or flat step. Competes with data vendors."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      55000000
+     ],
+     "post_money_usd": [
+      180000000,
+      450000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median 2022+ YC Series B is 37M, market 39.5M. Needs multiple lab contracts."
+    },
+    {
+     "raise_usd": [
+      55000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Breakout B at unicorn range if growth is exceptional. Needs scientific results at scale."
+    }
+   ],
+   "why_it_fails": "Series B requires scale revenue or a leading scientific result. It fails if autonomous science remains slow and verification stays expensive, so revenue stays small, and rivals with more compute or data win lab contracts. Few research labs from YC in this wave have reached this step."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.2,
+    "source": "python3 -I scripts/base_rates.py --tag \"Reinforcement Learning\" (53 researched, not calibration only, mostly 2024+): seed known 26% (lower 17, upper 51), series_a cond 33% (n=9), B 0% (n=3). Recent batches are right censored so known-only is biased low. Broader anchor python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59%, A 26%, B 16%, C 0% (n=3; upper 16%). Calibration rule: stay at or above 0.75 times anchor.",
+    "adjustment_reason": "Wide prior; anchor n=3, upper bound 16 percent to 34 percent in the RL tag cohort."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest C or growth round, or venture debt plus equity. Rare."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1800000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or later; 2022+ YC median C is 45M, D plus 97.5M. Needs a platform."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      1800000000,
+      5000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Breakout later round at multi billion value. Needs an autonomous science breakthrough."
+    }
+   ],
+   "why_it_fails": "Series C or later requires a proven platform or laboratory network and capital intensive scale. It fails if the physical lab work is slow and expensive, and foundation labs absorb the use case. Success would look more like a frontier lab than a startup."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.06
+   }
+  ],
+  "why_it_fails": "Most likely failure is that the company stays a research group without paying customers, is outcompeted by funded RL vendors or frontier labs, and stalls or is acquired for talent, as Symplex was. The big upside is a real autonomous science result, which is hard to forecast."
+ },
+ "analogs": [
+  {
+   "slug": "cartpole",
+   "relevance": "RL environments, S25",
+   "outcome_summary": "Two person team, no verified round, active."
+  },
+  {
+   "slug": "vibrant-labs",
+   "relevance": "RL environments and evals, W24",
+   "outcome_summary": "Active, shifted to RL environments, funding unverified."
+  },
+  {
+   "slug": "symplex",
+   "relevance": "Applied RL research lab, S19",
+   "outcome_summary": "Raised a seed, acquired by Scale AI."
+  },
+  {
+   "slug": "d-model",
+   "relevance": "Interpretability and RL environments, S24",
+   "outcome_summary": "20 person team, no funding press found, active."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Scope too broad for four people",
+   "p": 0.5,
+   "evidence": "The pitch spans tooling, evals, environments, algorithms and labs, with no stated first product.",
+   "analogs": [
+    "vibrant-labs",
+    "cartpole"
+   ],
+   "mitigation": "Pick one verification problem and ship it to one lab."
+  },
+  {
+   "risk": "Crowded RL environment market",
+   "p": 0.45,
+   "evidence": "Mechanize, Prime Intellect and large data vendors already sell environments to labs.",
+   "analogs": [
+    "cartpole",
+    "symplex"
+   ],
+   "mitigation": "Focus on science domains where verification is hardest."
+  },
+  {
+   "risk": "Frontier labs build in house",
+   "p": 0.4,
+   "evidence": "Large AI labs have more compute and data and are investing in science agents.",
+   "analogs": [
+    "symplex"
+   ],
+   "mitigation": "Offer tooling labs prefer to buy, and gain lab data access."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Mechanize",
+   "what": "RL environments for labs",
+   "traction": "Active vendor",
+   "source_url": "https://www.mechanize.work"
+  },
+  {
+   "name": "Prime Intellect",
+   "what": "Environments hub and training infrastructure",
+   "traction": "Funded open platform",
+   "source_url": "https://www.primeintellect.ai"
+  },
+  {
+   "name": "FutureHouse",
+   "what": "AI for scientific discovery",
+   "traction": "Nonprofit lab with agents",
+   "source_url": "https://www.futurehouse.org"
+  },
+  {
+   "name": "Status quo: in house lab teams",
+   "what": "AI labs build environments internally",
+   "traction": "Large internal budgets",
+   "source_url": "https://www.primeintellect.ai"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "Autonomous science needs reliable verification, training environments and sometimes physical labs. Four researchers can build tools and evals in three months, but scientific verification itself is an open research problem and compute and data access are limits."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Frontier AI labs",
+   "Mechanize",
+   "Prime Intellect"
+  ],
+  "timeline_months": 9,
+  "rationale": "Labs and funded vendors already work on environments and science agents, so a general version could be copied within months. Domain specific verification is harder to copy."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "AI labs buy RL environments and evals today, shown by funded vendors in the space.",
+    "source_url": "https://www.mechanize.work"
+   },
+   {
+    "claim": "Scientific discovery agents are an active research area with funded nonprofit and company efforts.",
+    "source_url": "https://www.futurehouse.org"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Ship one verification product with a paying lab customer.",
+   "actions": [
+    "Pick one science domain",
+    "Publish a benchmark",
+    "Sign one paid pilot with a lab or pharma"
+   ],
+   "proof": "One paid contract and public benchmark results"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show multiple contracts and recurring revenue.",
+   "actions": [
+    "Expand domains",
+    "Release tooling",
+    "Hire research engineers"
+   ],
+   "proof": "1M ARR or a clear scientific result"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Timely theme tied to lab spending on RL",
+   "evidence": "Labs fund environments and evals in 2025 and 2026.",
+   "source_url": "https://www.mechanize.work"
+  },
+  {
+   "point": "Research ambition could attract large early funding",
+   "evidence": "AI lab style startups raise large rounds on credentials.",
+   "source_url": "https://www.primeintellect.ai"
+  }
+ ],
+ "brand": {
+  "name": "Synthetic Sciences",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Synthetic Sciences\" --era 2022+ : kind compound_words, n=513, alive 95.3 percent, exit 4.9 percent",
+  "strengths": [
+   "Signals science and AI",
+   "Credible research tone"
+  ],
+  "weaknesses": [
+   "Generic and long",
+   "Hard to own as a brand"
+  ],
+  "rationale": "The name signals a research lab and fits the pitch, similar to science themed AI names. It is generic and long, with no mascot or voice. Little effect on success.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "An ambitious research lab with a hot theme and a vague first product; seed is plausible, later rounds depend on a concrete result.",
+  "general_summary": "Synthetic Sciences wants to build infrastructure for autonomous science: tools, evals, training environments and labs. The theme is timely and lab spending on RL is real, so a seed above the YC deal is more likely than not for a credentialed team. But the scope is very broad for four people and the RL environment market is crowded with funded vendors. YC analogs show small RL labs usually stall or are acquired after a seed. The ladder follows B2B anchors with wide uncertainty."
+ },
+ "assumptions": [
+  "Blind forecast: only the YC listing text was used.",
+  "Seed means a round above 500K within about 12 months.",
+  "RL tag cohort is recent and right censored; B2B anchors used.",
+  "Recorded 2026 batch funding was not used as evidence."
+ ],
+ "sources": [
+  "https://www.mechanize.work",
+  "https://www.primeintellect.ai",
+  "https://www.futurehouse.org",
+  "https://www.ycombinator.com/deal"
+ ]
+}

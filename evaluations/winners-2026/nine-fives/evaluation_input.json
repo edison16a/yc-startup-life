@@ -1,162 +1,257 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Nine Fives",
+    "one_liner": "RF test equipment for next-gen spacecraft, drones, and cellphones",
+    "description": "Nine Fives builds modern radio frequency test equipment and AI-ready test automation to challenge incumbents in a test and measurement market of roughly $5B in RF equipment (the founders cite $130B for all test equipment). Paying customers are hardware teams in aerospace, drones and telecom who buy instruments and want faster bring-up. A three person team in San Francisco, Spring 2026 batch.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.97,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is known to have been accepted, so this is a placeholder note and not an estimate. For reference the prior for a random applicant is about 1 percent (references/yc_acceptance.md) and a three person hard tech team targeting a large incumbent market would sit near the upper end of that range.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. If YC had said no, the likely reasons would be unproven founder credentials in RF engineering, no shipped instrument yet, and a capital intensive hardware plan that competes head on with Keysight and Rohde and Schwarz, with no named customer to show demand."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.58,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.67,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only gave seed 67% (n=12, CI 39-86%, median 3 months to seed); the 2018-2022 Industrials cohort gave 69% (n=13). The test defines seed as a round above $500K within about 12 months, so the anchor is trimmed.",
+        "adjustment_reason": "Slightly below the 67% anchor (ratio 0.87) because the test requires the round within 12 months and a three person hardware team has no revenue yet. Hard tech and aerospace tags are currently favored by investors, which stops a deeper cut."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            12000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small pre seed or seed from hard tech funds, near the 2022+ median seed raise of $2.6M for Industrials."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical seed led by a defense or hard tech seed fund on the strength of a spacecraft or drone design partner."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.13,
+          "rationale": "Upside band if a marquee aerospace customer or a pivot to defense test systems appears."
+        },
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Thin round of angels and a small fund with a SAFE close to the YC cap."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The most likely stop is that three founders with no revenue cannot show a working instrument that beats a refurbished Keysight unit within a year. Investors fund hardware test tools slowly, buyers are conservative and procure through long cycles, and Ohm (W23) took months and a pivot toward software to find a seed. A seed above $500K needs a named design partner, and if the first prototype slips past the demo day window the round slips with it."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.31,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2022 --industry Industrials --calibration-only gave series_a 31% unconditional and 44% given seed (n=9); B2B 2018-2022 gave 31% given seed (n=74).",
+        "adjustment_reason": "Near the anchors. The 2018-2022 Industrials row is small (n=13) so the 0.75 times floor from the backtest is respected. Slow instrument sales and long qualification cycles hold it just under the conditional anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Hardware Series A at the low end of the 2022+ median of about $15M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            120000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Standard Series A with defense or aerospace revenue and repeat orders."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            120000000,
+            250000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if drones or space customers drive fast unit growth."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            40000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Thin or bridge style A with a flat or down valuation after slow sales."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if instruments sell as one off pilots instead of repeat purchases and gross margin stays low because of component cost and manufacturing. Corvus Robotics (S18) needed four years of hardware iteration before it announced larger rounds, and test equipment buyers rarely commit until a product has years of calibration history. Without about $1M of recurring revenue, Series A investors will treat this as a services shop."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.35,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2022 --industry B2B --calibration-only gave series_b 35% given series_a (n=23); Industrials 2018-2022 gave 50% (n=4, anecdote).",
+        "adjustment_reason": "Slightly below the anchors because hardware scale up needs manufacturing capital, but within 0.75 times of them."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest B for a profitable niche instrument maker."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median 2022+ Series B of about $37M to $40M with an enterprise and defense customer base."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if the platform becomes a standard in drone or satellite production test."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Down or flat round from slower growth and weaker hardware margins than planned."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails when the company cannot turn a handful of aerospace customers into a repeatable sales motion, and when a large incumbent matches the AI automation features. Hardware companies hit gross margin and working capital limits, so growth is capped unless supply chain control (the company's stated edge) really lowers cost. Analogs show many hardware peers stall between A and B on inventory financing."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.35,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "knowledge/.../stage_benchmarks.md conditional rate for series C given B is 36% (n=55); B2B 2018-2022 gave series_c 50% given B (n=8).",
+        "adjustment_reason": "At the anchor, since survivors to B are a selected group, though instruments rarely grow fast enough to need a large C."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ Series C with a median near $45M to $74M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            700000000,
+            1500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Growth round on strong defense and space demand."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            4000000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if it becomes a category leader in RF test."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            35000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Smaller structured round or a strategic investment from an incumbent or defense prime."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails when growth plateaus at a niche instrument business of tens of millions in revenue, which is a good company but not a venture scale one. Incumbents can acquire the company before a large round, and the next step usually becomes an acquisition by Keysight, Rohde and Schwarz or a defense prime instead."
     }
   ],
   "outcomes": {
@@ -164,167 +259,236 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.42
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.21
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.07
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The most likely failure is a slow commercial ramp in a conservative market, where engineers keep buying trusted instruments and the three person team runs out of money before a product earns calibration credibility. The Industrials cohort shows 31% of 2018-2022 companies shut down, and hardware companies fail more slowly and more quietly than software."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "ohm-2",
+      "relevance": "Hardware test and data tooling for engineering teams, 2023 batch.",
+      "outcome_summary": "Raised a seed and pivoted toward AI agents for hardware testing; alive."
+    },
+    {
+      "slug": "corvus-robotics",
+      "relevance": "Hardware startup selling to industrial buyers, slow ramp.",
+      "outcome_summary": "Raised seed years after YC then larger rounds up to series A; alive."
+    },
+    {
+      "slug": "cascade-space",
+      "relevance": "Aerospace hard tech sold to space customers.",
+      "outcome_summary": "Raised a seed after the batch; alive."
+    },
+    {
+      "slug": "reditus-space",
+      "relevance": "Space hardware with small team.",
+      "outcome_summary": "Raised a seed; slow hardware milestones."
+    },
+    {
+      "slug": "tuxebo",
+      "relevance": "Weak equipment related analog for failure with no further funding.",
+      "outcome_summary": "Shut down with no post YC round found."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Incumbents (Keysight, Rohde and Schwarz) and trusted refurbished units win on calibration, support and procurement habit",
+      "p": 0.35,
+      "evidence": "The top five vendors held about 47% of RF test equipment in 2025 and Keysight alone about 30%, so buyers have strong default choices.",
       "analogs": [
-        "TODO-company-slug"
+        "tuxebo",
+        "ohm-2"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick one narrow instrument for drones or small satellites where incumbents are overpriced and sell it to design partners first."
+    },
+    {
+      "risk": "Hardware capital intensity and supply chain slow growth and cap margins",
+      "p": 0.3,
+      "evidence": "Instruments need components, calibration and inventory, which makes cash conversion slow for a seed stage team of three.",
+      "analogs": [
+        "corvus-robotics",
+        "cascade-space"
+      ],
+      "mitigation": "Pre sell units, use contract manufacturers and keep first products low parts count."
+    },
+    {
+      "risk": "Founders lack the RF depth and credibility to sell to aerospace engineers",
+      "p": 0.2,
+      "evidence": "Team size is three and the description gives no named customers or prior RF product history, so credibility is unproven as of the batch start.",
+      "analogs": [
+        "reditus-space"
+      ],
+      "mitigation": "Recruit a senior RF advisor and publish measured specifications against incumbent gear."
+    },
+    {
+      "risk": "AI test automation is built into incumbent software or by software first rivals",
+      "p": 0.2,
+      "evidence": "Daqstra style software layers and incumbent software suites can automate test benches without new hardware.",
+      "analogs": [
+        "ohm-2"
+      ],
+      "mitigation": "Make the hardware and software integration the product, not the automation alone."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Keysight Technologies",
+      "what": "Market leader in RF instruments and test software.",
+      "traction": "About 30% share of RF test equipment in 2025 per Global Market Insights.",
+      "source_url": "https://www.gminsights.com/industry-analysis/rf-test-equipment-market"
+    },
+    {
+      "name": "Rohde and Schwarz",
+      "what": "Major European RF test vendor.",
+      "traction": "Named among the top five vendors with a combined 46.9% share.",
+      "source_url": "https://www.gminsights.com/industry-analysis/rf-test-equipment-market"
+    },
+    {
+      "name": "Anritsu, NI and Tektronix",
+      "what": "Incumbent instrument and software vendors.",
+      "traction": "Broad installed base across telecom and aerospace.",
+      "source_url": "https://www.marketsandmarkets.com/Market-Reports/rf-test-equipment-market-155812654.html"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "RF front ends, calibration accuracy and firmware are hard but a small expert team can ship one narrow instrument in months. Matching incumbent specifications across a full range is not feasible for three people, so the plan has to be narrow."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Keysight",
+      "Rohde and Schwarz",
+      "NI"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 24,
+    "rationale": "Incumbents have distribution and could copy features, but they move slowly and price high, and a cheap modular instrument for drones is not their priority. A well funded copy would take about two years."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "The RF test equipment market is estimated at about $5.3B in 2025, growing to about $9B by 2035.",
+        "source_url": "https://www.gminsights.com/industry-analysis/rf-test-equipment-market"
+      },
+      {
+        "claim": "Market reports forecast steady growth near 6% a year driven by 5G, satellites and drones.",
+        "source_url": "https://meticulousresearch.com/product/rf-test-equipment-market-5776"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A working prototype and one named design partner.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build a prototype for a single measurement that engineers dislike on current gear.",
+        "Interview 30 drone and satellite hardware teams."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A signed pilot or letter of intent."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paid units and a credible seed story within 12 months.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Ship a first instrument to five design partners.",
+        "Publish accuracy against Keysight gear."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "First $100K of orders and a seed above $500K."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeat purchases and healthy gross margin.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire a sales engineer for aerospace accounts.",
+        "Fix the supply chain to lower cost."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "About $1M of annual revenue with repeat buyers."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A scalable sales motion.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand to a second product line.",
+        "Sign multi year defense or telecom contracts."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue growth above 2x a year."
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category leadership in modular RF test.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add software subscriptions on installed instruments.",
+        "Open international sales."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Recurring software revenue and positive margins."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large, steady market with identifiable buyers",
+      "evidence": "RF test equipment is a multi billion dollar market growing about 6% a year.",
+      "source_url": "https://meticulousresearch.com/product/rf-test-equipment-market-5776"
+    },
+    {
+      "point": "Hard tech and aerospace are in favor with seed investors",
+      "evidence": "YC and defense focused funds back many space and drone hardware companies, as the comps for 2024 to 2025 cohorts show.",
+      "source_url": "https://www.gminsights.com/industry-analysis/rf-test-equipment-market"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Nine Fives",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Nine Fives\" --era 2022+ : invented_or_proper, 2 words, 9 characters",
     "strengths": [
-      "TODO"
+      "Memorable and numeric, hints at reliability (five nines)"
     ],
     "weaknesses": [
-      "TODO"
+      "Not obviously about RF or test; two words and a number are harder to spell and search"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name nods to the five nines reliability idea and is distinctive, but it does not say what the product does. Past hard tech YC names are often abstract and still succeed, so the effect is neutral.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A narrow, credible RF instrument could reach seed, but it must beat entrenched incumbents.",
+    "general_summary": "Nine Fives is a three person hardware team aiming at the RF test market, which is large and steady but controlled by Keysight, Rohde and Schwarz and a few others. Industrials companies in recent cohorts reach seed quickly, with a median of three months, but only a minority reach Series A and the sample is small. Hardware sales cycles are long and margins depend on supply chain control, so a seed above $500K within a year is likely while later rounds are less certain. Slow and profitable paths are common for companies with paying customers, and a pivot to software or defense test systems is a plausible upside."
   },
   "assumptions": [
-    "TODO"
+    "Blind test using only the batch start description; no founder backgrounds are known.",
+    "Industrials cohort base rates are small (n=12 to 13) and treated as anecdotes; B2B cohorts were used to widen.",
+    "Seed means a round above $500K within about 12 months of the batch start.",
+    "Coverage per knowledge/coverage.md: 662 of 6,399 companies researched."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://www.gminsights.com/industry-analysis/rf-test-equipment-market",
+    "https://meticulousresearch.com/product/rf-test-equipment-market-5776",
+    "https://www.marketsandmarkets.com/Market-Reports/rf-test-equipment-market-155812654.html"
+  ],
+  "mode": "summary"
 }

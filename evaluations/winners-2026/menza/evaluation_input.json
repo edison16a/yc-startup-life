@@ -1,0 +1,429 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Menza",
+    "one_liner": "The AI data analyst for consumer brands",
+    "description": "Menza is the AI data analyst for consumer brands. A brand like Hershey\u2019s would connect all of their data sources and then we give them an AI analyst that works 24/7 looking for revenue opportunities, cost leaks, trends and anomalies.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.95,
+    "p_low": 0.95,
+    "p_high": 0.95,
+    "basis": "Test assumption: the company was accepted, so the acceptance step is recorded as given. For reference the prior for a random applicant is about 1 percent with a band of 0.6 to 2 percent, and this team of 3 with a narrow B2B analytics wedge would sit near that prior without traction evidence.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. The most plausible reason for a no would have been that AI analyst for BI is a crowded idea with no stated traction or founder domain proof."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.55,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49% / 59% / 65% (cond 59%, n=126); months to seed median 7, p75 15",
+        "adjustment_reason": "Within 1.0x of the cohort anchor. The 12 month window in this test trims the all-time rate (median 7 months, p75 15 months, so roughly 70 to 75 percent of eventual seeds land inside a year), offset by the 2026 AI funding climate."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.25,
+          "rationale": "A small extension of the YC deal from angels or a micro fund, often a pre-seed that is only a little above the $500K standard check. This is the thin band: investors wanted proof before a real lead."
+        },
+        {
+          "raise_usd": [
+            1500000,
+            4000000
+          ],
+          "post_money_usd": [
+            12000000,
+            25000000
+          ],
+          "p_band": 0.5,
+          "rationale": "The typical 2026 seed. US medians run about 3M raised at roughly 18M to 20M pre money, and YC companies announce slightly larger rounds, so this is the central case."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a hot AI category with a repeat or well known founding story, where a top seed fund prices ahead of traction and a pivot-then-raise path also lands here."
+        }
+      ],
+      "why_it_fails": "The most likely miss is a seed that never closes above the YC check because the product reads as one more text to SQL analyst. Muffin Data and Vizly show the pattern: small analytics teams that stayed under the radar and ended in a quiet sale or inactivity. Investors will want paying consumer brands and retention before pricing a round, and a three person London team has only months to show it."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.22,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_a 13% / 15% / 29%, cond 26% (n=74)",
+        "adjustment_reason": "0.85x of the anchor. Brand data connectors and large CPG buyers are slow to procure, but analytics vendors with paying logos do raise, so the discount is mild and within the 0.75x floor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            3000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            45000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin band: a small Series A or A-minus after a slow seed year, or an extension from existing investors. Down-round risk sits here."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            45000000,
+            110000000
+          ],
+          "p_band": 0.55,
+          "rationale": "The central case. 2022+ YC Series A raises had a median near 14M to 15M, and US medians are 17M to 19M at about 60M pre money."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            110000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for fast recurring revenue growth in an AI category where investors compete for the lead."
+        }
+      ],
+      "why_it_fails": "Series A needs repeatable revenue from named consumer brands, and the sales cycle into enterprise brand teams is long while the data connectors are a services heavy integration burden. Narrator shut down after promising to answer every data question, and Mito and GetDot kept small. Horizontal AI analysts from BI incumbents also compress the price a brand will pay, so the company must show net revenue retention above 110 percent to raise."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_b 2% / 2% / 18%, cond 16% (n=19); stage_benchmarks.md all-time cond 44% (n=126)",
+        "adjustment_reason": "Above the 2022+ B2B anchor of 16 percent because that cohort is right censored, and the all-time rate is 44 percent. I use a figure between the two."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin or flat round after growth slowed, or a bridge to a priced B with weaker terms."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            450000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: 2022+ YC Series B raises had a median near 37M to 45M."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a clear category leader, with valuations in line with the few disclosed YC Series B posts of 550M to 850M."
+        }
+      ],
+      "why_it_fails": "By Series B the company must be a system of record for CPG revenue analytics, not an add on. The likely failure is that large brands treat it as a pilot tool, churn after one budget cycle, or that a platform such as Snowflake, Databricks, Shopify or NielsenIQ ships a comparable agent. Muffin Data ended with a small acquisition by a finance platform, which is the realistic stall."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "knowledge stage_benchmarks.md all-time conditional Series C given B: 36% (n=55); 2022+ B2B cohort 0 of 3 so no usable figure",
+        "adjustment_reason": "0.78x of the all-time conditional rate, because the 2022+ cohort has too few Series B companies to anchor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            45000000
+          ],
+          "post_money_usd": [
+            120000000,
+            350000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat growth round, or a structured round, after growth slowed. Series C in the 2022+ data had a median near 45M."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            1000000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: a growth round in the 45M to 100M range, matching the 2022+ YC Series C and D medians of 45M and 97.5M."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category winner raising a large growth round, as the few YC companies with disclosed valuations above 1B did."
+        }
+      ],
+      "why_it_fails": "Series C needs a scaled enterprise motion with many millions in recurring revenue. A vertical analytics company can plateau as a profitable niche tool, or be acquired by a larger commerce data player before a growth round. Few narrow analytics companies in the YC data reach C, and the ones that do have built a platform that sits beyond dashboards."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.55
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.28
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.13
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "Most likely the company stalls as a small tool or is absorbed at a modest price. The category produces many acquihires and small sales such as Muffin Data and Aquarium Learning, while a $1B outcome would need the company to become the default operating layer for brand data, which incumbents in BI and retail data are positioned to contest."
+  },
+  "analogs": [
+    {
+      "slug": "muffin-data",
+      "relevance": "Closest wedge: analytics for CPG brands, two founders, YC W23.",
+      "outcome_summary": "Acquired in 2025 by a finance platform with little public funding, a small outcome."
+    },
+    {
+      "slug": "getdot",
+      "relevance": "AI data analyst product from YC S21.",
+      "outcome_summary": "Still active; no large round found, so it stayed small."
+    },
+    {
+      "slug": "vizly",
+      "relevance": "AI data to insights tool from YC S23.",
+      "outcome_summary": "Inactive, a failure case for generic AI analyst products."
+    },
+    {
+      "slug": "narrator",
+      "relevance": "Data preparation platform for analytics questions, YC S19.",
+      "outcome_summary": "Shut down."
+    },
+    {
+      "slug": "mito",
+      "relevance": "Cursor style product for data analysis, YC S20.",
+      "outcome_summary": "Active and focused on spreadsheet users; moderate scale."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Generic AI analysts commoditize the product",
+      "p": 0.45,
+      "evidence": "Many YC companies ship an AI data analyst (GetDot, Vizly, Mito, kater.ai) and BI vendors are adding natural language agents.",
+      "analogs": [
+        "getdot",
+        "vizly",
+        "mito"
+      ],
+      "mitigation": "Own the CPG specific data model, retail and marketplace connectors and a benchmark of savings found for each brand."
+    },
+    {
+      "risk": "Slow, services heavy sales into consumer brands",
+      "p": 0.4,
+      "evidence": "Large brands buy slowly and each data source needs a connector. Narrator ended after trying to prep data for every question.",
+      "analogs": [
+        "narrator",
+        "muffin-data"
+      ],
+      "mitigation": "Start with fast growing brands under 500M revenue and sell on one concrete leak found in the first week."
+    },
+    {
+      "risk": "Brand data access and trust",
+      "p": 0.3,
+      "evidence": "Brands must connect finance, retail and ads data to an unproven vendor, and an analyst that returns a wrong number loses the customer.",
+      "analogs": [
+        "vizly"
+      ],
+      "mitigation": "Ship audit trails and cite the source rows for every finding."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Triple Whale and Northbeam",
+      "what": "Analytics and attribution for direct to consumer brands",
+      "traction": "Widely used by Shopify brands; established vendors",
+      "source_url": "https://www.triplewhale.com"
+    },
+    {
+      "name": "NielsenIQ and Circana",
+      "what": "Retail and consumer data incumbents with analyst services",
+      "traction": "Entrenched with large CPG companies",
+      "source_url": "https://nielseniq.com"
+    },
+    {
+      "name": "Snowflake, Databricks and Tableau AI assistants",
+      "what": "General BI and warehouse vendors adding natural language analysis",
+      "traction": "Platform distribution",
+      "source_url": "https://www.snowflake.com"
+    },
+    {
+      "name": "Status quo: in house analysts and spreadsheets",
+      "what": "Brand analysts build reports by hand",
+      "traction": "Default for most brands",
+      "source_url": "https://en.wikipedia.org/wiki/Consumer_packaged_goods"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Connecting many data sources and getting numbers right is real engineering, and agent accuracy on messy brand data is hard. A three person team can build a first version in months, but reliable anomaly detection across retail, finance and ad data takes longer and is the moat if solved."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Snowflake and Databricks",
+      "Triple Whale",
+      "NielsenIQ",
+      "OpenAI and Anthropic agents with connectors"
+    ],
+    "timeline_months": 9,
+    "rationale": "A well funded rival could ship a general analyst agent in under a year. Whether they target CPG finance specifically is less certain, which leaves room for a vertical player."
+  },
+  "market_need_now": {
+    "rating": 3,
+    "evidence": [
+      {
+        "claim": "Consumer brands spend on analytics tooling and retail data services such as NielsenIQ and Circana.",
+        "source_url": "https://nielseniq.com"
+      },
+      {
+        "claim": "AI agents that query warehouses are a funded category with many entrants by 2025.",
+        "source_url": "https://www.snowflake.com"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Be a credible team with a sharp CPG wedge.",
+      "actions": [
+        "Interview ten brand finance leads and record the leaks they would pay to find.",
+        "Run the agent on two real brand datasets and write down each dollar finding."
+      ],
+      "proof": "Two brands agreeing to a paid pilot."
+    },
+    {
+      "phase": "seed",
+      "goal": "Show paying brands and repeat use above the standard YC check.",
+      "actions": [
+        "Convert pilots to annual contracts with five brands.",
+        "Publish an accuracy benchmark with source row citations."
+      ],
+      "proof": "Five paying brands and a weekly active analyst usage rate above 60 percent."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Show a repeatable sales motion and net revenue retention above 110 percent.",
+      "actions": [
+        "Hire a first sales lead and build a standard connector kit.",
+        "Move up to brands above 500M revenue."
+      ],
+      "proof": "About 1.5M to 2M recurring revenue with growth above 15 percent a month at the start of A."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Clear buyer pain with a named wedge",
+      "evidence": "Brands lack analyst headcount and want revenue and cost leak detection; the pitch names a recognizable customer type.",
+      "source_url": "https://menza.ai/"
+    },
+    {
+      "point": "Agent products can show a concrete dollar finding in the first week",
+      "evidence": "The product is framed around revenue opportunities and cost leaks, which makes the value measurable.",
+      "source_url": "https://menza.ai/"
+    }
+  ],
+  "brand": {
+    "name": "Menza",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Menza\" --era 2022+ : kind and length reported, no outcome lift claimed",
+    "strengths": [
+      "Short and easy to say",
+      "No close name collisions that I know of in analytics"
+    ],
+    "weaknesses": [
+      "Carries no meaning for analytics or brands",
+      "Spelled several plausible ways"
+    ],
+    "rationale": "Menza is a short coined name of five letters, a common shape among recent YC winners such as Brex and Ramp style short names, but it signals nothing about analytics. It is neutral: easy to say, no strong association, and it will not change the outcome.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A plausible vertical AI analyst for CPG brands whose main risk is a crowded category and slow enterprise sales; seed is likely but A is below even.",
+    "general_summary": "Menza sells an AI analyst to consumer brands that connects their data sources and looks for revenue gains, cost leaks and anomalies. A team of 3 in London joined the Winter 2026 batch. The wedge into consumer packaged goods is more specific than generic AI analytics, and 2026 seed money is available for AI products. The reference class is not kind: AI analyst tools from earlier batches mostly stayed small, and the one close CPG analytics peer ended in a small sale. The path to Series A runs through paying brands that renew, and the cohort rate of reaching A given a seed is about one in four."
+  },
+  "assumptions": [
+    "Seed is defined as a financing round above the YC deal of about 500K within about 12 months of the batch start.",
+    "Funding coverage in the YC data is incomplete; I used the lower, known and upper range from base_rates.py and the 2022+ B2B cohort is right censored.",
+    "Market claims are from my own prior knowledge and company homepages, not fresh searches; competitor traction is stated generally."
+  ],
+  "sources": [
+    "https://menza.ai/",
+    "https://www.triplewhale.com",
+    "https://nielseniq.com",
+    "https://www.snowflake.com"
+  ]
+}

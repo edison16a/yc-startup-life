@@ -1,0 +1,417 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Context.dev",
+  "one_liner": "Web data API for agents",
+  "description": "Context.dev provides structured data from any website through one API for AI agents and developer products. It states it powers Mintlify, Super, Vizzy, Klarna and more than 800 companies. Revenue comes from API usage by developers.",
+  "as_of": "2026-07-06"
+ },
+ "yc_acceptance": {
+  "p": 0.1,
+  "p_low": 0.05,
+  "p_high": 0.15,
+  "basis": "Note only: already accepted to YC Summer 2026, so this is not a forecast. Prior for a random applicant is about 1 percent (yc_acceptance.md). Claimed 800 plus customers is strong traction.",
+  "why_it_fails": "Not applicable since the company was accepted. YC would most plausibly worry that web data APIs are crowded by Firecrawl, Exa, Apify and Bright Data, and that the customer count lacks revenue depth. Because acceptance is already a fact in this test, the estimate is a placeholder and the forecast value sits in the funding ladder that follows."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.75,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --calibration-only: seed cond 61% (n=88; 50/61/68 lower/known/upper), series_a cond 33% (n=54), series_b cond 17% (n=18); series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "1.2x the anchor: 800 plus claimed customers and named logos show pull, and the AI agent data wave is the hottest category for seed."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      2000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Small round, possible for a lean usage business."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      5000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Core: AI developer infrastructure with logos. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      5000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      90000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside seen at peers like Firecrawl and Exa that raised at fast growth."
+    }
+   ],
+   "why_it_fails": "Seed stalls if the 800 customers are mostly free or very small and revenue stays low, or if the team of six is distracted. Dashblock, a website to API company from 2019, shut down, and Anakin raised only a 2M seed before slow growth. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --calibration-only: seed cond 61% (n=88; 50/61/68 lower/known/upper), series_a cond 33% (n=54), series_b cond 17% (n=18); series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "At the anchor. Pull is strong but Firecrawl and Exa already hold investor attention, which lowers the odds for a fourth entrant."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      9000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin round on modest revenue. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      22000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Core, in line with the B2B median near 15M and Firecrawl's 14.5M Series A in 2025."
+    },
+    {
+     "raise_usd": [
+      22000000,
+      40000000
+     ],
+     "post_money_usd": [
+      150000000,
+      350000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside with fast usage growth. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    }
+   ],
+   "why_it_fails": "Series A fails when usage stays small, the best customers churn to Firecrawl or build their own scrapers, or gross margin suffers from proxy and browser cost. Anakin and Newscatcher show profitable but slow growth that never became a priced Series A. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.17,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --calibration-only: seed cond 61% (n=88; 50/61/68 lower/known/upper), series_a cond 33% (n=54), series_b cond 17% (n=18); series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "At the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      100000000,
+      220000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat step up. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      70000000
+     ],
+     "post_money_usd": [
+      220000000,
+      600000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical for developer infrastructure at scale. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      150000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside, as seen for category leaders. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    }
+   ],
+   "why_it_fails": "Series B fails if the market consolidates around two or three leaders and Context.dev stays a niche option. It also fails when legal pressure on scraping, blocked access and rising anti bot costs weaken the product. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --calibration-only: seed cond 61% (n=88; 50/61/68 lower/known/upper), series_a cond 33% (n=54), series_b cond 17% (n=18); series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "Slightly below the anchor for a crowded category."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Modest growth round. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      160000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1800000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      160000000,
+      400000000
+     ],
+     "post_money_usd": [
+      1800000000,
+      5000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside as agent data infrastructure. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    }
+   ],
+   "why_it_fails": "Fails if open source tools and model providers' built in browsing remove the need for a separate API, so growth stalls before a late stage round, as with many tooling companies that stay mid size. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.45
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.05
+   }
+  ],
+  "why_it_fails": "The most common ends are a small acquisition by a data or developer platform, or a stall as search and browsing become features of model providers. A large exit needs category leadership. A meaningful exit needs a durable lead in a category where rivals can copy features and raise more money, and most companies in the reference cohort stay small, are acquired cheaply or stop operating before that point."
+ },
+ "analogs": [
+  {
+   "slug": "firecrawl",
+   "relevance": "Web data API for agents.",
+   "outcome_summary": "Pivoted from Mendable and reached Series A in 2025 and later rounds; leader of the category."
+  },
+  {
+   "slug": "anakin",
+   "relevance": "One API for web data.",
+   "outcome_summary": "2M seed in 2021, still active with about 70 people, no later round found."
+  },
+  {
+   "slug": "dashblock",
+   "relevance": "Turn any website into an API, Summer 2019.",
+   "outcome_summary": "Shut down by about 2022 with about 150K raised."
+  },
+  {
+   "slug": "newscatcher",
+   "relevance": "Web to structured events data.",
+   "outcome_summary": "Active with enterprise customers, no priced round beyond YC and TinySeed."
+  },
+  {
+   "slug": "skyvern",
+   "relevance": "Agent API for browser workflows.",
+   "outcome_summary": "Seed of 2.7M late in 2025."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Firecrawl, Exa and others win the category",
+   "p": 0.4,
+   "evidence": "Exa raised a large Series C in May 2026 and Firecrawl raised a Series A in 2025 with many developers.",
+   "analogs": [
+    "firecrawl",
+    "anakin"
+   ],
+   "mitigation": "Focus on structured outputs and reliability for named verticals."
+  },
+  {
+   "risk": "Models and agent platforms add built in web access",
+   "p": 0.3,
+   "evidence": "Search and browsing tools already ship inside major model APIs, which reduces the need for a separate vendor.",
+   "analogs": [
+    "dashblock"
+   ],
+   "mitigation": "Offer freshness, schemas and guarantees that general tools lack."
+  },
+  {
+   "risk": "Anti bot and legal pressure raise costs",
+   "p": 0.2,
+   "evidence": "Scraping at scale depends on proxies and on site tolerance, and blocking raises cost per request.",
+   "analogs": [
+    "newscatcher"
+   ],
+   "mitigation": "Build licensed data partnerships and caching."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Firecrawl",
+   "what": "Open source web to LLM data API.",
+   "traction": "Series A of 14.5M in August 2025.",
+   "source_url": "https://builtin.com/articles/firecrawl-raises-14m-series-a-20250820"
+  },
+  {
+   "name": "Exa",
+   "what": "Web search API for AI.",
+   "traction": "Raised 250M Series C in May 2026 at a reported 2.2B valuation.",
+   "source_url": "https://www.cbinsights.com/compare/metaphor-1-vs-sideguide-1"
+  },
+  {
+   "name": "Browserbase",
+   "what": "Browser infrastructure for agents.",
+   "traction": "67.5M total raised, 1,000 plus customers.",
+   "source_url": "https://www.cbinsights.com/investor/browserbase"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Scraping, extraction with models and caching are buildable by a small team. The hard part is staying reliable against blocking at scale and keeping cost per request low."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Firecrawl",
+   "Exa",
+   "model providers"
+  ],
+  "timeline_months": 6,
+  "rationale": "Funded rivals can match features in months and model providers can bundle browsing; the defense is customer lock in via structured schemas and integrations."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Investors fund the category heavily, with Exa, Firecrawl and Browserbase raising rounds.",
+    "source_url": "https://www.cbinsights.com/investor/browserbase"
+   },
+   {
+    "claim": "Agent builders need live web data, shown by the many vendors listed in the category.",
+    "source_url": "https://builtin.com/articles/firecrawl-raises-14m-series-a-20250820"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Prove paid usage.",
+   "actions": [
+    "Report paying customers and monthly revenue",
+    "Show retention by cohort"
+   ],
+   "proof": "Paid customers above 100 with growing usage."
+  },
+  {
+   "phase": "seed",
+   "goal": "Raise above 500K quickly.",
+   "actions": [
+    "Publish benchmarks versus Firecrawl",
+    "Land two logos paying over 2K a month"
+   ],
+   "proof": "Monthly revenue above 30K."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Be a top three web data API.",
+   "actions": [
+    "Launch structured schemas by vertical",
+    "Add enterprise plans"
+   ],
+   "proof": "Over 1M annual recurring revenue with strong retention."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Claimed 800 plus customers and named logos at the start of the batch.",
+   "evidence": "Stated in the company description.",
+   "source_url": "https://context.dev"
+  },
+  {
+   "point": "Category is the hottest for AI infrastructure funding.",
+   "evidence": "Exa and Firecrawl raised large rounds.",
+   "source_url": "https://builtin.com/articles/firecrawl-raises-14m-series-a-20250820"
+  }
+ ],
+ "brand": {
+  "name": "Context.dev",
+  "rating": 3,
+  "effect_on_success": "helps",
+  "name_check": "python3 -I scripts/name_features.py --score \"Context.dev\" --era 2022+: 7 characters, 2 syllables, real word",
+  "strengths": [
+   "Fits the agent context theme and is a real word",
+   "The dev suffix signals developers"
+  ],
+  "weaknesses": [
+   "Generic, hard to own in search"
+  ],
+  "rationale": "Descriptive developer brand names such as Firecrawl and Browserbase work when the product is strong, and a .dev style name signals a developer audience, a small plus."
+ },
+ "narrative": {
+  "headline": "Strong early pull in a crowded and well funded category; seed is likely, later rounds depend on beating Firecrawl and Exa.",
+  "general_summary": "Context.dev starts the batch with claimed usage by hundreds of companies, which is unusual and lifts seed odds above the cohort. The category is hot, but the leaders have raised far more and model providers can bundle web access. The outcome hinges on whether it carves out structured data and reliability as a distinct product. The forecast treats the day one description as the best case, anchors on the 2022 to 2024 cohort of researched YC companies, and widens the uncertainty because funding data for recent batches is incomplete and right censored."
+ },
+ "assumptions": [
+  "Pretend date is 2026-07-06 and only the input file describes the company.",
+  "Seed means a round above about 500K within about 12 months of batch start.",
+  "The 800 customer claim is taken as stated but not verified, and may include free users."
+ ],
+ "sources": [
+  "https://builtin.com/articles/firecrawl-raises-14m-series-a-20250820",
+  "https://www.cbinsights.com/investor/browserbase",
+  "https://www.cbinsights.com/compare/metaphor-1-vs-sideguide-1"
+ ]
+}

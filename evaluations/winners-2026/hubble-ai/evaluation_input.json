@@ -1,0 +1,435 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Hubble",
+    "one_liner": "AI-native retrieval engine for medical records",
+    "description": "Hubble\u2019s mission is to unify the patient medical record and remove the barriers to accessing it. Today, a person\u2019s health history is scattered across disconnected systems, leaving patients and the people helping them to piece it together. We\u2019re building a future where one authorization unlocks a more complete record, regardless of where someone received care.\n\nOur founders previously built healthcare and AI products at Grow Therapy and Amazon One Medical, and we\u2019re backed by Y Combinator, Madrona, and Basis Set. We\u2019re building our team in Seattle, with the opportunity to work directly with the founders and shape how people access and use their health information.",
+    "as_of": "2026-07-06"
+  },
+  "yc_acceptance": {
+    "p": 0.95,
+    "p_low": 0.95,
+    "p_high": 0.95,
+    "basis": "Test assumption: the company was accepted, so the acceptance step is recorded as given. The prior for a random applicant is about 1 percent (0.6 to 2 percent); founders with Grow Therapy and Amazon One Medical experience would sit above it.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. The likely concern would have been that medical record retrieval depends on hard to access data networks and has a poor record for earlier YC attempts."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.62,
+      "anchors": {
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Healthcare --calibration-only: seed 46% / 50% / 54% (cond 50%, n=22, anecdote); B2B cohort: 59% (n=126)",
+        "adjustment_reason": "1.2x the healthcare anchor. The description already names Madrona and Basis Set as backers, which suggests institutional money near the batch start, and AI healthcare is a hot 2026 category; the 12 month window limits it."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.25,
+          "rationale": "A small extension of the YC deal from angels or a micro fund, often a pre-seed that is only a little above the $500K standard check. This is the thin band: investors wanted proof before a real lead."
+        },
+        {
+          "raise_usd": [
+            1500000,
+            4000000
+          ],
+          "post_money_usd": [
+            12000000,
+            25000000
+          ],
+          "p_band": 0.5,
+          "rationale": "The typical 2026 seed. US medians run about 3M raised at roughly 18M to 20M pre money, and YC companies announce slightly larger rounds, so this is the central case."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a hot AI category with a repeat or well known founding story, where a top seed fund prices ahead of traction and a pivot-then-raise path also lands here."
+        }
+      ],
+      "why_it_fails": "The most likely miss is that record retrieval has an access problem: hospitals and networks gate data, and without clear paying customers investors worry about a long regulatory and integration path. PatientBank raised 2.2M from top funds and shut within about a year of that seed because distribution and unit economics did not work."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Healthcare --calibration-only: series_a cond 9% (n=11, anecdote); B2B cond 26% (n=74); knowledge/stage_benchmarks.md notes healthcare is slow to A at 29.5 months",
+        "adjustment_reason": "At the B2B anchor, well above the tiny healthcare figure, because that healthcare cohort has 11 companies and is right censored. Healthcare is slow to A, so the 12 to 30 month timing is long."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            3000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            45000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin band: a small Series A or A-minus after a slow seed year, or an extension from existing investors. Down-round risk sits here."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            45000000,
+            110000000
+          ],
+          "p_band": 0.55,
+          "rationale": "The central case. 2022+ YC Series A raises had a median near 14M to 15M, and US medians are 17M to 19M at about 60M pre money."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            110000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for fast recurring revenue growth in an AI category where investors compete for the lead."
+        }
+      ],
+      "why_it_fails": "Series A needs repeat revenue from payers, law firms, health systems or digital health apps, and the data supply side depends on record networks such as Epic and CommonWell remaining open. Metriport pivoted into record retrieval and reached a 26M Series A only by 2026 after about four years, and PatientBank failed on the same idea earlier, so timing and distribution can break the path."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B: series_b cond 16% (n=19); stage_benchmarks.md all-time conditional 44% (n=126)",
+        "adjustment_reason": "Between the right censored recent rate and the all-time rate."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin or flat round after growth slowed, or a bridge to a priced B with weaker terms."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            450000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: 2022+ YC Series B raises had a median near 37M to 45M."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a clear category leader, with valuations in line with the few disclosed YC Series B posts of 550M to 850M."
+        }
+      ],
+      "why_it_fails": "Series B needs a platform used by many health systems or payers. The likely failure is that large EHR vendors such as Epic expand their own record sharing and that regulation such as TEFCA makes retrieval a commodity, which squeezes pricing for a standalone retrieval layer."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "stage_benchmarks.md all-time conditional Series C given B: 36% (n=55)",
+        "adjustment_reason": "0.7x of the all-time rate because the healthcare data layer is slow and regulated."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            45000000
+          ],
+          "post_money_usd": [
+            120000000,
+            350000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat growth round, or a structured round, after growth slowed. Series C in the 2022+ data had a median near 45M."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            1000000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: a growth round in the 45M to 100M range, matching the 2022+ YC Series C and D medians of 45M and 97.5M."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category winner raising a large growth round, as the few YC companies with disclosed valuations above 1B did."
+        }
+      ],
+      "why_it_fails": "Series C needs a national scale data network with durable contracts. Healthcare data infrastructure companies often get acquired by larger players before a growth round, or plateau when the main customers consolidate."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.5
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.28
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.18
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "Healthcare data companies in the YC set are often acquired at modest prices, such as Slingshot and Fairway Health, or stall. A billion dollar outcome would require becoming the standard way patients authorize and retrieve records, which competes with EHR vendors and government networks."
+  },
+  "analogs": [
+    {
+      "slug": "patientbank",
+      "relevance": "Get medical records online from any hospital, YC S16.",
+      "outcome_summary": "Raised 2.2M seed in 2016 then shut down in 2018; the closest failure."
+    },
+    {
+      "slug": "metriport",
+      "relevance": "Healthcare data infrastructure and clinical record retrieval, YC S22.",
+      "outcome_summary": "Seed at about 20M valuation in 2022, pivoted to record retrieval, then a Series A; slow but real."
+    },
+    {
+      "slug": "bloomapi",
+      "relevance": "API for sharing clinical data, YC W17.",
+      "outcome_summary": "2.4M seed then pivoted to a small texting product."
+    },
+    {
+      "slug": "pulse",
+      "relevance": "EMR for India, YC W17.",
+      "outcome_summary": "Inactive."
+    },
+    {
+      "slug": "slingshot",
+      "relevance": "Analyze medical records in seconds, YC S22.",
+      "outcome_summary": "Acquired."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Data access depends on gatekeepers",
+      "p": 0.4,
+      "evidence": "Records sit with hospitals and networks that control access, and PatientBank could not reach scale pulling records from many hospitals.",
+      "analogs": [
+        "patientbank",
+        "bloomapi"
+      ],
+      "mitigation": "Use patient authorization and network participation and focus on one buyer with a clear need."
+    },
+    {
+      "risk": "Slow healthcare sales and compliance load",
+      "p": 0.35,
+      "evidence": "Metriport needed years to a Series A and healthcare is slow to seed and A in the YC data.",
+      "analogs": [
+        "metriport",
+        "pulse"
+      ],
+      "mitigation": "Sell to fast buyers such as law firms or digital health companies first."
+    },
+    {
+      "risk": "Incumbent and government networks make retrieval a commodity",
+      "p": 0.3,
+      "evidence": "Epic and national interoperability rules already move toward patient access to records.",
+      "analogs": [
+        "bloomapi"
+      ],
+      "mitigation": "Build AI structuring and retrieval on top, not just access."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Metriport",
+      "what": "Open source clinical record retrieval",
+      "traction": "YC backed with funding",
+      "source_url": "https://www.metriport.com"
+    },
+    {
+      "name": "Particle Health and Health Gorilla",
+      "what": "Record exchange APIs for digital health",
+      "traction": "Funded incumbents",
+      "source_url": "https://www.particlehealth.com"
+    },
+    {
+      "name": "Epic Care Everywhere and CommonWell",
+      "what": "Existing record exchange networks",
+      "traction": "Large hospital coverage",
+      "source_url": "https://www.epic.com"
+    },
+    {
+      "name": "Status quo: faxes and manual record requests",
+      "what": "Release of information vendors and fax",
+      "traction": "Default for most requests",
+      "source_url": "https://www.healthit.gov"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Retrieving, normalizing and searching records across systems is engineering heavy, with strict privacy and security requirements, but a small team can build a first retrieval product. The hard part is network access and accuracy on messy records."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Epic",
+      "Particle Health",
+      "Metriport",
+      "Large language model vendors with health records features"
+    ],
+    "timeline_months": 12,
+    "rationale": "Rivals already sell record retrieval. A funded player could add AI search within a year, and EHR vendors have the distribution."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "US patients and providers struggle to get complete records, and interoperability rules push toward patient access.",
+        "source_url": "https://www.healthit.gov"
+      },
+      {
+        "claim": "Record retrieval is a funded category, with Metriport, Particle and others selling it.",
+        "source_url": "https://www.particlehealth.com"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show a working retrieval flow for real patients.",
+      "actions": [
+        "Pull complete records for twenty patients through one authorization.",
+        "Name two paying buyer types."
+      ],
+      "proof": "Twenty complete retrievals with accuracy above 90 percent."
+    },
+    {
+      "phase": "seed",
+      "goal": "Show paid usage above the YC check and a clear buyer.",
+      "actions": [
+        "Sign three paying customers among digital health, law firms or care teams.",
+        "Add coverage of the major networks."
+      ],
+      "proof": "Three paying customers and a repeat retrieval rate."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Show repeatable revenue and network breadth.",
+      "actions": [
+        "Expand to a second buyer segment.",
+        "Build security and compliance certifications."
+      ],
+      "proof": "About 1.5M recurring revenue and coverage of most US patients."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Founders with relevant healthcare product experience",
+      "evidence": "Founders built healthcare and AI products at Grow Therapy and Amazon One Medical, per the application description.",
+      "source_url": "https://hubble.ai/"
+    },
+    {
+      "point": "Institutional backers named early",
+      "evidence": "The description names Madrona and Basis Set alongside YC, which signals early investor interest.",
+      "source_url": "https://hubble.ai/"
+    },
+    {
+      "point": "Clear mission and large pain",
+      "evidence": "Scattered records are a real barrier for patients and clinicians.",
+      "source_url": "https://www.healthit.gov"
+    }
+  ],
+  "brand": {
+    "name": "Hubble",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Hubble\" --era 2022+ : kind and length reported, no outcome lift claimed",
+    "strengths": [
+      "Memorable proper noun with an association to seeing far",
+      "Short and easy to spell"
+    ],
+    "weaknesses": [
+      "The Hubble name is widely used by other companies",
+      "Does not signal healthcare"
+    ],
+    "rationale": "Hubble is a real word with a positive science association, and the one syllable pair is easy to say. Many companies share the name so trademark and search are crowded. I rate it neutral, as brand has rarely decided outcomes in health data.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "Experienced founders with early backers in a category where an earlier YC attempt failed; seed is likely, Series A is a long road.",
+    "general_summary": "Hubble builds an AI retrieval engine to unify medical records with one patient authorization. Two founders with Grow Therapy and Amazon One Medical backgrounds, Seattle, Summer 2026, already backed by Madrona and Basis Set as per the description. Seed odds are above the cohort average. The reference class is mixed: PatientBank raised from top funds and shut, while Metriport pivoted into the same space and reached a Series A after about four years. Healthcare is slow to Series A in the YC data, so the ladder is gated by distribution and data access, not by capital."
+  },
+  "assumptions": [
+    "Seed is defined as a financing round above the YC deal of about 500K within about 12 months of the batch start.",
+    "I treated the investors named in the description as already known on the batch start date, since they are in the application text.",
+    "Healthcare cohort has 24 companies, so those rates are anecdotes; I widened to the B2B cohort.",
+    "Market facts come from prior knowledge and company sites, not fresh searches."
+  ],
+  "sources": [
+    "https://hubble.ai/",
+    "https://www.metriport.com",
+    "https://www.particlehealth.com",
+    "https://www.healthit.gov",
+    "https://www.epic.com"
+  ]
+}

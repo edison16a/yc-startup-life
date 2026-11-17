@@ -1,0 +1,428 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "flowscope",
+  "one_liner": "AI implementation firm that maps and automates business processes",
+  "description": "flowscope is an AI implementation firm that deploys agents to map, optimize, and automate companies\u2019 processes end to end",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.012,
+  "p_low": 0.006,
+  "p_high": 0.0216,
+  "basis": "Test note: this company was accepted to YC, so this is only the forward estimate. Starting prior is about 1 percent for a random applicant (0.6 to 2 percent third party range, per references/yc_acceptance.md). Factors from the table: no stated technical founder or revenue (neutral), two founders (neutral), a services-like idea in a crowded 2026 'AI implementation' category (down), but it fits the YC pattern of agents applied to boring operations (small up). Net about 1.2 percent, inside the 0.3 to 15 percent guard rail.",
+  "why_it_fails": "YC would most likely say the pitch sounds like a consulting firm with an AI label: two founders, no named customers, no sign that the agent product is better than what Lume, Sero or Onboard.io tried, and a crowded field of implementation and workflow vendors. Without proof of paid pilots, partners may see low software margins and a hard to scale services motion."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.55,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low.",
+    "adjustment_reason": "Seed is 0.94x the B2B 2022-25 anchor of 59 percent: a young AI wave and 2026 appetite for agent companies offset the services-like risk. Within the 0.75x guard rail."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small pre-seed of about 600K to 1.5M on a SAFE, barely above the YC deal. Services revenue may fund it without a priced round."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical 2026 seed near the 3.0M US median deal size and 18M pre money from PitchBook NVCA via Equidam (see stage_benchmarks.md). Paid pilots with mid sized companies convert into a lead investor."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Strong seed led by a known fund, near the YC 2022+ announced median of 4.1M or above. A fast growing forward deployed agent story attracts a hot seed."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Upside seed or large first round if usage or revenue spikes, common for hot AI categories in 2026. A pivot into a vertical product can reset the multiple."
+    }
+   ],
+   "why_it_fails": "Flowscope is two people selling process mapping and automation to companies. The seed step above the standard 500K deal fails if early revenue is project based and investors price it as a consultancy, as happened to services-like implementation startups such as Sero, which shows no funding found after its batch. Another miss is that no pilot customer renews, so there is no repeatable story to fund."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.21,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low.",
+    "adjustment_reason": "0.81x of the 26 percent anchor. Services margin and weak differentiation justify a modest discount, no more than the guard rail allows."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or bridge style A, or a down-ish A after a slow year. Revenue is mostly project fees."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Median 2022+ YC Series A raise is 14.15M, market 17.4M. Needs about 1M to 2M ARR with software-like margins."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Hot-category A led by a top fund, 62M pre money median market. Requires a clear product, not a services firm."
+    }
+   ],
+   "why_it_fails": "At Series A investors want recurring software revenue and gross margin above services levels. Flowscope would fail if each deployment needs bespoke work by the two founders, as Lume stayed at five people and was acquired for talent rather than raising a Series A. Competitors with product led onboarding agents and large integrators can undercut price."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.18,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low.",
+    "adjustment_reason": "Anchor 16 percent (n=19); 0.18 is slightly above it because companies that reach A with software revenue usually are not services firms."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      180000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin B or flat step. Few services-led firms reach this step."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      55000000
+     ],
+     "post_money_usd": [
+      180000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Median 2022+ YC Series B is 37M, market 39.5M. Needs repeatable deployments."
+    },
+    {
+     "raise_usd": [
+      55000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout B at unicorn range if growth is exceptional. Needs a platform narrative."
+    }
+   ],
+   "why_it_fails": "A Series B needs a repeatable platform with sales hires and net retention. This step fails if deployments never turn into a product, the team stays small, and customers treat the agents as a project. Onboard.io stayed a small SaaS and sold in 2025 without a B, which is the usual outcome for this path."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.2,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low.",
+    "adjustment_reason": "Anchor is 0 percent known-only (n=3) and 16 percent upper bound; 0.20 conditional is a prior between those, wide uncertainty."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Modest C or growth round, or venture debt plus equity. Late rounds are rare for companies with this start."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1800000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or later; 2022+ YC median C is 45M, D plus 97.5M. Needs profitable growth."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      1800000000,
+      5000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout later round at multi billion value. Needs category leadership."
+    }
+   ],
+   "why_it_fails": "Series C or later requires a category leading platform. It fails here because implementation work is service heavy, large systems integrators and model labs sell similar forward deployed agents, and few companies in this class reach scale. Auctor from 2025 shows the upside, but needs a clear enterprise wedge first."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.33
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.03
+   }
+  ],
+  "why_it_fails": "Most likely failure is that the company stays a small agency style firm, never builds a product that investors value on a software multiple, and stalls or is acquired for talent. Lume and Sero show that implementation startups in this wave stayed small. A pivot into a vertical product is the way out, but is not the base case."
+ },
+ "analogs": [
+  {
+   "slug": "lume-2",
+   "relevance": "AI to speed up customer implementation, 2023",
+   "outcome_summary": "Raised a 4.2M seed in late 2024, stayed at five people, acquired by Harvey in 2026 for talent."
+  },
+  {
+   "slug": "sero",
+   "relevance": "B2B customer implementation platform, W22",
+   "outcome_summary": "Two person team, no verified funding round after the batch, still active."
+  },
+  {
+   "slug": "onboard-io",
+   "relevance": "Customer onboarding automation, W22",
+   "outcome_summary": "Raised a 1.25M pre-seed before YC, stayed a small SaaS, sold in 2025."
+  },
+  {
+   "slug": "workflow86",
+   "relevance": "Agentic workflows for business operations, W22",
+   "outcome_summary": "Active small team, no public growth round."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Services economics, no product",
+   "p": 0.5,
+   "evidence": "Process mapping done end to end for each customer is labor heavy and investors price it as consulting.",
+   "analogs": [
+    "lume-2",
+    "sero"
+   ],
+   "mitigation": "Productize the mapping step and charge recurring platform fees."
+  },
+  {
+   "risk": "Crowded implementation and agent field",
+   "p": 0.45,
+   "evidence": "Rocketlane, ServiceNow and automation vendors plus forward deployed AI shops serve the same buyers.",
+   "analogs": [
+    "onboard-io",
+    "workflow86"
+   ],
+   "mitigation": "Pick one industry and process and show faster time to value."
+  },
+  {
+   "risk": "Founder bandwidth with two people",
+   "p": 0.35,
+   "evidence": "Every deployment needs founder time, which caps growth in the first year.",
+   "analogs": [
+    "lume-2"
+   ],
+   "mitigation": "Hire a deployment engineer early and standardize templates."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Rocketlane",
+   "what": "Customer onboarding and implementation platform",
+   "traction": "Funded and established vendor in the category",
+   "source_url": "https://www.rocketlane.com"
+  },
+  {
+   "name": "Zapier and Make",
+   "what": "Workflow automation with agent features",
+   "traction": "Large installed base of automation users",
+   "source_url": "https://zapier.com"
+  },
+  {
+   "name": "UiPath",
+   "what": "Incumbent robotic process automation vendor adding agents",
+   "traction": "Public company with enterprise customers",
+   "source_url": "https://www.uipath.com"
+  },
+  {
+   "name": "Status quo: consultants and ops hires",
+   "what": "Companies pay integrators or hire operations staff",
+   "traction": "Large existing spend",
+   "source_url": "https://www.accenture.com"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Agents that map and automate processes across varied company systems need integrations, reliability and evaluation. A two person team can build a demo in three months, but making deployments robust across customers is the hard part, and the models are rented."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "UiPath and ServiceNow",
+   "Large integrators",
+   "Foundation model labs with agent products"
+  ],
+  "timeline_months": 9,
+  "rationale": "Incumbents and labs already ship workflow agents and have distribution, so a copy of the core idea needs only months. The remaining moat is customer specific process knowledge."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Companies spend on automation platforms and integrators today, and agent vendors are marketing implementation services.",
+    "source_url": "https://www.uipath.com"
+   },
+   {
+    "claim": "Onboarding and implementation software is an established funded category.",
+    "source_url": "https://www.rocketlane.com"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Prove paid pilots that renew and a product layer beyond services.",
+   "actions": [
+    "Close 3 paying pilots at 5K to 15K per month",
+    "Build a reusable process mapping engine",
+    "Track hours of founder time per deployment"
+   ],
+   "proof": "3 renewing customers and gross margin above 60 percent"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show recurring software revenue growing 15 percent per month.",
+   "actions": [
+    "Narrow to one industry",
+    "Hire sales and deployment engineers",
+    "Publish ROI results"
+   ],
+   "proof": "About 1M ARR with net retention above 100 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real operational pain with clear budgets",
+   "evidence": "Companies already pay for automation platforms and integrators.",
+   "source_url": "https://www.uipath.com"
+  },
+  {
+   "point": "AI agent capability keeps improving, lowering delivery cost",
+   "evidence": "Cheaper agent deployment raises margin on each project.",
+   "source_url": "https://zapier.com"
+  }
+ ],
+ "brand": {
+  "name": "flowscope",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"flowscope\" --era 2022+ : kind invented_or_proper, n=1826, alive 92.7 percent, exit 4.4 percent",
+  "strengths": [
+   "Short, easy to say",
+   "Hints at process visibility"
+  ],
+  "weaknesses": [
+   "Compound with generic words; similar to existing tools named Scope",
+   "Does not signal AI or agents"
+  ],
+  "rationale": "The name suggests visibility into flows, which fits the mapping pitch. Past YC names in this class such as Lume and Sero are short and neutral too. The name neither helps nor hurts, and the invented or proper name class shows no outcome edge in the name data.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A two person AI implementation firm with a believable need but a services trap; seed is likely, later rounds depend on turning into a product.",
+  "general_summary": "Flowscope sells agents that map and automate business processes end to end. Demand for automation is real and 2026 investor appetite for agent companies is high, so a seed above the standard deal is more likely than not. The weakness is the shape of the business: it reads as an implementation firm, which usually means project revenue, low margin and founder bound delivery. YC analogs such as Lume and Sero stayed small and sold for talent or showed no later rounds. The ladder therefore sits near the B2B cohort anchors with a mild discount at Series A and a wide band at later stages."
+ },
+ "assumptions": [
+  "Blind forecast: only the YC listing text for this company was used.",
+  "Seed means a round above the 500K YC deal within about 12 months of the batch start.",
+  "Funding data in the base rate cohorts is incomplete; known-only rates are biased low.",
+  "Recorded 2026 batch company funding was not used as evidence."
+ ],
+ "sources": [
+  "https://www.ycombinator.com/deal",
+  "https://www.rocketlane.com",
+  "https://www.uipath.com",
+  "https://zapier.com"
+ ]
+}

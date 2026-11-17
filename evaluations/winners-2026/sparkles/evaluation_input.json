@@ -1,0 +1,443 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Sparkles",
+    "one_liner": "Make everyone on your team an engineer",
+    "description": "Two person London team. A web app and Slack bot that lets anyone on a team start a coding agent run (Claude Code, Codex or OpenCode) on the company's real GitHub repos in an isolated cloud sandbox wired to Linear, Sentry, Notion and Figma. Every run ends as a pull request with CI results streamed back. Buyers are software teams that want non engineers to ship changes.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.01,
+    "p_low": 0.006,
+    "p_high": 0.02,
+    "basis": "Test mode: assumed accepted to YC for Winter 2026. The prior is about 1 percent, with the usual 0.6 to 2 percent band, and no adjustment is made because the acceptance step is not forecast in this test.",
+    "why_it_fails": "Not scored in this blind test because the company was accepted, so the number shown is only the unadjusted prior. YC would most plausibly have passed because cloud coding agents are shipped by Cursor, OpenAI, Devin and GitHub, and a two person team had no stated distribution edge."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.58,
+      "anchors": {
+        "base_rate": 0.61,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only (lower/known/upper; cond): seed 50% / 61% / 67%, cond 61% (n=109). Seed means over $500K within about 12 months of batch start.",
+        "adjustment_reason": "Slightly below the anchor. AI developer tools raise easily in 2026, but this exact product is shipped by funded rivals, and the two person team is small."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            899999,
+            2250000
+          ],
+          "post_money_usd": [
+            9000000,
+            18000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Small raise or a YC extension, common when a two person team has usage but low revenue."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            6000000
+          ],
+          "post_money_usd": [
+            18000000,
+            37500000
+          ],
+          "p_band": 0.5,
+          "rationale": "2026 AI developer tool seed, about $3M to $6M at a $20M to $40M post; the AI tag cohort median 2022+ is $3.2M, scaled up for a hot AI developer market."
+        },
+        {
+          "raise_usd": [
+            7500000,
+            15000000
+          ],
+          "post_money_usd": [
+            45000000,
+            90000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if a viral launch or a design partner list brings a lead from a top fund."
+        }
+      ],
+      "why_it_fails": "Coding agents in the cloud are already sold by Cursor, OpenAI Codex, Devin and GitHub Copilot, so investors ask what Sparkles owns. A wrapper around third party agents has no model or data moat, and its pitch to non engineers has no stated customers. Tusk and Second, other AI developer tool YC companies, did not get past small rounds, while Greptile raised a $4M seed because it had unusual traction. Without fast usage growth, the seed stalls."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.2,
+      "anchors": {
+        "base_rate": 0.23,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only (lower/known/upper; cond): series_a 11% / 14% / 28%, cond 23% (n=66).",
+        "adjustment_reason": "Slightly below the anchor (0.87x), within the 0.75x rule. Platform risk is extreme, but the AI developer cohort has real A rounds."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            7500000,
+            13500000
+          ],
+          "post_money_usd": [
+            37500000,
+            67500000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin A when growth is modest and platform risk is high. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            30000000
+          ],
+          "post_money_usd": [
+            67500000,
+            150000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Median 2022+ AI Series A around $15M, near the current $17M market deal size."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            375000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if a pivot or a breakout adoption story, like Greptile's Benchmark led A, comes through."
+        }
+      ],
+      "why_it_fails": "A Series A needs a durable edge over the agent vendors. The product is a control layer on top of agents that Anthropic and OpenAI improve and sell directly with their own team features. If the labs ship a team workspace, usage moves to them. Axolo, a similar workflow tool, stayed at two people with no round, and Tusk shut down after incumbents covered its niche. A needs either enterprise contracts or a pivot to a defensible layer such as governance."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.07,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only (lower/known/upper; cond): series_b 1% / 1% / 18%, cond 7% (n=15); all company cond for B is 44% (n=126).",
+        "adjustment_reason": "Above the 7% AI cohort figure, which is tiny and right censored, and in line with the all company conditional of 44% trimmed hard for platform risk."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            22500000,
+            45000000
+          ],
+          "post_money_usd": [
+            120000000,
+            225000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat or down B if growth slows as labs compete. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            90000000
+          ],
+          "post_money_usd": [
+            225000000,
+            600000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Median 2022+ B around $37M to $45M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            90000000,
+            180000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a category winner in agent orchestration. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        }
+      ],
+      "why_it_fails": "Series B needs scaled revenue in a market where model vendors own the agent and the IDE vendors own the user. Investors will ask for net retention and gross margin after model costs, and margins on agent runs can be poor. Few developer tool analogs reach a B without a distinctive product or large community."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only (lower/known/upper; cond): series_c 0% / 0% / 17%, cond 0% (n=1); all company cond for C is 36% (n=55).",
+        "adjustment_reason": "Anchored on the all company conditional because the AI cohort has one case."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            56000000,
+            98000000
+          ],
+          "post_money_usd": [
+            350000000,
+            700000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Smaller growth round for a company with steady revenue. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            98000000,
+            210000000
+          ],
+          "post_money_usd": [
+            700000000,
+            2100000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Median 2022+ Series C around $45M in the YC data. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            210000000,
+            560000000
+          ],
+          "post_money_usd": [
+            2100000000,
+            7000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a company that became the standard team agent platform. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        }
+      ],
+      "why_it_fails": "Few companies get here, and in developer tools the common ending is acquisition by a platform before a C. Conductor-like orchestration products face constant platform risk, and Greptile style leaders rely on a differentiated model of code review. If agent vendors absorb team features, scaling to a C requires a distinct enterprise offering."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.55
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.28
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.13
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "The likeliest end is a shutdown or an acquihire as the labs and IDE vendors add team features, since there is no proprietary model or data. A modest acquisition by a developer platform is plausible. A billion dollar result needs becoming the enterprise control plane for coding agents."
+  },
+  "analogs": [
+    {
+      "slug": "greptile",
+      "relevance": "AI code agent for engineering teams from W24.",
+      "outcome_summary": "$4M seed in 2024 and a $25M A led by Benchmark in September 2025, so the AI developer category can raise on traction."
+    },
+    {
+      "slug": "tusk",
+      "relevance": "AI coding agent product from W24.",
+      "outcome_summary": "$1.5M seed in 2024, then pivoted and wound down; incumbents covered its niche."
+    },
+    {
+      "slug": "axolo",
+      "relevance": "Developer workflow tool with Slack and GitHub.",
+      "outcome_summary": "Stayed at two people with no round after YC."
+    },
+    {
+      "slug": "second",
+      "relevance": "AI codebase maintenance, W23.",
+      "outcome_summary": "Raised a small pre seed, pivoted once, now inactive."
+    },
+    {
+      "slug": "raycast",
+      "relevance": "Developer productivity tool that grew through a community.",
+      "outcome_summary": "Seed, A and B; shows that PLG with a community works where distribution is the moat."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Labs and IDE vendors ship team agent workspaces",
+      "p": 0.45,
+      "evidence": "Cursor cloud agents, Codex cloud, Devin and Copilot already run in isolated sandboxes and open pull requests, and Slack integrations exist.",
+      "analogs": [
+        "tusk",
+        "second"
+      ],
+      "mitigation": "Be agent agnostic and own governance, audit and cost control that single vendors will not provide."
+    },
+    {
+      "risk": "No distribution for a two person team",
+      "p": 0.3,
+      "evidence": "Non engineer adoption inside companies needs champions, and the product has no stated customers or community.",
+      "analogs": [
+        "axolo",
+        "raycast"
+      ],
+      "mitigation": "Launch open and free for small teams, chase one design partner per week."
+    },
+    {
+      "risk": "Unit economics of agent runs",
+      "p": 0.25,
+      "evidence": "Compute and model costs per run can exceed seat pricing, and customers can bring their own keys.",
+      "analogs": [
+        "tusk"
+      ],
+      "mitigation": "Charge on bring your own key plus a platform fee."
+    },
+    {
+      "risk": "Security and trust blocks adoption",
+      "p": 0.15,
+      "evidence": "Giving agents repo access and prod tool access raises security reviews that small vendors struggle to pass.",
+      "analogs": [
+        "greptile"
+      ],
+      "mitigation": "Ship SOC 2 early and keep humans on every merge."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Cursor cloud agents",
+      "what": "Background agents in isolated VMs with Slack integration.",
+      "traction": "Large installed developer base.",
+      "source_url": "https://www.builder.io/blog/best-ai-background-agents-for-developers-2026"
+    },
+    {
+      "name": "Devin",
+      "what": "Agent that takes Jira and Linear tickets to a pull request.",
+      "traction": "Enterprise customers.",
+      "source_url": "https://getunblocked.com/answers/devin-vs-cursor-background-agents-vs-claude-code/"
+    },
+    {
+      "name": "OpenAI Codex and Claude Code",
+      "what": "Agents in the cloud, terminal and Slack from the model labs.",
+      "traction": "Largest developer reach.",
+      "source_url": "https://slack.com/blog/developers/coding-agents-in-slack"
+    },
+    {
+      "name": "GitHub Copilot agent",
+      "what": "Assign an issue and receive a PR via Actions.",
+      "traction": "Native to GitHub.",
+      "source_url": "https://ssojet.com/blog/background-coding-agents"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 2,
+    "rationale": "Sandbox orchestration, GitHub and Slack integration and streaming logs are buildable in three months by two engineers. Hard parts are security and agent reliability, which depend on third party models."
+  },
+  "takeover_risk": {
+    "rating": 5,
+    "who": [
+      "Cursor",
+      "OpenAI",
+      "Anthropic",
+      "GitHub"
+    ],
+    "timeline_months": 3,
+    "rationale": "The same feature is already shipped by several well funded vendors with distribution. Sparkles depends on their agents, so a platform change can remove it."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Background coding agents that return pull requests are an established product category with several vendors.",
+        "source_url": "https://www.builder.io/blog/best-ai-background-agents-for-developers-2026"
+      },
+      {
+        "claim": "Slack promotes @mention coding agents as a way for non engineers to request changes.",
+        "source_url": "https://slack.com/blog/developers/coding-agents-in-slack"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "seed",
+      "goal": "Prove organic usage from non engineers.",
+      "actions": [
+        "Launch free for small teams with a public demo.",
+        "Track weekly teams with a merged PR from a non engineer.",
+        "Sign three design partners."
+      ],
+      "proof": "Fifty teams active weekly and ten paying."
+    },
+    {
+      "phase": "series_a",
+      "goal": "A defensible control layer.",
+      "actions": [
+        "Add governance, audit and cost controls across agents.",
+        "Sell to engineering leaders at mid size companies.",
+        "Pass SOC 2."
+      ],
+      "proof": "$1M ARR with net retention above 110 percent."
+    },
+    {
+      "phase": "series_b",
+      "goal": "Enterprise scale.",
+      "actions": [
+        "Build a sales team.",
+        "Add self hosted option.",
+        "Hold margins after model costs."
+      ],
+      "proof": "Eight figure ARR."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Right place in a fast growing category",
+      "evidence": "Background coding agents are being adopted widely and funded, and Greptile reached a $25M A in 2025.",
+      "source_url": "https://siliconangle.com/2025/09/23/greptile-bags-25m-funding-take-coderabbit-graphite-ai-code-validation/"
+    },
+    {
+      "point": "Clear workflow with GitHub safeguards",
+      "evidence": "Runs end as pull requests, so existing reviews and branch protection stay, which eases enterprise trust.",
+      "source_url": "https://slack.com/blog/developers/coding-agents-in-slack"
+    }
+  ],
+  "brand": {
+    "name": "Sparkles",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Sparkles\" --era 2022+: 8 chars, dictionary word, no flags",
+    "strengths": [
+      "Friendly, memorable, easy to spell",
+      "Suggests magic for non engineers"
+    ],
+    "weaknesses": [
+      "Generic English word, hard to search and to own a domain",
+      "Playful tone may not suit security buyers"
+    ],
+    "rationale": "A plain friendly word fits the pitch of making everyone an engineer. It is hard to own in search, as with other common word names, but brand is secondary to distribution and platform risk, so it does not change the ladder.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A well timed product in the hottest AI category, but nearly every funded rival already ships it.",
+    "general_summary": "Sparkles is a two person London team building a team workspace for coding agents with Slack, GitHub and cloud sandboxes. Demand is high and the AI developer category raises money easily, as the Greptile seed and A show. The danger is that Cursor, OpenAI, Devin and GitHub ship the same workflow, and Sparkles depends on their agents. I put the seed near the AI cohort anchor and shade later stages for platform risk while keeping them within 0.75x of the anchors."
+  },
+  "assumptions": [
+    "Assumed accepted to YC Winter 2026; as_of 2026-01-05.",
+    "Only the supplied description is used; founders' backgrounds and traction are unknown.",
+    "Seed means over $500K within about 12 months.",
+    "Recent cohorts are right censored; AI tag cohort has thin later stage counts.",
+    "No 2026 information about analogs used as evidence."
+  ],
+  "sources": [
+    "https://www.builder.io/blog/best-ai-background-agents-for-developers-2026",
+    "https://getunblocked.com/answers/devin-vs-cursor-background-agents-vs-claude-code/",
+    "https://slack.com/blog/developers/coding-agents-in-slack",
+    "https://ssojet.com/blog/background-coding-agents",
+    "https://siliconangle.com/2025/09/23/greptile-bags-25m-funding-take-coderabbit-graphite-ai-code-validation/"
+  ]
+}

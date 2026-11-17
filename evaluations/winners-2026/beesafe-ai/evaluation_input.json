@@ -1,0 +1,418 @@
+{
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.08,
+  "basis": "Starting from the roughly 1 percent prior for a random applicant (range 0.6 to 2 percent, knowledge note in yc_acceptance.md). The company is already accepted, so this is a note: a sharp wedge in financial crime, an AI security tailwind and a small team with an unusual data approach would move it up, while no stated traction or named customers holds it down.",
+  "why_it_fails": "YC would most plausibly say no because the pitch is a vision of a frontier model built on a dataset that does not yet exist, with no named customers, no revenue and a three person team, and because adversarial engagement with criminals has legal and safety questions that are hard to answer in a ten minute interview."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.55,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "Our 0.55 is below the 0.59 anchor by about 7 percent; three person team with no disclosed revenue and a legally awkward product, offset by a strong category tailwind."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin band: a small extension on top of the YC deal from angels or a security scout fund, common when a three person team has pilots but no signed bank contract."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core band: seed rounds for 2022 and later B2B companies in the benchmark table have a median near 3.4M. Alterya raised 9.8M seed in 2022 with intelligence unit founders, which sets the upper reference."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside band: an unusual proprietary data story about scammers could attract a security focused lead, in line with the large 2025 to 2026 AI security seeds."
+    }
+   ],
+   "why_it_fails": "BeeSafe has three founders and a product that needs live conversations with criminals, which is hard to demo and slow to turn into a signed bank contract. Investors in early 2026 will ask for proof that banks pay for the data and that the agents scale without legal trouble, because engaging attackers raises entrapment and privacy questions. If pilots stay unpaid by month nine, the round shrinks to a small extension. Alterya raised a large seed because its founders came from intelligence units; a team without that signal needs revenue first."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.27,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.27 is near the 0.26 anchor; strong AI tailwind offset by long bank procurement."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin A: a few bank pilots, data licensing revenue not yet recurring."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core A: 2022+ B2B Series A median raise 13M (n=25) per base_rates.py."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A: signed banks and a visible data asset, as with the hot AI security Series As."
+    }
+   ],
+   "why_it_fails": "Series A needs recurring revenue from banks or telecoms. Bank procurement for fraud tools runs six to twelve months and security reviews are long, so a three person team can miss the milestone before the seed money ends. Established fraud vendors such as Sardine and Unit21 can add scam intelligence features and bundle them. Inscribe reached Series A only after years of document fraud sales, and Smyte needed two years from seed to a four million dollar A, so slow conversion from pilots is the normal failure here."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.20 against anchor 0.16; the dataset could be a real moat but this is untested."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest Series B resting on bank contract revenue and a smaller dataset advantage than hoped."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      180000000,
+      400000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core B, 2022+ B2B median raise 45M but n=5."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B if the dataset becomes a platform for telecoms and platforms."
+    }
+   ],
+   "why_it_fails": "Series B requires that the proprietary attacker dataset is both defensible and sold across more than one buyer type. The risk is that the data stays a niche input for a few banks and the foundation model claim does not produce measurably better detection than incumbents. Inscribe raised a B and then cut staff after missing revenue targets, which shows that fraud tooling Series Bs are tied to bank budgets. Without a second buyer such as telecoms or platforms, growth flattens."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.22 against anchor 0.25 from a tiny sample; most comparable companies exit by acquisition first."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical later round for a security data company."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Scaled platform with enterprise and government sales across several buyer types."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Category leader outcome where the dataset becomes the standard feed for scam defense."
+    }
+   ],
+   "why_it_fails": "Reaching Series C needs a platform business across consumers, enterprises and governments, as the pitch says. Few YC fraud companies got there; Veriff did on identity verification demand, but most such companies end in acquisition, like Alterya to Chainalysis, Berbix to Socure and Smyte to Twitter. Acquirers will likely arrive before a C is needed, and regulation of adversarial engagement could cap the model."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.18
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     4000000000
+    ],
+    "p": 0.05
+   }
+  ],
+  "why_it_fails": "Most likely the company stalls because the data advantage does not translate into a better fraud signal than what banks already buy, and sales cycles outlast the cash. Analogs show that even good fraud companies mostly end as acquisitions. Alterya sold for about 150 to 160 million after two and a half years, Berbix sold for about 70 million, and Smyte was a talent acquisition, so a large independent outcome is rare."
+ },
+ "analogs": [
+  {
+   "slug": "alterya",
+   "relevance": "Scam detection agents for banks and crypto firms, intelligence unit founders.",
+   "outcome_summary": "Seed 9.8M in 2022, acquired by Chainalysis in January 2025 for a reported 150 to 160M."
+  },
+  {
+   "slug": "smyte",
+   "relevance": "Anti abuse and fraud tooling for platforms.",
+   "outcome_summary": "Seed 2.25M, Series A 4M, sold to Twitter in 2018 as a talent deal."
+  },
+  {
+   "slug": "inscribe",
+   "relevance": "AI fraud detection sold to banks and lenders.",
+   "outcome_summary": "Series A 10.5M in 2021, Series B 25M in 2023, then cut about 40 percent of staff in 2024."
+  },
+  {
+   "slug": "berbix",
+   "relevance": "Fraud and identity verification, domain expert founders.",
+   "outcome_summary": "Series A 9M in 2020, sold to Socure in 2023 for about 70M."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Banks pilot but do not pay, so no recurring revenue appears before the seed runs out",
+   "p": 0.35,
+   "evidence": "Fraud buyers run long security reviews, and Inscribe and Next Caller both needed years between seed and A.",
+   "analogs": [
+    "inscribe",
+    "next-caller"
+   ],
+   "mitigation": "Sell the data and mule network intelligence as a paid annual feed to two banks before building the model."
+  },
+  {
+   "risk": "Incumbent fraud vendors ship scam intelligence and bundle it",
+   "p": 0.3,
+   "evidence": "Sardine, Unit21 and others already sell to the same banks and have distribution; competitors recorded for similar YC companies list them.",
+   "analogs": [
+    "variance",
+    "finic"
+   ],
+   "mitigation": "Own a unique dataset that incumbents cannot buy, and partner rather than compete."
+  },
+  {
+   "risk": "Legal and platform limits on engaging criminals and handling conversation data",
+   "p": 0.2,
+   "evidence": "Undercover engagement with live attackers across SMS and voice touches wiretap, privacy and terms of service rules that vary by country.",
+   "analogs": [
+    "smyte",
+    "alterya"
+   ],
+   "mitigation": "Start with banks that own the channel and get legal sign off in a single jurisdiction."
+  },
+  {
+   "risk": "Team of three cannot build both the agents and the foundation model",
+   "p": 0.25,
+   "evidence": "The pitch needs voice, SMS and email agents plus model training; no founder background is stated in the input.",
+   "analogs": [
+    "finic",
+    "variance"
+   ],
+   "mitigation": "Narrow to one channel and one fraud type first, such as mule account networks."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Sardine and Unit21 (established fraud platforms)",
+   "what": "Fraud and AML platforms sold to banks that could add scam intelligence.",
+   "traction": "Recorded as competitors of YC fraud companies in the repo data, no figures used.",
+   "source_url": "https://www.takefive-stopfraud.org.uk/news/over-600-million-stolen-by-fraudsters-in-first-half-of-2025/"
+  },
+  {
+   "name": "Bank internal fraud teams and the status quo",
+   "what": "Rules engines, transaction monitoring and manual investigation.",
+   "traction": "UK banks reimbursed most authorised push payment fraud under the 2024 regime, so they have a strong reason to spend.",
+   "source_url": "https://www.pymnts.com/fraud-prevention/2025/authorized-push-payment-fraud-losses-in-uk-rise-12/"
+  },
+  {
+   "name": "Alterya (acquired by Chainalysis)",
+   "what": "AI agents that find scam sites for banks and crypto firms.",
+   "traction": "Acquired in January 2025 for a reported 150 to 160M.",
+   "source_url": "https://www.ycombinator.com/companies/alterya"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Convincing multi turn conversational agents across voice, SMS and email, and then training models on the collected attacker dialogue, is hard and needs safety work. A three person team can ship a narrow single channel agent in three months, but a frontier model claim needs data volume that takes a year or more to gather."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Sardine",
+   "Unit21",
+   "Chainalysis",
+   "large bank vendors such as BioCatch"
+  ],
+  "timeline_months": 18,
+  "rationale": "Incumbents have distribution into banks and could build agent based scam engagement within a year or two, but the dataset of live attacker conversations is slow to copy, so risk is medium. Past cases such as Alterya show acquirers prefer buying this capability."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "UK authorised push payment fraud losses rose 12 percent in the first half of 2025 to about 257M pounds, and banks are now liable for reimbursing victims.",
+    "source_url": "https://www.pymnts.com/fraud-prevention/2025/authorized-push-payment-fraud-losses-in-uk-rise-12/"
+   },
+   {
+    "claim": "Two thirds of UK authorised push payment fraud now originates online, outside the bank, which is where conversational intelligence would operate.",
+    "source_url": "https://www.fintechfutures.com/financial-crime-fraud-prevention/uk-payment-fraud-losses-topped-1-28bn-in-2025-new-uk-finance-report-finds"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show two banks or payment firms paying for scam intelligence before the seed raise.",
+   "actions": [
+    "Run paid pilots on mule network detection with two design partner banks",
+    "Publish one case showing money recovered or accounts frozen from agent engagements"
+   ],
+   "proof": "Two signed paid pilots and a documented fraud loss prevented."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Recurring revenue from several banks plus a second buyer type.",
+   "actions": [
+    "Package the dataset as an annual feed and API",
+    "Add telecoms or a payments platform as a second customer segment",
+    "Complete SOC 2 and a legal review of engagement methods"
+   ],
+   "proof": "Annual recurring revenue of 1M or more across five or more paying customers."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Scam losses are large and rising and banks face reimbursement liability.",
+   "evidence": "UK APP fraud losses rose 12 percent in H1 2025 and banks now reimburse victims.",
+   "source_url": "https://www.pymnts.com/fraud-prevention/2025/authorized-push-payment-fraud-losses-in-uk-rise-12/"
+  },
+  {
+   "point": "A closest YC analog exited at a strong price.",
+   "evidence": "Alterya sold to Chainalysis for a reported 150 to 160M two and a half years after its batch.",
+   "source_url": "https://www.ycombinator.com/companies/alterya"
+  }
+ ],
+ "brand": {
+  "name": "BeeSafe AI",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"BeeSafe AI\" --era 2022+ : kind name_plus_descriptor, 2 words, descriptor ai",
+  "strengths": [
+   "Easy to say and spell",
+   "The bee and sting image fits undercover agents"
+  ],
+  "weaknesses": [
+   "The AI descriptor is generic and the name sounds consumer, not like a bank grade fraud vendor"
+  ],
+  "rationale": "A friendly name for a product that engages criminals is slightly off tone for bank buyers, but names rarely sink B2B security companies; Alterya and Smyte were also plain names. Brand is a minor factor here."
+ },
+ "narrative": {
+  "headline": "A timely fraud intelligence bet whose dataset claim is unproven and whose bank sales cycle is the main danger.",
+  "general_summary": "BeeSafe is a three person Winter 2026 company building undercover AI agents that talk to scammers and turn the conversations into data and models, starting with banks fighting authorised push payment fraud. The need is real and growing, funding for AI security is strong, and a close YC analog was acquired for a reported 150 to 160 million. The risks are slow bank procurement, incumbents that bundle similar features, legal limits on engaging criminals, and a very small team. The most likely path is a seed round in 2026 followed by a hard Series A decision tied to paid bank contracts."
+ },
+ "assumptions": [
+  "Blind forecast as of the batch start 2026-01-05, using only the input file and market searches.",
+  "Seed here means a round above about 500K within about 12 months of the batch start.",
+  "Base rate cohorts include few 2025 and 2026 batches, which are not yet resolved, so later stages are anchored on small samples."
+ ],
+ "sources": [
+  "https://www.pymnts.com/fraud-prevention/2025/authorized-push-payment-fraud-losses-in-uk-rise-12/",
+  "https://www.fintechfutures.com/financial-crime-fraud-prevention/uk-payment-fraud-losses-topped-1-28bn-in-2025-new-uk-finance-report-finds",
+  "https://www.takefive-stopfraud.org.uk/news/over-600-million-stolen-by-fraudsters-in-first-half-of-2025/",
+  "https://www.ycombinator.com/companies/alterya"
+ ],
+ "mode": "summary",
+ "startup": {
+  "name": "BeeSafe AI",
+  "one_liner": "Frontier AI Defenses for Social Engineering Attacks",
+  "description": "BeeSafe AI is building the frontier model layer for social engineering defense. Cyberattacks have moved from code to conversation: attackers now use AI to carry out long-term, trust-based manipulation across SMS, voice, email, and social platforms, often inside encrypted channels where defenders cannot see, detect, or stop them.\n\nBeeSafe changes that by deploying undercover AI agents that engage attackers directly, expose hidden infrastructure, and convert live adversarial conversations into actionable intelligence. Each engagement adds to BeeSafe's proprietary dataset of real attacker behavior and trains foundational models that continually learn about counter-persuasion, deception, and manipulation in the wild.\n\nBeeSafe is starting in financial crime, where banks already value our data against Authorized Push Payment (APP) fraud and money laundering, but the opportunity is far broader.",
+  "as_of": "2026-01-05"
+ }
+}

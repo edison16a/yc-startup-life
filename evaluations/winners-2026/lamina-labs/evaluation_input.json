@@ -1,0 +1,407 @@
+{
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.07,
+  "basis": "Starting from the roughly 1 percent prior (range 0.6 to 2 percent). The company is already accepted, so this is a note: a hot generative video theme and a working demo product would move it up, while two founders, a direct YC competitor in the same wedge from the previous year and platform risk from model labs hold it down.",
+  "why_it_fails": "YC would most plausibly say no because whiteboard explainer videos from prompts already have a funded YC company, Golpo, and Google ships video overviews, so the interview would press hard on what is defensible, who the paying customer is, and why two founders can outrun the model labs and a funded peer over the next year."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.58,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.58 against anchor 0.59: Golpo funded fast, but with two founders and heavy platform risk it is held near the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin band: a small angel extension on the YC deal when usage is real but revenue is not."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4500000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core band: Golpo, the closest YC analog from Summer 2025, raised 4.1M seed in October 2025, about two months after launch."
+    },
+    {
+     "raise_usd": [
+      4500000,
+      8000000
+     ],
+     "post_money_usd": [
+      35000000,
+      70000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside band: a viral launch of the whiteboard video product with a lab or infrastructure pitch to LLM companies."
+    }
+   ],
+   "why_it_fails": "Lamina has two founders, a general purpose video model problem and a product category that a competing YC company, Golpo, entered eight months earlier and funded with 4.1M. Investors will ask what is defensible about whiteboard style output when Google and OpenAI keep improving video models and NotebookLM already makes video overviews. If the first product shows no paid retention within a few months, the near real time infrastructure story reads as a feature, and the round stays small or does not happen."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.22 is 0.85 times the anchor of 0.26; subscription churn and compute cost offset the generative AI tailwind."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series A on consumer and prosumer subscription revenue with churn."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core Series A, near the 13M median for 2022+ B2B rounds in base_rates.py."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      100000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if the API for LLM answers becomes embedded in other products."
+    }
+   ],
+   "why_it_fails": "Series A needs a clear subscription or API revenue line and low churn. Explainer videos are an occasional need, and consumer and prosumer tools in this category churn quickly. Linum, a small YC video model lab, stayed a two person research team without a visible business, and Yarn repositioned several times. Compute cost per video at near real time speeds can also crush margins, so a Series A investor may pass until unit economics are shown."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.18,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.18 against anchor 0.16; roughly the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      70000000,
+      140000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest Series B on solid but slowing subscription growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      160000000,
+      350000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core Series B for a generative media infrastructure company."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      400000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside as a default video layer for chat assistants."
+    }
+   ],
+   "why_it_fails": "Series B requires that the infrastructure claim, a video layer for LLM answers, wins distribution through other products rather than the direct app. Large model labs and chat assistants can build structured video in house, so partners may not pay. Windsor, an AI video YC company, ended as a team acquisition by Front in 2024 after about three years, which is the common end for narrow video products."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.20 against 0.25 from a tiny sample."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      600000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical later round for a scaled generative media company."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1300000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Platform scale with developer API revenue from several product partners."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1300000000,
+      3500000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Category leader outcome in AI video infrastructure used by many assistants."
+    }
+   ],
+   "why_it_fails": "A Series C needs scaled revenue as a video infrastructure provider. Almost no narrow AI video startups got there in earlier cohorts; most end in team acquisitions or stay small, like Windsor and Linum. Platform risk from the model labs that supply or compete with its models is the dominant reason it stops before a C."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.24
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.11
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     3000000000
+    ],
+    "p": 0.03
+   }
+  ],
+  "why_it_fails": "Most likely the company stalls because explainer video is an occasional use, model labs ship adjacent features, and compute cost limits margins. Analogs point the same way: Windsor ended as a team acquisition by Front, Linum remained a small research lab, and the field is crowded with funded rivals including Golpo and VideoGen, so a large independent outcome is rare."
+ },
+ "analogs": [
+  {
+   "slug": "golpo",
+   "relevance": "Same wedge: whiteboard explainer videos from prompts and documents, Summer 2025.",
+   "outcome_summary": "Raised a 4.1M seed in October 2025 and shipped version 2.0 in February 2026; no Series A found by the batch date."
+  },
+  {
+   "slug": "windsor",
+   "relevance": "AI video product for business use.",
+   "outcome_summary": "Small seed in 2019, made nearly a million videos, acquired by Front in January 2024 as a team deal."
+  },
+  {
+   "slug": "linum",
+   "relevance": "Small YC generative video model lab.",
+   "outcome_summary": "Still a two person research lab with open models and unclear funding."
+  },
+  {
+   "slug": "yarn-2",
+   "relevance": "AI video creation for business teams, Winter 2024.",
+   "outcome_summary": "Active, repositioned toward agentic go to market video, funding unverified."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Model labs and large platforms ship structured explainer video as a feature",
+   "p": 0.4,
+   "evidence": "Google NotebookLM already makes video overviews and the labs improve video models quarterly, so a wrapper lacks a moat.",
+   "analogs": [
+    "linum",
+    "windsor"
+   ],
+   "mitigation": "Move quickly into an API used by LLM products and own the structured output format."
+  },
+  {
+   "risk": "A funded YC competitor in the same wedge wins the category",
+   "p": 0.3,
+   "evidence": "Golpo raised 4.1M seed in October 2025 with the same prompt and document to whiteboard video offer.",
+   "analogs": [
+    "golpo",
+    "yarn-2"
+   ],
+   "mitigation": "Differentiate on near real time speed and developer integrations, not on the consumer app."
+  },
+  {
+   "risk": "Occasional use leads to high churn and poor unit economics",
+   "p": 0.3,
+   "evidence": "Explainer videos are made occasionally and rendering cost per minute stays high; roundups show a crowded, price driven tool market.",
+   "analogs": [
+    "windsor",
+    "videogen"
+   ],
+   "mitigation": "Target teams with recurring volume such as training and customer support."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Golpo",
+   "what": "AI whiteboard explainer videos from a prompt or document, YC Summer 2025.",
+   "traction": "4.1M seed in October 2025 per press.",
+   "source_url": "https://pulse2.com/golpo-ai-stanford-dropout-brothers-raise-4-1-million-for-launching-ai-video-generation-platform"
+  },
+  {
+   "name": "Google NotebookLM video overviews and cinematic video models",
+   "what": "Video overviews from documents and general video generation.",
+   "traction": "Bundled in a Google product with large distribution.",
+   "source_url": "https://hn.nuxt.dev/item/44891090"
+  },
+  {
+   "name": "VideoScribe, Doodly, Pexo, Knowlify and InVideo",
+   "what": "Manual and AI whiteboard and explainer video tools.",
+   "traction": "Many tools listed in vendor roundups, no market share data.",
+   "source_url": "https://knowlify.com/articles/best-ai-explainer-video-makers"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Generating structured whiteboard style video in near real time means orchestrating an LLM, layout, drawing and speech, which a two person team can build in three months. The hard part is quality and speed at low cost, and dependence on third party models."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Google",
+   "OpenAI",
+   "Canva",
+   "Synthesia",
+   "Golpo"
+  ],
+  "timeline_months": 9,
+  "rationale": "Platforms already ship video overviews, and a funded YC peer exists in the same niche. A well resourced rival could add whiteboard style output within a few months, so risk is high."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "A crowded set of whiteboard and AI explainer tools exists and competes for training and marketing budgets, which shows demand but also commoditization.",
+    "source_url": "https://knowlify.com/articles/best-ai-explainer-video-makers"
+   },
+   {
+    "claim": "Golpo found investor interest for the same offer, with a 4.1M seed two months after launch.",
+    "source_url": "https://pulse2.com/golpo-ai-stanford-dropout-brothers-raise-4-1-million-for-launching-ai-video-generation-platform"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show paid retention beyond a launch spike.",
+   "actions": [
+    "Launch publicly and publish usage and paid conversion",
+    "Sign two teams with recurring video volume"
+   ],
+   "proof": "Several hundred paying users or 20K monthly recurring revenue with month two retention above 50 percent."
+  },
+  {
+   "phase": "series_a",
+   "goal": "A defensible infrastructure position beyond the consumer app.",
+   "actions": [
+    "Ship an API and integrate it into two LLM products",
+    "Cut render cost per minute by half"
+   ],
+   "proof": "API revenue and positive gross margin."
+  }
+ ],
+ "pros": [
+  {
+   "point": "A direct analog raised a seed quickly in the same category.",
+   "evidence": "Golpo raised 4.1M seed in October 2025.",
+   "source_url": "https://pulse2.com/golpo-ai-stanford-dropout-brothers-raise-4-1-million-for-launching-ai-video-generation-platform"
+  },
+  {
+   "point": "Generative AI video interest keeps drawing investors, and structured video is distinct from cinematic clips.",
+   "evidence": "Several YC companies in the category found funding and customers.",
+   "source_url": "https://knowlify.com/articles/best-ai-explainer-video-makers"
+  }
+ ],
+ "brand": {
+  "name": "Lamina Labs",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Lamina Labs\" --era 2022+ : kind name_plus_descriptor, 2 words, descriptor labs",
+  "strengths": [
+   "Short and easy to say",
+   "The product name Simi is friendly"
+  ],
+  "weaknesses": [
+   "The Labs descriptor is common among AI companies"
+  ],
+  "rationale": "The name suggests thin layers, a loose fit for structured video, and the Labs suffix is common among AI startups. A neutral name for a B2B tool, like Linum, which also used a plain word name."
+ },
+ "narrative": {
+  "headline": "A fast moving AI video wedge with a funded YC rival and heavy platform risk.",
+  "general_summary": "Lamina Labs is a two person Spring 2026 company building near real time structured video generation, starting with a whiteboard style explainer product called Simi. Interest in generative video is high and the closest YC analog raised a 4.1 million seed within two months of launch. The risks are that model labs ship the feature, that a funded competitor already holds the niche, and that explainer videos are an occasional need with weak retention. The most likely outcome is a seed round if launch metrics are strong, followed by a difficult Series A."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-04-06 using only the input file and market searches.",
+  "Seed means a round above 500K within about 12 months of the batch start.",
+  "Golpo's later outcome beyond the batch date was not used."
+ ],
+ "sources": [
+  "https://pulse2.com/golpo-ai-stanford-dropout-brothers-raise-4-1-million-for-launching-ai-video-generation-platform",
+  "https://hn.nuxt.dev/item/44891090",
+  "https://knowlify.com/articles/best-ai-explainer-video-makers"
+ ],
+ "mode": "summary",
+ "startup": {
+  "name": "Lamina Labs",
+  "one_liner": "Near-real-time video infrastructure for LLMs",
+  "description": "Lamina Labs is building infrastructure for near-real-time structured video generation.\n\nMost AI video is built for cinematic clips. Lamina is built for useful videos that break down ideas, workflows, and AI answers. Our first product, Simi, turns prompts and documents into whiteboard-style explainer videos in seconds",
+  "as_of": "2026-04-06"
+ }
+}

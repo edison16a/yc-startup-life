@@ -1,0 +1,457 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "LightSprint",
+    "one_liner": "Software factory for product teams",
+    "description": "A collaborative platform where product teams, including non engineers, plan visually, preview live and ship software using cloud coding agents. Paid per team seat, sold to product and engineering orgs. Three founders with investing, crypto infrastructure and Facebook Messenger engineering backgrounds. Batch Spring 2026.",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.12,
+    "p_low": 0.06,
+    "p_high": 0.2,
+    "basis": "Test note: the company was accepted, so this is an if accepted view. A blind prior would start near 1 percent and rise for a three person team with a prior YC alumnus engineer, a VP Engineering at a listed company and an AI investor, in a category YC favours. Not part of the scored test.",
+    "why_it_fails": "YC might say no because the pitch sits in the most crowded corner of AI coding, where Cursor, Devin, Lovable and Replit all ship cloud agents. Without usage numbers the interviewers may see a thin wrapper over frontier models with no clear reason that product teams would adopt it."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.62,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent.",
+        "adjustment_reason": "Seed is set slightly above the 59 percent anchor because AI coding tools were raising quickly in early 2026 and the founders have strong networks in investing and engineering, but the 12 month window and crowding hold it back. The seed step here means a round above the standard 500K YC deal within about 12 months, and the anchor is for any seed ever, so the 12 month window pulls it down while a hot category pushes it up."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            600000,
+            1200000
+          ],
+          "post_money_usd": [
+            6000000,
+            10000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Small pre seed or extension, roughly YC plus angels, if traction is thin."
+        },
+        {
+          "raise_usd": [
+            1500000,
+            3500000
+          ],
+          "post_money_usd": [
+            12000000,
+            25000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ B2B seed of about 3.2M median in the cohort, and current market seed pre money near 18M."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            25000000,
+            50000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Hot AI coding round led by a top fund on a fast demo, with a small team and credible founders."
+        }
+      ],
+      "why_it_fails": "A seed above the YC check fails if the team cannot show real weekly usage from non engineer teams. Investors will compare it with Cursor cloud agents, Devin and Lovable, ask what a visual planning layer adds, and pass if the answer is a nicer interface over the same model calls. Analogs such as scott-ai and conductor show the category attracts money only when adoption is visible."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent.",
+        "adjustment_reason": "Set at 0.30, a little above the 26 percent cohort conditional and above 0.75 times it. Strong founders and a large paying category offset the risk of platform absorption."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            8000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            70000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Modest A at current medians near 17M raise and 60M pre, shaded down for a seat based product with slow enterprise sales."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            22000000
+          ],
+          "post_money_usd": [
+            60000000,
+            110000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core case in 2022+ B2B cohort, median A about 15M."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Breakout usage in AI coding earns premium rounds."
+        }
+      ],
+      "why_it_fails": "Series A fails if revenue stays small or churns after the novelty of agent built apps fades. Model vendors keep adding planning and team features to their own tools, so the startup must prove retention and team expansion within about two years. Analogs hoplite and emdash show how quickly rivals clone the pattern."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.16,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent. Series B cond 16 percent for B2B 2022+ (n=19) and 39 percent for 2018-2021 (n=18).",
+        "adjustment_reason": "Set above the recent cohort anchor of 16 percent, close to the older cohort figure of 39 percent, because the recent cohort is right censored and companies with paying customers often raise later."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            35000000
+          ],
+          "post_money_usd": [
+            150000000,
+            250000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat or modest Series B, a thin round after growth slows, near the low end of 2022+ medians."
+        },
+        {
+          "raise_usd": [
+            35000000,
+            60000000
+          ],
+          "post_money_usd": [
+            250000000,
+            500000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Median 2022+ Series B of about 45M in the cohort, matching current market deal sizes near 40M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            120000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Category leader premium round when growth is clearly outpacing peers in a hot market."
+        }
+      ],
+      "why_it_fails": "Series B fails if growth plateaus below the level needed for a 35M plus round, because the buyer pool is fought over by funded giants. If agent costs squeeze margins and enterprise buyers prefer the vendor already in their IDE, investors will not underwrite a standalone platform."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.05,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent. No usable C cohort (n=3).",
+        "adjustment_reason": "Anchor is too thin to use. 0.30 matches the broader all industry conditional of about 36 percent after discounting for crowding."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            50000000,
+            80000000
+          ],
+          "post_money_usd": [
+            500000000,
+            900000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Standard Series C near the 2022+ median of about 45M to 80M raise for researched companies."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2000000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Leader round with a larger raise as the company becomes a category name."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            5000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Hypergrowth premium round with a very large valuation, rare in the researched data."
+        }
+      ],
+      "why_it_fails": "A Series C fails if the product is absorbed into the coding tools of the model labs, or if usage never moves from prototypes to production code the enterprise trusts. Few YC AI coding companies have reached C, and valuations depend on a single market narrative."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.55
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          10000000,
+          100000000
+        ],
+        "p": 0.2
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.18
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.07
+      }
+    ],
+    "why_it_fails": "The most likely failure is being squeezed between model lab agents and well funded app builders: users try it, then default to the tool that already holds their code. If a team of three cannot build enterprise features and distribution quickly, the company stalls or sells small. Conductor and Capy style pivots may be the path to survival."
+  },
+  "analogs": [
+    {
+      "slug": "conductor",
+      "relevance": "Parallel cloud and local coding agents orchestration, same YC era and category.",
+      "outcome_summary": "Pivoted from Melty in 2025 and grew fast, showing the category can pay but also that platform risk is high."
+    },
+    {
+      "slug": "capy",
+      "relevance": "Coding agent IDE for parallel agents, pivoted from computer use infrastructure.",
+      "outcome_summary": "Alive with paid tiers but no verified funding beyond YC in its record, showing slow monetization."
+    },
+    {
+      "slug": "scott-ai",
+      "relevance": "Planning layer for teams that build with coding agents, close to the visual planning angle.",
+      "outcome_summary": "Alive without a priced round in the record, entering a category where AWS and GitHub ship spec tools."
+    },
+    {
+      "slug": "nexus",
+      "relevance": "AI agents built by non technical teams without engineers.",
+      "outcome_summary": "Raised a seed from a top fund after its batch, supporting the thesis that investors fund non engineer agent tooling."
+    },
+    {
+      "slug": "solari-ai",
+      "relevance": "Agents for non technical team members, thin traction.",
+      "outcome_summary": "One person company with no funding found, a cautionary case for generic offers."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Model labs and app builders ship the same cloud agent and planning features",
+      "p": 0.45,
+      "evidence": "Cursor, Devin, Lovable and Replit already ship cloud agents and collaborative building, and spec driven tools came from AWS and GitHub.",
+      "analogs": [
+        "scott-ai",
+        "emdash"
+      ],
+      "mitigation": "Own a workflow wedge for product teams with approvals, previews and integrations the labs do not prioritize."
+    },
+    {
+      "risk": "Quality: agent output is not reliable enough for non engineers to ship end to end",
+      "p": 0.35,
+      "evidence": "Public discussion of vibe coding limits notes users hit a ceiling as projects grow; enterprises need review and security.",
+      "analogs": [
+        "capy",
+        "solari-ai"
+      ],
+      "mitigation": "Keep engineers in the review loop and measure merged pull requests, not demos."
+    },
+    {
+      "risk": "Inference cost squeezes margins on seat pricing",
+      "p": 0.25,
+      "evidence": "Cloud agents run long jobs billed by tokens and compute, so heavy users can cost more than a seat fee.",
+      "analogs": [
+        "conductor"
+      ],
+      "mitigation": "Usage based pricing and bring your own key tiers."
+    },
+    {
+      "risk": "Founder team spread across product, investing and infrastructure with no proven consumer or team product growth",
+      "p": 0.2,
+      "evidence": "Backgrounds are strong in crypto infrastructure and Messenger engineering, but no team collaboration product launch is described.",
+      "analogs": [
+        "nexus"
+      ],
+      "mitigation": "Ship publicly, collect design partners within weeks."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Cursor cloud agents",
+      "what": "Background agents that run coding tasks in parallel.",
+      "traction": "Market leader among developers, per vendor guides.",
+      "source_url": "https://gopractice.io/product/the-best-ai-app-builders/"
+    },
+    {
+      "name": "Lovable",
+      "what": "AI app builder for non developers.",
+      "traction": "Reported 400M ARR by February 2026 in a roundup, unverified.",
+      "source_url": "https://lovable.dev/guides/best-ai-app-builders"
+    },
+    {
+      "name": "Replit and Bolt",
+      "what": "Browser based agent builders aimed at beginners and prototypes.",
+      "traction": "Widely used; no figure verified.",
+      "source_url": "https://toolradar.com/guides/best-vibe-coding-tools"
+    },
+    {
+      "name": "Status quo",
+      "what": "Product managers write specs and wait for engineering sprints.",
+      "traction": "Default workflow in most teams.",
+      "source_url": "https://productpower.substack.com/p/the-ultimate-guide-to-vibe-coding"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Orchestrating cloud agents, live previews and visual planning is buildable by a small team on top of frontier models, but reliability, security sandboxes and enterprise permissions are real work. The hard parts are product quality and cost control, not novel research."
+  },
+  "takeover_risk": {
+    "rating": 5,
+    "who": [
+      "OpenAI",
+      "Anthropic",
+      "Cursor",
+      "Lovable",
+      "GitHub"
+    ],
+    "timeline_months": 6,
+    "rationale": "Well funded rivals already ship cloud agents and add team features monthly, and they own distribution and the models. Incentive is high because product team seats are the next growth market. Past YC cases in this space show consolidation and platform dependence."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Non developers and PMs are actively adopting AI builders and coding agents, with large reported revenue at leaders.",
+        "source_url": "https://gopractice.io/product/the-best-ai-app-builders/"
+      },
+      {
+        "claim": "Product managers use Cursor and similar tools and hit ceilings, which suggests unmet need for team oriented workflows.",
+        "source_url": "https://amankhan1.substack.com/p/cursor-for-product-managers"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show a working product with real teams.",
+      "actions": [
+        "Ship a demo that takes a plan to a merged pull request",
+        "Recruit five product teams as design partners"
+      ],
+      "proof": "Five teams using it weekly"
+    },
+    {
+      "phase": "seed",
+      "goal": "Prove repeated team usage beyond the YC check.",
+      "actions": [
+        "Convert design partners to paid pilots",
+        "Publish a public metric such as merged changes by non engineers"
+      ],
+      "proof": "10 paying teams and 50K MRR run rate or equivalent usage"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Show retention and team expansion against labs.",
+      "actions": [
+        "Add security, review and audit features",
+        "Build a channel through engineering leaders"
+      ],
+      "proof": "Net revenue retention above 120 percent and 1M ARR"
+    },
+    {
+      "phase": "series_b",
+      "goal": "Reach durable enterprise revenue.",
+      "actions": [
+        "Hire enterprise sales",
+        "Cut agent cost per task"
+      ],
+      "proof": "10M ARR with positive gross margin"
+    },
+    {
+      "phase": "series_c_plus",
+      "goal": "Become the system of record for shipping.",
+      "actions": [
+        "Expand integrations",
+        "Win large accounts"
+      ],
+      "proof": "50M ARR or equivalent"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Credible, complementary founders",
+      "evidence": "An AI investor, a former VP Engineering and CTO at listed crypto firms and a Messenger engineer, per the YC description.",
+      "source_url": "https://lightsprint.ai"
+    },
+    {
+      "point": "Large, fast growing paid category",
+      "evidence": "Leaders report hundreds of millions in ARR in guides.",
+      "source_url": "https://lovable.dev/guides/best-ai-app-builders"
+    }
+  ],
+  "brand": {
+    "name": "LightSprint",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"LightSprint\" --era 2022+ gave compound words, 11 characters, 2 words.",
+    "strengths": [
+      "Evokes speed and agile sprints"
+    ],
+    "weaknesses": [
+      "Generic compound word, hard consonant run, close to many sprint tools"
+    ],
+    "rationale": "A compound name is common in recent batches and shows no clear outcome effect in the name tables. It communicates speed and agile planning but is not distinctive enough to drive growth.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "Strong team in a hot but brutally crowded category, likely to raise a seed and then be tested by lab competition.",
+    "general_summary": "LightSprint pitches a collaborative agent platform for product teams. The category is one of the hottest in 2026, which makes a larger seed plausible within a year for a team with these backgrounds. The danger sits at Series A, where model labs and app builders ship the same features, and investors will want proof of retention and team expansion. Based on B2B cohort rates the base case is a seed, then roughly a one in three chance of a Series A, with later rounds depending on whether it finds a wedge that platforms ignore."
+  },
+  "assumptions": [
+    "Blind test: only the YC listing text was used.",
+    "Seed means more than 500K within about 12 months of batch start.",
+    "Cohort anchors are for any seed ever and recent batches are right censored.",
+    "Web search results dated after the batch start were ignored."
+  ],
+  "sources": [
+    "https://gopractice.io/product/the-best-ai-app-builders/",
+    "https://lovable.dev/guides/best-ai-app-builders",
+    "https://toolradar.com/guides/best-vibe-coding-tools",
+    "https://amankhan1.substack.com/p/cursor-for-product-managers",
+    "https://productpower.substack.com/p/the-ultimate-guide-to-vibe-coding",
+    "https://lightsprint.ai"
+  ]
+}

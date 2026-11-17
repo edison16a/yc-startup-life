@@ -1,0 +1,433 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Wayco",
+  "one_liner": "AI operator for medlegal cases",
+  "description": "Wayco is building a unified data intelligence layer for medical treatment of legal cases. From the first intake to instant settlement.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.02,
+  "p_low": 0.01,
+  "p_high": 0.036000000000000004,
+  "basis": "Test note: this company was accepted to YC, so this is only the forward estimate. Starting prior is about 1 percent for a random applicant (0.6 to 2 percent third party range, per references/yc_acceptance.md). Vertical legal and medical AI with a five person team (larger than typical, up), a defined paying buyer in plaintiff law firms (up), strong market timing from funded legal AI categories (up), but a crowded space (down). Net about 2 percent.",
+  "why_it_fails": "YC would most likely say the medical legal records space is already served by well funded players such as EvenUp and Supio and by record retrieval vendors, and that the 'unified data intelligence layer' pitch is broad. Without proof of paying law firms or insurers and a clear wedge, partners may prefer a narrower product."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.68,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low. Legal tag cohort (--tag Legal --years 2018-2025) has only 5 companies, so it is not used.",
+    "adjustment_reason": "Seed at 1.15x the 59 percent anchor: vertical legal AI with a 5 person team and hot category. Above anchor because the market attracted investors, but wide uncertainty."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small pre-seed of about 600K to 1.5M on a SAFE, barely above the YC deal. If law firm pilots are slow, a small pre-seed follows."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical 2026 seed near the 3.0M US median deal size and 18M pre money from PitchBook NVCA via Equidam (see stage_benchmarks.md). Paid pilots with plaintiff firms lead to a seed."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong seed led by a known fund, near the YC 2022+ announced median of 4.1M or above. A hot legal AI market gives strong seed interest."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed or large first round if usage or revenue spikes, common for hot AI categories in 2026. Fast growth in cases processed attracts a larger round."
+    }
+   ],
+   "why_it_fails": "The seed step above 500K fails if law firm and treatment provider pilots stay unpaid or if investors see EvenUp, Supio and Hona already owning plaintiff workflows. A two sided data layer connecting treatment, records and settlement also needs data partnerships that a five person team may not secure within 12 months."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.29,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low. Legal tag cohort (--tag Legal --years 2018-2025) has only 5 companies, so it is not used.",
+    "adjustment_reason": "Anchor 26 percent; 0.29 is above because legal AI has had several A rounds (Hona)."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small or bridge style A, or a down-ish A after a slow year. Medlegal workflows are slow to sell."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median 2022+ YC Series A raise is 14.15M, market 17.4M. Needs 1M plus ARR from firms."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Hot-category A led by a top fund, 62M pre money median market. Needs clear category leadership."
+    }
+   ],
+   "why_it_fails": "Series A needs proof of recurring revenue and a data advantage. It fails if the company cannot show settlement outcomes improved or if firms use it as a records add on. Hona reached a 9.5M Series A after reaching over 1M ARR, while Codes Health and InQuery are still stuck at seed or lower, showing how narrow the path is."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.21,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low. Legal tag cohort (--tag Legal --years 2018-2025) has only 5 companies, so it is not used.",
+    "adjustment_reason": "Anchor 16 percent; 0.21 adds a modest lift for category leaders raising quickly, within a 2x band."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin B or flat step. Slower growth than leaders."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      55000000
+     ],
+     "post_money_usd": [
+      180000000,
+      450000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median 2022+ YC Series B is 37M, market 39.5M. Needs expansion into insurers."
+    },
+    {
+     "raise_usd": [
+      55000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Breakout B at unicorn range if growth is exceptional. Needs EvenUp class scale."
+    }
+   ],
+   "why_it_fails": "Series B requires expansion beyond plaintiff firms into insurers or providers and a defensible data asset. It fails if legal AI incumbents bundle medical workflows and growth stays at the pace of small firm sales cycles. The analogs show that very few medical records and legal companies in this niche, such as Codes Health or InQuery, have gone beyond seed."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.2,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low. Legal tag cohort (--tag Legal --years 2018-2025) has only 5 companies, so it is not used.",
+    "adjustment_reason": "Anchor n=3 is unusable; 0.22 is a prior between 0 and the 16 percent upper bound."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest C or growth round, or venture debt plus equity. Few reach this step."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1800000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or later; 2022+ YC median C is 45M, D plus 97.5M. Needs multiple lines."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      1800000000,
+      5000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Breakout later round at multi billion value. Needs dominance."
+    }
+   ],
+   "why_it_fails": "Series C or later needs a regulated data platform operating at national scale with several revenue lines. It fails if medical data access, HIPAA friction and bundling by category leaders such as EvenUp limit expansion, and the company ends as a mid sized tool or an acquisition target for a legal software vendor, as RiskAngle ended."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.45
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.35
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.05
+   }
+  ],
+  "why_it_fails": "Failure is most likely a niche where law firms buy a cheaper records tool and bigger legal AI vendors add medical chronology, leaving the company with small contracts. RiskAngle and PatientBank show records startups end in acquihires or shutdown. Success needs proof that settlement speed data is unique."
+ },
+ "analogs": [
+  {
+   "slug": "hona",
+   "relevance": "Personal injury law firm software, W23",
+   "outcome_summary": "Over 1M ARR by mid 2023, 2.1M seed in 2023, 9.5M Series A in June 2024."
+  },
+  {
+   "slug": "codes-health",
+   "relevance": "Medical record retrieval for plaintiff firms, S24",
+   "outcome_summary": "Active, seed stage, about 45 staff."
+  },
+  {
+   "slug": "inquery-2",
+   "relevance": "Medical record review, W24",
+   "outcome_summary": "Narrowed to records retrieval, no funding found."
+  },
+  {
+   "slug": "riskangle",
+   "relevance": "AI medical summaries, S24",
+   "outcome_summary": "Two founder team, acquired in 2025 per YC profile."
+  },
+  {
+   "slug": "patientbank",
+   "relevance": "Medical records online, S16",
+   "outcome_summary": "Raised 2.2M seed, shut the product in January 2018."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Better funded legal AI rivals",
+   "p": 0.5,
+   "evidence": "EvenUp and Supio sell AI case work to the same plaintiff firms with large funding.",
+   "analogs": [
+    "hona",
+    "inquery-2"
+   ],
+   "mitigation": "Own the treatment data and provider side where rivals are thin."
+  },
+  {
+   "risk": "Data access and HIPAA friction",
+   "p": 0.4,
+   "evidence": "Medical data partnerships are slow and regulated, as medical record startups found.",
+   "analogs": [
+    "patientbank",
+    "codes-health"
+   ],
+   "mitigation": "Start with law firm supplied records and build partnerships later."
+  },
+  {
+   "risk": "Slow sales cycles to small firms",
+   "p": 0.35,
+   "evidence": "Plaintiff firms are numerous but small and price sensitive, so each sale takes time and discounts.",
+   "analogs": [
+    "riskangle"
+   ],
+   "mitigation": "Sell on per case pricing tied to settlement value."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "EvenUp",
+   "what": "AI demand letters and case work for personal injury",
+   "traction": "Large funding and many firms",
+   "source_url": "https://www.evenup.ai"
+  },
+  {
+   "name": "Supio",
+   "what": "AI platform for plaintiff law firms",
+   "traction": "Funded vendor in the same market",
+   "source_url": "https://www.supio.com"
+  },
+  {
+   "name": "Wisedocs",
+   "what": "Medical record review automation",
+   "traction": "Established with insurers",
+   "source_url": "https://www.wisedocs.ai"
+  },
+  {
+   "name": "Status quo: paralegals and records vendors",
+   "what": "Manual retrieval and review",
+   "traction": "Existing spend per case",
+   "source_url": "https://www.evenup.ai"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Extracting and linking medical records, billing and legal data needs OCR, language models and integrations with providers. A five person team can build intake and summaries in three months, but a unified data layer across treatment and settlement depends on partnerships and access."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "EvenUp",
+   "Supio",
+   "Filevine"
+  ],
+  "timeline_months": 9,
+  "rationale": "Legal AI leaders have distribution among plaintiff firms and can add medical treatment tracking within months. The moat is proprietary provider data and settlement outcomes."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Plaintiff firms pay for AI case work today, shown by EvenUp and Supio products and pricing.",
+    "source_url": "https://www.evenup.ai"
+   },
+   {
+    "claim": "Medical record review is a paid service sold to insurers and law firms.",
+    "source_url": "https://www.wisedocs.ai"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show paying plaintiff firms and a measurable settlement time gain.",
+   "actions": [
+    "Sign 10 paying firms",
+    "Integrate with case management systems",
+    "Publish settlement time reduction"
+   ],
+   "proof": "10 firms and 100K ARR"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show recurring revenue from firms and early provider partnerships.",
+   "actions": [
+    "Add provider network",
+    "Expand to insurers",
+    "Raise pricing per case"
+   ],
+   "proof": "1M ARR and provider data advantage"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Defined paying buyer with a large per case value",
+   "evidence": "Plaintiff firms already buy AI tools and pay per case.",
+   "source_url": "https://www.evenup.ai"
+  },
+  {
+   "point": "Five person team is larger than the typical YC start",
+   "evidence": "More capacity to ship integrations and sell.",
+   "source_url": "https://www.ycombinator.com/deal"
+  }
+ ],
+ "brand": {
+  "name": "Wayco",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Wayco\" --era 2022+ : kind invented_or_proper, n=1826, alive 92.7 percent, exit 4.4 percent",
+  "strengths": [
+   "Short invented name",
+   "Easy to say and spell"
+  ],
+  "weaknesses": [
+   "Says nothing about medical or legal",
+   "Resembles other co names"
+  ],
+  "rationale": "Wayco is short and neutral and could stretch past medlegal. Past YC names like Hona show a short invented name can work in personal injury software. The name has little effect either way.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Vertical medlegal AI in a hot, funded category; seed is likely, Series A depends on beating EvenUp class rivals on data.",
+  "general_summary": "Wayco builds a data layer for the medical side of legal cases, from intake to settlement. Plaintiff firms already pay for AI tools, legal AI has drawn large funding, and YC analogs like Hona reached a Series A, so a seed above the YC deal is more likely than not. The risk is crowding by EvenUp and Supio and the difficulty of getting medical data. The ladder sits slightly above the B2B cohort anchors at seed and A because the category is investor friendly, with wide uncertainty."
+ },
+ "assumptions": [
+  "Blind forecast: only the YC listing text for this company was used.",
+  "Seed means a round above 500K within about 12 months.",
+  "Legal tag cohort too small; B2B cohorts used.",
+  "Recorded 2026 batch funding was not used as evidence."
+ ],
+ "sources": [
+  "https://www.evenup.ai",
+  "https://www.supio.com",
+  "https://www.wisedocs.ai",
+  "https://www.ycombinator.com/deal"
+ ]
+}

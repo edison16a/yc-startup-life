@@ -1,0 +1,436 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Billow AI Labs",
+    "one_liner": "AI-native Accounting Firm that's killing Deloitte",
+    "description": "Billow handles the work of Accounting and FP&A FTEs keeping teams compliant and audit-ready. We work within existing stacks (NetSuite, Coupa, and 80+ other systems) and complex spreadsheets, chasing down information and coordinating approvals across stakeholders. \n\nBuilt by repeat founders; Joan built and exited an accounting/ERP platform (45,000 businesses in 4 years) and Phil built Bloomberg's financial \u201cbrain\u201d data infrastructure, and as CTO of a trading platform ($1B in volume). Advisors include CFOs, controllers, auditors from publicly-traded biopharma, and a Big-4 Accounting firm.",
+    "as_of": "2026-07-06"
+  },
+  "yc_acceptance": {
+    "p": 0.95,
+    "p_low": 0.95,
+    "p_high": 0.95,
+    "basis": "Test assumption: the company was accepted, so the acceptance step is recorded as given. The prior for a random applicant is about 1 percent (band 0.6 to 2 percent); repeat founders with an ERP exit and Bloomberg data experience would sit well above it.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. The most plausible no would have been that AI accounting automation is crowded by well funded firms and the pitch is positioned as a services firm."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.62,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49% / 59% / 65% (cond 59%, n=126); --tag AI: 50% / 61% / 67%",
+        "adjustment_reason": "Slightly above the anchor: repeat founders with a platform exit and a hot AI finance category raise faster, partly offset by the 12 month window of this test."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.25,
+          "rationale": "A small extension of the YC deal from angels or a micro fund, often a pre-seed that is only a little above the $500K standard check. This is the thin band: investors wanted proof before a real lead."
+        },
+        {
+          "raise_usd": [
+            1500000,
+            4000000
+          ],
+          "post_money_usd": [
+            12000000,
+            25000000
+          ],
+          "p_band": 0.5,
+          "rationale": "The typical 2026 seed. US medians run about 3M raised at roughly 18M to 20M pre money, and YC companies announce slightly larger rounds, so this is the central case."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a hot AI category with a repeat or well known founding story, where a top seed fund prices ahead of traction and a pivot-then-raise path also lands here."
+        }
+      ],
+      "why_it_fails": "The most likely miss is that a services shaped pitch, an accounting firm that uses AI, reads as lower margin than software and investors hold back from a large round. Finnt raised a seed and later went inactive while pivoting toward AI finance agents. If pilots do not convert to paid contracts within a few months, a round above the YC check stalls."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_a cond 26% (n=74); --tag AI: cond 23% (n=66)",
+        "adjustment_reason": "1.15x the anchor given a founder pair with prior exits, in a category where Campfire, a YC ERP company, reached Series A within two years."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            3000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            45000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin band: a small Series A or A-minus after a slow seed year, or an extension from existing investors. Down-round risk sits here."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            45000000,
+            110000000
+          ],
+          "p_band": 0.55,
+          "rationale": "The central case. 2022+ YC Series A raises had a median near 14M to 15M, and US medians are 17M to 19M at about 60M pre money."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            110000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for fast recurring revenue growth in an AI category where investors compete for the lead."
+        }
+      ],
+      "why_it_fails": "Series A needs recurring revenue from mid market finance teams that trust an agent with close and audit work, and the work touches NetSuite, Coupa and many other systems, so each integration costs time. Mesh and FullSeam started in the same space at about the same time and well funded rivals such as Rillet, Numeric and FloQast also sell AI close. A services heavy gross margin would block a software priced A."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.33,
+      "anchors": {
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_b cond 16% (n=19); stage_benchmarks.md all-time conditional 44% (n=126)",
+        "adjustment_reason": "Between the right censored 2022+ rate and the all-time rate. Campfire reaching a B in under three years shows AI finance can move fast."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin or flat round after growth slowed, or a bridge to a priced B with weaker terms."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            450000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: 2022+ YC Series B raises had a median near 37M to 45M."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a clear category leader, with valuations in line with the few disclosed YC Series B posts of 550M to 850M."
+        }
+      ],
+      "why_it_fails": "Series B needs a product that replaces headcount at scale with strong gross margin. The likely failure is that large ERP vendors such as Oracle NetSuite and SAP ship agent features, and finance teams stay with the incumbents they already audit against. Revenue from a services blend may cap valuation, so investors pass on a B."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "stage_benchmarks.md all-time conditional Series C given B: 36% (n=55); 2022+ cohort too small",
+        "adjustment_reason": "0.83x of the all-time conditional rate because only a few AI finance companies have yet reached B."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            45000000
+          ],
+          "post_money_usd": [
+            120000000,
+            350000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat growth round, or a structured round, after growth slowed. Series C in the 2022+ data had a median near 45M."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            1000000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: a growth round in the 45M to 100M range, matching the 2022+ YC Series C and D medians of 45M and 97.5M."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category winner raising a large growth round, as the few YC companies with disclosed valuations above 1B did."
+        }
+      ],
+      "why_it_fails": "Series C requires becoming the default AI finance operations layer for large enterprises. Investors will test whether the software replaces Big 4 style work, and a failure would be a plateau at a mid market niche, or acquisition by an ERP or accounting software vendor before a growth round."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.45
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.27
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.22
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.06
+      }
+    ],
+    "why_it_fails": "Even with strong founders most outcomes here are a stall or a sale to an ERP or accounting platform. AI finance has produced a few large winners such as Campfire style ERPs, so the upside is real, but a billion dollar result needs displacing incumbents that control the ledger."
+  },
+  "analogs": [
+    {
+      "slug": "campfire-2",
+      "relevance": "AI native ERP, YC S23, founder from Invoice2go and Bill.com.",
+      "outcome_summary": "Series A and a Series B within about two years; a strong path in the same category."
+    },
+    {
+      "slug": "finnt",
+      "relevance": "AI agents for CFO and finance teams, YC W22.",
+      "outcome_summary": "Seed of 3.5M in 2022, later inactive."
+    },
+    {
+      "slug": "mesh-2",
+      "relevance": "Accrual and month end automation, YC W25.",
+      "outcome_summary": "Active, early; no confirmed round."
+    },
+    {
+      "slug": "sway-finance",
+      "relevance": "Earlier AI accounting attempt, YC S16.",
+      "outcome_summary": "Shut down; too early for the tech."
+    },
+    {
+      "slug": "cifrato",
+      "relevance": "AI accountant for accounting firms, YC W25.",
+      "outcome_summary": "Seed of about 1M; small but real traction."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Services shaped revenue limits valuation and margin",
+      "p": 0.4,
+      "evidence": "The pitch is an accounting firm replacing Big 4 work, and investors price services firms well below software.",
+      "analogs": [
+        "finnt",
+        "sway-finance"
+      ],
+      "mitigation": "Show software gross margin above 70 percent and price per workflow, not per hour."
+    },
+    {
+      "risk": "Integration and trust burden in finance",
+      "p": 0.4,
+      "evidence": "Work across NetSuite, Coupa and many systems means heavy integration and a single wrong entry harms trust and audits.",
+      "analogs": [
+        "mesh-2",
+        "campfire-2"
+      ],
+      "mitigation": "Start with narrow high volume close and reconciliation workflows with human approval steps."
+    },
+    {
+      "risk": "Well funded AI finance rivals",
+      "p": 0.45,
+      "evidence": "Rillet, Numeric, FloQast and others have raised large rounds and ERP vendors are adding agents.",
+      "analogs": [
+        "campfire-2",
+        "mesh-2"
+      ],
+      "mitigation": "Win on the audit ready coordination layer across systems that point solutions skip."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Numeric",
+      "what": "AI close management for finance teams",
+      "traction": "Funded AI accounting startup",
+      "source_url": "https://www.numeric.io"
+    },
+    {
+      "name": "FloQast",
+      "what": "Close management software with audit features",
+      "traction": "Established accounting software vendor",
+      "source_url": "https://floqast.com"
+    },
+    {
+      "name": "Rillet",
+      "what": "AI native ERP for growing companies",
+      "traction": "Funded ERP challenger",
+      "source_url": "https://www.rillet.com"
+    },
+    {
+      "name": "Big 4 firms and outsourced accountants",
+      "what": "Deloitte, KPMG, Accenture and local firms do the same work with staff",
+      "traction": "Incumbent services spend",
+      "source_url": "https://www.deloitte.com"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "The job spans many systems and spreadsheets, and the agent must chase approvals and keep an audit trail, which is engineering heavy. A small experienced team can build a narrow first set of workflows in months, but reaching 80 plus integrations and audit readiness takes years."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Oracle NetSuite and SAP",
+      "Numeric and FloQast",
+      "Big 4 firms with their own AI",
+      "OpenAI and Anthropic agents"
+    ],
+    "timeline_months": 12,
+    "rationale": "A funded rival could copy a single workflow in under a year, but copying the integrations and trust of a compliance vendor takes longer. ERP vendors have distribution and incentive."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Finance teams pay Big 4 and outsourced firms large fees for close, FP&A and audit support, and accountant shortages are widely reported.",
+        "source_url": "https://www.deloitte.com"
+      },
+      {
+        "claim": "AI native accounting and ERP startups have raised funding in this category.",
+        "source_url": "https://www.rillet.com"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show founder market fit with a first design partner.",
+      "actions": [
+        "Recruit three controllers as paid design partners.",
+        "Automate one close workflow end to end with audit logs."
+      ],
+      "proof": "One paid pilot before the batch."
+    },
+    {
+      "phase": "seed",
+      "goal": "Convert pilots into paid software contracts.",
+      "actions": [
+        "Move pricing from hours to per workflow software fees.",
+        "Publish accuracy and audit readiness metrics."
+      ],
+      "proof": "Five paying finance teams and software gross margin above 70 percent."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Prove a repeatable sales motion with net retention.",
+      "actions": [
+        "Build a standard connector library for the top ERP and AP systems.",
+        "Hire a head of customer success from a close software vendor."
+      ],
+      "proof": "About 1.5M to 2M recurring revenue and net retention above 110 percent."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Repeat founders with a platform exit",
+      "evidence": "One founder built and exited an accounting and ERP platform reaching 45,000 businesses in four years, as stated in the application description.",
+      "source_url": "https://thebillow.ai/"
+    },
+    {
+      "point": "Relevant finance advisors",
+      "evidence": "Advisors include CFOs, controllers and a Big 4 auditor, which helps with trust and first customers.",
+      "source_url": "https://thebillow.ai/"
+    },
+    {
+      "point": "A paid, budgeted workflow",
+      "evidence": "Accounting and FP&A headcount is a clear existing budget line.",
+      "source_url": "https://www.deloitte.com"
+    }
+  ],
+  "brand": {
+    "name": "Billow AI Labs",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Billow AI Labs\" --era 2022+ : kind and length reported, no outcome lift claimed",
+    "strengths": [
+      "Easy to say and spell",
+      "Soft, friendly feel next to heavy finance brands"
+    ],
+    "weaknesses": [
+      "Billow AI Labs is long and the suffix is generic",
+      "Name signals nothing about accounting"
+    ],
+    "rationale": "Billow is a short real word with a gentle sound, a style common in recent YC names, and the YC listing uses the longer Billow AI Labs. It is neutral for success, as brands such as Ramp and Rippling succeeded with names that do not describe the product.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "Strong repeat founders in a hot AI finance category, but services style positioning and well funded rivals cap the ladder.",
+    "general_summary": "Billow is an AI native accounting and FP&A firm that works inside existing finance stacks such as NetSuite and Coupa, built by repeat founders with an ERP exit and Bloomberg data experience. Summer 2026 batch. It has strong founder market fit and a clear budget line to displace, so a seed above the YC check is likelier than the cohort average. The weak points are a services shaped pitch, a crowded field with funded rivals and large ERP vendors adding agents, and an integration heavy product. The closest peer, Campfire, shows the upside path, while Finnt shows the stall path."
+  },
+  "assumptions": [
+    "Seed is defined as a financing round above the YC deal of about 500K within about 12 months of the batch start.",
+    "The input lists a team size of 0; I assumed the founders named in the description and treated the field as missing.",
+    "Funding coverage in the YC data is incomplete; the 2022+ cohort is right censored.",
+    "Market facts come from my prior knowledge and company sites, not fresh searches."
+  ],
+  "sources": [
+    "https://thebillow.ai/",
+    "https://www.numeric.io",
+    "https://floqast.com",
+    "https://www.rillet.com",
+    "https://www.deloitte.com"
+  ]
+}

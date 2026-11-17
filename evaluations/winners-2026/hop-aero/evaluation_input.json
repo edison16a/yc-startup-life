@@ -1,0 +1,405 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Hop Aero",
+    "one_liner": "Rocket cargo delivery to contested environments",
+    "description": "Rocket cargo vehicles that fly point to point at hypersonic speed, delivering cargo hundreds of miles in minutes to austere locations for the US military and allies. Six person team in Los Angeles.",
+    "as_of": "2026-07-06"
+  },
+  "yc_acceptance": {
+    "p": 0.15,
+    "p_low": 0.05,
+    "p_high": 0.3,
+    "basis": "Company is assumed accepted. The prior is about 1 percent; defense hardware is a current YC priority and a six person team with a clear government buyer pushes it up, so this note sets the top of the allowed range 15 percent.",
+    "why_it_fails": "YC would most plausibly decline if the team could not show a credible path from a paper design to a flight test with a few hundred thousand dollars, since hypersonic rocket logistics needs very large capital before any revenue and the Air Force program already funds Blue Origin and Anduril."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.8,
+      "anchors": {
+        "base_rate": 0.67,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only: seed cond 67% (n=12); broad cohort --years 2022-2025 --calibration-only: seed cond 57% (n=201), range 48%/57%/64%. Seed here means a round above the $500K YC deal within about 12 months.",
+        "adjustment_reason": "1.2x the Industrials anchor: defense hardware seeds were available in 2026 and Inversion Space (S21), a space logistics analog, raised a 10M seed; the tool cannot see the team, which is the main uncertainty."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            700000,
+            2500000
+          ],
+          "post_money_usd": [
+            8000000,
+            20000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Small bridge from angels or a grant funded round if hardware milestones lag."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            8000000
+          ],
+          "post_money_usd": [
+            25000000,
+            60000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical defense hardware seed, above the 3M US seed median because of testing costs."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Upside if a government contract or letter of intent anchors an oversized seed, as with Inversion's 10M seed."
+        }
+      ],
+      "why_it_fails": "The seed fails if investors will not underwrite propulsion development risk with no flight data, or if the team cannot show a government customer interested in an unproven rocket. SpaceRyde (W19) built a factory but ended in bankruptcy after noise complaints stopped engine tests, and funders know that rockets burn cash before the first revenue."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --calibration-only: series_a cond 22% (n=115), range 11%/12%/26%; --years 2018-2025 --industry Industrials: 25% (n=16).",
+        "adjustment_reason": "1.3x the broad anchor and under the Industrials anchor of 25 percent by the technical risk: Inversion reached A, but Talyn Air and SpaceRyde did not."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            40000000,
+            100000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin A funded by government contracts and strategic investors."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            45000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical defense tech A for a team with a flight test."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            100000000
+          ],
+          "post_money_usd": [
+            250000000,
+            600000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if a successful flight and Air Force agreement draw a large defense fund, as with Inversion's 44M A."
+        }
+      ],
+      "why_it_fails": "The Series A fails if the first subscale flight misses or slips by a year, because investors back hardware only on demonstrated flight data. Inversion's reported reentry failure on its demonstrator shows how one failed test can slow a raise. Volansi raised 75M but lost promised financing, so capital intensity makes this step fragile."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.38,
+      "anchors": {
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_b cond 44% (n=126), range 8%/15%/53% unconditional; 2022-2025 cohort is right censored (12%, n=25).",
+        "adjustment_reason": "0.9x the anchor: those that fund a flight A in defense usually get a B, but hardware capital needs make dilution painful."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            30000000,
+            70000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Government backed or venture debt heavy B at a flat price."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            500000000,
+            1200000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical defense hardware B, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if hypersonic cargo gets a program of record and a strategic investor."
+        }
+      ],
+      "why_it_fails": "A Series B fails if the program stays in study and demonstration status. The Air Force effort has moved between programs and rated early technology readiness, and the budget treatment of point to point flights is uncertain. Volansi reached a 50M B in 2020 and then lost its financing and sold assets in 2022, which shows the risk."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.33,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_c cond 36% (n=55), range 3%/6%/48% unconditional.",
+        "adjustment_reason": "0.9x the anchor, adjusted down for government dependence but kept near it since defense hardware investors fund later rounds."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            100000000,
+            200000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat late round, partly program funded, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            200000000,
+            500000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            4000000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical growth round for a defense launch company, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            500000000,
+            1000000000
+          ],
+          "post_money_usd": [
+            4000000000,
+            10000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the system enters service, sized against current US venture medians and the 2022+ YC round table."
+        }
+      ],
+      "why_it_fails": "A Series C fails if reusability and cost per delivery never beat existing airlift and SpaceX class launch on price, or if procurement chooses a larger prime. Anduril and Blue Origin already hold the Air Force agreements, and few small hardware companies in the sample reached C."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.58
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.18
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.17
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.07
+      }
+    ],
+    "why_it_fails": "Hypersonic rocket logistics needs hundreds of millions before revenue and relies on one customer whose program has moved between agencies. Most analogs, SpaceRyde, Talyn Air and Volansi, shut down or sold assets for lack of capital, so a stall or asset sale is the most likely end."
+  },
+  "analogs": [
+    {
+      "slug": "inversion-space",
+      "relevance": "Space based point to point military cargo, same buyer.",
+      "outcome_summary": "10M seed, 44M Series A in 2024, first demonstrator hit reentry problems."
+    },
+    {
+      "slug": "spaceryde",
+      "relevance": "Rocket delivery startup, hardware risk.",
+      "outcome_summary": "About 10M raised, built a factory, bankrupt after test limits."
+    },
+    {
+      "slug": "talyn-air",
+      "relevance": "Government funded cargo aircraft.",
+      "outcome_summary": "Seed only, assets sold in 2023 to Ampaire."
+    },
+    {
+      "slug": "volansi",
+      "relevance": "Defense and cargo drone, hardware heavy.",
+      "outcome_summary": "Series B in 2020, lost financing, assets sold 2022."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Propulsion and flight tests take longer and cost more than a seed can fund",
+      "p": 0.4,
+      "evidence": "Rocket vehicles need engine tests and range access; SpaceRyde ended after engine testing was blocked by noise complaints.",
+      "analogs": [
+        "spaceryde",
+        "inversion-space"
+      ],
+      "mitigation": "Win government test contracts and rent existing ranges."
+    },
+    {
+      "risk": "The government buyer funds larger primes and does not adopt a startup vehicle",
+      "p": 0.3,
+      "evidence": "The Air Force selected Blue Origin and Anduril for rocket cargo work and treats the program as leasing commercial launch.",
+      "analogs": [
+        "talyn-air",
+        "volansi"
+      ],
+      "mitigation": "Partner with a prime and target Army or Indo-Pacific logistics offices."
+    },
+    {
+      "risk": "Unit economics of small rockets never beat existing air and sea logistics",
+      "p": 0.2,
+      "evidence": "Point to point rocket cargo has been called early technology readiness and costs per mission are unproven.",
+      "analogs": [
+        "inversion-space",
+        "spaceryde"
+      ],
+      "mitigation": "Focus on missions where speed is worth any price, such as contested resupply."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Blue Origin and Anduril (Air Force REGAL)",
+      "what": "Funded Air Force rocket cargo delivery work.",
+      "traction": "Selected by the Air Force.",
+      "source_url": "https://www.space.com/space-exploration/launches-spacecraft/us-air-force-selects-blue-origin-and-anduril-for-rocket-cargo-delivery-project-report"
+    },
+    {
+      "name": "Inversion Space",
+      "what": "Orbital reentry vehicle for cargo delivery.",
+      "traction": "Raised a 44M Series A in 2024.",
+      "source_url": "https://www.seradata.com/analysis-us-military-gets-serious-about-using-rockets-for-point-to-point-cargo-delivery-on-earth"
+    },
+    {
+      "name": "Status quo airlift and prepositioning",
+      "what": "Military airlift and stockpiles.",
+      "traction": "Existing doctrine.",
+      "source_url": "https://www.seradata.com/analysis-us-military-gets-serious-about-using-rockets-for-point-to-point-cargo-delivery-on-earth"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 5,
+    "rationale": "Hypersonic reentry, engines and guidance are extremely hard for a six person team; propulsion testing needs ranges, licences and capital. This is the main risk and any success would be a real moat."
+  },
+  "takeover_risk": {
+    "rating": 2,
+    "who": [
+      "Anduril",
+      "Blue Origin",
+      "SpaceX"
+    ],
+    "timeline_months": 48,
+    "rationale": "Large rivals could build rocket cargo but have little incentive for small contested drop missions; they could win the program instead, so takeover is likelier through contract loss."
+  },
+  "market_need_now": {
+    "rating": 3,
+    "evidence": [
+      {
+        "claim": "The US military studies rocket point to point cargo and funds commercial partners.",
+        "source_url": "https://www.space.com/space-exploration/launches-spacecraft/us-air-force-selects-blue-origin-and-anduril-for-rocket-cargo-delivery-project-report"
+      },
+      {
+        "claim": "Defense analysts say interest in rockets for cargo delivery is serious though budgets are unclear.",
+        "source_url": "https://www.seradata.com/analysis-us-military-gets-serious-about-using-rockets-for-point-to-point-cargo-delivery-on-earth"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show propulsion progress.",
+      "actions": [
+        "Complete a static engine test",
+        "Secure a government letter of interest"
+      ],
+      "proof": "Test data and a named program office."
+    },
+    {
+      "phase": "seed",
+      "goal": "Fund a subscale flight.",
+      "actions": [
+        "Raise a seed with defense investors",
+        "Win a small contract such as SBIR"
+      ],
+      "proof": "A funded flight test date."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Clear government interest",
+      "evidence": "The Air Force already funds rocket cargo studies and agreements.",
+      "source_url": "https://www.space.com/space-exploration/launches-spacecraft/us-air-force-selects-blue-origin-and-anduril-for-rocket-cargo-delivery-project-report"
+    },
+    {
+      "point": "Defense tailwind",
+      "evidence": "Defense tech hardware attracted large rounds, for example Inversion's 44M A.",
+      "source_url": "https://www.seradata.com/analysis-us-military-gets-serious-about-using-rockets-for-point-to-point-cargo-delivery-on-earth"
+    }
+  ],
+  "brand": {
+    "name": "Hop Aero",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Hop Aero\" --era 2022+: compound words, 7 chars, 3 syllables",
+    "strengths": [
+      "Short and easy to remember",
+      "Describes a hop"
+    ],
+    "weaknesses": [
+      "Generic and the aero suffix is common"
+    ],
+    "rationale": "A plain, memorable name that describes the point to point hop; it is not a growth driver, and in defense hardware credibility and contracts matter far more than brand, as with Inversion Space."
+  },
+  "narrative": {
+    "headline": "A high risk, high capital defense rocket bet with a real buyer and a long road to flight data.",
+    "general_summary": "Hop Aero wants to deliver cargo by rocket to contested locations, a mission the US military already studies. Defense hardware had a strong funding climate in 2026, so a seed above the standard YC deal is likely if the team can show credible propulsion progress. Later rounds depend on test flights, which cost far more than a seed can pay for, and on a government customer who has favoured larger primes. Analogs such as SpaceRyde and Talyn Air stalled, while Inversion reached a Series A. The ladder is therefore generous at seed and harsh at A."
+  },
+  "assumptions": [
+    "The team's background is unknown from the input, so team quality is not credited.",
+    "Seed means a round above 500K within about 12 months of the batch start.",
+    "Funding of other 2026 batch companies was not used as evidence.",
+    "Industrials 2022+ cohort has only 12 researched companies."
+  ],
+  "sources": [
+    "https://www.space.com/space-exploration/launches-spacecraft/us-air-force-selects-blue-origin-and-anduril-for-rocket-cargo-delivery-project-report",
+    "https://www.seradata.com/analysis-us-military-gets-serious-about-using-rockets-for-point-to-point-cargo-delivery-on-earth"
+  ]
+}

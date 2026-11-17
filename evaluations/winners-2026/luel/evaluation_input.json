@@ -1,0 +1,427 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Luel",
+    "one_liner": "Turning everyday words and actions into usable training data.",
+    "description": "Luel is a sourcing and licensing platform for rights-cleared multimodal training data at scale. We work with frontier AI teams to provide high-quality bespoke data collections and off-the-shelf datasets.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.04,
+    "p_low": 0.02,
+    "p_high": 0.07,
+    "basis": "Roughly 1 percent base rate. Conditional on acceptance this is a note: a twelve person team selling to frontier AI labs and a category YC favored, so the estimate sits above the base.",
+    "why_it_fails": "YC would most plausibly worry that data sourcing is a services marketplace with concentrated buyers, thin margins and copyright exposure, and that frontier labs build data pipelines in house. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as sieve and panels."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.8,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Above the 59 percent recent anchor but near the 81 percent older anchor. AI data infrastructure with twelve people and buyers among frontier labs was among the fastest funded categories in early 2026."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            8000000,
+            15000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Thin round from a small number of angels if the first lab contracts are one off."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            6000000
+          ],
+          "post_money_usd": [
+            18000000,
+            40000000
+          ],
+          "p_band": 0.55,
+          "rationale": "Core round, above the 2022+ YC seed median of 4.1M because AI infrastructure rounds in the cohort are large."
+        },
+        {
+          "raise_usd": [
+            7000000,
+            15000000
+          ],
+          "post_money_usd": [
+            50000000,
+            120000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if a frontier lab signs a multi year licensing deal. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "The seed most plausibly fails because revenue is lumpy and concentrated in a few buyers. Panels, a YC audio data company, and Sieve, a multimodal data lab, show the category is crowded and that only some raise seeds. Investors may also worry about the legal risk behind rights clearance and about Scale AI, Mercor and Surge competing on data services."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Set near the 22 to 32 percent Series A anchors from the cohort commands above and not below 0.75 times the recent anchor of 26 percent, per the backtest rule; reaching a round later is common for companies with paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            8000000,
+            14000000
+          ],
+          "post_money_usd": [
+            40000000,
+            70000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin A, services like margins. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            150000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core A near the market Series A of 17M. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            180000000,
+            400000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the default licensing exchange for labs. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series A fails if buyers do not recur. Frontier labs may ingest data directly, and licensed data prices can fall as supply grows. Sieve pivoted within the data category and stayed at seed, which shows the wedge is hard to scale beyond a few customers. Customer concentration of one or two labs makes it hard to show a repeatable sales motion."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.32,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Anchor is 16 percent for 2022 to 2025 (n=19) and 39 percent for 2018 to 2021 (n=18); set between them at a figure above 0.75 times the recent anchor, since survivors of Series A usually have paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            30000000
+          ],
+          "post_money_usd": [
+            120000000,
+            250000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            35000000,
+            60000000
+          ],
+          "post_money_usd": [
+            250000000,
+            500000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            120000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside as the data layer for frontier labs. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series B fails if licensed data becomes commoditized, labs pivot toward synthetic data, or large content owners license directly. The company would need a durable supply moat, such as exclusive collections, which a twelve person team may not build before competitors with more capital do. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as sieve and panels."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Older cohort anchor 57 percent (n=7) and recent 0 percent (n=3), both tiny samples; set well below the older anchor because few companies reach late stage and the samples are anecdotes."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000,
+            60000000
+          ],
+          "post_money_usd": [
+            400000000,
+            700000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Modest. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            700000000,
+            1500000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            4000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "A Series C needs the company to become a durable marketplace. Demand from labs swings with their model training cycles and copyright litigation outcomes, and a few buyers dominate, so the late stage story is hard to underwrite. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as sieve and panels."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.45
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.35
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.17
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.03
+      }
+    ],
+    "why_it_fails": "A stall is likely because few buyers control demand and prices. Data labeling incumbents are larger, and legal risk over rights clearance can erase value. Exits are most likely sales to larger data firms, though a rare outcome above 1B is possible if it becomes a licensing exchange."
+  },
+  "analogs": [
+    {
+      "slug": "sieve",
+      "relevance": "Multimodal data lab from YC.",
+      "outcome_summary": "Pivoted and reached a seed, not further."
+    },
+    {
+      "slug": "panels",
+      "relevance": "Audio data for AI labs from Summer 2025.",
+      "outcome_summary": "Too recent to have an outcome as of this date; shows the category is crowded."
+    },
+    {
+      "slug": "hillclimb",
+      "relevance": "Training data for self improvement, Fall 2025.",
+      "outcome_summary": "Very recent, competes with Mercor and Scale."
+    },
+    {
+      "slug": "autocomputer",
+      "relevance": "Research data service for labs.",
+      "outcome_summary": "Reached a seed."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Frontier labs build data pipelines in house",
+      "p": 0.35,
+      "evidence": "Labs have large budgets and have acquired or built data teams, so demand for outside sourcing can shift.",
+      "analogs": [
+        "sieve",
+        "hillclimb"
+      ],
+      "mitigation": "Specialize in modalities and rights that labs cannot easily source."
+    },
+    {
+      "risk": "Customer concentration and lumpy revenue",
+      "p": 0.4,
+      "evidence": "A handful of labs pay for bespoke collections, and contracts are project based.",
+      "analogs": [
+        "panels",
+        "sieve"
+      ],
+      "mitigation": "Convert projects into off the shelf dataset licenses."
+    },
+    {
+      "risk": "Rights clearance and copyright risk",
+      "p": 0.3,
+      "evidence": "Licensing data has legal exposure if rights are not truly cleared, as ongoing AI copyright disputes show.",
+      "analogs": [
+        "sieve"
+      ],
+      "mitigation": "Document consent chains and use insurance."
+    },
+    {
+      "risk": "Scale AI, Mercor and Surge compete",
+      "p": 0.35,
+      "evidence": "Large vendors already serve labs with deep budgets. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "hillclimb"
+      ],
+      "mitigation": "Stay narrow and high quality."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Scale AI",
+      "what": "Data labeling and collection for labs.",
+      "traction": "Market leader with large lab contracts.",
+      "source_url": "https://www.extruct.ai/data-room/ai-training-data-marketplaces/"
+    },
+    {
+      "name": "Veritone and Troveo",
+      "what": "Rights cleared video and audio data marketplaces.",
+      "traction": "Troveo says access to training material is now a bigger constraint than labeling.",
+      "source_url": "https://itbrief.co.uk/story/troveo-expands-ai-data-platform-into-five-categories"
+    },
+    {
+      "name": "Protege and Kled style licensors",
+      "what": "Licensed data marketplaces.",
+      "traction": "Growing category.",
+      "source_url": "https://www.kled.ai/blog/why-licensed-data-is-becoming-the-future-of-ai-training"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Collecting multimodal data at scale and clearing rights is operationally hard: contracts, quality checks, consent and storage. A small team can run the first collections, but a durable supply side takes capital."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Scale AI",
+      "Mercor",
+      "Frontier labs in house"
+    ],
+    "timeline_months": 9,
+    "rationale": "Incumbents have the relationships, but exclusive supply is slow to copy. The timeline is an estimate for a well resourced rival with existing distribution and an incentive to copy the idea."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "The AI training dataset market is estimated around 8.7B dollars in 2025 growing about 33 percent a year by one research firm.",
+        "source_url": "https://www.giiresearch.com/report/moi2064515-ai-training-dataset-market-share-analysis-industry.html"
+      },
+      {
+        "claim": "Licensing data is becoming a bigger constraint than labeling for developers, per a data platform.",
+        "source_url": "https://itbrief.co.uk/story/troveo-expands-ai-data-platform-into-five-categories"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Land two paying lab customers.",
+      "actions": [
+        "Run paid pilot collections.",
+        "Document rights clearance."
+      ],
+      "proof": "Signed contracts over 250K dollars."
+    },
+    {
+      "phase": "seed",
+      "goal": "Convert projects to recurring licensing.",
+      "actions": [
+        "Build an off the shelf catalog.",
+        "Add a second modality."
+      ],
+      "proof": "Repeat revenue from the same buyers."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Show durable supply.",
+      "actions": [
+        "Sign exclusive supply partners.",
+        "Grow gross margin."
+      ],
+      "proof": "Annualized revenue above 5M and under 70 percent concentration."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Twelve person team in a hot AI infrastructure category.",
+      "evidence": "Team size in the input and a market growing fast."
+    },
+    {
+      "point": "Buyers are well funded labs.",
+      "evidence": "Frontier labs pay large sums for data.",
+      "source_url": "https://www.extruct.ai/data-room/ai-training-data-marketplaces/"
+    },
+    {
+      "point": "Rights cleared data answers a real legal need.",
+      "evidence": "Developers cite access to cleared content as a constraint.",
+      "source_url": "https://itbrief.co.uk/story/troveo-expands-ai-data-platform-into-five-categories"
+    }
+  ],
+  "brand": {
+    "name": "Luel",
+    "rating": 4,
+    "effect_on_success": "helps",
+    "name_check": "python3 -I scripts/name_features.py --score \"Luel\" --era 2022+ : one word invented name, four characters, one syllable.",
+    "strengths": [
+      "Short and invented, easy to trademark."
+    ],
+    "weaknesses": [
+      "Says nothing about data."
+    ],
+    "rationale": "Short invented one word names are common among strong recent YC brands and are easy to own, though the name carries no meaning. Effect on success is small.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A well timed AI data supplier likely to raise a seed fast, with real risk from buyer concentration and in house pipelines.",
+    "general_summary": "Luel sells rights cleared multimodal training data to frontier AI teams. Demand is strong and a team of twelve is large for a winter 2026 startup. The likeliest path is a quick seed, then a harder Series A where buyers and prices are tested. Scale AI, Mercor and other vendors are bigger. The comparable YC data companies mostly have no later rounds yet, so the base rate evidence is thin. The step odds are anchored on the 2022 to 2025 B2B cohorts and the older 2018 to 2021 cohort, which differ a lot, so treat the later rounds as wide ranges."
+  },
+  "assumptions": [
+    "Founder backgrounds and customers were not provided.",
+    "Market size figures come from research firms with differing scopes."
+  ],
+  "sources": [
+    "https://www.giiresearch.com/report/moi2064515-ai-training-dataset-market-share-analysis-industry.html",
+    "https://itbrief.co.uk/story/troveo-expands-ai-data-platform-into-five-categories",
+    "https://www.extruct.ai/data-room/ai-training-data-marketplaces/",
+    "https://www.kled.ai/blog/why-licensed-data-is-becoming-the-future-of-ai-training",
+    "https://www.ycombinator.com/deal"
+  ]
+}

@@ -1,0 +1,430 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Huscarl",
+    "one_liner": "Autonomous AI actuary for corporate insurance",
+    "description": "Huscarl is building an autonomous AI actuary for corporate (commercial) insurance, a market it puts at $1T, to automate pricing, reserving and risk analysis that insurers and brokers now do by hand. Customers are insurers, MGAs and brokers. Team of 3 in Paris, Spring 2026 batch.",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.03,
+    "p_low": 0.01,
+    "p_high": 0.06,
+    "basis": "Test assumes the company was accepted, so this is only a note. Prior about 1 percent (0.6 to 2 percent third party range). Up for a large regulated market with a clear paid workflow, down for a vague one line description, no stated actuarial credentials and a field with several funded AI underwriting teams.",
+    "why_it_fails": "YC would most plausibly pass because the application says almost nothing concrete: no named insurer pilot, no description of what an autonomous actuary does that an LLM plus a spreadsheet cannot, and several US underwriting AI companies already sit in the same batches. A Paris team with three people and no stated insurer relationships also gives reviewers little to hold on to in a short interview."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.62,
+      "anchors": {
+        "base_rate": 0.61,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2024 --calibration-only: seed 55/61/65 (cond 61, n=18), A 15/17/25 (cond 27, n=11), B 0/0/10; --industry Fintech --years 2019-2023: seed cond 74 (n=34), A cond 20 (n=25), B cond 20 (n=5). Small cohorts.",
+        "adjustment_reason": "At the Fintech 2022-24 anchor. Slightly lower for a one year window and a Paris team that must raise from a mix of European and US funds, offset by the AI timing in insurance."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            600000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin round from European angels and funds just above the standard deal."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            4000000
+          ],
+          "post_money_usd": [
+            12000000,
+            28000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical 2026 AI seed for insurtech, near the 2022+ median seed of about $3 to 4M."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            9000000
+          ],
+          "post_money_usd": [
+            30000000,
+            55000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if a carrier pilot is public and a US or European fund leads."
+        }
+      ],
+      "why_it_fails": "The seed fails if nobody can say what the autonomous actuary actually does and no insurer commits to a pilot. Insurers buy slowly, with model validation and regulatory review of any pricing tool under European rules, so a first paid contract may take longer than 12 months. Investors also compare it with funded US underwriting agents like Pibit.ai, Corgi and Tint style teams."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.27,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2024 --calibration-only: seed 55/61/65 (cond 61, n=18), A 15/17/25 (cond 27, n=11), B 0/0/10; --industry Fintech --years 2019-2023: seed cond 74 (n=34), A cond 20 (n=25), B cond 20 (n=5). Small cohorts.",
+        "adjustment_reason": "Anchor is 27 percent (2022-24) and 20 percent (2019-23), so we sit slightly above because insurtech analogs like Pibit.ai and Tint reached an A, but the cohorts are small."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            5000000,
+            9000000
+          ],
+          "post_money_usd": [
+            25000000,
+            45000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Small A, since a European insurtech may raise less than a US peer."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            18000000
+          ],
+          "post_money_usd": [
+            50000000,
+            100000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical Series A, as for Pibit.ai and Tint (Tint raised $25M). Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            35000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if multiple carriers adopt it. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        }
+      ],
+      "why_it_fails": "A Series A requires several paying insurers and proof that the AI prices or reserves within regulatory tolerance. Pibit.ai needed four years to a Series A, and Zinc Platform shows insurtechs that never convert pilots die. Incumbent actuarial vendors with entrenched data and model sign off make switching slow."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.22,
+      "anchors": {
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2024 --calibration-only: seed 55/61/65 (cond 61, n=18), A 15/17/25 (cond 27, n=11), B 0/0/10; --industry Fintech --years 2019-2023: seed cond 74 (n=34), A cond 20 (n=25), B cond 20 (n=5). Small cohorts.",
+        "adjustment_reason": "Slightly above the 20 percent Fintech anchor (n=5) because insurance contracts renew and compound, but the sample is tiny."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            12000000,
+            22000000
+          ],
+          "post_money_usd": [
+            60000000,
+            110000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat B below the 2022+ p25. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            45000000
+          ],
+          "post_money_usd": [
+            130000000,
+            260000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical Series B for the period. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            90000000
+          ],
+          "post_money_usd": [
+            300000000,
+            600000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes a standard risk platform. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        }
+      ],
+      "why_it_fails": "A Series B needs scaled recurring revenue across a handful of large carriers. Corporate insurance has few big buyers with long cycles, and a carrier may build the actuary tool in house or buy from an incumbent like Guidewire. Few Fintech cohort companies reach B."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2019-2023 --calibration-only: series_c cond 33 (n=6). Fintech 2019-23: 0 of 1 (n=1).",
+        "adjustment_reason": "0.85 times the B2B anchor from only 6 companies, so the figure is weak; Fintech has no usable data."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            30000000,
+            55000000
+          ],
+          "post_money_usd": [
+            200000000,
+            400000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Modest late round. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            450000000,
+            900000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Typical late growth round. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            200000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the company becomes a main carrier tool. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        }
+      ],
+      "why_it_fails": "A Series C requires the company to become an infrastructure layer in insurance with strong margins. Regulation, carrier consolidation and a mature market reduce growth and a late stage buyer may prefer to acquire. The cohort has almost no data at this step, so investors will lean on how companies like Pibit.ai fared and on current growth equity appetite for insurance software."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.5
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.3
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.15
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.05
+      }
+    ],
+    "why_it_fails": "Most likely it stalls without a reference insurer or is acquired by an insurtech or software vendor for a small amount. Zinc Platform shut down and Casey and Vantel are small, while Pibit.ai and Corgi show that a few insurance AI companies grow large. Reaching a billion dollar value needs a clear lead across carriers."
+  },
+  "analogs": [
+    {
+      "slug": "pibit-ai",
+      "relevance": "AI underwriting platform for commercial and specialty insurance",
+      "outcome_summary": "Survived four years, grew to about 200 staff and raised a $7M Series A in 2025."
+    },
+    {
+      "slug": "tint",
+      "relevance": "Insurtech infrastructure with founder market fit",
+      "outcome_summary": "$3.75M seed in 2021 and $25M Series A in 2022."
+    },
+    {
+      "slug": "accend",
+      "relevance": "AI agents for commercial underwriting at banks",
+      "outcome_summary": "$3.2M seed in 2024, grew to 18 people."
+    },
+    {
+      "slug": "zinc-platform",
+      "relevance": "Insurance distribution tooling that failed to scale",
+      "outcome_summary": "Inactive after the team shrank."
+    },
+    {
+      "slug": "vantel",
+      "relevance": "European AI platform for commercial insurance brokers",
+      "outcome_summary": "$2M seed in 2025 with broker customers."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Insurers will not trust an autonomous actuary without validation and regulatory sign off",
+      "p": 0.45,
+      "evidence": "Pricing and reserving models require actuarial sign off and regulators review model governance, so adoption is slow.",
+      "analogs": [
+        "zinc-platform",
+        "pibit-ai"
+      ],
+      "mitigation": "Position as a copilot that an actuary approves and publish validation results."
+    },
+    {
+      "risk": "The pitch is too broad and loses to focused competitors",
+      "p": 0.35,
+      "evidence": "The one line description covers pricing, reserving and underwriting, while funded rivals focus on narrow tasks.",
+      "analogs": [
+        "pibit-ai",
+        "tint"
+      ],
+      "mitigation": "Pick one line such as property or casualty reserving and win a single insurer."
+    },
+    {
+      "risk": "Large language model vendors and incumbents add actuarial features",
+      "p": 0.3,
+      "evidence": "General models can already analyse loss runs and write reserving code, and carriers have internal data teams.",
+      "analogs": [
+        "accend",
+        "vantel"
+      ],
+      "mitigation": "Build proprietary data pipelines and workflow integration that models alone lack."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Federato",
+      "what": "AI underwriting platform for commercial insurers",
+      "traction": "Venture funded with carrier customers",
+      "source_url": "https://www.federato.ai"
+    },
+    {
+      "name": "Sixfold",
+      "what": "AI underwriting assistant for risk assessment",
+      "traction": "Funded with insurer customers",
+      "source_url": "https://www.sixfold.ai"
+    },
+    {
+      "name": "Kalepa",
+      "what": "AI for commercial insurance underwriting",
+      "traction": "Funded with carrier and MGA customers",
+      "source_url": "https://www.kalepa.com"
+    },
+    {
+      "name": "Status quo: in house actuaries and consultants using spreadsheets and R",
+      "what": "Manual pricing and reserving",
+      "traction": "Default at all insurers",
+      "source_url": "https://www.soa.org"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 4,
+    "rationale": "Actuarial work needs accurate statistical models on messy loss data and explainable outputs for regulators. A small team can build copilots on top of language models, but a trusted autonomous system needs validation and data access that are slow to get."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Guidewire",
+      "Funded underwriting AI startups",
+      "Large model vendors"
+    ],
+    "timeline_months": 12,
+    "rationale": "Several funded rivals already sell AI for commercial underwriting and could add actuarial functions within a year. Carriers can also build with general models, so the startup needs a narrow wedge or data advantage."
+  },
+  "market_need_now": {
+    "rating": 3,
+    "evidence": [
+      {
+        "claim": "Commercial insurers invest in AI underwriting tools, shown by funded companies like Federato and Sixfold selling to carriers.",
+        "source_url": "https://www.federato.ai"
+      },
+      {
+        "claim": "Actuarial talent is scarce and the profession publishes workload and shortage concerns.",
+        "source_url": "https://www.soa.org"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Define one concrete actuarial task and a pilot insurer",
+      "actions": [
+        "Interview actuaries at 10 insurers or MGAs",
+        "Prototype on a public loss dataset"
+      ],
+      "proof": "One insurer agreeing to test it"
+    },
+    {
+      "phase": "seed",
+      "goal": "Raise above $500K within 12 months of the batch",
+      "actions": [
+        "Run a pilot with measured accuracy against human actuaries",
+        "Show results to European and US insurtech funds"
+      ],
+      "proof": "Signed pilot and a lead investor"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Convert pilots to recurring contracts",
+      "actions": [
+        "Pass model validation reviews",
+        "Add two more carriers or MGAs"
+      ],
+      "proof": "$1M recurring revenue and a reference carrier"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Large regulated market with proven spend on AI",
+      "evidence": "Federato, Sixfold and Kalepa sell to carriers, showing budgets exist.",
+      "source_url": "https://www.federato.ai"
+    },
+    {
+      "point": "Insurance contracts renew",
+      "evidence": "Pibit.ai and Tint reached later funding after landing insurers, showing sticky revenue is possible.",
+      "source_url": "https://www.sixfold.ai"
+    }
+  ],
+  "brand": {
+    "name": "Huscarl",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Huscarl\" --era 2022+: invented or proper noun, 7 characters, 1 word",
+    "strengths": [
+      "Short and distinct",
+      "Suggests a loyal guard, fitting risk"
+    ],
+    "weaknesses": [
+      "Hard to spell and pronounce for buyers",
+      "No link to insurance or AI"
+    ],
+    "rationale": "A historical term for a household warrior suits risk but is unfamiliar. Within eras, invented or proper nouns show no clear gap, and enterprise insurance buyers decide on validation not names, as with Pibit.ai and Tint.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A big regulated market and good timing, but an unfocused pitch and funded rivals make the first pilot decisive.",
+    "general_summary": "Huscarl aims to automate actuarial work for corporate insurers. Insurers are paying for AI underwriting tools today, so a seed is plausible if a pilot appears within a year. The weak points are a vague description, slow model validation and a crowded field including Federato, Sixfold and Kalepa. Analogs show Pibit.ai and Tint reaching an A while Zinc Platform shut down. Fintech cohort samples are small, so numbers sit near the anchors with wide uncertainty. Paris adds a modest friction for US funding but also lower costs, and the likely path is a seed from European and US insurtech investors followed by a harder Series A that requires carrier references."
+  },
+  "assumptions": [
+    "Only the input file was used for the company; market sections use general knowledge and homepage URLs.",
+    "Seed in this test means a round above about $500K within 12 months of the batch start.",
+    "Fintech cohorts have 20 to 37 companies, so rates are rough.",
+    "Competition recorded as of April 2026."
+  ],
+  "sources": [
+    "https://www.roundfunded.com/en/blogs/yc-acceptance-rate-2026",
+    "https://www.federato.ai",
+    "https://www.sixfold.ai",
+    "https://www.kalepa.com",
+    "https://www.soa.org"
+  ]
+}

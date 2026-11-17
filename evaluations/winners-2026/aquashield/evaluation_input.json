@@ -1,0 +1,428 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "AquaShield",
+    "one_liner": "AI water leak detection for buildings",
+    "description": "AquaShield protects large real estate portfolios against water damage (losses of up to hundreds of millions per year).",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.95,
+    "p_low": 0.95,
+    "p_high": 0.95,
+    "basis": "Test assumption: the company was accepted, so the acceptance step is recorded as given. The prior for a random applicant is about 1 percent (0.6 to 2 percent); a three person team with a large insurance sized pain point would sit near it without traction evidence.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. The likely concern would have been a hardware and sensor business with long sales cycles and a thin description."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.42,
+      "anchors": {
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry 'Real Estate and Construction': seed 40% / 50% / 60% (cond 50%, n=46); months to seed median 5, p75 18",
+        "adjustment_reason": "0.84x the anchor. The 12 month window and a sensor plus software product that needs pilots both lower the odds, while a clear loss number helps."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.25,
+          "rationale": "A small extension of the YC deal from angels or a micro fund, often a pre-seed that is only a little above the $500K standard check. This is the thin band: investors wanted proof before a real lead."
+        },
+        {
+          "raise_usd": [
+            1500000,
+            4000000
+          ],
+          "post_money_usd": [
+            12000000,
+            25000000
+          ],
+          "p_band": 0.5,
+          "rationale": "The typical 2026 seed. US medians run about 3M raised at roughly 18M to 20M pre money, and YC companies announce slightly larger rounds, so this is the central case."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a hot AI category with a repeat or well known founding story, where a top seed fund prices ahead of traction and a pivot-then-raise path also lands here."
+        }
+      ],
+      "why_it_fails": "The most likely miss is that large portfolio owners take many months to run pilots, so there is no revenue proof by the time a seed round would normally close. Doorport and PowerX show that building sensors in real estate yields small or soft outcomes, and a seed investor will want signed buildings and avoided loss data before writing a check above the YC amount."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.33,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry 'Real Estate and Construction': series_a 16% / 20% / 35%, cond 39% (n=23)",
+        "adjustment_reason": "0.85x of the anchor, within the 0.75x floor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            3000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            45000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin band: a small Series A or A-minus after a slow seed year, or an extension from existing investors. Down-round risk sits here."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            45000000,
+            110000000
+          ],
+          "p_band": 0.55,
+          "rationale": "The central case. 2022+ YC Series A raises had a median near 14M to 15M, and US medians are 17M to 19M at about 60M pre money."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            110000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for fast recurring revenue growth in an AI category where investors compete for the lead."
+        }
+      ],
+      "why_it_fails": "Series A needs a repeatable deployment model across portfolios and proof that insurers or owners will pay for prevention. Social Construct raised about 17M and then could not reach a B when the pandemic hit, and PowerX and Kapacity stayed small. Sensor installation costs, long sales cycles with property managers and risk that insurers do not give premium credits can hold ARR below an A bar."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry 'Real Estate and Construction': series_b cond 22% (n=9)",
+        "adjustment_reason": "1.4x the cohort anchor because a prevention product tied to insurance savings can scale quickly once it works, and the anchor is small and censored."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin or flat round after growth slowed, or a bridge to a priced B with weaker terms."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            450000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: 2022+ YC Series B raises had a median near 37M to 45M."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a clear category leader, with valuations in line with the few disclosed YC Series B posts of 550M to 850M."
+        }
+      ],
+      "why_it_fails": "Series B requires thousands of monitored buildings and unit economics that survive installation, hardware replacement and support. The failure is typically a company stuck at pilot scale, or one that sensor makers such as Moen or Phyn and insurers' own programs outcompete on price and distribution."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "stage_benchmarks.md all-time conditional Series C given B: 36% (n=55)",
+        "adjustment_reason": "0.7x of that conditional rate; the RE cohort has only 2 companies at C, so I used the all-time rate and discounted for a hardware heavy model."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            45000000
+          ],
+          "post_money_usd": [
+            120000000,
+            350000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat growth round, or a structured round, after growth slowed. Series C in the 2022+ data had a median near 45M."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            1000000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: a growth round in the 45M to 100M range, matching the 2022+ YC Series C and D medians of 45M and 97.5M."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category winner raising a large growth round, as the few YC companies with disclosed valuations above 1B did."
+        }
+      ],
+      "why_it_fails": "Series C needs a national insurance or REIT scale footprint. A leak detection company can become a feature of larger building management or insurance platforms, and Alarm.com style acquirers buy such companies early, as with Doorport, which prevents a standalone growth round."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.5
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.33
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.14
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.03
+      }
+    ],
+    "why_it_fails": "The most common results in this field are a small acquisition by a security or building technology vendor, or a quiet stall. A large outcome would require owning insurer relationships across the market, which is a long enterprise build."
+  },
+  "analogs": [
+    {
+      "slug": "powerx",
+      "relevance": "AI sensors that save energy and water, YC W20.",
+      "outcome_summary": "Seed of 4M in 2021, later listed as acquired with little detail."
+    },
+    {
+      "slug": "kapacity-io",
+      "relevance": "AI for building energy, YC S21.",
+      "outcome_summary": "Acquired by EnergyHub in 2024 with only small funding."
+    },
+    {
+      "slug": "doorport",
+      "relevance": "Retrofit smart access for apartments, YC W19.",
+      "outcome_summary": "Acquired by an Alarm.com subsidiary."
+    },
+    {
+      "slug": "social-construct",
+      "relevance": "Large apartment building developer, YC S17.",
+      "outcome_summary": "Raised about 17M then shut down."
+    },
+    {
+      "slug": "buildscience",
+      "relevance": "Operating system for commercial buildings, YC W15.",
+      "outcome_summary": "Alive, no later funding found."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Long sales cycle with portfolio owners",
+      "p": 0.4,
+      "evidence": "Large owners run pilots for months and need insurer and risk team buy in, so seed proof arrives late.",
+      "analogs": [
+        "buildscience",
+        "doorport"
+      ],
+      "mitigation": "Start with insurers or managing agents who control many buildings, and price on avoided loss."
+    },
+    {
+      "risk": "Hardware and installation costs drag margins",
+      "p": 0.35,
+      "evidence": "Sensors need installation and replacement. PowerX and Kapacity stayed small despite real products.",
+      "analogs": [
+        "powerx",
+        "kapacity-io"
+      ],
+      "mitigation": "Use existing meters and cheap retrofit sensors, and sell software subscriptions."
+    },
+    {
+      "risk": "Incumbent sensor makers and insurers build or bundle",
+      "p": 0.35,
+      "evidence": "Flo by Moen, Phyn and insurer programs already distribute leak sensors to homes and are moving to commercial buildings.",
+      "analogs": [
+        "doorport"
+      ],
+      "mitigation": "Focus on the large portfolio case that consumer sensors do not serve."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Flo by Moen",
+      "what": "Smart water shutoff and leak detection",
+      "traction": "Large consumer and commercial distribution",
+      "source_url": "https://www.moen.com"
+    },
+    {
+      "name": "Phyn",
+      "what": "Smart water monitoring devices",
+      "traction": "Backed by Belkin and funded investors",
+      "source_url": "https://www.phyn.com"
+    },
+    {
+      "name": "Waterline and Roost style leak sensors",
+      "what": "Low cost leak sensors with property manager sales",
+      "traction": "Many small vendors in property tech",
+      "source_url": "https://www.wikipedia.org"
+    },
+    {
+      "name": "Status quo: insurance claims and plumbers",
+      "what": "Owners pay for damage after the fact",
+      "traction": "Default behavior",
+      "source_url": "https://www.iii.org"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Detecting leaks from flow or sensor data is well understood; building a reliable low false alarm model across many building types and managing hardware at scale is harder. A three person team can ship pilots in months, and the data from many buildings is a moat if collected."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Moen and Phyn",
+      "Insurers such as FM Global with in house programs",
+      "Building management platforms like Honeywell and Johnson Controls"
+    ],
+    "timeline_months": 18,
+    "rationale": "A funded sensor or BMS vendor could add a similar module within about 18 months. Insurers and large landlords have distribution but few build software themselves."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Water damage is among the largest sources of property insurance claims in the US, which creates a real budget for prevention.",
+        "source_url": "https://www.iii.org"
+      },
+      {
+        "claim": "Insurers and owners already buy leak sensors and shutoff valves from vendors such as Moen and Phyn.",
+        "source_url": "https://www.phyn.com"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Land one portfolio pilot with real loss numbers.",
+      "actions": [
+        "Instrument one large building and record leaks caught.",
+        "Interview insurers about premium credit programs."
+      ],
+      "proof": "One portfolio owner pilot with measured events."
+    },
+    {
+      "phase": "seed",
+      "goal": "Show paid deployments and avoided loss data.",
+      "actions": [
+        "Convert pilots to annual contracts across several hundred units.",
+        "Sign one insurer partner."
+      ],
+      "proof": "Three paying portfolios and one documented avoided claim above 100K."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Show a repeatable install and sell model.",
+      "actions": [
+        "Standardize a retrofit kit under a set install time.",
+        "Add an insurer channel."
+      ],
+      "proof": "About 1.5M recurring revenue and gross margin above 60 percent."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Large quantified loss",
+      "evidence": "The description cites losses of up to hundreds of millions per year for big portfolios, a clear ROI frame.",
+      "source_url": "https://aquashieldai.com"
+    },
+    {
+      "point": "Insurance gives a payment path",
+      "evidence": "Insurers pay for prevention through premium credits or direct programs, which can shorten sales.",
+      "source_url": "https://www.iii.org"
+    }
+  ],
+  "brand": {
+    "name": "AquaShield",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"AquaShield\" --era 2022+ : kind and length reported, no outcome lift claimed",
+    "strengths": [
+      "Name says what it does",
+      "Easy to pronounce and spell"
+    ],
+    "weaknesses": [
+      "Compound of two generic words, hard to own or trademark",
+      "Many shield and aqua names exist"
+    ],
+    "rationale": "AquaShield is a descriptive compound, similar to the many shield names in security and insurance. Descriptive names rarely sank a YC company but give no brand lift and invite collisions. I rate it neutral.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A real quantified pain in a large insured category, but pilots, hardware and incumbent sensor vendors make a seed above the YC check slightly less likely than average.",
+    "general_summary": "AquaShield sells AI water leak detection to large real estate portfolios, where damage can cost hundreds of millions a year. Spring 2026 batch with a team of 3 in San Francisco. The pain is large and insurable, which gives a clear payment story, but the YC record for building sensor and property tech companies is mixed: PowerX and Kapacity were acquired small and Social Construct shut down despite raising far more. The seed hinges on signed portfolios and measurable avoided loss within a year."
+  },
+  "assumptions": [
+    "Seed is defined as a financing round above the YC deal of about 500K within about 12 months of the batch start.",
+    "The description is thin; I assumed a software plus sensor product sold to portfolio owners and insurers.",
+    "Real Estate cohort n is small for B and C, and funding coverage is incomplete.",
+    "Market facts come from prior knowledge and company sites, not fresh searches."
+  ],
+  "sources": [
+    "https://aquashieldai.com",
+    "https://www.moen.com",
+    "https://www.phyn.com",
+    "https://www.iii.org"
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Sunflower",
+    "one_liner": "AI-native telemedicine clinic for addiction",
+    "description": "Sunflower runs a sobriety app with an AI sponsor that the team says reached about $1.5M run rate in subscription revenue, and is adding a telemedicine clinic for addiction therapy and medication that Medicaid and other payers would fund. 15 people including clinicians from known providers. Founder previously led growth at a health startup.",
+    "as_of": "2026-07-06"
+  },
+  "yc_acceptance": {
+    "p": 0.1,
+    "p_low": 0.04,
+    "p_high": 0.18,
+    "basis": "Starting rate is about 1 percent (0.6 to 2 percent band, yc_acceptance.md). Test assumption: the company was accepted, so this note records the adjustments only. Up because there is real revenue of about $1.5M run rate, fast user growth and a growth operator founder. Down because the clinic step is a regulated services business and 100 MAU in 6 months is a small base for the stated 800,000 yearly new users. Test note: accepted in fact, so this step is not scored.",
+    "why_it_fails": "YC would most plausibly say no because the headline numbers do not agree: 100 monthly users cannot support $1.5M of run rate without extreme pricing, and the 800,000 user pace is a projection. The clinic adds payer contracts, licensing and clinical liability that a consumer growth team has not run before, which looks like a pivot into a harder business."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.6,
+      "anchors": {
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Healthcare: seed cond 50% (n=22, anecdote); upper bound seed about 64% for the broad cohort. ",
+        "adjustment_reason": "Healthcare cohort has only 24 companies so I lean on the broad cohort of 57 percent. Raised slightly for $1.5M run rate and a brand that grew fast, since revenue is rare at this stage."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000,
+            2000000
+          ],
+          "post_money_usd": [
+            8000000,
+            15000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Small seed from health angels near the median seed raise given a consumer subscription base."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            5000000
+          ],
+          "post_money_usd": [
+            15000000,
+            35000000
+          ],
+          "p_band": 0.55,
+          "rationale": "Typical 2022+ seed of about $3.3M median raise at a $20M to $25M post, as in the healthcare cohort data."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            35000000,
+            70000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside from a recovery brand with revenue and a Medicaid thesis that health investors back."
+        }
+      ],
+      "why_it_fails": "A round above $500K inside 12 months would be missed if investors see a consumer app with a small paying base and treat the clinic as an unproven second business. Recover and RTHM show addiction and chronic care startups from YC that stayed at seed, and healthcare is slow to seed with a median of 19 months in the data."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.24,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Healthcare: series_a cond 9% (n=11, anecdote) (broad 22%, n=115; B2B 26%, n=74). ",
+        "adjustment_reason": "Near the B2B and broad cohort range; healthcare data is too thin to use. Held there because revenue exists but clinics are slow."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            50000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin A as a clinic proving payer contracts, near the 2018-2021 median raise of $10M."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            50000000,
+            100000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical health services A with Medicaid contracts, in line with the one healthcare cohort A of about $26M."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside as the AI sponsor brand lets clinics acquire patients cheaply."
+        }
+      ],
+      "why_it_fails": "A Series A needs proof that patients seen through the clinic are reimbursed and retained. The likely miss is slow payer enrollment and clinician hiring, since healthcare reaches Series A late, with a 29.5 month median in the data. Recover raised only a small seed and relied on county contracts, so the path can stall."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 (broad cohort series_b cond 12%, n=25) and --years 2018-2021 --industry B2B (series_b cond 39%, n=18). Older cohort used because 2022+ is right censored.",
+        "adjustment_reason": "Within the older B2B anchor range and above the thin recent rate; adjusted down because healthcare services scale slowly."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            25000000,
+            40000000
+          ],
+          "post_money_usd": [
+            120000000,
+            250000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat or down round if patient growth slows."
+        },
+        {
+          "raise_usd": [
+            40000000,
+            70000000
+          ],
+          "post_money_usd": [
+            250000000,
+            500000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ B, as with the $50M Series B that Ophelia raised in late 2021 in a hotter market."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            120000000
+          ],
+          "post_money_usd": [
+            500000000,
+            1000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the model works across many states and payers keep rates stable."
+        }
+      ],
+      "why_it_fails": "A Series B requires state by state expansion with clean unit economics. Telehealth addiction peers such as Ophelia reached a B in a loose 2021 market, while smaller ones stayed at seed. The likely failure is payer rate cuts or a Medicaid policy change that breaks margins, and venture investors back few addiction companies."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2018-2021: series_c cond 30% (n=23), B2B 57% (n=7). Small n, wide range.",
+        "adjustment_reason": "Slightly below the broad anchor of 30 percent because few healthcare services startups reach late rounds."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            50000000,
+            80000000
+          ],
+          "post_money_usd": [
+            500000000,
+            900000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Thin growth round, in line with the 2022+ median of about $45M."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            900000000,
+            1800000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical Series C for a profitable multi state provider."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1800000000,
+            3500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if it becomes the national leader for addiction care and payers pay well."
+        }
+      ],
+      "why_it_fails": "Late rounds fail when reimbursement caps growth and margins stay thin, so investors cannot justify a software multiple. Clinic businesses grow with headcount rather than software leverage, and the few addiction telehealth peers that reached Series B had to restructure around payer contracts, so the odds of a later round are low."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.45
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.32
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.19
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          3500000000
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "Most likely the app stays a small subscription business while the clinic fails to win payer contracts, or it sells to a larger behavioral health provider for a modest price. Reimbursement driven margins and clinical regulation make a billion dollar outcome unlikely, and most telehealth addiction peers in the data ended as small independent providers or modest sales."
+  },
+  "analogs": [
+    {
+      "slug": "recover",
+      "relevance": "Online addiction treatment funded by government contracts",
+      "outcome_summary": "Alive on a small seed and county contracts, no large round."
+    },
+    {
+      "slug": "ophelia",
+      "relevance": "Telehealth addiction treatment with medication",
+      "outcome_summary": "Series A $15M and Series B $50M in 2021, then Medicaid and insurer contracts."
+    },
+    {
+      "slug": "perspectives-health",
+      "relevance": "Software for addiction treatment programs",
+      "outcome_summary": "Alive with early revenue, no verified round."
+    },
+    {
+      "slug": "rthm",
+      "relevance": "Care for complex chronic illness led by lived experience founders",
+      "outcome_summary": "Alive, small seed only."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Revenue and user numbers do not reconcile and may overstate scale",
+      "p": 0.3,
+      "evidence": "100 monthly users against $1.5M run rate implies very high pricing or a different user count than stated.",
+      "analogs": [
+        "recover"
+      ],
+      "mitigation": "Show cohort retention and paid conversion in the seed deck."
+    },
+    {
+      "risk": "The clinic step needs payer contracts and licensing that take years",
+      "p": 0.4,
+      "evidence": "Telehealth addiction care depends on Medicaid and commercial payer enrollment, which peers took years to build.",
+      "analogs": [
+        "ophelia",
+        "recover"
+      ],
+      "mitigation": "Start with cash pay and one state, then add payers."
+    },
+    {
+      "risk": "Well funded telehealth addiction providers can add a sponsor style app",
+      "p": 0.25,
+      "evidence": "Boulder Care, Bicycle Health and Ophelia raised tens of millions and already hold patients.",
+      "analogs": [
+        "ophelia"
+      ],
+      "mitigation": "Use the app as a cheap acquisition channel and partner with clinics."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Boulder Care",
+      "what": "Telehealth addiction treatment, mostly Medicaid patients",
+      "traction": "$35M Series C in May 2024",
+      "source_url": "https://hitconsultant.net/2024/05/24/boulder-care-secures-35m-to-expand-telehealth-addiction-treatment-for-underserved-communities"
+    },
+    {
+      "name": "Bicycle Health",
+      "what": "Virtual buprenorphine treatment",
+      "traction": "$50M Series B in 2022",
+      "source_url": "https://bhbusiness.com/2022/09/23/virtual-mat-provider-bicycle-scores-additional-5m-from-bcbs-of-kcs-venture-arm/"
+    },
+    {
+      "name": "Workit Health",
+      "what": "Digital recovery support plus telehealth",
+      "traction": "Early funder of digital recovery",
+      "source_url": "https://www.workithealth.com/blog/workit-health-raises-1-1m-bid-go-beyond-digital-version-addiction-recovery-program/"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 2,
+    "rationale": "The app is a chat product on public models that a small team can build quickly. The hard parts are clinical safety, licensing in each state and payer billing, which are operations rather than engineering."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Boulder Care",
+      "Bicycle Health",
+      "Large recovery app makers"
+    ],
+    "timeline_months": 12,
+    "rationale": "A funded telehealth provider could ship a chat sponsor in months but lacks the brand and user base. The clinic side is slower to copy because licensing and payer contracts take time."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Venture funded telehealth addiction providers serve mostly Medicaid patients and raised large rounds",
+        "source_url": "https://hitconsultant.net/2024/05/24/boulder-care-secures-35m-to-expand-telehealth-addiction-treatment-for-underserved-communities"
+      },
+      {
+        "claim": "Federal rules let telehealth start buprenorphine and methadone treatment, enabling remote clinics",
+        "source_url": "https://mobihealthnews.com/node/152069"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Reconcile the numbers and prove retention",
+      "actions": [
+        "Publish paid conversion and 90 day retention",
+        "Document the revenue run rate by cohort"
+      ],
+      "proof": "Retention curve that flattens above 30 percent"
+    },
+    {
+      "phase": "seed",
+      "goal": "Launch a first licensed clinic offer",
+      "actions": [
+        "Hire a medical director and open one state",
+        "Pilot cash pay visits"
+      ],
+      "proof": "500 clinic patients with 60 day retention"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Win a payer contract",
+      "actions": [
+        "Enroll with a Medicaid plan",
+        "Show cost per patient below payer rates"
+      ],
+      "proof": "Positive contribution margin per patient"
+    },
+    {
+      "phase": "series_b",
+      "goal": "Multi state scale",
+      "actions": [
+        "Expand to five states",
+        "Build billing automation"
+      ],
+      "proof": "Over $20M revenue"
+    },
+    {
+      "phase": "series_c_plus",
+      "goal": "National leader",
+      "actions": [
+        "Add partners and employers",
+        "Reach profitability"
+      ],
+      "proof": "Profitable growth"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Real revenue and rapid user growth for a team this early",
+      "evidence": "About $1.5M run rate claimed in the batch listing"
+    },
+    {
+      "point": "Large funded demand for addiction care",
+      "evidence": "Medicaid focused providers raised large rounds",
+      "source_url": "https://hitconsultant.net/2024/05/24/boulder-care-secures-35m-to-expand-telehealth-addiction-treatment-for-underserved-communities"
+    }
+  ],
+  "brand": {
+    "name": "Sunflower",
+    "rating": 4,
+    "effect_on_success": "helps",
+    "name_check": "python3 -I scripts/name_features.py --score \"Sunflower\" --era 2022+ : 3 syllables, plain English word",
+    "strengths": [
+      "Warm and memorable word",
+      "Fits a recovery and hope message"
+    ],
+    "weaknesses": [
+      "Common word with several other brands using it"
+    ],
+    "rationale": "A friendly nature word works for a consumer recovery brand and helps trust, in the way mascot and plain word brands helped other YC consumer companies, though it is not a moat. Brand effect is mildly positive.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A real recovery app brand with revenue, moving into a slower regulated clinic business.",
+    "general_summary": "Sunflower is a sobriety app with an AI sponsor and a claimed $1.5M run rate, now building a telemedicine clinic for addiction. Revenue at this stage is unusual and the topic attracts Medicaid focused investors, so a seed above $500K within a year is more likely than not. The main risks are numbers that do not reconcile, payer enrollment and licensing that take years, and well funded telehealth peers. Healthcare cohorts reach Series A late and rarely, so later steps are discounted to the cohort range and the data is thin."
+  },
+  "assumptions": [
+    "Only the batch listing was used, as of 2026-07-06.",
+    "Seed step means a round above about $500K within 12 months of the batch start.",
+    "Healthcare cohort has 24 companies, so it is an anecdote and I used broad cohorts."
+  ],
+  "sources": [
+    "https://hitconsultant.net/2024/05/24/boulder-care-secures-35m-to-expand-telehealth-addiction-treatment-for-underserved-communities",
+    "https://bhbusiness.com/2022/09/23/virtual-mat-provider-bicycle-scores-additional-5m-from-bcbs-of-kcs-venture-arm/",
+    "https://mobihealthnews.com/node/152069",
+    "https://www.workithealth.com/blog/workit-health-raises-1-1m-bid-go-beyond-digital-version-addiction-recovery-program/"
+  ]
+}

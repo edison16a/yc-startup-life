@@ -1,0 +1,405 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "KelAI",
+    "one_liner": "The AI Quant: Autonomous Alpha Engine for Funds and Traders.",
+    "description": "An AI engine that continuously finds, tests and validates trading signals for hedge funds and institutional investors, founded by a former WorldQuant portfolio manager and head of event driven systematic strategies. Three person team in New York.",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.15,
+    "p_low": 0.06,
+    "p_high": 0.3,
+    "basis": "Company is assumed accepted. The prior is about 1 percent; a founder who ran event driven systematic strategies at WorldQuant is strong founder market fit and AI for finance fits YC interests, so this note sits at the top of the allowed 15 percent range.",
+    "why_it_fails": "YC would most plausibly decline if the pitch could not show verified out of sample signal quality or a paying fund customer, since autonomous alpha claims are common and hard to prove, and hedge funds are secretive buyers that rarely let a three person startup near their data."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.8,
+      "anchors": {
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only: seed cond 57% (n=23); broad cohort --years 2022-2025 --calibration-only: seed cond 57% (n=201), range 48%/57%/64%. Seed here means a round above the $500K YC deal within about 12 months.",
+        "adjustment_reason": "1.4x the broad and Fintech anchor: a named quant PM pedigree and a hot AI for finance category make a larger seed more likely than for a typical batch company; I cannot verify traction."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            700000,
+            2500000
+          ],
+          "post_money_usd": [
+            8000000,
+            18000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Small round from angels if no fund pilots land."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            7000000
+          ],
+          "post_money_usd": [
+            18000000,
+            40000000
+          ],
+          "p_band": 0.55,
+          "rationale": "Typical AI fintech seed for a founder with institutional pedigree, near Fintech 2022+ median of 3.5M raise."
+        },
+        {
+          "raise_usd": [
+            7000000,
+            20000000
+          ],
+          "post_money_usd": [
+            40000000,
+            120000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside seen in AI quant peers, for example Inference Research's reported 20M seed in February 2026."
+        }
+      ],
+      "why_it_fails": "The seed fails if investors treat autonomous alpha as unproven science: with no live track record or fund customer, quant specialists may pass, and generalists may not trust back-tests. Pit.AI (W17) raised little and closed after struggling to raise capital, while Event Horizon Labs shows many AI investing labs competing for the same few investors."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --calibration-only: series_a cond 22% (n=115), range 11%/12%/26%; --years 2018-2025 --industry Industrials: 25% (n=16).",
+        "adjustment_reason": "1.1x the broad anchor and just below Fintech's 27 percent: sales to funds are slow and need proof, but a funded seed in the category usually converts if pilots appear."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            8000000,
+            14000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin A with a few pilot funds and no live results."
+        },
+        {
+          "raise_usd": [
+            14000000,
+            28000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical fintech infrastructure A, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            28000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if funds pay seven figure licences or it gains a flagship allocator."
+        }
+      ],
+      "why_it_fails": "The Series A fails if funds will not pay for a tool whose edge they cannot verify, or if they build equivalents in house with their own data and AI teams. The buyers are few, secretive and slow, and every fund guards its signals; Pit.AI could not raise LP capital and Trata sells research tools with only seed funding found."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.38,
+      "anchors": {
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_b cond 44% (n=126), range 8%/15%/53% unconditional; 2022-2025 cohort is right censored (12%, n=25).",
+        "adjustment_reason": "0.9x the anchor; few AI fintech names have reached B, and growth depends on a very small buyer base."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat B after slow license growth, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            90000000
+          ],
+          "post_money_usd": [
+            350000000,
+            800000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical fintech infrastructure B, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            90000000,
+            200000000
+          ],
+          "post_money_usd": [
+            800000000,
+            2000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it signs top funds and expands to asset managers."
+        }
+      ],
+      "why_it_fails": "The Series B fails if the market of hedge funds willing to buy external signal engines is smaller than hoped, with in house teams at large funds and rivals such as AlphaSense and LinqAlpha limiting pricing. Revenue per customer may be high, but customer counts stay in the dozens."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_c cond 36% (n=55), range 3%/6%/48% unconditional.",
+        "adjustment_reason": "0.8x the anchor, reflecting a narrow buyer set; no analog in fintech quant tools has reached C."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            400000000,
+            1000000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Late flat round, possibly with a strategic, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2500000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical growth round, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            250000000,
+            600000000
+          ],
+          "post_money_usd": [
+            2500000000,
+            6000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes core infrastructure for quant funds."
+        }
+      ],
+      "why_it_fails": "The Series C fails if the product stays a niche tool for a few hundred funds and the AI research agent becomes a commodity from large model labs and data vendors. Few fintech infrastructure companies with a customer base this small reach late stage rounds without an expansion product."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.5
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          10000000,
+          100000000
+        ],
+        "p": 0.24
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.21
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          4000000000
+        ],
+        "p": 0.05
+      }
+    ],
+    "why_it_fails": "A stall is most likely: a small buyer base, long sales cycles and unprovable alpha claims lead to a few pilots and no scale. Pit.AI and Event Horizon Labs show AI investing efforts that remain unproven, and the likely good outcome is a sale to a data vendor such as AlphaSense."
+  },
+  "analogs": [
+    {
+      "slug": "pit-ai",
+      "relevance": "AI for investment management with a quant founder.",
+      "outcome_summary": "Small seed, struggled to raise LP money, closed about 2021."
+    },
+    {
+      "slug": "event-horizon-labs",
+      "relevance": "AI research lab automating investing.",
+      "outcome_summary": "Active since W24, no funding verified."
+    },
+    {
+      "slug": "trata",
+      "relevance": "Research tool sold to hedge funds with founder market fit.",
+      "outcome_summary": "Seed round, active with six people."
+    },
+    {
+      "slug": "algotest",
+      "relevance": "Quant tooling for traders.",
+      "outcome_summary": "Active community product with a 40 person team; no venture round found."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Alpha claims cannot be verified so funds will not pay",
+      "p": 0.4,
+      "evidence": "Quant buyers demand out of sample proof, and Pit.AI could not raise LP money without a track record.",
+      "analogs": [
+        "pit-ai",
+        "event-horizon-labs"
+      ],
+      "mitigation": "Run a paper trading book and share audited results with design partners."
+    },
+    {
+      "risk": "Funds build in house or use general AI agents",
+      "p": 0.3,
+      "evidence": "Large funds have their own data science staff and research AI assistants are sold by vendors such as AlphaSense.",
+      "analogs": [
+        "trata",
+        "event-horizon-labs"
+      ],
+      "mitigation": "Sell to mid size funds without engineering depth."
+    },
+    {
+      "risk": "Very small and secretive buyer base limits revenue",
+      "p": 0.25,
+      "evidence": "There are only a few thousand institutional funds and each protects its data.",
+      "analogs": [
+        "algotest",
+        "pit-ai"
+      ],
+      "mitigation": "Expand to family offices and prop traders."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Inference Research",
+      "what": "AI quant trading startup with a large seed.",
+      "traction": "Reported 20M seed in February 2026.",
+      "source_url": "https://www.pulse.bot/ai/deals/inference-research-raises-20m-seed-round-led-by-avenir-group-b87df0f7-f236-48d5-8c38-9e49b3a66d28/"
+    },
+    {
+      "name": "AlphaSense and AI research vendors",
+      "what": "Research assistants sold to hedge funds.",
+      "traction": "Established vendor with large customer base.",
+      "source_url": "https://alpha-sense.com/resources/product-articles/ai-tools-hedge-funds"
+    },
+    {
+      "name": "In house quant teams",
+      "what": "Funds build their own research stack.",
+      "traction": "Default at large funds.",
+      "source_url": "https://alpha-sense.com/resources/product-articles/ai-tools-hedge-funds"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 4,
+    "rationale": "An agent loop that generates, back-tests and validates signals is buildable by a small team, but avoiding overfitting, getting data licences and proving out of sample edge is hard; the founder's quant experience helps."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "AlphaSense",
+      "Bloomberg",
+      "Large funds in house"
+    ],
+    "timeline_months": 18,
+    "rationale": "Data vendors have distribution but not quant credibility; funds can copy with their own teams. A rival could ship a similar workflow in about a year but trust is slow to build."
+  },
+  "market_need_now": {
+    "rating": 3,
+    "evidence": [
+      {
+        "claim": "Hedge funds spend on AI research tools and investors fund AI quant startups.",
+        "source_url": "https://www.pulse.bot/ai/deals/inference-research-raises-20m-seed-round-led-by-avenir-group-b87df0f7-f236-48d5-8c38-9e49b3a66d28/"
+      },
+      {
+        "claim": "Established vendors sell AI tools to hedge funds today.",
+        "source_url": "https://alpha-sense.com/resources/product-articles/ai-tools-hedge-funds"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show verified signal quality.",
+      "actions": [
+        "Publish a paper trading record",
+        "Sign one fund design partner"
+      ],
+      "proof": "Out of sample results and one paid pilot."
+    },
+    {
+      "phase": "seed",
+      "goal": "Convert pilots to paid.",
+      "actions": [
+        "Sell to five mid size funds",
+        "Hire a quant researcher"
+      ],
+      "proof": "500K in contracted annual revenue."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Strong founder market fit",
+      "evidence": "Founder ran event driven systematic strategies at WorldQuant.",
+      "source_url": "https://alpha-sense.com/resources/product-articles/ai-tools-hedge-funds"
+    },
+    {
+      "point": "Investor appetite for AI in finance",
+      "evidence": "AI quant peers raised large seeds in 2026.",
+      "source_url": "https://www.pulse.bot/ai/deals/inference-research-raises-20m-seed-round-led-by-avenir-group-b87df0f7-f236-48d5-8c38-9e49b3a66d28/"
+    }
+  ],
+  "brand": {
+    "name": "KelAI",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"KelAI\" --era 2022+: name plus descriptor, 5 chars, 2 syllables",
+    "strengths": [
+      "Short",
+      "Hints at the Kelly criterion for quants"
+    ],
+    "weaknesses": [
+      "The AI suffix is crowded and the name is a founder derived string"
+    ],
+    "rationale": "The AI suffix follows a crowded trend that most 2023 to 2026 YC names share and gives little distinctiveness, though the Kelly reference may delight quants; brand will matter little against pedigree and results."
+  },
+  "narrative": {
+    "headline": "Pedigreed founder in a hot but trust-limited category, with a likely seed and a hard Series A.",
+    "general_summary": "KelAI pitches an autonomous research engine for hedge funds from a former WorldQuant portfolio manager. Investor interest in AI for finance was high in early 2026, so a seed above the YC deal is likely. The harder steps are proof and distribution: funds are secretive, verify alpha slowly and often build their own tools. Analogs such as Pit.AI struggled to raise, while some AI research tools did reach seed and beyond. Probabilities follow the cohort anchors with a lift for pedigree at seed, and no discount below anchor at later steps."
+  },
+  "assumptions": [
+    "Only the input description was used about the company.",
+    "A web search surfaced news about this company dated after the as_of date; it was ignored.",
+    "Seed means a round above 500K within about 12 months of the batch start.",
+    "Fintech 2022+ cohort has only 26 researched companies."
+  ],
+  "sources": [
+    "https://www.pulse.bot/ai/deals/inference-research-raises-20m-seed-round-led-by-avenir-group-b87df0f7-f236-48d5-8c38-9e49b3a66d28/",
+    "https://alpha-sense.com/resources/product-articles/ai-tools-hedge-funds"
+  ]
+}

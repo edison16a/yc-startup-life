@@ -1,0 +1,420 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Complir",
+    "one_liner": "Vanta for physical products",
+    "description": "AI-powered product compliance platform that makes it easy for retailers to launch and scale products across borders without drowning in regulatory work. Complir's AI agents handle the regulations and documentation across every market you sell in - and keep your entire catalogue audit-ready.",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.03,
+    "p_low": 0.015,
+    "p_high": 0.05,
+    "basis": "Roughly 1 percent base rate. Conditional on acceptance this is a note: a thirteen person Copenhagen team with a clear Vanta comparison and a regulatory driver, so the estimate sits above the base.",
+    "why_it_fails": "YC would most plausibly worry about a European team selling to retailers with long sales cycles and regulation that varies by country, and whether AI agents can be trusted for compliance. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as upcodes and pluralith."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.72,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Within 0.75 times of the 59 percent recent anchor and below the 81 percent older anchor. Compliance automation with a Vanta analogy attracts seed investors, but a European base lowers the odds of a quick large US round."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            14000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin round from European angels. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            5000000
+          ],
+          "post_money_usd": [
+            15000000,
+            30000000
+          ],
+          "p_band": 0.55,
+          "rationale": "Core round near the 2022+ YC median of 4.1M. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            35000000,
+            70000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if retailer pilots turn into paid contracts. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "The seed most plausibly fails if investors see consulting work rather than software, because every market has its own rules and documents. UpCodes, a YC building code platform, grew slowly and Pluralith, a compliance documentation tool, did not show a later round. Without paid retailers by demo day the Vanta comparison alone will not close a round."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.27,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Set near the 26 to 32 percent Series A anchors from the cohort commands above and not below 0.75 times the recent anchor of 26 percent, per the backtest rule; reaching a round later is common for companies with paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            7000000,
+            12000000
+          ],
+          "post_money_usd": [
+            35000000,
+            60000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin A. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core A near market 17M. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            22000000,
+            40000000
+          ],
+          "post_money_usd": [
+            130000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series A fails if retail customers buy slowly and each market needs manual expertise, so growth looks like services. UpCodes needed years to reach a Series A, and the regulatory data moat is hard to build. Large incumbents in product information management can add compliance modules. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as upcodes and pluralith."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Anchor is 16 percent for 2022 to 2025 (n=19) and 39 percent for 2018 to 2021 (n=18); set between them at a figure above 0.75 times the recent anchor, since survivors of Series A usually have paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            35000000,
+            55000000
+          ],
+          "post_money_usd": [
+            200000000,
+            420000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            450000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series B fails if the company stays a niche tool for a few categories. Selling to retailers across borders requires local expertise, and a rival with more regulatory data could take the category before Complir scales. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as upcodes and pluralith."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Older cohort anchor 57 percent (n=7) and recent 0 percent (n=3), both tiny samples; set well below the older anchor because few companies reach late stage and the samples are anecdotes."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000,
+            60000000
+          ],
+          "post_money_usd": [
+            300000000,
+            500000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Modest. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            500000000,
+            1000000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "A Series C requires becoming the standard compliance system for physical products. The category could be taken by marketplaces such as Amazon and by ERP vendors who offer the same documents. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as upcodes and pluralith."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.4
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.4
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.17
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.03
+      }
+    ],
+    "why_it_fails": "A stall is likeliest if regulatory content costs stay high. Exits are most plausibly acquisitions by product data, ERP or testing companies under 100M. A very large outcome would mirror Vanta. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as upcodes and pluralith."
+  },
+  "analogs": [
+    {
+      "slug": "upcodes",
+      "relevance": "Regulation and code data for built products.",
+      "outcome_summary": "Series A after slow growth."
+    },
+    {
+      "slug": "pluralith",
+      "relevance": "Automated compliance documentation.",
+      "outcome_summary": "No later round found."
+    },
+    {
+      "slug": "markit",
+      "relevance": "Product compliance for global markets, Fall 2025.",
+      "outcome_summary": "Too recent; direct competitor in the same batch cycle."
+    },
+    {
+      "slug": "pier",
+      "relevance": "Compliance as a service for credit.",
+      "outcome_summary": "Reached a seed."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Regulatory content is expensive and local",
+      "p": 0.4,
+      "evidence": "Each country has different rules and documents, which look like services. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "upcodes",
+        "pluralith"
+      ],
+      "mitigation": "Focus on EU GPSR and a few categories first."
+    },
+    {
+      "risk": "Long retailer sales cycles",
+      "p": 0.35,
+      "evidence": "Large retailers take many months to buy compliance tools. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "upcodes"
+      ],
+      "mitigation": "Sell to fast mid market brands."
+    },
+    {
+      "risk": "Platforms and incumbents add compliance",
+      "p": 0.3,
+      "evidence": "Marketplaces like Etsy already added compliance tools in 2025. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "pluralith"
+      ],
+      "mitigation": "Sell across channels."
+    },
+    {
+      "risk": "Europe based fundraising",
+      "p": 0.2,
+      "evidence": "European seed rounds are smaller than US ones. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "pier"
+      ],
+      "mitigation": "Build US presence early."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Etsy and marketplace tooling",
+      "what": "Marketplaces added GPSR compliance tools.",
+      "traction": "Etsy rolled out tools in April 2025.",
+      "source_url": "https://www.bakermckenzie.com/en/insight/publications/resources/product-risk-radar-articles/general-product-safety-regulation"
+    },
+    {
+      "name": "Product information management vendors",
+      "what": "PIM and ERP vendors adding compliance modules.",
+      "traction": "Established customer bases.",
+      "source_url": "https://www.dlapiper.com/insights/publications/2025/02/new-regulations-reshape-the-product-safety-landscape"
+    },
+    {
+      "name": "Consultancies and testing labs",
+      "what": "Services firms doing documentation by hand.",
+      "traction": "Status quo for most retailers.",
+      "source_url": "https://www.mhc.ie/latest/insights/application-of-the-general-product-safety-regulation-to-software"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Agents that read regulations and generate technical documents are feasible, but accuracy and audit readiness across many markets are hard. A small team can cover one regulation set first."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Marketplaces",
+      "PIM and ERP vendors",
+      "Testing labs"
+    ],
+    "timeline_months": 12,
+    "rationale": "Incumbents have distribution but not the regulatory depth. The timeline is an estimate for a well resourced rival with existing distribution and an incentive to copy the idea."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "The EU General Product Safety Regulation applied from December 2024 to any seller into the EU, creating documentation duties.",
+        "source_url": "https://www.bakermckenzie.com/en/insight/publications/resources/product-risk-radar-articles/general-product-safety-regulation"
+      },
+      {
+        "claim": "Law firm analysis shows the scope covers non food consumer products and some B2B goods.",
+        "source_url": "https://www.dlapiper.com/insights/publications/2025/02/new-regulations-reshape-the-product-safety-landscape"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Get paying retailers.",
+      "actions": [
+        "Sign five pilot retailers in the EU.",
+        "Ship GPSR documentation."
+      ],
+      "proof": "Paid pilots from five retailers."
+    },
+    {
+      "phase": "seed",
+      "goal": "Show repeatable onboarding.",
+      "actions": [
+        "Cover three regulation sets.",
+        "Measure hours saved."
+      ],
+      "proof": "Net revenue retention above 100 percent."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Expand categories.",
+      "actions": [
+        "Add US and UK rules.",
+        "Hire regulatory staff."
+      ],
+      "proof": "Annualized revenue above 3M."
+    }
+  ],
+  "pros": [
+    {
+      "point": "A regulatory forcing function.",
+      "evidence": "GPSR applies to all sellers into the EU.",
+      "source_url": "https://www.bakermckenzie.com/en/insight/publications/resources/product-risk-radar-articles/general-product-safety-regulation"
+    },
+    {
+      "point": "A clear analogy to a proven category.",
+      "evidence": "Vanta style compliance automation."
+    }
+  ],
+  "brand": {
+    "name": "Complir",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Complir\" --era 2022+ : one word invented name with a compliance echo.",
+    "strengths": [
+      "Hints at compliance."
+    ],
+    "weaknesses": [
+      "Spelling is awkward."
+    ],
+    "rationale": "The name is invented but echoes compliance and is easy to say. It resembles many recent invented B2B names and will not change outcomes much.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A timely compliance idea with a good analogy, held back by local regulatory work and a long retail sales cycle.",
+    "general_summary": "Complir sells AI product compliance to retailers. A new EU regulation gives it a clear trigger and a thirteen person team is large for a spring 2026 company. The likeliest path is a seed, then a harder Series A as investors test whether it scales like software. UpCodes and Pluralith show slower paths. Data on recent B2B Series B outcomes is thin. The step odds are anchored on the 2022 to 2025 B2B cohorts and the older 2018 to 2021 cohort, which differ a lot, so treat the later rounds as wide ranges."
+  },
+  "assumptions": [
+    "Founders and customers were not provided.",
+    "Competitor search results gave no market size for compliance software."
+  ],
+  "sources": [
+    "https://www.bakermckenzie.com/en/insight/publications/resources/product-risk-radar-articles/general-product-safety-regulation",
+    "https://www.dlapiper.com/insights/publications/2025/02/new-regulations-reshape-the-product-safety-landscape",
+    "https://www.mhc.ie/latest/insights/application-of-the-general-product-safety-regulation-to-software",
+    "https://www.ycombinator.com/deal"
+  ]
+}

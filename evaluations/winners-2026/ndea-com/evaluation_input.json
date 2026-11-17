@@ -1,0 +1,404 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Ndea",
+  "one_liner": "Building AGI that can innovate.",
+  "description": "Ndea is a remote AI research lab of about 15 people aiming at AGI that can invent, by combining deep learning intuition with formal reasoning and program synthesis. It has no product in the description. Revenue is not stated; funding would come from investors who back frontier research, with a later plan to commercialize discoveries across science and industry.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.06,
+  "basis": "In this test the company is assumed accepted to YC for Winter 2026, so this is a short note. Prior is about 1 percent. A 15 person team is far larger than the 2 to 3 person norm, which signals a serious technical group, but a pure research lab without a product is an unusual fit for YC and the pitch gives no evidence about the team, so roughly 3 percent.",
+  "why_it_fails": "YC would most plausibly pass because a frontier AGI lab without a product, revenue or a stated path to customers is a poor fit for a three month program, needs capital orders of magnitude beyond the YC check, and the pitch gives no evidence on who the researchers are."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.72,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed 50/61/67 (cond 61%, n=109), series_a 11/14/28 (cond 23%, n=66), series_b 1/1/18 (cond 7%, n=15), series_c 0/0/17 (n=1). Broad all-era conditionals from stage_benchmarks.md: A 45%, B 44%, C 36%.",
+    "adjustment_reason": "Above the 61 percent AI anchor (1.2x): a 15 person team in AI research is an unusual signal and frontier AI labs have attracted unusually large early rounds, but the description names no credentials, so this is not pushed higher."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      5000000
+     ],
+     "post_money_usd": [
+      15000000,
+      40000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A small round for a research team without a name brand, near the AI cohort p75 of 5M."
+    },
+    {
+     "raise_usd": [
+      5000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      150000000
+     ],
+     "p_band": 0.45,
+     "rationale": "A seed sized for a 15 person research lab that must pay for compute and salaries; above cohort medians because the team is much larger."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      80000000
+     ],
+     "post_money_usd": [
+      200000000,
+      800000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Frontier lab seed priced on the team and AGI narrative, as hot AI labs have raised."
+    }
+   ],
+   "why_it_fails": "The seed fails if the team cannot show a result that investors can verify, such as a benchmark gain, because there is no product and the description offers only a vision. Maya Labs and Output Labs, both deep research bets in the YC data, show no outside round recorded, and AGI labs compete with OpenAI, Google and others for the same investors."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.32,
+   "anchors": {
+    "base_rate": 0.23,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed 50/61/67 (cond 61%, n=109), series_a 11/14/28 (cond 23%, n=66), series_b 1/1/18 (cond 7%, n=15), series_c 0/0/17 (n=1). Broad all-era conditionals from stage_benchmarks.md: A 45%, B 44%, C 36%.",
+    "adjustment_reason": "Above the 23 percent AI conditional (1.4x) because labs that clear a large seed rarely need a classic A and often raise again if results arrive, but the 45 percent broad rate is not reached since research cost is high."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      10000000,
+      40000000
+     ],
+     "post_money_usd": [
+      100000000,
+      400000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Research round sized below frontier scale for a lab with partial results."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      150000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Large A for a credible AGI lab with benchmark results."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      500000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      5000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Frontier style round if the architecture shows strong scaling and clear results."
+    }
+   ],
+   "why_it_fails": "A second round needs evidence that the approach scales better than large language models, and benchmarks on abstract reasoning are not a business. Compute costs consume the seed within about a year, and investors will compare the lab to well funded frontier labs, so a miss on results stalls it, as with Pit.AI, which tried to solve intelligence for investing and shut down after a seed."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.07,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed 50/61/67 (cond 61%, n=109), series_a 11/14/28 (cond 23%, n=66), series_b 1/1/18 (cond 7%, n=15), series_c 0/0/17 (n=1). Broad all-era conditionals from stage_benchmarks.md: A 45%, B 44%, C 36%.",
+    "adjustment_reason": "Above the 7 percent 2022+ AI figure (n=15, censored) but under the 44 percent broad cohort; five times the narrow figure is justified because the narrow cohort is mostly young software companies and any lab that reaches an A has proven large investor appetite."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      50000000,
+      150000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Down or flat round for a research lab that has not found a product."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      500000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      5000000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical raise for a leading second tier AI lab."
+    },
+    {
+     "raise_usd": [
+      500000000,
+      2000000000
+     ],
+     "post_money_usd": [
+      5000000000,
+      20000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Frontier scale raise if the lab is seen as a top tier competitor."
+    }
+   ],
+   "why_it_fails": "Series B needs either a commercial product or a breakthrough, and a lab that remains research only faces the question of why it exists next to better funded rivals. Synthetic Minds, built on program synthesis, shut down after a seed because the approach did not become a product."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed 50/61/67 (cond 61%, n=109), series_a 11/14/28 (cond 23%, n=66), series_b 1/1/18 (cond 7%, n=15), series_c 0/0/17 (n=1). Broad all-era conditionals from stage_benchmarks.md: A 45%, B 44%, C 36%.",
+    "adjustment_reason": "At the 36 percent broad anchor, a little under because very few labs survive to this scale."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      300000000,
+      1000000000
+     ],
+     "post_money_usd": [
+      3000000000,
+      10000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Large growth round for a lab with a commercial path and revenue."
+    },
+    {
+     "raise_usd": [
+      1000000000,
+      3000000000
+     ],
+     "post_money_usd": [
+      10000000000,
+      30000000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Frontier scale round priced on capability leadership against the big labs."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Smaller round if the lab licenses narrow capabilities and stays modest."
+    }
+   ],
+   "why_it_fails": "At this stage the lab competes on compute with trillion dollar companies, so investors want revenue or a unique capability that large labs lack. Many research labs are acquired or folded into a larger company instead of raising a Series C, and research timelines can slip well beyond investor patience."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
+    ],
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.17
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     20000000000
+    ],
+    "p": 0.13
+   }
+  ],
+  "why_it_fails": "The most likely failure is that the architecture does not beat scaled language models, the team cannot afford compute, and the lab is folded or acquired for talent; deep research bets such as Maya Labs and Synthetic Minds in the YC data show how slow and rare breakthroughs are."
+ },
+ "analogs": [
+  {
+   "slug": "synthetic-minds",
+   "relevance": "Program synthesis startup, a core method of this lab.",
+   "outcome_summary": "Raised a seed and shut down."
+  },
+  {
+   "slug": "maya-labs",
+   "relevance": "Self programming machines, deep research with complexity 5.",
+   "outcome_summary": "Active, no outside round recorded."
+  },
+  {
+   "slug": "output-labs",
+   "relevance": "A science foundation research bet with very high technical complexity.",
+   "outcome_summary": "Active, no outside round recorded."
+  },
+  {
+   "slug": "pit-ai",
+   "relevance": "Aimed to solve intelligence for a vertical.",
+   "outcome_summary": "Raised a seed, later shut down."
+  },
+  {
+   "slug": "afterquery",
+   "relevance": "Applied research lab for foundation model data.",
+   "outcome_summary": "Active, reached a Series A."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "No result that beats scaled language models",
+   "p": 0.5,
+   "evidence": "Frontier labs have far more compute, and an alternative architecture must show a measurable edge quickly.",
+   "analogs": [
+    "synthetic-minds",
+    "maya-labs"
+   ],
+   "mitigation": "Publish verifiable benchmark gains early."
+  },
+  {
+   "risk": "Compute and salary burn exceed the seed",
+   "p": 0.4,
+   "evidence": "A 15 person team burns millions per year before compute costs.",
+   "analogs": [
+    "output-labs",
+    "pit-ai"
+   ],
+   "mitigation": "Raise a large seed and license narrow capabilities."
+  },
+  {
+   "risk": "Talent poaching by large labs",
+   "p": 0.25,
+   "evidence": "Frontier labs offer researchers far larger pay packages than an early lab can match.",
+   "analogs": [
+    "afterquery"
+   ],
+   "mitigation": "Offer equity and mission, and keep a small core team."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "OpenAI, Google DeepMind and Anthropic",
+   "what": "Frontier labs pursuing reasoning and agents",
+   "traction": "Billions of dollars of funding",
+   "source_url": "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/"
+  },
+  {
+   "name": "Academic and open neuro-symbolic research groups",
+   "what": "Program synthesis and reasoning research",
+   "traction": "Published results, no products",
+   "source_url": "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/"
+  },
+  {
+   "name": "Status quo of scaled language models",
+   "what": "Current dominant path to capability",
+   "traction": "Hundreds of millions of users",
+   "source_url": "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "Merging deep learning with formal reasoning is an open research problem, and success is uncertain. A small team can run experiments but cannot match frontier compute, so the moat exists only if the architecture is genuinely better."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "OpenAI",
+   "Google DeepMind",
+   "Anthropic"
+  ],
+  "timeline_months": 24,
+  "rationale": "Large labs could copy a proven idea within months, but they have not shown interest in a non-transformer path, and a breakthrough would still require time to reproduce."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Investors and labs are spending heavily on AI capability and training environments, showing appetite for research that improves agents.",
+    "source_url": "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/"
+   },
+   {
+    "claim": "Capital for AI research companies is abundant relative to other sectors in 2025 and 2026.",
+    "source_url": "https://carta.com/data/state-of-private-markets-q3-2026-full-report/"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a result",
+   "actions": [
+    "Publish a benchmark improvement",
+    "Release a small open demo"
+   ],
+   "proof": "A third party verified result"
+  },
+  {
+   "phase": "seed",
+   "goal": "Convince investors the architecture scales",
+   "actions": [
+    "Run scaling experiments",
+    "Recruit two senior researchers"
+   ],
+   "proof": "A signed round of 5M or more"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Team of 15 is large and likely senior for a YC company",
+   "evidence": "Median team is two to three founders; size signals prior funding or serious backing.",
+   "source_url": "https://carta.com/data/state-of-private-markets-q3-2026-full-report/"
+  },
+  {
+   "point": "AI capital is abundant",
+   "evidence": "Carta reports seed size up 50 percent versus 2021.",
+   "source_url": "https://carta.com/data/state-of-private-markets-q3-2026-full-report/"
+  }
+ ],
+ "brand": {
+  "name": "Ndea",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Ndea\" --era 2022+ : 4 characters, invented, no suffix",
+  "strengths": "Short and distinctive; story from Greek concepts",
+  "weaknesses": "Hard to pronounce on first read and easy to misspell",
+  "rationale": "The name is short and unique, which helps search and recall, but the pronunciation is unclear. Research labs live on reputation more than brand, so the effect is small.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A well staffed AGI research bet with a high chance of a large seed and a low chance of becoming a durable company.",
+  "general_summary": "Ndea is a research lab, not a product company, so the main question is whether investors fund a big seed for a 15 person team and whether results arrive. The data shows deep research bets rarely survive without a result, while AI capital is abundant. The ladder therefore starts high at seed and falls sharply afterward, with the upside path coming from a breakthrough or from a pivot to a product that commercializes the technology. Missing funding data is not failure, and reaching a round years later is common for companies with real results, so the later steps are held near the broad cohort rather than the censored recent one."
+ },
+ "assumptions": [
+  "Test is blind: only the YC input file was used for company facts.",
+  "Seed means a round above $500K within about 12 months.",
+  "Web search results naming this company were ignored (LEAK-WEB)."
+ ],
+ "sources": [
+  "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/",
+  "https://carta.com/data/state-of-private-markets-q3-2026-full-report/"
+ ]
+}

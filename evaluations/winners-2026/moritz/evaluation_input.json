@@ -1,0 +1,430 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Moritz",
+    "one_liner": "Global AI-native law firm handling legal work with same-day turnaround",
+    "description": "A law firm run from Oslo with a small team of lawyers using AI to turn around deal work in hours. It says its lawyers closed about $3bn of deals with a 4 hour average turnaround. Clients are companies and startups that pay legal fees for transactions and contracts. Backed by YC, 20VC and a long list of founder angels.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.06,
+    "p_low": 0.02,
+    "p_high": 0.12,
+    "basis": "Starting rate is about 1 percent (0.6 to 2 percent band, yc_acceptance.md). Test assumption: the company was accepted, so this note records the adjustments only. Up for a lawyer led team with claimed closed deals, a sharp speed wedge and strong angel backing before the batch. Down because law firm ownership rules limit the structure and a services business is a weaker YC fit. Test note: accepted in fact, so this step is not scored.",
+    "why_it_fails": "YC would most plausibly worry that a law firm is a services business with linear headcount growth and regulatory limits on who may own it, so the upside looks capped. A claim of closed deals and fast turnaround is hard to verify, and Oslo based founders serving a global client base may lack a US client channel."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.62,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126); upper bound seed about 64% for the broad cohort. ",
+        "adjustment_reason": "Within 2x of the cohort. Raised up slightly because AI-native law firm is a funded category, the batch lists famous angel backers and claimed revenue exists. Capped because the step requires a round above about $500K inside 12 months."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000,
+            2000000
+          ],
+          "post_money_usd": [
+            10000000,
+            15000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Small round near the standard deal because law firm equity is awkward for VCs."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            5000000
+          ],
+          "post_money_usd": [
+            15000000,
+            30000000
+          ],
+          "p_band": 0.55,
+          "rationale": "Typical 2022+ seed (cohort median about $3.3M raise) at a $15M to $30M post, in line with the market seed benchmark of about $3M deals."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside from the hot AI-native law firm theme, where a peer firm raised a $20M Series A in 2025."
+        }
+      ],
+      "why_it_fails": "A round above $500K inside 12 months fails if investors treat a law firm as a services business. Lawyer owned structures cannot take normal equity in many places, Blueshoe and Spire Law show AI-native or tech-enabled firms that stayed small and never raised large rounds, and Norwegian base limits US investor access."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.24,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: series_a cond 26% (n=74) (broad 22%, n=115; B2B 26%, n=74). ",
+        "adjustment_reason": "Within the cohort range. Held near the anchor because legal is a high willingness to pay area, but services margins and regulation push down."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            25000000,
+            45000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin A near the 2018-2021 median of about $10M raise."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            20000000
+          ],
+          "post_money_usd": [
+            45000000,
+            90000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ A (median about $14M to $15M raise, market about $17M at about $60M pre)."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            90000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it proves software like margins and wins in the AI-native firm race."
+        }
+      ],
+      "why_it_fails": "Series A needs proof that revenue scales without hiring lawyers at the same rate. The most plausible miss is flat gross margin: AI speeds work but each deal still needs a licensed lawyer, so investors see a boutique firm. Flo and Spire Law show legal startups that stayed small or grew slowly, and well funded peers can outspend it."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 (broad cohort series_b cond 12%, n=25) and --years 2018-2021 --industry B2B (series_b cond 39%, n=18). Older cohort used because 2022+ is right censored.",
+        "adjustment_reason": "Below the 2018-2021 B2B anchor and above the thin 2022+ rate, so inside the 0.75 to 2x band."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            180000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat round, near the 2018-2021 median of about $29M."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            55000000
+          ],
+          "post_money_usd": [
+            180000000,
+            350000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ B of about $37M median, market about $40M at about $190M pre."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            800000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the category leader across several countries."
+        }
+      ],
+      "why_it_fails": "A Series B needs a repeatable multi jurisdiction machine. The risk is that regulation blocks expansion, since a law firm must be licensed where it practices, and that bigger competitors copy the speed pitch. Analogs such as Spire Law and Blueshoe stayed local, and large firms adopting AI close the speed gap."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2018-2021: series_c cond 30% (n=23), B2B 57% (n=7). Small n, wide range.",
+        "adjustment_reason": "At the broad cohort anchor, n is small."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000,
+            70000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Thin C near the 2022+ median of about $45M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            800000000,
+            1800000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical growth round, with market series C deals near $77M and 2022+ YC medians of $45M."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1800000000,
+            4000000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if it is the default legal provider for startups."
+        }
+      ],
+      "why_it_fails": "Late rounds fail when growth slows into a profitable but modest firm. Investors need a path to a very large profit pool, and a law firm structure usually caps valuation multiples because revenue depends on licensed lawyers. Companies that sell lawyer time, like Spire Law, rarely reach this stage, and the few legal startups that do need software revenue."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.45
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.3
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.19
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          4000000000
+        ],
+        "p": 0.06
+      }
+    ],
+    "why_it_fails": "Most likely the firm stays a profitable but small boutique, or a bigger funded rival and the large law firms close the speed gap. Regulation on ownership and cross border practice limits scale and exit multiples, so a venture sized outcome needs the model to prove software like margins first."
+  },
+  "analogs": [
+    {
+      "slug": "blueshoe",
+      "relevance": "AI-native consumer and plaintiff law firm, also relies on a lawyer managing partner",
+      "outcome_summary": "Alive, seed at most, no verified traction. Shows the category is early."
+    },
+    {
+      "slug": "spire-law",
+      "relevance": "Tech enabled litigation law firm from YC",
+      "outcome_summary": "Stayed a small self sustaining firm with about 10 people, never raised venture money."
+    },
+    {
+      "slug": "flo",
+      "relevance": "Legal talent platform, legal vertical with slow capital efficient growth",
+      "outcome_summary": "Seed in 2019 era, Series A of about $5M only in 2025."
+    },
+    {
+      "slug": "caseflood-ai",
+      "relevance": "AI for law firm intake, fast seed after batch",
+      "outcome_summary": "Announced a $3.2M round about six months after its batch."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Law firm ownership rules cap equity returns and block expansion into other jurisdictions",
+      "p": 0.35,
+      "evidence": "Lawyer ownership and licensing rules differ by country, and the model only works in places that allow it or via an affiliated structure.",
+      "analogs": [
+        "blueshoe",
+        "spire-law"
+      ],
+      "mitigation": "Pick jurisdictions with alternative business structures and pair the firm with a software company that holds the venture equity."
+    },
+    {
+      "risk": "Speed claims are not verifiable and the model is hard to reproduce at scale",
+      "p": 0.3,
+      "evidence": "The 4 hour turnaround on $3bn of deals is self reported and based on a few lawyers on complex deals.",
+      "analogs": [
+        "spire-law"
+      ],
+      "mitigation": "Publish client references and standardize deal types so speed becomes a measurable product."
+    },
+    {
+      "risk": "Well funded AI-native rivals and large firms match the speed",
+      "p": 0.35,
+      "evidence": "Other AI-native firms raised large rounds in 2025 and incumbent firms are adopting AI tools.",
+      "analogs": [
+        "blueshoe",
+        "caseflood-ai"
+      ],
+      "mitigation": "Win a specialty such as startup financings where reputation and trust build a moat."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Crosby",
+      "what": "AI law firm for contract review",
+      "traction": "Reported $20M Series A in October 2025",
+      "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
+    },
+    {
+      "name": "Eudia Counsel",
+      "what": "AI augmented law firm under Arizona alternative business structure rules",
+      "traction": "Parent raised a large round led by General Catalyst in February 2025",
+      "source_url": "https://www.eudia.com/news/legal-ai-startup-eudia-launches-ai-augmented-law-firm-in-arizona"
+    },
+    {
+      "name": "Traditional law firms and legal ops teams",
+      "what": "Status quo billable hour work",
+      "traction": "Incumbent with relationships",
+      "source_url": "https://www.globallegalpost.com/news/a-fancy-deck-and-a-round-of-funding-doesnt-make-a-law-firm-708945371"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 2,
+    "rationale": "The software is a workflow and drafting layer on public models, which a small team can build in months. The hard part is legal quality, liability and licensing, not engineering."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Funded AI-native law firms",
+      "Large law firms with AI tools"
+    ],
+    "timeline_months": 12,
+    "rationale": "A rival can copy the speed pitch within a year, but a licensed bench of lawyers and client trust take longer to build, which is the real barrier."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Investors funded several AI-native law firms in 2025, showing demand for faster cheaper legal work",
+        "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
+      },
+      {
+        "claim": "Commentary notes that AI-native is a label VC funding rewards, so hype may run ahead of proof",
+        "source_url": "https://www.globallegalpost.com/news/a-fancy-deck-and-a-round-of-funding-doesnt-make-a-law-firm-708945371"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show real clients and the speed claim with references",
+      "actions": [
+        "List three client references and deal types",
+        "Document a turnaround log"
+      ],
+      "proof": "Three named clients confirming turnaround"
+    },
+    {
+      "phase": "seed",
+      "goal": "Prove revenue growth beyond founder lawyers",
+      "actions": [
+        "Hire two more lawyers and track revenue per lawyer",
+        "Pick one deal type to productize"
+      ],
+      "proof": "Monthly revenue growing 15 percent for 6 months"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Show software like leverage",
+      "actions": [
+        "Automate drafting for the top deal type",
+        "Open a second jurisdiction"
+      ],
+      "proof": "Revenue per lawyer 2x a normal firm"
+    },
+    {
+      "phase": "series_b",
+      "goal": "Multi country coverage",
+      "actions": [
+        "License in additional markets",
+        "Add a US presence"
+      ],
+      "proof": "Revenue over $15M run rate"
+    },
+    {
+      "phase": "series_c_plus",
+      "goal": "Category leader",
+      "actions": [
+        "Expand practice areas",
+        "Build a platform for partner firms"
+      ],
+      "proof": "Profitable growth above 80 percent"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Real speed claim in a category investors are funding",
+      "evidence": "AI-native law firms raised large rounds in 2025",
+      "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
+    },
+    {
+      "point": "Strong angel backing before the batch",
+      "evidence": "Description lists YC, 20VC and many founder angels, which helps seed access"
+    }
+  ],
+  "brand": {
+    "name": "Moritz",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Moritz\" --era 2022+ : 2 syllables, invented or proper name",
+    "strengths": [
+      "Short and easy to say",
+      "Sounds like a traditional firm name, which fits legal trust"
+    ],
+    "weaknesses": [
+      "Says nothing about AI or speed"
+    ],
+    "rationale": "A personal name suits a law firm because clients expect that tone, much like proper name brands among past YC companies, but it adds no product meaning. Brand will not move the outcome.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A fast AI law firm in a funded category, limited by services economics and licensing.",
+    "general_summary": "Moritz is an Oslo based AI-native law firm claiming same day turnaround on complex deals. The category was hot in 2025, with peers raising multi million rounds, and the team has strong angels, so a seed above $500K is more likely than not. The weak points are services margins, ownership rules and a self reported speed claim. Past tech enabled firms from YC mostly stayed small, so later rounds depend on proving software like leverage. The honest range is wide, because the data on this category is thin and recent."
+  },
+  "assumptions": [
+    "Information limited to the batch listing as of 2026-01-05.",
+    "Seed step means a round above about $500K within 12 months of the batch start.",
+    "Data on 2022+ cohorts is right censored, so later steps use older cohorts as a cross check."
+  ],
+  "sources": [
+    "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/",
+    "https://www.globallegalpost.com/news/a-fancy-deck-and-a-round-of-funding-doesnt-make-a-law-firm-708945371",
+    "https://www.eudia.com/news/legal-ai-startup-eudia-launches-ai-augmented-law-firm-in-arizona"
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "e2e",
+    "one_liner": "the software verification layer for the agentic coding era",
+    "description": "e2e is an eight person team based in Warsaw and remote, positioned as the software verification layer for the agentic coding era. The input gives only the one liner, so the product is inferred: tooling that automatically checks that code written by AI agents works, most likely end to end tests and checks run in CI. Buyers are engineering teams shipping a lot of agent written code. No description, traction or customers are given.",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.05,
+    "p_low": 0.02,
+    "p_high": 0.1,
+    "basis": "Starting rate about 1 percent (YC investor line, third party range 0.6 to 2 percent). Test setup: already accepted, so this is a reference only. Up for a team of 8 in a topical category the agentic coding wave created, and for a clear painful problem. Down for a thin description and a crowded testing field. Net about 5 percent as a plain applicant.",
+    "why_it_fails": "YC would most plausibly pass because the pitch is a category label with no stated wedge or customer. AI testing and verification for coding agents already had funded startups, and a reviewer would ask what e2e does that Momentic, QA Wolf or the coding agents themselves do not. Without early usage or a named user pain, the application reads as timely but undifferentiated."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.72,
+      "anchors": {
+        "base_rate": 0.51,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 51 percent, ours 72 percent. A hot category in spring 2026 with a team of 8 raises odds, within 1.5x of the anchor. The definition here is a round above about 500K within 12 months, which is looser than the anchor's any seed round."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            2000000,
+            4000000
+          ],
+          "post_money_usd": [
+            12000000,
+            22000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ B2B seed: median 3.2M, p25 2.0M, p75 5.0M (base_rates B2B 2022-2025). A team of 8 has a larger burn, so a normal seed is the single likeliest outcome."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            22000000,
+            45000000
+          ],
+          "p_band": 0.32,
+          "rationale": "Strong developer tools seeds in the AI coding wave are priced richer, near the p75 of 5M and above."
+        },
+        {
+          "raise_usd": [
+            600000,
+            2000000
+          ],
+          "post_money_usd": [
+            6000000,
+            14000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Small round from angels and YC follow on, or a bridge. Thin band."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            15000000
+          ],
+          "post_money_usd": [
+            45000000,
+            90000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside: a breakout open source or viral developer adoption pulls a large seed."
+        }
+      ],
+      "why_it_fails": "It does not clear a round above about 500K in 12 months if investors see it as one more AI testing tool. Rainforest took three years from batch to a Series A, and recent entrants like Autosana raised only a 3.2M seed about 9 months after the batch. Without paying customers and a clear reason to pick e2e over Momentic or the coding agents' own checks, investors in a crowded field pass, and the team of 8 burns the YC money quickly."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.27,
+      "anchors": {
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 22 percent, ours 27 percent. Agent written code makes verification a real budget line, but the field is crowded, so only modestly above the cohort."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000,
+            15000000
+          ],
+          "post_money_usd": [
+            50000000,
+            80000000
+          ],
+          "p_band": 0.35,
+          "rationale": "B2B 2022+ Series A p25 13M and a lower end for a small tools company."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            140000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Median 17M, p75 22M; post money 80M to 140M where known (n=3, thin)."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            10000000
+          ],
+          "post_money_usd": [
+            20000000,
+            45000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Small or extension A, or a down round after a tough market."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            40000000
+          ],
+          "post_money_usd": [
+            140000000,
+            250000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside with fast usage growth. Sized from the cohort round tables and the current funding climate."
+        }
+      ],
+      "why_it_fails": "A seed round is raised on promise, a Series A on revenue. Reflect and Rainforest show that testing tools can stall at seed or take years to reach A, and Reflect was sold to SmartBear after a 1.8M seed. e2e needs several repeat paying teams, and the risk is that coding agents and CI platforms bundle verification, so growth flattens below the roughly 1M to 2M annual revenue an A investor expects."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.24,
+      "anchors": {
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 19 percent, ours 24 percent. Companies that reach A with paying engineering customers usually continue, close to the cohort."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            25000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thinly supported, B2B 2022+ Series B p25 39M; lower end here."
+        },
+        {
+          "raise_usd": [
+            40000000,
+            55000000
+          ],
+          "post_money_usd": [
+            300000000,
+            650000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Median 42.5M, post money 500M to 750M where known (n=9)."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Down or small B. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            650000000,
+            1200000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside. Sized from the cohort round tables and the current funding climate."
+        }
+      ],
+      "why_it_fails": "Reaching a Series B needs a durable product moat and rising revenue. Testing has been a hard category to grow past the 40M raised by Rainforest, and buyers can switch. The model labs and platform vendors keep adding verification, so e2e must become a system of record that engineering teams cannot drop, or growth slows and the B round never materializes."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.22,
+      "anchors": {
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 19 percent, ours 22 percent. Later rounds depend on becoming a standard in the CI workflow; kept near the cohort."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            500000000,
+            900000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Series C 2022+ raise median 101M with post money 0.9 to 1.5B (n=3); lower end here."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            150000000
+          ],
+          "post_money_usd": [
+            900000000,
+            1500000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Cohort p25 to p75 for 2022+ Series C. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Down or extension. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            3500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside. Sized from the cohort round tables and the current funding climate."
+        }
+      ],
+      "why_it_fails": "A Series C needs a large, scaled business. The testing category has few outcomes of that size, and a standalone verification vendor would face the largest platform vendors. Few B2B companies in the cohort get there, and most that stay independent grow slowly with revenue instead of raising again."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.52
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.27
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.16
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.05
+      }
+    ],
+    "why_it_fails": "Most likely the company stalls because it is one of many AI testing startups with similar pitches and no unique data or distribution. Reflect ended in an acquisition by an established tester, and several 2025 and 2026 batch entries target the same job. The coding agent vendors can add verification as a feature, which caps a standalone category and leads to acquihires or a slow bootstrapped path."
+  },
+  "analogs": [
+    {
+      "slug": "rainforest",
+      "relevance": "Earlier YC end to end testing platform for CI pipelines.",
+      "outcome_summary": "Seed in 2015, Series A 2016, Series B 2018 totalling about 41M, still operating, never a large exit."
+    },
+    {
+      "slug": "reflect",
+      "relevance": "No code web test automation, direct category match.",
+      "outcome_summary": "Small team, 1.8M seed in 2021, then sold to a larger testing vendor."
+    },
+    {
+      "slug": "autosana",
+      "relevance": "AI agents for E2E testing, closest recent peer.",
+      "outcome_summary": "Raised a 3.2M seed about nine months after its batch with named customers."
+    },
+    {
+      "slug": "lark",
+      "relevance": "E2E testing layer for AI driven development, nearly the same pitch.",
+      "outcome_summary": "Pivoted from billing to testing, no verified round found, competes with Momentic and Functionize."
+    },
+    {
+      "slug": "marketfox",
+      "relevance": "Crowded category failure example for a two person team entering funded rivals.",
+      "outcome_summary": "Shut down with no funding found."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Coding agent vendors bundle verification and make a standalone layer unnecessary",
+      "p": 0.35,
+      "evidence": "Agent vendors can run tests inside their own loop at no marginal cost and own the developer relationship.",
+      "analogs": [
+        "reflect",
+        "autosana"
+      ],
+      "mitigation": "Stay vendor neutral and become the shared check across several agents and CI systems."
+    },
+    {
+      "risk": "Crowded AI testing field with many similar pitches and funded rivals",
+      "p": 0.4,
+      "evidence": "Autosana, Lark, Narrative and Momentic all pitch AI end to end testing for teams shipping AI written code.",
+      "analogs": [
+        "lark",
+        "narrative",
+        "autosana"
+      ],
+      "mitigation": "Pick a narrow, painful wedge such as one stack or one failure type and win a few paying teams fast."
+    },
+    {
+      "risk": "Trust and accuracy: flaky or wrong verdicts make teams turn the tool off",
+      "p": 0.3,
+      "evidence": "Testing tools live or die on false positives; Rainforest moved toward no code automation after crowd testing proved unreliable.",
+      "analogs": [
+        "rainforest"
+      ],
+      "mitigation": "Publish precision numbers and keep humans in the loop for the first customers."
+    },
+    {
+      "risk": "Unclear buyer and slow budget: developers use it free, nobody pays",
+      "p": 0.3,
+      "evidence": "Developer tools often get usage without budget, as with several open source tooling companies in the cohort.",
+      "analogs": [
+        "rainforest"
+      ],
+      "mitigation": "Charge per run or per repo from day one."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Momentic",
+      "what": "AI end to end test authoring and running for web apps.",
+      "traction": "3.7M seed announced in 2025.",
+      "source_url": "https://momentic.ai/blog/seed-round"
+    },
+    {
+      "name": "Autosana",
+      "what": "AI agents for E2E testing across mobile and web.",
+      "traction": "3.2M seed reported in February 2026.",
+      "source_url": "https://letsdatascience.com/news/autosana-raises-32m-for-agentic-qa-d11f673d"
+    },
+    {
+      "name": "QA Wolf and other managed QA services",
+      "what": "Services plus tooling that write and maintain end to end tests.",
+      "traction": "Established vendor named in YC records as a competitor of recent testing startups.",
+      "source_url": "https://neuronfeed.com/category/ai-testing?page=2"
+    },
+    {
+      "name": "Status quo: in house tests and code review",
+      "what": "Engineers write Playwright or Cypress tests and review agent output by hand.",
+      "traction": "Default practice at most teams.",
+      "source_url": "https://neuronfeed.com/category/ai-testing?page=2"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Running and judging end to end tests across many stacks is a solid engineering job a small team can build in three months, but reliable verdicts on agent written code, low flakiness and fast infrastructure are hard to make excellent. Depends on model quality and CI integrations."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Coding agent vendors",
+      "GitHub and CI platforms",
+      "Existing testing vendors"
+    ],
+    "timeline_months": 9,
+    "rationale": "A well resourced rival could add basic verification in under a year and has distribution through the developer workflow. Incentive is strong because verification keeps users inside their product. Past testing companies like Reflect ended up inside larger vendors."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Seed funding in AI testing and QA has been active, with an aggregator tracking about 30 startups.",
+        "source_url": "https://neuronfeed.com/category/ai-testing?page=2"
+      },
+      {
+        "claim": "Competing startups such as Autosana and Momentic raised seed rounds to sell agentic QA.",
+        "source_url": "https://letsdatascience.com/news/autosana-raises-32m-for-agentic-qa-d11f673d"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "A clear wedge and a few real users of the verification product.",
+      "actions": [
+        "Choose one stack and one failure type and ship a working verifier on it.",
+        "Get three engineering teams using it on agent written pull requests."
+      ],
+      "proof": "Three teams running it weekly."
+    },
+    {
+      "phase": "seed",
+      "goal": "Paying customers and visible usage that justify a round above 500K.",
+      "actions": [
+        "Charge per repo or per run and sign five paying teams.",
+        "Publish precision and false positive numbers and open source a core piece to build trust."
+      ],
+      "proof": "Recurring revenue and a public accuracy benchmark."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Repeatable revenue from teams that did not know the founders.",
+      "actions": [
+        "Hire a first sales and customer success owner and add CI integrations.",
+        "Show net revenue retention and a pipeline of larger teams."
+      ],
+      "proof": "About 1M to 2M in annual recurring revenue with strong retention."
+    },
+    {
+      "phase": "series_b",
+      "goal": "A category position that agent vendors cannot copy.",
+      "actions": [
+        "Build cross vendor integrations and enterprise controls.",
+        "Collect data on failures that improves the verifier."
+      ],
+      "proof": "Growth above 2x with enterprise logos."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Timely category",
+      "evidence": "Agent written code increases the need to verify it, and funded peers show investors will back the space.",
+      "source_url": "https://letsdatascience.com/news/autosana-raises-32m-for-agentic-qa-d11f673d"
+    },
+    {
+      "point": "Experienced sized team",
+      "evidence": "Eight people at batch start is larger than the usual two person YC team, giving more build capacity."
+    }
+  ],
+  "brand": {
+    "name": "e2e",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"e2e\" --era 2022+: 2 characters, 1 syllable, kind invented_or_proper, but a generic tech abbreviation.",
+    "strengths": [
+      "Very short and tells developers what the product does"
+    ],
+    "weaknesses": [
+      "Generic abbreviation that is hard to search for and trademark",
+      "Shared with the testing term, so no distinct identity"
+    ],
+    "rationale": "A name that is the category term gives instant meaning to developers but no brand ownership, like past YC names that were descriptive and hard to search. Brand is secondary here and mostly neutral, so it does not move the ladder."
+  },
+  "narrative": {
+    "headline": "A timely but crowded bet on verifying agent written code; likely to raise a seed and then face a hard Series A.",
+    "general_summary": "e2e sells the verification layer for agentic coding, which is a real and growing need as teams ship code written by AI. The same insight is shared by several funded startups, and the YC record shows testing companies tend to raise a seed and then struggle to scale, as Rainforest and Reflect did. The team of 8 gives it build capacity, and the timing helps a seed above 500K within a year. The path to a Series A depends on paying teams and a wedge that coding agents and CI platforms cannot bundle away. The description is thin, so uncertainty is wide."
+  },
+  "assumptions": [
+    "Description was empty, so the product is inferred from the one liner and the category.",
+    "Seed means a round above about 500K within about 12 months of the batch start.",
+    "Base rates are B2B 2022 to 2025 cohort numbers; right censoring lowers the later stages in recent batches, so rates are a floor.",
+    "Data coverage: knowledge base is complete at depth 2 but funding data is partial, so known only rates are biased low."
+  ],
+  "sources": [
+    "https://momentic.ai/blog/seed-round",
+    "https://letsdatascience.com/news/autosana-raises-32m-for-agentic-qa-d11f673d",
+    "https://neuronfeed.com/category/ai-testing?page=2"
+  ]
+}

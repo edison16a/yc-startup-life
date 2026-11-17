@@ -1,0 +1,420 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Rainbrand",
+    "one_liner": "The brand layer for agents.",
+    "description": "Rainbrand is the brand layer for agents. It turns a brand\u2019s identity, guidance, and assets into shared context that agents and products can use. That context evolves with the brand, alongside the tools where it is created and managed.\n\nStarting with websites, social media, and files, Rainbrand develops and maintains versioned brand context. Through MCP or the API, connected agents and products can retrieve and update that context, then apply it to images, websites, slides, video, copy, and other brand work.\n\nWe\u2019re an ai infra company making brand as operable as software.",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.04,
+    "basis": "Roughly 1 percent base rate. Conditional on acceptance this is a note: a three person team in a trendy agent infrastructure area, but an unclear buyer.",
+    "why_it_fails": "YC would most plausibly worry that brand guidelines are a feature that design platforms and agent platforms will add, and that the buyer and budget are unclear. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as credal-ai and airweave."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.7,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Within the recent B2B anchor band. Agent infrastructure was heavily funded in 2026, but a three person team with no named customers keeps it below the older 81 percent anchor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            14000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin round. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            5000000
+          ],
+          "post_money_usd": [
+            15000000,
+            30000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core round. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            35000000,
+            80000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes a standard MCP for brand. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "The seed most plausibly fails if no customer pays for brand context. Credal, a context layer company, raised a seed, but brand specific tools already exist from Typeface, SlideSpeak and open source projects. A three person team can show an MCP demo yet struggle to prove a budget."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.22,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Set near the 16 to 26 percent anchors from the cohort commands above and not below 0.75 times the recent anchor of 26 percent, per the backtest rule; reaching a round later is common for companies with paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            6000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            50000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Thin A. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            18000000
+          ],
+          "post_money_usd": [
+            50000000,
+            100000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core A. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            35000000
+          ],
+          "post_money_usd": [
+            110000000,
+            220000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series A fails if brand context stays a feature. Design asset platforms and AI content tools can ship their own MCP servers, and agent platforms can read brand files directly. A seed stage company needs paying design led teams before investors treat it as infrastructure. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as credal-ai and airweave."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Anchor is 16 percent for 2022 to 2025 (n=19) and 39 percent for 2018 to 2021 (n=18); set between them at a figure above 0.75 times the recent anchor, since survivors of Series A usually have paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Flat. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            35000000,
+            55000000
+          ],
+          "post_money_usd": [
+            200000000,
+            400000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            450000000,
+            900000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series B fails if the product never becomes the system of record for brand. Creative suites and brand management incumbents can bundle the same context for their existing customers. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as credal-ai and airweave."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Older cohort anchor 57 percent (n=7) and recent 0 percent (n=3), both tiny samples; set well below the older anchor because few companies reach late stage and the samples are anecdotes."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000,
+            60000000
+          ],
+          "post_money_usd": [
+            300000000,
+            500000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Modest. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            500000000,
+            1000000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "A Series C is unlikely because brand context is a narrow layer. It would need to expand into a broader context platform, and then it would compete with far larger context and memory companies. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as credal-ai and airweave."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.55
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.33
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.1
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.02
+      }
+    ],
+    "why_it_fails": "A stall is likeliest because the feature is easy to copy and the budget is small. The likeliest exit is a small acquisition by a brand, design or agent platform, possibly with a pivot. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as credal-ai and airweave."
+  },
+  "analogs": [
+    {
+      "slug": "credal-ai",
+      "relevance": "Context for agents.",
+      "outcome_summary": "Reached a seed."
+    },
+    {
+      "slug": "airweave",
+      "relevance": "Open source context retrieval for agents.",
+      "outcome_summary": "Reached a seed."
+    },
+    {
+      "slug": "cloudglue",
+      "relevance": "Video context layer for AI.",
+      "outcome_summary": "No later round found."
+    },
+    {
+      "slug": "vespper",
+      "relevance": "MCP for Word documents.",
+      "outcome_summary": "No later round found."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Brand context is a feature",
+      "p": 0.45,
+      "evidence": "Typeface, SlideSpeak and others already offer brand MCP servers. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "vespper",
+        "cloudglue"
+      ],
+      "mitigation": "Own versioning and governance."
+    },
+    {
+      "risk": "Unclear buyer and budget",
+      "p": 0.4,
+      "evidence": "Brand teams do not typically buy agent infrastructure. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "credal-ai"
+      ],
+      "mitigation": "Sell to agencies and AI product teams."
+    },
+    {
+      "risk": "Platforms bundle it",
+      "p": 0.35,
+      "evidence": "Creative suites can add MCP access. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "airweave"
+      ],
+      "mitigation": "Be neutral across tools."
+    },
+    {
+      "risk": "Three person team",
+      "p": 0.25,
+      "evidence": "A small team must cover integrations. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "cloudglue"
+      ],
+      "mitigation": "Focus on websites and social first."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Typeface MCP",
+      "what": "Brand kits and context via MCP.",
+      "traction": "Announced January 2026.",
+      "source_url": "https://www.typeface.ai/blog/introducing-typeface-mcp-context-aware-content-right-where-you-work"
+    },
+    {
+      "name": "OnBrand by SlideSpeak",
+      "what": "Brand guidelines for assistants.",
+      "traction": "Product Hunt launch.",
+      "source_url": "https://www.producthunt.com/products/onbrand-2"
+    },
+    {
+      "name": "Standards.site",
+      "what": "MCP access to brand guidelines.",
+      "traction": "Existing product.",
+      "source_url": "https://standards.site/ai/"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Crawling brand identity from websites and files and serving versioned context through MCP is buildable by a small team. The hard part is quality and keeping context current across tools."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Typeface",
+      "Adobe style creative suites",
+      "Agent platforms"
+    ],
+    "timeline_months": 6,
+    "rationale": "Incumbents already ship similar MCP servers and could add versioning quickly. The timeline is an estimate for a well resourced rival with existing distribution and an incentive to copy the idea."
+  },
+  "market_need_now": {
+    "rating": 2,
+    "evidence": [
+      {
+        "claim": "Several tools already expose brand guidelines to agents over MCP, suggesting demand exists but is fragmented.",
+        "source_url": "https://www.producthunt.com/products/onbrand-2"
+      },
+      {
+        "claim": "A vendor article argues that governed brand context fits MCP better than a static file.",
+        "source_url": "https://slidespeak.co/blog/design-md-vs-mcp-ai-brand-guidelines"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show paying users.",
+      "actions": [
+        "Ship an MCP server with ten pilot teams.",
+        "Measure on brand output quality."
+      ],
+      "proof": "Ten weekly active teams."
+    },
+    {
+      "phase": "seed",
+      "goal": "Prove budget.",
+      "actions": [
+        "Charge agencies.",
+        "Add versioning."
+      ],
+      "proof": "First 100K annualized revenue."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Become the system of record.",
+      "actions": [
+        "Integrate with design tools.",
+        "Add approvals."
+      ],
+      "proof": "Customers that keep brand data only here."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Timely with agent adoption.",
+      "evidence": "Brand MCP servers are launching.",
+      "source_url": "https://www.typeface.ai/blog/introducing-typeface-mcp-context-aware-content-right-where-you-work"
+    },
+    {
+      "point": "Narrow and clear wedge.",
+      "evidence": "Starting with websites, social and files."
+    }
+  ],
+  "brand": {
+    "name": "Rainbrand",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Rainbrand\" --era 2022+ : one word invented compound.",
+    "strengths": [
+      "Memorable and says brand."
+    ],
+    "weaknesses": [
+      "Rain connotes weather."
+    ],
+    "rationale": "The name signals the category and is easy to remember. A brand company needs a good name, but this one is plain rather than distinctive.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A timely but narrow agent infrastructure idea with small team and feature risk.",
+    "general_summary": "Rainbrand offers brand context to agents through MCP. The area is hot but the competition already includes Typeface and small open products. With three people and no named customers, the likeliest path is a small seed, then a hard Series A. Comparable YC context companies mostly stopped at seed. Evidence on budgets is thin. The step odds are anchored on the 2022 to 2025 B2B cohorts and the older 2018 to 2021 cohort, which differ a lot, so treat the later rounds as wide ranges."
+  },
+  "assumptions": [
+    "No customers or founder backgrounds were provided."
+  ],
+  "sources": [
+    "https://www.typeface.ai/blog/introducing-typeface-mcp-context-aware-content-right-where-you-work",
+    "https://www.producthunt.com/products/onbrand-2",
+    "https://standards.site/ai/",
+    "https://slidespeak.co/blog/design-md-vs-mcp-ai-brand-guidelines",
+    "https://www.ycombinator.com/deal"
+  ]
+}

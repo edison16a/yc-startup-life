@@ -1,0 +1,426 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Patientdesk.ai",
+    "one_liner": "AI front & back office agent for dental practices",
+    "description": "Patientdesk is an AI bookings system that helps healthcare practices make more money. We do this by handling bookings, payments, and insurance to fill up a provider's calendar with high value appointments.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.04,
+    "basis": "Roughly 1 percent base rate. Conditional on acceptance this is a note: a five person team in a crowded but proven category, with measurable booking revenue as a plus and many same wedge YC companies as a minus, so the estimate stays close to the base rate.",
+    "why_it_fails": "YC would most plausibly worry that AI receptionists for dental practices are crowded, with Weave, Peerlogic and many YC companies, and that selling to small practices has high churn. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as onederful and newton."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.68,
+      "anchors": {
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Healthcare: seed cond 50% (n=22), series_a cond 9% (n=11), only 24 researched companies so anecdotal. Broad python3 -I scripts/base_rates.py --calibration-only --years 2022-2025: seed 57%, series_a cond 22% (n=115), series_b cond 12% (n=25). Older B2B 2018-2021: seed 81%, A 32%, B 39%, C 57%.",
+        "adjustment_reason": "Above the 50 percent Healthcare anchor from an anecdotal cohort, and near the 57 to 81 percent broader anchors. The category is hot and bookings are measurable revenue."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            14000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin round. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            5000000
+          ],
+          "post_money_usd": [
+            15000000,
+            30000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core round near the 3.3M Healthcare seed median in the cohort. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            10000000
+          ],
+          "post_money_usd": [
+            35000000,
+            70000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "The seed most plausibly fails if the product is not distinct from Weave and others. Several YC companies target the same dental front desk, such as Newton, Opencall and Avora, and each needs integrations with practice management systems. Investors may pass without evidence of revenue lift or low churn."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.26,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Healthcare: seed cond 50% (n=22), series_a cond 9% (n=11), only 24 researched companies so anecdotal. Broad python3 -I scripts/base_rates.py --calibration-only --years 2022-2025: seed 57%, series_a cond 22% (n=115), series_b cond 12% (n=25). Older B2B 2018-2021: seed 81%, A 32%, B 39%, C 57%.",
+        "adjustment_reason": "Set near the 22 to 32 percent anchors from the cohort commands above and not below 0.75 times the recent anchor of 26 percent, per the backtest rule; reaching a round later is common for companies with paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            6000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            50000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Thin A. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            110000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core A. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            22000000,
+            35000000
+          ],
+          "post_money_usd": [
+            120000000,
+            220000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series A fails if small practice churn and integration costs are high. Onederful, a YC dental insurance API, was acquired rather than scaling to a Series A, and Healthcare cohorts reach Series A slowly. Weave, a public company, already bundles an AI receptionist for the same buyers. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as onederful and newton."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Healthcare: seed cond 50% (n=22), series_a cond 9% (n=11), only 24 researched companies so anecdotal. Broad python3 -I scripts/base_rates.py --calibration-only --years 2022-2025: seed 57%, series_a cond 22% (n=115), series_b cond 12% (n=25). Older B2B 2018-2021: seed 81%, A 32%, B 39%, C 57%.",
+        "adjustment_reason": "Anchor is 16 percent for 2022 to 2025 (n=19) and 39 percent for 2018 to 2021 (n=18); set between them at a figure above 0.75 times the recent anchor, since survivors of Series A usually have paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Flat. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            35000000,
+            55000000
+          ],
+          "post_money_usd": [
+            200000000,
+            400000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            450000000,
+            900000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series B fails if growth plateaus in dental and expansion to other specialties is slow. Practice software vendors with distribution can add the same agents, and payment and insurance handling brings compliance work. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as onederful and newton."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Healthcare: seed cond 50% (n=22), series_a cond 9% (n=11), only 24 researched companies so anecdotal. Broad python3 -I scripts/base_rates.py --calibration-only --years 2022-2025: seed 57%, series_a cond 22% (n=115), series_b cond 12% (n=25). Older B2B 2018-2021: seed 81%, A 32%, B 39%, C 57%.",
+        "adjustment_reason": "Older cohort anchor 57 percent (n=7) and recent 0 percent (n=3), both tiny samples; set well below the older anchor because few companies reach late stage and the samples are anecdotes."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000,
+            60000000
+          ],
+          "post_money_usd": [
+            300000000,
+            500000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Modest. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            500000000,
+            1000000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "A Series C requires becoming a platform across healthcare practices. Few small practice software companies reach that, and healthcare IT cycles are long. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as onederful and newton."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.5
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.37
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.11
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.02
+      }
+    ],
+    "why_it_fails": "A stall is likeliest because the category is crowded and practice customers churn. The likeliest exit is acquisition by a practice software vendor, as Weave did with TrueLark in 2025. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as onederful and newton."
+  },
+  "analogs": [
+    {
+      "slug": "onederful",
+      "relevance": "Dental insurance API.",
+      "outcome_summary": "Acquired after a seed."
+    },
+    {
+      "slug": "newton",
+      "relevance": "AI phone platform for dentists.",
+      "outcome_summary": "Direct overlap in the same wedge."
+    },
+    {
+      "slug": "opencall",
+      "relevance": "Practice admin run by AI.",
+      "outcome_summary": "Direct overlap."
+    },
+    {
+      "slug": "adravision",
+      "relevance": "Automation for dental clinics.",
+      "outcome_summary": "No later round found."
+    },
+    {
+      "slug": "avora",
+      "relevance": "Agents for dental operations.",
+      "outcome_summary": "Direct overlap."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Crowded dental AI front desk",
+      "p": 0.5,
+      "evidence": "Weave, Peerlogic, and several YC companies sell the same function. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "newton",
+        "opencall",
+        "avora"
+      ],
+      "mitigation": "Win on insurance and payments."
+    },
+    {
+      "risk": "Churn in small practices",
+      "p": 0.35,
+      "evidence": "Small practices switch vendors and have low budgets. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "onederful"
+      ],
+      "mitigation": "Sell to groups."
+    },
+    {
+      "risk": "Integration dependence",
+      "p": 0.3,
+      "evidence": "Needs access to practice management systems. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "adravision"
+      ],
+      "mitigation": "Build deep integrations."
+    },
+    {
+      "risk": "Incumbents bundle AI",
+      "p": 0.35,
+      "evidence": "Weave bought TrueLark in 2025 for AI reception. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.",
+      "analogs": [
+        "opencall"
+      ],
+      "mitigation": "Differentiate."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Weave",
+      "what": "Public dental communications platform with AI receptionist after buying TrueLark.",
+      "traction": "Listed company.",
+      "source_url": "https://www.silicon.co.uk/press-release/weave-communications-to-acquire-truelark-accelerating-ai-powered-front-office-automation"
+    },
+    {
+      "name": "Peerlogic",
+      "what": "AI receptionist for dental practices.",
+      "traction": "Integrates with Dentrix and Open Dental.",
+      "source_url": "https://lp.peerlogic.com/dental-ai-assistant"
+    },
+    {
+      "name": "NexHealth",
+      "what": "Integration based patient communication.",
+      "traction": "Established.",
+      "source_url": "https://www.getweave.com/ai-dental-clinic/"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Voice agents with scheduling and insurance verification are buildable, but integrations with practice management systems and accuracy on insurance are hard."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Weave",
+      "Practice management vendors",
+      "NexHealth"
+    ],
+    "timeline_months": 9,
+    "rationale": "Incumbents with distribution can ship similar agents quickly. The timeline is an estimate for a well resourced rival with existing distribution and an incentive to copy the idea."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Weave agreed to buy TrueLark in May 2025 to add AI virtual reception, showing buyers want the function.",
+        "source_url": "https://www.silicon.co.uk/press-release/weave-communications-to-acquire-truelark-accelerating-ai-powered-front-office-automation"
+      },
+      {
+        "claim": "Peerlogic and others market 24 hour AI booking to dentists.",
+        "source_url": "https://lp.peerlogic.com/dental-ai-assistant"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show revenue lift for practices.",
+      "actions": [
+        "Pilot with ten practices.",
+        "Track booked revenue."
+      ],
+      "proof": "Measured booked revenue per practice."
+    },
+    {
+      "phase": "seed",
+      "goal": "Prove retention.",
+      "actions": [
+        "Integrate with major systems.",
+        "Add insurance."
+      ],
+      "proof": "Monthly churn under 2 percent."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Expand beyond dental.",
+      "actions": [
+        "Add specialties.",
+        "Sell to groups."
+      ],
+      "proof": "Revenue above 3M annualized."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Measurable ROI in bookings.",
+      "evidence": "The pitch ties directly to filled calendars."
+    },
+    {
+      "point": "Proven demand.",
+      "evidence": "Weave bought a rival in 2025.",
+      "source_url": "https://www.silicon.co.uk/press-release/weave-communications-to-acquire-truelark-accelerating-ai-powered-front-office-automation"
+    }
+  ],
+  "brand": {
+    "name": "Patientdesk.ai",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Patientdesk.ai\" --era 2022+ : descriptive compound with an ai suffix.",
+    "strengths": [
+      "Clear what it does."
+    ],
+    "weaknesses": [
+      "Generic and an ai suffix."
+    ],
+    "rationale": "The name is descriptive and uses a dot ai suffix, which is now common and hard to own. It will not drive growth or hurt much.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A sensible product in a crowded dental AI category that probably gets a seed but struggles to stand out later.",
+    "general_summary": "Patientdesk sells an AI booking and insurance agent to dental practices. Demand is proven, because Weave bought a rival in 2025, but several YC companies and larger vendors chase the same buyer. With five people the likeliest path is a seed, then a hard Series A. Healthcare cohort data is thin with only 24 researched companies. The step odds are anchored on the 2022 to 2025 B2B cohorts and the older 2018 to 2021 cohort, which differ a lot, so treat the later rounds as wide ranges."
+  },
+  "assumptions": [
+    "No traction or founder facts were provided.",
+    "Healthcare cohort has only 24 companies."
+  ],
+  "sources": [
+    "https://www.silicon.co.uk/press-release/weave-communications-to-acquire-truelark-accelerating-ai-powered-front-office-automation",
+    "https://lp.peerlogic.com/dental-ai-assistant",
+    "https://www.getweave.com/ai-dental-clinic/",
+    "https://www.ycombinator.com/deal"
+  ]
+}

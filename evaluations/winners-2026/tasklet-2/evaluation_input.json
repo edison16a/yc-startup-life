@@ -1,0 +1,440 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Tasklet",
+  "one_liner": "Agents that own the work",
+  "description": "AI chatbots can answer questions, but they can't do your work \u2014 they aren't connected to your tools, can't take actions, and stop running when you close the tab. Meanwhile, knowledge workers are still spending most of their day switching between dozens of SaaS apps, manually stitching together workflows that should be automated.\n\nTasklet is the AI agent that actually does the work. It connects to every tool you use \u2014 via thousands of built-in integrations, any HTTP API, or MCP servers \u2014 and takes real actions on your behalf: pulling reports, updating CRMs, triaging emails, processing data, and",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.07200000000000001,
+  "basis": "Test note: this company was accepted to YC, so this is only the forward estimate. Starting prior is about 1 percent for a random applicant (0.6 to 2 percent third party range, per references/yc_acceptance.md). Eight person team with a detailed product description suggests an existing shipped product (up), a technical agent runtime (up), general AI agent market is very crowded and dominated by labs (down), unbundling SaaS is a favored YC theme (up). Net about 4 percent.",
+  "why_it_fails": "YC would most likely say a general purpose agent that connects to everything competes head on with ChatGPT, Claude, Zapier and Lindy, so differentiation and retention are unclear. Without strong usage, paying customers or growth numbers, partners may see a product that model labs will ship as a feature."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.8,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low.",
+    "adjustment_reason": "0.80/0.59 anchor is 1.36x: team size 8 and shipped product, hot category, within 2x."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Small pre-seed of about 600K to 1.5M on a SAFE, barely above the YC deal. If usage is weak, a small round follows."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical 2026 seed near the 3.0M US median deal size and 18M pre money from PitchBook NVCA via Equidam (see stage_benchmarks.md). Typical seed given the team size and shipped product."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Strong seed led by a known fund, near the YC 2022+ announced median of 4.1M or above. Strong agent growth draws a top fund."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside seed or large first round if usage or revenue spikes, common for hot AI categories in 2026. Hot agent category in 2026 can give a large seed."
+    }
+   ],
+   "why_it_fails": "The seed step above 500K fails if the product shows weak retention, or if investors decide ChatGPT, Claude and Zapier agents will absorb the category. With eight people the team has a burn that needs real funding, so this miss is less likely, but Workflow86 and Peakflo show agent workflow companies that stayed at small rounds."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.34,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low.",
+    "adjustment_reason": "0.34 vs 26 percent anchor, 1.3x; shipped product and large team lift it."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small or bridge style A, or a down-ish A after a slow year. Churn after trials."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median 2022+ YC Series A raise is 14.15M, market 17.4M. Needs strong paid usage."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Hot-category A led by a top fund, 62M pre money median market. Needs breakout growth."
+    }
+   ],
+   "why_it_fails": "Series A needs strong paid growth and retention. It fails if usage is trials and one off tasks, if token and sandbox costs squeeze margin, or if labs ship the same connected agent. Sim reached a 7M Series A from open source adoption, while Workflow86 has no public growth round, showing the split between winners and the rest."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low.",
+    "adjustment_reason": "Anchor 16 percent; 0.22 is 1.4x with the same lift, within 2x."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin B or flat step. Pressure from labs."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      55000000
+     ],
+     "post_money_usd": [
+      180000000,
+      450000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median 2022+ YC Series B is 37M, market 39.5M. Needs strong retention."
+    },
+    {
+     "raise_usd": [
+      55000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Breakout B at unicorn range if growth is exceptional. Needs category leadership."
+    }
+   ],
+   "why_it_fails": "Series B needs durable revenue and a defensible runtime. It fails if model vendors bundle agents into their apps and general agents become commodity. Pylon reached B only through a narrow B2B support wedge, which shows that horizontal agents struggle to hold it."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.2,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower/known/upper 49/59/65), series_a cond 26% (n=74; 13/15/29), series_b cond 16% (n=19; 2/2/18), series_c cond 0% (n=3; upper 16%). Second cohort --industry B2B --years 2020-2022: seed 77%, A 30%, B 35%, C 33%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem. Coverage is partial, known-only rates are biased low.",
+    "adjustment_reason": "Wide prior; anchor n=3, upper 16 percent."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest C or growth round, or venture debt plus equity. Few reach this."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1800000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or later; 2022+ YC median C is 45M, D plus 97.5M. Needs a platform."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      1800000000,
+      5000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Breakout later round at multi billion value. Needs agent OS leadership."
+    }
+   ],
+   "why_it_fails": "Series C or later requires becoming the operating layer for work across companies. It fails against Microsoft, Google, OpenAI and Anthropic with distribution and models. Few horizontal tools reach this scale, and most that do are acquired earlier."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.42
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.34
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.16
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.08
+   }
+  ],
+  "why_it_fails": "Failure is most likely that general agents become a feature of ChatGPT, Claude and Microsoft products, so a startup with no vertical wedge loses retention and stalls or is acquired for its runtime. OpenInt and Nango show integration startups acquired or staying mid sized. Upside needs a pivot to a vertical product or breakout usage."
+ },
+ "analogs": [
+  {
+   "slug": "sim",
+   "relevance": "Agent builder for enterprise systems, S25",
+   "outcome_summary": "Open source launch, 7M Series A in November 2025."
+  },
+  {
+   "slug": "pylon-2",
+   "relevance": "Agent support platform, W23",
+   "outcome_summary": "Seed 3.2M, Series A 17M, Series B 31M after a pivot."
+  },
+  {
+   "slug": "nango",
+   "relevance": "Integrations for products, W23",
+   "outcome_summary": "Bootstrapped, 7.5M seed in April 2026."
+  },
+  {
+   "slug": "openint",
+   "relevance": "Open source integrations, W23",
+   "outcome_summary": "Four person team, acquired by Replit in 2025."
+  },
+  {
+   "slug": "workflow86",
+   "relevance": "Agentic workflows for operations, W22",
+   "outcome_summary": "Active small team, no growth round."
+  },
+  {
+   "slug": "peakflo",
+   "relevance": "Agentic back office workflows, W22",
+   "outcome_summary": "4.1M seed in 2022, no later round found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Labs and incumbents ship connected agents",
+   "p": 0.55,
+   "evidence": "OpenAI, Anthropic and Microsoft ship agents with connectors, and Zapier added agent features.",
+   "analogs": [
+    "openint",
+    "workflow86"
+   ],
+   "mitigation": "Win a vertical or a reliability niche and own the runtime."
+  },
+  {
+   "risk": "Weak retention and cost of tokens",
+   "p": 0.4,
+   "evidence": "General agents see one off trials and high inference costs that squeeze margins.",
+   "analogs": [
+    "peakflo",
+    "sim"
+   ],
+   "mitigation": "Focus on recurring triggered workflows with usage pricing."
+  },
+  {
+   "risk": "Crowded agent builder category",
+   "p": 0.4,
+   "evidence": "Lindy, Relevance AI, n8n and others sell similar no-code agents to the same users.",
+   "analogs": [
+    "workflow86",
+    "sim"
+   ],
+   "mitigation": "Differentiate through the cloud runtime and integration breadth."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Zapier",
+   "what": "Automation with thousands of integrations and agents",
+   "traction": "Large user base",
+   "source_url": "https://zapier.com"
+  },
+  {
+   "name": "Lindy",
+   "what": "No-code AI agent builder",
+   "traction": "Funded agent startup",
+   "source_url": "https://www.lindy.ai"
+  },
+  {
+   "name": "OpenAI and Anthropic",
+   "what": "Chat assistants with connectors and agents",
+   "traction": "Hundreds of millions of users",
+   "source_url": "https://openai.com"
+  },
+  {
+   "name": "n8n",
+   "what": "Workflow automation with AI",
+   "traction": "Large developer base",
+   "source_url": "https://n8n.io"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A cloud agent runtime with integrations, code sandbox and browser control uses existing components and model APIs. An eight person team can ship this, and reliability and context engineering are the hard parts, with all value depending on rented models."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "OpenAI",
+   "Anthropic",
+   "Microsoft",
+   "Zapier"
+  ],
+  "timeline_months": 6,
+  "rationale": "Labs and platforms already ship connected agents with distribution to millions, so a competing product exists or will within months. Only reliability and ease of use remain as edges."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Knowledge workers pay for automation tools and agent products today.",
+    "source_url": "https://zapier.com"
+   },
+   {
+    "claim": "No-code agent builders have raised funding and have paying users.",
+    "source_url": "https://www.lindy.ai"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show paid usage with retention among recurring workflows.",
+   "actions": [
+    "Track weekly active agents",
+    "Launch usage pricing",
+    "Find 2 segments with high retention"
+   ],
+   "proof": "1,000 paying users and 70 percent monthly retention"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show recurring revenue growing fast with healthy margins.",
+   "actions": [
+    "Cut inference cost",
+    "Build templates by role",
+    "Add team plans"
+   ],
+   "proof": "1M to 2M ARR"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Eight person team with a described shipped product",
+   "evidence": "The description details a runtime, integrations and browser use, which suggests working software.",
+   "source_url": "https://www.ycombinator.com/deal"
+  },
+  {
+   "point": "Demand for agents that run continuously is clear",
+   "evidence": "Zapier and Lindy show paid demand for automation.",
+   "source_url": "https://zapier.com"
+  }
+ ],
+ "brand": {
+  "name": "Tasklet",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Tasklet\" --era 2022+ : kind invented_or_proper, n=1826, alive 92.7 percent, exit 4.4 percent",
+  "strengths": [
+   "Suggests small units of work",
+   "Short and friendly"
+  ],
+  "weaknesses": [
+   "Suffix style name common in software",
+   "Not distinctive"
+  ],
+  "rationale": "Tasklet suggests small tasks done by an agent, which fits. It is short and easy to spell, similar in style to names like Pylon or Nango. The name has little effect on outcomes.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A capable general agent in the most crowded category in software; seed is very likely, later rounds depend on retention against labs.",
+  "general_summary": "Tasklet is a chat based agent that connects to many tools and runs in the cloud. Demand is real, investors fund agents in 2026, and the eight person team suggests a shipped product, so a seed above the YC deal is very likely. The danger is that OpenAI, Anthropic, Microsoft and Zapier already ship similar agents with huge distribution. Analogs such as Sim and Pylon show a path with a clear wedge, while Workflow86 and Peakflo show stalls. The ladder sits above B2B anchors at seed and A, within 2x, with wide uncertainty later."
+ },
+ "assumptions": [
+  "Blind forecast: only the YC listing text was used.",
+  "Seed means a round above 500K within about 12 months.",
+  "Team size of eight is treated as a sign of an existing product.",
+  "Recorded 2026 batch funding was not used as evidence."
+ ],
+ "sources": [
+  "https://zapier.com",
+  "https://www.lindy.ai",
+  "https://openai.com",
+  "https://n8n.io"
+ ]
+}

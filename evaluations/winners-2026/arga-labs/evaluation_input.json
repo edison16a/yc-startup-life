@@ -1,0 +1,444 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Arga Labs",
+  "one_liner": "Real-world sandboxes to test and train AI agents",
+  "description": "We build environments to test your app and agents against the real world.\n\nDeploy your code/agent into a sandbox that runs against replicas of external services (Stripe, Slack, Google Drive, etc.). Twins support the same APIs, MCP tool calls & SDKs as the real software, and you can spin up thousands of instances in parallel and seed them using natural language. Run real workflows, surface edge cases, and observe how your code/agents actually behave before hitting production.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.08,
+  "basis": "Starting rate is about 1 percent with a 0.6 to 2 percent band (knowledge yc_acceptance.md). The company is already accepted, so this is a note only. A team of 6 working on agent testing infrastructure fits the current RFS interest in AI tooling and likely carries technical founders, which would raise the odds several times over the base rate.",
+  "why_it_fails": "YC would most plausibly say no because simulated API twins for agent testing look like a feature of a mocking or CI product, and several teams were building the same thing at once. Without live usage from agent builders the pitch rests on a thesis about demand, and the interview would probe why customers would not simply use mocks or vendor sandboxes."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.75,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed lower 50 / known 61 / upper 67 percent, cond 61 percent (n=109). B2B 2022-2025 cond 59 percent (n=126)",
+    "adjustment_reason": "Within 1.25x of the cohort. Slight lift because agent infrastructure was the hottest seed category in 2026 and the team of 6 implies a working product."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small extension or pre seed SAFEs from angels around the batch, the common outcome for infrastructure teams that launch late in the batch."
+    },
+    {
+     "raise_usd": [
+      1500000,
+      5000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022+ seed for B2B at a median of about 3.2M raise (B2B cohort n=55) with current market seed pre money near 18M."
+    },
+    {
+     "raise_usd": [
+      5000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside band for AI infrastructure with named lab or enterprise design partners, as the 2026 market for agent environments is hot."
+    }
+   ],
+   "why_it_fails": "The seed fails if the company cannot show paying agent builders by demo day. Investors would see a crowded set of simulators and mocking vendors such as WireMock, and ask why a platform lab or a testing incumbent would not own it. Analogs such as signadot raised only a modest seed in a similar validation niche, and others in the RL environment space showed no round."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.23,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: series_a known 14 / upper 28 percent, cond 23 percent (n=66); B2B 2022-2025 cond 26 percent (n=74)",
+    "adjustment_reason": "Within 1.5x of the anchor. Lift for a hot category and fast follow on rounds, tempered by fast commoditization risk."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      8000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or flat A, near the 2022+ YC series A p25 of 10M, for a company with revenue but limited growth."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Matches the 2022+ YC median of about 14M and the market deal size near 17M."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside if lab customers adopt it as standard test infrastructure."
+    }
+   ],
+   "why_it_fails": "Series A fails if usage stays with experimenters and does not convert into large annual contracts. Test environments are a spend that can move in house, and revenue concentrated in a few labs is fragile. Analogs in the RL environment and agent testing group, such as playgent and cartpole, show how many such teams struggle to turn pilots into recurring revenue."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_b known 2 / upper 18 percent, cond 16 percent (n=19)",
+    "adjustment_reason": "Within 1.6x of the anchor. Lift for the AI tailwind in a category where capital is abundant."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      25000000,
+      40000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Below the 2022+ median B round of about 37M, a slower grower."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Market series B deal size near 40M with pre money near 187M, adjusted for a hot category."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Breakout infrastructure outcome, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series B fails if a platform company such as a cloud, model lab or large testing vendor ships good enough twins for free and the startup is squeezed to a feature. Investors would also want evidence that revenue is recurring and not tied to a single lab's training budget, which swings from quarter to quarter."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_c cond 0 percent (n=3) in the recent cohort; calibration table overall cond 36 percent (n=55)",
+    "adjustment_reason": "Recent cohorts are right censored, so the older table is used. Discounted for a young and commoditizing category."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Near the 2022+ series C p25 to p50 of 35M to 45M."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      2000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Market series C deal near 77M with pre money near 500M."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      5000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Category leader outcome, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series C fails if the product stays a developer testing tool with a capped market while agent platforms absorb testing and evaluation into their own stacks. Few YC infrastructure companies in the data reached a C, and those that did owned a system of record, which test sandboxes rarely become."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
+    ],
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.16
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.06
+   }
+  ],
+  "why_it_fails": "Most such companies stall because the product is cheap to copy, buyers are a small set of labs and agent builders, and acquirers prefer to buy teams. A middle exit under 100M is more likely than a large one, as with continue and fig, which sold to platform owners after real usage."
+ },
+ "analogs": [
+  {
+   "slug": "signadot",
+   "relevance": "Validation infrastructure for testing services in realistic environments, the closest older analog.",
+   "outcome_summary": "Raised a 4M seed in 2022, named customers, no later round found. Modest growth."
+  },
+  {
+   "slug": "vibrant-labs",
+   "relevance": "Open source evaluation roots that moved to RL environments for agents.",
+   "outcome_summary": "Active with a reported 2.5M raise in late 2025 and unverified traction."
+  },
+  {
+   "slug": "playgent",
+   "relevance": "Started as agent sandboxes and moved to finance RL environments, so a direct cousin.",
+   "outcome_summary": "Active, no funding found, crowded category."
+  },
+  {
+   "slug": "hud",
+   "relevance": "Platform and marketplace for RL environments, a sibling market.",
+   "outcome_summary": "Active with 24 staff and aggregator reports of a Series A in 2026, not confirmed."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Mock and simulator tools are commoditized and platforms bundle them",
+   "p": 0.35,
+   "evidence": "WireMock, Klavis and several cloud sandboxes already sell simulated APIs, and a Summer 2025 YC company already sold agent sandboxes.",
+   "analogs": [
+    "playgent",
+    "signadot"
+   ],
+   "mitigation": "Win on fidelity of stateful twins for the top 20 services and own the benchmark workflows."
+  },
+  {
+   "risk": "Demand comes from a handful of labs that may build in house",
+   "p": 0.3,
+   "evidence": "Labs are the biggest buyers of environments and have the engineering to build twins themselves.",
+   "analogs": [
+    "cartpole",
+    "vibrant-labs"
+   ],
+   "mitigation": "Serve application developers and enterprises, not only labs, with a self serve product."
+  },
+  {
+   "risk": "Twins drift from real service behavior, breaking trust",
+   "p": 0.25,
+   "evidence": "Replicating Stripe or Slack semantics requires continuous maintenance as APIs change.",
+   "analogs": [
+    "signadot"
+   ],
+   "mitigation": "Automated contract tests against real APIs and a community of twin contributors."
+  },
+  {
+   "risk": "Revenue is project based and does not recur",
+   "p": 0.2,
+   "evidence": "Training environment spend follows lab budgets, which fluctuate, as shown by the analog records and the current market.",
+   "analogs": [
+    "hud"
+   ],
+   "mitigation": "Move to usage priced subscriptions tied to CI runs."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "WireMock Cleanroom",
+   "what": "Simulated API environments for agent testing from an established API mocking vendor.",
+   "traction": "Named enterprise customer example in vendor material.",
+   "source_url": "https://www.wiremock.io/solutions/cleanroom"
+  },
+  {
+   "name": "Klavis Sandbox",
+   "what": "Deterministic MCP sandboxes for agent training and evaluation.",
+   "traction": "Vendor claims, unverified.",
+   "source_url": "https://eu.klavis.ai/blog/introducing-klavis-sandbox-as-a-service"
+  },
+  {
+   "name": "Modal and other code sandboxes",
+   "what": "General sandbox execution for agent and RL workloads.",
+   "traction": "Large infrastructure vendor, many competing products.",
+   "source_url": "https://modal.com/resources/best-sandboxes-rl-environments"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Building stateful replicas of Stripe, Slack and Drive that match real API, SDK and MCP behavior is laborious but within reach of a small team for a handful of services. The hard part is fidelity at scale and keeping twins current as providers change, plus orchestrating thousands of parallel instances cheaply."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "WireMock",
+   "Modal and cloud sandbox vendors",
+   "Model labs",
+   "Stripe and Slack with official sandboxes"
+  ],
+  "timeline_months": 9,
+  "rationale": "Mock vendors already sell similar products and cloud or lab players could add twins to their agent platforms within months. Service owners also ship official test modes. The startup's lead rests on fidelity and speed, which are copyable."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Several vendors sell simulated API environments for agent testing and the sandbox category expanded sharply in 2025 and 2026.",
+    "source_url": "https://modal.com/resources/best-sandboxes-rl-environments"
+   },
+   {
+    "claim": "Labs are described as major buyers of environments, per a vendor view that is unverified.",
+    "source_url": "https://gradient.com/blog/posts/environment-for-lm-agents/"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show real agent builders running on the twins.",
+   "actions": [
+    "Ship twins for the five most used services",
+    "Get 10 teams running CI against them"
+   ],
+   "proof": "Ten weekly active teams"
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert usage into paid contracts and a clear wedge.",
+   "actions": [
+    "Charge for parallel instances",
+    "Sign two lab or enterprise design partners"
+   ],
+   "proof": "Paid ARR above 150K by demo day"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show recurring usage that does not depend on one lab.",
+   "actions": [
+    "Add usage billing",
+    "Broaden to 30 services"
+   ],
+   "proof": "ARR above 1.5M across 20 plus customers"
+  },
+  {
+   "phase": "series_b",
+   "goal": "Become the default test layer for agent deployment.",
+   "actions": [
+    "Integrate with major agent frameworks",
+    "Add compliance and audit features"
+   ],
+   "proof": "Net revenue retention above 120 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Hot category with a team of 6 at batch start",
+   "evidence": "Agent testing demand is rising as AI written code ships to production and many vendors are funded.",
+   "source_url": "https://modal.com/resources/best-sandboxes-rl-environments"
+  },
+  {
+   "point": "Product spans testing and training, two budgets",
+   "evidence": "Twins serve both pre production tests and RL training, widening buyers.",
+   "source_url": "https://eu.klavis.ai/blog/introducing-klavis-sandbox-as-a-service"
+  }
+ ],
+ "brand": {
+  "name": "Arga Labs",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Arga Labs\" --era 2022+ : kind name_plus_descriptor, 8 chars, 2 words",
+  "strengths": [
+   "Short and easy to type",
+   "Labs suffix signals research seriousness"
+  ],
+  "weaknesses": [
+   "Meaningless and generic labs descriptor",
+   "Hard to tell what it does"
+  ],
+  "rationale": "A short coined word plus Labs is a common AI infrastructure pattern and is neutral for growth. It does not hint at the product, so the brand must be built through developer content, as with many infrastructure companies."
+ },
+ "narrative": {
+  "headline": "A hot but crowded agent testing infrastructure company with a good chance of a seed and uncertain staying power against bundlers.",
+  "general_summary": "Arga Labs sells simulated copies of services such as Stripe and Slack so teams can test and train agents safely. The need is real and growing, and a team of 6 suggests a working product. The problem is crowding: mocking vendors, sandbox platforms and other YC teams sell similar products, and platforms could bundle twins. A seed above the YC deal looks likely in 12 months because agent infrastructure is a favored category. Later rounds depend on turning labs and developers into recurring revenue, and on owning fidelity at scale. The base rates for AI B2B companies show about one in four reaching a Series A.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Blind test: only the batch input file was used for the company.",
+  "A seed here means a round above the YC deal of about 500K within about 12 months of the batch start.",
+  "Comps output once included another company's note mentioning this company's later funding; it was ignored (LEAK flag).",
+  "Cohort data is for 2022 to 2025 batches and is right censored."
+ ],
+ "sources": [
+  "https://www.wiremock.io/solutions/cleanroom",
+  "https://eu.klavis.ai/blog/introducing-klavis-sandbox-as-a-service",
+  "https://modal.com/resources/best-sandboxes-rl-environments",
+  "https://gradient.com/blog/posts/environment-for-lm-agents/"
+ ]
+}

@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunflower: YC evaluation</title>
+<style>
+:root{
+  --bg:#F5F0E6;--card:#FFFFFF;--ink:#14110F;--muted:#6B655C;--line:#E6DFD0;--soft:#FAF7F0;
+  --orange:#F26625;--orange-soft:#FDE9DD;--blue:#2F5BEA;--blue-soft:#E4EAFD;
+  --green:#1E9E5A;--green-soft:#DDF3E6;--red:#D64545;--red-soft:#FBE3E3;--amber:#D9A21B;
+  --radius:18px;--shadow:0 1px 2px rgba(20,17,15,.04),0 8px 24px rgba(20,17,15,.05);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+:root[data-theme="dark"]{
+  --bg:#0E0D0C;--card:#181614;--ink:#F3EEE4;--muted:#9A9285;--line:#2A2622;--soft:#1F1C19;
+  --orange-soft:#3A2417;--blue-soft:#1A2547;--green-soft:#15301F;--red-soft:#3A1C1C;--shadow:none;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E0D0C;--card:#181614;--ink:#F3EEE4;--muted:#9A9285;--line:#2A2622;--soft:#1F1C19;
+  --orange-soft:#3A2417;--blue-soft:#1A2547;--green-soft:#15301F;--red-soft:#3A1C1C;--shadow:none;}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+svg{display:block}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+button{font:inherit}
+.app{display:grid;grid-template-columns:92px 1fr;height:100vh;height:100dvh}
+.nav{display:flex;flex-direction:column;align-items:center;gap:2px;padding:18px 6px;border-right:1px solid var(--line);overflow-y:auto}
+.brand{width:42px;height:42px;border-radius:12px;background:var(--orange);display:grid;place-items:center;margin-bottom:16px;color:#fff;font-weight:800;font-size:19px;flex:none}
+.tab{all:unset;cursor:pointer;width:84px;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--muted);font-size:11px;font-weight:600;white-space:nowrap;transition:color .25s var(--ease)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--orange)}
+.tab:focus-visible,.ibtn:focus-visible,.tx:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
+.tab svg,.ibtn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.spacer{flex:1;min-height:12px}
+.ibtn{all:unset;cursor:pointer;display:grid;place-items:center;width:40px;height:40px;color:var(--muted);transition:color .2s var(--ease),transform .25s var(--ease)}
+.ibtn:hover{color:var(--orange)}
+.ibtn.big{width:64px;height:64px}.ibtn.big svg{width:38px;height:38px;stroke-width:1.5}
+.ibtn.go{color:var(--orange)}.ibtn.go:hover{color:var(--ink);transform:translateX(3px)}
+.ibtn[disabled]{opacity:.25;pointer-events:none}
+.main{overflow-y:auto;scroll-behavior:smooth}
+.page{max-width:1240px;margin:0 auto;padding:28px 32px 64px}
+.title{margin:0 0 22px;font-size:30px;line-height:1.15;letter-spacing:-.025em}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;color:#fff;white-space:nowrap}
+.view{display:none}.view.on{display:block;animation:viewin .5s var(--ease)}
+@keyframes viewin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}.grid>*,.chart-wrap>*,.walk>*{min-width:0}
+a{overflow-wrap:anywhere}.list li>*{min-width:0;overflow-wrap:anywhere}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.rc-row{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}.rc-f{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
+.rc-in{font:inherit;font-size:18px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%;box-sizing:border-box}
+.rc-in:focus-visible{outline:2px solid var(--blue);outline-offset:2px}.rc-out{margin-top:6px}
+.card h2{margin:0 0 14px;font-size:19px;letter-spacing:-.015em}
+.big{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.muted{color:var(--muted)}.small{font-size:13px}
+.stat{display:flex;flex-direction:column;gap:8px;min-height:150px}
+.ring{width:92px;height:92px;flex:none}
+.ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--orange);transition:stroke-dashoffset 1.2s var(--ease)}
+.row{display:flex;align-items:center;gap:14px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stepper{display:grid;gap:4px}
+.step{all:unset;cursor:pointer;display:grid;grid-template-columns:110px 1fr 140px;align-items:center;gap:14px;padding:10px 4px;transition:color .2s var(--ease)}
+.step:hover b{color:var(--orange)}
+.bar{height:12px;border-radius:999px;background:var(--soft);overflow:hidden}
+.bar>i{display:block;height:100%;width:0;border-radius:999px;background:var(--orange);transition:width 1.1s var(--ease)}
+.gauge{display:flex;gap:5px;margin:10px 0 0}
+.gauge i{flex:1;height:10px;border-radius:5px;background:var(--line);transition:background .4s var(--ease)}
+.dots{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.callout{border-radius:14px;padding:14px 16px;font-size:14px}
+.callout.red{background:var(--red-soft)}.callout.green{background:var(--green-soft)}.callout.blue{background:var(--blue-soft)}
+.callout b{display:block;font-size:12px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.callout.red b{color:var(--red)}.callout.green b{color:var(--green)}
+.snap{scroll-snap-type:y proximity}.snap>.card{scroll-snap-align:start;scroll-margin-top:16px}
+.band{display:grid;grid-template-columns:150px 1fr 70px;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.band:first-of-type{border-top:0}
+.range{position:relative;height:10px;border-radius:999px;background:var(--soft)}
+.range i{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--blue);transform-origin:left;animation:grow .9s var(--ease) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tx{all:unset;cursor:pointer;padding:4px 2px;margin-left:14px;font-size:14px;font-weight:700;color:var(--muted);transition:color .2s var(--ease);border-bottom:2px solid transparent}
+.tx:hover{color:var(--ink)}.tx[aria-pressed="true"]{color:var(--orange);border-bottom-color:var(--orange)}
+.chart-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
+.chart{width:100%;height:auto;touch-action:pan-y;cursor:crosshair;user-select:none}
+.chart text{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;fill:var(--muted)}
+.chart .grid-l{stroke:var(--line);stroke-width:1}
+.chart .ln{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cg{transition:opacity .35s var(--ease)}
+.readout{display:flex;flex-direction:column;gap:2px;max-height:470px;overflow:auto;padding-right:2px}
+.rrow{all:unset;cursor:pointer;display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;padding:7px 8px;font-size:13px;box-sizing:border-box}
+.rrow .nm{font-weight:700;line-height:1.2;transition:color .2s}.rrow .st{font-size:11px;color:var(--muted)}
+.rrow:hover .nm{color:var(--orange)}.rrow.sel .nm{color:var(--blue)}.rrow.me .nm{color:var(--orange)}
+.rrow:focus-visible{outline:2px solid var(--blue);border-radius:8px}
+.range-in{width:100%;accent-color:var(--orange);margin:10px 0 0}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.ico{border-radius:22%;overflow:hidden;background:var(--soft);display:grid;place-items:center;font-weight:800;color:var(--muted);flex:none;position:relative;font-size:12px}
+.ico img{width:100%;height:100%;object-fit:cover;display:block}
+.ico .sd{position:absolute;right:-2px;bottom:-2px;width:9px;height:9px;border-radius:50%;border:2px solid var(--card)}
+.acard{display:flex;flex-direction:column;gap:8px}
+.cards{align-items:start}
+.more{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;color:var(--blue);font-weight:700;font-size:13px;margin-top:2px;transition:color .2s var(--ease);align-self:flex-start}
+.more:hover{color:var(--orange)}.more:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:6px}
+.more svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease)}
+.more[aria-expanded="true"] svg{transform:rotate(180deg)}
+.xp{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.xp.open{grid-template-rows:1fr}
+.xp>.xpi{overflow:hidden;min-height:0}
+.detail{padding-top:6px}
+.dsec{margin-top:14px}
+.dsec h4{margin:0 0 6px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.tl li{display:grid;grid-template-columns:76px 1fr;gap:10px;font-size:13px}
+.tl li>span:first-child{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{padding:2px 9px;border-radius:999px;background:var(--soft);font-size:12px}
+.chips.good span{background:var(--green-soft)}.chips.bad span{background:var(--red-soft)}
+.detailpanel{border-top:1px solid var(--line);margin-top:16px;padding-top:12px;display:none}
+.dotb{all:unset;cursor:pointer;display:block;transition:transform .2s var(--ease)}
+.dotb:hover{transform:translateY(-2px)}.dotb:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
+.acard .head{display:flex;align-items:center;gap:10px}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.list li{display:grid;grid-template-columns:22px 1fr;gap:10px}
+.list svg{width:20px;height:20px;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.pro svg{stroke:var(--green)}.con svg{stroke:var(--red)}
+.prob{height:8px;border-radius:999px;background:var(--soft);margin:8px 0;overflow:hidden}
+.prob i{display:block;height:100%;width:0;background:var(--red);border-radius:999px;transition:width 1s var(--ease)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}.tbl th{font-size:12px;text-align:left;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}.tbl td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+details{border-top:1px solid var(--line);padding:12px 0}summary{cursor:pointer;font-weight:700}details[open] summary{margin-bottom:8px}
+.walk{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch}
+.stage-chart{width:100%;height:auto}
+.stage-chart text{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;fill:var(--muted)}
+.shake{animation:shake .6s var(--ease)}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.cap{display:flex;flex-direction:column;gap:12px;min-height:520px}
+.cap .num{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.cap .res{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.cap .ctl{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.pips{display:flex;gap:8px}.pips i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .4s var(--ease),transform .4s var(--ease)}
+.pips i.on{background:var(--orange);transform:scale(1.25)}.pips i.bad{background:var(--red)}
+.fadein{animation:viewin .6s var(--ease)}
+.link{all:unset;cursor:pointer;color:var(--blue);font-weight:700;font-size:14px;transition:color .2s}.link:hover{color:var(--orange)}
+.tree{position:relative;display:flex;gap:70px;overflow-x:auto;padding:6px 4px 18px;align-items:flex-start;min-height:340px}
+.tcol{display:flex;flex-direction:column;gap:14px;min-width:230px;max-width:250px;animation:fade .4s var(--ease);flex:none}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.tn{all:unset;cursor:pointer;display:block;box-sizing:border-box;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.tn:hover{transform:translateY(-2px)}
+.tn:focus-visible{outline:2px solid var(--blue)}
+.tn.sel{border-color:var(--orange)}
+.tn b{display:block;font-size:15px;line-height:1.25}
+.tn .pr{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)}
+.tlinks{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.tlinks path{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round;transition:stroke .3s}
+.tlinks path.on{stroke:var(--orange)}
+.rm{display:grid;gap:0;position:relative}
+.rm-item{display:grid;grid-template-columns:34px 1fr;gap:16px}
+.rm-rail{display:flex;flex-direction:column;align-items:center}
+.rm-dot{width:16px;height:16px;border-radius:50%;background:var(--line);margin-top:26px;transition:background .4s var(--ease),transform .4s var(--ease)}
+.rm-item.focus .rm-dot{background:var(--orange);transform:scale(1.3)}
+.rm-line{flex:1;width:2px;background:var(--line)}.rm-item:last-child .rm-line{display:none}
+.rm-item .card{margin-bottom:16px}
+.rm-item.focus .card h2{color:var(--orange)}
+@media (max-width:980px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:minmax(0,1fr)}.chart-wrap,.walk{grid-template-columns:minmax(0,1fr)}.readout{max-height:none}.cap{min-height:0}}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr;grid-template-rows:1fr auto}
+  .nav{order:2;flex-direction:row;justify-content:space-around;border-right:0;border-top:1px solid var(--line);padding:6px 2px;background:var(--bg);overflow-x:auto}
+  .brand,.spacer{display:none}.tab{width:auto;min-width:44px;flex:1;padding:8px 0 6px}.tab span{font-size:9px}
+  .page{padding:20px 16px 40px}.g4,.g2{grid-template-columns:minmax(0,1fr)}.title{font-size:24px}
+  .step{grid-template-columns:90px 1fr 100px}.band{grid-template-columns:1fr}.chart{min-width:640px}.chartbox{overflow-x:auto}.tbl{display:block;overflow-x:auto;max-width:100%}.tbl td,.tbl th{white-space:nowrap}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}.reveal{opacity:1;transform:none}.chart .ln{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav" role="tablist" aria-label="Report sections" id="nav"></nav>
+  <main class="main" id="main"><div class="page" id="page"></div></main>
+</div>
+<script type="application/json" id="data">{"mode": "summary", "startup": {"name": "Sunflower", "one_liner": "AI-native telemedicine clinic for addiction", "description": "Sunflower runs a sobriety app with an AI sponsor that the team says reached about $1.5M run rate in subscription revenue, and is adding a telemedicine clinic for addiction therapy and medication that Medicaid and other payers would fund. 15 people including clinicians from known providers. Founder previously led growth at a health startup.", "as_of": "2026-07-06"}, "thresholds": [{"min": 0.65, "label": "Very likely"}, {"min": 0.45, "label": "Likely"}, {"min": 0.2, "label": "Reasonable"}, {"min": 0.05, "label": "Unlikely"}, {"min": 0.0, "label": "Very unlikely"}], "headline": "A real recovery app brand with revenue, moving into a slower regulated clinic business.", "summary": "Sunflower is a sobriety app with an AI sponsor and a claimed $1.5M run rate, now building a telemedicine clinic for addiction. Revenue at this stage is unusual and the topic attracts Medicaid focused investors, so a seed above $500K within a year is more likely than not. The main risks are numbers that do not reconcile, payer enrollment and licensing that take years, and well funded telehealth peers. Healthcare cohorts reach Series A late and rarely, so later steps are discounted to the cohort range and the data is thin.", "yc": {"p": 0.1, "p_low": 0.04, "p_high": 0.18, "basis": "Starting rate is about 1 percent (0.6 to 2 percent band, yc_acceptance.md). Test assumption: the company was accepted, so this note records the adjustments only. Up because there is real revenue of about $1.5M run rate, fast user growth and a growth operator founder. Down because the clinic step is a regulated services business and 100 MAU in 6 months is a small base for the stated 800,000 yearly new users. Test note: accepted in fact, so this step is not scored.", "why_it_fails": "YC would most plausibly say no because the headline numbers do not agree: 100 monthly users cannot support $1.5M of run rate without extreme pricing, and the 800,000 user pace is a projection. The clinic adds payer contracts, licensing and clinical liability that a consumer growth team has not run before, which looks like a pivot into a harder business.", "label": "Unlikely"}, "stages": [{"key": "seed", "title": "Seed", "months": 8, "p_reach_prev": 0.6, "p_given_yc": 0.6, "label_given_yc": "Likely", "p_today": 0.06, "label_today": "Unlikely", "why": "A round above $500K inside 12 months would be missed if investors see a consumer app with a small paying base and treat the clinic as an unproven second business. Recover and RTHM show addiction and chronic care startups from YC that stayed at seed, and healthcare is slow to seed with a median of 19 months in the data.", "anchor": {"base_rate": 0.5, "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Healthcare: seed cond 50% (n=22, anecdote); upper bound seed about 64% for the broad cohort. ", "adjustment_reason": "Healthcare cohort has only 24 companies so I lean on the broad cohort of 57 percent. Raised slightly for $1.5M run rate and a brand that grew fast, since revenue is rare at this stage."}, "bands": [{"raise": [1000000, 2000000], "post": [8000000, 15000000], "p_band": 0.25, "p_given_yc": 0.15, "label": "Unlikely", "rationale": "Small seed from health angels near the median seed raise given a consumer subscription base."}, {"raise": [2000000, 5000000], "post": [15000000, 35000000], "p_band": 0.55, "p_given_yc": 0.33, "label": "Reasonable", "rationale": "Typical 2022+ seed of about $3.3M median raise at a $20M to $25M post, as in the healthcare cohort data."}, {"raise": [5000000, 10000000], "post": [35000000, 70000000], "p_band": 0.2, "p_given_yc": 0.12, "label": "Unlikely", "rationale": "Upside from a recovery brand with revenue and a Medicaid thesis that health investors back."}]}, {"key": "series_a", "title": "Series A", "months": 26, "p_reach_prev": 0.24, "p_given_yc": 0.144, "label_given_yc": "Unlikely", "p_today": 0.0144, "label_today": "Very unlikely", "why": "A Series A needs proof that patients seen through the clinic are reimbursed and retained. The likely miss is slow payer enrollment and clinician hiring, since healthcare reaches Series A late, with a 29.5 month median in the data. Recover raised only a small seed and relied on county contracts, so the path can stall.", "anchor": {"base_rate": 0.26, "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Healthcare: series_a cond 9% (n=11, anecdote) (broad 22%, n=115; B2B 26%, n=74). ", "adjustment_reason": "Near the B2B and broad cohort range; healthcare data is too thin to use. Held there because revenue exists but clinics are slow."}, "bands": [{"raise": [6000000, 12000000], "post": [30000000, 50000000], "p_band": 0.3, "p_given_yc": 0.043199999999999995, "label": "Very unlikely", "rationale": "Thin A as a clinic proving payer contracts, near the 2018-2021 median raise of $10M."}, {"raise": [12000000, 25000000], "post": [50000000, 100000000], "p_band": 0.5, "p_given_yc": 0.072, "label": "Unlikely", "rationale": "Typical health services A with Medicaid contracts, in line with the one healthcare cohort A of about $26M."}, {"raise": [25000000, 40000000], "post": [100000000, 200000000], "p_band": 0.2, "p_given_yc": 0.0288, "label": "Very unlikely", "rationale": "Upside as the AI sponsor brand lets clinics acquire patients cheaply."}]}, {"key": "series_b", "title": "Series B", "months": 44, "p_reach_prev": 0.28, "p_given_yc": 0.04032, "label_given_yc": "Very unlikely", "p_today": 0.004032, "label_today": "Very unlikely", "why": "A Series B requires state by state expansion with clean unit economics. Telehealth addiction peers such as Ophelia reached a B in a loose 2021 market, while smaller ones stayed at seed. The likely failure is payer rate cuts or a Medicaid policy change that breaks margins, and venture investors back few addiction companies.", "anchor": {"base_rate": 0.39, "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 (broad cohort series_b cond 12%, n=25) and --years 2018-2021 --industry B2B (series_b cond 39%, n=18). Older cohort used because 2022+ is right censored.", "adjustment_reason": "Within the older B2B anchor range and above the thin recent rate; adjusted down because healthcare services scale slowly."}, "bands": [{"raise": [25000000, 40000000], "post": [120000000, 250000000], "p_band": 0.3, "p_given_yc": 0.012096, "label": "Very unlikely", "rationale": "Flat or down round if patient growth slows."}, {"raise": [40000000, 70000000], "post": [250000000, 500000000], "p_band": 0.5, "p_given_yc": 0.02016, "label": "Very unlikely", "rationale": "Typical 2022+ B, as with the $50M Series B that Ophelia raised in late 2021 in a hotter market."}, {"raise": [70000000, 120000000], "post": [500000000, 1000000000], "p_band": 0.2, "p_given_yc": 0.008064, "label": "Very unlikely", "rationale": "Upside if the model works across many states and payers keep rates stable."}]}, {"key": "series_c_plus", "title": "Series C+", "months": 66, "p_reach_prev": 0.25, "p_given_yc": 0.01008, "label_given_yc": "Very unlikely", "p_today": 0.001008, "label_today": "Very unlikely", "why": "Late rounds fail when reimbursement caps growth and margins stay thin, so investors cannot justify a software multiple. Clinic businesses grow with headcount rather than software leverage, and the few addiction telehealth peers that reached Series B had to restructure around payer contracts, so the odds of a later round are low.", "anchor": {"base_rate": 0.3, "source": "python3 -I scripts/base_rates.py --calibration-only --years 2018-2021: series_c cond 30% (n=23), B2B 57% (n=7). Small n, wide range.", "adjustment_reason": "Slightly below the broad anchor of 30 percent because few healthcare services startups reach late rounds."}, "bands": [{"raise": [50000000, 80000000], "post": [500000000, 900000000], "p_band": 0.4, "p_given_yc": 0.004032, "label": "Very unlikely", "rationale": "Thin growth round, in line with the 2022+ median of about $45M."}, {"raise": [80000000, 150000000], "post": [900000000, 1800000000], "p_band": 0.45, "p_given_yc": 0.004536, "label": "Very unlikely", "rationale": "Typical Series C for a profitable multi state provider."}, {"raise": [150000000, 300000000], "post": [1800000000, 3500000000], "p_band": 0.15, "p_given_yc": 0.001512, "label": "Very unlikely", "rationale": "Upside if it becomes the national leader for addiction care and payers pay well."}]}], "outcomes": [{"name": "Shuts down or stalls", "value": null, "failure": true, "p_given_yc": 0.45, "label_given_yc": "Likely", "p_today": 0.945, "label_today": "Very likely"}, {"name": "Acquired or IPO under $100M", "value": [5000000, 100000000], "failure": false, "p_given_yc": 0.32, "label_given_yc": "Reasonable", "p_today": 0.032, "label_today": "Very unlikely"}, {"name": "Acquired or IPO $100M-$1B", "value": [100000000, 1000000000], "failure": false, "p_given_yc": 0.19, "label_given_yc": "Unlikely", "p_today": 0.019000000000000003, "label_today": "Very unlikely"}, {"name": "Acquired or IPO over $1B", "value": [1000000000, 3500000000], "failure": false, "p_given_yc": 0.04, "label_given_yc": "Very unlikely", "p_today": 0.004, "label_today": "Very unlikely"}], "outcomes_why": "Most likely the app stays a small subscription business while the clinic fails to win payer contracts, or it sells to a larger behavioral health provider for a modest price. Reimbursement driven margins and clinical regulation make a billion dollar outcome unlikely, and most telehealth addiction peers in the data ended as small independent providers or modest sales.", "most_likely": {"stop_index": 1, "stop_name": "Seed", "stop_p": 0.45599999999999996, "stop_dist": [{"name": "No priced round", "p": 0.4}, {"name": "Seed", "p": 0.45599999999999996}, {"name": "Series A", "p": 0.10368}, {"name": "Series B", "p": 0.030240000000000003}, {"name": "Series C+", "p": 0.01008}], "stop_band": {"raise": [2000000, 5000000], "post": [15000000, 35000000], "p_band": 0.55}, "credible_index": 1, "credible_name": "Seed", "credible_p": 0.6, "credible_band": {"raise": [2000000, 5000000], "post": [15000000, 35000000], "p_band": 0.55}}, "scores": {"need": 4, "technical": 2, "takeover": 3, "brand": 4}, "insights": {"need": {"rating": 4, "evidence": [{"claim": "Venture funded telehealth addiction providers serve mostly Medicaid patients and raised large rounds", "source_url": "https://hitconsultant.net/2024/05/24/boulder-care-secures-35m-to-expand-telehealth-addiction-treatment-for-underserved-communities"}, {"claim": "Federal rules let telehealth start buprenorphine and methadone treatment, enabling remote clinics", "source_url": "https://mobihealthnews.com/node/152069"}]}, "competition": [{"name": "Boulder Care", "what": "Telehealth addiction treatment, mostly Medicaid patients", "traction": "$35M Series C in May 2024", "source_url": "https://hitconsultant.net/2024/05/24/boulder-care-secures-35m-to-expand-telehealth-addiction-treatment-for-underserved-communities"}, {"name": "Bicycle Health", "what": "Virtual buprenorphine treatment", "traction": "$50M Series B in 2022", "source_url": "https://bhbusiness.com/2022/09/23/virtual-mat-provider-bicycle-scores-additional-5m-from-bcbs-of-kcs-venture-arm/"}, {"name": "Workit Health", "what": "Digital recovery support plus telehealth", "traction": "Early funder of digital recovery", "source_url": "https://www.workithealth.com/blog/workit-health-raises-1-1m-bid-go-beyond-digital-version-addiction-recovery-program/"}], "technical": {"rating": 2, "rationale": "The app is a chat product on public models that a small team can build quickly. The hard parts are clinical safety, licensing in each state and payer billing, which are operations rather than engineering."}, "takeover": {"rating": 3, "who": ["Boulder Care", "Bicycle Health", "Large recovery app makers"], "timeline_months": 12, "rationale": "A funded telehealth provider could ship a chat sponsor in months but lacks the brand and user base. The clinic side is slower to copy because licensing and payer contracts take time."}, "brand": {"name": "Sunflower", "rating": 4, "effect_on_success": "helps", "name_check": "python3 -I scripts/name_features.py --score \"Sunflower\" --era 2022+ : 3 syllables, plain English word", "strengths": ["Warm and memorable word", "Fits a recovery and hope message"], "weaknesses": ["Common word with several other brands using it"], "rationale": "A friendly nature word works for a consumer recovery brand and helps trust, in the way mascot and plain word brands helped other YC consumer companies, though it is not a moat. Brand effect is mildly positive.", "better_names": []}, "deep_dive": {}}, "roadmap": [{"phase": "before_yc", "goal": "Reconcile the numbers and prove retention", "actions": ["Publish paid conversion and 90 day retention", "Document the revenue run rate by cohort"], "proof": "Retention curve that flattens above 30 percent"}, {"phase": "seed", "goal": "Launch a first licensed clinic offer", "actions": ["Hire a medical director and open one state", "Pilot cash pay visits"], "proof": "500 clinic patients with 60 day retention"}, {"phase": "series_a", "goal": "Win a payer contract", "actions": ["Enroll with a Medicaid plan", "Show cost per patient below payer rates"], "proof": "Positive contribution margin per patient"}, {"phase": "series_b", "goal": "Multi state scale", "actions": ["Expand to five states", "Build billing automation"], "proof": "Over $20M revenue"}, {"phase": "series_c_plus", "goal": "National leader", "actions": ["Add partners and employers", "Reach profitability"], "proof": "Profitable growth"}], "pros": [{"point": "Real revenue and rapid user growth for a team this early", "evidence": "About $1.5M run rate claimed in the batch listing"}, {"point": "Large funded demand for addiction care", "evidence": "Medicaid focused providers raised large rounds", "source_url": "https://hitconsultant.net/2024/05/24/boulder-care-secures-35m-to-expand-telehealth-addiction-treatment-for-underserved-communities"}], "cons": [{"risk": "The clinic step needs payer contracts and licensing that take years", "p": 0.4, "evidence": "Telehealth addiction care depends on Medicaid and commercial payer enrollment, which peers took years to build.", "analogs": ["ophelia", "recover"], "mitigation": "Start with cash pay and one state, then add payers.", "analog_names": ["Ophelia", "Recover"]}, {"risk": "Revenue and user numbers do not reconcile and may overstate scale", "p": 0.3, "evidence": "100 monthly users against $1.5M run rate implies very high pricing or a different user count than stated.", "analogs": ["recover"], "mitigation": "Show cohort retention and paid conversion in the seed deck.", "analog_names": ["Recover"]}, {"risk": "Well funded telehealth addiction providers can add a sponsor style app", "p": 0.25, "evidence": "Boulder Care, Bicycle Health and Ophelia raised tens of millions and already hold patients.", "analogs": ["ophelia"], "mitigation": "Use the app as a cheap acquisition channel and partner with clinics.", "analog_names": ["Ophelia"]}], "analogs": [{"slug": "recover", "name": "Recover", "batch": "Winter 2021", "status": "Active", "relevance": "Online addiction treatment funded by government contracts", "summary": "Alive on a small seed and county contracts, no large round.", "url": "https://www.ycombinator.com/companies/recover", "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAIAAACzY+a1AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAGYktHRAD/AP8A/6C9p5MAAAAJcEhZcwAAuIwAALiMAcz2uy8AAAAHdElNRQflAQwHGjaHM89eAAAXW0lEQVR42u2de5RdVX3Hv7/fPufcc++dmcxkkvBIQlDCM4ACkYegPCQIFcHH0tVl1brER6trgcVnW2xpRWuxllbaLkqrCGXVan0WLRgjKvIUSHgJAQJ5EEhISDKP+zxn79+vf5w7AVyEOXdyz9x76P2sgcVlzrmz9/6evc/ev/3bvx9Nvvdd6JNnuNsF6LO39CXMPX0Jc09fwtzTlzD39CXMPX0Jc09fwtzTlzD3/D+RULtdgAzxul2AjkKkRK3/AhLlks9KSgqABIASQaCvEF1zLiFR8kOqcE6thbUQgYqogkhBSkRQUgUUIAapYRiPjIExIFYoVPOraM4kJIUwCEREUFVrNY7UiRqjpTKNzqORuToyYoaHeWDAhEUEAchABda6Rl0rFTcxwTt3ul07dGyMKxW1kWEivwDfU2KFJv202xVtg3xJSM6DEUKzaW0EY3R0Hi850Cw9lF/1am/f/Xh0ngnDab9FAYmaMjYm27ba9evdusdlw5PYttU0muT7VCgoG1WBCrWG4Z6G8rHZRARmimOtN50HXbTEO/o15rXH+gcdYgYHX9TMu4fE5N+7f5f0K4KCCAQm3f2aBKRRtxs2xA+ssffdKxs2+I06wpD9QPMwwPa+hARDaEbSbMjIXD52uX/KqYXDj+CgkPxaVSEOIBATKYiQpuuoAqqqiaRgk/xvcS5evy6+7TZ71+387Bb2fIQhFFDpdjvsuYF6WkJjqNl0zYbbf2HhtBX+aaf78+a3fiUCTE1n9p6WSArm5Amw1YnojjvtypvkyUeN8SksQly3m+Ol6VUJmck5V6u5fffxzzkvPGOFVy5DoSoAqFPKvRQqDqrEBkRio+Ydd0Q3/JDWPUZhSEEA13NC9pqEpKRMrNVqXCp6Z59Xeuv5ZnAQqhBVIuJZmF+ogqBKImAGkcRx/eaV8Q++a7Ztp8EyJWXpdks932Q9JaEyGeviel2WH19+7wf8A5ZQMqHIsttNg0jy1+3YWPU71+uqVR4TCqGI6xHLVi9JaAxqtahUDt/zvnDFm5lYxRFx18SbQlVVXDK0Ntbc0/j61WbLM2ZgUHvj7dgzErLRyQl7+OHlP74wWHSAihAA7pEHHUCyXBGwsRPj1W9chVt+5ZUHlZJ5UDcfMvNnRy/rctMQEchVJvDmc4c+8SlvZFSdI8OgXtIPyeyXIcKFsHDSKbZYtvfdy6Rgv7vWnC5bZ5SJncRR5H3wo+VzzycREUfGdLdULwezqsK5gfPeVl+4f/PKK0yjSYWgtcjpSom62RxkOLaxaHDRxeVzz1dnQcRsemey99KlJiJmOFc87vjiJX/t5sxBowHmbvXF7knITDaOjAk//bnSyaeqjZMZfIf/SstC1unGJYIxam1h6cHFz/91PH++NGq7TTyzTJckJIa1MVHhk58Jj1kuzpLnEXhvW1oEIioO4qZspPQCk5tCREXgREV0742fnlFnC4sWl//8UhldkPTFF1tmZ4MuSKgEqLXOBRdeXHrtcrGOjUfJrGZG39eSLTGPMRMbZaNEIuKaTWnUXbMpzgEEZmKGYWIGkTpR52ZsyCYQGQ/OBfstLH32knjOIKKIiIFZfS92YTrDxLZW9z/6sdIJJ4m15M30mU0GSWYwARBr7dYtbuMG2bzJbd2KsZ1SrVLUZBEhhu+hXNY5c4P582nxYrPkQLNwIQfF1t+eWr/PpBjGqIuDJQfKRZ9rfPlSIzGRN5vvxVmVUAFmdpMT/I53l1aco86xabe2ifVLSBWJGTOOo7WPxPfeJQ8/oluf5loVTpkJhpla6prkPlGIsyIAR2FRF8w3Bx/qH3e8f/RRpjQAYOaLUeOJc+GyZfbDH3dXftUr+h0YpVMzu0t7JqlWcezxA3/6eVIFEbX54KuqqmMyILK7djR+9Ut726954xOwwr5PQQBmpamn4nfaccqtBlAS0TiWOAJB9t3fHP/6wpvODBYuTiwxMzQJOYHhyeu/qd//jhmao7NlEJ9FCYkQWTt3Tvmyy/2580SEuE2jtaqqErMd21W/8cfu5lW04znjB1ooEKF9/xcCs0I5amqjaQcHzYknB+e/o7Bw0fNDdJvFAyAiE5f9pXnoASqVZmexODvWGVKACTa2hY9fVFh6iIpjNgRNPXlTFSFmqNZW3VS/8grcfacPcKkIY6BCMxm3COpIocajsEgqePSR5q2/so26f9DBFAQqLlkEpv4+UlU2xiw9tHH7LV4UY1aWuLNkYDPkueoEnXXOwHlvR2IyThoxHeqEjIm3bJ782lf1hh95zplSWYkgiZvhjFuKWv+oAqCw6Dvn7l/dWH0PL1pk9tlPRRJfq7RfRwRxZs4cDYv27ts5KM6C38ZsSKhEiCO7YN/yhRebMFS00SjJmEbG1O64rXH5l/mp9Tw4RKCOe0IQFCpKzMWi2bkruuUX1jPBEUcSFNB2+iJDxVt6cOOxx/ipTSgEWas4G+tCInJRHLzz3f6cYST7R+lIvI+UufK9b0df/ZLfbHJ5gJzLZsqeWAAUzmpY8IOCfPOaypVXaGyJWEU09R9VBYGKv/8HNixAJOtumL2EzKjV9KijSqe9CdA2rFCqBChz5etX2+uv8UuD4plZ8XsgElFVb86w/mLl+OVfdLUamJFaC2JWZwtLD+HTz9Rqhcmkl38GZCuhAqRqmcPz30lE7czQVKFCNHH1P+sNP/DmjKgq1M6m7UpdbIaGzeq7J//2i1JrJJOpqWpNBxsAxXPfbkdG1cWUZTtn+NUKELHW63T0awvHHJfsl6a9V4SIq/9xrd74Ex4eghNAMm2Il4AIzpmhYX5wzcQ/fkWc08RvMcVjlDyv/j4LvNPOkHqVsty7zvCrCQrAEQVnn0vteGKqc8SmuvJG+cF3vKFBOEEby48Ooy42Q3P4N7dXvnG1EiP9S5EIQLjibJ0zChdn5z6S5XNNrI0aDj60cOyxCtUUT6Im/c+Y5tqHo2u/4ZdKLzic1C1InPWGhuWmn9R/dhOMgUv3MBJBnL/vfjjxJKnVcyohiXP+qacxMYmmssSogNnVqrV/u8q3kRjuBX94AqmKXwzj66+NN20gY1KXigCEp55uwwCSwbYlgAwlJKI4xuj84HUnJR9T3SVKQPW//8t7Yp0WS3Dd16+FqhrPq1ar112jqaujRKLqH3aEWXqYNhugTHb2M5TQNZv8mmPMyIgmWznTIkLGNNY95lbeyIMDcK63zhWJULnIq++t/mIVEqfvFI3AIgyYE05Ua0GcxUshw4FUmPzlJ9DUvCZNhRWIv/sdr9nUdi3gs4IDvMBzP/heXKsSTz+c7t66Co5ZLoNDcHF+JExG0XkLvMOPAJDKnVAERM0H75c191Cp3EWHsJeBnUoYYvOm6OafAa0DHtM2BVS9/RfSq5ei2UQGT2YmEipBosgcdLAZGlJx046iCk2Ovjd/eiO5uLfGzxdCIIEJgvjnq2yjQSmXuSoEeMuOdG76ppgBnZdQk5qK8LJluzcBpkGU2ESbNuL+1RwOpDdldQEVFAq8aWO8+m4A6UYLAuAdsQxBIYvRpfMSEgjqUAi9gw8DQGmmYaoERHfeStUKGcrUotgBlIg0vvWWpLbT144IgDlgicwdIWs73hEzGEgJsA4jI95++01VYJpCkzEi4lbfY/yCoofOfb006hAWZO3aePs2EE//RiSCqhkYNPsv1rjzZposJCRElvbd35QHWufKpmkRAWA3rMdTmxH4PT2K7sYENL7TPvxbIJXHYeJYRYuXqOu8pT6LgRQiThcuBNK9CBUA4kcfRr1rDtHt11EYFD/84FT1pqlmMrB4ixa1s3eclqzWhf6++7R1vVv3uEHPvwV3oyDPcxvWqzgyPO3Yn7iG0IJ9xPc77m+QiYRimOYtSF0EFhHdvJl8M5vul3sJ+T5v3+527Gjt9b/8xVAAZnSUg7Djk9IMFhWqZDwaHkl5NQCdGNddO2C8GTmidQNVMGut4rZvS6o8zfVEAHhgCMVQpcNHSjPohark+6Y8sLvoL381ADs+rrUaTNfOd80EIo6t7tiJVIIQAApDKRaR0mKcmk5LSARR8X2EhVTXJweBJiY4jnruWO/LFzwJAje+8/lqvHyzAPA9DUutADedI4tWE/J84/vpb3D1Klw+Ap69EIXGtWr664nY+AFUtad7IQAFMbflzU7WkkJz8yZsVZNBFNs2qgnAMBSdrWhGZu50gdB210007YZULyFTq4X0Rc/C8pTV66ddQWb/cOxe0nIc9j0AlE4ZBZCcVO35d2FSw/z1qrZIrBBcKgNIOTKqqkSd3zLMbhKYpy414yp6c+akujJZOMYRms3EOaGD5Gke31OQqnoBjc4DoOmeV200uNYAd1jDvoQzgghOtFzm+QuQ4qBWYr5xlcqUKT8P78JXNApAXIz583h0FEjz0lAF3M4dGjWI9zo2y4vpSzgDSIkRxXzgQYZNchh4uluUADy7jSPb8f2mvoTt04q5QbxsGdJtibaCRT+9sZ2z6WnpS9g+RHCxDo8UDj8SAKexQxErIJs2wnT4RYi+hDOBSRuROeQwb/6CdJ4lSkSuMoGnt7Dvd/yUSF/CtiFAAHPKG9O6WKoCsE9t0F3PwfP6EnYbIo2auviAwnHLgZShohSAffhRjpr5cAV+ZUPM0oy8N51lwmJaFwpiBdxDD5DxsnAO6kvYDkRoNN3iA4pnnNn6OC2iIIqf2azrH6dCmEWMxL6E7cCwcTM4/51cKqtL4T8xlRslXrOaJiZgMmntvoSpYdZKnV67vHTGmVBN13IKJgHsXXea1kSm8wNpvpLfTU9r5UxMRAqh3b7hBE2Oe9CUlTmJS5TGspJYQZ21A+XyBz6YTERThQ5QJeZo7cN4/FGEWQXzeqVJSGxULOo1cQ5Mzg+UDSugQuLIJTlGAWYYw55HxoDN9IlEibU2WfjYJ4LFS9Q5MikD5KkCzV/dzFEDwWBfwulgJhGZHHelAT7yaDr8CH/JgTQ8V4MAqmRjajakWncT427ndn72Wbt9q2x7TifHuVkhNhwE8P3EdvbCtlaoYd9O7MJb31Y68yxNn4NBldhEW7fIXbf7YTE7L+d8S0it3XMCs9ZrLgj5LecXV5wdLF6SwmaiMjnunn7GPrHOPvpI/OTjtH07W0uFAoJgKreWkPHtxC498eTBP/zwlC1m2tFXAWpFX1m1ksfGdGgobaiT9sm3hEkKHmaWyrgse03pgg/7S16dZKUkN2X62oOrCjGboWEzNBwcfoSee56rVtxjj8b3/sbefx9teYYBKobwPB0bk2OOG7zwU2wYquliAJKKgzHRtmftL1f5xdQryBmRdwlhiG1lnFa8ZfBDHzGer84pgYhfNIPfU5/RBGFirzzgHXNc4ZjjbL1m71sT3XKzPPgQPbdDT3z9wMWf4WLYimmbsmCqBDRu+KHZuQODQ30J9wgx28qkOef88oc+SqJJ2JN2vB+T6OBJVI7WBNUrlryTTg5POjla91jzwQfKbz7HFEtIchmmQ0XYeI0n1rlf/LxQGnCS7aHXPEvIrNUalh9fuuAjpApKF1rjJUjG26nwv1MZE4OlhwRLD9H243QTkQDRt673m3UplSnj6B25XdoTwcZuZG7pgo8wkabZ9En/zUkiEhFJwte28c2qzoGovvImXXM3ZiX6Sk4lJCJy9YZ/7nn+gn3hXBbRIomZjUkfwxhTMQCjZ55ufvt6rxDOTgC5fEpI0DjGPgvD088EeiZTpSqIRaT+71f54+PiB6liC+01vVH5diHWRp2WH2eGhjp+XG/GqAgRVb91He67h8oDJHZ2zmrlUkKCijH+0a/pdkFaKCDOkjHVX98sP/y+GZiDVG5tnSGHEiZxbcqDZskSIHWYzExxlo3XeOSh6F+v9gJfZzdzWg4lTGwfg0NmaLjbJQEAqJLx4s0bG1f8XWBj9WY7YkAeJQRUNCyQ5wHd7oWqIIq3b5v8wl95E2Na6ELoo3xKCNDu+XoPHILjgTIfsESt7crTlE8JmVGvazMC0GUNk/hqxfLQpz7rlh2llVpyFHtWG6Ob9Z8ZqsRGJyfsrh3dLgqAJLmMUCEc/JPPRgcsRr2ekY/MnsihhACMoWrFPfkEkPZMQ6YkOdJ5eHjgok/GpTIyiFj5MuRSQgUYZFff2331ACTn7o2Bc8GBrw4v+CMbNQnUbkLMGZNLCSGCYhH3rbFbngH3RC4LJFFVnS2e8kY+562uMs48S6uLfEoIIsOYHKvf9GMAmtVugE79pIXZKLT8nve5gw5FvZbGy23vyamEClFTKsuqlc21vyVjOp/7WFVF1Im01cWJSNSExeIHLojZm52wHzmVEACU2bO2fvVV8cQ4GdOxnTmRxHRObDTxAWhrw4FZxRWWHWVWnCXVClK6u+0FOZYQIghD3rShdsVXXKMGZnVuZh7T2upzTlXADGap1eor/3f8y5dFT28GsUobqUuTLcbwHe+S+ftQFGU9O82zhICK4/IAP7hm8guXxtueJWNUVZ2mcNpUqEIEziX77MSc3N544vHKdddMfPrC+OqrvLtuq3/pC9HGjcRG03sREsHF/shc761vj5v1tjaNZ0CefWeSEGjOUnnIe2xt5ZLPFN7z/vANp7U8oH7XO1tbd6DlJgN63r4qjVq8caN98H635l5d/yQ3al6hiHIJxN5z22p/8xd0yWXeosVtOEGxEaD4phWTP1+pz2zWIKC+K/AeSJJrWyqVgkolvvIfmqt+VlhxVnDMsWZoeE+hJRRQG7uxcXl2i92w3q57HE8+odu2crNhPJ8KoQ4OJ29EhVCp6O/cVbn8S4OXXubNHVVxYJ52L5eIIY7D0D/79+xV/+QVQtWsshDnXcKpvPYi6nme7+tja6O1D0SjC/hVB/HiA2R0vlfwSdRZK/W6qVR0Ytzt2okdO3R8jCcrsA0mQ35Avq+FQjIRxVRWNALgREsD3tObql/7+4FLLmXPg6bajU/Gz8Ipb4x//CNsexZBVtnR8y7hC0jceouBr6FOTuo9d7nf3AFQ/IKjTI6UQMawGo+NQRgoFaZuBe1hZaIupsEhun9N9T+vG3r/BaqSytuRSJ3zSmXzhtPdt67jMMwoHfgrSEIAAAkUAs8j3/deOIlMXoLayqNAqpLsWOn0mWYJBOd4aND++IbakUeXjn1dSs9uYlKgcMob6j/5H9ispqb5npHuEVWIaLLCS36cwImKa31UncH8wmPY66519RqYU51UIoY4f7/9cdSRaNQ1m0Qqr1AJM0AFVAh10/raDT9sa71PgH/C650yo8PpDRL6EqaFoCpqikX56U3x9m3EJo2KyaQmOPJonTdXY9vhsNwA+hK2icL3addzzZ/+RIFUbjJEEDHDI3zwYWhm8jrsS9gmIhyG8a2/dmO7kDY7uhJgjjrKQiiDBu9L2Caq5BfMtq3Nu+5KPk5/CxEA79DDtFhCmjzcbdKXsG0Eysazd96qQLpY6QzA228hz1sAm4sUlK90SEQLoTyxLnp6c3KmfrobABUuhFi0UOJcJIJt0RPOEBlVjA2ZyqRLsoimmJeqKAG8eIlmcIinJ5IcdD5SbpYQICAw7CMPays1Tpoqwlu4SIk6vmWRhYFNAW3toU/30LUsVapCZFr35kFNVWMC+9QGiSM2njo3TcDtxIw3Ok8zMHZ3XkJSVWJNDjwwv7yErd89H58sD/ol2WF8ozuek/FxM2/+tLGBE4G9+Qs4LGorzV/HhOy0hKpqPK9Wr//L18gPUlmhjCfbt5ogmN0jXXtdT2KOosZVV0aDw5Dp86cpE5oRt+Y+neyINPned2VRQW00oOmyqCjI81Ao9Ig7aHs0G+oEaSNCERWLHS9CNptNRFQut3G9zprrc6cpltob+jNwec1svzD7YB09QQ9Us7+0zz19CXNPX8Lc05cw9/QlzD19CXNPX8Lc05cw9/QlzD19CXNPX8Lc05cw9/QlzD19CXNPX8Lc05cw9/QlzD19CXNPX8Lc05cw9/QlzD19CXNPX8Lc05cw9/QlzD3/B6tCYKr/C9OLAAAAAElFTkSuQmCC", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/575746cea96c11bc6b379dcd00b9abf8ac9a21ce.png", "one_liner": "Government-funded online addiction treatment", "website": "https://www.letsrecover.com", "detail": {"depth": 2, "confidence": "low", "funding_coverage": "partial", "outcome": "Recover sells government-funded telehealth addiction treatment and remains active. Third-party profiles report only a small seed and roughly 3.3 million of 2024 revenue with about 22 staff, with no large outside round found. It grew on county contracts rather than venture capital, so the story is steady, capital-light growth with a risk concentrated in government contracts.", "target_customer": "State and local governments (counties) that refer patients and fund addiction treatment; Medi-Cal in-network patients", "business_model": "Government contracts and insurance reimbursement for telehealth addiction treatment (clinic entity Recover Medical Group P.C.)", "rounds": [{"date": "2021-09", "stage": "Seed", "amount": 130000, "post": null, "basis": null, "investors": ["Springbank Collective"], "url": "https://village.ai/company/letsrecover"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.letsrecover.com"}, "founders": [{"name": "Nick Gulino", "role": "Founder and CEO", "background": ""}], "competitors_as_of": "2021-01", "competitors": [{"name": "Workit Health", "what": "telemedicine addiction treatment with medication", "traction": "grant funded programs", "url": "https://dc.fortune.com/2020/12/15/workit-health-digital-rehab-startup-funding-12-million"}, {"name": "Ophelia", "what": "virtual opioid use disorder treatment", "traction": "unknown", "url": "https://mobihealthnews.com/node/148140"}], "market_need": "YC description cites over 20 million Americans with addiction and under 10 percent treated; governments fund most treatment, with high overdose death toll.", "technical": {"rating": 2, "text": "Telehealth delivery uses standard tools; the hard parts are clinical licensing, prescribing compliance and government contracting, not engineering."}, "defensibility": {"rating": 3, "text": "County contracts and state certification (California DHCS certification, Medi-Cal in network per the company site) are slow to win and renew, but competitors like Workit and Ophelia offered similar care."}, "takeover": {"rating": 2, "text": "No acquisition or copying found. Better funded telehealth rivals raised large rounds in 2021 (Workit 118 million Series C in October 2021)."}, "success": ["regulatory_moat", "founder_market_fit"], "failure": [], "pivots": [], "brand": {"rating": 2, "origin": null, "signature": null, "effect": "unclear", "rebrands": []}, "notes": "A reported 130K seed in September 2021 (Springbank Collective per Village.ai) came only from aggregator snippets and one source, so it is not recorded as a round. Crunchbase page showed placeholder text. Revenue and headcount figures are from an aggregator. Outcome search found no shutdown, acquisition or layoffs. Rosenman Institute page could not be opened (rate-limited). Founder education and prior employers not found on opened sources. Ophelia source dated 2018 is an earlier-stage announcement. Completeness pass: the $130K seed of September 2021 is reported by Village and one other listing; no press release found.", "sources": ["https://www.ycombinator.com/companies/recover", "https://www.letsrecover.com", "https://dc.fortune.com/2020/12/15/workit-health-digital-rehab-startup-funding-12-million", "https://mobihealthnews.com/node/148140", "https://www.fiercehealthcare.com/tech/cvs-bcbs-venture-funds-back-workit-health-s-118m-round-to-expand-virtual-addiction-platform"]}, "valuation": [], "raised": [[8.0, 130000.0, "Seed"]], "end": {"kind": "active", "month": 65.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "ophelia", "name": "Ophelia", "batch": "Winter 2020", "status": "Active", "relevance": "Telehealth addiction treatment with medication", "summary": "Series A $15M and Series B $50M in 2021, then Medicaid and insurer contracts.", "url": "https://www.ycombinator.com/companies/ophelia", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/3cbf4c2fae04f0bf480c466e071e33c3b2be8a0d.png", "one_liner": "Medication & support to beat opioid addiction from home", "website": "https://ophelia.com", "detail": {"depth": 2, "confidence": "medium", "funding_coverage": "partial", "outcome": "Ophelia launched as telehealth rules loosened in 2020, grew to about 250 people and raised a 15 million dollar Series A in April 2021 and a 50 million dollar Series B in December 2021 from Tiger Global and others. It then added insurer and Medicaid contracts in New York and New Jersey. No layoffs, sale or shutdown turned up in searches, so it is treated as active and growing but with no later round found.", "target_customer": "People with opioid use disorder in the US, paying through insurance (including Medicaid) or cash", "business_model": "Virtual clinic billing insurers and patients for telehealth visits and prescriptions", "rounds": [{"date": "2021-04", "stage": "Series A", "amount": 15000000, "post": null, "basis": null, "investors": ["Menlo Ventures"], "url": "https://bhbusiness.com/2021/04/22/virtual-oud-treatment-provider-ophelia-scores-15m/"}, {"date": "2021-12", "stage": "Series B", "amount": 50000000, "post": null, "basis": null, "investors": ["Tiger Global", "Menlo Ventures", "General Catalyst", "Refactor Capital"], "url": "https://www.mobihealthnews.com/news/opioid-use-recovery-tool-ophelia-scores-50m"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://ophelia.com"}, "founders": [{"name": "Zack Gray", "role": "Founder", "background": "Wharton, University of Pennsylvania (graduate, per Daily Pennsylvanian headline)"}, {"name": "Mattan Griffel", "role": "Co-founder", "background": "Columbia Business School (faculty, Innovation Fellow at the Lang Center); New York University, philosophy and finance"}], "competitors_as_of": "2020-03", "competitors": [{"name": "Bicycle Health", "what": "Exclusively virtual opioid use disorder treatment program", "traction": "not stated in the source", "url": "https://www.mobihealthnews.com/news/contributed-digital-health-and-opioid-use-disorder"}, {"name": "Eleanor Health", "what": "Virtual first addiction treatment peer named in a 2020 article", "traction": "not stated in the source", "url": "https://www.mobihealthnews.com/news/contributed-digital-health-and-opioid-use-disorder"}, {"name": "Halcyon Health", "what": "Virtual first addiction treatment peer named in a 2020 article", "traction": "not stated in the source", "url": "https://www.mobihealthnews.com/news/contributed-digital-health-and-opioid-use-disorder"}], "market_need": "The YC page cites more than 3 million Americans addicted to opioids with 80 percent untreated, fewer than 5 percent of doctors holding the prescribing waiver, and telehealth flexibilities in 2020 that let virtual programs start.", "technical": {"rating": 2, "text": "Standard telehealth stack plus prescribing and compliance workflows; the hard parts were clinical operations and state licensing, not software."}, "defensibility": {"rating": 2, "text": "Licensing in many states and insurance contracts took time to build, but rivals launched the same virtual model in the same period."}, "takeover": {"rating": 2, "text": "No incumbent absorbed the wedge by 2024; the company expanded state by state and signed insurer and Medicaid contracts."}, "success": ["timing_tailwind", "founder_market_fit", "regulatory_moat"], "failure": [], "pivots": [], "brand": {"rating": 3, "origin": "Ophelia's own blog says Gray named it after Shakespeare's Ophelia, whose story embodies grief and loss, and because the name starts with the letters op like opioids. A 2021 Vator article adds a Greek etymology meaning help.", "signature": "A founder story of loss told on the company blog, with the message that the story is one of hope", "effect": "unclear", "rebrands": []}, "notes": "A MobiHealthNews headline reports an earlier seed for Ophelia (written as 27m in the URL) but the page could not be opened, so no seed round is recorded. Total raised of about 68 million dollars is reported by search summaries of the Series B coverage. The Series A lead and investors rely on the BHBusiness and search summaries. Founding year is 2019 on the YC page and the Daily Pennsylvanian but some profiles say 2020.", "sources": ["https://www.ycombinator.com/companies/ophelia", "https://ophelia.com", "https://bhbusiness.com/2021/04/22/virtual-oud-treatment-provider-ophelia-scores-15m/", "https://www.mobihealthnews.com/news/opioid-use-recovery-tool-ophelia-scores-50m", "https://ophelia.com/blog/the-ophelia-story", "https://www.thedp.com/article/2023/04/penn-wharton-graduate-zack-gray-opioid-addiction-start-up"]}, "valuation": [], "raised": [[15.0, 15000000.0, "Series A"], [23.0, 65000000.0, "Series B"]], "end": {"kind": "active", "month": 77.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "perspectives-health", "name": "Perspectives Health", "batch": "Summer 2025", "status": "Active", "relevance": "Software for addiction treatment programs", "summary": "Alive with early revenue, no verified round.", "url": "https://www.ycombinator.com/companies/perspectives-health", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/d4d717434657a084785d53a7ab208f3a1b202dae.png", "one_liner": "AI to run behavioral health programs better", "website": "https://perspectiveshealth.ai/", "detail": {"depth": 2, "confidence": "low", "funding_coverage": "partial", "outcome": "Perspectives Health entered YC in Summer 2025 with a chart audit and utilization review product for addiction treatment programs. It reports early revenue and a dozen customer logos but no verified funding or exit, so its outcome is still open and the main risks are scribe competition and proving payer denial savings.", "target_customer": "Addiction and mental health treatment programs and their directors", "business_model": "B2B SaaS and AI agents sold to behavioral health programs (pricing not public)", "rounds": [{"date": "2025-09", "stage": "Pre-seed", "amount": 500000, "post": null, "basis": null, "investors": ["Y Combinator"], "url": "https://www.vcbacked.co/company/perspectives-health"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/perspectives-health"}, "founders": [{"name": "Eshan Dosani", "role": "CEO", "background": "White House (drug policy work, per YC launch post)"}, {"name": "Kyle Jung", "role": "CTO", "background": ""}], "competitors_as_of": "2025-06", "competitors": [{"name": "Eleos Health", "what": "AI documentation and quality tools for behavioral health", "traction": "A comparison page claims 200+ organizations and 40,000+ providers (vendor-sourced, undated)", "url": "https://seektool.ai/ai/eleos-health/alternatives"}, {"name": "Upheal", "what": "AI note generation and session analytics for therapists", "traction": "not stated", "url": "https://seektool.ai/ai/upheal-io/alternatives"}], "market_need": "The YC page and company site describe administrative burden, staff shortages and insurance denials. The company reports about $250K committed ARR within four weeks of launching Reclaim (self-reported).", "technical": {"rating": 3, "text": "LLM chart review against payer and documentation rules is standard applied AI, with HIPAA compliance and EHR data access as the harder parts."}, "defensibility": {"rating": 2, "text": "Many scribe vendors exist, and defensibility would come from payer rule data and workflow embedding, neither shown at founding."}, "takeover": {"rating": 3, "text": "No acquisition or incumbent copy found."}, "success": ["founder_market_fit"], "failure": [], "pivots": [], "brand": {"rating": 2, "origin": null, "signature": null, "effect": "unclear", "rebrands": []}, "notes": "An aggregator (VCBacked) lists $500K pre-seed in September 2025 from Y Combinator, unverified and not recorded as a round. Another source lists a different co-founder name that could not be confirmed. Competitor sources are undated vendor comparison pages, so competition as of founding is only approximate. Education and prior employers beyond the YC page not found. Audit fix: the $500K pre-seed (2025-09) is now recorded from VCBacked; Caplight shows the same total and adds IKJ Capital, so it rests on databases only, with no primary confirmation.", "sources": ["https://www.ycombinator.com/companies/perspectives-health", "https://perspectiveshealth.ai/", "https://seektool.ai/ai/eleos-health/alternatives"]}, "valuation": [], "raised": [[3.0, 500000.0, "Pre-seed"]], "end": {"kind": "active", "month": 12.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "rthm", "name": "RTHM", "batch": "Winter 2022", "status": "Active", "relevance": "Care for complex chronic illness led by lived experience founders", "summary": "Alive, small seed only.", "url": "https://www.ycombinator.com/companies/rthm", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/fd57e5296d2209f67d20ed24f4f46c80b1984e47.png", "one_liner": "Self-learning care for complex illness", "website": "https://www.rthm.com", "detail": {"depth": 2, "confidence": "low", "funding_coverage": "partial", "outcome": "RTHM is active as of the directory and built from founders with lived and clinical experience of Long COVID and ME/CFS, which gives it founder market fit. No acquisition, shutdown or layoff reporting was found in an outcome search. Funding is not reliably documented, so the trajectory beyond a small team of 10 and a widening product line from intelligence platform to clinic and direct prescriptions cannot be judged.", "target_customer": "Patients with complex, overlapping chronic illness (Long COVID, ME/CFS, MCAS, POTS) who pay for clinic membership, prescriptions and testing", "business_model": "Free data intelligence platform plus paid clinic membership (reported $1,000 per month with 3 month minimum and $1,500 onboarding), prescriptions and lab testing; cash pay, no Medicare or Medicaid", "rounds": [{"date": "2022-05", "stage": "Seed", "amount": 2000000, "post": null, "basis": null, "investors": ["Y Combinator"], "url": "https://www.vcbacked.co/company/rthm"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/rthm"}, "founders": [{"name": "Ryan Kellogg", "role": "CEO and Co-founder", "background": "PhD in Microfluidics and Systems Biology, ETH Zurich"}, {"name": "Jennifer Curtin", "role": "Chief Medical Officer and Co-founder", "background": ""}], "competitors_as_of": "2022-01", "competitors": [], "market_need": "Long COVID created a large new population of patients with unmet needs in early 2022; YC page claims 70M US individuals are affected by infection-associated chronic and autoimmune conditions (company figure, not independently checked).", "technical": {"rating": 3, "text": "Needs a clinical care delivery layer with licensed clinicians and a data platform that unifies patient records and lab results; standard software but with clinical and regulatory overhead. Founder had microfluidic blood microsample technology background per YC page."}, "defensibility": {"rating": 2, "text": "Clinical know-how from a physician founder and accumulated patient data could help, but care delivery and software were copyable and no regulatory moat is evidenced."}, "takeover": {"rating": 2, "text": "No source found showing incumbents building or buying the same Long COVID and ME/CFS wedge in 2022; the company remained active per the YC directory."}, "success": ["founder_market_fit"], "failure": [], "pivots": [], "brand": {"rating": 2, "origin": "Stands for Real Time Health Monitoring and is pronounced rhythm (one directory and a search summary); no founder interview confirming this was opened.", "signature": null, "effect": "unclear", "rebrands": []}, "notes": "Funding unverified: VCBacked lists $2.0M seed (May 2022), Dealroom lists seed entries of $1.6M, $2.0M and $125k, Village lists $4.1M total, a Substack guide says $6.1M, and one snippet says $1M pre-seed. All come from aggregators or secondary posts, so none is recorded as a round. Do not confuse with RTHMS (a different company). Competitors: a Sifted article from Nov 2022 names Visible (London, $1M raise) and HealthHero, but that is about 8 months after the batch, so none are listed as of founding. Company site lists Jennifer Curtin as the only named cofounder while the YC page lists Ryan Kellogg as CEO. Completeness pass: the seed round of $2.0M (May 2022) is recorded and rests on a single database (VCBacked); Seedtable dates the last funding 2022-03 with no amount, and other aggregator totals conflict, so the real total is unknown. Not confused with Rithmm.", "sources": ["https://www.ycombinator.com/companies/rthm", "https://www.rthm.com", "https://sifted.eu/articles/long-covid-treatment-startup"]}, "valuation": [], "raised": [[4.0, 2000000.0, "Seed"]], "end": {"kind": "active", "month": 53.7, "dated": true, "src": "record"}, "has_record": true}], "comp_summary": {"total": 4, "dead": 0, "exited": 0, "active": 4}, "assumptions": ["Only the batch listing was used, as of 2026-07-06.", "Seed step means a round above about $500K within 12 months of the batch start.", "Healthcare cohort has 24 companies, so it is an anecdote and I used broad cohorts."], "sources": ["https://hitconsultant.net/2024/05/24/boulder-care-secures-35m-to-expand-telehealth-addiction-treatment-for-underserved-communities", "https://bhbusiness.com/2022/09/23/virtual-mat-provider-bicycle-scores-additional-5m-from-bcbs-of-kcs-venture-arm/", "https://mobihealthnews.com/node/152069", "https://www.workithealth.com/blog/workit-health-raises-1-1m-bid-go-beyond-digital-version-addiction-recovery-program/"]}</script>
+<script>
+(function(){
+"use strict";
+var D=JSON.parse(document.getElementById("data").textContent);
+var NS="http://www.w3.org/2000/svg";
+var ICONS={
+  overview:"M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M14 14h6v6h-6z",
+  compare:"M4 4v16h16 M8 15l4-4 3 3 5-6",
+  walk:"M8 5v14l11-7z",
+  tree:"M12 3v5 M12 8l-6 6 M12 8l6 6 M6 14v7 M18 14v7",
+  path:"M4 20h4v-4h4v-4h4V8h4V4",
+  roadmap:"M5 21V4 M5 4h13l-3 4 3 4H5",
+  insights:"M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z M21 21l-5-5",
+  pros:"M12 4v16 M6 8h12 M6 8l-3 7a3.5 2.5 0 0 0 6 0z M18 8l-3 7a3.5 2.5 0 0 0 6 0z",
+  sun:"M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M4.9 19.1l1.4-1.4 M17.7 6.3l1.4-1.4",
+  moon:"M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z",
+  check:"M5 12l5 5L20 7",x:"M6 6l12 12 M18 6L6 18",chev:"M6 9l6 6 6-6",
+  arrow:"M5 12h14 M13 6l6 6-6 6",
+  restart:"M4 4v6h6 M20 20v-6h-6 M5.5 15A8 8 0 0 0 20 14 M18.5 9A8 8 0 0 0 4 10",
+  link:"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1 M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"
+};
+function icon(n){var s=document.createElementNS(NS,"svg");s.setAttribute("viewBox","0 0 24 24");s.setAttribute("aria-hidden","true");var p=document.createElementNS(NS,"path");p.setAttribute("d",ICONS[n]);s.appendChild(p);return s}
+function h(tag,attrs){var e=document.createElement(tag);attrs=attrs||{};for(var k in attrs){var v=attrs[k];if(k==="class")e.className=v;else if(k==="text")e.textContent=v;else if(k==="style")e.setAttribute("style",v);else if(k.slice(0,2)==="on")e.addEventListener(k.slice(2),v);else if(v!==null&&v!==undefined)e.setAttribute(k,v)}
+  for(var i=2;i<arguments.length;i++){var c=arguments[i];if(c===null||c===undefined||c===false)continue;if(Array.isArray(c)){c.forEach(function(x){if(x)e.appendChild(x)})}else e.appendChild(typeof c==="string"?document.createTextNode(c):c)}return e}
+function sv(tag,attrs){var e=document.createElementNS(NS,tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);for(var i=2;i<arguments.length;i++)if(arguments[i])e.appendChild(arguments[i]);return e}
+function safeUrl(u){return /^https?:\/\//i.test(u||"")?u:null}
+function trim(x){return (Math.round(x*100)/100).toString()}
+function usd(n){if(n===null||n===undefined)return "n/a";if(n<1)return "$0";function t(v){return v>=100?String(Math.round(v)):v>=10?String(Math.round(v*10)/10):trim(v)}if(n>=1e9)return "$"+t(n/1e9)+"B";if(n>=1e6)return "$"+t(n/1e6)+"M";return "$"+Math.round(n/1e3)+"K"}
+function rng(r){if(!r)return "n/a";return r[0]===r[1]?usd(r[0]):usd(r[0])+" to "+usd(r[1])}
+function pct(p){if(p>0&&p<0.001)return "<0.1%";return p>=0.1?Math.round(p*100)+"%":(Math.round(p*1000)/10)+"%"}
+var LC={"Very likely":"#1E9E5A","Likely":"#5FAE62","Reasonable":"#D9A21B","Unlikely":"#E2793A","Very unlikely":"#D64545"};
+function labelFor(p){var t=D.thresholds.slice().sort(function(a,b){return b.min-a.min});for(var i=0;i<t.length;i++)if(p>=t[i].min)return t[i].label;return t[t.length-1].label}
+function npill(l){return h("span",{class:"pill",style:"background:var(--muted)",text:l})}
+function lpill(l){return h("span",{class:"pill",style:"background:"+(LC[l]||"#6B655C"),text:l})}
+function ext(u,t){var s=safeUrl(u);return s?h("a",{href:s,target:"_blank",rel:"noopener noreferrer",text:t||s}):h("span",{text:t||""})}
+function logoSrc(a){return a.logo||(a.logo_url&&/^https:\/\//i.test(a.logo_url)?a.logo_url:null)}
+function ico(a,size,status){var box=h("div",{class:"ico",title:a.name,style:"width:"+size+"px;height:"+size+"px;font-size:"+Math.round(size*.42)+"px"});var init=h("span",{text:(a.name||"?").charAt(0).toUpperCase()});box.appendChild(init);
+  var src=logoSrc(a);if(src){var img=h("img",{src:src,alt:"",loading:"lazy"});img.addEventListener("load",function(){init.remove()});img.addEventListener("error",function(){img.remove()});box.appendChild(img)}
+  if(status){box.appendChild(h("i",{class:"sd",style:"background:"+status}))}return box}
+function statusColor(k){return k==="dead"?"#D64545":k==="active"?"#2F5BEA":"#1E9E5A"}
+function countUp(el,to,fmt,ms){var t0=null;ms=ms||1100;function f(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/ms);k=1-Math.pow(1-k,3);el.textContent=fmt(to*k);if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+function smooth(pts){var n=pts.length;if(!n)return "";if(n===1)return "M"+pts[0].x.toFixed(1)+" "+pts[0].y.toFixed(1);
+  var P=pts.map(function(p){return {x:p.x,y:p.y}});for(var i=1;i<n;i++)if(P[i].x<=P[i-1].x)P[i].x=P[i-1].x+0.5;
+  if(n===2){var dx=(P[1].x-P[0].x)/2;return "M"+P[0].x.toFixed(1)+" "+P[0].y.toFixed(1)+" C"+(P[0].x+dx).toFixed(1)+" "+P[0].y.toFixed(1)+" "+(P[1].x-dx).toFixed(1)+" "+P[1].y.toFixed(1)+" "+P[1].x.toFixed(1)+" "+P[1].y.toFixed(1)}
+  var d=[],m=[],k;for(k=0;k<n-1;k++)d[k]=(P[k+1].y-P[k].y)/(P[k+1].x-P[k].x);m[0]=d[0];m[n-1]=d[n-2];for(k=1;k<n-1;k++)m[k]=d[k-1]*d[k]<=0?0:(d[k-1]+d[k])/2;
+  for(k=0;k<n-1;k++){if(d[k]===0){m[k]=0;m[k+1]=0}else{var a=m[k]/d[k],b=m[k+1]/d[k],s=a*a+b*b;if(s>9){var t=3/Math.sqrt(s);m[k]=t*a*d[k];m[k+1]=t*b*d[k]}}}
+  var out="M"+P[0].x.toFixed(1)+" "+P[0].y.toFixed(1);for(k=0;k<n-1;k++){var h3=(P[k+1].x-P[k].x)/3;out+=" C"+(P[k].x+h3).toFixed(1)+" "+(P[k].y+m[k]*h3).toFixed(1)+" "+(P[k+1].x-h3).toFixed(1)+" "+(P[k+1].y-m[k+1]*h3).toFixed(1)+" "+P[k+1].x.toFixed(1)+" "+P[k+1].y.toFixed(1)}return out}
+
+var TABS=[["overview","Overview","overview"],["compare","Compare","compare"],["walk","Walkthrough","walk"],["tree","Possibilities","tree"],["path","Funding","path"],["roadmap","Roadmap","roadmap"],["insights","Insights","insights"],["pros","Pros and cons","pros"]];
+var nav=document.getElementById("nav"),page=document.getElementById("page"),views={},tabs={},built={},cur=null,BUILD={};
+nav.appendChild(h("div",{class:"brand","aria-hidden":"true",text:"Y"}));
+TABS.forEach(function(t){var b=h("button",{class:"tab",role:"tab","aria-selected":"false","aria-controls":"v-"+t[0],onclick:function(){show(t[0])}},icon(t[2]),h("span",{text:t[1]}));tabs[t[0]]=b;nav.appendChild(b)});
+nav.addEventListener("keydown",function(e){if(!e.target.classList||!e.target.classList.contains("tab"))return;var ids=TABS.map(function(t){return t[0]}),i=ids.indexOf(cur);
+  if(e.key==="ArrowDown"||e.key==="ArrowRight")i=(i+1)%ids.length;else if(e.key==="ArrowUp"||e.key==="ArrowLeft")i=(i-1+ids.length)%ids.length;else if(e.key==="Home")i=0;else if(e.key==="End")i=ids.length-1;else return;
+  e.preventDefault();tabs[ids[i]].focus();show(ids[i])});
+nav.appendChild(h("div",{class:"spacer"}));
+var themeBtn=h("button",{class:"ibtn","aria-label":"Toggle light and dark theme",onclick:toggleTheme});nav.appendChild(themeBtn);
+function curTheme(){var t=document.documentElement.getAttribute("data-theme");if(t)return t;return matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}
+function paintTheme(){themeBtn.replaceChildren(icon(curTheme()==="dark"?"sun":"moon"))}
+function toggleTheme(){document.documentElement.setAttribute("data-theme",curTheme()==="dark"?"light":"dark");paintTheme();if(built.compare)drawChart();if(built.walk)drawWalk(null);if(built.tree&&cur==="tree")drawTree(true)}
+paintTheme();
+page.appendChild(h("h1",{class:"title",text:D.startup.name}));
+TABS.forEach(function(t){var v=h("section",{class:"view",id:"v-"+t[0],role:"tabpanel"});views[t[0]]=v;page.appendChild(v)});
+function show(id,after){if(cur!==id){cur=id;for(var k in views){views[k].classList.toggle("on",k===id);tabs[k].setAttribute("aria-selected",k===id?"true":"false")}
+  if(!built[id]){built[id]=true;BUILD[id](views[id])}document.getElementById("main").scrollTo({top:0,behavior:"auto"});try{history.replaceState(null,"","#"+id)}catch(e){}animateIn(views[id]);if(id==="tree")drawTree(true)}
+  if(after)setTimeout(after,80)}
+function animateIn(root){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");(e.target.__go||[]).forEach(function(f){f()});e.target.__go=[];io.unobserve(e.target)}})},{root:document.getElementById("main"),threshold:.1});
+  root.querySelectorAll(".reveal").forEach(function(el,i){el.style.transitionDelay=Math.min(i*60,360)+"ms";io.observe(el)})}
+function onIn(el,f){(el.__go=el.__go||[]).push(f)}
+function reveal(e){e.classList.add("reveal");return e}
+
+BUILD.overview=function(root){
+  var ml=D.most_likely,cs=D.comp_summary;
+  var C=2*Math.PI*40,fg=sv("circle",{class:"fg",cx:46,cy:46,r:40,"stroke-dasharray":C,"stroke-dashoffset":C,transform:"rotate(-90 46 46)"});
+  var ring=sv("svg",{class:"ring",viewBox:"0 0 92 92"},sv("circle",{class:"bg",cx:46,cy:46,r:40}),fg);
+  var pv=h("div",{class:"big",text:"0%"});
+  var s1=reveal(h("div",{class:"card stat"},h("h3",{text:"Chance of getting into YC"}),h("div",{class:"row"},ring,h("div",{},pv,lpill(D.yc.label)))));
+  onIn(s1,function(){countUp(pv,D.yc.p,function(v){return pct(v)});fg.style.strokeDashoffset=C*(1-Math.min(1,D.yc.p/0.35))});
+  var sb=ml.stop_band;
+  var s2=reveal(h("div",{class:"card stat"},h("h3",{text:"If accepted, most likely ends at"}),h("div",{class:"big",text:ml.stop_name}),h("div",{class:"small",text:pct(ml.stop_p)+" chance"+(sb?", typical value "+rng(sb.post):"")})));
+  var cb=ml.credible_band;
+  var s3=reveal(h("div",{class:"card stat"},h("h3",{text:"If accepted, furthest credible stage"}),h("div",{class:"big",text:ml.credible_name}),h("div",{class:"small",text:ml.credible_index?pct(ml.credible_p)+" chance"+(cb?", typical value "+rng(cb.post):""):"No stage reaches 20%"})));
+  var dots=h("div",{class:"dots"});D.analogs.forEach(function(a,i){var k=(a.end||{}).kind;dots.appendChild(h("button",{class:"dotb","aria-label":a.name+", open in Compare",title:a.name,onclick:function(){show("compare",function(){selectComp(i,true)})}},ico(a,26,statusColor(k))))});
+  var s4=reveal(h("div",{class:"card stat"},h("h3",{text:"Similar past YC companies"}),h("div",{class:"big",text:cs.dead+" of "+cs.total}),h("div",{class:"small",text:"shut down"}),dots));
+  root.appendChild(h("div",{class:"grid g4"},s1,s2,s3,s4));
+  root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h2",{text:D.headline}),h("p",{class:"muted",style:"margin:0",text:D.summary}))));
+  var st=h("div",{class:"stepper"}),fills=[];
+  var all=[{title:"YC",p:D.yc.p,label:D.yc.label,key:"yc"}].concat(D.stages.map(function(s){return {title:s.title,p:s.p_today,label:s.label_today,key:s.key}}));
+  all.forEach(function(s){var fill=h("i",{style:"background:"+(LC[s.label]||"#F26625")});fills.push([fill,s.p]);
+    st.appendChild(h("button",{class:"step",onclick:function(){show("path",function(){var el=document.getElementById("stage-"+s.key);if(el)el.scrollIntoView({behavior:"smooth",block:"start"})})}},h("b",{text:s.title}),h("div",{class:"bar"},fill),h("span",{},lpill(s.label),h("span",{class:"small muted",text:" "+pct(s.p)}))))});
+  var stcard=reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Chance of reaching each step, from today"}),st));
+  onIn(stcard,function(){fills.forEach(function(f){f[0].style.width=Math.max(1.5,Math.min(100,f[1]*100*2.2))+"%"})});
+  root.appendChild(stcard);
+  var S=[["Market need",D.scores.need,"good"],["Technical complexity",D.scores.technical,"info"],["Takeover risk",D.scores.takeover,"bad"],["Name and brand",D.scores.brand,"good"]];
+  var sg=h("div",{class:"grid g4",style:"margin-top:16px"});
+  S.forEach(function(s){var col=s[2]==="info"?"var(--blue)":(s[2]==="good"?(s[1]>=4?"var(--green)":s[1]>=3?"var(--amber)":"var(--red)"):(s[1]>=4?"var(--red)":s[1]>=3?"var(--amber)":"var(--green)"));
+    var g=h("div",{class:"gauge"});for(var i=0;i<5;i++)g.appendChild(h("i",{"data-on":i<s[1]?"1":"0"}));
+    var c=reveal(h("div",{class:"card"},h("h3",{text:s[0]}),h("div",{class:"big",text:s[1]+" / 5"}),g));
+    onIn(c,function(){c.querySelectorAll(".gauge i").forEach(function(e,i){setTimeout(function(){if(e.dataset.on==="1")e.style.background=col},i*90)})});sg.appendChild(c)});
+  root.appendChild(sg);
+};
+
+var metric=null,cursor=0,chart={},selected=null;
+BUILD.compare=function(root){
+  var withVal=D.analogs.filter(function(a){return a.valuation.length>0}).length;
+  metric=withVal>=3?"valuation":"raised";
+  var segs=h("div",{role:"group","aria-label":"Chart metric"});
+  [["valuation","Valuation"],["raised","Total raised"]].forEach(function(m){segs.appendChild(h("button",{class:"tx","aria-pressed":m[0]===metric?"true":"false","data-m":m[0],onclick:function(){metric=m[0];segs.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.m===metric?"true":"false")});drawChart(true)}},m[1]))});
+  var note=h("div",{class:"small muted",id:"metric-note",style:"margin:2px 0 8px"});
+  chart.svg=sv("svg",{class:"chart",viewBox:"0 0 1000 460",role:"img","aria-label":"Funding history of similar YC companies compared with this startup, by months after the YC batch"});
+  chart.read=h("div",{class:"readout",id:"readout","aria-live":"polite"});chart.detail=h("div",{class:"detailpanel"});
+  chart.range=h("input",{type:"range",class:"range-in",min:"0",max:"100",step:"1","aria-label":"Move along the timeline",oninput:function(e){setCursorM(+e.target.value/100*chart.xmax)}});
+  function lg(svgEl,t){return h("span",{},svgEl,t)}
+  var legend=h("div",{class:"legend"},
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M3 3l8 8M11 3l-8 8",stroke:"#D64545","stroke-width":2,"stroke-linecap":"round"})),"Shut down"),
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M7 1l6 6-6 6-6-6z",fill:"#1E9E5A"})),"Acquired or public"),
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("circle",{cx:7,cy:7,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2})),"Still running"));
+  root.appendChild(reveal(h("div",{class:"card"},h("div",{class:"row",style:"justify-content:space-between;margin-bottom:6px;flex-wrap:wrap"},h("h2",{style:"margin:0",text:"Similar companies, and where this one stops"}),segs),note,
+    h("div",{class:"chart-wrap"},h("div",{},h("div",{class:"chartbox"},chart.svg),chart.range,legend),chart.read),chart.detail)));
+  var cards=h("div",{class:"grid g3 cards",style:"margin-top:16px"});
+  D.analogs.forEach(function(a,i){cards.appendChild(companyCard(a,i))});
+  root.appendChild(cards);
+  setTimeout(function(){drawChart(true)},30);
+};
+function proj(){var pts=[],cum=0;
+  D.stages.forEach(function(s,i){var b=s.bands.reduce(function(a,b){return b.p_band>a.p_band?b:a},s.bands[0]);
+    var v=Math.sqrt(Math.max(1,b.post[0])*Math.max(1,b.post[1]));cum+=(b.raise[0]+b.raise[1])/2;
+    pts.push({m:s.months,v:metric==="valuation"?v:cum,label:s.title,p:s.p_given_yc,idx:i+1})});
+  return pts}
+function drawChart(replay){
+  var svg=chart.svg;svg.replaceChildren();
+  var W=1000,H=460,L=64,R=30,T=34,B=44,pts=proj(),ml=D.most_likely;
+  svg.appendChild(sv("defs",{},sv("clipPath",{id:"rr",clipPathUnits:"objectBoundingBox"},sv("rect",{width:1,height:1,rx:.22,ry:.22}))));
+  var xs=[],ys=[];D.analogs.forEach(function(a){a[metric].forEach(function(p){xs.push(p[0]);ys.push(p[1])});if(a.end)xs.push(a.end.month)});
+  pts.forEach(function(p){xs.push(p.m);ys.push(p.v)});
+  var xmax=Math.max(60,Math.ceil(Math.max.apply(null,xs.concat([60]))/12)*12+6);
+  var lo=Math.max(1e4,Math.min.apply(null,ys.concat([1e6]))/3),hi=Math.max.apply(null,ys.concat([1e7]))*2.5;
+  var y0=Math.pow(10,Math.floor(Math.log10(lo))),y1=Math.pow(10,Math.ceil(Math.log10(hi)));
+  function X(m){return L+(m/xmax)*(W-L-R)}function Y(v){return T+(1-(Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0)))*(H-T-B)}
+  chart.X=X;chart.xmax=xmax;
+  for(var v=y0;v<=y1*1.01;v*=10){svg.appendChild(sv("line",{class:"grid-l",x1:L,x2:W-R,y1:Y(v),y2:Y(v)}));svg.appendChild(sv("text",{x:L-8,y:Y(v)+4,"text-anchor":"end"})).textContent=usd(v)}
+  for(var m=0;m<=xmax;m+=12){svg.appendChild(sv("line",{class:"grid-l",x1:X(m),x2:X(m),y1:T,y2:H-B,"stroke-dasharray":"2 4"}));svg.appendChild(sv("text",{x:X(m),y:H-B+18,"text-anchor":"middle"})).textContent=m===0?"YC":(m/12)+"y"}
+  D.stages.forEach(function(s){svg.appendChild(sv("text",{x:X(s.months),y:T-12,"text-anchor":"middle",style:"fill:var(--orange);font-weight:700"})).textContent=s.title});
+  function logoMark(a,x,y,size){var g=sv("g",{});var src=logoSrc(a);
+    g.appendChild(sv("rect",{x:x-size/2,y:y-size/2,width:size,height:size,rx:size*.22,fill:"var(--soft)"}));
+    if(src)g.appendChild(sv("image",{x:x-size/2,y:y-size/2,width:size,height:size,href:src,"clip-path":"url(#rr)",preserveAspectRatio:"xMidYMid slice"}));
+    else{var t=sv("text",{x:x,y:y+4,"text-anchor":"middle",style:"font-weight:800;fill:var(--muted)"});t.textContent=(a.name||"?").charAt(0).toUpperCase();g.appendChild(t)}
+    return g}
+  var missing=[];chart.groups=[];
+  D.analogs.forEach(function(a,i){var s=a[metric];if(!s.length){missing.push(a.name);return}
+    var g=sv("g",{class:"cg","data-i":i});var e=a.end,lastP=s[s.length-1];
+    var px=s.map(function(p){return {x:X(p[0]),y:Y(p[1])}});
+    if(e&&e.month>lastP[0]+0.5)px.push({x:X(e.month),y:Y(lastP[1])});
+    var ln=sv("path",{class:"ln",d:smooth(px),pathLength:1,stroke:"var(--ink)","stroke-width":2});ln.style.animationDelay=(replay?i*90:0)+"ms";g.appendChild(ln);chart.groups[i]={g:g,ln:ln};
+    s.forEach(function(p){g.appendChild(logoMark(a,X(p[0]),Y(p[1]),26))});
+    if(e){var cx=px[px.length-1].x,cy=px[px.length-1].y,k=e.kind;
+      if(e.month>lastP[0]+0.5)g.appendChild(logoMark(a,cx,cy,26));
+      var bx=cx+20,by=cy-14;
+      if(k==="dead")g.appendChild(sv("path",{d:"M"+(bx-4)+" "+(by-4)+"l8 8M"+(bx+4)+" "+(by-4)+"l-8 8",stroke:"#D64545","stroke-width":2.4,"stroke-linecap":"round"}));
+      else if(k==="acquired"||k==="ipo")g.appendChild(sv("path",{d:"M"+bx+" "+(by-6)+"l6 6-6 6-6-6z",fill:"#1E9E5A"}));
+      else g.appendChild(sv("circle",{cx:bx,cy:by,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2.2}))}
+    svg.appendChild(g)});
+  var me=sv("g",{class:"me"}),first=pts[0],stopIdx=ml.stop_index;
+  var base=Math.max(y0,first.v/4);
+  var all=[{x:X(0),y:Y(base)}].concat(pts.map(function(p){return {x:X(p.m),y:Y(p.v)}}));
+  var upto=stopIdx>0?stopIdx+1:1;
+  var solid=all.slice(0,upto),rest=all.slice(Math.max(0,upto-1));
+  if(stopIdx===0){var a0=all[0],a1=all[1];var mid={x:a0.x+(a1.x-a0.x)*0.5,y:a0.y+(a1.y-a0.y)*0.38};solid=[a0,mid];rest=all.slice(0)}
+  if(rest.length>1)me.appendChild(sv("path",{d:smooth(rest),fill:"none",stroke:"#F26625","stroke-width":4,"stroke-dasharray":"2 9","stroke-linecap":"round",opacity:.7}));
+  if(solid.length>1){var ml2=sv("path",{class:"ln",d:smooth(solid),pathLength:1,stroke:"#F26625","stroke-width":4.5});ml2.style.animationDelay="600ms";me.appendChild(ml2)}
+  function myMark(x,y,sz){var g=sv("g",{});g.appendChild(sv("rect",{x:x-sz/2,y:y-sz/2,width:sz,height:sz,rx:sz*.22,fill:"#F26625"}));var t=sv("text",{x:x,y:y+sz*.19,"text-anchor":"middle",style:"fill:#fff;font-weight:800;font-size:"+Math.round(sz*.55)+"px"});t.textContent=(D.startup.name||"?").charAt(0).toUpperCase();g.appendChild(t);return g}
+  for(var q=1;q<upto&&q<all.length;q++)me.appendChild(myMark(all[q].x,all[q].y,30));
+  var lastX=all[Math.min(upto,all.length)-1];
+  if(stopIdx>0||solid.length>1){var cx=stopIdx>0?lastX.x:solid[solid.length-1].x,cy=stopIdx>0?lastX.y:solid[solid.length-1].y;me.appendChild(sv("path",{d:"M"+(cx+18)+" "+(cy-8)+"l12 12M"+(cx+30)+" "+(cy-8)+"l-12 12",stroke:"#F26625","stroke-width":3,"stroke-linecap":"round"}));
+    var lx=stopIdx>0?Math.min(cx+24,W-R-4):L+8,anc=stopIdx>0?(cx>W-220?"end":"middle"):"start";var lab=sv("text",{x:lx,y:stopIdx>0?cy-20:cy+34,"text-anchor":anc,style:"fill:#F26625;font-weight:800;font-size:12px"});lab.textContent=stopIdx>0?"Most likely stops here ("+pct(ml.stop_p)+")":"Most likely ends before a priced round ("+pct(ml.stop_p)+")";me.appendChild(lab)}
+  svg.appendChild(me);
+  chart.cur=sv("g",{});chart.curLine=sv("line",{y1:T,y2:H-B,stroke:"var(--blue)","stroke-width":2,opacity:.8});chart.curLab=sv("text",{y:H-B+34,"text-anchor":"middle",style:"fill:var(--blue);font-weight:800"});
+  chart.cur.appendChild(chart.curLine);chart.cur.appendChild(chart.curLab);svg.appendChild(chart.cur);
+  var hit=sv("rect",{x:L,y:T,width:W-L-R,height:H-T-B,fill:"transparent"});svg.appendChild(hit);
+  function fromEvent(ev){var r=svg.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width*W;return Math.max(0,Math.min(chart.xmax,(x-L)/(W-L-R)*chart.xmax))}
+  var drag=false;hit.addEventListener("pointerdown",function(e){drag=true;hit.setPointerCapture(e.pointerId);setCursorM(fromEvent(e))});
+  hit.addEventListener("pointermove",function(e){if(drag||e.pointerType==="mouse")setCursorM(fromEvent(e))});
+  hit.addEventListener("pointerup",function(){drag=false});
+  document.getElementById("metric-note").textContent=metric==="raised"?("Showing total raised. Valuation data is sparse for these companies."+(missing.length?" No data: "+missing.join(", ")+".":"")+" This startup's line uses the most likely band at each step and typical timing after YC."):("Showing reported post-money valuation."+(missing.length?" No data: "+missing.join(", ")+".":"")+" This startup's line uses the most likely band at each step and typical timing after YC.");
+  if(!replay||cursor===0)cursor=D.stages[0].months;
+  applySel();setCursorM(cursor)}
+function applySel(){D.analogs.forEach(function(a,i){var c=chart.groups&&chart.groups[i];if(!c)return;var on=selected===i;
+    c.g.style.opacity=selected===null?0.55:(on?1:0.14);c.ln.setAttribute("stroke",on?"#2F5BEA":"var(--ink)");c.ln.setAttribute("stroke-width",on?4:2);if(on)chart.svg.insertBefore(c.g,chart.svg.querySelector(".me"))})}
+function selectComp(i,force){selected=(force||selected!==i)?i:null;if(chart.groups){applySel();setCursorM(cursor)}showChartDetail()}
+function showChartDetail(){var box=chart.detail;if(!box)return;box.replaceChildren();
+  if(selected===null){box.style.display="none";return}
+  var a=D.analogs[selected];box.style.display="block";
+  box.appendChild(h("div",{class:"row",style:"justify-content:space-between"},h("div",{class:"row"},ico(a,36),h("div",{},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch+", "+statusText(a)}))),h("button",{class:"tx",onclick:function(){selectComp(selected)}},"Close")));
+  box.appendChild(companyDetail(a));box.classList.remove("fadein");void box.offsetWidth;box.classList.add("fadein")}
+function statusText(a){var e=a.end||{},k=e.kind;var t=k==="dead"?"Shut down":k==="acquired"?"Acquired":k==="ipo"?"Public":k==="active"?"Still running":a.status;
+  if(k&&k!=="active"){if(e.src==="directory")t+=" (per YC directory)";else if(!e.dated)t+=" (date unknown)"}return t}
+function sec(title,node){return h("div",{class:"dsec"},h("h4",{text:title}),node)}
+function chips(list,cls){return h("div",{class:"chips "+cls},list.map(function(x){return h("span",{text:String(x).replace(/_/g," ")})}))}
+function rate(n){return n===null||n===undefined?"not rated":n+" / 5"}
+function companyDetail(a){var d=a.detail,box=h("div",{class:"detail"});
+  if(!d){box.appendChild(h("p",{class:"small muted",style:"margin:6px 0",text:(a.one_liner?a.one_liner+". ":"")+"No researched record exists for this company yet, so the chart uses the YC directory status only."}));
+    if(a.website&&safeUrl(a.website))box.appendChild(ext(a.website,"Website"));return box}
+  box.appendChild(h("div",{class:"small muted",text:"Record confidence: "+(d.confidence||"unknown")+". Funding data: "+String(d.funding_coverage||"unknown").replace("_"," ")+(d.depth===1?". Shallow record: missing fields mean unknown, not zero.":".")}));
+  box.appendChild(sec("What happened",h("p",{class:"small",style:"margin:0",text:d.outcome||"Not recorded."})));
+  if(d.target_customer)box.appendChild(sec("What it does",h("p",{class:"small",style:"margin:0",text:d.target_customer.replace(/[.\s]+$/,"")+"."+(d.business_model?" Model: "+d.business_model.replace(/[.\s]+$/,"")+".":"")})));
+  var rl=h("ul",{class:"tl"});
+  d.rounds.forEach(function(r){var bits=[r.stage+(r.amount!=null?", "+usd(r.amount):", amount not reported")];if(r.post!=null)bits.push("post-money "+usd(r.post)+(r.basis?" ("+r.basis+")":""));if(r.investors&&r.investors.length)bits.push(r.investors.join(", "));
+    rl.appendChild(h("li",{},h("span",{text:r.date||"undated"}),h("span",{},bits.join(". ")+" ",r.url?ext(r.url,"source"):null)))});
+  box.appendChild(sec("Funding rounds on record",d.rounds.length?rl:h("p",{class:"small muted",style:"margin:0",text:d.funding_coverage==="none_found"?"None found. That means the data was not found, not that nothing was raised.":"None recorded."})));
+  var ex=d.exit||{},et=ex.type;
+  var exTxt=et==="acquisition"||et==="merger"?"Acquired"+(ex.acquirer?" by "+ex.acquirer:"")+(ex.date?" ("+ex.date+")":"")+(ex.amount?" for "+usd(ex.amount):""):et==="shutdown"?"Shut down"+(ex.date?" ("+ex.date+")":"")+(ex.reason?". Reason given: "+ex.reason:". Cause not public."):et==="ipo"||et==="spac"?"Went public"+(ex.date?" ("+ex.date+")":""):et==="none"?"No exit recorded (still operating as far as sources show).":"Outcome unknown in the record.";
+  box.appendChild(sec("Exit",h("p",{class:"small",style:"margin:0"},exTxt+" ",ex.url?ext(ex.url,"source"):null)));
+  if(d.founders.length){var fl=h("ul",{class:"tl"});d.founders.forEach(function(f){fl.appendChild(h("li",{},h("span",{text:f.role||"Founder"}),h("span",{},h("b",{text:f.name}),f.background?", "+f.background:"")))});box.appendChild(sec("Founders",fl))}
+  var cl=h("ul",{class:"tl"});d.competitors.forEach(function(c){cl.appendChild(h("li",{},h("span",{text:"Rival"}),h("span",{},h("b",{text:c.name}),c.what?", "+c.what:"",c.traction?" Traction then: "+c.traction:""," ",c.url?ext(c.url,"source"):null)))});
+  box.appendChild(sec("Competition at founding"+(d.competitors_as_of?" (as of "+d.competitors_as_of+")":""),d.competitors.length?cl:h("p",{class:"small muted",style:"margin:0",text:"No competitors with sources dated near the batch were found."})));
+  if(d.market_need)box.appendChild(sec("Demand at the time",h("p",{class:"small",style:"margin:0",text:d.market_need})));
+  var rt=h("ul",{class:"tl"});[["Technical",d.technical],["Moat",d.defensibility],["Takeover risk",d.takeover]].forEach(function(x){if(x[1]&&(x[1].rating!=null||x[1].text))rt.appendChild(h("li",{},h("span",{text:x[0]}),h("span",{},h("b",{text:rate(x[1].rating)}),x[1].text?". "+x[1].text:"")))});
+  if(rt.children.length)box.appendChild(sec("Ratings as of founding",rt));
+  if(d.success.length)box.appendChild(sec("What helped",chips(d.success,"good")));
+  if(d.failure.length)box.appendChild(sec("What hurt",chips(d.failure,"bad")));
+  if(d.pivots.length){var pl=h("ul",{class:"tl"});d.pivots.forEach(function(x){pl.appendChild(h("li",{},h("span",{text:x.date||"undated"}),h("span",{text:x.to+(x.why?". "+x.why:"")})))});box.appendChild(sec("Pivots",pl))}
+  if(d.brand){var b=d.brand,bt=["Brand "+rate(b.rating)];if(b.effect&&b.effect!=="unclear")bt.push("effect on outcome: "+b.effect);if(b.origin)bt.push("name origin: "+b.origin);if(b.signature)bt.push("signature: "+b.signature);if(b.rebrands&&b.rebrands.length)bt.push("renamed to "+b.rebrands.map(function(r){return r.to+(r.date?" ("+r.date+")":"")}).join(", "));
+    box.appendChild(sec("Name and brand",h("p",{class:"small",style:"margin:0",text:bt.join(". ")+"."})))}
+  if(d.notes)box.appendChild(sec("Caveats",h("p",{class:"small muted",style:"margin:0",text:d.notes})));
+  if(d.sources.length)box.appendChild(sec("Sources",h("div",{class:"small"},d.sources.map(function(u,i){return h("span",{},i?" ":"",ext(u,"["+(i+1)+"]"))}))));
+  return box}
+function companyCard(a,i){var k=(a.end||{}).kind;
+  var xp=h("div",{class:"xp",id:"xp-"+i}),inner=h("div",{class:"xpi"}),filled=false;xp.appendChild(inner);
+  var btn=h("button",{class:"more","aria-expanded":"false","aria-controls":"xp-"+i,onclick:function(){var open=xp.classList.toggle("open");btn.setAttribute("aria-expanded",open?"true":"false");btn.firstChild.nodeValue=open?"Hide details":"Details";if(open&&!filled){filled=true;inner.appendChild(companyDetail(a))}}},"Details",icon("chev"));
+  return reveal(h("div",{class:"card acard"},h("div",{class:"head"},ico(a,40),h("div",{style:"flex:1"},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch}))),
+    h("span",{class:"pill",style:"background:"+statusColor(k)+";align-self:flex-start",text:statusText(a)}),
+    h("div",{class:"small",text:a.relevance}),h("div",{class:"small muted",text:a.summary}),btn,xp))}
+function valueAt(a,m){var s=a[metric];if(!s.length)return null;var v=null;for(var i=0;i<s.length;i++){if(s[i][0]<=m+0.001)v=s[i]}return v}
+function setCursorM(m){cursor=m;var x=chart.X(m);chart.curLine.setAttribute("x1",x);chart.curLine.setAttribute("x2",x);chart.curLab.setAttribute("x",x);chart.curLab.textContent=m<1?"YC":(m/12).toFixed(1)+" years after YC";
+  chart.range.value=Math.round(m/chart.xmax*100);
+  var rd=chart.read;rd.replaceChildren();
+  var pts=proj(),ml=D.most_likely,me=null;pts.forEach(function(p){if(p.m<=m+0.001){me=p}});
+  var stopped=ml.stop_index>0&&me&&me.idx>ml.stop_index;
+  var meText=!me?"Before a priced round":stopped?"Most likely stopped at "+pts[ml.stop_index-1].label:me.label+": "+usd(me.v);
+  var myIco=h("div",{class:"ico",style:"width:28px;height:28px;background:var(--orange);color:#fff",text:(D.startup.name||"?").charAt(0).toUpperCase()});
+  rd.appendChild(h("div",{class:"rrow me",style:"cursor:default"},myIco,h("div",{},h("div",{class:"nm",text:D.startup.name}),h("div",{class:"st",text:meText})),h("span",{class:"small muted",text:me&&!stopped?pct(me.p):""})));
+  var deadN=0;
+  D.analogs.forEach(function(a,i){var v=valueAt(a,m),e=a.end,state="";
+    if(e&&m>e.month+0.001){state=e.kind==="dead"?"Gone":e.kind==="active"?"":"Exited";if(e.kind==="dead")deadN++}
+    var txt=v?v[2]+": "+usd(v[1]):(a[metric].length?"No round yet":"No data");
+    rd.appendChild(h("button",{class:"rrow"+(selected===i?" sel":""),"aria-pressed":selected===i?"true":"false",onclick:function(){selectComp(i)}},ico(a,28),h("div",{},h("div",{class:"nm",text:a.name}),h("div",{class:"st",text:txt})),
+      h("span",{class:"small",style:"font-weight:700;color:"+(state==="Gone"?"#D64545":state==="Exited"?"#1E9E5A":"var(--muted)"),text:state})))});
+  rd.appendChild(h("div",{class:"small muted",style:"padding:8px",text:deadN+" of "+D.analogs.length+" had shut down by this point."}))}
+
+var W={};
+BUILD.walk=function(root){
+  var steps=[{key:"yc",title:"Y Combinator",p:D.yc.p,why:D.yc.why_it_fails,roadmap:"before_yc"}].concat(D.stages.map(function(s){return {key:s.key,title:s.title,p:s.p_reach_prev,why:s.why,roadmap:s.key,stage:s}}));
+  W.steps=steps;W.W=1000;W.H=560;W.L=70;W.R=40;W.T=30;W.B=48;
+  W.svg=sv("svg",{class:"stage-chart",viewBox:"0 0 1000 560",role:"img","aria-label":"Simulated run of this startup through YC and each funding round"});
+  W.capTitle=h("h3",{text:"Startup life"});W.num=h("div",{class:"num",text:"$0"});W.line=h("div",{class:"small muted"});W.res=h("div",{class:"res"});W.extra=h("div",{class:"small"});
+  W.mode="next";W.next=h("button",{class:"ibtn big go","aria-label":"Next step",onclick:function(){if(W.mode==="reset")walkReset();else walkNext()}},icon("arrow"));
+  W.again=h("button",{class:"ibtn","aria-label":"Start over",onclick:walkReset},icon("restart"));
+  W.pips=h("div",{class:"pips"},steps.map(function(){return h("i")}));
+  var ctl=h("div",{class:"ctl"},h("div",{class:"row"},W.again,W.pips),W.next);
+  W.cap=h("div",{class:"card cap"},W.capTitle,W.num,W.line,W.res,W.extra,ctl);
+  W.chartCard=h("div",{class:"card"},W.svg);
+  root.appendChild(reveal(h("div",{class:"walk"},W.chartCard,W.cap)));
+  document.addEventListener("keydown",function(e){if(cur==="walk"&&(e.key==="ArrowRight"||e.key==="Enter")&&!W.busy&&document.activeElement.tagName!=="BUTTON"){e.preventDefault();W.next.click()}});
+  walkReset();
+};
+function wx(i){return W.L+(i/W.steps.length)*(W.W-W.L-W.R)}
+function wy(v,range){var lo=Math.log10(range[0]),hi=Math.log10(range[1]);return W.T+(1-(Math.log10(Math.max(v,range[0]))-lo)/(hi-lo))*(W.H-W.T-W.B)}
+function walkReset(){W.i=0;W.pts=[{x:0,v:0}];W.range=[1e5,3e6];W.dead=false;W.busy=false;W.done=false;W.maxV=0;
+  W.mode="next";W.capTitle.textContent="Startup life";W.num.textContent="Idea";W.line.textContent="Press the arrow. Each step uses the odds from this evaluation.";W.res.textContent="";W.res.style.color="";W.extra.replaceChildren();
+  W.pips.querySelectorAll("i").forEach(function(i){i.className=""});W.next.disabled=false;W.next.replaceChildren(icon("arrow"));W.next.setAttribute("aria-label","Next step");W.chartCard.classList.remove("shake");
+  drawWalk(null)}
+function walkRange(maxV){var hi=Math.max(3e6,maxV*3);return [1e5,Math.pow(10,Math.ceil(Math.log10(hi)*4)/4)]}
+function drawWalk(head,rng){var svg=W.svg;svg.replaceChildren();var range=rng||W.range,color=W.dead?"#D64545":"#F26625";
+  for(var v=1e5;v<=range[1]*1.01;v*=10){svg.appendChild(sv("line",{x1:W.L,x2:W.W-W.R,y1:wy(v,range),y2:wy(v,range),stroke:"var(--line)"}));svg.appendChild(sv("text",{x:W.L-8,y:wy(v,range)+4,"text-anchor":"end"})).textContent=usd(v)}
+  W.steps.forEach(function(s,i){var x=wx(i+1);svg.appendChild(sv("line",{x1:x,x2:x,y1:W.T,y2:W.H-W.B,stroke:"var(--line)","stroke-dasharray":"2 5"}));
+    var t=sv("text",{x:x,y:W.H-W.B+20,"text-anchor":"middle",style:i<W.i?"fill:var(--ink);font-weight:700":""});t.textContent=s.key==="yc"?"YC":s.title;svg.appendChild(t)});
+  var px=W.pts.map(function(p){return {x:wx(p.x),y:p.v===0?W.H-W.B:wy(p.v,range)}});
+  if(head)px.push(head);
+  if(px.length>1)svg.appendChild(sv("path",{d:smooth(px),fill:"none",stroke:color,"stroke-width":5,"stroke-linecap":"round","stroke-linejoin":"round"}));
+  var tip=px[px.length-1];
+  svg.appendChild(sv("circle",{cx:tip.x,cy:tip.y,r:16,fill:color,opacity:.15}));svg.appendChild(sv("circle",{cx:tip.x,cy:tip.y,r:7,fill:color}))}
+function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+function easeOut(t){return 1-Math.pow(1-t,4)}
+function easeIn(t){return t*t*t}
+function walkAnim(target,kind,done){W.busy=true;var from=W.pts[W.pts.length-1];var fromV=from.v||0;var oldRange=W.range.slice(),newRange=kind==="crash"?W.range.slice():walkRange(Math.max(target.v,W.maxV||0));
+  var dur=kind==="crash"?1500:1900,t0=null,fx=from.x,tx=target.x;
+  function frame(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/dur);var ek=kind==="crash"?easeIn(k):easeOut(k);var rk=ease(k);
+    var r=[oldRange[0],Math.pow(10,Math.log10(oldRange[1])+(Math.log10(newRange[1])-Math.log10(oldRange[1]))*rk)];
+    var xk=ease(Math.min(1,k*1.15));var hx=fx+(tx-fx)*xk;
+    var lo=Math.log10(Math.max(fromV,1e5)),hv=kind==="crash"?Math.pow(10,lo+(Math.log10(1e5)-lo)*ek):Math.pow(10,lo+(Math.log10(Math.max(target.v,1e5))-lo)*ek);
+    var val=kind==="crash"?fromV*(1-ek):fromV+(target.v-fromV)*ek;
+    W.num.textContent=target.noUsd?"In YC":(kind==="crash"&&!fromV?"Applying":usd(Math.max(0,val)));
+    drawWalk({x:wx(hx),y:wy(hv,r)},r);
+    if(k<1)requestAnimationFrame(frame);else{W.pts.push(target);W.range=newRange;W.busy=false;drawWalk(null);done&&done()}}
+  requestAnimationFrame(frame)}
+function pickBand(bands){var r=Math.random(),c=0;for(var i=0;i<bands.length;i++){c+=bands[i].p_band;if(r<=c)return bands[i]}return bands[bands.length-1]}
+function walkNext(){if(W.busy||W.done)return;
+  var s=W.steps[W.i],lucky=Math.random()<s.p;
+  W.capTitle.textContent="Step "+(W.i+1)+" of "+W.steps.length+": "+s.title;
+  W.line.textContent=s.key==="yc"?"This company has a "+pct(s.p)+" chance of getting into YC.":"If it gets this far, it has a "+pct(s.p)+" chance of reaching "+s.title+".";
+  W.res.textContent="";W.res.style.color="";W.extra.replaceChildren();
+  var pip=W.pips.querySelectorAll("i")[W.i];
+  if(lucky){
+    var target,txt;
+    if(s.key==="yc"){target={x:1,v:1.5e5,noUsd:true};txt="You got into YC."}
+    else{var b=pickBand(s.stage.bands);var lo=Math.log10(Math.max(1,b.post[0])),hi=Math.log10(Math.max(1,b.post[1]));var val=Math.pow(10,lo+(hi-lo)*Math.random());target={x:W.i+1,v:val};txt="You raised at a "+usd(val)+" valuation."}
+    W.maxV=Math.max(W.maxV,target.v);W.next.disabled=true;
+    walkAnim(target,"up",function(){W.i++;pip.className="on";W.res.textContent=txt;W.res.style.color="var(--green)";W.next.disabled=false;if(W.i>=W.steps.length)walkFinish()})
+  }else{
+    W.dead=true;W.next.disabled=true;
+    walkAnim({x:W.i+1,v:1e5},"crash",function(){pip.className="bad";W.num.textContent=s.key==="yc"?"Not accepted":"Stalled";W.chartCard.classList.remove("shake");void W.chartCard.offsetWidth;W.chartCard.classList.add("shake");
+      W.res.textContent=s.key==="yc"?"Not this time. YC said no.":"It stalled before "+s.title+".";W.res.style.color="var(--red)";
+      W.extra.appendChild(h("div",{class:"callout red"},h("b",{text:"Why it fails here"}),s.why));
+      walkEnd("See the roadmap for this step",s.roadmap)})
+  }}
+function walkFinish(){var outs=D.outcomes.filter(function(o){return !o.failure});var tot=outs.reduce(function(a,o){return a+o.p_given_yc},0);var r=Math.random()*tot,c=0,o=outs[outs.length-1];
+  for(var i=0;i<outs.length;i++){c+=outs[i].p_given_yc;if(r<=c){o=outs[i];break}}
+  W.res.textContent="End state: "+o.name+".";W.res.style.color="var(--green)";
+  W.extra.appendChild(h("div",{class:"callout green"},h("b",{text:"You made it"}),"Among runs that get this far, this outcome comes up "+pct(o.p_given_yc/tot)+" of the time. Value: "+(o.value?rng(o.value):"n/a")+"."));
+  walkEnd("See the roadmap for the late stage","series_c_plus")}
+function walkEnd(label,phase){W.done=true;W.next.disabled=false;W.next.replaceChildren(icon("restart"));W.next.setAttribute("aria-label","Run again");W.mode="reset";
+  W.extra.appendChild(h("button",{class:"link",style:"margin-top:8px;text-align:left",onclick:function(){roadmapFocus=phase;show("roadmap",focusRoadmap)}},label))}
+
+var T={path:[]};
+function treeData(){var yc=D.yc.p,st=D.stages;var cum=[yc].concat(st.map(function(s){return s.p_today}));
+  function node(title,p,c,kind,detail){return {title:title,p:p,cum:c,kind:kind,detail:detail,kids:[]}}
+  var root=node("Today",1,1,"root",{text:"Applying to YC with this startup."});
+  var no=node("Rejected by YC",1-yc,1-yc,"stop",{why:D.yc.why_it_fails});
+  var yes=node("Accepted into YC",yc,yc,"go",{text:D.yc.basis});root.kids=[no,yes];
+  var prev=yes;
+  st.forEach(function(s,i){var stall=node("Stops before "+s.title,1-s.p_reach_prev,cum[i]-cum[i+1],"stop",{why:s.why});
+    var reach=node("Reaches "+s.title,s.p_reach_prev,cum[i+1],i===st.length-1?"end":"go",{bands:s.bands});
+    prev.kids=[stall,reach];prev=reach});
+  prev.detail.outcomes=D.outcomes;return root}
+BUILD.tree=function(root){
+  T.root=treeData();T.path=[T.root];
+  T.box=h("div",{class:"tree",id:"tree"});T.panel=h("div",{class:"card",style:"margin-top:16px;min-height:140px"});
+  root.appendChild(reveal(h("div",{class:"card"},h("h2",{text:"Every way it can go"}),T.box)));root.appendChild(T.panel);
+  window.addEventListener("resize",function(){if(cur==="tree")drawTree(true)})};
+function drawTree(quick){var box=T.box;if(!box)return;box.replaceChildren();var svgL=sv("svg",{class:"tlinks"});box.appendChild(svgL);
+  var rootCol=h("div",{class:"tcol"});rootCol.style.animation="none";
+  var rb=h("button",{class:"tn sel",onclick:function(){T.path=[T.root];drawTree();}},h("b",{text:"Today"}),h("div",{class:"small muted",style:"margin-top:6px",text:"Apply to YC"}));T.root.el=rb;rootCol.appendChild(rb);box.appendChild(rootCol);
+  T.path.forEach(function(n,depth){var next=T.path[depth+1];if(!n.kids.length)return;var col=h("div",{class:"tcol"});if(quick||depth<T.path.length-2)col.style.animation="none";
+    n.kids.forEach(function(k){var sel=next===k;var lab=labelFor(k.cum);
+      var el=h("button",{class:"tn"+(sel?" sel":""),onclick:function(){selectNode(depth+1,k)}},h("b",{text:k.title}),h("div",{class:"small muted",style:"margin-top:8px",text:pct(k.p)+" from here"}),h("div",{class:"pr",style:"margin-top:4px"},h("span",{text:pct(k.cum)+" from today"}),k.kind==="stop"?npill(lab):lpill(lab)));
+      k.el=el;col.appendChild(el)});box.appendChild(col)});
+  requestAnimationFrame(function(){var br=box.getBoundingClientRect();svgL.setAttribute("width",box.scrollWidth);svgL.setAttribute("height",box.scrollHeight);
+    T.path.forEach(function(n,depth){var next=T.path[depth+1];n.kids.forEach(function(k){if(!k.el||!n.el)return;var a=n.el.getBoundingClientRect(),b=k.el.getBoundingClientRect();
+      var x1=a.right-br.left+box.scrollLeft,y1=a.top+a.height/2-br.top+box.scrollTop,x2=b.left-br.left+box.scrollLeft,y2=b.top+b.height/2-br.top+box.scrollTop,mx=(x1+x2)/2;
+      svgL.appendChild(sv("path",{class:next===k?"on":"",d:"M"+x1+" "+y1+" C"+mx+" "+y1+" "+mx+" "+y2+" "+x2+" "+y2}))})})});
+  showDetail(T.path[T.path.length-1])}
+function selectNode(depth,k){T.path=T.path.slice(0,depth);T.path.push(k);drawTree();setTimeout(function(){T.box.scrollTo({left:T.box.scrollWidth,behavior:"smooth"})},60)}
+function showDetail(n){var p=T.panel;p.replaceChildren();p.classList.remove("fadein");void p.offsetWidth;p.classList.add("fadein");
+  var lab=labelFor(n.cum);
+  p.appendChild(h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:n.title}),h("div",{class:"row"},h("span",{class:"big",style:"font-size:30px",text:pct(n.cum)}),n.kind==="stop"?npill(lab):lpill(lab),h("span",{class:"small muted",text:"from today"}))));
+  var d=n.detail||{};
+  if(d.text)p.appendChild(h("p",{class:"muted",text:d.text}));
+  if(d.why)p.appendChild(h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it ends here"}),d.why));
+  if(d.bands){var y0=1e5,y1=1e10;var pos=function(v){return (Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0))*100};
+    d.bands.forEach(function(b){var lo=pos(b.post[0]),hi=Math.max(pos(b.post[1]),lo+1.2);p.appendChild(h("div",{class:"band"},h("div",{},h("b",{text:rng(b.post)}),h("div",{class:"small muted",text:"Raise "+rng(b.raise)})),h("div",{},h("div",{class:"range"},h("i",{style:"left:"+lo+"%;width:"+(hi-lo)+"%"})),h("div",{class:"small muted",style:"margin-top:6px",text:b.rationale})),h("div",{style:"text-align:right"},h("b",{text:pct(b.p_band)}))))})}
+  if(d.outcomes){p.appendChild(h("table",{class:"tbl",style:"margin-top:12px"},h("thead",{},h("tr",{},h("th",{text:"Final outcome"}),h("th",{text:"Value"}),h("th",{text:"If accepted"}),h("th",{text:"From today"}))),
+    h("tbody",{},d.outcomes.map(function(o){return h("tr",{},h("td",{text:o.name}),h("td",{text:o.failure?"n/a":rng(o.value)}),h("td",{},lpill(o.label_given_yc),h("span",{class:"small muted",text:" "+pct(o.p_given_yc)})),h("td",{},lpill(o.label_today),h("span",{class:"small muted",text:" "+pct(o.p_today)})))}))));
+    p.appendChild(h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it fails at the end"}),D.outcomes_why))}}
+
+function parseMoney(t){t=String(t||"").trim().toLowerCase().replace(/[$,\s]/g,"");var m=t.match(/^([0-9]*\.?[0-9]+)(k|m|b)?$/);if(!m)return null;var v=parseFloat(m[1]);if(m[2]==="k")v*=1e3;else if(m[2]==="m")v*=1e6;else if(m[2]==="b")v*=1e9;return v>0?v:null}
+function raiseCalc(){
+  var amt=h("input",{type:"text",inputmode:"decimal",class:"rc-in",value:"50k","aria-label":"Amount you want to raise",autocomplete:"off"});
+  var cap=h("input",{type:"text",inputmode:"decimal",class:"rc-in",value:"1m","aria-label":"Valuation cap",autocomplete:"off"});
+  var out=h("div",{class:"rc-out","aria-live":"polite"});
+  function upd(){var a=parseMoney(amt.value),c=parseMoney(cap.value);out.replaceChildren();
+    if(a===null||c===null){out.appendChild(h("div",{class:"small muted",text:"Enter amounts like 50k or 1m."}));return}
+    var sold=a/c;
+    out.appendChild(h("div",{class:"row",style:"align-items:baseline;gap:10px;flex-wrap:wrap"},h("span",{class:"big",text:(sold>=0.1?Math.round(sold*1000)/10:Math.round(sold*10000)/100)+"%"}),h("span",{class:"muted",text:"of the company sold for "+usd(a)+" on a "+usd(c)+" cap"})));
+    if(sold>=1){out.appendChild(h("div",{class:"callout red"},h("b",{text:"Check the numbers"}),"The raise is as large as the cap, which would sell the whole company."));return}
+    out.appendChild(h("div",{class:"small muted",style:"margin-top:8px",text:"You keep about "+(Math.round((1-sold)*1000)/10)+"% before any other dilution. This treats the cap as a post-money cap, so the percentage is the amount divided by the cap."}));
+    var st=D.stages&&D.stages[0];if(st&&st.bands&&st.bands.length){var lo=Math.min.apply(null,st.bands.map(function(b){return b.post[0]})),hi=Math.max.apply(null,st.bands.map(function(b){return b.post[1]}));
+      var where=c<lo?"below":c>hi?"above":"inside";
+      out.appendChild(h("div",{class:"small",style:"margin-top:8px",text:"This report's seed range is "+usd(lo)+" to "+usd(hi)+" post-money. Your cap is "+where+" that range."}))}}
+  amt.addEventListener("input",upd);cap.addEventListener("input",upd);upd();
+  return h("div",{class:"card",id:"raise-calc"},h("h2",{text:"Raise calculator"}),h("p",{class:"muted",style:"margin-top:0",text:"Say how much you want to raise and the valuation cap. It shows the share of the company you sell."}),
+    h("div",{class:"rc-row"},h("label",{class:"rc-f"},h("span",{class:"small muted",text:"Amount to raise"}),amt),h("label",{class:"rc-f"},h("span",{class:"small muted",text:"Valuation cap"}),cap)),out)}
+BUILD.path=function(root){
+  var wrap=h("div",{class:"grid snap"});
+  wrap.appendChild(reveal(raiseCalc()));
+  wrap.appendChild(reveal(h("div",{class:"card",id:"stage-yc"},h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:"Getting into YC"}),h("div",{class:"row"},h("span",{class:"big",text:pct(D.yc.p)}),lpill(D.yc.label))),
+    h("p",{class:"muted",text:D.yc.basis}),h("div",{class:"callout red"},h("b",{text:"Why it fails here"}),D.yc.why_it_fails))));
+  var y0=1e5,y1=1e10;function pos(v){return (Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0))*100}
+  D.stages.forEach(function(s){
+    var bands=h("div",{});
+    s.bands.forEach(function(b){var lo=pos(b.post[0]),hi=Math.max(pos(b.post[1]),lo+1.2);
+      bands.appendChild(h("div",{class:"band"},h("div",{},h("b",{text:rng(b.post)}),h("div",{class:"small muted",text:"Raise "+rng(b.raise)})),
+        h("div",{},h("div",{class:"range"},h("i",{style:"left:"+lo+"%;width:"+(hi-lo)+"%"})),h("div",{class:"small muted",style:"margin-top:6px",text:b.rationale})),
+        h("div",{style:"text-align:right"},h("b",{text:pct(b.p_band)}))))});
+    wrap.appendChild(reveal(h("div",{class:"card",id:"stage-"+s.key},
+      h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:s.title}),
+        h("div",{class:"row"},h("div",{style:"text-align:right"},h("div",{class:"big",text:pct(s.p_given_yc)}),h("div",{class:"small muted",text:pct(s.p_today)+" from today"})),lpill(s.label_given_yc))),
+      bands,
+      h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it fails here"}),s.why),
+      h("details",{},h("summary",{text:"How the odds were set"}),h("p",{class:"small muted",style:"margin:0",text:pct(s.p_reach_prev)+" chance of reaching this step from the previous one. "+(s.anchor.source||"")+(s.anchor.adjustment_reason?" "+s.anchor.adjustment_reason:"")})))))});
+  wrap.appendChild(reveal(h("div",{class:"card"},h("h2",{text:"Where it finally lands"}),
+    h("table",{class:"tbl"},h("thead",{},h("tr",{},h("th",{text:"Outcome"}),h("th",{text:"Value"}),h("th",{text:"If accepted"}),h("th",{text:"From today"}))),
+      h("tbody",{},D.outcomes.map(function(o){return h("tr",{},h("td",{text:o.name}),h("td",{text:o.failure?"n/a":rng(o.value)}),h("td",{},lpill(o.label_given_yc),h("span",{class:"small muted",text:" "+pct(o.p_given_yc)})),h("td",{},lpill(o.label_today),h("span",{class:"small muted",text:" "+pct(o.p_today)})))}))),
+    h("div",{class:"callout red",style:"margin-top:14px"},h("b",{text:"Why it fails here"}),D.outcomes_why))));
+  root.appendChild(wrap)};
+
+var roadmapFocus=null;
+var RM_TITLE={before_yc:"Get into YC",seed:"Reach Seed",series_a:"Reach Series A",series_b:"Reach Series B",series_c_plus:"Reach Series C and beyond"};
+BUILD.roadmap=function(root){var wrap=h("div",{class:"rm"});
+  var order=["before_yc","seed","series_a","series_b","series_c_plus"];
+  var items=D.roadmap.slice().sort(function(a,b){return order.indexOf(a.phase)-order.indexOf(b.phase)});
+  if(!items.length){root.appendChild(h("div",{class:"card"},h("p",{class:"muted",text:"No roadmap was written for this evaluation."})));return}
+  items.forEach(function(r){var el=h("div",{class:"rm-item","data-phase":r.phase},h("div",{class:"rm-rail"},h("div",{class:"rm-dot"}),h("div",{class:"rm-line"})),
+    reveal(h("div",{class:"card"},h("h2",{text:RM_TITLE[r.phase]||r.phase}),h("p",{style:"margin:0 0 12px;font-weight:600",text:r.goal}),
+      h("ul",{class:"list pro"},r.actions.map(function(a){return h("li",{},icon("check"),h("span",{text:a}))})),
+      h("div",{class:"callout green",style:"margin-top:14px"},h("b",{text:"You know it worked when"}),r.proof))));wrap.appendChild(el)});
+  root.appendChild(wrap)};
+function focusRoadmap(){var els=views.roadmap.querySelectorAll(".rm-item");els.forEach(function(e){e.classList.toggle("focus",e.dataset.phase===roadmapFocus)});
+  if(roadmapFocus){var t=views.roadmap.querySelector('.rm-item[data-phase="'+roadmapFocus+'"]');if(t)t.scrollIntoView({behavior:"smooth",block:"center"})}}
+
+function dots5(n){var g=h("div",{class:"gauge",style:"margin-bottom:12px"});for(var i=0;i<5;i++)g.appendChild(h("i",{style:i<n?"background:var(--orange)":""}));return g}
+BUILD.insights=function(root){
+  var I=D.insights,g=h("div",{class:"grid g2"});
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Market need"}),h("h2",{text:I.need.rating+" / 5"}),dots5(I.need.rating),
+    h("ul",{class:"list"},I.need.evidence.map(function(e){return h("li",{},icon("check"),h("div",{},h("div",{text:e.claim}),ext(e.source_url,"Source")))})))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Competition today"}),
+    h("table",{class:"tbl"},h("thead",{},h("tr",{},h("th",{text:"Who"}),h("th",{text:"What they do"}),h("th",{text:"Traction"}))),
+      h("tbody",{},I.competition.map(function(c){return h("tr",{},h("td",{},h("b",{text:c.name}),h("div",{},ext(c.source_url,"Source"))),h("td",{text:c.what}),h("td",{text:c.traction||"unknown"}))}))))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Technical complexity"}),h("h2",{text:I.technical.rating+" / 5"}),dots5(I.technical.rating),h("p",{class:"muted",style:"margin:0",text:I.technical.rationale}))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Takeover risk"}),h("h2",{text:I.takeover.rating+" / 5"}),dots5(I.takeover.rating),
+    h("p",{class:"muted",text:I.takeover.rationale}),h("div",{class:"small",text:I.takeover.who.join(", ")+", in about "+I.takeover.timeline_months+" months."}))));
+  var b=I.brand;
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Name and brand"}),h("h2",{text:b.name+", "+b.rating+" / 5"}),dots5(b.rating),h("p",{class:"muted",text:b.rationale}),
+    h("div",{class:"small",text:"Effect on success: "+b.effect_on_success+". "+b.name_check}),
+    h("div",{class:"grid g2",style:"margin-top:10px"},h("ul",{class:"list pro"},(b.strengths||[]).map(function(s){return h("li",{},icon("check"),h("span",{text:s}))})),h("ul",{class:"list con"},(b.weaknesses||[]).map(function(s){return h("li",{},icon("x"),h("span",{text:s}))}))),
+    (b.better_names&&b.better_names.length)?h("div",{class:"small muted",style:"margin-top:10px",text:"Alternatives: "+b.better_names.join(", ")}):null)));
+  root.appendChild(g);
+  var dd=I.deep_dive||{},keys=Object.keys(dd);
+  if(keys.length){var TT={market_need:"Is there real need today?",competition:"Competition now, and then",technical_complexity:"Technical complexity",takeover:"Who could take it over",economics_and_distribution:"Economics and distribution",team:"Team and founder fit",yc_specific:"Why YC may say no"};
+    var box=h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Deep dive"}));keys.forEach(function(k){box.appendChild(h("details",{},h("summary",{text:TT[k]||k}),h("p",{class:"muted",style:"margin:0",text:dd[k]})))});root.appendChild(reveal(box))}
+  root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Assumptions and limits"}),h("p",{class:"small muted",style:"margin:0 0 10px",text:"Evaluated as of "+D.startup.as_of+", "+(D.mode==="full"?"full":"summary")+" mode."}),h("ul",{class:"list"},D.assumptions.map(function(a){return h("li",{},icon("link"),h("span",{text:a}))})),
+    h("h3",{style:"margin-top:18px",text:"Sources"}),h("ul",{class:"list"},D.sources.map(function(u){return h("li",{},icon("link"),ext(u))})))));
+};
+
+BUILD.pros=function(root){
+  var g=h("div",{class:"grid g2"});
+  var pro=h("div",{class:"card"},h("h3",{text:"Pros"}));
+  var pl=h("ul",{class:"list pro"});(D.pros||[]).forEach(function(p){pl.appendChild(h("li",{},icon("check"),h("div",{},h("b",{text:p.point}),h("div",{class:"small muted",text:p.evidence}),p.source_url?ext(p.source_url,"Source"):null)))});
+  pro.appendChild(D.pros&&D.pros.length?pl:h("p",{class:"muted",text:"No pros were listed in this evaluation."}));
+  var con=h("div",{class:"card"},h("h3",{text:"Cons"}));
+  var cl=h("ul",{class:"list con"});D.cons.forEach(function(k){var fill=h("i",{});var li=h("li",{},icon("x"),h("div",{},h("b",{text:k.risk}),h("div",{class:"prob"},fill),h("div",{class:"small",text:pct(k.p)+" chance this happens"}),h("div",{class:"small muted",text:k.evidence}),
+      h("div",{class:"callout green",style:"margin-top:8px"},h("b",{text:"Mitigation"}),k.mitigation),h("div",{class:"small muted",style:"margin-top:6px",text:"Past YC cases: "+k.analog_names.join(", ")})));
+    cl.appendChild(li);onIn(con,function(){fill.style.width=Math.min(100,k.p*100)+"%"})});con.appendChild(cl);
+  g.appendChild(reveal(pro));g.appendChild(reveal(con));root.appendChild(g)};
+
+var start=(location.hash||"#overview").slice(1);show(BUILD[start]?start:"overview");
+})();
+</script>
+</body>
+</html>

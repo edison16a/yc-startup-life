@@ -1,0 +1,404 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Bayworks",
+    "one_liner": "Intelligence that keeps America's vehicles running",
+    "description": "Captures how expert technicians fix cars, guides technicians through diagnosis and repair in real time, and automates the admin work after. Claims nearly seven figures of contracted ARR from 6 dealership groups after four months, with a two person team in San Francisco.",
+    "as_of": "2026-10-05"
+  },
+  "yc_acceptance": {
+    "p": 0.15,
+    "p_low": 0.08,
+    "p_high": 0.3,
+    "basis": "The company is assumed accepted to YC, so this is a note only and set at the top of the allowed range. A prior of about 1 percent for a random applicant rises sharply with nearly seven figures of contracted ARR in four months, a top-50 dealer customer and a narrow vertical, per the factor table in yc_acceptance.md.",
+    "why_it_fails": "YC would most plausibly pass if the traction proved to be pilots rather than paid contracts, or if the two founders showed no edge over Tekion, which launched a technician AI agent in early 2026 inside the system dealers already use. Interviewers would also probe why a two person team can win a market with entrenched software vendors and slow sales cycles."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.88,
+      "anchors": {
+        "base_rate": 0.67,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only: seed cond 67% (n=12); broad cohort --years 2022-2025 --calibration-only: seed cond 57% (n=201), range 48%/57%/64%. Seed here means a round above the $500K YC deal within about 12 months.",
+        "adjustment_reason": "Within 1.3x of the Industrials anchor: near seven figure ARR, a top-50 dealer and 50,000 repairs are stronger than the typical batch company, and Toma (W24) raised after similar dealership traction."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            700000,
+            2000000
+          ],
+          "post_money_usd": [
+            8000000,
+            15000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Small extension or bridge from existing angels and YC follow-on, if growth slows."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            6000000
+          ],
+          "post_money_usd": [
+            20000000,
+            40000000
+          ],
+          "p_band": 0.55,
+          "rationale": "Typical 2026 seed for an AI vertical SaaS company with seven figure ARR (US seed median about 3M raise, 18M pre per PitchBook via Equidam)."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            15000000
+          ],
+          "post_money_usd": [
+            40000000,
+            90000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Hot AI vertical with fast ARR growth draws an oversized seed, as with Toma in dealerships."
+        }
+      ],
+      "why_it_fails": "The seed fails if the nearly seven figure cARR turns out to be annualised pilot pricing that churns, or if the dealer groups hold off expanding because Tekion and CDK ship technician AI inside their own platforms. Revion (W26) and ShortLoop show many AI dealership startups competing for the same few investor slots, and investors may want proof of repeat renewals before pricing a large round."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.4,
+      "anchors": {
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --calibration-only: series_a cond 22% (n=115), range 11%/12%/26%; --years 2018-2025 --industry Industrials: 25% (n=16).",
+        "adjustment_reason": "1.8x the broad anchor but inside 2x: Toma (W24) went from seven figures of dealership ARR to a 17M Series A, and paid usage by dealer groups is rare at this stage."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin A from a smaller fund if growth is mostly one large dealer group."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            70000000,
+            150000000
+          ],
+          "p_band": 0.55,
+          "rationale": "Typical 2026 AI vertical A (US median A deal about 17M, pre money about 60M)."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if ARR reaches 8 figures and the robot repair story lands."
+        }
+      ],
+      "why_it_fails": "The Series A fails if growth concentrates in the first six groups and net retention is unproven, or if technicians resist a tool that watches how they work. Dealership software is a slow sales cycle with large incumbents. Toma raised a 17M A only after reaching eight figure ARR across over 100 dealerships, and a two person team may not be able to scale deployment and support fast enough."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.4,
+      "anchors": {
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_b cond 44% (n=126), range 8%/15%/53% unconditional; 2022-2025 cohort is right censored (12%, n=25).",
+        "adjustment_reason": "Within 1x of the anchor; nothing yet distinguishes the company from the cohort at this stage, and growth after A is untestable."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin or flat B after a slow A year with weaker net retention."
+        },
+        {
+          "raise_usd": [
+            40000000,
+            80000000
+          ],
+          "post_money_usd": [
+            250000000,
+            600000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical B (median deal about 40M, pre about 190M per Equidam)."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            160000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the knowledge base becomes a data moat across repairs."
+        }
+      ],
+      "why_it_fails": "A Series B fails if repair guidance proves to be a feature that OEM and dealer management systems absorb, or if the captured technician knowledge does not generalise across makes and shops. Scope AR (S15) raised a 15.8M A and then sold in 2026 for an undisclosed price, showing how guided work software can plateau without a B."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.33,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_c cond 36% (n=55), range 3%/6%/48% unconditional.",
+        "adjustment_reason": "Slightly under the anchor because reaching C needs the robot repair vision or multi vertical expansion to work, and there is no analog yet."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            1000000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Modest growth round at a flat valuation if expansion slows after the Series B."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            200000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2500000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical C for a scaled vertical AI company."
+        },
+        {
+          "raise_usd": [
+            200000000,
+            500000000
+          ],
+          "post_money_usd": [
+            2500000000,
+            6000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the system of record for repair knowledge."
+        }
+      ],
+      "why_it_fails": "A Series C fails if the company stays a dealership workflow tool with capped dealer count and a few hundred million dollars of reachable revenue, or if robotics, the stated next step, absorbs capital without a product. Rodeo Robotics and RoboTire show robot repair is a separate hard hardware business with funded rivals, so the data moat may not produce a large market."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.42
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          10000000,
+          100000000
+        ],
+        "p": 0.26
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.25
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.07
+      }
+    ],
+    "why_it_fails": "Most failure here would be a stall: a dealership tool that reaches a few million in ARR and then stops growing because dealer management platforms and Tekion ship similar technician features, and because automotive sales cycles are slow. Fiix and Mecho Autotech show that auto repair startups often sell cheaply or restructure when scaling needs more capital than the market gives."
+  },
+  "analogs": [
+    {
+      "slug": "toma",
+      "relevance": "AI for dealerships, seven figure ARR quickly, closest traction match.",
+      "outcome_summary": "Raised a 17M Series A led by a16z in 2025 after reaching seven figure ARR in under a year."
+    },
+    {
+      "slug": "shortloop",
+      "relevance": "Pivoted to dealership AI and sells to dealer groups.",
+      "outcome_summary": "Seed of about 2.7M, then a dealership phone AI with about 22 groups; no later round found."
+    },
+    {
+      "slug": "scope-ar",
+      "relevance": "Guided work instructions for technicians.",
+      "outcome_summary": "Series A of about 15.8M in 2019, sold in 2026 for an undisclosed price."
+    },
+    {
+      "slug": "fiix",
+      "relevance": "Auto repair, consumer side, cash hungry.",
+      "outcome_summary": "Seed 1.8M, stayed in one metro and was sold after failing to raise more."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Tekion, CDK or OEMs bundle technician AI into the platform dealers already pay for",
+      "p": 0.35,
+      "evidence": "Tekion announced a Technician AI agent for voice and visual input at NADA 2026 and already runs service AI agents across its dealer base.",
+      "analogs": [
+        "toma",
+        "shortloop"
+      ],
+      "mitigation": "Capture proprietary repair data that the platform lacks and sell outcome based savings per repair."
+    },
+    {
+      "risk": "Technicians do not adopt the tool, so usage and renewals fade after pilots",
+      "p": 0.3,
+      "evidence": "Guided work tools depend on frontline users, and the 7 figure cARR comes from only 6 groups after four months.",
+      "analogs": [
+        "scope-ar"
+      ],
+      "mitigation": "Tie to technician pay and flat rate hours and track weekly active technicians per store."
+    },
+    {
+      "risk": "The robot repair vision pulls a two person team into hardware before software scales",
+      "p": 0.2,
+      "evidence": "Hardware repair robots such as those at Rodeo Robotics and RoboTire are separately funded and rated complexity 5.",
+      "analogs": [
+        "rodeo-robotics",
+        "fiix"
+      ],
+      "mitigation": "Stay software only until ARR passes 5M and partner for robotics."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Tekion Technician AI",
+      "what": "Dealer management platform with service AI agents and a technician assistant.",
+      "traction": "Announced at NADA 2026 and sold to its dealer base.",
+      "source_url": "https://www.autoremarketing.com/ar/retail/tekion-launches-its-first-ai-agent-to-automate-service-department-processes/"
+    },
+    {
+      "name": "Revion and CarSignal and Parrot",
+      "what": "Other YC startups building AI for auto service and shops.",
+      "traction": "Early, mostly shop level.",
+      "source_url": "https://www.businesswire.com/news/home/20250318084635/en/Tekion-Launches-AI-Agents-on-Its-Platform-Boosting-Business-Value-for-Automotive-Retail"
+    },
+    {
+      "name": "Status quo of OEM manuals and tribal knowledge",
+      "what": "Technicians use OEM service information and senior mechanics.",
+      "traction": "Universal, no switching cost.",
+      "source_url": "https://www.autoremarketing.com/ar/retail/tekion-launches-its-first-ai-agent-to-automate-service-department-processes/"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Capturing and structuring technician knowledge with multimodal models is feasible for a small team in three months; the hard part is accuracy across makes and trust on the shop floor, plus integrations with dealer management systems."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Tekion",
+      "CDK Global",
+      "OEMs"
+    ],
+    "timeline_months": 12,
+    "rationale": "Dealer management platforms control the workflow and data and have already shipped technician AI. A well resourced rival could match basic guidance within a year, so the moat must be proprietary repair data."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Dealers buy service AI today; Tekion sells service AI agents with claimed technician productivity gains.",
+        "source_url": "https://www.autoremarketing.com/ar/retail/tekion-launches-its-first-ai-agent-to-automate-service-department-processes/"
+      },
+      {
+        "claim": "Skilled technician shortage and fixed flat rate pay make productivity tools valuable (company claims 6 paying groups).",
+        "source_url": "https://www.businesswire.com/news/home/20250318084635/en/Tekion-Launches-AI-Agents-on-Its-Platform-Boosting-Business-Value-for-Automotive-Retail"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Prove paid usage, not pilots.",
+      "actions": [
+        "Convert pilots to annual contracts with all six groups",
+        "Publish repair time saved per technician"
+      ],
+      "proof": "Over 1M signed ARR with renewals."
+    },
+    {
+      "phase": "seed",
+      "goal": "Show repeatable dealer sales.",
+      "actions": [
+        "Hire a dealer sales lead",
+        "Reach 15 groups with weekly technician usage"
+      ],
+      "proof": "3M ARR and over 80 percent usage retention."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Real revenue early",
+      "evidence": "Nearly seven figures of cARR in four months across 6 groups including a top-50 dealer.",
+      "source_url": "https://www.businesswire.com/news/home/20250318084635/en/Tekion-Launches-AI-Agents-on-Its-Platform-Boosting-Business-Value-for-Automotive-Retail"
+    },
+    {
+      "point": "Data flywheel",
+      "evidence": "Each captured repair improves guidance across makes, giving a possible proprietary dataset.",
+      "source_url": "https://www.businesswire.com/news/home/20250318084635/en/Tekion-Launches-AI-Agents-on-Its-Platform-Boosting-Business-Value-for-Automotive-Retail"
+    }
+  ],
+  "brand": {
+    "name": "Bayworks",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Bayworks\" --era 2022+: invented or proper, 8 chars, 2 syllables",
+    "strengths": [
+      "Short and easy to say",
+      "Hints at the service bay"
+    ],
+    "weaknesses": [
+      "Generic compound that is hard to own"
+    ],
+    "rationale": "Bayworks is a short two syllable name that evokes the service bay, which fits the buyer, like Toma's plain name in the same dealership market; it neither helps nor hurts, since traction drives success here."
+  },
+  "narrative": {
+    "headline": "Strong early traction in a crowded dealership AI market, with platform takeover as the main risk.",
+    "general_summary": "Bayworks sells technician guidance and repair admin automation to dealership groups and claims nearly seven figures of contracted revenue after four months. That puts it ahead of most batch companies and close to the Toma path, which raised a Series A from a16z. The main uncertainties are whether usage persists, whether Tekion and other platforms absorb the feature, and whether a two person team can scale deployment. The seed step is likely, with a Series A possible if growth holds. The robot repair story is upside but also a distraction risk."
+  },
+  "assumptions": [
+    "Company claims about traction are taken as stated and unverified.",
+    "Seed means a round above the 500K YC deal within about 12 months of the batch start.",
+    "Funding for other 2026 batch companies was not used as evidence.",
+    "Calibration data is thin for Industrials 2022+ (n=12)."
+  ],
+  "sources": [
+    "https://www.autoremarketing.com/ar/retail/tekion-launches-its-first-ai-agent-to-automate-service-department-processes/",
+    "https://www.businesswire.com/news/home/20250318084635/en/Tekion-Launches-AI-Agents-on-Its-Platform-Boosting-Business-Value-for-Automotive-Retail"
+  ]
+}

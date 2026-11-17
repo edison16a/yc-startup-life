@@ -1,0 +1,444 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Haladir",
+    "one_liner": "Operational Intelligence for Global Logistics",
+    "description": "Four person San Francisco team building AI decision intelligence for warehousing, fulfillment and transportation. It combines AI with optimization solvers to decide what happens today and how plans change over time, from one site to a whole network. Buyers are logistics operators and shippers.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.01,
+    "p_low": 0.006,
+    "p_high": 0.02,
+    "basis": "Test mode: the company is assumed accepted to YC for Winter 2026, so the acceptance step is not forecast here. The prior would be about 1 percent for a random applicant with a 0.6 to 2 percent band, adjusted up for a hard technical wedge and down for no stated traction.",
+    "why_it_fails": "Not scored in this blind test because the company was accepted, so the number shown is only the unadjusted prior. YC would most plausibly have passed if the pitch read as a generic AI planning layer with no named customer pain or pilot, since the category already has funded planning vendors and incumbents."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.6,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (lower/known/upper; cond): seed 49% / 59% / 65%, cond 59% (n=126); the 2018-2021 B2B cohort shows cond 81% (n=69). Seed here means a round over $500K within about 12 months of batch start, which is stricter than any seed, so I stay near the recent cohort.",
+        "adjustment_reason": "Within 1.1x of the anchor. Up: AI decision tools are a hot YC category and the 2026 funding climate favors them. Down: enterprise logistics pilots are slow and a four person team has no named customer."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            780000,
+            1950000
+          ],
+          "post_money_usd": [
+            7800000,
+            15600000
+          ],
+          "p_band": 0.3,
+          "rationale": "Small or SAFE extension rounds just above the $500K YC check, common when a founder takes a pilot first and raises on early logos."
+        },
+        {
+          "raise_usd": [
+            2600000,
+            5200000
+          ],
+          "post_money_usd": [
+            15600000,
+            32500000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical 2026 seed for an AI plus B2B company: about $2M to $4M at a $12M to $25M post, close to the 2022+ B2B median raise of $3.2M, scaled up for a hot AI market."
+        },
+        {
+          "raise_usd": [
+            6500000,
+            13000000
+          ],
+          "post_money_usd": [
+            39000000,
+            78000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if a marquee shipper or 3PL pilot lands in the batch and a top fund leads."
+        }
+      ],
+      "why_it_fails": "The most likely stop is a pilot that does not convert in 12 months. Investors in 2026 want a paying warehouse or carrier customer, and logistics buyers run long security and integration reviews that outlast a batch. Nextmv, with a founder pair from Grubhub, raised its seed only after real optimization credibility, and SprintAI and Shotput never raised past angel money. Without a named pilot, seed slips past 12 months or comes as a small extension."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.27,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (lower/known/upper; cond): series_a 13% / 15% / 29%, cond 26% (n=74); 2018-2021 B2B cond 32% (n=56).",
+        "adjustment_reason": "At the anchor. Supply chain software has real budgets and Nextmv and Flowspace both reached A, but incumbents ship AI features and sales cycles are long."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            7000000,
+            12600000
+          ],
+          "post_money_usd": [
+            35000000,
+            62999999
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin A for a company with a few pilots but modest revenue; below the $10M median."
+        },
+        {
+          "raise_usd": [
+            14000000,
+            28000000
+          ],
+          "post_money_usd": [
+            62999999,
+            140000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Median 2022+ B2B Series A raise of $15M, about the $15M to $20M current market deal size."
+        },
+        {
+          "raise_usd": [
+            28000000,
+            56000000
+          ],
+          "post_money_usd": [
+            140000000,
+            350000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if it lands multi site rollouts and an AI supply chain leader (Lyric raised a $43.5M Series B in 2025) sets the climate."
+        }
+      ],
+      "why_it_fails": "Series A needs repeatable revenue, usually $1M to $2M ARR across several sites. Haladir faces a long implementation path inside warehouse systems it does not control, and Blue Yonder, o9 and Kinaxis are adding agents. Flowspace and Nextmv reached A with a clear niche and a founder from the industry. A broad network wide decision engine without one winning workflow is hard to scale, as SprintAI showed."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (lower/known/upper; cond): series_b 2% / 2% / 18%, cond 16% (n=19); 2018-2021 B2B cond 39% (n=18).",
+        "adjustment_reason": "Between the two B2B cohorts. The 2022+ cohort is right censored, so I lean toward the older 39 percent but trim for the thin sample."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            21000000,
+            42000000
+          ],
+          "post_money_usd": [
+            112000000,
+            210000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat B if growth slows after a hot A and the market cools."
+        },
+        {
+          "raise_usd": [
+            42000000,
+            84000000
+          ],
+          "post_money_usd": [
+            210000000,
+            560000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Median 2022+ Series B around $37M to $45M in the YC data."
+        },
+        {
+          "raise_usd": [
+            84000000,
+            168000000
+          ],
+          "post_money_usd": [
+            560000000,
+            1400000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a category leader in decision intelligence with strong retention."
+        }
+      ],
+      "why_it_fails": "Series B requires scaling sales beyond founders, and logistics buyers consolidate vendors. If net retention is weak or each site is a custom project, growth looks like services revenue and investors pass. Shipper and Flowspace reached B only with strong market growth, and Haladir has no such tailwind beyond AI interest."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (lower/known/upper; cond): series_c 0% / 0% / 16%, cond 0% (n=3); 2018-2021 B2B cond 57% (n=7); calibration all stages cond 36% (n=55).",
+        "adjustment_reason": "Between the sparse B2B cohorts and the all company cond of 36%; sample is thin."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            52000000,
+            91000000
+          ],
+          "post_money_usd": [
+            325000000,
+            650000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Smaller growth round for a company that has slowed but is profitable enough."
+        },
+        {
+          "raise_usd": [
+            91000000,
+            195000000
+          ],
+          "post_money_usd": [
+            650000000,
+            1950000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Median 2022+ Series C around $45M to $50M in the YC data."
+        },
+        {
+          "raise_usd": [
+            195000000,
+            520000000
+          ],
+          "post_money_usd": [
+            1950000000,
+            6500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a platform deployed network wide at large shippers."
+        }
+      ],
+      "why_it_fails": "A Series C needs tens of millions in revenue and a defensible position against suites from large vendors. Most decision intelligence vendors end in acquisition by a supply chain suite before this stage. Nextmv was acquired after its A, which is the common ending, and few of the analogs reached C."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.55
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.28
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.14
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.03
+      }
+    ],
+    "why_it_fails": "Most likely the company stalls or is acquired small by a suite vendor because supply chain buyers consolidate, sales cycles are slow and incumbents with distribution add similar AI. Nextmv ended in a sale after an A, and SprintAI and Shotput shut down. Only a product that becomes the planning system of record at large operators reaches a billion dollar outcome."
+  },
+  "analogs": [
+    {
+      "slug": "nextmv",
+      "relevance": "Optimization decision engine for logistics, same solver plus AI thesis.",
+      "outcome_summary": "Seed $2.7M 2020 and Series A $8M the same year, then acquired. Shows the path ends at A and sale."
+    },
+    {
+      "slug": "flowspace",
+      "relevance": "Fulfillment software that rode ecommerce growth.",
+      "outcome_summary": "Seed, A in 2019, $31M B in 2021, active. Reached B with real traction and an acquisition."
+    },
+    {
+      "slug": "sprintai",
+      "relevance": "AI inventory and fulfillment optimization.",
+      "outcome_summary": "Raised about $0.5M angels, joined YC W20 and is listed dead. Failure case for AI optimization without a buyer."
+    },
+    {
+      "slug": "shotput",
+      "relevance": "Fulfillment platform pitch with AI and robotics later.",
+      "outcome_summary": "Only a YC seed of about $120K and inactive; competition from Flexe and Shipwire."
+    },
+    {
+      "slug": "shipper",
+      "relevance": "Logistics platform in a growth market.",
+      "outcome_summary": "Seed 2019 and $63M Series B 2021, later layoffs; shows B needs market growth."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Pilots do not convert to paid contracts inside a year",
+      "p": 0.35,
+      "evidence": "Warehouse and transport buyers run long integration and security reviews, and a four person team has no named customer in the description.",
+      "analogs": [
+        "sprintai",
+        "shotput"
+      ],
+      "mitigation": "Pick one workflow such as dock scheduling or labor planning, sign a paid pilot in the batch and show a measured cost saving."
+    },
+    {
+      "risk": "Large suites add agentic decisions and bundle them",
+      "p": 0.3,
+      "evidence": "Blue Yonder, o9 and Kinaxis already market AI agents on top of installed bases.",
+      "analogs": [
+        "nextmv",
+        "flowspace"
+      ],
+      "mitigation": "Integrate with existing WMS and TMS as a layer, win on one measurable outcome and not on a platform pitch."
+    },
+    {
+      "risk": "Custom solver work turns the business into services",
+      "p": 0.3,
+      "evidence": "Each site has its own constraints, so optimization projects often need per customer modeling that limits software margins.",
+      "analogs": [
+        "nextmv",
+        "sprintai"
+      ],
+      "mitigation": "Build reusable constraint templates and charge per site software fees, not hours."
+    },
+    {
+      "risk": "Vague positioning at the start (judgement as a theme) hides the wedge",
+      "p": 0.2,
+      "evidence": "The description speaks of the next frontier of AI judgement and spans warehouses, fulfillment and transportation from one site to a network, which is very broad for four people.",
+      "analogs": [
+        "sprintai",
+        "shotput"
+      ],
+      "mitigation": "State one buyer, one decision and one number saved."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Lyric",
+      "what": "AI supply chain decision platform; a direct category peer that sells to large shippers.",
+      "traction": "$43.5M Series B in August 2025, $67M total raised.",
+      "source_url": "https://siliconangle.com/2025/08/05/next-generation-supply-chain-intelligence-startup-lyric-gets-43-5m-funding/"
+    },
+    {
+      "name": "Optilogic",
+      "what": "Supply chain design and optimization software.",
+      "traction": "$40M Series B in April 2025.",
+      "source_url": "https://pulse2.com/optilogic-40-million-series-b-raised-for-optimization-and-decision-making-platform"
+    },
+    {
+      "name": "Blue Yonder, o9 and Kinaxis",
+      "what": "Incumbent planning and execution suites adding AI agents.",
+      "traction": "Large installed bases among global shippers and retailers.",
+      "source_url": "https://procurementmag.com/news/o9-blueyonder-and-kinaxis-extending-procurement-operations"
+    },
+    {
+      "name": "Status quo (spreadsheets and WMS rules)",
+      "what": "Most sites decide with rules in the WMS, planner experience and spreadsheets.",
+      "traction": "Default for mid size operators.",
+      "source_url": "https://pulse2.com/daybreak-15-million-raised-for-supply-chain-planning-platform"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 4,
+    "rationale": "Optimization solvers plus learned models on messy operational data is hard, and integration with WMS, TMS and ERP is slow. A small team can build a single workflow in three months but not a network wide engine with trusted results."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Blue Yonder",
+      "o9 Solutions",
+      "Kinaxis"
+    ],
+    "timeline_months": 18,
+    "rationale": "Suites have distribution and data and are shipping agents, but their products are heavy and slow to change, so a focused layer has room for a year or two. Platform dependency on customer systems is the larger issue."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Investors funded several AI supply chain decision startups in 2025 including a $43.5M Series B and a $40M Series B, showing paid demand.",
+        "source_url": "https://siliconangle.com/2025/08/05/next-generation-supply-chain-intelligence-startup-lyric-gets-43-5m-funding/"
+      },
+      {
+        "claim": "Incumbent suites are racing to add agentic AI, which signals buyers ask for it.",
+        "source_url": "https://procurementmag.com/news/o9-blueyonder-and-kinaxis-extending-procurement-operations"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "seed",
+      "goal": "Paid pilot with one named operator.",
+      "actions": [
+        "Choose one decision such as slotting or labor plans.",
+        "Run a four week shadow test against the customer's current plan.",
+        "Convert to a paid pilot with a written savings target."
+      ],
+      "proof": "One signed paid pilot with a measured percent cost saving."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Repeatable multi site revenue.",
+      "actions": [
+        "Productize constraints into templates.",
+        "Hire a sales lead who has sold into 3PLs.",
+        "Expand from one site to a network at one customer."
+      ],
+      "proof": "$1M ARR across at least three customers with net retention above 110 percent."
+    },
+    {
+      "phase": "series_b",
+      "goal": "Scale beyond founder led sales.",
+      "actions": [
+        "Add integrations with the top WMS and TMS vendors.",
+        "Build a partner channel with 3PLs.",
+        "Prove software margin above 70 percent."
+      ],
+      "proof": "Eight figure ARR with sales not led by founders."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Hard technical wedge (solvers plus AI) that a small team can defend",
+      "evidence": "Optimization is a skill barrier; Nextmv's Grubhub founders raised a seed and an A within a year.",
+      "source_url": "https://techcrunch.com/2020/05/07/nextmv-picks-up-2-7m-to-optimize-and-test-decision-models-for-the-logistics-industry/"
+    },
+    {
+      "point": "Hot category with active venture money",
+      "evidence": "Lyric, Optilogic, ketteQ and Daybreak all raised in 2025.",
+      "source_url": "https://pulse2.com/daybreak-15-million-raised-for-supply-chain-planning-platform"
+    }
+  ],
+  "brand": {
+    "name": "Haladir",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Haladir\" --era 2022+: 7 chars, invented, no flags from the text screen",
+    "strengths": [
+      "Short, easy to say and spell",
+      "Invented word with no descriptor baggage"
+    ],
+    "weaknesses": [
+      "Says nothing about logistics",
+      "Sounds like a fantasy name"
+    ],
+    "rationale": "A short invented name is typical of recent YC winners and neither helps nor hurts a B2B sale where buyers decide on savings. The text screen shows no flags. Brand is secondary here and does not move the ladder.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A credible but broad AI plus solver logistics bet whose odds hinge on converting one pilot into paid, repeatable sites.",
+    "general_summary": "Haladir is a four person team selling AI decision intelligence to warehouses, fulfillment and transportation operators. Demand is real and funded: several peers raised Series B rounds in 2025, and incumbents are adding agents. The risks are a very broad pitch for four people, slow enterprise pilots and suites that bundle similar features. The base rates for recent B2B YC companies show about 59 percent reaching a seed, 26 percent an A, and a thin tail beyond. I stay close to those, with a small lift for the AI climate."
+  },
+  "assumptions": [
+    "Company assumed accepted to YC Winter 2026; as_of 2026-01-05.",
+    "Only the supplied description was used; no team background, customers or revenue are known.",
+    "Seed means a round over $500K within about 12 months of batch start.",
+    "Base rates for 2022 to 2025 cohorts are right censored and underestimate later stages; funding coverage is partial.",
+    "Only pre 2026 information from analog records was used as evidence."
+  ],
+  "sources": [
+    "https://siliconangle.com/2025/08/05/next-generation-supply-chain-intelligence-startup-lyric-gets-43-5m-funding/",
+    "https://pulse2.com/optilogic-40-million-series-b-raised-for-optimization-and-decision-making-platform",
+    "https://pulse2.com/daybreak-15-million-raised-for-supply-chain-planning-platform",
+    "https://procurementmag.com/news/o9-blueyonder-and-kinaxis-extending-procurement-operations",
+    "https://techcrunch.com/2020/05/07/nextmv-picks-up-2-7m-to-optimize-and-test-decision-models-for-the-logistics-industry/"
+  ]
+}

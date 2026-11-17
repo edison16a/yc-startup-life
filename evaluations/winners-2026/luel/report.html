@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luel: YC evaluation</title>
+<style>
+:root{
+  --bg:#F5F0E6;--card:#FFFFFF;--ink:#14110F;--muted:#6B655C;--line:#E6DFD0;--soft:#FAF7F0;
+  --orange:#F26625;--orange-soft:#FDE9DD;--blue:#2F5BEA;--blue-soft:#E4EAFD;
+  --green:#1E9E5A;--green-soft:#DDF3E6;--red:#D64545;--red-soft:#FBE3E3;--amber:#D9A21B;
+  --radius:18px;--shadow:0 1px 2px rgba(20,17,15,.04),0 8px 24px rgba(20,17,15,.05);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+:root[data-theme="dark"]{
+  --bg:#0E0D0C;--card:#181614;--ink:#F3EEE4;--muted:#9A9285;--line:#2A2622;--soft:#1F1C19;
+  --orange-soft:#3A2417;--blue-soft:#1A2547;--green-soft:#15301F;--red-soft:#3A1C1C;--shadow:none;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E0D0C;--card:#181614;--ink:#F3EEE4;--muted:#9A9285;--line:#2A2622;--soft:#1F1C19;
+  --orange-soft:#3A2417;--blue-soft:#1A2547;--green-soft:#15301F;--red-soft:#3A1C1C;--shadow:none;}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+svg{display:block}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+button{font:inherit}
+.app{display:grid;grid-template-columns:92px 1fr;height:100vh;height:100dvh}
+.nav{display:flex;flex-direction:column;align-items:center;gap:2px;padding:18px 6px;border-right:1px solid var(--line);overflow-y:auto}
+.brand{width:42px;height:42px;border-radius:12px;background:var(--orange);display:grid;place-items:center;margin-bottom:16px;color:#fff;font-weight:800;font-size:19px;flex:none}
+.tab{all:unset;cursor:pointer;width:84px;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--muted);font-size:11px;font-weight:600;white-space:nowrap;transition:color .25s var(--ease)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--orange)}
+.tab:focus-visible,.ibtn:focus-visible,.tx:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
+.tab svg,.ibtn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.spacer{flex:1;min-height:12px}
+.ibtn{all:unset;cursor:pointer;display:grid;place-items:center;width:40px;height:40px;color:var(--muted);transition:color .2s var(--ease),transform .25s var(--ease)}
+.ibtn:hover{color:var(--orange)}
+.ibtn.big{width:64px;height:64px}.ibtn.big svg{width:38px;height:38px;stroke-width:1.5}
+.ibtn.go{color:var(--orange)}.ibtn.go:hover{color:var(--ink);transform:translateX(3px)}
+.ibtn[disabled]{opacity:.25;pointer-events:none}
+.main{overflow-y:auto;scroll-behavior:smooth}
+.page{max-width:1240px;margin:0 auto;padding:28px 32px 64px}
+.title{margin:0 0 22px;font-size:30px;line-height:1.15;letter-spacing:-.025em}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;color:#fff;white-space:nowrap}
+.view{display:none}.view.on{display:block;animation:viewin .5s var(--ease)}
+@keyframes viewin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}.grid>*,.chart-wrap>*,.walk>*{min-width:0}
+a{overflow-wrap:anywhere}.list li>*{min-width:0;overflow-wrap:anywhere}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.rc-row{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}.rc-f{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
+.rc-in{font:inherit;font-size:18px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%;box-sizing:border-box}
+.rc-in:focus-visible{outline:2px solid var(--blue);outline-offset:2px}.rc-out{margin-top:6px}
+.card h2{margin:0 0 14px;font-size:19px;letter-spacing:-.015em}
+.big{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.muted{color:var(--muted)}.small{font-size:13px}
+.stat{display:flex;flex-direction:column;gap:8px;min-height:150px}
+.ring{width:92px;height:92px;flex:none}
+.ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--orange);transition:stroke-dashoffset 1.2s var(--ease)}
+.row{display:flex;align-items:center;gap:14px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stepper{display:grid;gap:4px}
+.step{all:unset;cursor:pointer;display:grid;grid-template-columns:110px 1fr 140px;align-items:center;gap:14px;padding:10px 4px;transition:color .2s var(--ease)}
+.step:hover b{color:var(--orange)}
+.bar{height:12px;border-radius:999px;background:var(--soft);overflow:hidden}
+.bar>i{display:block;height:100%;width:0;border-radius:999px;background:var(--orange);transition:width 1.1s var(--ease)}
+.gauge{display:flex;gap:5px;margin:10px 0 0}
+.gauge i{flex:1;height:10px;border-radius:5px;background:var(--line);transition:background .4s var(--ease)}
+.dots{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.callout{border-radius:14px;padding:14px 16px;font-size:14px}
+.callout.red{background:var(--red-soft)}.callout.green{background:var(--green-soft)}.callout.blue{background:var(--blue-soft)}
+.callout b{display:block;font-size:12px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.callout.red b{color:var(--red)}.callout.green b{color:var(--green)}
+.snap{scroll-snap-type:y proximity}.snap>.card{scroll-snap-align:start;scroll-margin-top:16px}
+.band{display:grid;grid-template-columns:150px 1fr 70px;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.band:first-of-type{border-top:0}
+.range{position:relative;height:10px;border-radius:999px;background:var(--soft)}
+.range i{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--blue);transform-origin:left;animation:grow .9s var(--ease) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tx{all:unset;cursor:pointer;padding:4px 2px;margin-left:14px;font-size:14px;font-weight:700;color:var(--muted);transition:color .2s var(--ease);border-bottom:2px solid transparent}
+.tx:hover{color:var(--ink)}.tx[aria-pressed="true"]{color:var(--orange);border-bottom-color:var(--orange)}
+.chart-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
+.chart{width:100%;height:auto;touch-action:pan-y;cursor:crosshair;user-select:none}
+.chart text{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;fill:var(--muted)}
+.chart .grid-l{stroke:var(--line);stroke-width:1}
+.chart .ln{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cg{transition:opacity .35s var(--ease)}
+.readout{display:flex;flex-direction:column;gap:2px;max-height:470px;overflow:auto;padding-right:2px}
+.rrow{all:unset;cursor:pointer;display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;padding:7px 8px;font-size:13px;box-sizing:border-box}
+.rrow .nm{font-weight:700;line-height:1.2;transition:color .2s}.rrow .st{font-size:11px;color:var(--muted)}
+.rrow:hover .nm{color:var(--orange)}.rrow.sel .nm{color:var(--blue)}.rrow.me .nm{color:var(--orange)}
+.rrow:focus-visible{outline:2px solid var(--blue);border-radius:8px}
+.range-in{width:100%;accent-color:var(--orange);margin:10px 0 0}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.ico{border-radius:22%;overflow:hidden;background:var(--soft);display:grid;place-items:center;font-weight:800;color:var(--muted);flex:none;position:relative;font-size:12px}
+.ico img{width:100%;height:100%;object-fit:cover;display:block}
+.ico .sd{position:absolute;right:-2px;bottom:-2px;width:9px;height:9px;border-radius:50%;border:2px solid var(--card)}
+.acard{display:flex;flex-direction:column;gap:8px}
+.cards{align-items:start}
+.more{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;color:var(--blue);font-weight:700;font-size:13px;margin-top:2px;transition:color .2s var(--ease);align-self:flex-start}
+.more:hover{color:var(--orange)}.more:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:6px}
+.more svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease)}
+.more[aria-expanded="true"] svg{transform:rotate(180deg)}
+.xp{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.xp.open{grid-template-rows:1fr}
+.xp>.xpi{overflow:hidden;min-height:0}
+.detail{padding-top:6px}
+.dsec{margin-top:14px}
+.dsec h4{margin:0 0 6px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.tl li{display:grid;grid-template-columns:76px 1fr;gap:10px;font-size:13px}
+.tl li>span:first-child{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{padding:2px 9px;border-radius:999px;background:var(--soft);font-size:12px}
+.chips.good span{background:var(--green-soft)}.chips.bad span{background:var(--red-soft)}
+.detailpanel{border-top:1px solid var(--line);margin-top:16px;padding-top:12px;display:none}
+.dotb{all:unset;cursor:pointer;display:block;transition:transform .2s var(--ease)}
+.dotb:hover{transform:translateY(-2px)}.dotb:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
+.acard .head{display:flex;align-items:center;gap:10px}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.list li{display:grid;grid-template-columns:22px 1fr;gap:10px}
+.list svg{width:20px;height:20px;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.pro svg{stroke:var(--green)}.con svg{stroke:var(--red)}
+.prob{height:8px;border-radius:999px;background:var(--soft);margin:8px 0;overflow:hidden}
+.prob i{display:block;height:100%;width:0;background:var(--red);border-radius:999px;transition:width 1s var(--ease)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}.tbl th{font-size:12px;text-align:left;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}.tbl td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+details{border-top:1px solid var(--line);padding:12px 0}summary{cursor:pointer;font-weight:700}details[open] summary{margin-bottom:8px}
+.walk{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch}
+.stage-chart{width:100%;height:auto}
+.stage-chart text{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;fill:var(--muted)}
+.shake{animation:shake .6s var(--ease)}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.cap{display:flex;flex-direction:column;gap:12px;min-height:520px}
+.cap .num{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.cap .res{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.cap .ctl{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.pips{display:flex;gap:8px}.pips i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .4s var(--ease),transform .4s var(--ease)}
+.pips i.on{background:var(--orange);transform:scale(1.25)}.pips i.bad{background:var(--red)}
+.fadein{animation:viewin .6s var(--ease)}
+.link{all:unset;cursor:pointer;color:var(--blue);font-weight:700;font-size:14px;transition:color .2s}.link:hover{color:var(--orange)}
+.tree{position:relative;display:flex;gap:70px;overflow-x:auto;padding:6px 4px 18px;align-items:flex-start;min-height:340px}
+.tcol{display:flex;flex-direction:column;gap:14px;min-width:230px;max-width:250px;animation:fade .4s var(--ease);flex:none}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.tn{all:unset;cursor:pointer;display:block;box-sizing:border-box;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.tn:hover{transform:translateY(-2px)}
+.tn:focus-visible{outline:2px solid var(--blue)}
+.tn.sel{border-color:var(--orange)}
+.tn b{display:block;font-size:15px;line-height:1.25}
+.tn .pr{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)}
+.tlinks{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.tlinks path{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round;transition:stroke .3s}
+.tlinks path.on{stroke:var(--orange)}
+.rm{display:grid;gap:0;position:relative}
+.rm-item{display:grid;grid-template-columns:34px 1fr;gap:16px}
+.rm-rail{display:flex;flex-direction:column;align-items:center}
+.rm-dot{width:16px;height:16px;border-radius:50%;background:var(--line);margin-top:26px;transition:background .4s var(--ease),transform .4s var(--ease)}
+.rm-item.focus .rm-dot{background:var(--orange);transform:scale(1.3)}
+.rm-line{flex:1;width:2px;background:var(--line)}.rm-item:last-child .rm-line{display:none}
+.rm-item .card{margin-bottom:16px}
+.rm-item.focus .card h2{color:var(--orange)}
+@media (max-width:980px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:minmax(0,1fr)}.chart-wrap,.walk{grid-template-columns:minmax(0,1fr)}.readout{max-height:none}.cap{min-height:0}}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr;grid-template-rows:1fr auto}
+  .nav{order:2;flex-direction:row;justify-content:space-around;border-right:0;border-top:1px solid var(--line);padding:6px 2px;background:var(--bg);overflow-x:auto}
+  .brand,.spacer{display:none}.tab{width:auto;min-width:44px;flex:1;padding:8px 0 6px}.tab span{font-size:9px}
+  .page{padding:20px 16px 40px}.g4,.g2{grid-template-columns:minmax(0,1fr)}.title{font-size:24px}
+  .step{grid-template-columns:90px 1fr 100px}.band{grid-template-columns:1fr}.chart{min-width:640px}.chartbox{overflow-x:auto}.tbl{display:block;overflow-x:auto;max-width:100%}.tbl td,.tbl th{white-space:nowrap}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}.reveal{opacity:1;transform:none}.chart .ln{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav" role="tablist" aria-label="Report sections" id="nav"></nav>
+  <main class="main" id="main"><div class="page" id="page"></div></main>
+</div>
+<script type="application/json" id="data">{"mode": "summary", "startup": {"name": "Luel", "one_liner": "Turning everyday words and actions into usable training data.", "description": "Luel is a sourcing and licensing platform for rights-cleared multimodal training data at scale. We work with frontier AI teams to provide high-quality bespoke data collections and off-the-shelf datasets.", "as_of": "2026-01-05"}, "thresholds": [{"min": 0.65, "label": "Very likely"}, {"min": 0.45, "label": "Likely"}, {"min": 0.2, "label": "Reasonable"}, {"min": 0.05, "label": "Unlikely"}, {"min": 0.0, "label": "Very unlikely"}], "headline": "A well timed AI data supplier likely to raise a seed fast, with real risk from buyer concentration and in house pipelines.", "summary": "Luel sells rights cleared multimodal training data to frontier AI teams. Demand is strong and a team of twelve is large for a winter 2026 startup. The likeliest path is a quick seed, then a harder Series A where buyers and prices are tested. Scale AI, Mercor and other vendors are bigger. The comparable YC data companies mostly have no later rounds yet, so the base rate evidence is thin. The step odds are anchored on the 2022 to 2025 B2B cohorts and the older 2018 to 2021 cohort, which differ a lot, so treat the later rounds as wide ranges.", "yc": {"p": 0.04, "p_low": 0.02, "p_high": 0.07, "basis": "Roughly 1 percent base rate. Conditional on acceptance this is a note: a twelve person team selling to frontier AI labs and a category YC favored, so the estimate sits above the base.", "why_it_fails": "YC would most plausibly worry that data sourcing is a services marketplace with concentrated buyers, thin margins and copyright exposure, and that frontier labs build data pipelines in house. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as sieve and panels.", "label": "Very unlikely"}, "stages": [{"key": "seed", "title": "Seed", "months": 8, "p_reach_prev": 0.8, "p_given_yc": 0.8, "label_given_yc": "Very likely", "p_today": 0.032, "label_today": "Very unlikely", "why": "The seed most plausibly fails because revenue is lumpy and concentrated in a few buyers. Panels, a YC audio data company, and Sieve, a multimodal data lab, show the category is crowded and that only some raise seeds. Investors may also worry about the legal risk behind rights clearance and about Scale AI, Mercor and Surge competing on data services.", "anchor": {"base_rate": 0.59, "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).", "adjustment_reason": "Above the 59 percent recent anchor but near the 81 percent older anchor. AI data infrastructure with twelve people and buyers among frontier labs was among the fastest funded categories in early 2026."}, "bands": [{"raise": [500000, 1500000], "post": [8000000, 15000000], "p_band": 0.2, "p_given_yc": 0.16000000000000003, "label": "Unlikely", "rationale": "Thin round from a small number of angels if the first lab contracts are one off."}, {"raise": [2000000, 6000000], "post": [18000000, 40000000], "p_band": 0.55, "p_given_yc": 0.44000000000000006, "label": "Reasonable", "rationale": "Core round, above the 2022+ YC seed median of 4.1M because AI infrastructure rounds in the cohort are large."}, {"raise": [7000000, 15000000], "post": [50000000, 120000000], "p_band": 0.25, "p_given_yc": 0.2, "label": "Reasonable", "rationale": "Upside if a frontier lab signs a multi year licensing deal. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}]}, {"key": "series_a", "title": "Series A", "months": 26, "p_reach_prev": 0.3, "p_given_yc": 0.24, "label_given_yc": "Reasonable", "p_today": 0.0096, "label_today": "Very unlikely", "why": "Series A fails if buyers do not recur. Frontier labs may ingest data directly, and licensed data prices can fall as supply grows. Sieve pivoted within the data category and stayed at seed, which shows the wedge is hard to scale beyond a few customers. Customer concentration of one or two labs makes it hard to show a repeatable sales motion.", "anchor": {"base_rate": 0.26, "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).", "adjustment_reason": "Set near the 22 to 32 percent Series A anchors from the cohort commands above and not below 0.75 times the recent anchor of 26 percent, per the backtest rule; reaching a round later is common for companies with paying customers."}, "bands": [{"raise": [8000000, 14000000], "post": [40000000, 70000000], "p_band": 0.35, "p_given_yc": 0.08399999999999999, "label": "Unlikely", "rationale": "Thin A, services like margins. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}, {"raise": [15000000, 25000000], "post": [80000000, 150000000], "p_band": 0.45, "p_given_yc": 0.108, "label": "Unlikely", "rationale": "Core A near the market Series A of 17M. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}, {"raise": [30000000, 60000000], "post": [180000000, 400000000], "p_band": 0.2, "p_given_yc": 0.048, "label": "Very unlikely", "rationale": "Upside if it becomes the default licensing exchange for labs. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}]}, {"key": "series_b", "title": "Series B", "months": 44, "p_reach_prev": 0.32, "p_given_yc": 0.0768, "label_given_yc": "Unlikely", "p_today": 0.0030719999999999996, "label_today": "Very unlikely", "why": "Series B fails if licensed data becomes commoditized, labs pivot toward synthetic data, or large content owners license directly. The company would need a durable supply moat, such as exclusive collections, which a twelve person team may not build before competitors with more capital do. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as sieve and panels.", "anchor": {"base_rate": 0.39, "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).", "adjustment_reason": "Anchor is 16 percent for 2022 to 2025 (n=19) and 39 percent for 2018 to 2021 (n=18); set between them at a figure above 0.75 times the recent anchor, since survivors of Series A usually have paying customers."}, "bands": [{"raise": [20000000, 30000000], "post": [120000000, 250000000], "p_band": 0.3, "p_given_yc": 0.023039999999999998, "label": "Very unlikely", "rationale": "Flat. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}, {"raise": [35000000, 60000000], "post": [250000000, 500000000], "p_band": 0.5, "p_given_yc": 0.0384, "label": "Very unlikely", "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}, {"raise": [70000000, 120000000], "post": [600000000, 1200000000], "p_band": 0.2, "p_given_yc": 0.015359999999999999, "label": "Very unlikely", "rationale": "Upside as the data layer for frontier labs. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}]}, {"key": "series_c_plus", "title": "Series C+", "months": 66, "p_reach_prev": 0.3, "p_given_yc": 0.023039999999999998, "label_given_yc": "Very unlikely", "p_today": 0.0009216, "label_today": "Very unlikely", "why": "A Series C needs the company to become a durable marketplace. Demand from labs swings with their model training cycles and copyright litigation outcomes, and a few buyers dominate, so the late stage story is hard to underwrite. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as sieve and panels.", "anchor": {"base_rate": 0.57, "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).", "adjustment_reason": "Older cohort anchor 57 percent (n=7) and recent 0 percent (n=3), both tiny samples; set well below the older anchor because few companies reach late stage and the samples are anecdotes."}, "bands": [{"raise": [40000000, 60000000], "post": [400000000, 700000000], "p_band": 0.35, "p_given_yc": 0.008063999999999998, "label": "Very unlikely", "rationale": "Modest. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}, {"raise": [60000000, 120000000], "post": [700000000, 1500000000], "p_band": 0.45, "p_given_yc": 0.010367999999999999, "label": "Very unlikely", "rationale": "Core. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}, {"raise": [120000000, 300000000], "post": [1500000000, 4000000000], "p_band": 0.2, "p_given_yc": 0.004608, "label": "Very unlikely", "rationale": "Upside. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."}]}], "outcomes": [{"name": "Shuts down or stalls", "value": null, "failure": true, "p_given_yc": 0.45, "label_given_yc": "Likely", "p_today": 0.978, "label_today": "Very likely"}, {"name": "Acquired or IPO under $100M", "value": [5000000, 100000000], "failure": false, "p_given_yc": 0.35, "label_given_yc": "Reasonable", "p_today": 0.013999999999999999, "label_today": "Very unlikely"}, {"name": "Acquired or IPO $100M-$1B", "value": [100000000, 1000000000], "failure": false, "p_given_yc": 0.17, "label_given_yc": "Unlikely", "p_today": 0.0068000000000000005, "label_today": "Very unlikely"}, {"name": "Acquired or IPO over $1B", "value": [1000000000, 5000000000], "failure": false, "p_given_yc": 0.03, "label_given_yc": "Very unlikely", "p_today": 0.0012, "label_today": "Very unlikely"}], "outcomes_why": "A stall is likely because few buyers control demand and prices. Data labeling incumbents are larger, and legal risk over rights clearance can erase value. Exits are most likely sales to larger data firms, though a rare outcome above 1B is possible if it becomes a licensing exchange.", "most_likely": {"stop_index": 1, "stop_name": "Seed", "stop_p": 0.56, "stop_dist": [{"name": "No priced round", "p": 0.19999999999999996}, {"name": "Seed", "p": 0.56}, {"name": "Series A", "p": 0.1632}, {"name": "Series B", "p": 0.053759999999999995}, {"name": "Series C+", "p": 0.023039999999999998}], "stop_band": {"raise": [2000000, 6000000], "post": [18000000, 40000000], "p_band": 0.55}, "credible_index": 2, "credible_name": "Series A", "credible_p": 0.24, "credible_band": {"raise": [15000000, 25000000], "post": [80000000, 150000000], "p_band": 0.45}}, "scores": {"need": 4, "technical": 3, "takeover": 3, "brand": 4}, "insights": {"need": {"rating": 4, "evidence": [{"claim": "The AI training dataset market is estimated around 8.7B dollars in 2025 growing about 33 percent a year by one research firm.", "source_url": "https://www.giiresearch.com/report/moi2064515-ai-training-dataset-market-share-analysis-industry.html"}, {"claim": "Licensing data is becoming a bigger constraint than labeling for developers, per a data platform.", "source_url": "https://itbrief.co.uk/story/troveo-expands-ai-data-platform-into-five-categories"}]}, "competition": [{"name": "Scale AI", "what": "Data labeling and collection for labs.", "traction": "Market leader with large lab contracts.", "source_url": "https://www.extruct.ai/data-room/ai-training-data-marketplaces/"}, {"name": "Veritone and Troveo", "what": "Rights cleared video and audio data marketplaces.", "traction": "Troveo says access to training material is now a bigger constraint than labeling.", "source_url": "https://itbrief.co.uk/story/troveo-expands-ai-data-platform-into-five-categories"}, {"name": "Protege and Kled style licensors", "what": "Licensed data marketplaces.", "traction": "Growing category.", "source_url": "https://www.kled.ai/blog/why-licensed-data-is-becoming-the-future-of-ai-training"}], "technical": {"rating": 3, "rationale": "Collecting multimodal data at scale and clearing rights is operationally hard: contracts, quality checks, consent and storage. A small team can run the first collections, but a durable supply side takes capital."}, "takeover": {"rating": 3, "who": ["Scale AI", "Mercor", "Frontier labs in house"], "timeline_months": 9, "rationale": "Incumbents have the relationships, but exclusive supply is slow to copy. The timeline is an estimate for a well resourced rival with existing distribution and an incentive to copy the idea."}, "brand": {"name": "Luel", "rating": 4, "effect_on_success": "helps", "name_check": "python3 -I scripts/name_features.py --score \"Luel\" --era 2022+ : one word invented name, four characters, one syllable.", "strengths": ["Short and invented, easy to trademark."], "weaknesses": ["Says nothing about data."], "rationale": "Short invented one word names are common among strong recent YC brands and are easy to own, though the name carries no meaning. Effect on success is small.", "better_names": []}, "deep_dive": {}}, "roadmap": [{"phase": "before_yc", "goal": "Land two paying lab customers.", "actions": ["Run paid pilot collections.", "Document rights clearance."], "proof": "Signed contracts over 250K dollars."}, {"phase": "seed", "goal": "Convert projects to recurring licensing.", "actions": ["Build an off the shelf catalog.", "Add a second modality."], "proof": "Repeat revenue from the same buyers."}, {"phase": "series_a", "goal": "Show durable supply.", "actions": ["Sign exclusive supply partners.", "Grow gross margin."], "proof": "Annualized revenue above 5M and under 70 percent concentration."}], "pros": [{"point": "Twelve person team in a hot AI infrastructure category.", "evidence": "Team size in the input and a market growing fast."}, {"point": "Buyers are well funded labs.", "evidence": "Frontier labs pay large sums for data.", "source_url": "https://www.extruct.ai/data-room/ai-training-data-marketplaces/"}, {"point": "Rights cleared data answers a real legal need.", "evidence": "Developers cite access to cleared content as a constraint.", "source_url": "https://itbrief.co.uk/story/troveo-expands-ai-data-platform-into-five-categories"}], "cons": [{"risk": "Customer concentration and lumpy revenue", "p": 0.4, "evidence": "A handful of labs pay for bespoke collections, and contracts are project based.", "analogs": ["panels", "sieve"], "mitigation": "Convert projects into off the shelf dataset licenses.", "analog_names": ["Panels", "Sieve"]}, {"risk": "Frontier labs build data pipelines in house", "p": 0.35, "evidence": "Labs have large budgets and have acquired or built data teams, so demand for outside sourcing can shift.", "analogs": ["sieve", "hillclimb"], "mitigation": "Specialize in modalities and rights that labs cannot easily source.", "analog_names": ["Sieve", "hillclimb"]}, {"risk": "Scale AI, Mercor and Surge compete", "p": 0.35, "evidence": "Large vendors already serve labs with deep budgets. This is visible in the comparable YC companies and the competitor sources listed in this evaluation.", "analogs": ["hillclimb"], "mitigation": "Stay narrow and high quality.", "analog_names": ["hillclimb"]}, {"risk": "Rights clearance and copyright risk", "p": 0.3, "evidence": "Licensing data has legal exposure if rights are not truly cleared, as ongoing AI copyright disputes show.", "analogs": ["sieve"], "mitigation": "Document consent chains and use insurance.", "analog_names": ["Sieve"]}], "analogs": [{"slug": "sieve", "name": "Sieve", "batch": "Winter 2022", "status": "Active", "relevance": "Multimodal data lab from YC.", "summary": "Pivoted and reached a seed, not further.", "url": "https://www.ycombinator.com/companies/sieve", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/b247c36fd7cd016d5bb505d32429cd07b9acfcbb.png", "one_liner": "The multimodal data lab", "website": "https://sievedata.com/", "detail": {"depth": 2, "confidence": "medium", "funding_coverage": "partial", "outcome": "Sieve launched in early 2022 with a developer video API and raised an announced seed of about four million dollars in November 2022. Its YC page now shows 34 people and a repositioning toward data for frontier labs, which suggests the video API market was too thin and the team found demand in training data. Customer claims are the company's own and revenue is not public, so the success of the pivot is unverified.", "target_customer": "Frontier AI labs, Fortune 100 companies and AI startups buying multimodal training data; originally developers who needed video search and editing APIs", "business_model": "Usage-based video AI API at launch, later custom dataset and environment sales to AI labs", "rounds": [{"date": "2022-11", "stage": "Seed", "amount": 4000000, "post": null, "basis": null, "investors": [], "url": "https://seedtable.com/companies/sieve/funding-rounds/seed-2022-11"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/sieve"}, "founders": [{"name": "Mokshith Voodarla", "role": "CEO", "background": "Scale AI, NVIDIA, Ford; UC Berkeley, B.S. Electrical Engineering and Computer Science"}, {"name": "Abhinav (Abhi) Ayalur", "role": "CTO", "background": "Second Spectrum, NVIDIA, Microsoft, Niantic; UC Berkeley, B.S. Electrical Engineering and Computer Science"}], "competitors_as_of": "2022-01", "competitors": [{"name": "Twelve Labs", "what": "Video search and understanding API", "traction": "Not stated in the source", "url": "https://www.twelvelabs.io/blog/to-make-the-worlds-videos-searchable-twelve-labs-raises-5m"}], "market_need": "Developers wanted to search and edit video with a few API calls, as the Launch HN thread of early 2022 framed it. Spend and complaint data were not found.", "technical": {"rating": 4, "text": "Sieve claimed it could process 24 hours of video in under 10 minutes using filtering, parallelization and interpolation, which needs real computer vision and infrastructure work for a two person team."}, "defensibility": {"rating": 2, "text": "A pluggable video API sat on top of open models and cloud compute, so it was easy to copy. Defensibility came later from data sourcing scale and lab relationships, which the sources only describe as company claims."}, "takeover": {"rating": 3, "text": "No source shows an incumbent copying or buying Sieve. The company instead pivoted away from video APIs toward datasets, announced in its March 2026 reintroduction post."}, "success": ["successful_pivot", "founder_market_fit"], "failure": [], "pivots": [{"date": "2026-03", "to": "Multimodal datasets and environments for frontier AI labs", "why": "Stated in the company's Reintroducing Sieve post; the date comes from a third-party summary of that post."}], "brand": {"rating": 2, "origin": null, "signature": null, "effect": "unclear", "rebrands": [{"date": "2026-03", "to": "Multimodal data lab on sieve.ai"}]}, "notes": "The company blog post titled Sieve's Video AI API Beta and ~$4M Raise (14 Nov 2022) is cited on the YC page; its host chicken.sievedata.com did not resolve here, so the amount is confirmed by YC page plus Seedtable only, and investors are unknown. CB Insights reports a $0.5M convertible note in April 2025 with YC; seen in one aggregator only, so unverified and not recorded. Total raised figures conflict across aggregators ($4.1M to $12M). Competitor list is short because pre-batch dated sources for Google or AWS video APIs were not found.", "sources": ["https://www.ycombinator.com/companies/sieve", "https://sieve.ai/", "https://seedtable.com/companies/sieve/funding-rounds/seed-2022-11", "https://www.twelvelabs.io/blog/to-make-the-worlds-videos-searchable-twelve-labs-raises-5m", "https://sieve.ai/blog/reintro"]}, "valuation": [], "raised": [[10.0, 4000000.0, "Seed"]], "end": {"kind": "active", "month": 47.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "panels", "name": "Panels", "batch": "Summer 2025", "status": "Active", "relevance": "Audio data for AI labs from Summer 2025.", "summary": "Too recent to have an outcome as of this date; shows the category is crowded.", "url": "https://www.ycombinator.com/companies/panels", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/f6701ac45e2897f58f58412507e74dbdbfa60235.png", "one_liner": "Audio Data for AI Labs", "website": "https://www.usepanels.com/", "detail": {"depth": 2, "confidence": "medium", "funding_coverage": "none_found", "outcome": "Panels is an active Summer 2025 company with no public funding or exit found. It sells speech datasets to voice labs and claims a network of over 10,000 contributors across 100 plus countries, but those are company claims, and a better funded rival, David AI, was scaling in the same niche.", "target_customer": "Frontier voice AI labs and early-stage voice startups that buy speech training and evaluation data", "business_model": "Dataset licensing, including exclusive rights and custom datasets", "rounds": [], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/panels"}, "founders": [{"name": "Aaron Wenk", "role": "Founder/CEO", "background": "Princeton, Operations Research and Financial Engineering"}, {"name": "Jason Le", "role": "Co-founder", "background": "Amazon (data team); Princeton, Operations Research and Financial Engineering"}], "competitors_as_of": "2025-06", "competitors": [{"name": "David AI", "what": "Channel-separated natural conversation audio datasets for AI labs", "traction": "Claims proprietary catalog and customer labs; customers not publicly named", "url": "https://seedtable.com/companies/david-ai/funding-rounds/seed-2025-01"}], "market_need": "Voice AI labs needed more training and evaluation audio in 2025, and rival David AI raised 5M seed in January 2025 and later 50M, which indicates real spend. No Panels revenue is public.", "technical": {"rating": 2, "text": "Mainly operations: recruiting and vetting contributors, collection tooling, QA and transcription. Little novel technology."}, "defensibility": {"rating": 2, "text": "Exclusive datasets and a contributor network give some advantage, but the model is a data vendor service competing with funded rivals."}, "takeover": {"rating": 3, "text": "David AI raised a 50M Series B in October 2025 per Bloomberg, so a funded rival scaled quickly; no incumbent action against Panels is documented."}, "success": [], "failure": [], "pivots": [], "brand": {"rating": 1, "origin": null, "signature": null, "effect": "unclear", "rebrands": []}, "notes": "Two funding searches found no round for Panels; the Crunchbase page found belongs to a different company called Panels. Team size shows 1 on the YC page while two founders are named.", "sources": ["https://www.ycombinator.com/companies/panels", "https://www.usepanels.com/", "https://www.ycombinator.com/launches/OEW-panels-audio-data-for-ai-labs", "https://seedtable.com/companies/david-ai/funding-rounds/seed-2025-01"]}, "valuation": [], "raised": [], "end": {"kind": "active", "month": 6.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "hillclimb", "name": "hillclimb", "batch": "Fall 2025", "status": "Active", "relevance": "Training data for self improvement, Fall 2025.", "summary": "Very recent, competes with Mercor and Scale.", "url": "https://www.ycombinator.com/companies/hillclimb", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/660320374818f816f5cf14de03fe92dcab2740eb.png", "one_liner": "Training Data for Recursive Self-Improvement", "website": "https://hillclimb.com", "detail": {"depth": 2, "confidence": "low", "funding_coverage": "partial", "outcome": "Active as of 2026-11 and too early to call. The team shows a lab partnership with Nous Research and a math expert network, but vendors with far more capital sell the same product and labs are in-housing, so durability depends on keeping scarce expert supply.", "target_customer": "Frontier AI labs buying training data and RL environments", "business_model": "Sells datasets and RL environments to AI labs; expert contractor network", "rounds": [{"date": null, "stage": "Seed", "amount": 500000, "post": null, "basis": null, "investors": ["Y Combinator"], "url": "https://standout.work/companies/hillclimb"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/hillclimb"}, "founders": [{"name": "Jun Park", "role": "CEO", "background": "DeepMind (research engineer); Georgia Tech"}, {"name": "Ibrakhim Ustelbay", "role": "Founder", "background": ""}], "competitors_as_of": "2025-09", "competitors": [{"name": "Mercor, Surge, Handshake, Turing", "what": "Human data vendors that also sell RL environments", "traction": "Named by TechCrunch as moving into environments", "url": "https://techcrunch.com/2025/09/16/silicon-valley-bets-big-on-environments-to-train-ai-agents/"}, {"name": "Scale AI", "what": "Incumbent data labeling vendor", "traction": "Lost ground after Meta's $14B investment per TechCrunch", "url": "https://techcrunch.com/2025/09/16/silicon-valley-bets-big-on-environments-to-train-ai-agents/"}], "market_need": "In 2025 labs shifted spending to RL environments and expert data; TechCrunch reported in September 2025 that Silicon Valley was betting heavily on environments.", "technical": {"rating": 3, "text": "Building verifiable math environments with Lean formalization needs expert talent and tooling, but it is data work rather than a research breakthrough."}, "defensibility": {"rating": 2, "text": "Expert network and lab relationships help, but labs build in-house and large vendors compete."}, "takeover": {"rating": 4, "text": "Large vendors added RL environment offerings in 2025; no action against hillclimb found."}, "success": [], "failure": [], "pivots": [], "brand": {"rating": 2, "origin": null, "signature": null, "effect": "unclear", "rebrands": []}, "notes": "Standout.work and Extruct list a $500K seed with Y Combinator as investor; other aggregators say pre-seed dated Oct or Dec 2025, so date and stage conflict and the date is left null. The round rests on databases. The company site says it is backed by Tier 1 VCs, Jeff Dean, Paul Graham and others with no amounts, so a gap may exist. Competitor list comes from a general RL environments article, not math-specific coverage.", "sources": ["https://www.ycombinator.com/companies/hillclimb", "https://hillclimb.com", "https://www.ycombinator.com/launches/Oqr-hillclimb-training-data-derived-from-human-superintelligence", "https://techcrunch.com/2025/09/16/silicon-valley-bets-big-on-environments-to-train-ai-agents/"]}, "valuation": [], "raised": [], "end": {"kind": "active", "month": 3.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "autocomputer", "name": "AutoComputer", "batch": "Fall 2024", "status": "Active", "relevance": "Research data service for labs.", "summary": "Reached a seed.", "url": "https://www.ycombinator.com/companies/autocomputer", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/22437c4b2babed8d2f89a2761165b5fa935cd154.png", "one_liner": "Forward Deployed Research", "website": "https://www.autocomputer.ai/", "detail": {"depth": 2, "confidence": "medium", "funding_coverage": "partial", "outcome": "AutoComputer is an active two-person company that appears to have moved from desktop automation toward post-training data and RL environment services as that market grew after late 2024. Funding is only reported by aggregators at about $500K, and no exit or shutdown was found. Founder fit is strong through Replit AI experience, but the field is crowded.", "target_customer": "Data companies, AI research labs and AI product companies buying post-training data, environments and research services", "business_model": "Research services and BYOC infrastructure (pricing not found)", "rounds": [{"date": "2024-12", "stage": "Seed", "amount": 500000, "post": null, "basis": null, "investors": ["Y Combinator"], "url": "https://startupintros.com/news/2024-12-01-autocomputer-seed"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/autocomputer"}, "founders": [{"name": "Madhav Singhal", "role": "CEO", "background": "Replit"}, {"name": "Rick Sugden", "role": "COO", "background": ""}], "competitors_as_of": "2024-10", "competitors": [{"name": "Anthropic computer use", "what": "Claude computer use capability launched in public beta", "traction": "Launched October 2024", "url": "https://www.nbcnewyork.com/news/business/money-report/amazon-backed-anthropic-debuts-ai-agents-that-can-do-complex-tasks-racing-against-openai-microsoft-and-google/5911636/"}], "market_need": "Anthropic's October 2024 computer use launch spurred demand for training and evaluation data for agents; the company's earlier pitch was desktop automation (YC launch post), later repositioned to post-training research.", "technical": {"rating": 4, "text": "Building post-training environments and data pipelines for frontier models needs deep ML research skill from a team of two."}, "defensibility": {"rating": 2, "text": "Customer-specific data and research relationships help, but many RL environment vendors emerged (SemiAnalysis counts more than 35)."}, "takeover": {"rating": 3, "text": "Large labs build in-house environments and a crowded vendor field appeared; no source shows direct action against AutoComputer."}, "success": ["founder_market_fit"], "failure": [], "pivots": [{"date": "2024", "to": "Data and post-training research infrastructure and services", "why": "Not stated by a source; inferred only from differing YC launch post and current description"}], "brand": {"rating": 2, "origin": null, "signature": null, "effect": "unclear", "rebrands": []}, "notes": "Funding unverified: $500K seed (December 2024 per Startup Intros, YC investor) from aggregators; Caplight gives $1M total with a September 2024 date. Not recorded as a round. Company website fetch was blocked by a rate-limited safety check. Pivot is an inference from changed positioning, not a sourced statement. Education not named on the YC page. Funding completeness pass: 500K round (2024-12) recorded from Startup Intros, labelled seed there and pre-seed by VCBacked and Crunchbase; single database, likely the standard YC deal. Caplight's 1M total with a 2024-09 date conflicts.", "sources": ["https://www.ycombinator.com/companies/autocomputer", "https://www.vcbacked.co/company/autocomputer", "https://startupintros.com/news/2024-12-01-autocomputer-seed", "https://newsletter.semianalysis.com/p/rl-environments-and-rl-for-science"]}, "valuation": [], "raised": [[3.0, 500000.0, "Seed"]], "end": {"kind": "active", "month": 15.7, "dated": true, "src": "record"}, "has_record": true}], "comp_summary": {"total": 4, "dead": 0, "exited": 0, "active": 4}, "assumptions": ["Founder backgrounds and customers were not provided.", "Market size figures come from research firms with differing scopes."], "sources": ["https://www.giiresearch.com/report/moi2064515-ai-training-dataset-market-share-analysis-industry.html", "https://itbrief.co.uk/story/troveo-expands-ai-data-platform-into-five-categories", "https://www.extruct.ai/data-room/ai-training-data-marketplaces/", "https://www.kled.ai/blog/why-licensed-data-is-becoming-the-future-of-ai-training", "https://www.ycombinator.com/deal"]}</script>
+<script>
+(function(){
+"use strict";
+var D=JSON.parse(document.getElementById("data").textContent);
+var NS="http://www.w3.org/2000/svg";
+var ICONS={
+  overview:"M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M14 14h6v6h-6z",
+  compare:"M4 4v16h16 M8 15l4-4 3 3 5-6",
+  walk:"M8 5v14l11-7z",
+  tree:"M12 3v5 M12 8l-6 6 M12 8l6 6 M6 14v7 M18 14v7",
+  path:"M4 20h4v-4h4v-4h4V8h4V4",
+  roadmap:"M5 21V4 M5 4h13l-3 4 3 4H5",
+  insights:"M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z M21 21l-5-5",
+  pros:"M12 4v16 M6 8h12 M6 8l-3 7a3.5 2.5 0 0 0 6 0z M18 8l-3 7a3.5 2.5 0 0 0 6 0z",
+  sun:"M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M4.9 19.1l1.4-1.4 M17.7 6.3l1.4-1.4",
+  moon:"M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z",
+  check:"M5 12l5 5L20 7",x:"M6 6l12 12 M18 6L6 18",chev:"M6 9l6 6 6-6",
+  arrow:"M5 12h14 M13 6l6 6-6 6",
+  restart:"M4 4v6h6 M20 20v-6h-6 M5.5 15A8 8 0 0 0 20 14 M18.5 9A8 8 0 0 0 4 10",
+  link:"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1 M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"
+};
+function icon(n){var s=document.createElementNS(NS,"svg");s.setAttribute("viewBox","0 0 24 24");s.setAttribute("aria-hidden","true");var p=document.createElementNS(NS,"path");p.setAttribute("d",ICONS[n]);s.appendChild(p);return s}
+function h(tag,attrs){var e=document.createElement(tag);attrs=attrs||{};for(var k in attrs){var v=attrs[k];if(k==="class")e.className=v;else if(k==="text")e.textContent=v;else if(k==="style")e.setAttribute("style",v);else if(k.slice(0,2)==="on")e.addEventListener(k.slice(2),v);else if(v!==null&&v!==undefined)e.setAttribute(k,v)}
+  for(var i=2;i<arguments.length;i++){var c=arguments[i];if(c===null||c===undefined||c===false)continue;if(Array.isArray(c)){c.forEach(function(x){if(x)e.appendChild(x)})}else e.appendChild(typeof c==="string"?document.createTextNode(c):c)}return e}
+function sv(tag,attrs){var e=document.createElementNS(NS,tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);for(var i=2;i<arguments.length;i++)if(arguments[i])e.appendChild(arguments[i]);return e}
+function safeUrl(u){return /^https?:\/\//i.test(u||"")?u:null}
+function trim(x){return (Math.round(x*100)/100).toString()}
+function usd(n){if(n===null||n===undefined)return "n/a";if(n<1)return "$0";function t(v){return v>=100?String(Math.round(v)):v>=10?String(Math.round(v*10)/10):trim(v)}if(n>=1e9)return "$"+t(n/1e9)+"B";if(n>=1e6)return "$"+t(n/1e6)+"M";return "$"+Math.round(n/1e3)+"K"}
+function rng(r){if(!r)return "n/a";return r[0]===r[1]?usd(r[0]):usd(r[0])+" to "+usd(r[1])}
+function pct(p){if(p>0&&p<0.001)return "<0.1%";return p>=0.1?Math.round(p*100)+"%":(Math.round(p*1000)/10)+"%"}
+var LC={"Very likely":"#1E9E5A","Likely":"#5FAE62","Reasonable":"#D9A21B","Unlikely":"#E2793A","Very unlikely":"#D64545"};
+function labelFor(p){var t=D.thresholds.slice().sort(function(a,b){return b.min-a.min});for(var i=0;i<t.length;i++)if(p>=t[i].min)return t[i].label;return t[t.length-1].label}
+function npill(l){return h("span",{class:"pill",style:"background:var(--muted)",text:l})}
+function lpill(l){return h("span",{class:"pill",style:"background:"+(LC[l]||"#6B655C"),text:l})}
+function ext(u,t){var s=safeUrl(u);return s?h("a",{href:s,target:"_blank",rel:"noopener noreferrer",text:t||s}):h("span",{text:t||""})}
+function logoSrc(a){return a.logo||(a.logo_url&&/^https:\/\//i.test(a.logo_url)?a.logo_url:null)}
+function ico(a,size,status){var box=h("div",{class:"ico",title:a.name,style:"width:"+size+"px;height:"+size+"px;font-size:"+Math.round(size*.42)+"px"});var init=h("span",{text:(a.name||"?").charAt(0).toUpperCase()});box.appendChild(init);
+  var src=logoSrc(a);if(src){var img=h("img",{src:src,alt:"",loading:"lazy"});img.addEventListener("load",function(){init.remove()});img.addEventListener("error",function(){img.remove()});box.appendChild(img)}
+  if(status){box.appendChild(h("i",{class:"sd",style:"background:"+status}))}return box}
+function statusColor(k){return k==="dead"?"#D64545":k==="active"?"#2F5BEA":"#1E9E5A"}
+function countUp(el,to,fmt,ms){var t0=null;ms=ms||1100;function f(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/ms);k=1-Math.pow(1-k,3);el.textContent=fmt(to*k);if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+function smooth(pts){var n=pts.length;if(!n)return "";if(n===1)return "M"+pts[0].x.toFixed(1)+" "+pts[0].y.toFixed(1);
+  var P=pts.map(function(p){return {x:p.x,y:p.y}});for(var i=1;i<n;i++)if(P[i].x<=P[i-1].x)P[i].x=P[i-1].x+0.5;
+  if(n===2){var dx=(P[1].x-P[0].x)/2;return "M"+P[0].x.toFixed(1)+" "+P[0].y.toFixed(1)+" C"+(P[0].x+dx).toFixed(1)+" "+P[0].y.toFixed(1)+" "+(P[1].x-dx).toFixed(1)+" "+P[1].y.toFixed(1)+" "+P[1].x.toFixed(1)+" "+P[1].y.toFixed(1)}
+  var d=[],m=[],k;for(k=0;k<n-1;k++)d[k]=(P[k+1].y-P[k].y)/(P[k+1].x-P[k].x);m[0]=d[0];m[n-1]=d[n-2];for(k=1;k<n-1;k++)m[k]=d[k-1]*d[k]<=0?0:(d[k-1]+d[k])/2;
+  for(k=0;k<n-1;k++){if(d[k]===0){m[k]=0;m[k+1]=0}else{var a=m[k]/d[k],b=m[k+1]/d[k],s=a*a+b*b;if(s>9){var t=3/Math.sqrt(s);m[k]=t*a*d[k];m[k+1]=t*b*d[k]}}}
+  var out="M"+P[0].x.toFixed(1)+" "+P[0].y.toFixed(1);for(k=0;k<n-1;k++){var h3=(P[k+1].x-P[k].x)/3;out+=" C"+(P[k].x+h3).toFixed(1)+" "+(P[k].y+m[k]*h3).toFixed(1)+" "+(P[k+1].x-h3).toFixed(1)+" "+(P[k+1].y-m[k+1]*h3).toFixed(1)+" "+P[k+1].x.toFixed(1)+" "+P[k+1].y.toFixed(1)}return out}
+
+var TABS=[["overview","Overview","overview"],["compare","Compare","compare"],["walk","Walkthrough","walk"],["tree","Possibilities","tree"],["path","Funding","path"],["roadmap","Roadmap","roadmap"],["insights","Insights","insights"],["pros","Pros and cons","pros"]];
+var nav=document.getElementById("nav"),page=document.getElementById("page"),views={},tabs={},built={},cur=null,BUILD={};
+nav.appendChild(h("div",{class:"brand","aria-hidden":"true",text:"Y"}));
+TABS.forEach(function(t){var b=h("button",{class:"tab",role:"tab","aria-selected":"false","aria-controls":"v-"+t[0],onclick:function(){show(t[0])}},icon(t[2]),h("span",{text:t[1]}));tabs[t[0]]=b;nav.appendChild(b)});
+nav.addEventListener("keydown",function(e){if(!e.target.classList||!e.target.classList.contains("tab"))return;var ids=TABS.map(function(t){return t[0]}),i=ids.indexOf(cur);
+  if(e.key==="ArrowDown"||e.key==="ArrowRight")i=(i+1)%ids.length;else if(e.key==="ArrowUp"||e.key==="ArrowLeft")i=(i-1+ids.length)%ids.length;else if(e.key==="Home")i=0;else if(e.key==="End")i=ids.length-1;else return;
+  e.preventDefault();tabs[ids[i]].focus();show(ids[i])});
+nav.appendChild(h("div",{class:"spacer"}));
+var themeBtn=h("button",{class:"ibtn","aria-label":"Toggle light and dark theme",onclick:toggleTheme});nav.appendChild(themeBtn);
+function curTheme(){var t=document.documentElement.getAttribute("data-theme");if(t)return t;return matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}
+function paintTheme(){themeBtn.replaceChildren(icon(curTheme()==="dark"?"sun":"moon"))}
+function toggleTheme(){document.documentElement.setAttribute("data-theme",curTheme()==="dark"?"light":"dark");paintTheme();if(built.compare)drawChart();if(built.walk)drawWalk(null);if(built.tree&&cur==="tree")drawTree(true)}
+paintTheme();
+page.appendChild(h("h1",{class:"title",text:D.startup.name}));
+TABS.forEach(function(t){var v=h("section",{class:"view",id:"v-"+t[0],role:"tabpanel"});views[t[0]]=v;page.appendChild(v)});
+function show(id,after){if(cur!==id){cur=id;for(var k in views){views[k].classList.toggle("on",k===id);tabs[k].setAttribute("aria-selected",k===id?"true":"false")}
+  if(!built[id]){built[id]=true;BUILD[id](views[id])}document.getElementById("main").scrollTo({top:0,behavior:"auto"});try{history.replaceState(null,"","#"+id)}catch(e){}animateIn(views[id]);if(id==="tree")drawTree(true)}
+  if(after)setTimeout(after,80)}
+function animateIn(root){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");(e.target.__go||[]).forEach(function(f){f()});e.target.__go=[];io.unobserve(e.target)}})},{root:document.getElementById("main"),threshold:.1});
+  root.querySelectorAll(".reveal").forEach(function(el,i){el.style.transitionDelay=Math.min(i*60,360)+"ms";io.observe(el)})}
+function onIn(el,f){(el.__go=el.__go||[]).push(f)}
+function reveal(e){e.classList.add("reveal");return e}
+
+BUILD.overview=function(root){
+  var ml=D.most_likely,cs=D.comp_summary;
+  var C=2*Math.PI*40,fg=sv("circle",{class:"fg",cx:46,cy:46,r:40,"stroke-dasharray":C,"stroke-dashoffset":C,transform:"rotate(-90 46 46)"});
+  var ring=sv("svg",{class:"ring",viewBox:"0 0 92 92"},sv("circle",{class:"bg",cx:46,cy:46,r:40}),fg);
+  var pv=h("div",{class:"big",text:"0%"});
+  var s1=reveal(h("div",{class:"card stat"},h("h3",{text:"Chance of getting into YC"}),h("div",{class:"row"},ring,h("div",{},pv,lpill(D.yc.label)))));
+  onIn(s1,function(){countUp(pv,D.yc.p,function(v){return pct(v)});fg.style.strokeDashoffset=C*(1-Math.min(1,D.yc.p/0.35))});
+  var sb=ml.stop_band;
+  var s2=reveal(h("div",{class:"card stat"},h("h3",{text:"If accepted, most likely ends at"}),h("div",{class:"big",text:ml.stop_name}),h("div",{class:"small",text:pct(ml.stop_p)+" chance"+(sb?", typical value "+rng(sb.post):"")})));
+  var cb=ml.credible_band;
+  var s3=reveal(h("div",{class:"card stat"},h("h3",{text:"If accepted, furthest credible stage"}),h("div",{class:"big",text:ml.credible_name}),h("div",{class:"small",text:ml.credible_index?pct(ml.credible_p)+" chance"+(cb?", typical value "+rng(cb.post):""):"No stage reaches 20%"})));
+  var dots=h("div",{class:"dots"});D.analogs.forEach(function(a,i){var k=(a.end||{}).kind;dots.appendChild(h("button",{class:"dotb","aria-label":a.name+", open in Compare",title:a.name,onclick:function(){show("compare",function(){selectComp(i,true)})}},ico(a,26,statusColor(k))))});
+  var s4=reveal(h("div",{class:"card stat"},h("h3",{text:"Similar past YC companies"}),h("div",{class:"big",text:cs.dead+" of "+cs.total}),h("div",{class:"small",text:"shut down"}),dots));
+  root.appendChild(h("div",{class:"grid g4"},s1,s2,s3,s4));
+  root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h2",{text:D.headline}),h("p",{class:"muted",style:"margin:0",text:D.summary}))));
+  var st=h("div",{class:"stepper"}),fills=[];
+  var all=[{title:"YC",p:D.yc.p,label:D.yc.label,key:"yc"}].concat(D.stages.map(function(s){return {title:s.title,p:s.p_today,label:s.label_today,key:s.key}}));
+  all.forEach(function(s){var fill=h("i",{style:"background:"+(LC[s.label]||"#F26625")});fills.push([fill,s.p]);
+    st.appendChild(h("button",{class:"step",onclick:function(){show("path",function(){var el=document.getElementById("stage-"+s.key);if(el)el.scrollIntoView({behavior:"smooth",block:"start"})})}},h("b",{text:s.title}),h("div",{class:"bar"},fill),h("span",{},lpill(s.label),h("span",{class:"small muted",text:" "+pct(s.p)}))))});
+  var stcard=reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Chance of reaching each step, from today"}),st));
+  onIn(stcard,function(){fills.forEach(function(f){f[0].style.width=Math.max(1.5,Math.min(100,f[1]*100*2.2))+"%"})});
+  root.appendChild(stcard);
+  var S=[["Market need",D.scores.need,"good"],["Technical complexity",D.scores.technical,"info"],["Takeover risk",D.scores.takeover,"bad"],["Name and brand",D.scores.brand,"good"]];
+  var sg=h("div",{class:"grid g4",style:"margin-top:16px"});
+  S.forEach(function(s){var col=s[2]==="info"?"var(--blue)":(s[2]==="good"?(s[1]>=4?"var(--green)":s[1]>=3?"var(--amber)":"var(--red)"):(s[1]>=4?"var(--red)":s[1]>=3?"var(--amber)":"var(--green)"));
+    var g=h("div",{class:"gauge"});for(var i=0;i<5;i++)g.appendChild(h("i",{"data-on":i<s[1]?"1":"0"}));
+    var c=reveal(h("div",{class:"card"},h("h3",{text:s[0]}),h("div",{class:"big",text:s[1]+" / 5"}),g));
+    onIn(c,function(){c.querySelectorAll(".gauge i").forEach(function(e,i){setTimeout(function(){if(e.dataset.on==="1")e.style.background=col},i*90)})});sg.appendChild(c)});
+  root.appendChild(sg);
+};
+
+var metric=null,cursor=0,chart={},selected=null;
+BUILD.compare=function(root){
+  var withVal=D.analogs.filter(function(a){return a.valuation.length>0}).length;
+  metric=withVal>=3?"valuation":"raised";
+  var segs=h("div",{role:"group","aria-label":"Chart metric"});
+  [["valuation","Valuation"],["raised","Total raised"]].forEach(function(m){segs.appendChild(h("button",{class:"tx","aria-pressed":m[0]===metric?"true":"false","data-m":m[0],onclick:function(){metric=m[0];segs.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.m===metric?"true":"false")});drawChart(true)}},m[1]))});
+  var note=h("div",{class:"small muted",id:"metric-note",style:"margin:2px 0 8px"});
+  chart.svg=sv("svg",{class:"chart",viewBox:"0 0 1000 460",role:"img","aria-label":"Funding history of similar YC companies compared with this startup, by months after the YC batch"});
+  chart.read=h("div",{class:"readout",id:"readout","aria-live":"polite"});chart.detail=h("div",{class:"detailpanel"});
+  chart.range=h("input",{type:"range",class:"range-in",min:"0",max:"100",step:"1","aria-label":"Move along the timeline",oninput:function(e){setCursorM(+e.target.value/100*chart.xmax)}});
+  function lg(svgEl,t){return h("span",{},svgEl,t)}
+  var legend=h("div",{class:"legend"},
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M3 3l8 8M11 3l-8 8",stroke:"#D64545","stroke-width":2,"stroke-linecap":"round"})),"Shut down"),
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M7 1l6 6-6 6-6-6z",fill:"#1E9E5A"})),"Acquired or public"),
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("circle",{cx:7,cy:7,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2})),"Still running"));
+  root.appendChild(reveal(h("div",{class:"card"},h("div",{class:"row",style:"justify-content:space-between;margin-bottom:6px;flex-wrap:wrap"},h("h2",{style:"margin:0",text:"Similar companies, and where this one stops"}),segs),note,
+    h("div",{class:"chart-wrap"},h("div",{},h("div",{class:"chartbox"},chart.svg),chart.range,legend),chart.read),chart.detail)));
+  var cards=h("div",{class:"grid g3 cards",style:"margin-top:16px"});
+  D.analogs.forEach(function(a,i){cards.appendChild(companyCard(a,i))});
+  root.appendChild(cards);
+  setTimeout(function(){drawChart(true)},30);
+};
+function proj(){var pts=[],cum=0;
+  D.stages.forEach(function(s,i){var b=s.bands.reduce(function(a,b){return b.p_band>a.p_band?b:a},s.bands[0]);
+    var v=Math.sqrt(Math.max(1,b.post[0])*Math.max(1,b.post[1]));cum+=(b.raise[0]+b.raise[1])/2;
+    pts.push({m:s.months,v:metric==="valuation"?v:cum,label:s.title,p:s.p_given_yc,idx:i+1})});
+  return pts}
+function drawChart(replay){
+  var svg=chart.svg;svg.replaceChildren();
+  var W=1000,H=460,L=64,R=30,T=34,B=44,pts=proj(),ml=D.most_likely;
+  svg.appendChild(sv("defs",{},sv("clipPath",{id:"rr",clipPathUnits:"objectBoundingBox"},sv("rect",{width:1,height:1,rx:.22,ry:.22}))));
+  var xs=[],ys=[];D.analogs.forEach(function(a){a[metric].forEach(function(p){xs.push(p[0]);ys.push(p[1])});if(a.end)xs.push(a.end.month)});
+  pts.forEach(function(p){xs.push(p.m);ys.push(p.v)});
+  var xmax=Math.max(60,Math.ceil(Math.max.apply(null,xs.concat([60]))/12)*12+6);
+  var lo=Math.max(1e4,Math.min.apply(null,ys.concat([1e6]))/3),hi=Math.max.apply(null,ys.concat([1e7]))*2.5;
+  var y0=Math.pow(10,Math.floor(Math.log10(lo))),y1=Math.pow(10,Math.ceil(Math.log10(hi)));
+  function X(m){return L+(m/xmax)*(W-L-R)}function Y(v){return T+(1-(Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0)))*(H-T-B)}
+  chart.X=X;chart.xmax=xmax;
+  for(var v=y0;v<=y1*1.01;v*=10){svg.appendChild(sv("line",{class:"grid-l",x1:L,x2:W-R,y1:Y(v),y2:Y(v)}));svg.appendChild(sv("text",{x:L-8,y:Y(v)+4,"text-anchor":"end"})).textContent=usd(v)}
+  for(var m=0;m<=xmax;m+=12){svg.appendChild(sv("line",{class:"grid-l",x1:X(m),x2:X(m),y1:T,y2:H-B,"stroke-dasharray":"2 4"}));svg.appendChild(sv("text",{x:X(m),y:H-B+18,"text-anchor":"middle"})).textContent=m===0?"YC":(m/12)+"y"}
+  D.stages.forEach(function(s){svg.appendChild(sv("text",{x:X(s.months),y:T-12,"text-anchor":"middle",style:"fill:var(--orange);font-weight:700"})).textContent=s.title});
+  function logoMark(a,x,y,size){var g=sv("g",{});var src=logoSrc(a);
+    g.appendChild(sv("rect",{x:x-size/2,y:y-size/2,width:size,height:size,rx:size*.22,fill:"var(--soft)"}));
+    if(src)g.appendChild(sv("image",{x:x-size/2,y:y-size/2,width:size,height:size,href:src,"clip-path":"url(#rr)",preserveAspectRatio:"xMidYMid slice"}));
+    else{var t=sv("text",{x:x,y:y+4,"text-anchor":"middle",style:"font-weight:800;fill:var(--muted)"});t.textContent=(a.name||"?").charAt(0).toUpperCase();g.appendChild(t)}
+    return g}
+  var missing=[];chart.groups=[];
+  D.analogs.forEach(function(a,i){var s=a[metric];if(!s.length){missing.push(a.name);return}
+    var g=sv("g",{class:"cg","data-i":i});var e=a.end,lastP=s[s.length-1];
+    var px=s.map(function(p){return {x:X(p[0]),y:Y(p[1])}});
+    if(e&&e.month>lastP[0]+0.5)px.push({x:X(e.month),y:Y(lastP[1])});
+    var ln=sv("path",{class:"ln",d:smooth(px),pathLength:1,stroke:"var(--ink)","stroke-width":2});ln.style.animationDelay=(replay?i*90:0)+"ms";g.appendChild(ln);chart.groups[i]={g:g,ln:ln};
+    s.forEach(function(p){g.appendChild(logoMark(a,X(p[0]),Y(p[1]),26))});
+    if(e){var cx=px[px.length-1].x,cy=px[px.length-1].y,k=e.kind;
+      if(e.month>lastP[0]+0.5)g.appendChild(logoMark(a,cx,cy,26));
+      var bx=cx+20,by=cy-14;
+      if(k==="dead")g.appendChild(sv("path",{d:"M"+(bx-4)+" "+(by-4)+"l8 8M"+(bx+4)+" "+(by-4)+"l-8 8",stroke:"#D64545","stroke-width":2.4,"stroke-linecap":"round"}));
+      else if(k==="acquired"||k==="ipo")g.appendChild(sv("path",{d:"M"+bx+" "+(by-6)+"l6 6-6 6-6-6z",fill:"#1E9E5A"}));
+      else g.appendChild(sv("circle",{cx:bx,cy:by,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2.2}))}
+    svg.appendChild(g)});
+  var me=sv("g",{class:"me"}),first=pts[0],stopIdx=ml.stop_index;
+  var base=Math.max(y0,first.v/4);
+  var all=[{x:X(0),y:Y(base)}].concat(pts.map(function(p){return {x:X(p.m),y:Y(p.v)}}));
+  var upto=stopIdx>0?stopIdx+1:1;
+  var solid=all.slice(0,upto),rest=all.slice(Math.max(0,upto-1));
+  if(stopIdx===0){var a0=all[0],a1=all[1];var mid={x:a0.x+(a1.x-a0.x)*0.5,y:a0.y+(a1.y-a0.y)*0.38};solid=[a0,mid];rest=all.slice(0)}
+  if(rest.length>1)me.appendChild(sv("path",{d:smooth(rest),fill:"none",stroke:"#F26625","stroke-width":4,"stroke-dasharray":"2 9","stroke-linecap":"round",opacity:.7}));
+  if(solid.length>1){var ml2=sv("path",{class:"ln",d:smooth(solid),pathLength:1,stroke:"#F26625","stroke-width":4.5});ml2.style.animationDelay="600ms";me.appendChild(ml2)}
+  function myMark(x,y,sz){var g=sv("g",{});g.appendChild(sv("rect",{x:x-sz/2,y:y-sz/2,width:sz,height:sz,rx:sz*.22,fill:"#F26625"}));var t=sv("text",{x:x,y:y+sz*.19,"text-anchor":"middle",style:"fill:#fff;font-weight:800;font-size:"+Math.round(sz*.55)+"px"});t.textContent=(D.startup.name||"?").charAt(0).toUpperCase();g.appendChild(t);return g}
+  for(var q=1;q<upto&&q<all.length;q++)me.appendChild(myMark(all[q].x,all[q].y,30));
+  var lastX=all[Math.min(upto,all.length)-1];
+  if(stopIdx>0||solid.length>1){var cx=stopIdx>0?lastX.x:solid[solid.length-1].x,cy=stopIdx>0?lastX.y:solid[solid.length-1].y;me.appendChild(sv("path",{d:"M"+(cx+18)+" "+(cy-8)+"l12 12M"+(cx+30)+" "+(cy-8)+"l-12 12",stroke:"#F26625","stroke-width":3,"stroke-linecap":"round"}));
+    var lx=stopIdx>0?Math.min(cx+24,W-R-4):L+8,anc=stopIdx>0?(cx>W-220?"end":"middle"):"start";var lab=sv("text",{x:lx,y:stopIdx>0?cy-20:cy+34,"text-anchor":anc,style:"fill:#F26625;font-weight:800;font-size:12px"});lab.textContent=stopIdx>0?"Most likely stops here ("+pct(ml.stop_p)+")":"Most likely ends before a priced round ("+pct(ml.stop_p)+")";me.appendChild(lab)}
+  svg.appendChild(me);
+  chart.cur=sv("g",{});chart.curLine=sv("line",{y1:T,y2:H-B,stroke:"var(--blue)","stroke-width":2,opacity:.8});chart.curLab=sv("text",{y:H-B+34,"text-anchor":"middle",style:"fill:var(--blue);font-weight:800"});
+  chart.cur.appendChild(chart.curLine);chart.cur.appendChild(chart.curLab);svg.appendChild(chart.cur);
+  var hit=sv("rect",{x:L,y:T,width:W-L-R,height:H-T-B,fill:"transparent"});svg.appendChild(hit);
+  function fromEvent(ev){var r=svg.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width*W;return Math.max(0,Math.min(chart.xmax,(x-L)/(W-L-R)*chart.xmax))}
+  var drag=false;hit.addEventListener("pointerdown",function(e){drag=true;hit.setPointerCapture(e.pointerId);setCursorM(fromEvent(e))});
+  hit.addEventListener("pointermove",function(e){if(drag||e.pointerType==="mouse")setCursorM(fromEvent(e))});
+  hit.addEventListener("pointerup",function(){drag=false});
+  document.getElementById("metric-note").textContent=metric==="raised"?("Showing total raised. Valuation data is sparse for these companies."+(missing.length?" No data: "+missing.join(", ")+".":"")+" This startup's line uses the most likely band at each step and typical timing after YC."):("Showing reported post-money valuation."+(missing.length?" No data: "+missing.join(", ")+".":"")+" This startup's line uses the most likely band at each step and typical timing after YC.");
+  if(!replay||cursor===0)cursor=D.stages[0].months;
+  applySel();setCursorM(cursor)}
+function applySel(){D.analogs.forEach(function(a,i){var c=chart.groups&&chart.groups[i];if(!c)return;var on=selected===i;
+    c.g.style.opacity=selected===null?0.55:(on?1:0.14);c.ln.setAttribute("stroke",on?"#2F5BEA":"var(--ink)");c.ln.setAttribute("stroke-width",on?4:2);if(on)chart.svg.insertBefore(c.g,chart.svg.querySelector(".me"))})}
+function selectComp(i,force){selected=(force||selected!==i)?i:null;if(chart.groups){applySel();setCursorM(cursor)}showChartDetail()}
+function showChartDetail(){var box=chart.detail;if(!box)return;box.replaceChildren();
+  if(selected===null){box.style.display="none";return}
+  var a=D.analogs[selected];box.style.display="block";
+  box.appendChild(h("div",{class:"row",style:"justify-content:space-between"},h("div",{class:"row"},ico(a,36),h("div",{},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch+", "+statusText(a)}))),h("button",{class:"tx",onclick:function(){selectComp(selected)}},"Close")));
+  box.appendChild(companyDetail(a));box.classList.remove("fadein");void box.offsetWidth;box.classList.add("fadein")}
+function statusText(a){var e=a.end||{},k=e.kind;var t=k==="dead"?"Shut down":k==="acquired"?"Acquired":k==="ipo"?"Public":k==="active"?"Still running":a.status;
+  if(k&&k!=="active"){if(e.src==="directory")t+=" (per YC directory)";else if(!e.dated)t+=" (date unknown)"}return t}
+function sec(title,node){return h("div",{class:"dsec"},h("h4",{text:title}),node)}
+function chips(list,cls){return h("div",{class:"chips "+cls},list.map(function(x){return h("span",{text:String(x).replace(/_/g," ")})}))}
+function rate(n){return n===null||n===undefined?"not rated":n+" / 5"}
+function companyDetail(a){var d=a.detail,box=h("div",{class:"detail"});
+  if(!d){box.appendChild(h("p",{class:"small muted",style:"margin:6px 0",text:(a.one_liner?a.one_liner+". ":"")+"No researched record exists for this company yet, so the chart uses the YC directory status only."}));
+    if(a.website&&safeUrl(a.website))box.appendChild(ext(a.website,"Website"));return box}
+  box.appendChild(h("div",{class:"small muted",text:"Record confidence: "+(d.confidence||"unknown")+". Funding data: "+String(d.funding_coverage||"unknown").replace("_"," ")+(d.depth===1?". Shallow record: missing fields mean unknown, not zero.":".")}));
+  box.appendChild(sec("What happened",h("p",{class:"small",style:"margin:0",text:d.outcome||"Not recorded."})));
+  if(d.target_customer)box.appendChild(sec("What it does",h("p",{class:"small",style:"margin:0",text:d.target_customer.replace(/[.\s]+$/,"")+"."+(d.business_model?" Model: "+d.business_model.replace(/[.\s]+$/,"")+".":"")})));
+  var rl=h("ul",{class:"tl"});
+  d.rounds.forEach(function(r){var bits=[r.stage+(r.amount!=null?", "+usd(r.amount):", amount not reported")];if(r.post!=null)bits.push("post-money "+usd(r.post)+(r.basis?" ("+r.basis+")":""));if(r.investors&&r.investors.length)bits.push(r.investors.join(", "));
+    rl.appendChild(h("li",{},h("span",{text:r.date||"undated"}),h("span",{},bits.join(". ")+" ",r.url?ext(r.url,"source"):null)))});
+  box.appendChild(sec("Funding rounds on record",d.rounds.length?rl:h("p",{class:"small muted",style:"margin:0",text:d.funding_coverage==="none_found"?"None found. That means the data was not found, not that nothing was raised.":"None recorded."})));
+  var ex=d.exit||{},et=ex.type;
+  var exTxt=et==="acquisition"||et==="merger"?"Acquired"+(ex.acquirer?" by "+ex.acquirer:"")+(ex.date?" ("+ex.date+")":"")+(ex.amount?" for "+usd(ex.amount):""):et==="shutdown"?"Shut down"+(ex.date?" ("+ex.date+")":"")+(ex.reason?". Reason given: "+ex.reason:". Cause not public."):et==="ipo"||et==="spac"?"Went public"+(ex.date?" ("+ex.date+")":""):et==="none"?"No exit recorded (still operating as far as sources show).":"Outcome unknown in the record.";
+  box.appendChild(sec("Exit",h("p",{class:"small",style:"margin:0"},exTxt+" ",ex.url?ext(ex.url,"source"):null)));
+  if(d.founders.length){var fl=h("ul",{class:"tl"});d.founders.forEach(function(f){fl.appendChild(h("li",{},h("span",{text:f.role||"Founder"}),h("span",{},h("b",{text:f.name}),f.background?", "+f.background:"")))});box.appendChild(sec("Founders",fl))}
+  var cl=h("ul",{class:"tl"});d.competitors.forEach(function(c){cl.appendChild(h("li",{},h("span",{text:"Rival"}),h("span",{},h("b",{text:c.name}),c.what?", "+c.what:"",c.traction?" Traction then: "+c.traction:""," ",c.url?ext(c.url,"source"):null)))});
+  box.appendChild(sec("Competition at founding"+(d.competitors_as_of?" (as of "+d.competitors_as_of+")":""),d.competitors.length?cl:h("p",{class:"small muted",style:"margin:0",text:"No competitors with sources dated near the batch were found."})));
+  if(d.market_need)box.appendChild(sec("Demand at the time",h("p",{class:"small",style:"margin:0",text:d.market_need})));
+  var rt=h("ul",{class:"tl"});[["Technical",d.technical],["Moat",d.defensibility],["Takeover risk",d.takeover]].forEach(function(x){if(x[1]&&(x[1].rating!=null||x[1].text))rt.appendChild(h("li",{},h("span",{text:x[0]}),h("span",{},h("b",{text:rate(x[1].rating)}),x[1].text?". "+x[1].text:"")))});
+  if(rt.children.length)box.appendChild(sec("Ratings as of founding",rt));
+  if(d.success.length)box.appendChild(sec("What helped",chips(d.success,"good")));
+  if(d.failure.length)box.appendChild(sec("What hurt",chips(d.failure,"bad")));
+  if(d.pivots.length){var pl=h("ul",{class:"tl"});d.pivots.forEach(function(x){pl.appendChild(h("li",{},h("span",{text:x.date||"undated"}),h("span",{text:x.to+(x.why?". "+x.why:"")})))});box.appendChild(sec("Pivots",pl))}
+  if(d.brand){var b=d.brand,bt=["Brand "+rate(b.rating)];if(b.effect&&b.effect!=="unclear")bt.push("effect on outcome: "+b.effect);if(b.origin)bt.push("name origin: "+b.origin);if(b.signature)bt.push("signature: "+b.signature);if(b.rebrands&&b.rebrands.length)bt.push("renamed to "+b.rebrands.map(function(r){return r.to+(r.date?" ("+r.date+")":"")}).join(", "));
+    box.appendChild(sec("Name and brand",h("p",{class:"small",style:"margin:0",text:bt.join(". ")+"."})))}
+  if(d.notes)box.appendChild(sec("Caveats",h("p",{class:"small muted",style:"margin:0",text:d.notes})));
+  if(d.sources.length)box.appendChild(sec("Sources",h("div",{class:"small"},d.sources.map(function(u,i){return h("span",{},i?" ":"",ext(u,"["+(i+1)+"]"))}))));
+  return box}
+function companyCard(a,i){var k=(a.end||{}).kind;
+  var xp=h("div",{class:"xp",id:"xp-"+i}),inner=h("div",{class:"xpi"}),filled=false;xp.appendChild(inner);
+  var btn=h("button",{class:"more","aria-expanded":"false","aria-controls":"xp-"+i,onclick:function(){var open=xp.classList.toggle("open");btn.setAttribute("aria-expanded",open?"true":"false");btn.firstChild.nodeValue=open?"Hide details":"Details";if(open&&!filled){filled=true;inner.appendChild(companyDetail(a))}}},"Details",icon("chev"));
+  return reveal(h("div",{class:"card acard"},h("div",{class:"head"},ico(a,40),h("div",{style:"flex:1"},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch}))),
+    h("span",{class:"pill",style:"background:"+statusColor(k)+";align-self:flex-start",text:statusText(a)}),
+    h("div",{class:"small",text:a.relevance}),h("div",{class:"small muted",text:a.summary}),btn,xp))}
+function valueAt(a,m){var s=a[metric];if(!s.length)return null;var v=null;for(var i=0;i<s.length;i++){if(s[i][0]<=m+0.001)v=s[i]}return v}
+function setCursorM(m){cursor=m;var x=chart.X(m);chart.curLine.setAttribute("x1",x);chart.curLine.setAttribute("x2",x);chart.curLab.setAttribute("x",x);chart.curLab.textContent=m<1?"YC":(m/12).toFixed(1)+" years after YC";
+  chart.range.value=Math.round(m/chart.xmax*100);
+  var rd=chart.read;rd.replaceChildren();
+  var pts=proj(),ml=D.most_likely,me=null;pts.forEach(function(p){if(p.m<=m+0.001){me=p}});
+  var stopped=ml.stop_index>0&&me&&me.idx>ml.stop_index;
+  var meText=!me?"Before a priced round":stopped?"Most likely stopped at "+pts[ml.stop_index-1].label:me.label+": "+usd(me.v);
+  var myIco=h("div",{class:"ico",style:"width:28px;height:28px;background:var(--orange);color:#fff",text:(D.startup.name||"?").charAt(0).toUpperCase()});
+  rd.appendChild(h("div",{class:"rrow me",style:"cursor:default"},myIco,h("div",{},h("div",{class:"nm",text:D.startup.name}),h("div",{class:"st",text:meText})),h("span",{class:"small muted",text:me&&!stopped?pct(me.p):""})));
+  var deadN=0;
+  D.analogs.forEach(function(a,i){var v=valueAt(a,m),e=a.end,state="";
+    if(e&&m>e.month+0.001){state=e.kind==="dead"?"Gone":e.kind==="active"?"":"Exited";if(e.kind==="dead")deadN++}
+    var txt=v?v[2]+": "+usd(v[1]):(a[metric].length?"No round yet":"No data");
+    rd.appendChild(h("button",{class:"rrow"+(selected===i?" sel":""),"aria-pressed":selected===i?"true":"false",onclick:function(){selectComp(i)}},ico(a,28),h("div",{},h("div",{class:"nm",text:a.name}),h("div",{class:"st",text:txt})),
+      h("span",{class:"small",style:"font-weight:700;color:"+(state==="Gone"?"#D64545":state==="Exited"?"#1E9E5A":"var(--muted)"),text:state})))});
+  rd.appendChild(h("div",{class:"small muted",style:"padding:8px",text:deadN+" of "+D.analogs.length+" had shut down by this point."}))}
+
+var W={};
+BUILD.walk=function(root){
+  var steps=[{key:"yc",title:"Y Combinator",p:D.yc.p,why:D.yc.why_it_fails,roadmap:"before_yc"}].concat(D.stages.map(function(s){return {key:s.key,title:s.title,p:s.p_reach_prev,why:s.why,roadmap:s.key,stage:s}}));
+  W.steps=steps;W.W=1000;W.H=560;W.L=70;W.R=40;W.T=30;W.B=48;
+  W.svg=sv("svg",{class:"stage-chart",viewBox:"0 0 1000 560",role:"img","aria-label":"Simulated run of this startup through YC and each funding round"});
+  W.capTitle=h("h3",{text:"Startup life"});W.num=h("div",{class:"num",text:"$0"});W.line=h("div",{class:"small muted"});W.res=h("div",{class:"res"});W.extra=h("div",{class:"small"});
+  W.mode="next";W.next=h("button",{class:"ibtn big go","aria-label":"Next step",onclick:function(){if(W.mode==="reset")walkReset();else walkNext()}},icon("arrow"));
+  W.again=h("button",{class:"ibtn","aria-label":"Start over",onclick:walkReset},icon("restart"));
+  W.pips=h("div",{class:"pips"},steps.map(function(){return h("i")}));
+  var ctl=h("div",{class:"ctl"},h("div",{class:"row"},W.again,W.pips),W.next);
+  W.cap=h("div",{class:"card cap"},W.capTitle,W.num,W.line,W.res,W.extra,ctl);
+  W.chartCard=h("div",{class:"card"},W.svg);
+  root.appendChild(reveal(h("div",{class:"walk"},W.chartCard,W.cap)));
+  document.addEventListener("keydown",function(e){if(cur==="walk"&&(e.key==="ArrowRight"||e.key==="Enter")&&!W.busy&&document.activeElement.tagName!=="BUTTON"){e.preventDefault();W.next.click()}});
+  walkReset();
+};
+function wx(i){return W.L+(i/W.steps.length)*(W.W-W.L-W.R)}
+function wy(v,range){var lo=Math.log10(range[0]),hi=Math.log10(range[1]);return W.T+(1-(Math.log10(Math.max(v,range[0]))-lo)/(hi-lo))*(W.H-W.T-W.B)}
+function walkReset(){W.i=0;W.pts=[{x:0,v:0}];W.range=[1e5,3e6];W.dead=false;W.busy=false;W.done=false;W.maxV=0;
+  W.mode="next";W.capTitle.textContent="Startup life";W.num.textContent="Idea";W.line.textContent="Press the arrow. Each step uses the odds from this evaluation.";W.res.textContent="";W.res.style.color="";W.extra.replaceChildren();
+  W.pips.querySelectorAll("i").forEach(function(i){i.className=""});W.next.disabled=false;W.next.replaceChildren(icon("arrow"));W.next.setAttribute("aria-label","Next step");W.chartCard.classList.remove("shake");
+  drawWalk(null)}
+function walkRange(maxV){var hi=Math.max(3e6,maxV*3);return [1e5,Math.pow(10,Math.ceil(Math.log10(hi)*4)/4)]}
+function drawWalk(head,rng){var svg=W.svg;svg.replaceChildren();var range=rng||W.range,color=W.dead?"#D64545":"#F26625";
+  for(var v=1e5;v<=range[1]*1.01;v*=10){svg.appendChild(sv("line",{x1:W.L,x2:W.W-W.R,y1:wy(v,range),y2:wy(v,range),stroke:"var(--line)"}));svg.appendChild(sv("text",{x:W.L-8,y:wy(v,range)+4,"text-anchor":"end"})).textContent=usd(v)}
+  W.steps.forEach(function(s,i){var x=wx(i+1);svg.appendChild(sv("line",{x1:x,x2:x,y1:W.T,y2:W.H-W.B,stroke:"var(--line)","stroke-dasharray":"2 5"}));
+    var t=sv("text",{x:x,y:W.H-W.B+20,"text-anchor":"middle",style:i<W.i?"fill:var(--ink);font-weight:700":""});t.textContent=s.key==="yc"?"YC":s.title;svg.appendChild(t)});
+  var px=W.pts.map(function(p){return {x:wx(p.x),y:p.v===0?W.H-W.B:wy(p.v,range)}});
+  if(head)px.push(head);
+  if(px.length>1)svg.appendChild(sv("path",{d:smooth(px),fill:"none",stroke:color,"stroke-width":5,"stroke-linecap":"round","stroke-linejoin":"round"}));
+  var tip=px[px.length-1];
+  svg.appendChild(sv("circle",{cx:tip.x,cy:tip.y,r:16,fill:color,opacity:.15}));svg.appendChild(sv("circle",{cx:tip.x,cy:tip.y,r:7,fill:color}))}
+function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+function easeOut(t){return 1-Math.pow(1-t,4)}
+function easeIn(t){return t*t*t}
+function walkAnim(target,kind,done){W.busy=true;var from=W.pts[W.pts.length-1];var fromV=from.v||0;var oldRange=W.range.slice(),newRange=kind==="crash"?W.range.slice():walkRange(Math.max(target.v,W.maxV||0));
+  var dur=kind==="crash"?1500:1900,t0=null,fx=from.x,tx=target.x;
+  function frame(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/dur);var ek=kind==="crash"?easeIn(k):easeOut(k);var rk=ease(k);
+    var r=[oldRange[0],Math.pow(10,Math.log10(oldRange[1])+(Math.log10(newRange[1])-Math.log10(oldRange[1]))*rk)];
+    var xk=ease(Math.min(1,k*1.15));var hx=fx+(tx-fx)*xk;
+    var lo=Math.log10(Math.max(fromV,1e5)),hv=kind==="crash"?Math.pow(10,lo+(Math.log10(1e5)-lo)*ek):Math.pow(10,lo+(Math.log10(Math.max(target.v,1e5))-lo)*ek);
+    var val=kind==="crash"?fromV*(1-ek):fromV+(target.v-fromV)*ek;
+    W.num.textContent=target.noUsd?"In YC":(kind==="crash"&&!fromV?"Applying":usd(Math.max(0,val)));
+    drawWalk({x:wx(hx),y:wy(hv,r)},r);
+    if(k<1)requestAnimationFrame(frame);else{W.pts.push(target);W.range=newRange;W.busy=false;drawWalk(null);done&&done()}}
+  requestAnimationFrame(frame)}
+function pickBand(bands){var r=Math.random(),c=0;for(var i=0;i<bands.length;i++){c+=bands[i].p_band;if(r<=c)return bands[i]}return bands[bands.length-1]}
+function walkNext(){if(W.busy||W.done)return;
+  var s=W.steps[W.i],lucky=Math.random()<s.p;
+  W.capTitle.textContent="Step "+(W.i+1)+" of "+W.steps.length+": "+s.title;
+  W.line.textContent=s.key==="yc"?"This company has a "+pct(s.p)+" chance of getting into YC.":"If it gets this far, it has a "+pct(s.p)+" chance of reaching "+s.title+".";
+  W.res.textContent="";W.res.style.color="";W.extra.replaceChildren();
+  var pip=W.pips.querySelectorAll("i")[W.i];
+  if(lucky){
+    var target,txt;
+    if(s.key==="yc"){target={x:1,v:1.5e5,noUsd:true};txt="You got into YC."}
+    else{var b=pickBand(s.stage.bands);var lo=Math.log10(Math.max(1,b.post[0])),hi=Math.log10(Math.max(1,b.post[1]));var val=Math.pow(10,lo+(hi-lo)*Math.random());target={x:W.i+1,v:val};txt="You raised at a "+usd(val)+" valuation."}
+    W.maxV=Math.max(W.maxV,target.v);W.next.disabled=true;
+    walkAnim(target,"up",function(){W.i++;pip.className="on";W.res.textContent=txt;W.res.style.color="var(--green)";W.next.disabled=false;if(W.i>=W.steps.length)walkFinish()})
+  }else{
+    W.dead=true;W.next.disabled=true;
+    walkAnim({x:W.i+1,v:1e5},"crash",function(){pip.className="bad";W.num.textContent=s.key==="yc"?"Not accepted":"Stalled";W.chartCard.classList.remove("shake");void W.chartCard.offsetWidth;W.chartCard.classList.add("shake");
+      W.res.textContent=s.key==="yc"?"Not this time. YC said no.":"It stalled before "+s.title+".";W.res.style.color="var(--red)";
+      W.extra.appendChild(h("div",{class:"callout red"},h("b",{text:"Why it fails here"}),s.why));
+      walkEnd("See the roadmap for this step",s.roadmap)})
+  }}
+function walkFinish(){var outs=D.outcomes.filter(function(o){return !o.failure});var tot=outs.reduce(function(a,o){return a+o.p_given_yc},0);var r=Math.random()*tot,c=0,o=outs[outs.length-1];
+  for(var i=0;i<outs.length;i++){c+=outs[i].p_given_yc;if(r<=c){o=outs[i];break}}
+  W.res.textContent="End state: "+o.name+".";W.res.style.color="var(--green)";
+  W.extra.appendChild(h("div",{class:"callout green"},h("b",{text:"You made it"}),"Among runs that get this far, this outcome comes up "+pct(o.p_given_yc/tot)+" of the time. Value: "+(o.value?rng(o.value):"n/a")+"."));
+  walkEnd("See the roadmap for the late stage","series_c_plus")}
+function walkEnd(label,phase){W.done=true;W.next.disabled=false;W.next.replaceChildren(icon("restart"));W.next.setAttribute("aria-label","Run again");W.mode="reset";
+  W.extra.appendChild(h("button",{class:"link",style:"margin-top:8px;text-align:left",onclick:function(){roadmapFocus=phase;show("roadmap",focusRoadmap)}},label))}
+
+var T={path:[]};
+function treeData(){var yc=D.yc.p,st=D.stages;var cum=[yc].concat(st.map(function(s){return s.p_today}));
+  function node(title,p,c,kind,detail){return {title:title,p:p,cum:c,kind:kind,detail:detail,kids:[]}}
+  var root=node("Today",1,1,"root",{text:"Applying to YC with this startup."});
+  var no=node("Rejected by YC",1-yc,1-yc,"stop",{why:D.yc.why_it_fails});
+  var yes=node("Accepted into YC",yc,yc,"go",{text:D.yc.basis});root.kids=[no,yes];
+  var prev=yes;
+  st.forEach(function(s,i){var stall=node("Stops before "+s.title,1-s.p_reach_prev,cum[i]-cum[i+1],"stop",{why:s.why});
+    var reach=node("Reaches "+s.title,s.p_reach_prev,cum[i+1],i===st.length-1?"end":"go",{bands:s.bands});
+    prev.kids=[stall,reach];prev=reach});
+  prev.detail.outcomes=D.outcomes;return root}
+BUILD.tree=function(root){
+  T.root=treeData();T.path=[T.root];
+  T.box=h("div",{class:"tree",id:"tree"});T.panel=h("div",{class:"card",style:"margin-top:16px;min-height:140px"});
+  root.appendChild(reveal(h("div",{class:"card"},h("h2",{text:"Every way it can go"}),T.box)));root.appendChild(T.panel);
+  window.addEventListener("resize",function(){if(cur==="tree")drawTree(true)})};
+function drawTree(quick){var box=T.box;if(!box)return;box.replaceChildren();var svgL=sv("svg",{class:"tlinks"});box.appendChild(svgL);
+  var rootCol=h("div",{class:"tcol"});rootCol.style.animation="none";
+  var rb=h("button",{class:"tn sel",onclick:function(){T.path=[T.root];drawTree();}},h("b",{text:"Today"}),h("div",{class:"small muted",style:"margin-top:6px",text:"Apply to YC"}));T.root.el=rb;rootCol.appendChild(rb);box.appendChild(rootCol);
+  T.path.forEach(function(n,depth){var next=T.path[depth+1];if(!n.kids.length)return;var col=h("div",{class:"tcol"});if(quick||depth<T.path.length-2)col.style.animation="none";
+    n.kids.forEach(function(k){var sel=next===k;var lab=labelFor(k.cum);
+      var el=h("button",{class:"tn"+(sel?" sel":""),onclick:function(){selectNode(depth+1,k)}},h("b",{text:k.title}),h("div",{class:"small muted",style:"margin-top:8px",text:pct(k.p)+" from here"}),h("div",{class:"pr",style:"margin-top:4px"},h("span",{text:pct(k.cum)+" from today"}),k.kind==="stop"?npill(lab):lpill(lab)));
+      k.el=el;col.appendChild(el)});box.appendChild(col)});
+  requestAnimationFrame(function(){var br=box.getBoundingClientRect();svgL.setAttribute("width",box.scrollWidth);svgL.setAttribute("height",box.scrollHeight);
+    T.path.forEach(function(n,depth){var next=T.path[depth+1];n.kids.forEach(function(k){if(!k.el||!n.el)return;var a=n.el.getBoundingClientRect(),b=k.el.getBoundingClientRect();
+      var x1=a.right-br.left+box.scrollLeft,y1=a.top+a.height/2-br.top+box.scrollTop,x2=b.left-br.left+box.scrollLeft,y2=b.top+b.height/2-br.top+box.scrollTop,mx=(x1+x2)/2;
+      svgL.appendChild(sv("path",{class:next===k?"on":"",d:"M"+x1+" "+y1+" C"+mx+" "+y1+" "+mx+" "+y2+" "+x2+" "+y2}))})})});
+  showDetail(T.path[T.path.length-1])}
+function selectNode(depth,k){T.path=T.path.slice(0,depth);T.path.push(k);drawTree();setTimeout(function(){T.box.scrollTo({left:T.box.scrollWidth,behavior:"smooth"})},60)}
+function showDetail(n){var p=T.panel;p.replaceChildren();p.classList.remove("fadein");void p.offsetWidth;p.classList.add("fadein");
+  var lab=labelFor(n.cum);
+  p.appendChild(h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:n.title}),h("div",{class:"row"},h("span",{class:"big",style:"font-size:30px",text:pct(n.cum)}),n.kind==="stop"?npill(lab):lpill(lab),h("span",{class:"small muted",text:"from today"}))));
+  var d=n.detail||{};
+  if(d.text)p.appendChild(h("p",{class:"muted",text:d.text}));
+  if(d.why)p.appendChild(h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it ends here"}),d.why));
+  if(d.bands){var y0=1e5,y1=1e10;var pos=function(v){return (Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0))*100};
+    d.bands.forEach(function(b){var lo=pos(b.post[0]),hi=Math.max(pos(b.post[1]),lo+1.2);p.appendChild(h("div",{class:"band"},h("div",{},h("b",{text:rng(b.post)}),h("div",{class:"small muted",text:"Raise "+rng(b.raise)})),h("div",{},h("div",{class:"range"},h("i",{style:"left:"+lo+"%;width:"+(hi-lo)+"%"})),h("div",{class:"small muted",style:"margin-top:6px",text:b.rationale})),h("div",{style:"text-align:right"},h("b",{text:pct(b.p_band)}))))})}
+  if(d.outcomes){p.appendChild(h("table",{class:"tbl",style:"margin-top:12px"},h("thead",{},h("tr",{},h("th",{text:"Final outcome"}),h("th",{text:"Value"}),h("th",{text:"If accepted"}),h("th",{text:"From today"}))),
+    h("tbody",{},d.outcomes.map(function(o){return h("tr",{},h("td",{text:o.name}),h("td",{text:o.failure?"n/a":rng(o.value)}),h("td",{},lpill(o.label_given_yc),h("span",{class:"small muted",text:" "+pct(o.p_given_yc)})),h("td",{},lpill(o.label_today),h("span",{class:"small muted",text:" "+pct(o.p_today)})))}))));
+    p.appendChild(h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it fails at the end"}),D.outcomes_why))}}
+
+function parseMoney(t){t=String(t||"").trim().toLowerCase().replace(/[$,\s]/g,"");var m=t.match(/^([0-9]*\.?[0-9]+)(k|m|b)?$/);if(!m)return null;var v=parseFloat(m[1]);if(m[2]==="k")v*=1e3;else if(m[2]==="m")v*=1e6;else if(m[2]==="b")v*=1e9;return v>0?v:null}
+function raiseCalc(){
+  var amt=h("input",{type:"text",inputmode:"decimal",class:"rc-in",value:"50k","aria-label":"Amount you want to raise",autocomplete:"off"});
+  var cap=h("input",{type:"text",inputmode:"decimal",class:"rc-in",value:"1m","aria-label":"Valuation cap",autocomplete:"off"});
+  var out=h("div",{class:"rc-out","aria-live":"polite"});
+  function upd(){var a=parseMoney(amt.value),c=parseMoney(cap.value);out.replaceChildren();
+    if(a===null||c===null){out.appendChild(h("div",{class:"small muted",text:"Enter amounts like 50k or 1m."}));return}
+    var sold=a/c;
+    out.appendChild(h("div",{class:"row",style:"align-items:baseline;gap:10px;flex-wrap:wrap"},h("span",{class:"big",text:(sold>=0.1?Math.round(sold*1000)/10:Math.round(sold*10000)/100)+"%"}),h("span",{class:"muted",text:"of the company sold for "+usd(a)+" on a "+usd(c)+" cap"})));
+    if(sold>=1){out.appendChild(h("div",{class:"callout red"},h("b",{text:"Check the numbers"}),"The raise is as large as the cap, which would sell the whole company."));return}
+    out.appendChild(h("div",{class:"small muted",style:"margin-top:8px",text:"You keep about "+(Math.round((1-sold)*1000)/10)+"% before any other dilution. This treats the cap as a post-money cap, so the percentage is the amount divided by the cap."}));
+    var st=D.stages&&D.stages[0];if(st&&st.bands&&st.bands.length){var lo=Math.min.apply(null,st.bands.map(function(b){return b.post[0]})),hi=Math.max.apply(null,st.bands.map(function(b){return b.post[1]}));
+      var where=c<lo?"below":c>hi?"above":"inside";
+      out.appendChild(h("div",{class:"small",style:"margin-top:8px",text:"This report's seed range is "+usd(lo)+" to "+usd(hi)+" post-money. Your cap is "+where+" that range."}))}}
+  amt.addEventListener("input",upd);cap.addEventListener("input",upd);upd();
+  return h("div",{class:"card",id:"raise-calc"},h("h2",{text:"Raise calculator"}),h("p",{class:"muted",style:"margin-top:0",text:"Say how much you want to raise and the valuation cap. It shows the share of the company you sell."}),
+    h("div",{class:"rc-row"},h("label",{class:"rc-f"},h("span",{class:"small muted",text:"Amount to raise"}),amt),h("label",{class:"rc-f"},h("span",{class:"small muted",text:"Valuation cap"}),cap)),out)}
+BUILD.path=function(root){
+  var wrap=h("div",{class:"grid snap"});
+  wrap.appendChild(reveal(raiseCalc()));
+  wrap.appendChild(reveal(h("div",{class:"card",id:"stage-yc"},h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:"Getting into YC"}),h("div",{class:"row"},h("span",{class:"big",text:pct(D.yc.p)}),lpill(D.yc.label))),
+    h("p",{class:"muted",text:D.yc.basis}),h("div",{class:"callout red"},h("b",{text:"Why it fails here"}),D.yc.why_it_fails))));
+  var y0=1e5,y1=1e10;function pos(v){return (Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0))*100}
+  D.stages.forEach(function(s){
+    var bands=h("div",{});
+    s.bands.forEach(function(b){var lo=pos(b.post[0]),hi=Math.max(pos(b.post[1]),lo+1.2);
+      bands.appendChild(h("div",{class:"band"},h("div",{},h("b",{text:rng(b.post)}),h("div",{class:"small muted",text:"Raise "+rng(b.raise)})),
+        h("div",{},h("div",{class:"range"},h("i",{style:"left:"+lo+"%;width:"+(hi-lo)+"%"})),h("div",{class:"small muted",style:"margin-top:6px",text:b.rationale})),
+        h("div",{style:"text-align:right"},h("b",{text:pct(b.p_band)}))))});
+    wrap.appendChild(reveal(h("div",{class:"card",id:"stage-"+s.key},
+      h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:s.title}),
+        h("div",{class:"row"},h("div",{style:"text-align:right"},h("div",{class:"big",text:pct(s.p_given_yc)}),h("div",{class:"small muted",text:pct(s.p_today)+" from today"})),lpill(s.label_given_yc))),
+      bands,
+      h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it fails here"}),s.why),
+      h("details",{},h("summary",{text:"How the odds were set"}),h("p",{class:"small muted",style:"margin:0",text:pct(s.p_reach_prev)+" chance of reaching this step from the previous one. "+(s.anchor.source||"")+(s.anchor.adjustment_reason?" "+s.anchor.adjustment_reason:"")})))))});
+  wrap.appendChild(reveal(h("div",{class:"card"},h("h2",{text:"Where it finally lands"}),
+    h("table",{class:"tbl"},h("thead",{},h("tr",{},h("th",{text:"Outcome"}),h("th",{text:"Value"}),h("th",{text:"If accepted"}),h("th",{text:"From today"}))),
+      h("tbody",{},D.outcomes.map(function(o){return h("tr",{},h("td",{text:o.name}),h("td",{text:o.failure?"n/a":rng(o.value)}),h("td",{},lpill(o.label_given_yc),h("span",{class:"small muted",text:" "+pct(o.p_given_yc)})),h("td",{},lpill(o.label_today),h("span",{class:"small muted",text:" "+pct(o.p_today)})))}))),
+    h("div",{class:"callout red",style:"margin-top:14px"},h("b",{text:"Why it fails here"}),D.outcomes_why))));
+  root.appendChild(wrap)};
+
+var roadmapFocus=null;
+var RM_TITLE={before_yc:"Get into YC",seed:"Reach Seed",series_a:"Reach Series A",series_b:"Reach Series B",series_c_plus:"Reach Series C and beyond"};
+BUILD.roadmap=function(root){var wrap=h("div",{class:"rm"});
+  var order=["before_yc","seed","series_a","series_b","series_c_plus"];
+  var items=D.roadmap.slice().sort(function(a,b){return order.indexOf(a.phase)-order.indexOf(b.phase)});
+  if(!items.length){root.appendChild(h("div",{class:"card"},h("p",{class:"muted",text:"No roadmap was written for this evaluation."})));return}
+  items.forEach(function(r){var el=h("div",{class:"rm-item","data-phase":r.phase},h("div",{class:"rm-rail"},h("div",{class:"rm-dot"}),h("div",{class:"rm-line"})),
+    reveal(h("div",{class:"card"},h("h2",{text:RM_TITLE[r.phase]||r.phase}),h("p",{style:"margin:0 0 12px;font-weight:600",text:r.goal}),
+      h("ul",{class:"list pro"},r.actions.map(function(a){return h("li",{},icon("check"),h("span",{text:a}))})),
+      h("div",{class:"callout green",style:"margin-top:14px"},h("b",{text:"You know it worked when"}),r.proof))));wrap.appendChild(el)});
+  root.appendChild(wrap)};
+function focusRoadmap(){var els=views.roadmap.querySelectorAll(".rm-item");els.forEach(function(e){e.classList.toggle("focus",e.dataset.phase===roadmapFocus)});
+  if(roadmapFocus){var t=views.roadmap.querySelector('.rm-item[data-phase="'+roadmapFocus+'"]');if(t)t.scrollIntoView({behavior:"smooth",block:"center"})}}
+
+function dots5(n){var g=h("div",{class:"gauge",style:"margin-bottom:12px"});for(var i=0;i<5;i++)g.appendChild(h("i",{style:i<n?"background:var(--orange)":""}));return g}
+BUILD.insights=function(root){
+  var I=D.insights,g=h("div",{class:"grid g2"});
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Market need"}),h("h2",{text:I.need.rating+" / 5"}),dots5(I.need.rating),
+    h("ul",{class:"list"},I.need.evidence.map(function(e){return h("li",{},icon("check"),h("div",{},h("div",{text:e.claim}),ext(e.source_url,"Source")))})))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Competition today"}),
+    h("table",{class:"tbl"},h("thead",{},h("tr",{},h("th",{text:"Who"}),h("th",{text:"What they do"}),h("th",{text:"Traction"}))),
+      h("tbody",{},I.competition.map(function(c){return h("tr",{},h("td",{},h("b",{text:c.name}),h("div",{},ext(c.source_url,"Source"))),h("td",{text:c.what}),h("td",{text:c.traction||"unknown"}))}))))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Technical complexity"}),h("h2",{text:I.technical.rating+" / 5"}),dots5(I.technical.rating),h("p",{class:"muted",style:"margin:0",text:I.technical.rationale}))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Takeover risk"}),h("h2",{text:I.takeover.rating+" / 5"}),dots5(I.takeover.rating),
+    h("p",{class:"muted",text:I.takeover.rationale}),h("div",{class:"small",text:I.takeover.who.join(", ")+", in about "+I.takeover.timeline_months+" months."}))));
+  var b=I.brand;
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Name and brand"}),h("h2",{text:b.name+", "+b.rating+" / 5"}),dots5(b.rating),h("p",{class:"muted",text:b.rationale}),
+    h("div",{class:"small",text:"Effect on success: "+b.effect_on_success+". "+b.name_check}),
+    h("div",{class:"grid g2",style:"margin-top:10px"},h("ul",{class:"list pro"},(b.strengths||[]).map(function(s){return h("li",{},icon("check"),h("span",{text:s}))})),h("ul",{class:"list con"},(b.weaknesses||[]).map(function(s){return h("li",{},icon("x"),h("span",{text:s}))}))),
+    (b.better_names&&b.better_names.length)?h("div",{class:"small muted",style:"margin-top:10px",text:"Alternatives: "+b.better_names.join(", ")}):null)));
+  root.appendChild(g);
+  var dd=I.deep_dive||{},keys=Object.keys(dd);
+  if(keys.length){var TT={market_need:"Is there real need today?",competition:"Competition now, and then",technical_complexity:"Technical complexity",takeover:"Who could take it over",economics_and_distribution:"Economics and distribution",team:"Team and founder fit",yc_specific:"Why YC may say no"};
+    var box=h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Deep dive"}));keys.forEach(function(k){box.appendChild(h("details",{},h("summary",{text:TT[k]||k}),h("p",{class:"muted",style:"margin:0",text:dd[k]})))});root.appendChild(reveal(box))}
+  root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Assumptions and limits"}),h("p",{class:"small muted",style:"margin:0 0 10px",text:"Evaluated as of "+D.startup.as_of+", "+(D.mode==="full"?"full":"summary")+" mode."}),h("ul",{class:"list"},D.assumptions.map(function(a){return h("li",{},icon("link"),h("span",{text:a}))})),
+    h("h3",{style:"margin-top:18px",text:"Sources"}),h("ul",{class:"list"},D.sources.map(function(u){return h("li",{},icon("link"),ext(u))})))));
+};
+
+BUILD.pros=function(root){
+  var g=h("div",{class:"grid g2"});
+  var pro=h("div",{class:"card"},h("h3",{text:"Pros"}));
+  var pl=h("ul",{class:"list pro"});(D.pros||[]).forEach(function(p){pl.appendChild(h("li",{},icon("check"),h("div",{},h("b",{text:p.point}),h("div",{class:"small muted",text:p.evidence}),p.source_url?ext(p.source_url,"Source"):null)))});
+  pro.appendChild(D.pros&&D.pros.length?pl:h("p",{class:"muted",text:"No pros were listed in this evaluation."}));
+  var con=h("div",{class:"card"},h("h3",{text:"Cons"}));
+  var cl=h("ul",{class:"list con"});D.cons.forEach(function(k){var fill=h("i",{});var li=h("li",{},icon("x"),h("div",{},h("b",{text:k.risk}),h("div",{class:"prob"},fill),h("div",{class:"small",text:pct(k.p)+" chance this happens"}),h("div",{class:"small muted",text:k.evidence}),
+      h("div",{class:"callout green",style:"margin-top:8px"},h("b",{text:"Mitigation"}),k.mitigation),h("div",{class:"small muted",style:"margin-top:6px",text:"Past YC cases: "+k.analog_names.join(", ")})));
+    cl.appendChild(li);onIn(con,function(){fill.style.width=Math.min(100,k.p*100)+"%"})});con.appendChild(cl);
+  g.appendChild(reveal(pro));g.appendChild(reveal(con));root.appendChild(g)};
+
+var start=(location.hash||"#overview").slice(1);show(BUILD[start]?start:"overview");
+})();
+</script>
+</body>
+</html>

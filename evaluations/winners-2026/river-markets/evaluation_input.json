@@ -1,0 +1,426 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "River Markets",
+    "one_liner": "Prime brokerage for prediction markets",
+    "description": "River Markets aggregates the major event contract venues into one account for professional traders, offering best execution, portfolio and order management tools and a unified API. Two founders in San Francisco.",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.12,
+    "p_low": 0.06,
+    "p_high": 0.25,
+    "basis": "Test assumes acceptance, so this is a note. Baseline acceptance is low single digits to about 4 percent. A two person fintech infrastructure team in the hottest category of 2026 would be adjusted upward to about 12 percent, but several YC peers (Valence, Sequence Markets, Selfin, Dome) were already in this exact wedge.",
+    "why_it_fails": "YC could say the wedge is already taken by three or four YC companies, that the two largest venues, Kalshi and Polymarket, hold about 95 percent of volume and can ship their own APIs and institutional tools, and that a two person team has no evidence of paying professional customers or regulatory standing for brokerage."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.7,
+      "anchors": {
+        "base_rate": 0.7,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2020-2024 --calibration-only: seed 64/70/72 percent (n=33)",
+        "adjustment_reason": "At the cohort anchor: the category is white hot and fintech infrastructure seeds fast, but the two person team and likely platform dependency offset it."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            2000000.0,
+            4000000.0
+          ],
+          "post_money_usd": [
+            15000000.0,
+            28000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical hot 2026 fintech infrastructure seed of $2M to $4M, in line with the $3.0M market median."
+        },
+        {
+          "raise_usd": [
+            5000000.0,
+            10000000.0
+          ],
+          "post_money_usd": [
+            35000000.0,
+            70000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside: a crypto or market structure fund leads a larger round, as hot prediction market infrastructure drew several multi million seeds in 2025 and 2026."
+        },
+        {
+          "raise_usd": [
+            700000.0,
+            1800000.0
+          ],
+          "post_money_usd": [
+            8000000.0,
+            14000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin band: a small angel or crypto fund check above the YC deal."
+        }
+      ],
+      "why_it_fails": "The seed fails if investors conclude that venues will integrate institutional features themselves, so a middleman has no durable edge. Without a first professional client trading real size and a clear regulatory path for brokerage, a two person team is just another API wrapper. SFOX and Alpaca show brokerage needs licenses and capital, and TradeX shows regulatory shocks can freeze a prediction market business."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2020-2024 --calibration-only: series_a cond 26 percent (n=23); 2013-2024 cond 33 percent (n=36)",
+        "adjustment_reason": "Slightly below the anchor, at about 0.95 times, because takeover risk is very high and the market could be absorbed by the venues."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            12000000.0,
+            20000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            110000000.0
+          ],
+          "p_band": 0.4,
+          "rationale": "Fintech infrastructure Series A, market median about $17.4M."
+        },
+        {
+          "raise_usd": [
+            25000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            150000000.0,
+            300000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside: becomes the default routing layer for institutional prediction market flow, as Alpaca did for API brokerage."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            10000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            50000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin band: small A after volumes cool or a venue partnership narrows the story."
+        }
+      ],
+      "why_it_fails": "Series A fails if routing fees are tiny relative to venue fees and flow is concentrated in two venues that can cut a deal with the largest trading firms directly. Prediction markets are volatile: a regulatory ruling, a volume drop or an insider trading controversy can freeze institutional interest. Aggregators in new crypto cycles often fade when the underlying market cools."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.17,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2020-2024 --calibration-only: series_b cond 17 percent (n=6); 2013-2024 cond 33 percent (n=12)",
+        "adjustment_reason": "I sit between the two cohorts, at 0.9 times the broader anchor, because a company that survives to Series A in this category typically owns real flow and licenses."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            30000000.0,
+            50000000.0
+          ],
+          "post_money_usd": [
+            200000000.0,
+            400000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Median Series B in the market is about $39.5M."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            100000000.0
+          ],
+          "post_money_usd": [
+            500000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: category leader in institutional execution across event contracts and tokenized assets."
+        },
+        {
+          "raise_usd": [
+            15000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            80000000.0,
+            150000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin band: flat or down round after volume normalizes."
+        }
+      ],
+      "why_it_fails": "Series B fails if transaction revenue does not scale with institutional adoption, or if the company needs licensed entities and capital that it cannot raise. A broker dealer and futures commission merchant stack takes years and capital, and incumbents such as Interactive Brokers and large exchanges can add event contracts."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.25,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2013-2024 --calibration-only: series_c cond 25 percent (n=4)",
+        "adjustment_reason": "Close to the anchor with a tiny sample; companies that reach this stage are usually category winners."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            50000000.0,
+            90000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            800000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Series C 2022+ median $45M in our sample, $77M market."
+        },
+        {
+          "raise_usd": [
+            100000000.0,
+            250000000.0
+          ],
+          "post_money_usd": [
+            1000000000.0,
+            2500000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: becomes market infrastructure for event contracts, as Kalshi did for regulated exchanges."
+        },
+        {
+          "raise_usd": [
+            25000000.0,
+            45000000.0
+          ],
+          "post_money_usd": [
+            150000000.0,
+            300000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin or flat round during a regulatory or volume downturn."
+        }
+      ],
+      "why_it_fails": "Series C fails if the prediction market boom proves cyclical, or if the two largest venues keep institutional flow in house. A brokerage middleman then looks like a feature. Companies like SFOX survived crypto winters but raised little after their Series A, and a company that stays small is more likely to be sold than to raise growth equity."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.45
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          10000000.0,
+          100000000.0
+        ],
+        "p": 0.33
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000.0,
+          1000000000.0
+        ],
+        "p": 0.17
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000.0,
+          3000000000.0
+        ],
+        "p": 0.05
+      }
+    ],
+    "why_it_fails": "A middleman between two dominant venues and professional traders is easy to bypass. If volume stalls or venues build institutional access themselves, the likely outcomes are a small acquisition by an exchange or brokerage for the team and flow, or a quiet stall after the seed. Railbird sold to a large operator only after holding a license, which this company does not."
+  },
+  "analogs": [
+    {
+      "slug": "kalshi",
+      "relevance": "The regulated venue this company depends on, also a YC company.",
+      "outcome_summary": "Winter 2019, took years to win CFTC designation, then became a multi billion company; shows venues are strong and well funded."
+    },
+    {
+      "slug": "alpaca",
+      "relevance": "API first brokerage infrastructure.",
+      "outcome_summary": "Winter 2019, seed, A, B and C over six years, needed licenses and heavy capital."
+    },
+    {
+      "slug": "sfox",
+      "relevance": "Crypto trading router that became an institutional prime broker.",
+      "outcome_summary": "Summer 2014, Series A $22.7M in 2018 and survived crypto cycles with modest later funding."
+    },
+    {
+      "slug": "railbird",
+      "relevance": "Event contract exchange with a license.",
+      "outcome_summary": "Winter 2022, took three years to get a CFTC license and was acquired by DraftKings in October 2025."
+    },
+    {
+      "slug": "tradex",
+      "relevance": "Prediction market startup exposed to regulation.",
+      "outcome_summary": "Winter 2022, $1M seed and no verified later round after state bans hit real money trading."
+    },
+    {
+      "slug": "sequence-markets",
+      "relevance": "Cross venue execution peer in the same YC wedge.",
+      "outcome_summary": "Winter 2026, active, self reported traction only."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Kalshi and Polymarket build institutional tools and APIs themselves",
+      "p": 0.4,
+      "evidence": "Two venues hold about 95 percent of volume and have the incentive and capital to serve professional traders directly.",
+      "analogs": [
+        "kalshi",
+        "railbird"
+      ],
+      "mitigation": "Integrate deeply across many venues and own the portfolio layer that single venues cannot offer."
+    },
+    {
+      "risk": "Regulatory and licensing barrier for brokerage",
+      "p": 0.3,
+      "evidence": "Routing customer orders to event contract venues requires registration and capital that two founders may lack.",
+      "analogs": [
+        "alpaca",
+        "tradex"
+      ],
+      "mitigation": "Partner with a licensed introducing broker or FCM and hire a compliance lead early."
+    },
+    {
+      "risk": "Several funded YC peers in the same wedge and a cooling market",
+      "p": 0.3,
+      "evidence": "Valence, Sequence Markets, Selfin and Dome were already building unified prediction market access.",
+      "analogs": [
+        "sequence-markets",
+        "sfox"
+      ],
+      "mitigation": "Land one or two large professional accounts and out execute on liquidity and latency."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Kalshi and Polymarket",
+      "what": "The two dominant venues, with growing institutional programs",
+      "traction": "About 94.7 percent of 2025 prediction market volume combined",
+      "source_url": "https://www.theblock.co/news/ecosystems/2025-12-31-prediction-markets-kalshi-polymarket-duopoly-2025-383733"
+    },
+    {
+      "name": "YC peers such as Sequence Markets and Selfin",
+      "what": "Cross venue execution and institutional liquidity for event contracts",
+      "traction": "Early stage, self reported",
+      "source_url": "https://www.ycombinator.com/companies"
+    },
+    {
+      "name": "Large quant firms and brokers",
+      "what": "Trading firms such as Jump and Susquehanna connect to venues directly",
+      "traction": "Direct market access and own execution",
+      "source_url": "https://www.fia.org/marketvoice/articles/fast-growing-prediction-markets-move-traditional-financial-areas-executives"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 4,
+    "rationale": "Low latency routing, venue APIs with different semantics, position and risk tracking, and settlement across on chain and regulated venues are demanding. Two strong engineers can build a first version in three months, but reliability, compliance and custody take longer."
+  },
+  "takeover_risk": {
+    "rating": 5,
+    "who": [
+      "Kalshi",
+      "Polymarket",
+      "DraftKings",
+      "Interactive Brokers"
+    ],
+    "timeline_months": 9,
+    "rationale": "The venues control the supply and the customer relationship and can add portfolio tools and APIs within months. Their incentive is to capture professional flow themselves and avoid fee sharing."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Prediction market volume surpassed $44B in 2025 and grew about twelvefold in a year",
+        "source_url": "https://www.theblock.co/news/ecosystems/2025-12-31-prediction-markets-kalshi-polymarket-duopoly-2025-383733"
+      },
+      {
+        "claim": "Institutional participation is growing but remains limited by liquidity gaps",
+        "source_url": "https://www.benefitsandpensionsmonitor.com/investments/alternative-investments/institutional-money-is-trickling-into-prediction-markets-not-flooding-in/393640"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show real professional users trading through the account.",
+      "actions": [
+        "Onboard five funds or quant traders on a pilot",
+        "Publish routed volume and slippage savings"
+      ],
+      "proof": "Five professional accounts and measurable best execution savings"
+    },
+    {
+      "phase": "seed",
+      "goal": "Raise on volume and a path to licenses.",
+      "actions": [
+        "Sign a licensed broker partner",
+        "Ship the unified API and order management tools"
+      ],
+      "proof": "$10M monthly routed volume and recurring fees"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Own institutional flow across venues.",
+      "actions": [
+        "Add new venues and tokenized assets",
+        "Add prime services such as credit and custody"
+      ],
+      "proof": "Revenue above $2M annualized and three venue partnerships"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Strong category tailwind",
+      "evidence": "Volume growth of about twelvefold in a year and large institutional backing of venues.",
+      "source_url": "https://www.theblock.co/post/374421/kalshi-polymarket-record-1-4-billion-trading-month-institutional-backing-surges"
+    },
+    {
+      "point": "Real fragmentation problem for professionals",
+      "evidence": "Liquidity is split across venues with different APIs, which is the problem prime brokers solve in other asset classes.",
+      "source_url": "https://www.fia.org/marketvoice/articles/fast-growing-prediction-markets-move-traditional-financial-areas-executives"
+    }
+  ],
+  "brand": {
+    "name": "River Markets",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"River Markets\" --era 2022+: 12 characters, 2 words, compound words",
+    "strengths": [
+      "Clear finance signal and easy to say"
+    ],
+    "weaknesses": [
+      "Generic, hard to trademark and similar to many markets names"
+    ],
+    "rationale": "A compound words name that signals markets is readable and credible to traders, like Alpaca or Kalshi in being short, though it is more generic than those. It is neutral for success."
+  },
+  "narrative": {
+    "headline": "A hot category with a plausible seed, but the two venues can absorb the product and the YC wedge already holds several peers.",
+    "general_summary": "River Markets is a prime brokerage layer for event contract traders. Volume in prediction markets exploded through 2025 and early 2026, so a seed above the YC check is likely for a fintech infrastructure team in this wedge. The harder questions come later: two venues hold nearly all volume and can build institutional tools themselves, brokerage needs licenses and capital, and at least four YC companies were already in the same wedge. Fintech cohort data show about a quarter of seeded companies reach a Series A. I forecast a good seed chance, an Unlikely Series A, and acquisition by an exchange or broker as the most common positive outcome."
+  },
+  "assumptions": [
+    "Blind test: the company is assumed accepted to YC in Spring 2026, with forecast date 2026-04-06.",
+    "Seed means a round above the $500K YC deal within about 12 months.",
+    "Later events of peer 2026 batch companies (funding, acquisitions) were not used.",
+    "Market data in early 2026 shows a boom, which may not persist."
+  ],
+  "sources": [
+    "https://www.theblock.co/news/ecosystems/2025-12-31-prediction-markets-kalshi-polymarket-duopoly-2025-383733",
+    "https://www.benefitsandpensionsmonitor.com/investments/alternative-investments/institutional-money-is-trickling-into-prediction-markets-not-flooding-in/393640",
+    "https://www.fia.org/marketvoice/articles/fast-growing-prediction-markets-move-traditional-financial-areas-executives",
+    "https://www.theblock.co/post/374421/kalshi-polymarket-record-1-4-billion-trading-month-institutional-backing-surges"
+  ]
+}

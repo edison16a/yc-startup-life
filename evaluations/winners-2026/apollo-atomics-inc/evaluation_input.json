@@ -1,0 +1,461 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Apollo Atomics, Inc.",
+  "one_liner": "We make the most compact nuclear reactors",
+  "description": "Apollo Atomics, based in Boston, says it makes the most compact nuclear reactors. No description, team size or customers are given. Assumed to be an early microreactor developer selling to remote sites, industry or data centers, which needs a design, regulatory approval, fuel and capital in the hundreds of millions of dollars before revenue.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.99,
+  "p_low": 0.98,
+  "p_high": 0.9999,
+  "basis": "The company was accepted to YC, which is the premise of this test, so acceptance is near certainty. For reference a random applicant starts near 1 percent, and a nuclear startup with no description and an unknown team would normally sit below a typical strong team, though nuclear is a stated YC interest after Oklo and recent fusion companies.",
+  "why_it_fails": "YC would most plausibly say no because a reactor company needs years and hundreds of millions of dollars and a licence before revenue, which does not fit a three month batch. With no public traction, team background or design details, partners could not tell whether the founders have the nuclear engineering depth to pass regulators. The acceptance step is set from the premise that the company was admitted."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.72,
+   "anchors": {
+    "base_rate": 0.7,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: seed 70% (n=23), series_a 17% known (cond 25%, n=16), series_b cond 50% (n=4), series_c cond 0% (n=2); anecdote level, only 23 researched",
+    "adjustment_reason": "Close to the Industrials anchor of 0.70. Nuclear is the hottest hard tech theme in 2026 with a federal reactor pilot program and large rounds for peers, and YC nuclear companies oklo and maritime-fusion raised early. Seed means above the YC 500K within about 12 months."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      2000000
+     ],
+     "post_money_usd": [
+      6000000,
+      15000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small round or grants only, which the team could use to fund design work."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      40000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical hard tech seed in a hot sector."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      15000000
+     ],
+     "post_money_usd": [
+      40000000,
+      100000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Large seed like maritime fusion at 4.5M and above, possible with famed investors."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Outlier, reactor companies sometimes raise much larger first rounds."
+    }
+   ],
+   "why_it_fails": "The most likely failure is that investors cannot verify the claimed compactness and the founders lack nuclear regulatory credentials, so a hard tech round falls through. A first reactor needs fuel access and a licence path that a seed cannot buy. Analogs: atomic-alchemy sold to a larger buyer and oklo needed years of seed level money, and some reactor teams stall on fuel supply."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: seed 70% (n=23), series_a 17% known (cond 25%, n=16), series_b cond 50% (n=4), series_c cond 0% (n=2); anecdote level, only 23 researched",
+    "adjustment_reason": "Set at 1.5x the Industrials conditional anchor of 0.25, justified by the unusual capital flows to nuclear in 2025 and 2026: the DOE Reactor Pilot Program selected ten companies in August 2025 and peers announced Series A rounds above 100M. Within 2x of the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      10000000,
+      25000000
+     ],
+     "post_money_usd": [
+      50000000,
+      120000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest A for a design stage team. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      25000000,
+      60000000
+     ],
+     "post_money_usd": [
+      120000000,
+      300000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical large hard tech A for a nuclear developer."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      150000000
+     ],
+     "post_money_usd": [
+      300000000,
+      800000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong A from top funds on a pilot program selection or test reactor plan."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      800000000,
+      1800000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier, a peer reported a 130M Series A."
+    }
+   ],
+   "why_it_fails": "A Series A needs a working demonstration or a credible licensing path, and compact reactor claims are tested by physics and the regulator, not by a pitch. The likely miss is a design that cannot reach criticality on the planned timeline, no fuel supply, or no customer commitment letters. Many deep tech teams in the data stall at seed when the first milestone costs more than a seed buys."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.4,
+   "anchors": {
+    "base_rate": 0.5,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: seed 70% (n=23), series_a 17% known (cond 25%, n=16), series_b cond 50% (n=4), series_c cond 0% (n=2); anecdote level, only 23 researched",
+    "adjustment_reason": "Industrials B conditional anchor of 0.50 is n=4, so I use 0.40, discounted for the large capital needed and licence delays."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      100000000
+     ],
+     "post_money_usd": [
+      250000000,
+      600000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Standard hard tech B. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      100000000,
+      250000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Large B tied to a test reactor build."
+    },
+    {
+     "raise_usd": [
+      250000000,
+      500000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      3500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Top tier round if criticality is achieved. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      500000000,
+      900000000
+     ],
+     "post_money_usd": [
+      3500000000,
+      7000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "The Series B is the first one that funds actual reactor construction, and cost overruns, fuel enrichment shortages, or licensing delays can stop it. Investors would also compare the design with better funded peers that reach milestones first."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.4,
+   "anchors": {
+    "base_rate": 0.0,
+    "source": "python3 -I scripts/base_rates.py --calibration-only all cohorts: series_c cond 36% (n=55); Industrials cond 0% (n=2)",
+    "adjustment_reason": "Anchored at the all cohort 0.36, slightly raised because reaching B in nuclear means a real reactor milestone and public markets have shown appetite for the sector."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Growth round for first commercial units. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      300000000,
+      700000000
+     ],
+     "post_money_usd": [
+      2500000000,
+      6000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Large nuclear C. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      700000000,
+      1500000000
+     ],
+     "post_money_usd": [
+      6000000000,
+      15000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Leader round or IPO scale financing. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "Late stage rounds need a commercial reactor order book and a licence. The most likely failure is a delay in regulation or fuel that pushes revenue out for years and exhausts investors, or a rival design winning the same customers. Nuclear projects often fail on cost per megawatt rather than on physics."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
+    ],
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     20000000000
+    ],
+    "p": 0.1
+   }
+  ],
+  "why_it_fails": "Most likely the company runs out of money before a licence or a working reactor, or is absorbed by a larger developer for its design and team. Even strong nuclear teams need a decade of capital, and the fuel and regulatory chain is controlled by others."
+ },
+ "analogs": [
+  {
+   "slug": "oklo",
+   "relevance": "Advanced fission power plants, S14, the YC nuclear precedent.",
+   "outcome_summary": "Seed in 2015, Series A in 2018, later went public, a long road of over a decade."
+  },
+  {
+   "slug": "atomic-alchemy",
+   "relevance": "Nuclear medicine isotopes, W19.",
+   "outcome_summary": "Acquired, a smaller nuclear exit."
+  },
+  {
+   "slug": "maritime-fusion",
+   "relevance": "Fusion reactors for ships, W25.",
+   "outcome_summary": "4.5M seed in November 2025, active."
+  },
+  {
+   "slug": "helion-energy",
+   "relevance": "Fusion power plant, S14, a capital intensive energy bet.",
+   "outcome_summary": "Active with large later funding, took many years."
+  },
+  {
+   "slug": "ovipost",
+   "relevance": "Capital heavy hardware startup that ran out of runway, W18.",
+   "outcome_summary": "Shut down with no later funding found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Regulatory and licensing delay",
+   "p": 0.4,
+   "evidence": "Reactor designs need DOE or NRC authorization, and only ten companies were selected for the DOE pilot program in 2025.",
+   "analogs": [
+    "oklo",
+    "helion-energy"
+   ],
+   "mitigation": "Join the DOE pilot program or an approved test site early."
+  },
+  {
+   "risk": "Capital needs far above any seed or A",
+   "p": 0.4,
+   "evidence": "Pilot program participants pay all costs of building and operating test reactors, and peers announced rounds above 100M.",
+   "analogs": [
+    "oklo",
+    "helion-energy"
+   ],
+   "mitigation": "Stage the design into cheap tests and pursue non dilutive government money."
+  },
+  {
+   "risk": "Founders lack nuclear depth or the compactness claim is unproven",
+   "p": 0.3,
+   "evidence": "No team, design or test data is published, and compactness trades off with safety and fuel use.",
+   "analogs": [
+    "atomic-alchemy"
+   ],
+   "mitigation": "Hire experienced reactor engineers and publish independent review."
+  },
+  {
+   "risk": "Fuel supply (HALEU) shortage",
+   "p": 0.25,
+   "evidence": "Advanced designs need high enrichment fuel that was scarce in 2025, with DOE allocating limited commitments.",
+   "analogs": [
+    "oklo"
+   ],
+   "mitigation": "Design for fuel that is available."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Radiant",
+   "what": "1 MWe helium cooled microreactor Kaleidos.",
+   "traction": "Venture funded through at least a Series C, testing planned at INL.",
+   "source_url": "https://www.ans.org/news/2025-11-14/article-7543/the-progress-so-far-an-update-on-the-reactor-pilot-program"
+  },
+  {
+   "name": "Valar Atomics",
+   "what": "Test reactor developer in the DOE pilot program.",
+   "traction": "Announced a 130M Series A.",
+   "source_url": "https://www.energytech.com/infrastructure/article/55309652/doe-names-10-companies-to-fast-track-small-modular-reactors-by-2026"
+  },
+  {
+   "name": "Last Energy",
+   "what": "Micro modular reactors, pilot program participant.",
+   "traction": "Not yet broken ground as of November 2025.",
+   "source_url": "https://www.ans.org/news/2025-11-14/article-7543/the-progress-so-far-an-update-on-the-reactor-pilot-program"
+  },
+  {
+   "name": "Status quo: diesel and grid power",
+   "what": "Remote sites and data centers use diesel, gas and grid power.",
+   "traction": "Dominant by default, cheap and certified.",
+   "source_url": "https://www.energy.gov/ne/us-department-energy-reactor-pilot-program"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "Reactor design, neutronics, fuel, shielding and safety cases are among the hardest engineering problems. A small team cannot build a working unit in 3 months, and the work depends on government test facilities, licences and enriched fuel."
+ },
+ "takeover_risk": {
+  "rating": 2,
+  "who": [
+   "Radiant",
+   "Westinghouse",
+   "Oklo"
+  ],
+  "timeline_months": 60,
+  "rationale": "A rival needs years and large capital to field a competing reactor and regulatory approval, so copying is slow. Absorption by an incumbent after a design milestone is more likely than a quick copy."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "DOE launched a Reactor Pilot Program in 2025 and selected ten companies to fast track test reactors.",
+    "source_url": "https://www.energy.gov/ne/us-department-energy-reactor-pilot-program"
+   },
+   {
+    "claim": "Peer microreactor companies announced large venture rounds through Series C and a 130M Series A.",
+    "source_url": "https://www.energytech.com/infrastructure/article/55309652/doe-names-10-companies-to-fast-track-small-modular-reactors-by-2026"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show a credible design and team to investors and DOE.",
+   "actions": [
+    "Publish the design basis and hire a licensing lead.",
+    "Apply to the DOE reactor pilot or a national lab test partnership."
+   ],
+   "proof": "A signed lab or site agreement and a seed above 2M"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Fund a first demonstration.",
+   "actions": [
+    "Secure fuel supply commitments.",
+    "Sign letters of intent from a data center or remote site customer."
+   ],
+   "proof": "Funded test reactor plan with customer commitments"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Strong policy and capital tailwind for nuclear",
+   "evidence": "DOE fast tracked test reactors in 2025 and peers raised large rounds.",
+   "source_url": "https://www.energy.gov/ne/us-department-energy-reactor-pilot-program"
+  },
+  {
+   "point": "YC has a precedent in the category",
+   "evidence": "Oklo from the S14 batch went on to a public listing."
+  }
+ ],
+ "brand": {
+  "name": "Apollo Atomics, Inc.",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Apollo Atomics\" --era 2022+ gave kind compound_words, 13 chars, 2 words",
+  "strengths": [
+   "Apollo evokes ambition and the space era",
+   "Alliteration is easy to remember"
+  ],
+  "weaknesses": [
+   "Generic and similar to many other Apollo named companies",
+   "Atomics is a descriptive word for nuclear"
+  ],
+  "rationale": "A confident industrial name that tells people it is atomic, in the style of oklo that also used a short energy name. For deep tech the name rarely matters, and regulators and fuel will decide the outcome.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A very high risk, very high capital bet that is likely to raise seed money in a hot sector but faces a long road.",
+  "general_summary": "Apollo Atomics claims the most compact nuclear reactors and gave no further detail, so the forecast rests on the sector. Nuclear funding was strong in 2025 and 2026, YC has funded Oklo and recent fusion companies, so a seed above the YC check is likely. Beyond that, the company needs a licence, fuel and hundreds of millions of dollars, and most hard tech teams stall before a demonstrator. The ladder follows the Industrials anchors, raised a little for the sector tailwind, with a majority chance of ending in shutdown or stall."
+ },
+ "assumptions": [
+  "The input had no description, team size or tags, so everything beyond the one liner is inferred.",
+  "Industrials cohort has 23 researched companies, which is anecdote level.",
+  "Only information before 2026-04-06 was used, later reactor milestones were ignored."
+ ],
+ "sources": [
+  "https://www.energy.gov/ne/us-department-energy-reactor-pilot-program",
+  "https://www.energytech.com/infrastructure/article/55309652/doe-names-10-companies-to-fast-track-small-modular-reactors-by-2026",
+  "https://www.ans.org/news/2025-11-14/article-7543/the-progress-so-far-an-update-on-the-reactor-pilot-program"
+ ]
+}

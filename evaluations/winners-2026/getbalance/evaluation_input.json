@@ -1,0 +1,443 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Balance",
+  "one_liner": "Full-Stack AI Accounting",
+  "description": "Balance is an AI accounting firm that helps SMBs close their monthly books. Our agents do the work of an in-house finance hire, reconciling books in real time and flagging issues before they become problems.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.08,
+  "basis": "Starting rate is about 1 percent with a 0.6 to 2 percent band. The company is already accepted, so this is a note only. A London team of 20 at batch start implies real customers and revenue, and AI accounting is a clear YC theme, which pushes the odds well above the base rate.",
+  "why_it_fails": "YC would most plausibly say no because AI accounting is crowded and services businesses with human accountants in the loop have lower margins than software. A team of 20 also suggests a service company that could be seen as hard to scale, and the interview would test whether gross margin improves as agents replace staff."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.78,
+   "anchors": {
+    "base_rate": 0.66,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --tag Fintech --calibration-only: seed cond 73 percent (n=56); B2B 2022-2025 cond 59 percent (n=126)",
+    "adjustment_reason": "Within 1.2x of the cohort. Lift for existing paying customers and a hot AI accounting investor appetite."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Small extension from existing backers, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      1500000,
+      5000000
+     ],
+     "post_money_usd": [
+      15000000,
+      40000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Typical seed for a revenue generating AI services company in 2026."
+    },
+    {
+     "raise_usd": [
+      5000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      90000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside with a lead from a tier one fund, as AI accounting peers raised large rounds in 2025."
+    }
+   ],
+   "why_it_fails": "Seed fails if revenue is mostly human labor and investors see a bookkeeping firm with software margins promised, not delivered. Fundraising in London can also be slower than in San Francisco. Analogs such as fondo stayed small and sway finance, an early AI bookkeeping attempt, was shut down without raising a priced round."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.4,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --tag Fintech --calibration-only: series_a cond 24 percent (n=41); B2B 2022-2025 cond 26 percent (n=74)",
+    "adjustment_reason": "Within 1.6x. Lift for revenue at start and a well funded category where peers raised large rounds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      8000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      70000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Flat A for a services heavy model, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      70000000,
+      150000000
+     ],
+     "p_band": 0.5,
+     "rationale": "AI accounting peers raised A rounds of 25M to 34M in 2024 and 2025; this is a notch lower."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      40000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside if gross margins reach software levels, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series A fails if monthly close quality needs too much human review, so margins stay at services levels and growth is capped by hiring. Well funded rivals such as Basis and Rillet raised large rounds in 2025, and investors will compare retention and gross margin, not only revenue growth."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only: series_b cond 39 percent (n=18); recent B2B cohort cond 16 percent (n=19)",
+    "adjustment_reason": ""
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      25000000,
+      40000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Below the 2022+ median for a slower grower, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Market series B deal near 40M, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1200000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Leader outcome in a category where rivals reached unicorn valuations."
+    }
+   ],
+   "why_it_fails": "Series B fails if the company stays regional or an SMB bookkeeping market with high churn, as small businesses switch tools or fold. Rivals with more capital would out hire it. The analogs in small business accounting show modest raises, with doublehq reaching only a 6.5M Series A after years."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only: series_c cond 57 percent (n=7), tiny sample; overall table cond 36 percent (n=55)",
+    "adjustment_reason": "Discounted because only a few AI accounting companies could reach scale and the segment is SMB."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Low C, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      2000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Market series C deal size near 77M, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      250000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      4000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Category leader, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series C fails if SMB accounting stays a low ticket market with high churn, and platform players such as QuickBooks add similar agents. The company would need to move upmarket or into a payments product to justify large rounds, which few small business accounting companies in the data did."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.45
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
+    ],
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.05
+   }
+  ],
+  "why_it_fails": "Failure is most likely a stall at modest scale, with human heavy margins and heavy competition, ending in a sale to an accounting firm roll up or a fintech under 100M. Contalink and doublehq show that profitable small business accounting can last, but large exits are rare."
+ },
+ "analogs": [
+  {
+   "slug": "doublehq",
+   "relevance": "Bookkeeping software company with long runway on little capital.",
+   "outcome_summary": "Grew to thousands of firms, a 6.5M Series A in 2025 after years."
+  },
+  {
+   "slug": "fondo",
+   "relevance": "Bookkeeping and tax service for startups led by an accountant.",
+   "outcome_summary": "A 3M pre seed in 2023 and 7M seed in 2024, years after batch."
+  },
+  {
+   "slug": "sway-finance",
+   "relevance": "Early AI bookkeeping for small business.",
+   "outcome_summary": "Listed inactive, no priced round found."
+  },
+  {
+   "slug": "contalink",
+   "relevance": "Cloud accounting for accountants and SMEs.",
+   "outcome_summary": "A 2.1M round in 2022 and strong customer counts."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Service margins never reach software margins",
+   "p": 0.35,
+   "evidence": "The company calls itself an accounting firm and a team of 20 at batch start suggests human labor does much of the close.",
+   "analogs": [
+    "fondo",
+    "doublehq"
+   ],
+   "mitigation": "Track gross margin per client and automate review steps."
+  },
+  {
+   "risk": "Better funded AI accounting rivals outspend it",
+   "p": 0.3,
+   "evidence": "Basis and Rillet raised tens of millions in 2024 and 2025.",
+   "analogs": [
+    "sway-finance"
+   ],
+   "mitigation": "Focus on a regional or sector niche underserved by US players."
+  },
+  {
+   "risk": "SMB churn and errors in books destroy trust",
+   "p": 0.25,
+   "evidence": "A wrong close can create tax and audit problems and small businesses switch providers.",
+   "analogs": [
+    "contalink"
+   ],
+   "mitigation": "Human review layer and audit trails."
+  },
+  {
+   "risk": "Distribution in a fragmented market is expensive",
+   "p": 0.2,
+   "evidence": "SMB acquisition is channel driven, as shown by the analog records and the current market.",
+   "analogs": [
+    "doublehq"
+   ],
+   "mitigation": "Partner with accountants, banks and software platforms."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Basis",
+   "what": "AI agents sold to accounting firms.",
+   "traction": "34M Series A led by Khosla in 2024.",
+   "source_url": "https://www.maginative.com/article/basis-secures-34m-to-deploy-ai-agents-for-accounting-firms/"
+  },
+  {
+   "name": "Rillet",
+   "what": "AI native ERP for mid market companies.",
+   "traction": "25M Series A from Sequoia in mid 2025.",
+   "source_url": "https://techcrunch.com/2025/05/28/rillet-raises-25m-from-sequoia-to-automate-general-ledger-systems-using-ai"
+  },
+  {
+   "name": "Traditional bookkeeping firms and QuickBooks",
+   "what": "The status quo for SMB books.",
+   "traction": "Dominant installed base.",
+   "source_url": "https://www.cpapracticeadvisor.com/2025/06/02/rillet-raises-25m-series-a-from-sequoia-capital-to-bring-ai-to-mid-market-accounting/162164/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Reconciliation and categorization with agents is well understood, but accuracy for a monthly close, handling many bank and ERP integrations and audit quality is hard. A small team can build a good product but must run human review, which adds operational complexity."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Intuit QuickBooks",
+   "Xero",
+   "Funded AI accounting startups",
+   "Big accounting firms"
+  ],
+  "timeline_months": 12,
+  "rationale": "QuickBooks and Xero are adding agents and funded rivals can expand downmarket. A services model is hard to copy fast, which limits the threat, but software features are not."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "AI accounting startups raised large rounds in 2024 and 2025, showing buyer and investor demand.",
+    "source_url": "https://www.maginative.com/article/basis-secures-34m-to-deploy-ai-agents-for-accounting-firms/"
+   },
+   {
+    "claim": "Rillet raised a 70M Series B in August 2025 for AI accounting.",
+    "source_url": "https://builtin.com/articles/rillet-raises-70m-series-b-20250806"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show paying clients and improving margins.",
+   "actions": [
+    "Report gross margin per client",
+    "Document error rates on closes"
+   ],
+   "proof": "Gross margin above 50 percent"
+  },
+  {
+   "phase": "seed",
+   "goal": "Prove software leverage.",
+   "actions": [
+    "Raise accounts per accountant",
+    "Land a vertical niche"
+   ],
+   "proof": "Revenue growing 15 percent monthly"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Reach software like retention.",
+   "actions": [
+    "Productize onboarding",
+    "Expand beyond one country"
+   ],
+   "proof": "ARR above 2M and logo retention above 90 percent"
+  },
+  {
+   "phase": "series_b",
+   "goal": "Defend against funded rivals.",
+   "actions": [
+    "Build integrations with ERPs and banks",
+    "Add tax and audit modules"
+   ],
+   "proof": "ARR above 10M"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Revenue likely exists at batch start",
+   "evidence": "A team of 20 before the batch implies customers paying for a real service.",
+   "source_url": "https://www.maginative.com/article/basis-secures-34m-to-deploy-ai-agents-for-accounting-firms/"
+  },
+  {
+   "point": "Investors fund AI accounting heavily",
+   "evidence": "Multiple 2024 and 2025 rounds in the same category.",
+   "source_url": "https://builtin.com/articles/rillet-raises-70m-series-b-20250806"
+  }
+ ],
+ "brand": {
+  "name": "Balance",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Balance\" --era 2022+ : kind real_word, 7 chars",
+  "strengths": [
+   "Real word that fits accounting",
+   "Easy to say and spell"
+  ],
+  "weaknesses": [
+   "Very generic and hard to search",
+   "Many companies use the name"
+  ],
+  "rationale": "A real word that matches accounting meaning helps comprehension but is hard to own, similar to other plain word finance brands. Domain getbalance.ai shows the plain name was taken."
+ },
+ "narrative": {
+  "headline": "A revenue backed AI accounting service with good odds of a seed and a hard fight on margin and rivals after that.",
+  "general_summary": "Balance runs monthly books for small businesses with AI agents. The category is hot, with large rounds for Basis and Rillet in 2024 and 2025, and a team of 20 at the start of the batch suggests real customers. The risks are service level margins, strong rivals, and small business churn. A seed above the YC deal is likely, and a Series A is better than the cohort rate because of existing revenue, but the base rate for small business fintech Series A is about one in four.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Blind test: only the batch input file was used for the company.",
+  "A seed here means a round above the YC deal of about 500K within about 12 months of the batch start.",
+  "Web results dated after 2026-01-05 were ignored.",
+  "Cohort data is for earlier batches and is right censored."
+ ],
+ "sources": [
+  "https://www.maginative.com/article/basis-secures-34m-to-deploy-ai-agents-for-accounting-firms/",
+  "https://techcrunch.com/2025/05/28/rillet-raises-25m-from-sequoia-to-automate-general-ledger-systems-using-ai",
+  "https://builtin.com/articles/rillet-raises-70m-series-b-20250806",
+  "https://www.cpapracticeadvisor.com/2025/06/02/rillet-raises-25m-series-a-from-sequoia-capital-to-bring-ai-to-mid-market-accounting/162164/"
+ ]
+}

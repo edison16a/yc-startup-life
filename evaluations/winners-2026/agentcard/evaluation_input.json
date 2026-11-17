@@ -1,0 +1,432 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Agentcard",
+  "one_liner": "let agents buy anything online",
+  "description": "Agentcard let's companies buy anything online. We work with companies building personal assistants to enable payments.",
+  "as_of": "2026-07-06"
+ },
+ "yc_acceptance": {
+  "p": 0.02,
+  "p_low": 0.01,
+  "p_high": 0.036000000000000004,
+  "basis": "Test note: this company was accepted to YC, so this is only the forward estimate. Starting prior is about 1 percent for a random applicant (0.6 to 2 percent third party range, per references/yc_acceptance.md). Agent payments is a current YC-style topic with real urgency (up), four person team (neutral), fintech and regulated cards are hard for a young team (down), and large incumbents Stripe, Visa and Coinbase are active (down). Net about 2 percent.",
+  "why_it_fails": "YC would most likely say that card issuing for agents depends on banks and networks, that Stripe, Visa and Coinbase are shipping agent payment rails, and that the customer base of personal assistant companies is tiny and early. Without a regulatory path and live volume, partners may see a feature that incumbents will absorb."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.6,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025 --calibration-only: seed cond 57% (n=23, 50/57/62), series_a cond 23% (n=13; 12/13/23), series_b 0% known (n=3; upper 12%), series_c n/a. Second cohort --industry Fintech --years 2020-2025: seed 66% (n=38), A 24% (n=25), B 17% (n=6). Cohorts under 30 companies are anecdotes; B2B 2022-2025 cohort gives A 26%, B 16%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem.",
+    "adjustment_reason": "0.60/0.57 anchor, 1.05x. Hot agent theme offsets regulatory friction."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small pre-seed of about 600K to 1.5M on a SAFE, barely above the YC deal. If few assistant companies sign on, a small round follows."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical 2026 seed near the 3.0M US median deal size and 18M pre money from PitchBook NVCA via Equidam (see stage_benchmarks.md). Early integrations with assistant builders attract a seed."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Strong seed led by a known fund, near the YC 2022+ announced median of 4.1M or above. A hot agent payments story draws a large round."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed or large first round if usage or revenue spikes, common for hot AI categories in 2026. Fast volume growth attracts a breakout round."
+    }
+   ],
+   "why_it_fails": "The seed step above 500K fails if card issuing and compliance take months, if the few personal assistant companies using it send little volume, or if investors see Stripe, Visa and Coinbase agent products as sufficient. Lyra and Bridgecard show virtual card startups raised little or stalled when issuing partners and chargebacks became hard."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.23,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025 --calibration-only: seed cond 57% (n=23, 50/57/62), series_a cond 23% (n=13; 12/13/23), series_b 0% known (n=3; upper 12%), series_c n/a. Second cohort --industry Fintech --years 2020-2025: seed 66% (n=38), A 24% (n=25), B 17% (n=6). Cohorts under 30 companies are anecdotes; B2B 2022-2025 cohort gives A 26%, B 16%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem.",
+    "adjustment_reason": "0.23 equals the Fintech 2022-25 anchor of 13 to 23 percent known and B2B 26 percent."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or bridge style A, or a down-ish A after a slow year. Volume is thin and revenue is interchange only."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median 2022+ YC Series A raise is 14.15M, market 17.4M. Needs live payment volume and bank partners."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Hot-category A led by a top fund, 62M pre money median market. Needs agent commerce volume at scale."
+    }
+   ],
+   "why_it_fails": "Series A needs live volume and a defensible position. It fails if agent commerce stays small, margins depend on thin interchange, or issuer partners limit programs. Lyra shows no funding after its batch, while Slash reached A only by pivoting to a real customer base of online sellers."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.15,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025 --calibration-only: seed cond 57% (n=23, 50/57/62), series_a cond 23% (n=13; 12/13/23), series_b 0% known (n=3; upper 12%), series_c n/a. Second cohort --industry Fintech --years 2020-2025: seed 66% (n=38), A 24% (n=25), B 17% (n=6). Cohorts under 30 companies are anecdotes; B2B 2022-2025 cohort gives A 26%, B 16%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem.",
+    "adjustment_reason": "Anchor 0 known, B2B 16; 0.15 sits near the B2B anchor, 0.94x."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      180000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin B or flat step. Competition from card issuers."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      55000000
+     ],
+     "post_money_usd": [
+      180000000,
+      450000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median 2022+ YC Series B is 37M, market 39.5M. Needs multiple use cases."
+    },
+    {
+     "raise_usd": [
+      55000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout B at unicorn range if growth is exceptional. Needs network leadership."
+    }
+   ],
+   "why_it_fails": "Series B needs a durable platform with bank relationships and recurring volume. It fails if Stripe, Visa or Coinbase bundle agent cards free, leaving a small margin product. Emburse, a prepaid card startup, ended with a sale at a small scale rather than a Series B."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.18,
+   "anchors": {
+    "base_rate": 0.2,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025 --calibration-only: seed cond 57% (n=23, 50/57/62), series_a cond 23% (n=13; 12/13/23), series_b 0% known (n=3; upper 12%), series_c n/a. Second cohort --industry Fintech --years 2020-2025: seed 66% (n=38), A 24% (n=25), B 17% (n=6). Cohorts under 30 companies are anecdotes; B2B 2022-2025 cohort gives A 26%, B 16%. Calibration rule: stay at or above 0.75 times anchor unless a named analog shows a fatal problem.",
+    "adjustment_reason": "Wide prior; anchor n=0 or 3, so 0.18 is between zero and the 12 to 16 percent upper bounds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Modest C or growth round, or venture debt plus equity. Few fintech infrastructure companies reach this."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1800000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or later; 2022+ YC median C is 45M, D plus 97.5M. Needs licensing and scale."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      1800000000,
+      5000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout later round at multi billion value. Needs category dominance."
+    }
+   ],
+   "why_it_fails": "Series C or later needs licensing, risk systems and large volume. It fails if the market consolidates into the networks and large processors, as with most card startups, and only top companies such as Slash and Jeeves reached these rounds after finding large customer segments."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.32
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.04
+   }
+  ],
+  "why_it_fails": "Failure is most likely that agent payments stay a feature of Stripe, Visa and Coinbase, volume stays small and the company shuts down or is sold for talent. Lyra and Bridgecard show virtual card startups stalling. Upside needs a pivot into a broader spend or banking product, as Slash did."
+ },
+ "analogs": [
+  {
+   "slug": "lyra",
+   "relevance": "Virtual cards, spend crypto online, S22",
+   "outcome_summary": "Three person team, no funding found after batch, active."
+  },
+  {
+   "slug": "bridgecard",
+   "relevance": "Card issuing API, S22",
+   "outcome_summary": "Raised 440K pre-seed, scaled past 1M ARR per a cofounder, now inactive."
+  },
+  {
+   "slug": "slash",
+   "relevance": "Cards and banking via a pivot to online sellers, S21",
+   "outcome_summary": "Raised 19M in 2022, 41M in 2025, Series C in 2026."
+  },
+  {
+   "slug": "emburse",
+   "relevance": "Prepaid controlled cards, W16",
+   "outcome_summary": "Raised 1.5M seed, acquired in 2019."
+  },
+  {
+   "slug": "jeeves",
+   "relevance": "Corporate cards and banking, S20",
+   "outcome_summary": "Seed to Series C in 18 months, unicorn valuation."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Incumbents ship agent payments",
+   "p": 0.5,
+   "evidence": "Stripe, Visa and Coinbase already announce agent payment products and have the distribution.",
+   "analogs": [
+    "lyra",
+    "emburse"
+   ],
+   "mitigation": "Serve assistant builders quickly with better APIs and controls."
+  },
+  {
+   "risk": "Issuing and compliance friction",
+   "p": 0.4,
+   "evidence": "Card programs require bank partners, KYC and chargeback handling that stall small teams.",
+   "analogs": [
+    "bridgecard"
+   ],
+   "mitigation": "Use a licensed issuing platform and add controls first."
+  },
+  {
+   "risk": "Thin early market",
+   "p": 0.4,
+   "evidence": "Few personal assistant companies exist and their volume is small and uncertain.",
+   "analogs": [
+    "lyra"
+   ],
+   "mitigation": "Widen to any agent developer and consumer agent."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Stripe",
+   "what": "Issuing and agent payment tooling",
+   "traction": "Dominant payments platform",
+   "source_url": "https://stripe.com"
+  },
+  {
+   "name": "Visa",
+   "what": "Network with intelligent commerce work for agents",
+   "traction": "Global network",
+   "source_url": "https://usa.visa.com"
+  },
+  {
+   "name": "Coinbase x402",
+   "what": "Crypto payment protocol for agents",
+   "traction": "Active developer protocol",
+   "source_url": "https://www.coinbase.com"
+  },
+  {
+   "name": "Lithic",
+   "what": "Card issuing API",
+   "traction": "Funded issuing API vendor",
+   "source_url": "https://www.lithic.com"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Virtual card issuing for agents requires bank partners, fraud controls and merchant compatibility. A four person team can build on an issuing API in three months, but handling declines, merchant restrictions and compliance is the hard part."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "Stripe",
+   "Visa",
+   "Coinbase"
+  ],
+  "timeline_months": 6,
+  "rationale": "These companies already announce agent payment products and have merchants, issuing and distribution, so absorbing this wedge needs only months and strong incentive."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Agent builders need ways to pay online, and networks and payment firms are launching products for it.",
+    "source_url": "https://usa.visa.com"
+   },
+   {
+    "claim": "Issuing APIs for virtual cards are a paid market today.",
+    "source_url": "https://www.lithic.com"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show live agent card volume from several assistant builders.",
+   "actions": [
+    "Integrate with 5 assistant companies",
+    "Get live issuing with bank partner",
+    "Publish approval rate and fraud numbers"
+   ],
+   "proof": "1M monthly volume and low chargeback rate"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show recurring volume and revenue and add banks.",
+   "actions": [
+    "Add controls and policies",
+    "Expand to more agent types",
+    "Hire compliance lead"
+   ],
+   "proof": "100M annual volume"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Timely need as agents begin transacting",
+   "evidence": "Payment networks are building for it, confirming demand.",
+   "source_url": "https://usa.visa.com"
+  },
+  {
+   "point": "Fintech infrastructure scales with volume once working",
+   "evidence": "Slash and Jeeves reached large rounds after finding volume.",
+   "source_url": "https://stripe.com"
+  }
+ ],
+ "brand": {
+  "name": "Agentcard",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Agentcard\" --era 2022+ : kind invented_or_proper, n=1826, alive 92.7 percent, exit 4.4 percent",
+  "strengths": [
+   "Names the use case directly",
+   "Easy to remember"
+  ],
+  "weaknesses": [
+   "Descriptive and hard to trademark",
+   "Ties it to cards only"
+  ],
+  "rationale": "Agentcard is a descriptive compound that says exactly what it is, which helps early understanding but is weak as a brand and limits expansion. Past YC names like Slash grew beyond cards. Little effect on odds.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Agent payments is timely but incumbents are close; seed likely, later rounds need a pivot or real volume.",
+  "general_summary": "Agentcard offers cards so assistant products can buy things online. Timing is good and investors fund agent infrastructure, so a seed above the YC deal is more likely than not. The weakness is that Stripe, Visa and Coinbase are moving into the same space, card programs need bank and compliance work, and the customer base is early. Fintech analogs such as Lyra and Bridgecard stalled while Slash and Jeeves succeeded after finding large customer bases. The ladder follows the Fintech and B2B anchors with wide uncertainty."
+ },
+ "assumptions": [
+  "Blind forecast: only the YC listing text was used.",
+  "Seed means a round above 500K within about 12 months.",
+  "Fintech cohort is small; B2B anchors used as a cross check.",
+  "Recorded 2026 batch funding was not used as evidence."
+ ],
+ "sources": [
+  "https://stripe.com",
+  "https://usa.visa.com",
+  "https://www.coinbase.com",
+  "https://www.lithic.com"
+ ]
+}

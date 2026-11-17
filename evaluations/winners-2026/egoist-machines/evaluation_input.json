@@ -1,0 +1,465 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Egoist Machines",
+  "one_liner": "Your personal context, securely portable across every AI app.",
+  "description": "Egoist Machines builds AI Passport, a user controlled portable profile of the context a person generates across AI assistants and apps. Apps integrate through a sign in with AI Passport flow that requests scoped, time limited context, which users can inspect and revoke. The company built its own memory store for fast per user retrieval. Distribution is through first party consumer products and integrations into consumer apps. The long term plan is a local hardware device, Digital Domovoy, that keeps context on hardware the user controls. Two person team in San Francisco. Revenue model is not stated.",
+  "as_of": "2026-07-06"
+ },
+ "yc_acceptance": {
+  "p": 0.99,
+  "p_low": 0.98,
+  "p_high": 0.9999,
+  "basis": "The company was accepted to YC, which is the premise of this test, so the acceptance estimate is near certainty. For reference a random applicant starts near 1 percent. This team has a timely theme, privacy and AI memory, but a vague business model and a hardware ambition, so an applicant story like this would be below a typical strong B2B team on the factor table.",
+  "why_it_fails": "YC would most plausibly say no because the pitch is a platform and a protocol with no stated paying customer, a cold start network effect that needs both users and app integrators, and a hardware product years away. Partners often reject two sided identity ideas without early usage numbers, and the AI model companies are shipping their own memory features, so the wedge looked contested when applying. The acceptance step is set from the premise that the company was admitted."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.56,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Consumer --calibration-only: seed 43%/56%/67% (cond 56%, n=16), series_a 0%/0%/24% (cond 0%, n=9); only 21 researched, anecdote level. B2B 2022-2025 cond A 26%, B 16%",
+    "adjustment_reason": "Set at 0.9x the Consumer anchor of 0.56 (n=16). Memory is a hot theme with several funded YC peers, but a two person team with no stated revenue and a protocol pitch is harder to price. Seed here means more than the YC 500K within 12 months."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      6000000,
+      12000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small pre seed from angels or a micro fund, common for consumer teams without traction."
+    },
+    {
+     "raise_usd": [
+      1500000,
+      4000000
+     ],
+     "post_money_usd": [
+      12000000,
+      25000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical 2022+ seed around 3.2M for AI infrastructure with a credible founder story."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong round if the memory layer shows developer pull, in line with mem0 and similar peers."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      50000000,
+      90000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier on a breakout consumer launch. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "The likely failure is that investors cannot find a buyer. Users get little from a passport until many apps accept it and apps will not integrate until users hold passports. Meanwhile the main assistants ship their own memory import, so the consumer pain shrinks. Two founders also split attention between software and hardware. Analogs: epicenter raised only a small pre seed for a similar portable memory idea and oki likewise stayed at 500K."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Consumer --calibration-only: seed 43%/56%/67% (cond 56%, n=16), series_a 0%/0%/24% (cond 0%, n=9); only 21 researched, anecdote level. B2B 2022-2025 cond A 26%, B 16%",
+    "adjustment_reason": "Set at 0.77x the B2B conditional anchor of 0.26 and above the Consumer cohort figure of 0 percent (n=9), which is too small to use. Consumer identity layers rarely reach A, but the infrastructure framing helps and mem0 reached A in 2025."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      9000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin A on early usage. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      9000000,
+      16000000
+     ],
+     "post_money_usd": [
+      45000000,
+      100000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median recent A near 14M raise. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      16000000,
+      30000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Platform story with real app integrations. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      30000000,
+      50000000
+     ],
+     "post_money_usd": [
+      200000000,
+      350000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier if it becomes a standard. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "A Series A needs a measurable network, such as many integrated apps with active passports. The most likely miss is that integrations are pilots with no usage, and consumer adoption is weak because no one sees a reason to manage a context profile. Model vendors can bundle sign in and memory so the neutral layer is unneeded. Analog: mem0 reached A only as a developer API, not as a consumer passport."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Consumer --calibration-only: seed 43%/56%/67% (cond 56%, n=16), series_a 0%/0%/24% (cond 0%, n=9); only 21 researched, anecdote level. B2B 2022-2025 cond A 26%, B 16%",
+    "adjustment_reason": "Older calibration shows conditional B near 44 percent and the recent cohort 16 percent (right censored), so 0.28 sits between. Anyone reaching A in this space has strong usage."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      160000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest B. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      160000000,
+      320000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical recent B. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      45000000,
+      80000000
+     ],
+     "post_money_usd": [
+      320000000,
+      650000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Leader round on rapid user growth. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      80000000,
+      120000000
+     ],
+     "post_money_usd": [
+      650000000,
+      1100000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "At B investors want a clear revenue model. Selling identity and permission services to apps is a slow, small per user business, and the hardware add on needs capital and long cycles with uncertain demand. A privacy product also meets regulators and platform rules on data sharing that can freeze integrations."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.0,
+    "source": "python3 -I scripts/base_rates.py --calibration-only all cohorts: series_c cond 36% (n=55); Consumer 2022-2025 has no C",
+    "adjustment_reason": "Discounted from the 0.36 all cohort conditional rate to 0.20 because consumer hardware and identity layers have few large outcomes."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      650000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Growth round. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      70000000,
+      130000000
+     ],
+     "post_money_usd": [
+      650000000,
+      1300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C for an AI platform. given the cohort anchors and the comparable companies above"
+    },
+    {
+     "raise_usd": [
+      130000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1300000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Category leader. given the cohort anchors and the comparable companies above"
+    }
+   ],
+   "why_it_fails": "Late rounds need a hardware or platform business with real scale. The most likely miss is that the passport never becomes standard, the hardware device sells in small volume with thin margins, and large platforms own the user relationship. Consumer hardware startups rarely reach late stage rounds without a hit product."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.6
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.03
+   }
+  ],
+  "why_it_fails": "Most paths end as a stalled consumer or developer product or a small acquihire by an AI memory or identity company. A large outcome needs the passport to become the default permission layer across AI apps, against model vendors who control the user relationship and ship memory natively."
+ },
+ "analogs": [
+  {
+   "slug": "epicenter",
+   "relevance": "Portable open ChatGPT memory, S25, nearly the same wedge.",
+   "outcome_summary": "A small 500K pre seed in 2025 and active, no larger round found."
+  },
+  {
+   "slug": "mem0",
+   "relevance": "Memory layer for AI, S24, the developer side of the same stack.",
+   "outcome_summary": "Seed then a 20M Series A in 2025, evidence the infrastructure framing can be financed."
+  },
+  {
+   "slug": "oki",
+   "relevance": "Memory computer for your digital life, W25.",
+   "outcome_summary": "500K from YC in 2025 and active, no larger round found."
+  },
+  {
+   "slug": "zep-ai",
+   "relevance": "Context layer for enterprise data, W24.",
+   "outcome_summary": "Small rounds including a YC check, alive."
+  },
+  {
+   "slug": "preclusio",
+   "relevance": "Privacy compliance startup, S19, a privacy pitch with weak buyer pull.",
+   "outcome_summary": "Shut down with no later funding found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Cold start network problem between users and integrating apps",
+   "p": 0.4,
+   "evidence": "Value to a user depends on many apps accepting the passport and apps join only if many users hold one; no early usage is stated.",
+   "analogs": [
+    "epicenter",
+    "oki"
+   ],
+   "mitigation": "Ship a first party product that is useful alone, then open the API."
+  },
+  {
+   "risk": "Model vendors ship memory and import natively",
+   "p": 0.4,
+   "evidence": "Anthropic added memory import from other assistants in early 2026 and the assistants already keep their own memory.",
+   "analogs": [
+    "epicenter",
+    "oki"
+   ],
+   "mitigation": "Be the neutral layer for apps outside the big assistants."
+  },
+  {
+   "risk": "No clear payer or business model",
+   "p": 0.35,
+   "evidence": "The description names no customer who pays and consumer privacy products historically monetize poorly.",
+   "analogs": [
+    "preclusio"
+   ],
+   "mitigation": "Charge apps per verified context request."
+  },
+  {
+   "risk": "Hardware ambition splits a two person team",
+   "p": 0.25,
+   "evidence": "Digital Domovoy needs hardware design, supply chain and capital that two founders cannot cover while building software.",
+   "analogs": [
+    "oki"
+   ],
+   "mitigation": "Defer hardware until the software layer has usage."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Mem0 and OpenMemory",
+   "what": "Memory layer for agents, with a browser extension that shared memory across chat sites.",
+   "traction": "Series A in 2025, extension launched June 2025.",
+   "source_url": "https://mem0.ai/blog/introducing-the-openmemory-chrome-extension"
+  },
+  {
+   "name": "ChatGPT, Claude and Gemini native memory",
+   "what": "Assistants with built in memory and a memory import tool from competitors.",
+   "traction": "Claude launched memory import on March 2 2026 per guides.",
+   "source_url": "https://tomsguide.com/ai/you-can-move-your-chatgpt-memory-to-claude-in-60-seconds-heres-how"
+  },
+  {
+   "name": "MacPaw portable memory proposal",
+   "what": "Open standard proposal for cross vendor AI memory.",
+   "traction": "Research proposal with reference implementation, no revenue.",
+   "source_url": "https://research.macpaw.com/publications/portable-memory.md"
+  },
+  {
+   "name": "Status quo: copy and paste of context",
+   "what": "Users manually restate preferences to each assistant.",
+   "traction": "Default behavior, mild pain.",
+   "source_url": "https://engadget.com/2222018/how-to-switch-from-chatgpt-to-claude-without-losing-information"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A scoped permission layer and fast per user memory retrieval are doable by a strong small team. The hard parts are getting access to context held by other apps, secure on device processing, and any hardware, which two people cannot finish in three months."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "OpenAI",
+   "Anthropic",
+   "Google",
+   "Apple"
+  ],
+  "timeline_months": 9,
+  "rationale": "The big assistants already offer memory and import tools and control sign in. They have the distribution and incentive to keep context inside their own products, so a neutral layer depends on their cooperation or on a niche they ignore."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Users and commentators describe AI memory as trapped in each vendor, and guides exist for moving it between assistants.",
+    "source_url": "https://portable-ai-memory.pages.dev/blog/ai-memory-portability-problem/"
+   },
+   {
+    "claim": "Memory infrastructure companies are raising money, such as a 20M Series A for a memory layer.",
+    "source_url": "https://techcrunch.com/2025/10/28/mem0-raises-24m-from-yc-peak-xv-and-basis-set-to-build-the-memory-layer-for-ai-apps"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Prove that people keep a passport and apps request it.",
+   "actions": [
+    "Ship a first party product that people use daily.",
+    "Sign five consumer apps to the sign in flow with live traffic."
+   ],
+   "proof": "Weekly active passports and requests per app growing for eight weeks"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show a repeatable integration and revenue model.",
+   "actions": [
+    "Price scoped context access per request or per active user.",
+    "Hit retention above 40 percent at three months on holders."
+   ],
+   "proof": "Paying apps and cohort retention"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Timely theme with funded peers",
+   "evidence": "Memory layer companies from recent YC batches raised seeds and an A.",
+   "source_url": "https://techcrunch.com/2025/10/28/mem0-raises-24m-from-yc-peak-xv-and-basis-set-to-build-the-memory-layer-for-ai-apps"
+  },
+  {
+   "point": "Privacy and user ownership is a clear differentiator from the assistants",
+   "evidence": "The pitch is explicitly user governed access with revocation, which assistants have little incentive to build."
+  }
+ ],
+ "brand": {
+  "name": "Egoist Machines",
+  "rating": 2,
+  "effect_on_success": "unclear",
+  "name_check": "python3 -I scripts/name_features.py --score \"Egoist Machines\" --era 2022+ gave kind compound_words, 14 chars, 2 words",
+  "strengths": [
+   "Memorable and distinctive",
+   "Fits the self sovereign theme"
+  ],
+  "weaknesses": [
+   "Egoist has a negative connotation for consumers",
+   "Long, and the product name AI Passport is what users will see"
+  ],
+  "rationale": "The company name is unusual and the product brand AI Passport carries the consumer message, so the name matters less. A negative word like egoist could hurt a consumer facing trust product, though most YC brands show no clear effect.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A timely idea with a hard cold start and a crowded memory field, likely to stop at seed.",
+  "general_summary": "Egoist Machines wants a portable, user controlled context layer across AI apps. Memory is a hot theme and peer YC companies have raised, so a seed above the YC check is a coin flip rather than a long shot. Beyond that, the passport needs both users and integrating apps, the model vendors are building memory and import themselves, and the business model is unstated. Hardware adds cost and delay. The ladder sits slightly under the cohort anchors, with the highest chance of ending as a stalled product or a small acquihire."
+ },
+ "assumptions": [
+  "No revenue or usage figures were given.",
+  "The Consumer cohort has 21 researched companies and is anecdote level, so B2B anchors were also used.",
+  "Web results dated before 2026-07-06 only were used for the market."
+ ],
+ "sources": [
+  "https://mem0.ai/blog/introducing-the-openmemory-chrome-extension",
+  "https://tomsguide.com/ai/you-can-move-your-chatgpt-memory-to-claude-in-60-seconds-heres-how",
+  "https://research.macpaw.com/publications/portable-memory.md",
+  "https://engadget.com/2222018/how-to-switch-from-chatgpt-to-claude-without-losing-information",
+  "https://portable-ai-memory.pages.dev/blog/ai-memory-portability-problem/",
+  "https://techcrunch.com/2025/10/28/mem0-raises-24m-from-yc-peak-xv-and-basis-set-to-build-the-memory-layer-for-ai-apps"
+ ]
+}

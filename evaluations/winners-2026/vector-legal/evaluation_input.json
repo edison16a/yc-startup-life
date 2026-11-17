@@ -1,0 +1,425 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Vector Legal",
+    "one_liner": "A premier AI-native law firm & legal operating system for Startups.",
+    "description": "A modern solution for Startup legal.\n\nVector combines premier lawyers/paralegals (averaging 13+ years of experience) + custom-built AI, so our clients get world class startup legal service at a fraction of Big Law rates. See our client testimonials - https://www.vectorlegal.com/testimonials.\n\nServices: fundraise & priced rounds | customer contracts and commercial contracts | international flips | complex formations | grow your team | agentic data rooms | e-signatures | cap table management | legal health checks | mergers & acquisitions | co-founder separations | dissolutions.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.03,
+    "p_low": 0.015,
+    "p_high": 0.06,
+    "basis": "Roughly 1 percent base rate with a 0.6 to 2 percent band (references/yc_acceptance.md). Test is conditional on acceptance, so this is a note only: the company is a services business with real revenue and senior lawyers, and AI-native law firms were a visible funded category in late 2025, which pushes the estimate up from the base rate.",
+    "why_it_fails": "YC would most plausibly worry that a law firm with software layered on is a services margin business that does not scale like software, and that the regulatory structure around lawyer ownership limits the equity story. The estimate leans on the cohort base rates in stage_benchmarks.md, where later rounds are rare and slow, and on what happened to comparable YC companies such as atrium and draftwise."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.72,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Within 0.75 times the 59 percent recent cohort anchor and close to the 81 percent 2018-2021 anchor. Raised from 59 because AI-native legal was among the best funded categories of 2025 and the company has paying startup clients from day one."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            14000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin round: a small angel or SAFE round on top of YC because the services revenue means little capital is needed and investors see a law firm, not software."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            5000000
+          ],
+          "post_money_usd": [
+            15000000,
+            30000000
+          ],
+          "p_band": 0.55,
+          "rationale": "Core round close to the 2022+ YC seed median of about 4.1M (stage_benchmarks.md) and US seed deal size near 3.0M."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the AI-native law firm story lands as it did for hybrid firms that raised large rounds in 2025."
+        }
+      ],
+      "why_it_fails": "The seed most plausibly stalls because investors read Vector as a boutique law firm with a revenue line tied to lawyer hours. Atrium, an earlier YC law firm for startups, raised big rounds yet never made lawyers meaningfully more efficient and wound down. Small teams of nine can look like a services shop, and AI native law firm rivals with larger early rounds can soak up the investor attention in the first year."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Set near the 22 to 32 percent Series A anchors from the cohort commands above and not below 0.75 times the recent anchor of 26 percent, per the backtest rule; reaching a round later is common for companies with paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            6000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            50000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin Series A for a services heavy margin profile, below the 2022+ YC Series A median of 14M."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            110000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core band matching the 2022+ YC median of about 14M and a market Series A near 17M."
+        },
+        {
+          "raise_usd": [
+            22000000,
+            40000000
+          ],
+          "post_money_usd": [
+            120000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if software gross margins and enterprise legal clients show up, as the best funded AI law firms reached."
+        }
+      ],
+      "why_it_fails": "Series A fails if revenue per lawyer does not rise quickly and gross margin stays near a normal firm. Atrium reached a 65M Series B yet never fixed that and Spire Law stayed a small self sustaining practice. Investors may also prefer pure legal software such as Draftwise, which raised a venture round on product revenue, over a firm that carries malpractice exposure."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Anchor is 16 percent for 2022 to 2025 (n=19) and 39 percent for 2018 to 2021 (n=18); set between them at a figure above 0.75 times the recent anchor, since survivors of Series A usually have paying customers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            180000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Flat or modest Series B because services margins cap valuation. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            35000000,
+            55000000
+          ],
+          "post_money_usd": [
+            200000000,
+            400000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Core band near the 2022+ YC Series B median of 37M. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            450000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the default legal operating system for venture backed startups. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series B fails if the company stays a startup legal vendor whose customers churn when they stop raising. Startup legal spend is cyclical with venture funding, a risk Atrium also faced, and growth into mid-market contracts would need a different sales motion that a lean team may not build in time."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126, lower 49%, upper 65%), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Older cohort --years 2018-2021 --industry B2B: seed cond 81% (n=69), series_a 32% (n=56), series_b 39% (n=18), series_c 57% (n=7).",
+        "adjustment_reason": "Older cohort anchor 57 percent (n=7) and recent 0 percent (n=3), both tiny samples; set well below the older anchor because few companies reach late stage and the samples are anecdotes."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000,
+            60000000
+          ],
+          "post_money_usd": [
+            300000000,
+            500000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Modest growth round. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            500000000,
+            1000000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Core late stage round, 2022+ YC Series C median about 45M with market near 77M."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it consolidates legal services across a large base of startups. It is sized against the 2022 and later YC round medians and current market deal sizes in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "A Series C is unlikely because law firm models have rarely been valued like software, and the larger legal AI leaders such as Harvey and Legora, which have far larger rounds, can sell directly to the same buyers. The few venture scale outcomes in legal services need either large exits or acquisition by an incumbent."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.45
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.38
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.15
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.02
+      }
+    ],
+    "why_it_fails": "A shutdown or stall is likeliest because the model depends on lawyer capacity and a startup client base that shrinks in funding downturns. Atrium raised 75M and shut down, ROSS Intelligence was sued by an incumbent, and Spire Law stayed small. Most plausible exits are acquisitions by legal tech or a larger firm below 100M."
+  },
+  "analogs": [
+    {
+      "slug": "atrium",
+      "relevance": "Closest model: a YC law firm for startups powered by technology.",
+      "outcome_summary": "Raised 75.5M across a Series A and Series B, then wound down after failing to make lawyers meaningfully more efficient."
+    },
+    {
+      "slug": "draftwise",
+      "relevance": "YC legal AI that paired ex lawyers with engineers.",
+      "outcome_summary": "Reached Series A with law firm backing, showing legal AI can raise on product revenue."
+    },
+    {
+      "slug": "ross-intelligence",
+      "relevance": "YC legal AI that attacked incumbents.",
+      "outcome_summary": "Raised about 13M, then shut down after an incumbent lawsuit."
+    },
+    {
+      "slug": "spire-law",
+      "relevance": "Tech enabled law firm from YC.",
+      "outcome_summary": "Remains a small self sustaining practice, never venture scale."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Services margins cap the venture story",
+      "p": 0.4,
+      "evidence": "Revenue depends on lawyer and paralegal hours, which look like a conventional firm to investors, as in the Atrium outcome.",
+      "analogs": [
+        "atrium",
+        "spire-law"
+      ],
+      "mitigation": "Show software gross margin by automating drafting and diligence and report revenue per lawyer each quarter."
+    },
+    {
+      "risk": "Better funded AI native law firms and legal AI leaders",
+      "p": 0.4,
+      "evidence": "Crosby, Eudia Counsel and Norm Law all raised large rounds in 2025, so investor attention and the best startup clients are contested.",
+      "analogs": [
+        "draftwise",
+        "atrium"
+      ],
+      "mitigation": "Pick a narrow wedge such as international flips and priced rounds and win it on speed."
+    },
+    {
+      "risk": "Bar and ownership rules limit the structure",
+      "p": 0.2,
+      "evidence": "Law firm ownership rules limit outside equity, as the AI law firm structure writeups note, which can complicate how investors own the upside.",
+      "analogs": [
+        "atrium"
+      ],
+      "mitigation": "Use an Arizona style structure or an MSO and explain it plainly to investors."
+    },
+    {
+      "risk": "Startup legal spend follows the funding cycle",
+      "p": 0.25,
+      "evidence": "Clients are venture backed startups that cut legal spend when funding slows.",
+      "analogs": [
+        "atrium"
+      ],
+      "mitigation": "Add recurring subscription products such as cap table management and legal health checks."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Crosby",
+      "what": "Hybrid AI law firm for contracts.",
+      "traction": "Raised a 20M Series A in October 2025, per press.",
+      "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
+    },
+    {
+      "name": "Eudia Counsel",
+      "what": "AI augmented law firm in Arizona.",
+      "traction": "Came out of stealth with 105M Series A, tied to acquisitions.",
+      "source_url": "https://www.eudia.com/news/2025-sparked-a-legal-tech-funding-frenzy-here-were-some-of-the-notable-deals"
+    },
+    {
+      "name": "Traditional startup firms and Big Law",
+      "what": "Orrick, Wilson Sonsini, Cooley and others.",
+      "traction": "Dominant incumbents with startup practices and referral networks.",
+      "source_url": "https://www.globallegalpost.com/news/a-fancy-deck-and-a-round-of-funding-doesnt-make-a-law-firm-708945371"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 2,
+    "rationale": "The AI is mostly applied drafting, review and workflow around existing models, which a small team can build in three months. The hard part is operational: recruiting senior lawyers, malpractice risk and quality control, not engineering."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Large law firms",
+      "Harvey and Legora style legal AI",
+      "Norm Law and Crosby"
+    ],
+    "timeline_months": 12,
+    "rationale": "Well funded AI law firms and the large legal AI platforms can add startup legal services within a year, though lawyer hiring and trust are slower to copy than software."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Legal tech funding reached about 3.2 billion dollars in 2025 and AI native firms raised large rounds.",
+        "source_url": "https://www.eudia.com/news/2025-sparked-a-legal-tech-funding-frenzy-here-were-some-of-the-notable-deals"
+      },
+      {
+        "claim": "Investors such as Cooley and Index backed a hybrid AI law firm in 2025, showing buyers and capital for the category.",
+        "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show paying startup clients and testimonials.",
+      "actions": [
+        "Convert existing client work into a recurring subscription plan.",
+        "Publish turnaround time and price versus Big Law."
+      ],
+      "proof": "Monthly recurring revenue and net retention from the first 20 clients."
+    },
+    {
+      "phase": "seed",
+      "goal": "Prove software gross margin.",
+      "actions": [
+        "Automate drafting for priced rounds and contracts.",
+        "Track revenue per lawyer."
+      ],
+      "proof": "Gross margin well above a normal firm."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Win a narrow category.",
+      "actions": [
+        "Own international flips and financings.",
+        "Add data room and cap table products."
+      ],
+      "proof": "Repeatable revenue above 3M annualized."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Senior lawyers averaging over 13 years and testimonials.",
+      "evidence": "Description lists the team and a testimonials page."
+    },
+    {
+      "point": "Real revenue from day one through services.",
+      "evidence": "Clients pay for legal work directly, reducing the need for early capital."
+    },
+    {
+      "point": "The category is funded and validated by investors in 2025.",
+      "evidence": "Crosby and Eudia rounds.",
+      "source_url": "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/"
+    }
+  ],
+  "brand": {
+    "name": "Vector Legal",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Vector Legal\" --era 2022+ : two word compound with a descriptor.",
+    "strengths": [
+      "Clear and memorable, easy to say."
+    ],
+    "weaknesses": [
+      "Descriptive and generic, hard to own a trademark."
+    ],
+    "rationale": "The name pairs a generic word with a category word, similar to many plain B2B names, so it is clear but not distinctive. Brand rarely decides outcomes for services companies compared with trust and referrals.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A credible AI assisted startup law firm that probably gets a seed but faces a services margin ceiling.",
+    "general_summary": "Vector sells legal services to startups with senior lawyers and custom AI. In the winter 2026 cohort of 199 companies it joined a hot area: AI native law firms raised large rounds in 2025. The most likely path is a seed round of a few million dollars, then a harder Series A where investors ask whether margins look like software or like a firm. Atrium is the closest failure, and Draftwise shows legal AI selling software can raise a Series A. Data behind the numbers is thin because the cohort of 2022 to 2025 B2B companies has few Series B examples."
+  },
+  "assumptions": [
+    "Founder identities and traction were not provided, so team strength is assumed average.",
+    "Only the description, one liner and team size of nine were used."
+  ],
+  "sources": [
+    "https://www.artificiallawyer.com/2025/10/08/hybrid-ai-law-firm-crosby-raises-20m-cooley-invests/",
+    "https://www.eudia.com/news/2025-sparked-a-legal-tech-funding-frenzy-here-were-some-of-the-notable-deals",
+    "https://www.globallegalpost.com/news/a-fancy-deck-and-a-round-of-funding-doesnt-make-a-law-firm-708945371",
+    "https://www.ycombinator.com/deal"
+  ]
+}

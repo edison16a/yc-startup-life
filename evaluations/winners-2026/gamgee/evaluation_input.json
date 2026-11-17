@@ -1,0 +1,429 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Gamgee",
+    "one_liner": "Curing cancer. Starting with dogs.",
+    "description": "Gamgee runs an end to end service for personalised mRNA cancer vaccines for dogs: sequence tumour and healthy DNA, find tumour specific mutations, design a vaccine, and manage vet intake, production, treatment and monitoring. Owners and vets pay per case. Early clinical trials in Australia. Team of 2, Summer 2026 batch.",
+    "as_of": "2026-07-06"
+  },
+  "yc_acceptance": {
+    "p": 0.02,
+    "p_low": 0.005,
+    "p_high": 0.05,
+    "basis": "Test assumes the company was accepted, so this is only a note. Prior about 1 percent (0.6 to 2 percent third party range). Up for a vivid personal origin and a technical founder story with a real treated case, down for biotech capital need, a regulatory path that YC rarely funds and a team of only two.",
+    "why_it_fails": "YC would most plausibly pass because one treated dog is not a repeatable business: the evidence is a single case, the vaccine was made with university scientists and the founder's wet lab and veterinary credentials are unclear. Biotech with long timelines is also a poor fit for a three month batch."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.55,
+      "anchors": {
+        "base_rate": 0.74,
+        "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2019-2023 --calibration-only: seed 72/74/75 (cond 74, n=31), A 34/35/38 (cond 48, n=23), B 19/19/22 (cond 55, n=11), C 3/3/6 (cond 17, n=6). Healthcare median months to seed is 11 and 19 for slower cells.",
+        "adjustment_reason": "0.74 times the 0.74 anchor, near the 0.75 floor. The anchor counts any seed ever and healthcare is slow (about 11 months median to seed), while this test needs a round above $500K within roughly 12 months. The viral origin story and AI angle raise it, regulated biotech and two founders lower it."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            600000,
+            1200000
+          ],
+          "post_money_usd": [
+            5000000,
+            10000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin round of angels or grants just above the standard deal; biotech seeds often start small as in LEAH Labs which lived on grants and small angel money."
+        },
+        {
+          "raise_usd": [
+            2000000,
+            5000000
+          ],
+          "post_money_usd": [
+            12000000,
+            30000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical bio seed of $2 to 5M, similar to FidoCure's $5M seed from a bio fund in 2019."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            35000000,
+            70000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the viral story and trial data bring a bio fund to lead."
+        }
+      ],
+      "why_it_fails": "The seed stalls if investors see one treated dog as an anecdote and the company cannot show a second and third case, or a credible cost per vaccine. Bio funds want a clear regulatory pathway with the animal drug regulator, and vet oncologists must refer cases. LEAH Labs lived on grants for years without a priced round, and Immunity Project never raised."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.37,
+      "anchors": {
+        "base_rate": 0.48,
+        "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2019-2023 --calibration-only: seed 72/74/75 (cond 74, n=31), A 34/35/38 (cond 48, n=23), B 19/19/22 (cond 55, n=11), C 3/3/6 (cond 17, n=6). Healthcare median months to seed is 11 and 19 for slower cells.",
+        "adjustment_reason": "0.77 times the 48 percent anchor. Healthcare and drug cohorts reach A more often than the other industries, but a service built on custom manufacturing is capital heavy and the pet oncology market is small."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            25000000,
+            50000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Small A, below the 2022+ median of $14M, for a vet focused company."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            20000000
+          ],
+          "post_money_usd": [
+            50000000,
+            100000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical Series A for a companion animal therapeutics platform, around the $10M that FidoCure raised in 2020."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            120000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if trial data suggest the platform can extend to human oncology."
+        }
+      ],
+      "why_it_fails": "A Series A needs controlled trial data showing response and a manufacturing process that turns around a vaccine at a cost owners can pay, around thousands of dollars. Individual mRNA design is expensive and each case is a new drug. FidoCure reached an A with a standing sequencing and drug matching model, but Helix Nanotechnologies, a similar mRNA platform, raised nothing found in years."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.4,
+      "anchors": {
+        "base_rate": 0.55,
+        "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2019-2023 --calibration-only: seed 72/74/75 (cond 74, n=31), A 34/35/38 (cond 48, n=23), B 19/19/22 (cond 55, n=11), C 3/3/6 (cond 17, n=6). Healthcare median months to seed is 11 and 19 for slower cells.",
+        "adjustment_reason": "0.73 times the 55 percent anchor (n=11), slightly under the floor because the sample is tiny and pet oncology is a small market, as the named analog FidoCure shows no Series B found."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            15000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat B because vet markets are small. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical bio Series B size. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the work becomes a human cancer program. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        }
+      ],
+      "why_it_fails": "Series B needs proof the vaccine works across breeds and tumour types and a path to a larger human market or licensing. Animal oncology may be too small to support a venture sized company by itself, and big animal health firms can in license the approach. FidoCure stopped at a Series A and Adventris, which is human, is still preclinical."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.2,
+      "anchors": {
+        "base_rate": 0.17,
+        "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2019-2023 --calibration-only: seed 72/74/75 (cond 74, n=31), A 34/35/38 (cond 48, n=23), B 19/19/22 (cond 55, n=11), C 3/3/6 (cond 17, n=6). Healthcare median months to seed is 11 and 19 for slower cells.",
+        "adjustment_reason": "1.2 times the 17 percent anchor from n=6, which is thin. The few companies that reach C in healthcare tend to be human therapeutics, so we stay close to the anchor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000,
+            70000000
+          ],
+          "post_money_usd": [
+            200000000,
+            400000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Modest later round for an animal health platform. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            500000000,
+            1000000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Typical bio growth round. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the human oncology path opens. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        }
+      ],
+      "why_it_fails": "A Series C needs a pivot into human oncology or a profitable large veterinary business. The regulatory costs, trial sizes and mRNA manufacturing required are large, and the company might be acquired by an animal health major before then. Nuntius and Sensible show how long mRNA platforms take."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.58
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.24
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.14
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "Most likely it stalls as a one off service that cannot scale because each vaccine is custom and veterinary demand is small, or it is acquired for its data and team. Helix Nanotechnologies and Immunity Project stayed active without large rounds, and VetPronto sold for a small amount. A billion dollar outcome requires human oncology success, which is a different company."
+  },
+  "analogs": [
+    {
+      "slug": "fidocure",
+      "relevance": "Precision oncology for dogs, same buyers and vets",
+      "outcome_summary": "$5M seed in 2019 and $10M Series A in 2020, still active."
+    },
+    {
+      "slug": "helix-nanotechnologies",
+      "relevance": "mRNA platform for cancer, long biotech timeline",
+      "outcome_summary": "Still active, no later round found, reached a phase I trial for a COVID vaccine."
+    },
+    {
+      "slug": "leah-labs",
+      "relevance": "Pet therapy company on grants and small money",
+      "outcome_summary": "Alive after seven years on grants and angels, no priced round."
+    },
+    {
+      "slug": "adventris-pharmaceuticals",
+      "relevance": "Cancer vaccine startup with an oncologist founder",
+      "outcome_summary": "Active and preclinical with a seed round."
+    },
+    {
+      "slug": "vetpronto",
+      "relevance": "Veterinary consumer service with small market",
+      "outcome_summary": "Raised about $1.3M and was acquired after failing to scale."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "One case does not generalise and trials show no consistent benefit",
+      "p": 0.45,
+      "evidence": "The company's proof is a single dog; tumour response to personalised vaccines is variable and unproven in controlled settings.",
+      "analogs": [
+        "helix-nanotechnologies",
+        "immunity-project"
+      ],
+      "mitigation": "Run a registered trial with matched controls and publish the results."
+    },
+    {
+      "risk": "Unit economics fail because each custom vaccine costs more than owners will pay",
+      "p": 0.4,
+      "evidence": "Sequencing, design and mRNA production per patient cost thousands and the companion animal market has a spending ceiling.",
+      "analogs": [
+        "fidocure",
+        "vetpronto"
+      ],
+      "mitigation": "Standardise manufacturing, batch cases and start with owners who accept premium prices."
+    },
+    {
+      "risk": "Regulatory and manufacturing limits slow growth and need capital the seed will not cover",
+      "p": 0.4,
+      "evidence": "Animal biologics need approvals and GMP like production, and the founder works through university labs.",
+      "analogs": [
+        "leah-labs",
+        "adventris-pharmaceuticals"
+      ],
+      "mitigation": "Partner with a contract manufacturer and the regulator early and use non dilutive grants."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Torigen Pharmaceuticals",
+      "what": "Autologous cancer vaccines for dogs",
+      "traction": "Conditionally approved veterinary cancer immunotherapy",
+      "source_url": "https://www.torigen.com"
+    },
+    {
+      "name": "Elias Animal Health",
+      "what": "Canine cancer immunotherapy",
+      "traction": "Backed by animal health investors",
+      "source_url": "https://www.eliasanimalhealth.com"
+    },
+    {
+      "name": "FidoCure",
+      "what": "Genomic precision oncology for dogs",
+      "traction": "Series A and a vet network",
+      "source_url": "https://www.fidocure.com"
+    },
+    {
+      "name": "Standard chemotherapy and surgery at vet oncology practices",
+      "what": "Status quo treatment",
+      "traction": "Default for most dogs with cancer",
+      "source_url": "https://www.acvim.org"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 5,
+    "rationale": "The work spans genomics, computational vaccine design, mRNA manufacturing and clinical validation, which a two person team cannot do alone. The hard parts are partly solvable through partners and labs, but they set the timeline and cost. Model assisted target discovery is the easy part."
+  },
+  "takeover_risk": {
+    "rating": 2,
+    "who": [
+      "Zoetis",
+      "Merck Animal Health",
+      "Torigen"
+    ],
+    "timeline_months": 36,
+    "rationale": "Large animal health firms have the distribution but not a personalised mRNA service, and building one needs years of trials. A funded rival like FidoCure or Torigen could add mRNA in a few years, so risk is moderate."
+  },
+  "market_need_now": {
+    "rating": 3,
+    "evidence": [
+      {
+        "claim": "Cancer is a leading cause of death in dogs and owners spend heavily on treatment, with existing paid canine immunotherapy products.",
+        "source_url": "https://www.torigen.com"
+      },
+      {
+        "claim": "FidoCure showed that dog owners pay for genomic cancer treatment and that funds back the category.",
+        "source_url": "https://www.fidocure.com"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show repeatable evidence beyond a single dog",
+      "actions": [
+        "Treat two or three more dogs under a trial protocol",
+        "Document tumour response and costs"
+      ],
+      "proof": "Three treated dogs with measured outcomes"
+    },
+    {
+      "phase": "seed",
+      "goal": "Raise above $500K within 12 months",
+      "actions": [
+        "Apply for grants and bio angel funds with the trial data",
+        "Sign a veterinary oncology referral partner"
+      ],
+      "proof": "Term sheet from a bio fund or grant above $500K"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Prove a standardised vaccine process",
+      "actions": [
+        "Cut turnaround and cost per vaccine",
+        "Start a controlled study with a university"
+      ],
+      "proof": "A controlled trial with positive response data"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Vivid founder market fit and a real treated case",
+      "evidence": "The founder used AI genomic analysis to design a vaccine for his own dog, with tumours shrinking, giving credibility and press.",
+      "source_url": "https://www.fidocure.com"
+    },
+    {
+      "point": "Owners will pay for canine cancer treatment",
+      "evidence": "Paid competitors exist and FidoCure raised a Series A, showing investors fund the category.",
+      "source_url": "https://www.fidocure.com"
+    }
+  ],
+  "brand": {
+    "name": "Gamgee",
+    "rating": 4,
+    "effect_on_success": "helps",
+    "name_check": "python3 -I scripts/name_features.py --score \"Gamgee\" --era 2022+: invented or proper noun, 6 characters, 1 word",
+    "strengths": [
+      "Short and memorable",
+      "Warm literary reference to a loyal companion that suits pets"
+    ],
+    "weaknesses": [
+      "Name says nothing about medicine, so trust must come from results"
+    ],
+    "rationale": "A short, warm name fits the dog story and consumer owner trust, and short names did better in older YC eras. Companies like FidoCure used descriptive names, so Gamgee is more brand driven but credibility for a biotech still needs proof.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A moving origin story and a real paid niche, but a custom biologic with one case of evidence and a heavy capital path.",
+    "general_summary": "Gamgee turns one dog's treatment into a service for personalised mRNA vaccines for pets. Dog owners pay for cancer care and FidoCure shows investors fund the category, so a small seed is plausible, helped by a strong story. The hard parts are repeatable results, per case cost, regulation and manufacturing, and a Series A needs trial data. Analogs split between FidoCure, which raised an A, and mRNA or grant funded companies that stayed small. The healthcare cohort is slow to seed, so the one year seed estimate is lower than the cohort anchor."
+  },
+  "assumptions": [
+    "Only the input file was used for the company; market sections use general knowledge and homepage URLs.",
+    "Seed in this test means a round above about $500K within 12 months of the batch start.",
+    "Healthcare cohort has 32 researched companies, near the 30 minimum.",
+    "Competition recorded as of July 2026."
+  ],
+  "sources": [
+    "https://www.roundfunded.com/en/blogs/yc-acceptance-rate-2026",
+    "https://www.torigen.com",
+    "https://www.eliasanimalhealth.com",
+    "https://www.fidocure.com",
+    "https://www.acvim.org"
+  ]
+}

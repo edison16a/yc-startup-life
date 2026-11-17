@@ -1,0 +1,420 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Minicor",
+  "one_liner": "Scalable windows desktop automations",
+  "description": "Minicor lets AI startups call legacy Windows desktop apps that have no API. A customer describes a workflow and gets an API endpoint; each call runs a self healing automation on a Windows VM, on premises, in the cloud or over Citrix. Observability includes video replay, logging and Slack alerts. Customers are AI companies that need to reach legacy systems on behalf of their own clients.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.1,
+  "p_low": 0.05,
+  "p_high": 0.15,
+  "basis": "Note only: the company is already accepted to YC Spring 2026, so this is not a forecast. Prior of about 1 percent for a random applicant (yc_acceptance.md) is not informative here. The work is in the ladder.",
+  "why_it_fails": "Not applicable because the company was accepted. A reviewer would most plausibly worry that computer use agents from model labs and UiPath make a thin wrapper around Windows VMs easy to copy. Because acceptance is already a fact in this test, the estimate is a placeholder and the forecast value sits in the funding ladder that follows."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.62,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --calibration-only: seed cond 61% (n=88; 50/61/68 lower/known/upper), series_a cond 33% (n=54), series_b cond 17% (n=18); series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "Within 0.75x to 1.1x of the anchor. Up for hot AI infrastructure demand and a nine person team, down because the buyer is other AI startups, a small and young customer base."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      2000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small pre seed or angel round after the YC deal, common for infrastructure teams with a few pilots."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      5000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Core outcome: 2022+ B2B seed median is about 3.3M (base_rates.py) and AI infrastructure rounds run higher."
+    },
+    {
+     "raise_usd": [
+      5000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside if logos in healthcare or insurance back office prove demand, as with Sola."
+    }
+   ],
+   "why_it_fails": "The most likely stall is that customers are AI startups that themselves have few paying clients, so revenue stays at pilots. Investors may also doubt that a Windows VM plus a vision model is a company when UiPath, Microsoft and the model labs ship computer use. Cyberdesk, a close peer, shows no confirmed round after its batch."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --calibration-only: seed cond 61% (n=88; 50/61/68 lower/known/upper), series_a cond 33% (n=54), series_b cond 17% (n=18); series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "0.9x of the anchor. Automat and Sola reached Series A in the RPA reinvention wave, so no larger discount is justified."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin round on modest annual recurring revenue. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      110000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Matches the 2022+ B2B Series A median of about 14.9M."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      110000000,
+      250000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside if usage per customer compounds across many enterprise end clients."
+    }
+   ],
+   "why_it_fails": "Series A fails if recurring revenue stays below the level investors expect, roughly 1M or more with growth, or if gross margin is hurt by VM and vision model costs. Concentration is a risk when a few AI customers drive usage. Skyvern raised only a seed more than two years after its batch, which is the likely path for a thin wedge."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.16,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --calibration-only: seed cond 61% (n=88; 50/61/68 lower/known/upper), series_a cond 33% (n=54), series_b cond 17% (n=18); series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "Near the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      160000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or modest step up. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      160000000,
+      400000000
+     ],
+     "p_band": 0.5,
+     "rationale": "2022+ B2B Series B median about 45M. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      400000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it becomes the standard bridge to legacy apps."
+    }
+   ],
+   "why_it_fails": "Series B fails when the product is replaced by agent platforms that ship their own desktop control, or when enterprises keep building in house. Growth must show net revenue retention above 120 percent and low support cost per automation; self healing flows that still need human fixes keep margins thin."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --calibration-only: seed cond 61% (n=88; 50/61/68 lower/known/upper), series_a cond 33% (n=54), series_b cond 17% (n=18); series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "Slightly under the anchor because few comparable companies got this far."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      70000000
+     ],
+     "post_money_usd": [
+      250000000,
+      600000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round at moderate scale. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      150000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical unicorn path for infrastructure with enterprise contracts."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it becomes core agent infrastructure. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    }
+   ],
+   "why_it_fails": "Later rounds fail if growth decays once the early AI customers saturate, or if hyperscalers bundle agent desktops cheaply. Bird style breakout cases are rare and the sample at this stage is small, so the odds are close to the all year base rate with a modest discount."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.05
+   }
+  ],
+  "why_it_fails": "Most likely a stall or a small acquihire by an RPA or agent platform, since the same capability can be built by a well funded rival within months and VM cost and flakiness cap margins. A meaningful exit needs a durable lead in a category where rivals can copy features and raise more money, and most companies in the reference cohort stay small, are acquired cheaply or stop operating before that point."
+ },
+ "analogs": [
+  {
+   "slug": "cyberdesk",
+   "relevance": "Direct rival, Windows legacy app agent for developers, Summer 2025.",
+   "outcome_summary": "Active, no confirmed round after the batch; shows slow funding even in a hot space."
+  },
+  {
+   "slug": "automat",
+   "relevance": "Agentic automation against legacy RPA, Winter 2023.",
+   "outcome_summary": "Reached a 15.5M Series A in 2025, about two years after the batch."
+  },
+  {
+   "slug": "sola",
+   "relevance": "Copilot for RPA, Summer 2023.",
+   "outcome_summary": "3.5M seed then a 17.5M Series A in 2025, led by a top fund."
+  },
+  {
+   "slug": "skyvern",
+   "relevance": "API for browser workflows with agents.",
+   "outcome_summary": "Only a 2.7M seed more than two years after the batch."
+  },
+  {
+   "slug": "synthetic-minds",
+   "relevance": "Screen recording to desktop automation, Summer 2018.",
+   "outcome_summary": "Shut down; automation without durable demand or distribution."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Computer use from model labs and UiPath, Microsoft and AWS commoditizes Windows desktop control",
+   "p": 0.4,
+   "evidence": "UiPath says its computer use covers desktop and Citrix, and Microsoft and AWS market managed agent desktops for apps without APIs.",
+   "analogs": [
+    "cyberdesk",
+    "synthetic-minds"
+   ],
+   "mitigation": "Win on reliability, self healing and observability for production, and own customer integrations."
+  },
+  {
+   "risk": "Customers are AI startups with small revenue, so demand is concentrated and fragile",
+   "p": 0.3,
+   "evidence": "The buyer is other early AI companies, whose own volume determines usage; Skyvern needed years for a seed.",
+   "analogs": [
+    "skyvern",
+    "cyberdesk"
+   ],
+   "mitigation": "Move to direct enterprise and healthcare accounts."
+  },
+  {
+   "risk": "Unit economics: VM, vision model and human repair cost leave thin margins",
+   "p": 0.25,
+   "evidence": "Each call runs a Windows VM and a model; Citrix and on premises deployments need onsite work.",
+   "analogs": [
+    "automat",
+    "sola"
+   ],
+   "mitigation": "Cache learned flows, replace vision calls with deterministic steps once stable."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "UiPath",
+   "what": "Incumbent RPA with computer use covering desktop and Citrix.",
+   "traction": "FY2026 revenue about 1.6B, up 13 percent.",
+   "source_url": "https://www.uipath.com/ai/what-is-computer-use"
+  },
+  {
+   "name": "Cyberdesk",
+   "what": "YC startup automating legacy Windows apps via API.",
+   "traction": "Launched in 2025 with production use in healthcare.",
+   "source_url": "https://www.ycombinator.com/launches/O4a-cyberdesk-the-computer-use-agent-for-developers-to-automate-legacy-windows-apps"
+  },
+  {
+   "name": "Microsoft Windows 365 for Agents and AWS WorkSpaces",
+   "what": "Managed desktops for agents to drive apps without APIs.",
+   "traction": "Hyperscaler distribution.",
+   "source_url": "https://www.mindstudio.ai/blog/aws-workspaces-ai-agents-legacy-desktop-software"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A small team can build VM orchestration, vision driven control and replay in three months. Reliability across Citrix, latency and self healing at scale are hard but solvable, and depend on third party vision model quality and speed."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "UiPath",
+   "Microsoft",
+   "AWS",
+   "Anthropic and OpenAI computer use"
+  ],
+  "timeline_months": 9,
+  "rationale": "Rivals have the distribution and incentive and could ship a comparable endpoint in under a year; the defense is production grade reliability and customer relationships rather than technology."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "UiPath still grows at 13 percent on about 1.6B revenue, showing enterprises pay to automate legacy interfaces.",
+    "source_url": "https://www.zacks.com/stock/news/2716905/automation-boom-fuels-path-s-performance-in-growing-rpa-market"
+   },
+   {
+    "claim": "Hyperscalers are building desktops for agents because many apps have no API.",
+    "source_url": "https://www.mindstudio.ai/blog/aws-workspaces-ai-agents-legacy-desktop-software"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show paying production usage.",
+   "actions": [
+    "Sign three AI customers on usage pricing",
+    "Publish reliability numbers per automation"
+   ],
+   "proof": "Paid calls per week and a success rate above 95 percent."
+  },
+  {
+   "phase": "seed",
+   "goal": "Raise above 500K within 12 months of the batch.",
+   "actions": [
+    "Add two enterprise end client logos",
+    "Show falling cost per call"
+   ],
+   "proof": "Recurring revenue of 20K a month or more."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Reach scalable repeatable revenue.",
+   "actions": [
+    "Build a self serve flow builder through the MCP",
+    "Land one regulated industry"
+   ],
+   "proof": "About 1M annual recurring revenue with 3x growth."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real pain with a long tail of Windows apps that lack APIs.",
+   "evidence": "Hyperscalers and UiPath target the same gap, validating demand.",
+   "source_url": "https://www.uipath.com/ai/what-is-computer-use"
+  },
+  {
+   "point": "Observability and an agent friendly MCP setup match how buyers work.",
+   "evidence": "Video replay, logging and Slack alerts are in the description.",
+   "source_url": "https://minicor.com"
+  }
+ ],
+ "brand": {
+  "name": "Minicor",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Minicor\" --era 2022+: 7 characters, 3 syllables, invented word",
+  "strengths": [
+   "Short and easy to spell"
+  ],
+  "weaknesses": [
+   "Says nothing about desktop automation"
+  ],
+  "rationale": "An invented short name is a common pattern among YC infrastructure companies and neither helps nor hurts, as with Firecrawl where the product mattered more than the name."
+ },
+ "narrative": {
+  "headline": "A real but crowded wedge: seed is likely, later rounds depend on beating computer use from big platforms.",
+  "general_summary": "Minicor sells reliable API access to legacy Windows apps for AI startups. Demand is real and the AI infrastructure funding climate is warm, which makes a seed more likely than not. The doubts start at Series A: peers like Cyberdesk and Skyvern show slow funding, and UiPath, Microsoft and model labs can ship the same capability. The story improves if it lands enterprise or healthcare end clients with real volume. The forecast treats the day one description as the best case, anchors on the 2022 to 2024 cohort of researched YC companies, and widens the uncertainty because funding data for recent batches is incomplete and right censored."
+ },
+ "assumptions": [
+  "Pretend date is 2026-04-06 and only the input file describes the company.",
+  "Seed means a round above about 500K within about 12 months of batch start.",
+  "Base rate cohort B2B 2022 to 2024 has right censoring, so known only rates are biased low."
+ ],
+ "sources": [
+  "https://www.uipath.com/ai/what-is-computer-use",
+  "https://www.zacks.com/stock/news/2716905/automation-boom-fuels-path-s-performance-in-growing-rpa-market",
+  "https://www.mindstudio.ai/blog/aws-workspaces-ai-agents-legacy-desktop-software",
+  "https://www.ycombinator.com/launches/O4a-cyberdesk-the-computer-use-agent-for-developers-to-automate-legacy-windows-apps"
+ ]
+}

@@ -1,0 +1,423 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Bernard",
+  "one_liner": "AI employees that run home appliance repair companies",
+  "description": "Bernard builds AI employees for home and commercial appliance repair companies. They handle phone, text and email, scheduling and dispatch, and a diagnosis tool called Pre-ID that predicts the fault and ranked parts so technicians arrive with the right parts and fix more on the first visit. Appliance servicers pay. Team of 9 in New York.",
+  "as_of": "2026-07-06"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.015,
+  "p_high": 0.1,
+  "basis": "Accepted to YC in this test, so this note is for completeness. From roughly 1 percent for a random applicant, the lifts are a specific vertical with a clear metric (first visit fix rate), a concrete product (Pre-ID) and a team of 9. The cuts are the lack of stated revenue and the many AI front desk startups for home services.",
+  "why_it_fails": "YC would most plausibly pass on this application because AI receptionists and dispatch tools for home services are plentiful, the description shows no revenue figure or named servicer customers to prove demand, and appliance repair is a small niche that partners may doubt can support a venture sized outcome without expansion."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.62,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (n=126), range 49 / 59 / 65%.",
+    "adjustment_reason": "Close to the anchor: vertical AI for services is fundable in 2026 but there is no stated traction."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or small-check round, close to the standard YC deal plus a small angel or pre-seed extension, typical when traction is slow."
+    },
+    {
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ seed medians in the researched cohort are about $3.2M raised, and 2026 public seed pre money medians are near $18M."
+    },
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside: a hot-category seed led by a top seed fund after quick early revenue or usage."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier large seed, seen in the hottest AI categories only and rare overall."
+    }
+   ],
+   "why_it_fails": "The seed above $500K does not close if investors see appliance repair as a narrow market and AI front desk as a feature that ServiceTitan, Housecall Pro and Jobber now ship themselves. With no revenue stated, a few pilot servicers that churn would also stall the round, as in CentralComs style home services agents facing many rivals."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.26,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave series_a cond 26% (n=74).",
+    "adjustment_reason": "At the anchor. The vertical is narrow, but it is not discounted below 0.75 times the anchor because no named analog died of the same problem."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Modest A or a down-leaning round after a slow year of growth."
+    },
+    {
+     "raise_usd": [
+      11000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series A medians are about $15M raised, public series A pre money near $60M."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside A led by a large fund after strong, fast revenue growth."
+    }
+   ],
+   "why_it_fails": "Series A is missed if the number of appliance servicers is too small and too fragmented to reach about $1M to $2M of recurring revenue, if each servicer needs custom integration work, or if the field service platforms give AI answering away. Albiware and Newton show vertical AI can raise, but each needed a deep integrated product, which Bernard must build within two years."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.27,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave series_b cond 16% (n=19); full calibration sample cond 44% (n=126).",
+    "adjustment_reason": "Between the young cohort and full sample conditional, helped by recurring service company revenue."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Smaller or flat B, often an extension for a company that is profitable but growing slower."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      55000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series B medians are about $37M to $45M raised."
+    },
+    {
+     "raise_usd": [
+      55000000,
+      100000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B on fast growth in a large category, led by a major growth fund."
+    }
+   ],
+   "why_it_fails": "Series B fails if the company cannot expand beyond appliance repair into other home services or parts commerce. Servicer count and software budgets cap revenue, and the platforms build the same agents. The parts and warranty network idea needs manufacturer cooperation that is slow to win."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "stage_benchmarks.md: conditional C rate 36% (n=55) in the calibration sample.",
+    "adjustment_reason": "A little under the full sample conditional because the market is narrower."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Smaller late round or a growth extension, likely when growth has slowed but revenue is solid."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series C medians are about $45M raised, public series C deal size near $77M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside late round for a category leader with fast growth and strong retention."
+    }
+   ],
+   "why_it_fails": "A late round fails if growth slows after the first few hundred servicers, if the vision of an appliance ecosystem needs manufacturer deals that never come, or if a platform absorbs the workflow. A company that owns the data on repairs could still be acquired rather than raise again."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.58
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
+    ],
+    "p": 0.27
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.02
+   }
+  ],
+  "why_it_fails": "The likeliest result is a stall or a small acquisition by a field service platform or appliance parts distributor, because the servicer market is fragmented and platforms bundle AI. A result above $1B would require expanding into the whole home services stack or owning appliance parts commerce."
+ },
+ "analogs": [
+  {
+   "slug": "albiware-inc",
+   "relevance": "Vertical SaaS for restoration contractors, Summer 2022.",
+   "outcome_summary": "Series A of $8M in 2023 and a Series B in 2025, showing a niche trades software can raise."
+  },
+  {
+   "slug": "newton",
+   "relevance": "AI phone and front desk platform for dentists, Winter 2024.",
+   "outcome_summary": "Seed of $3.8M about two years after batch, showing the seed can come late."
+  },
+  {
+   "slug": "icracked",
+   "relevance": "On demand repair with dispatch, Winter 2012.",
+   "outcome_summary": "Raised a seed and was acquired in 2019 by SquareTrade, a small exit."
+  },
+  {
+   "slug": "shift-messenger",
+   "relevance": "Workforce messaging for shift workers, Winter 2015.",
+   "outcome_summary": "Raised a $1.5M seed then went inactive, an example of a niche tool that stalled."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Field service platforms ship AI answering and dispatch themselves",
+   "p": 0.4,
+   "evidence": "Housecall Pro, ServiceTitan and Jobber each already sell AI call answering and dispatch add-ons, per the market search.",
+   "analogs": [
+    "newton"
+   ],
+   "mitigation": "Go deeper than a phone bot with Pre-ID diagnosis and parts data that platforms lack."
+  },
+  {
+   "risk": "Appliance repair is too small and fragmented for a venture return",
+   "p": 0.35,
+   "evidence": "The customer base is many small shops with low software budgets, which limits revenue per account and sales efficiency.",
+   "analogs": [
+    "shift-messenger",
+    "albiware-inc"
+   ],
+   "mitigation": "Expand into HVAC and other repair trades and take a share of parts margin."
+  },
+  {
+   "risk": "Diagnosis accuracy and parts prediction fail in practice",
+   "p": 0.25,
+   "evidence": "Pre-ID depends on repair history and manufacturer data that may be incomplete, and a wrong part prediction erases the first visit fix benefit.",
+   "analogs": [
+    "icracked"
+   ],
+   "mitigation": "Start with a few appliance categories and measure first visit fix rate against a baseline."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "ServiceTitan, Housecall Pro, Jobber",
+   "what": "Field service platforms with built in AI call answering and dispatch.",
+   "traction": "Large installed base of home service businesses.",
+   "source_url": "https://www.servicetitan.com/blog/automation-how-contractors-start"
+  },
+  {
+   "name": "Sameday and Smith.ai",
+   "what": "Standalone AI voice agents integrated with field service platforms.",
+   "traction": "Sold to trades, counts unverified.",
+   "source_url": "https://sameday.ai/post/comparison-of-ai-voice-platforms-that-integrate-with-servicetitan"
+  },
+  {
+   "name": "Fieldproxy and generic appliance repair software",
+   "what": "Appliance repair management software, with parts hold dispatch logic.",
+   "traction": "Vendor ranked lists only, unverified.",
+   "source_url": "https://www.fieldproxy.ai/resources/blog/best-appliance-repair-business-management-software-in-2026-ranked-for-"
+  },
+  {
+   "name": "Status quo: human dispatchers and phone staff",
+   "what": "Office staff answer phones, schedule and guess parts by experience.",
+   "traction": "The way most servicers work today.",
+   "source_url": "https://www.fieldproxy.ai/resources/blog/best-appliance-repair-business-management-software-in-2026-ranked-for-"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Voice, text and scheduling agents are easy to build now, but accurate fault diagnosis and parts ranking need clean repair history and manufacturer data, and integrations with many servicer systems take sustained work."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "ServiceTitan",
+   "Housecall Pro",
+   "Jobber"
+  ],
+  "timeline_months": 9,
+  "rationale": "The platforms already ship AI receptionists and own the customer data and distribution, so a copy of the front desk part is likely within a year, while diagnosis and parts depth would take longer."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Appliance repair guides name parts not being in the technician's van as the largest margin loss, which Pre-ID targets.",
+    "source_url": "https://www.fieldproxy.ai/resources/blog/best-appliance-repair-business-management-software-in-2026-ranked-for-"
+   },
+   {
+    "claim": "Home service businesses buy AI call answering today at about $99 per month add-on prices.",
+    "source_url": "https://quiq.com/blog/ai-tools-for-home-service-businesses/"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show servicers will pay for a measured first visit fix gain.",
+   "actions": [
+    "Run a pilot with several servicers and measure first visit fix rate before and after.",
+    "Collect two written customer references."
+   ],
+   "proof": "Two or more paid servicers with a measured gain."
+  },
+  {
+   "phase": "seed",
+   "goal": "Reach about $1M recurring revenue pace and a lead seed.",
+   "actions": [
+    "Integrate with the top three field service platforms.",
+    "Expand Pre-ID to more appliance types."
+   ],
+   "proof": "A seed above $500K and recurring revenue growing month over month."
+  }
+ ],
+ "pros": [
+  {
+   "point": "A concrete product tied to one metric.",
+   "evidence": "Pre-ID predicts fault and parts so first visit completion rises, a number buyers already track.",
+   "source_url": "https://bernardhq.com/"
+  },
+  {
+   "point": "Boring vertical with real spend.",
+   "evidence": "Servicers already pay for dispatch software and AI answering add-ons.",
+   "source_url": "https://quiq.com/blog/ai-tools-for-home-service-businesses/"
+  }
+ ],
+ "brand": {
+  "name": "Bernard",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Bernard\" --era 2022+ gave kind invented_or_proper, 7 chars, 2 syllables.",
+  "strengths": [
+   "Human first name fits the AI employee concept",
+   "Short and memorable"
+  ],
+  "weaknesses": [
+   "Generic person name, hard to own in search"
+  ],
+  "rationale": "A person name suits a product sold as an AI employee and is easy to remember, but it is neutral for outcomes; many successful YC names are person names or invented words."
+ },
+ "narrative": {
+  "headline": "A focused vertical AI company in a market where platforms are copying the front desk, so a seed is likely but Series A is a coin flip below even.",
+  "general_summary": "Bernard sells AI employees to appliance repair companies, covering calls, scheduling, dispatch and a diagnosis tool that tells technicians which parts to bring. The metric, first visit fix rate, is clear and buyers care about it. The team of 9 and the specific vertical help, but the market is small and fragmented, and the leading field service platforms already ship AI answering. A seed above the YC deal is likely because vertical AI is fundable, and the later steps depend on whether Pre-ID becomes a data advantage platforms cannot copy. Stalling is more likely than failing outright, since paying servicers tend to stay."
+ },
+ "assumptions": [
+  "Forecast made blind from the batch start 2026-07-06 using only the input file and market searches.",
+  "Seed means a round above about $500K within about 12 months.",
+  "The 2022 to 2025 B2B cohort is young so later stage anchors are weak.",
+  "Current 2026 benchmarks are used for round sizes."
+ ],
+ "sources": [
+  "https://www.servicetitan.com/blog/automation-how-contractors-start",
+  "https://sameday.ai/post/comparison-of-ai-voice-platforms-that-integrate-with-servicetitan",
+  "https://www.fieldproxy.ai/resources/blog/best-appliance-repair-business-management-software-in-2026-ranked-for-",
+  "https://quiq.com/blog/ai-tools-for-home-service-businesses/"
+ ]
+}

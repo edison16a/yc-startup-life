@@ -1,0 +1,422 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Frontier Computing",
+    "one_liner": "Frontier grows scalable biological brains as an ML training substrate",
+    "description": "Frontier is first to grow biological brains at scale, serving biological neural nets with substrate-level colocation of memory and compute, enabling highly cost effective training of large parameter count models.\n\nWhile academia has traditionally been limited to ~1M neurons in vitro, Frontier has built a pathway to scale to 100M+ neurons by circumventing traditional scaling challenges in biological culture, demonstrating this strategy's functionality by training a biological brain using this scaling primitive to play Frogger.\n\nFrontier is now growing exascale compute clusters to produce substrates capable of long-horizon language reasoning while operating at much higher sample efficiencies than traditional architectures, and collocating memory with compute to enable significantly larger parameter counts than would be tractable for training within traditional compute clusters.",
+    "as_of": "2026-07-06"
+  },
+  "yc_acceptance": {
+    "p": 0.95,
+    "p_low": 0.95,
+    "p_high": 0.95,
+    "basis": "Test assumption: the company was accepted, so the acceptance step is recorded as given. The prior for a random applicant is about 1 percent (0.6 to 2 percent); a hard tech demo with unusual science can sit above or below it.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. The likely concern would have been unproven science and a very long path to a commercial product."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.5,
+      "anchors": {
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only: seed 45% / 50% / 55% (cond 50%, n=140); months to seed median 6",
+        "adjustment_reason": "At the anchor. Deep tech hype and a live demo help, while the novelty and a 12 month window offset it."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.25,
+          "rationale": "A small extension of the YC deal from angels or a micro fund, often a pre-seed that is only a little above the $500K standard check. This is the thin band: investors wanted proof before a real lead."
+        },
+        {
+          "raise_usd": [
+            1500000,
+            4000000
+          ],
+          "post_money_usd": [
+            12000000,
+            25000000
+          ],
+          "p_band": 0.5,
+          "rationale": "The typical 2026 seed. US medians run about 3M raised at roughly 18M to 20M pre money, and YC companies announce slightly larger rounds, so this is the central case."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a hot AI category with a repeat or well known founding story, where a top seed fund prices ahead of traction and a pivot-then-raise path also lands here."
+        }
+      ],
+      "why_it_fails": "The most likely miss is that investors cannot diligence biological compute claims and want evidence that the neuron scale and learning results are reproducible. Rain Neuromorphics raised from top names but had to rely on a rare investor set, and academic labs already hold the approach, so a lead investor may wait for peer review or a customer before pricing a round above the YC check."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.2,
+      "anchors": {
+        "base_rate": 0.23,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only: series_a 10% / 11% / 20%, cond 23% (n=70)",
+        "adjustment_reason": "0.87x of the anchor. Capital intensity and science risk are large, but deep tech with a clear compute narrative can attract large A rounds."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            3000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            45000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin band: a small Series A or A-minus after a slow seed year, or an extension from existing investors. Down-round risk sits here."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            45000000,
+            110000000
+          ],
+          "p_band": 0.55,
+          "rationale": "The central case. 2022+ YC Series A raises had a median near 14M to 15M, and US medians are 17M to 19M at about 60M pre money."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            110000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for fast recurring revenue growth in an AI category where investors compete for the lead."
+        }
+      ],
+      "why_it_fails": "Series A needs evidence that biological substrates train useful models at lower cost, not only a Frogger demo. Growing 100M neurons in culture means lab space, culture lifetime and variability problems, and Rain Neuromorphics needed years and 25M of Series A to get near a chip. Without a measurable benchmark against GPUs, the A stalls."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.06,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only: series_b cond 6% (n=16); stage_benchmarks.md all-time conditional 44% (n=126)",
+        "adjustment_reason": "Far above the right censored 2022+ industrial figure, because deep tech companies that get a large A usually raise a B on technical milestones, and the all-time rate is 44 percent. Still below that rate."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin or flat round after growth slowed, or a bridge to a priced B with weaker terms."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            450000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: 2022+ YC Series B raises had a median near 37M to 45M."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a clear category leader, with valuations in line with the few disclosed YC Series B posts of 550M to 850M."
+        }
+      ],
+      "why_it_fails": "Series B needs a repeatable product or cluster that customers pay for. The failure is that culture scale and learning stability do not improve with size, and silicon and neuromorphic chips improve faster. Rain Neuromorphics saw a planned B collapse after investor and regulatory trouble."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.36,
+        "source": "stage_benchmarks.md all-time conditional Series C given B: 36% (n=55)",
+        "adjustment_reason": "0.7x of the all-time rate because the science risk is high."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            45000000
+          ],
+          "post_money_usd": [
+            120000000,
+            350000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat growth round, or a structured round, after growth slowed. Series C in the 2022+ data had a median near 45M."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            1000000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case: a growth round in the 45M to 100M range, matching the 2022+ YC Series C and D medians of 45M and 97.5M."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category winner raising a large growth round, as the few YC companies with disclosed valuations above 1B did."
+        }
+      ],
+      "why_it_fails": "Series C needs revenue from compute customers. Biological compute must beat GPU economics or find a niche such as drug testing, and capital hungry deep tech frequently stalls or sells to a larger lab or chip company before a growth round."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.7
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.17
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.09
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "Most deep science companies end without a product that beats the incumbent technology. Rain Neuromorphics ended in an asset sale after a collapsed round, and the larger outcomes here need a breakthrough that makes biological training cheaper than GPUs, which is highly uncertain."
+  },
+  "analogs": [
+    {
+      "slug": "rain-neuromorphics",
+      "relevance": "Brain inspired AI processors, YC S18.",
+      "outcome_summary": "Seed from Sam Altman, 25M Series A in 2022, then a collapsed B and sale."
+    },
+    {
+      "slug": "strong-compute",
+      "relevance": "Faster neural network training compute, YC W22.",
+      "outcome_summary": "7.8M seed, still active, no later round found."
+    },
+    {
+      "slug": "brainkey",
+      "relevance": "Brain MRI analysis, YC W19.",
+      "outcome_summary": "Alive, a small neuroscience company with no big round."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "The science does not scale or generalize",
+      "p": 0.55,
+      "evidence": "The demo is a Frogger task; scaling culture to 100M neurons with stable learning is unproven and academic labs reached about 1M.",
+      "analogs": [
+        "rain-neuromorphics"
+      ],
+      "mitigation": "Publish reproducible benchmarks and partner with a lab to validate."
+    },
+    {
+      "risk": "GPUs and neuromorphic chips improve faster",
+      "p": 0.4,
+      "evidence": "Silicon compute improves yearly and neuromorphic rivals exist; Rain Neuromorphics could not turn the brain inspired idea into a sold chip.",
+      "analogs": [
+        "rain-neuromorphics",
+        "strong-compute"
+      ],
+      "mitigation": "Target a niche where sample efficiency matters, such as small data tasks."
+    },
+    {
+      "risk": "Capital intensity and ethics review",
+      "p": 0.35,
+      "evidence": "Growing neural cultures needs lab space and raises ethical and regulatory scrutiny from investors and the public.",
+      "analogs": [
+        "brainkey"
+      ],
+      "mitigation": "Run a lean lab and engage bioethics reviewers early."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Cortical Labs",
+      "what": "Biological computing with neurons on chips (DishBrain, Pong demo)",
+      "traction": "Funded Australian startup with published research",
+      "source_url": "https://corticallabs.com"
+    },
+    {
+      "name": "FinalSpark",
+      "what": "Swiss neuroplatform with brain organoid computing",
+      "traction": "Remote access to neural organoids",
+      "source_url": "https://finalspark.com"
+    },
+    {
+      "name": "NVIDIA GPUs and cloud training clusters",
+      "what": "Incumbent compute for ML training",
+      "traction": "Dominant market share",
+      "source_url": "https://www.nvidia.com"
+    },
+    {
+      "name": "Neuromorphic chips such as Intel Loihi",
+      "what": "Silicon brain inspired computing",
+      "traction": "Research stage products",
+      "source_url": "https://www.intel.com"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 5,
+    "rationale": "Growing and keeping alive large neural cultures, reading and writing signals, and showing stable learning at 100M neurons is frontier science, not engineering. A team of three in London can run a lab demo, but scaling to exascale clusters needs years and major capital."
+  },
+  "takeover_risk": {
+    "rating": 1,
+    "who": [
+      "Cortical Labs",
+      "NVIDIA",
+      "Academic labs"
+    ],
+    "timeline_months": 36,
+    "rationale": "Few can copy the work because it needs wet lab skills, but also the market itself may never form. Takeover risk is low and survival risk is high."
+  },
+  "market_need_now": {
+    "rating": 2,
+    "evidence": [
+      {
+        "claim": "Demand for AI training compute is very large and costly, which gives a need for cheaper compute in principle.",
+        "source_url": "https://www.nvidia.com"
+      },
+      {
+        "claim": "Biological computing is early, with only a few funded startups such as Cortical Labs and FinalSpark.",
+        "source_url": "https://corticallabs.com"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Have a reproducible demo and a credible lab team.",
+      "actions": [
+        "Document the Frogger run and share data with an outside lab.",
+        "Show culture viability over weeks."
+      ],
+      "proof": "An outside lab reproducing the result."
+    },
+    {
+      "phase": "seed",
+      "goal": "Show scaling beyond the academic limit.",
+      "actions": [
+        "Show a culture above 10M neurons with learning curves.",
+        "Compare cost and sample efficiency to a small GPU baseline."
+      ],
+      "proof": "A reproducible result at 10M neurons or more."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Show a benchmark that beats a silicon baseline on a task.",
+      "actions": [
+        "Publish peer reviewed or lab verified results.",
+        "Sign one paying research customer."
+      ],
+      "proof": "One task where cost per learning step beats a GPU baseline."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Huge compute market if it works",
+      "evidence": "AI training compute demand is large and growing, so a successful substrate would have a large market.",
+      "source_url": "https://www.nvidia.com"
+    },
+    {
+      "point": "A live demonstration",
+      "evidence": "The company says it trained a culture to play Frogger, which is more than a slide, though unreviewed.",
+      "source_url": "https://frontier.site"
+    },
+    {
+      "point": "Deep tech tailwind",
+      "evidence": "Investors in 2026 fund deep tech and AI hardware at large sizes.",
+      "source_url": "https://www.nvidia.com"
+    }
+  ],
+  "brand": {
+    "name": "Frontier Computing",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Frontier Computing\" --era 2022+ : kind and length reported, no outcome lift claimed",
+    "strengths": [
+      "Frontier signals ambition",
+      "Computing is clear to investors"
+    ],
+    "weaknesses": [
+      "Frontier is a very common name in tech",
+      "Biological brains may meet ethical resistance in branding"
+    ],
+    "rationale": "Frontier Computing is a compound of two common words and shares its name with several large firms and a supercomputer. It tells investors this is compute but does not stand out. I rate it neutral, with search collisions as the main cost.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A true frontier science bet where a seed is plausible on the demo but each later step is limited by unproven scaling; most likely stops at seed.",
+    "general_summary": "Frontier says it grows biological neural networks at scale as a machine learning substrate, with 100M neurons targeted against about 1M in academic cultures and a Frogger demo as proof. Three founders in London, Summer 2026. Deep tech with a strong narrative can raise a seed on a demo, but every later step needs reproducible evidence that the biology beats GPUs on cost. Rain Neuromorphics is the nearest YC analog and it ended in a sale after a collapsed Series B. I put most weight on a stall at seed or A."
+  },
+  "assumptions": [
+    "Seed is defined as a financing round above the YC deal of about 500K within about 12 months of the batch start.",
+    "I could not verify the neuron counts or demo claims; they are the company's description.",
+    "Comparable data is thin: no YC company does biological compute, so analogs are about brain inspired hardware and ML compute.",
+    "Market facts come from prior knowledge and company sites, not fresh searches."
+  ],
+  "sources": [
+    "https://frontier.site",
+    "https://corticallabs.com",
+    "https://finalspark.com",
+    "https://www.nvidia.com"
+  ]
+}

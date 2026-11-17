@@ -1,0 +1,403 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Revnu",
+  "one_liner": "Your AI growth hire.",
+  "description": "Revnu is an AI growth hire for founders. It connects to a company's tools, researches buyers, prepares outreach, runs paid ads and publishes search content, then measures results and applies what it learns across channels. The founder approves only the work that needs judgment and receives a morning digest. Customers are small founder-led software and service companies that pay a monthly fee in place of a growth hire or agency. Three founders in Manchester, UK.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.025,
+  "p_low": 0.01,
+  "p_high": 0.05,
+  "basis": "In this test the company is assumed accepted to YC for the Spring 2026 batch, so the acceptance estimate is a placeholder note. The prior for a random applicant is about 1 percent (0.6 to 2 percent, references/yc_acceptance.md). A three person technical team in the hottest category (AI agents) with a clear paid job would sit above that, but the idea is copyable and crowded, so roughly 2 to 3 percent.",
+  "why_it_fails": "YC would most plausibly pass because AI growth agents are a very crowded category with several funded entrants, the pitch has no stated traction, and a general purpose agent could copy the workflow. Interviewers would ask why this team wins distribution against better funded tools and whether founders will really pay for autonomous output."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.52,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49/59/65 (cond 59%, n=126), series_a 13/15/29 (cond 26%, n=74), series_b 2/2/18 (cond 16%, n=19), series_c 0/0/16 (cond 0%, n=3). The 2022+ rows are right censored; the older B2B 2018-2021 cohort gives cond A 32% (n=56), B 39% (n=18), C 57% (n=7).",
+    "adjustment_reason": "Slightly below the 59 percent B2B 2022+ anchor (0.88x): the category is crowded and the stated deal is only about 12 months to a round above the YC check, while median time to seed is 7 months (p75 15), so a part of the 59 percent arrives later than the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      800000.0,
+      2500000.0
+     ],
+     "post_money_usd": [
+      10000000,
+      20000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small pre-seed above the standard YC deal from AI-focused angels and micro funds, the most common outcome for a three person AI tools team; ties to the 2022+ B2B p25 of 1.9M."
+    },
+    {
+     "raise_usd": [
+      2500000.0,
+      5000000
+     ],
+     "post_money_usd": [
+      20000000,
+      30000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical seed near the 2022+ B2B median of 3.2M and the market median pre money near 18M cited in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      5000000,
+      10000000
+     ],
+     "post_money_usd": [
+      35000000,
+      60000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Hot AI seed if usage grows quickly after Demo Day; AI tag seeds in the cohort reach the 75th percentile of 5M or more."
+    }
+   ],
+   "why_it_fails": "Growth agents show visible output but investors want proof of revenue retention, and founder-run companies churn quickly when the AI output needs heavy editing. With Hyperdesk, Gooseworks and Sprites all pitching similar marketing agents and no funding recorded for most of them, investors may judge this a feature war and stay at the YC check, leaving the company without a round above 500K inside a year."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.24,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49/59/65 (cond 59%, n=126), series_a 13/15/29 (cond 26%, n=74), series_b 2/2/18 (cond 16%, n=19), series_c 0/0/16 (cond 0%, n=3). The 2022+ rows are right censored; the older B2B 2018-2021 cohort gives cond A 32% (n=56), B 39% (n=18), C 57% (n=7).",
+    "adjustment_reason": "At the 0.92x of the B2B 2022+ conditional of 26 percent; the older B2B cohort suggests 32 percent, so no large adjustment."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin A, below the 2022+ B2B p25 of 11.5M."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      90000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical A near the 2022+ B2B median of 15M and market A pre money near 60M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      160000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A if ARR grows past a few million with strong retention."
+    }
+   ],
+   "why_it_fails": "Reaching an A needs a repeatable acquisition channel and low churn, but small founder customers cancel quickly and the product competes with agencies, HubSpot and general agents. Positional and RankScience, both SEO content companies, never passed a small seed, which shows how hard it is to make marketing software venture scale."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49/59/65 (cond 59%, n=126), series_a 13/15/29 (cond 26%, n=74), series_b 2/2/18 (cond 16%, n=19), series_c 0/0/16 (cond 0%, n=3). The 2022+ rows are right censored; the older B2B 2018-2021 cohort gives cond A 32% (n=56), B 39% (n=18), C 57% (n=7).",
+    "adjustment_reason": "Above the 16 percent 2022+ B2B conditional (n=19, censored) but below the 39 to 44 percent of the older and broader cohorts, which is more representative once an A is raised."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      140000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Down or flat B close to the 2022+ B2B p25 near 35M."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical B near the 45M median of 2022+ B2B rounds."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      90000000
+     ],
+     "post_money_usd": [
+      300000000,
+      600000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B if it becomes the default growth layer for small teams."
+    }
+   ],
+   "why_it_fails": "A Series B requires proof that AI output beats a human hire at scale and that the customer base moves up from tiny founder accounts. Incumbent suites like HubSpot can bundle the same agents, and net revenue retention in small business marketing tends to be poor, so many companies at this point are acquired instead."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49/59/65 (cond 59%, n=126), series_a 13/15/29 (cond 26%, n=74), series_b 2/2/18 (cond 16%, n=19), series_c 0/0/16 (cond 0%, n=3). The 2022+ rows are right censored; the older B2B 2018-2021 cohort gives cond A 32% (n=56), B 39% (n=18), C 57% (n=7).",
+    "adjustment_reason": "Below the 36 percent broad C conditional (n=55) because the 2022+ B2B sample shows 0 of 3 and small business marketing caps the ceiling."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      35000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      600000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Series C near 2022+ median of 45M with a modest valuation."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1200000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round for a category leader with strong retention and revenue."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it becomes a platform that handles revenue end to end."
+    }
+   ],
+   "why_it_fails": "Few small business marketing tools reach a Series C because the customer base is price sensitive and large platforms add the same features, so growth slows at around tens of millions of revenue and the company is usually acquired, as many YC marketing software companies such as Positional have been."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.16
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.04
+   }
+  ],
+  "why_it_fails": "Most paths end in a small sale or a stall because AI marketing agents are close to commodity features that platforms and general agents can replicate, small business customers churn quickly, and YC marketing software analogs such as Positional and RankScience ended in modest acquisitions or small businesses."
+ },
+ "analogs": [
+  {
+   "slug": "sprites",
+   "relevance": "Direct AI marketing growth agent for businesses with a similar pitch.",
+   "outcome_summary": "Active, 50 plus customers claimed on its YC page, no verified outside funding found."
+  },
+  {
+   "slug": "positional",
+   "relevance": "Content marketing and SEO platform in a crowded tool market.",
+   "outcome_summary": "Pivoted once, raised a seed, acquired in a small deal."
+  },
+  {
+   "slug": "rankscience",
+   "relevance": "Automated SEO for startups, same customer.",
+   "outcome_summary": "Profitable, small $1.8M seed, still a small agency style business."
+  },
+  {
+   "slug": "gooseworks",
+   "relevance": "Self improving marketing agent for startups.",
+   "outcome_summary": "Active small team, repeated repositioning, no clear later round recorded."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Crowded category and copyable by general agents or CRM suites",
+   "p": 0.45,
+   "evidence": "Many funded and YC companies sell AI marketing agents, and the competition search shows Salesforce and HubSpot offering similar agents.",
+   "analogs": [
+    "sprites",
+    "hyperdesk",
+    "gooseworks"
+   ],
+   "mitigation": "Win a narrow customer, such as one vertical of technical founders, and own the data loop that improves results."
+  },
+  {
+   "risk": "Output quality does not beat a human marketer, so customers churn",
+   "p": 0.35,
+   "evidence": "Autonomous ad and outreach output often needs heavy edits; cold outreach also faces deliverability limits.",
+   "analogs": [
+    "positional",
+    "rankscience"
+   ],
+   "mitigation": "Report revenue attribution per approval and offer pricing tied to results."
+  },
+  {
+   "risk": "Seed round never exceeds the YC check because investors see a feature, not a company",
+   "p": 0.4,
+   "evidence": "Several similar marketing agent companies in the YC data have no round recorded.",
+   "analogs": [
+    "hyperdesk",
+    "algoviral"
+   ],
+   "mitigation": "Show paying customers with retention at Demo Day."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "HubSpot Breeze and Salesforce Agentforce",
+   "what": "Marketing agents inside incumbent CRM suites",
+   "traction": "Large installed base of marketing teams",
+   "source_url": "https://nogood.io/blog/ai-agents-for-marketers/"
+  },
+  {
+   "name": "Sprites, Blaze AI, Dreamstate",
+   "what": "AI growth agent startups for small business",
+   "traction": "Early, vendor claims only",
+   "source_url": "https://www.guideflow.com/blog/ai-marketing-agents"
+  },
+  {
+   "name": "Zapier and Relevance AI",
+   "what": "Workflow and custom agent builders for marketers",
+   "traction": "Millions of users on Zapier",
+   "source_url": "https://aimultiple.com/ai-agents-in-marketing"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Connecting many marketing channels and learning across them is integration heavy but a three person team can ship a version in months using model APIs. The hard part is attribution and quality of output, not model research."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "HubSpot",
+   "Salesforce",
+   "general coding and computer use agents",
+   "ad platforms"
+  ],
+  "timeline_months": 9,
+  "rationale": "A rival with distribution could assemble the same agent workflow in under a year, and incumbents already ship similar agents. Customers' ad and CRM accounts are controlled by the platforms."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Marketing teams already buy and compare many AI marketing agent products, showing spend, though vendor lists are self interested.",
+    "source_url": "https://nogood.io/blog/ai-agents-for-marketers/"
+   },
+   {
+    "claim": "Dozens of competing AI growth agent tools are listed on comparison sites, showing crowded demand.",
+    "source_url": "https://aimultiple.com/ai-agents-in-marketing"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "A narrow paid niche",
+   "actions": [
+    "Interview 30 founders who do no growth work",
+    "Run the agent manually for 5 paying customers"
+   ],
+   "proof": "5 customers paying monthly"
+  },
+  {
+   "phase": "seed",
+   "goal": "Retention and attribution proof",
+   "actions": [
+    "Show revenue attributed per customer",
+    "Cut approvals needed per week"
+   ],
+   "proof": "Net revenue retention above 100 percent on 20 customers"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear paid job: replace a growth hire founders cannot afford",
+   "evidence": "Founders without a marketer are a defined buyer and agencies cost more.",
+   "source_url": "https://nogood.io/blog/ai-agents-for-marketers/"
+  },
+  {
+   "point": "Hot category with active seed investor interest",
+   "evidence": "Comparable AI agent companies in the YC data reach seed at higher rates than the 59 percent anchor.",
+   "source_url": "https://aimultiple.com/ai-agents-in-marketing"
+  }
+ ],
+ "brand": {
+  "name": "Revnu",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Revnu\" --era 2022+ : 5 characters, 2 syllables, invented, no suffix",
+  "strengths": "Short and easy to type, signals revenue",
+  "weaknesses": "Clipped spelling is hard to say and easy to misspell; the vowel drop is a common 2020s pattern",
+  "rationale": "The name is short and hints at revenue, which matches the job. The dropped vowel makes it harder to find by ear, but past YC names with this style rarely failed because of the name, so the effect is small.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Plausible early seed for a crowded AI growth agent, with a hard path to a venture scale Series A.",
+  "general_summary": "Revnu sells an AI growth hire to founders, a useful job in a very crowded and copyable category. The team is three people with no stated traction in the description. Past YC marketing agents show few rounds beyond a small seed and incumbents are adding the same agents. The seed over 500K within a year is a bit under a coin flip and later steps follow the base rates, with the upside path coming from a pivot to a narrower customer or a deeper analytics layer."
+ },
+ "assumptions": [
+  "Test is blind: only the YC input file was used for company facts.",
+  "Seed means a round above $500K within about 12 months of the batch start.",
+  "Cohort data for 2022+ is right censored."
+ ],
+ "sources": [
+  "https://nogood.io/blog/ai-agents-for-marketers/",
+  "https://aimultiple.com/ai-agents-in-marketing",
+  "https://www.guideflow.com/blog/ai-marketing-agents"
+ ]
+}

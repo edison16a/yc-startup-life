@@ -1,0 +1,499 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Rational",
+    "one_liner": "First Zero-human Accounting Firm",
+    "description": "Rational is building an accounting firm with no human staff. AI employees handle client intake, bookkeeping and filing with the IRS, selling the service to businesses at a claimed 90 percent lower cost with 24/7 support. Two founders in San Francisco. Customers pay a service fee like a firm would, so revenue is services style with software margins if automation holds. No customers or traction are given.",
+    "as_of": "2026-07-06"
+  },
+  "yc_acceptance": {
+    "p": 0.04,
+    "p_low": 0.015,
+    "p_high": 0.09,
+    "basis": "Starting rate about 1 percent (YC investor line, third party range 0.6 to 2 percent). Test setup: already accepted, reference only. Up for a bold, YC friendly full stack AI services idea in a huge market and a large painful cost gap. Down for a two person team, no stated traction and regulatory exposure. Net about 4 percent as a plain applicant.",
+    "why_it_fails": "YC would most plausibly worry that tax and accounting are regulated and trust dependent, so a firm with no humans cannot sign returns or take liability, and that AI accounting is already crowded with funded companies such as Basis and Pilot. A two person team with no named customers or filed returns makes the claim of zero humans look like a slogan rather than a working service."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.6,
+      "anchors": {
+        "base_rate": 0.51,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 51 percent, ours 60 percent. Full stack AI services were a hot theme and a two person SF team can raise on the idea, but regulatory work slows revenue, so only a modest lift over the anchor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000,
+            2500000
+          ],
+          "post_money_usd": [
+            8000000,
+            16000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Small seed or extension of the YC deal, typical for a two person team with an early pilot, below the 3.2M median."
+        },
+        {
+          "raise_usd": [
+            2500000,
+            5000000
+          ],
+          "post_money_usd": [
+            16000000,
+            30000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Typical B2B 2022+ seed p25 to p75 of 2.0M to 5.0M; AI services rounds clear here."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Hot AI services theme and a strong demo can pull a large seed, as 2025 and 2026 AI accounting entrants have shown."
+        },
+        {
+          "raise_usd": [
+            600000,
+            1000000
+          ],
+          "post_money_usd": [
+            5000000,
+            9000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Thin round from angels, barely above the YC deal."
+        }
+      ],
+      "why_it_fails": "It fails to raise a round above about 500K if investors doubt that a no human firm can be licensed, insured and trusted with filings, and prefer funded software competitors that sell to existing CPA firms such as Basis, which raised a 100M Series B in February 2026. Two founders with no named customers make the claim hard to test. Analogs like Combinely and Cranston sell to accountants, a safer wedge than replacing them."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.18,
+      "anchors": {
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 22 percent, ours 18 percent. Below the anchor within 1.25x because accountants must still sign filings and clients churn at tax season, with funded rivals going after the same buyers."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            8000000,
+            14000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Lower end of B2B 2022+ Series A, p25 13M; fits a services margin story with early revenue."
+        },
+        {
+          "raise_usd": [
+            14000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            150000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Median 17M, p75 22M with known post money 80M to 140M (thin data)."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            8000000
+          ],
+          "post_money_usd": [
+            15000000,
+            40000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Small A or extension if revenue is lumpy around tax season."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            45000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if the zero human firm shows real gross margin."
+        }
+      ],
+      "why_it_fails": "The Series A needs paying clients across a full tax season, meaning real returns filed with low error and growing retention. Accounting is seasonal and trust heavy, and Fondo took years after YC to raise a seed while Finta stayed small. If error rates, regulation on who may sign returns or customer churn blocks growth, investors see a services company with software hopes and pass."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.17,
+      "anchors": {
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 19 percent, ours 17 percent. Services businesses that reach A with real margins usually keep growing, close to the cohort."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            35000000
+          ],
+          "post_money_usd": [
+            120000000,
+            250000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Lower than the B2B 2022+ p25 of 39M because a services style business raises less per dollar of revenue."
+        },
+        {
+          "raise_usd": [
+            35000000,
+            55000000
+          ],
+          "post_money_usd": [
+            250000000,
+            650000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Cohort median 42.5M, post money 500M to 750M where known."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            50000000,
+            120000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Down or small B after churn. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            650000000,
+            1200000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside as the largest AI native firm. Sized from the cohort round tables and the current funding climate."
+        }
+      ],
+      "why_it_fails": "A Series B needs a scaled, defensible AI native firm. Customer acquisition for small businesses is expensive, big accounting firms can adopt similar agents, and each client brings liability. Few YC accounting companies passed A, and Keeper is the notable one to reach Series A, so the company may stall as a profitable small firm instead."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.2,
+      "anchors": {
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 19 percent, ours 20 percent. A scaled AI accounting firm is a large business if it works, so near the cohort."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            50000000,
+            90000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Lower end of Series C cohort, median 101M. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            90000000,
+            150000000
+          ],
+          "post_money_usd": [
+            800000000,
+            1500000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Cohort p25 to p75 for 2022+ Series C. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            50000000
+          ],
+          "post_money_usd": [
+            150000000,
+            400000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Extension or down round. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            3500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if it becomes a large national firm. Sized from the cohort round tables and the current funding climate."
+        }
+      ],
+      "why_it_fails": "A Series C requires a business of national scale, which means winning many clients across states and clearing licensing and insurance in each. Competition from Basis, Pilot and Rillet style products and the big firms makes the final scale up uncertain; most accounting companies in the cohort stop earlier."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.58
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.22
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.15
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          6000000000
+        ],
+        "p": 0.05
+      }
+    ],
+    "why_it_fails": "The most likely failure is that the service never reaches reliable accuracy and legal standing without humans, so it must hire accountants and becomes a normal firm with lower margins, or customers churn after one tax season. Several AI accounting entrants hold the same positioning and larger funded rivals sell software to firms. Pivoting to a tool for accountants is the common escape path."
+  },
+  "analogs": [
+    {
+      "slug": "combinely",
+      "relevance": "AI coworker for accountants from Spring 2025, same market.",
+      "outcome_summary": "Raised a seed in mid 2025 and claims 100 plus firm customers."
+    },
+    {
+      "slug": "fondo",
+      "relevance": "Bookkeeping and tax for startups run as a service with accountants.",
+      "outcome_summary": "Batch in 2018, launched product around 2020, pre-seed of 3M in 2023 and 7M in 2024, slow but alive."
+    },
+    {
+      "slug": "keeper-2",
+      "relevance": "AI tax filing, a tax service company from YC.",
+      "outcome_summary": "Seed 1.65M in 2019 and a 13M Series A in 2021 after reaching many users."
+    },
+    {
+      "slug": "finta",
+      "relevance": "Accounting and tax for startups.",
+      "outcome_summary": "Small team, seed reported but unverified, still active."
+    },
+    {
+      "slug": "taxgpt",
+      "relevance": "AI tax assistant facing Thomson Reuters.",
+      "outcome_summary": "Pivoted to firms and raised a 4.6M seed in 2025, platform incumbent risk."
+    },
+    {
+      "slug": "contalink",
+      "relevance": "Cloud accounting for accountants in Mexico, shows services plus software path.",
+      "outcome_summary": "2.1M round in 2022 and growth driven by e-invoicing rules."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Regulation and liability: only licensed people can sign or represent clients before the IRS",
+      "p": 0.4,
+      "evidence": "Filing returns and representing clients are regulated activities, so a firm with no humans needs licensed signers and insurance.",
+      "analogs": [
+        "keeper-2",
+        "taxgpt"
+      ],
+      "mitigation": "Partner with or hire a small licensed staff and keep AI as the production engine, not the legal signer."
+    },
+    {
+      "risk": "Accuracy and trust: errors in books or filings cost customers real money",
+      "p": 0.35,
+      "evidence": "Small business owners will not move filings to an unproven firm; Fondo took years to reach funding after building a human backed service.",
+      "analogs": [
+        "fondo",
+        "finta"
+      ],
+      "mitigation": "Start with narrow work like bookkeeping for startups and publish error rates."
+    },
+    {
+      "risk": "Funded AI accounting competitors sell to the firms instead and outspend",
+      "p": 0.35,
+      "evidence": "Basis raised a 100M Series B in February 2026 to sell AI agents to accounting firms, and Pilot already serves startups.",
+      "analogs": [
+        "combinely",
+        "cranston-ai"
+      ],
+      "mitigation": "Pick one niche such as tax for one business type where full automation is achievable."
+    },
+    {
+      "risk": "Seasonal revenue and customer acquisition cost make unit economics weak",
+      "p": 0.25,
+      "evidence": "Tax work concentrates in a few months and small businesses churn often, which raises acquisition cost.",
+      "analogs": [
+        "tributi",
+        "afternoon-co"
+      ],
+      "mitigation": "Sell year round bookkeeping and annual contracts."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Basis",
+      "what": "AI agents sold to accounting firms to automate their work.",
+      "traction": "100M Series B at about 1.15B reported February 2026.",
+      "source_url": "https://www.cpapracticeadvisor.com/2026/02/24/basis-raises-100-million-to-deploy-ai-agents-for-accounting-firms/178759/"
+    },
+    {
+      "name": "Pilot",
+      "what": "Bookkeeping and tax service for startups using software plus accountants.",
+      "traction": "Estimated valuation 250M to 400M by a market grid, not confirmed.",
+      "source_url": "https://newmarketpitch.com/blogs/news/ai-accounting-top-startups-valuation"
+    },
+    {
+      "name": "Combinely and other YC AI accountant startups",
+      "what": "AI coworker or AI accountant products for accounting firms and SMBs.",
+      "traction": "Seed stage with firm customers claimed.",
+      "source_url": "https://newmarketpitch.com/blogs/news/ai-accounting-top-startups"
+    },
+    {
+      "name": "Status quo: local CPA firm or QuickBooks plus a bookkeeper",
+      "what": "Human accountants and small business software.",
+      "traction": "The default for nearly all small businesses.",
+      "source_url": "https://newmarketpitch.com/blogs/news/ai-accounting-funding-trends"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Language models can do much of bookkeeping and form preparation, but reliable end to end work across messy documents, bank feeds and IRS e-filing needs many integrations and error checks. A two person team can build a demo in three months but not a trusted, audited system."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Basis and other AI accounting vendors",
+      "Intuit and Thomson Reuters",
+      "Large accounting firms building internal agents"
+    ],
+    "timeline_months": 12,
+    "rationale": "Funded AI accounting startups and incumbents like Intuit already ship agents, and large firms can adopt them. The zero human firm is a business model that a tool vendor cannot copy, but the underlying automation is replicable within about a year."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "AI accounting attracted large rounds in 2026, such as a 100M Series B for a vendor selling agents to accounting firms, showing strong buyer interest.",
+        "source_url": "https://www.cpapracticeadvisor.com/2026/02/24/basis-raises-100-million-to-deploy-ai-agents-for-accounting-firms/178759/"
+      },
+      {
+        "claim": "Market maps list many funded AI accounting startups, showing real spend on automation.",
+        "source_url": "https://newmarketpitch.com/blogs/news/ai-accounting-top-startups"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Prove one narrow service works with no human touching the work.",
+      "actions": [
+        "Pick a single client type such as small startups and process their books end to end.",
+        "Resolve who legally signs filings with a licensed partner."
+      ],
+      "proof": "Ten paying clients with books closed by the AI alone."
+    },
+    {
+      "phase": "seed",
+      "goal": "Show revenue and low error rates to justify a round above 500K.",
+      "actions": [
+        "Publish an error rate and human review rate for closed books.",
+        "Reach monthly revenue from recurring contracts."
+      ],
+      "proof": "Recurring monthly revenue and under 1 percent corrections."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Survive a full tax season at scale.",
+      "actions": [
+        "File several hundred returns with automated checks and audit support.",
+        "Add a second client segment and hire a head of compliance."
+      ],
+      "proof": "Net retention above 90 percent after a tax season and gross margin above 60 percent."
+    },
+    {
+      "phase": "series_b",
+      "goal": "Become a recognized national AI native firm.",
+      "actions": [
+        "Expand state coverage, insurance and audit services.",
+        "Build referral channels with banks and software vendors."
+      ],
+      "proof": "Revenue growth above 2x with stable margins."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Huge, boring market with a large cost gap",
+      "evidence": "Accounting is a large professional services spend, and AI accounting startups raised large rounds in 2026.",
+      "source_url": "https://www.cpapracticeadvisor.com/2026/02/24/basis-raises-100-million-to-deploy-ai-agents-for-accounting-firms/178759/"
+    },
+    {
+      "point": "Full stack model captures the whole fee",
+      "evidence": "Selling the service instead of a tool captures service revenue and gives data on every filing."
+    }
+  ],
+  "brand": {
+    "name": "Rational",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Rational\" --era 2022+: 8 characters, 3 syllables, kind invented_or_proper, a real word.",
+    "strengths": [
+      "Short real word that suggests logic and trust for finance",
+      "Easy to say and spell"
+    ],
+    "weaknesses": [
+      "Common word that is hard to own in search and shared with a well known software brand"
+    ],
+    "rationale": "A short real word with a credible tone suits a finance firm, like past YC names such as Brex or Gusto that were simple and memorable. The shared meaning and an older software brand dilute it, so the effect on success is neutral."
+  },
+  "narrative": {
+    "headline": "A bold zero human accounting firm in a hot category; likely to raise a seed but faces regulatory and accuracy hurdles at Series A.",
+    "general_summary": "Rational sells accounting as a service done by AI agents, which captures the full fee in a large market and fits the full stack AI services theme investors liked in 2026. The team is two founders with no stated traction, and tax and accounting require licensed signers, trust and accuracy, so the main question is whether the work can really be done without people. AI accounting is crowded with funded companies, and the closest YC analogs raised seeds of a few million and grew slowly. We rate the seed as likely and the Series A below the cohort anchor because of regulatory and seasonal friction. Data is thin on the company itself."
+  },
+  "assumptions": [
+    "Seed means a round above about 500K within about 12 months of the batch start.",
+    "Only the YC input description was used; no traction is known.",
+    "Base rates are B2B 2022 to 2025 cohort numbers; recent batches are right censored.",
+    "Funding coverage in the knowledge base is partial, so known only rates are biased low.",
+    "Search results dated after 2026-07-06 were ignored."
+  ],
+  "sources": [
+    "https://www.cpapracticeadvisor.com/2026/02/24/basis-raises-100-million-to-deploy-ai-agents-for-accounting-firms/178759/",
+    "https://newmarketpitch.com/blogs/news/ai-accounting-top-startups",
+    "https://newmarketpitch.com/blogs/news/ai-accounting-top-startups-valuation",
+    "https://newmarketpitch.com/blogs/news/ai-accounting-funding-trends"
+  ]
+}
