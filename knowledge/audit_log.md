@@ -201,3 +201,28 @@ Sample: 16 records drawn at random from the 330 most recently written (scanbase,
 Totals: 90 fields checked. Strict count (anything an auditor could find that is missing, including aggregator-only rounds and unsourced competitors): 21 wrong (23.3 percent). Lenient count (only fields contradicted by a source the auditor opened): 1 wrong (1.1 percent). A middle count, adding omissions confirmed by a non-aggregator source (Refine's blog rounds, Agave's TechCrunch founder and competitors, Dr Treat's acquisition, Roame's look-ahead leak), is roughly 8 fields, about 9 percent; this middle count is approximate because it was assembled by hand. The limit is 10 percent.
 
 Note on the standard: the strict count penalizes the repo's own no-fabrication rule, because aggregator-only rounds are deliberately kept in notes as unverified. The extractor skill asks auditors to check recorded founders, rounds, exits and competitor dates, which is closest to the middle count. For the final audit (Stage 5) I will report all three counts side by side and will only write the PASS line if the middle count is at or below 10 percent on a fresh sample, with the lenient and strict figures shown next to it. Result of this audit: not accepted as PASS-eligible because the sample was not a final audit. AUDIT RESULT is not PASS.
+
+## Waves 27 and 28 (strict prompt with the competitor and co-founder lessons), audit 10
+
+Sample: 16 records drawn at random from the 330 most recently written (kamion, alokai, savein, seaflight-technologies, palitronica-inc, numida, inferedge, vendoo, digi, ahazou, hype, hypestream, kapital-bank, sota2, julius, haddock). Two auditors. Both opened only a handful of pages and worked from search results for the rest, so the middle and lenient counts are lower bounds. This time each auditor reported three counts: strict (anything findable and missing, including aggregator-only rounds and empty competitor lists), middle (recorded items that are wrong or unsourced, plus omissions confirmed by a non-aggregator source the auditor opened) and lenient (only fields contradicted by an opened source).
+
+| Slug | Fields checked | Strict | Middle | Lenient | Notes |
+|---|---|---|---|---|---|
+| kamion | 5 | 1 | 1 | 0 | Parade Dergi (opened) reports a YC investment of 8.5M TL in July 2022 that the record omits. |
+| alokai | 8 | 2 | 1 | 0 | 20M round labelled series_a but the company post gives no stage; lead investors omitted; competitors empty. |
+| savein | 9 | 2 | 1 | 0 | Inc42 (opened) reports a 3M tranche in July 2022. |
+| seaflight-technologies | 7 | 2 | 0 | 0 | Competitors empty; aggregator rounds. |
+| palitronica-inc | 6 | 2 | 0 | 0 | Competitors empty; aggregator seed. |
+| numida | 9 | 3 | 0 | 0 | Competitor as_of does not match the batch; aggregator raise. |
+| inferedge | 5 | 1 | 0 | 0 | Aggregator seed. |
+| vendoo | 7 | 2 | 0 | 0 | Undated round; aggregator rounds. |
+| digi | 4 | 2 | 0 | 0 | Aggregator seed; competitors empty. |
+| ahazou | 3 | 1 | 0 | 0 | Aggregator seed. |
+| hype | 3 | 2 | 0 | 0 | Aggregator seed; competitors empty. |
+| hypestream | 3 | 1 | 0 | 0 | Competitors empty. |
+| kapital-bank | 9 | 6 | 3 | 1 | Foley notice (opened) labels the July 2022 30M round Series A with more investors; May 2023 Series A amount missing (LatamList, opened, says 20M); competitors undated. |
+| sota2 | 4 | 1 | 0 | 0 | Aggregator seed; founders unconfirmed. |
+| julius | 4 | 3 | 2 | 0 | AI Grant omitted from the seed (TechCrunch, opened); competitor dated after the as_of. |
+| haddock | 5 | 4 | 1 | 0 | Seed investors incomplete; undated competitors. |
+
+Totals: 91 fields checked. Strict: 35 wrong (38.5 percent). Middle: 9 wrong (9.9 percent). Lenient: 1 wrong (1.1 percent). The limit is 10 percent. The middle count is just under the limit and is a lower bound, so this is not evidence of a pass. Errors cluster in older companies with real funding history (Kapital Bank, Julius, Haddock, SaveIN, Kamion): the researcher found a seed but missed later rounds, stages and extra investors. Action: the records with middle errors are being corrected. AUDIT RESULT is not PASS.
