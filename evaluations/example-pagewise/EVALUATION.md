@@ -100,6 +100,64 @@ Pagewise sells document extraction to finance teams. The need is real and funded
 | 4 | Already funded category leaders pull ahead | 30% | A document AI company in the same wedge raised a Series B only about a year after its seed. | Reducto (reducto), Stacker (stacker) | Pick a vertical (for example construction invoices) where the leaders do not specialize. |
 | 5 | Founders have no stated edge in finance workflows | 25% | The description lists no customers, no pilots and no finance operating experience among the founders, so the team's edge is unproven. | Legacy (legacy), Teleport (teleport) | Add a finance operator as a co-founder or design partner before applying. |
 
+## Pros
+
+- **Proven demand**: A direct comparable raised a seed, A and B quickly, so buyers and investors exist. (https://www.ycombinator.com/companies/reducto)
+- **Clear unit of value**: Per page pricing is easy to explain and to test with pilots.
+- **Buildable by a small team**: Existing models plus a review step reach a useful product in about three months.
+
+## Roadmap
+
+### Get into YC
+
+Show paying demand before applying, so the application is not a thinner version of an existing company.
+
+1. Sign three design partners in finance operations and write down what they pay for today.
+2. Run the product on 500 real invoices from them and publish the accuracy numbers.
+3. Pick one vertical the funded leaders ignore, such as construction invoices.
+
+You know it worked when: Three named pilots and a measured accuracy figure on their own documents.
+
+### Reach Seed
+
+Turn pilots into recurring revenue before the first money is gone.
+
+1. Convert at least two pilots to paid contracts with a monthly minimum.
+2. Ship the review workflow so customers keep using the product after the demo.
+3. Track weekly pages processed and the share needing human review.
+
+You know it worked when: Monthly recurring revenue growing for three months in a row.
+
+### Reach Series A
+
+Prove it is more than an extraction API by owning the review workflow and integrations.
+
+1. Build integrations with the top two accounting systems used by your customers.
+2. Finish a security review and write down the deployment options enterprises ask for.
+3. Reach net revenue retention above 110 percent.
+
+You know it worked when: About $1M to $2M in annual revenue with low churn.
+
+### Reach Series B
+
+Stay ahead as model vendors add document features.
+
+1. Move pricing from per page to per closed outcome.
+2. Add an audit trail and approval steps competitors do not have.
+3. Hire a first sales leader for mid market accounts.
+
+You know it worked when: Gross margin holding above 70 percent while page prices fall.
+
+### Reach Series C and beyond
+
+Become the system of record for finance documents, not a feature inside a suite.
+
+1. Expand to a second department such as procurement.
+2. Sign two large channel partners.
+3. Decide early whether to sell to a suite vendor or to keep building.
+
+You know it worked when: More than half of revenue from multi product accounts.
+
 ## Scorecard
 
 | Factor | Rating (1-5) | Notes |
