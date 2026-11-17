@@ -1,330 +1,493 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "TensorPool",
+  "one_liner": "Vercel For GPUs",
+  "description": "TensorPool is a three person San Francisco developer tools company. Its command line tool lets an ML engineer describe a training job and have the company handle GPU orchestration and execution at about half the cost of the big cloud providers. It is a thin layer that buys capacity from GPU clouds and neoclouds, sold as Vercel for GPUs. Tags are AIOps, developer tools, SaaS, DevOps and cloud computing. Customers, revenue and margin are not stated.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.078,
+  "basis": "Start from the roughly 1 percent applicant prior (band 0.6 to 2 percent). Adjust up about 2.5x for an infrastructure developer tool with a clear price claim, a technical three person team and fit with YC's interest in AI infrastructure. Adjust down for the commodity nature of GPU resale, and many funded rivals. Net about 3 percent.",
+  "why_it_fails": "YC would most plausibly say a GPU orchestration CLI that resells cloud capacity has no obvious moat: suppliers set the cost, SkyPilot is open source, and Modal and similar serverless GPU platforms already sell the same developer convenience. The application gives no usage numbers, so partners cannot see pull from real ML teams."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.67,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag \"Developer Tools\": seed cond 67 percent (n=54); --tag AI: 64 percent (n=183). Window is 22 months from 2025-01-06 to 2026-11-17; time_to_milestones.csv 2022+ months_to_seed median 6, p75 14.2.",
+    "adjustment_reason": "Anchors are for ever reaching a seed; a 22 month window covers most reachers, so the number is the anchor times about 0.75 (0.5), not lifted for the GPU boom, since the winners test shows lifts do not rank companies. Seed means an outside round above about $1M, not the YC deal. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a micro fund. Common for a team of two to four before a customer logo is public; the 2022 and later seed row has p25 of $2.8M, so this is the lower quartile."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed at the center of the 2022 and later table (median $3.5M to $4.1M) shifted up a little for AI native B2B. Most likely if two or three paying design partners are visible."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Large AI seed. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers big rounds more, so this band is kept below the central one."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: a hot category plus fast revenue and a lead from a multi stage fund. Rare in the YC data."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Investors often balk at GPU resale because gross margin depends on supplier prices that fell through 2024 and are set by others. Trainy, a Summer 2023 GPU cluster management company, shows only a $500K YC round on record, and Cedana, a deep GPU technology team, shows no verified round beyond YC either."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.47,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag \"Developer Tools\": series_a cond 47 percent (n=36). time_to_milestones.csv 2022+ months_to_series_a p25 19.4, median 28.0.",
+    "adjustment_reason": "Window anchored: 22 months sits at the p25 to median of time to A, so roughly a third of eventual A companies show it; 0.47 times about 0.2 gives about 0.10, over 2x below the ever anchor because of time and not quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge style A under $10M, a down or flat round relative to the seed."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band: 2022 and later series A median $14.15M, with market medians near $17M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      160000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong A led by a top fund after clear revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside: breakout category leader, AI infrastructure style round."
+    }
+   ],
+   "why_it_fails": "A Series A needs a recurring revenue base that is not just pass through compute spend, with gross margins investors respect. A half price GPU claim invites customers to price shop, so retention is weak; Shadeform, a GPU marketplace that grew to 22 staff, shows no public A in the record, and FloydHub, an earlier ML platform, shut down in 2021 after the clouds copied it."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.41,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag \"Developer Tools\": series_b cond 41 percent (n=17).",
+    "adjustment_reason": "Below the anchor (0.8x) because infrastructure resale margins are thin and the later stage is crowded with neoclouds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      70000000,
+      130000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small or extension B: growth slowed after the A, so the round is modest or flat to the prior valuation."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical B, 2022 and later median about $37M to $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Large B for a category leader with strong revenue growth and a top tier lead investor."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside round if the company becomes the clear category winner with outsized growth."
+    }
+   ],
+   "why_it_fails": "A Series B requires infrastructure revenue at scale with defensible margins, and this business depends on capacity suppliers who can sell direct. The likely failure is that large customers go straight to neoclouds and hyperscalers, leaving a small developer segment that does not support a B valuation."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.43,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag \"Developer Tools\": series_c cond 43 percent (n=7), a tiny sample.",
+    "adjustment_reason": "Below the anchor (0.77x) because the sample is only 7 and GPU compute is capital heavy."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest C with a flat valuation to the B, reflecting slower growth and tougher market multiples."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or D, 2022 and later median $74M to $150M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Large growth round for a company with strong enterprise revenue and expanding margins."
+    },
+    {
+     "raise_usd": [
+      300000000,
+      600000000
+     ],
+     "post_money_usd": [
+      3000000000,
+      8000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Category winner raising a very large round on a premium valuation."
+    }
+   ],
+   "why_it_fails": "A Series C requires a durable platform with large recurring spend. The common outcome is an acquisition by a neocloud that wants software on top of its capacity, at a price below C valuations, or a plateau once GPU prices fall and customers go direct."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.57
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     6000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "GPU access wrappers see their economics set by supplier prices that move against them; FloydHub's shutdown in 2021 after cloud vendors served the same developers is the pattern. Large outcomes require owning infrastructure or a proprietary scheduler that cuts utilization costs, and neither Trainy nor Cedana, both Summer 2023 GPU infrastructure companies, shows a verified round past YC so far."
+ },
+ "analogs": [
+  {
+   "slug": "shadeform",
+   "relevance": "GPU cloud marketplace, Summer 2023.",
+   "outcome_summary": "Grew to about 22 staff and over 30 provider clouds; funding is not clearly public, so the marketplace path needs scale first."
+  },
+  {
+   "slug": "trainy",
+   "relevance": "GPU cluster management and scheduling for training, Summer 2023.",
+   "outcome_summary": "Small company, $500K YC level funding on record, claims customer logos; no later round found."
+  },
+  {
+   "slug": "cedana",
+   "relevance": "GPU live migration for AI workloads, Summer 2023.",
+   "outcome_summary": "Deeply technical small team with a marketplace listing; no verified round past YC, and large vendors moved in."
+  },
+  {
+   "slug": "floydhub",
+   "relevance": "Heroku for deep learning, Winter 2017: the same idea in an earlier era.",
+   "outcome_summary": "Showed early usage and raised a seed but shut down in August 2021; specialist GPU clouds and big clouds served the same developers."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Thin margin from reselling third party GPU capacity",
+   "p": 0.4,
+   "evidence": "Costs are set by suppliers, and public price indexes in the market show neocloud H100 rates falling, shrinking the half price spread over big clouds.",
+   "analogs": [
+    "shadeform",
+    "floydhub"
+   ],
+   "mitigation": "Move up the stack with a scheduler or checkpointing that saves customers money regardless of supplier price."
+  },
+  {
+   "risk": "Developer convenience copied by serverless GPU platforms and open source",
+   "p": 0.35,
+   "evidence": "Modal raised $16M in a Series A in Oct 2023 for serverless GPU compute, and SkyPilot is open source for multi cloud ML jobs.",
+   "analogs": [
+    "floydhub",
+    "cedana"
+   ],
+   "mitigation": "Pick the training niche where setup pain is highest and own the CLI workflow."
+  },
+  {
+   "risk": "Customers go direct to neoclouds once they scale",
+   "p": 0.3,
+   "evidence": "Larger ML teams negotiate reserved capacity directly with providers, which cuts out the reseller.",
+   "analogs": [
+    "trainy",
+    "shadeform"
+   ],
+   "mitigation": "Lock in with reproducibility and cost tracking tools that stay valuable at scale."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Modal",
+   "what": "Serverless GPU compute for AI developers.",
+   "traction": "Raised $16M Series A in October 2023 led by Redpoint.",
+   "source_url": "https://techcrunch.com/2023/10/10/modal-labs-lands-16m-to-abstract-away-big-data-workload-infrastructure/"
+  },
+  {
+   "name": "SkyPilot",
+   "what": "Open source framework to run ML jobs across clouds at lower cost.",
+   "traction": "Widely used open source project from Berkeley researchers.",
+   "source_url": "https://skypilot.co"
+  },
+  {
+   "name": "Lambda, RunPod and CoreWeave",
+   "what": "GPU clouds selling raw capacity.",
+   "traction": "Large neoclouds that are also the likely suppliers.",
+   "source_url": "https://lambda.ai"
+  },
+  {
+   "name": "AWS SageMaker and Google Vertex",
+   "what": "Hyperscaler managed training.",
+   "traction": "The default for enterprise ML teams despite higher prices.",
+   "source_url": "https://aws.amazon.com/sagemaker/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A job description to execution flow with provisioning across multiple GPU suppliers, data transfer, retries and cost tracking is feasible for three engineers in three months using supplier APIs. The hard part is reliability across heterogeneous providers and getting capacity at a real discount, which depends on supplier deals and not on code."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Modal",
+   "SkyPilot",
+   "Lambda",
+   "CoreWeave",
+   "Together AI"
+  ],
+  "timeline_months": 6,
+  "rationale": "Suppliers can offer their own CLI and workflows, and open source SkyPilot already covers much of the orchestration. A rival can match the CLI in under six months; the discount is the actual product."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Serverless GPU compute drew venture funding, with Modal raising a $16M Series A in 2023.",
+    "source_url": "https://techcrunch.com/2023/10/10/modal-labs-lands-16m-to-abstract-away-big-data-workload-infrastructure/"
+   },
+   {
+    "claim": "Hyperscaler on demand GPU prices are well above neocloud prices, so a savings pitch has an audience.",
+    "source_url": "https://vessl.ai/en/blog/hyperscalers-vs-neoclouds-2026-en"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show ML teams using the CLI for real training jobs.",
+   "actions": [
+    "Get 20 active weekly users with at least 10 GPU hours each.",
+    "Publish cost per job comparison against AWS with receipts."
+   ],
+   "proof": "Paid usage from five teams and a measured 40 percent or larger saving."
+  },
+  {
+   "phase": "seed",
+   "goal": "Turn savings into margin and recurring spend.",
+   "actions": [
+    "Sign committed capacity deals with two suppliers.",
+    "Add team billing and spend commitments."
+   ],
+   "proof": "$30K monthly gross profit and 3 teams spending over $5K a month."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove a platform beyond resale.",
+   "actions": [
+    "Ship a scheduler that raises utilization and cuts failed jobs.",
+    "Build enterprise controls."
+   ],
+   "proof": "$1.5M annualized revenue at 50 percent or higher gross margin."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Scale to large ML customers.",
+   "actions": [
+    "Add inference and fine tuning workflows.",
+    "Offer reserved capacity management."
+   ],
+   "proof": "$10M annual recurring revenue."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Be the default software layer over GPU suppliers.",
+   "actions": [
+    "Integrate with all neoclouds.",
+    "Add global regions."
+   ],
+   "proof": "$40M or more annual recurring revenue."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear value proposition with a number: half the cost",
+   "evidence": "Hyperscaler on demand GPU prices run well above neocloud rates in market price indexes.",
+   "source_url": "https://vessl.ai/en/blog/hyperscalers-vs-neoclouds-2026-en"
+  },
+  {
+   "point": "Technical team in a funded category",
+   "evidence": "Serverless GPU and ML infra drew rounds such as Modal's $16M Series A in 2023.",
+   "source_url": "https://techcrunch.com/2023/10/10/modal-labs-lands-16m-to-abstract-away-big-data-workload-infrastructure/"
+  }
+ ],
+ "brand": {
+  "name": "TensorPool",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"TensorPool\" --era 2022+: two words, compound_words, 10 characters, 3 syllables",
+  "strengths": [
+   "Immediately tells ML engineers it is about tensors and compute pools",
+   "Easy to spell"
+  ],
+  "weaknesses": [
+   "Descriptive, close to existing GPU and pool brand names",
+   "Little room to expand beyond GPU compute"
+  ],
+  "rationale": "Compound descriptive names are common in infrastructure, like FloydHub or Shadeform, and help developers understand the product, but they are not ownable; effect neutral."
+ },
+ "narrative": {
+  "headline": "A real cost pain in a funded niche, but a commodity resale position makes margin and moat the question; a seed in 22 months is about even odds.",
+  "general_summary": "TensorPool wraps GPU capacity from other clouds in a CLI that promises about half the price of major clouds. Demand is real, since ML teams pay a lot for GPUs and serverless GPU companies raised money, but the product depends on supplier pricing that is falling and rivals like Modal and open source SkyPilot already cover the convenience. The anchor for developer tools is 67 percent ever for a seed; with a 22 month window and a thin moat I use 50 percent. The odds do not rank this company against others. Series A inside the window is about 10 percent. The biggest killers are margin compression and customers going direct to suppliers. An upside path is a scheduler or utilization layer that earns margin regardless of supplier price."
+ },
+ "assumptions": [
+  "Only the as of date input was used: description, tags, team of 3, San Francisco.",
+  "Window is 22 months from 2025-01-06 to 2026-11-17; seed means an outside round above about $1M, not the YC deal.",
+  "Customer count, revenue and supplier terms are unknown.",
+  "Records and web results dated after 2025-01-06 were ignored, including 2026 GPU price pages cited by search results.",
+  "Funding data for 2022+ analogs is partial and right censored."
+ ],
+ "sources": [
+  "https://techcrunch.com/2023/10/10/modal-labs-lands-16m-to-abstract-away-big-data-workload-infrastructure/",
+  "https://skypilot.co",
+  "https://lambda.ai",
+  "https://aws.amazon.com/sagemaker/",
+  "https://vessl.ai/en/blog/hyperscalers-vs-neoclouds-2026-en"
+ ]
 }

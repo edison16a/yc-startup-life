@@ -1,330 +1,491 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Caseflood.ai",
+  "one_liner": "How elite law firms do intake",
+  "description": "Caseflood.ai is a two person Miami company whose one line pitch is how elite law firms do intake. Tags are B2B, sales, legal, call center and AI. The input gives no description, so the product is assumed to be AI that answers calls and messages from potential clients of law firms, qualifies the case and books the consultation, sold to plaintiff and other consumer facing firms that live on lead response speed. Customers, revenue and pricing are unknown.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.02,
+  "p_low": 0.0067,
+  "p_high": 0.052,
+  "basis": "Start from the roughly 1 percent applicant prior (band 0.6 to 2 percent). Adjust up about 1.5x for a clear vertical with a paid job and a sales led wedge, a fit with YC's interest in vertical AI agents. Adjust down for two founders with no stated traction, no description, and an intake category that already has funded legal AI rivals. Net about 2 percent.",
+  "why_it_fails": "YC would most plausibly say the pitch is one line with no evidence of customers, and that AI intake and call answering for law firms is a busy area with many small vendors and a funded legal AI player moving into intake. Without proof that firms pay or that the founders have legal sales access, interviewers may see a thin wrapper."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.65,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B: seed cond 65 percent (n=294); --tag AI: 64 percent (n=183); B2B 2022-2026: 52 percent (n=163). Window is 22 months from 2025-01-06 to 2026-11-17; time_to_milestones.csv 2022+ months_to_seed p25 3, median 6, p75 14.2.",
+    "adjustment_reason": "Anchors are for ever reaching a seed; a 22 month window covers most reachers (p75 is 14 months), so the window barely trims. I put the number below the AI anchor (0.7x) because of two founders, no stated traction and a narrow vertical, which is inside the 0.75x allowance only just; seed means an outside round above about $1M, not the YC deal. No lift for hype, and the odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      7000000,
+      15000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Small post YC round under $3M. Vertical SaaS teams with a handful of firms paying often take a $1M to $3M round first, as hona did with $2.1M in 2023."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.37,
+     "rationale": "Institutional seed. Needs recurring revenue and a repeatable channel to buyers."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      55000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Large seed from a multi stage fund if revenue is clearly growing; unusual for a two person vertical team."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      18000000
+     ],
+     "post_money_usd": [
+      55000000,
+      90000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Upside tail: a vertical leader with fast revenue growth and a lead from a multi stage fund."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Investors may see a thin AI call answering layer for a narrow buyer set with lots of cheap receptionist style competitors, and a two person team without published revenue. Hona, a legal communications company in the same personal injury world, needed over $1M in ARR before its $2.1M seed, while Sophys, an AI intake company in healthcare, shows nothing beyond the YC check."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.32,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B: series_a cond 32 percent (n=191). time_to_milestones.csv 2022+ months_to_series_a p25 19.4, median 28.0, p75 38.4.",
+    "adjustment_reason": "Window anchored: 22 months is near the p25 to median of time to A (19 to 28 months), so about a third of eventual A companies show it in the window; 0.32 times about 0.3 gives about 0.10, over 2x below the anchor because of time. Hona took 11 months from seed to A."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge style A under $10M, a down or flat round relative to the seed."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band: 2022 and later series A median $14.15M, with market medians near $17M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      160000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong A led by a top fund after clear revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside: breakout category leader, AI infrastructure style round."
+    }
+   ],
+   "why_it_fails": "Reaching a Series A means turning intake automation into a platform with several hundred firms paying recurring fees. Distribution to law firms is word of mouth and conferences and the product is easy to copy, so growth often flattens at a few dozen accounts. Hona reached a $9.5M A in June 2024 after a long run of product work and over $1M ARR, a bar this team must match."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.46,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B: series_b cond 46 percent (n=61).",
+    "adjustment_reason": "Below the anchor (0.76x) because legal vertical software has a small buyer base and the intake slice is easily bundled; ever, not windowed."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      70000000,
+      130000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small or extension B: growth slowed after the A, so the round is modest or flat to the prior valuation."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical B, 2022 and later median about $37M to $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Large B for a category leader with strong revenue growth and a top tier lead investor."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside round if the company becomes the clear category winner with outsized growth."
+    }
+   ],
+   "why_it_fails": "A Series B needs a defensible platform beyond intake, such as case management or marketing, that pushes revenue into the eight figures. The common failure is that practice management vendors and case platforms add intake features, so the company stalls at a few million in revenue and investors would not fund a B on a niche of the legal market."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.5,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B: series_c cond 50 percent (n=28).",
+    "adjustment_reason": "Below the anchor (0.66x) since a narrow legal wedge usually caps scale unless it widens to the whole firm workflow."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest C with a flat valuation to the B, reflecting slower growth and tougher market multiples."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or D, 2022 and later median $74M to $150M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Large growth round for a company with strong enterprise revenue and expanding margins."
+    },
+    {
+     "raise_usd": [
+      300000000,
+      600000000
+     ],
+     "post_money_usd": [
+      3000000000,
+      8000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Category winner raising a very large round on a premium valuation."
+    }
+   ],
+   "why_it_fails": "Series C needs category leadership in legal operations. The failure mode is that the vertical's total spend on intake is small relative to growth stage valuations, and platforms that own case management absorb the product, leaving growth below what a C investor requires; Hona's path from seed to A in 11 months is the fast case, and nothing here suggests this team has shown that pace yet."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     6000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Narrow vertical AI wrappers usually end by acquisition by a practice management or legal marketing company at small prices, or by drifting after a seed. Large outcomes need expansion from intake into the full case workflow, which funded legal AI companies are already attacking, and a call handling product like SigmaMind's contact center voice AI, which shows only a $500K YC check, shows how stalled the narrow path can be."
+ },
+ "analogs": [
+  {
+   "slug": "hona",
+   "relevance": "Personal injury law firm communications software, Winter 2023, same buyer.",
+   "outcome_summary": "Over $1M ARR by mid 2023, $2.1M seed in July 2023 and $9.5M Series A in June 2024: the success path needs revenue first."
+  },
+  {
+   "slug": "sophys",
+   "relevance": "AI intake agents for healthcare, Winter 2022.",
+   "outcome_summary": "One person team, only the YC deal on record, later pitched wellness customers; intake is not by itself a fundable wedge."
+  },
+  {
+   "slug": "sigmamind-ai",
+   "relevance": "Contact center voice AI, Summer 2022.",
+   "outcome_summary": "Only a $500K YC round on record and about 12 staff; voice call handling alone did not get a visible seed."
+  },
+  {
+   "slug": "retell-ai",
+   "relevance": "AI phone agents sold to contact centers, Winter 2024.",
+   "outcome_summary": "A $4.6M seed in Aug 2024 after $3M annualized revenue; shows voice agents fund when sales already exist."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Thin product easy to copy with voice AI platforms",
+   "p": 0.45,
+   "evidence": "Voice agent platforms and law firm answering services already offer AI intake at low monthly prices, and little in the description suggests a moat.",
+   "analogs": [
+    "retell-ai",
+    "sophys"
+   ],
+   "mitigation": "Integrate deeply with case management and measure signed cases per call, not just answered calls."
+  },
+  {
+   "risk": "Funded legal AI companies expand into intake",
+   "p": 0.3,
+   "evidence": "Plaintiff firm platforms with large rounds are broadening from document work into case intake in 2025.",
+   "analogs": [
+    "hona"
+   ],
+   "mitigation": "Pick one practice area and own the lead response workflow end to end."
+  },
+  {
+   "risk": "Small buyer base and slow law firm adoption",
+   "p": 0.3,
+   "evidence": "Law firms buy slowly and many are tiny; selling per firm needs founders who know the buyer.",
+   "analogs": [
+    "hona",
+    "sophys"
+   ],
+   "mitigation": "Sell on a pay per signed case model that makes the pitch easy."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Smith.ai and Ruby",
+   "what": "Human plus AI receptionist services for law firms.",
+   "traction": "Established paid services in legal answering; the status quo to beat on price and quality.",
+   "source_url": "https://smith.ai"
+  },
+  {
+   "name": "Hona",
+   "what": "Client communication platform for personal injury firms.",
+   "traction": "$9.5M Series A in June 2024 and over $1M ARR by mid 2023 per its record.",
+   "source_url": "https://www.ycombinator.com/companies/hona"
+  },
+  {
+   "name": "Lawmatics and Clio",
+   "what": "Legal CRM and practice management with intake modules.",
+   "traction": "Incumbent systems that hold firm data and can add AI intake.",
+   "source_url": "https://www.clio.com"
+  },
+  {
+   "name": "Status quo: in house intake staff and call centers",
+   "what": "Staff answering calls and following up leads.",
+   "traction": "Paid labor cost in every firm that buys marketing leads.",
+   "source_url": "https://autocalls.ai/industries/legal"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "AI phone and chat agents that qualify callers and book appointments are well within reach of two founders using voice AI platforms; the work is conversation design, CRM integration and handling edge cases like sensitive client details. Little is hard to copy, so technology is not a moat."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Clio",
+   "Lawmatics",
+   "Smith.ai",
+   "funded legal AI platforms"
+  ],
+  "timeline_months": 6,
+  "rationale": "Case management vendors and well funded legal AI companies can add AI intake in a few months, and voice API platforms offer templates. The advantage must come from outcomes data and relationships."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Vendor sources say many law firm calls go unanswered and sell AI answering services, with prices from $99 a month in the market.",
+    "source_url": "https://justcall.io/product/ai-voice-agent/law-firms/"
+   },
+   {
+    "claim": "Personal injury firms spend on lead generation, so conversion speed has a clear dollar value; vendor claims are unverified.",
+    "source_url": "https://autocalls.ai/industries/legal"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Prove firms pay for AI intake.",
+   "actions": [
+    "Sign three paying law firms and log signed cases per 100 calls.",
+    "Write a clear product description and customer quote."
+   ],
+   "proof": "Three firms paying and a conversion lift over their baseline."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeatable sales into plaintiff firms.",
+   "actions": [
+    "Choose one practice area and sell pay per signed case.",
+    "Integrate with two case management systems."
+   ],
+   "proof": "$25K monthly recurring revenue across 15 firms."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Become the intake system of record for plaintiff firms.",
+   "actions": [
+    "Add marketing attribution and follow up automation.",
+    "Build a partner channel with legal marketing agencies."
+   ],
+   "proof": "$1.5M annual recurring revenue across 200 firms."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Expand from intake into the case lifecycle.",
+   "actions": [
+    "Add case tracking and client messaging.",
+    "Enter a second practice area."
+   ],
+   "proof": "$10M annual recurring revenue."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Own legal client acquisition operations.",
+   "actions": [
+    "Add international or large firm product.",
+    "Acquire a legal marketing service."
+   ],
+   "proof": "$35M or more annual recurring revenue."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear dollar value per answered lead",
+   "evidence": "Firms pay for leads, so faster intake converts directly to signed cases; vendor claims support this but are unverified.",
+   "source_url": "https://autocalls.ai/industries/legal"
+  },
+  {
+   "point": "Sales led B2B wedge with small founding team costs",
+   "evidence": "Hona reached $9.5M Series A on the same buyer after a revenue led start.",
+   "source_url": "https://www.ycombinator.com/companies/hona"
+  }
+ ],
+ "brand": {
+  "name": "Caseflood.ai",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Caseflood.ai\" --era 2022+: one word, invented_or_proper, 9 characters, 3 syllables, no descriptor words flagged",
+  "strengths": [
+   "Vivid image of a flood of cases, tells the benefit",
+   "Compound of case and flood is memorable"
+  ],
+  "weaknesses": [
+   "The .ai suffix is generic",
+   "Flood has a negative disaster sense and sounds like lead spam"
+  ],
+  "rationale": "Compound benefit names work in vertical software, similar in spirit to Hona or Rootly, but the flood image may suggest a lead generation agency to law firms; neutral on outcomes."
+ },
+ "narrative": {
+  "headline": "A narrow legal intake wedge with a clear dollar value but a thin description and a two person team; a seed in 22 months is somewhat below even odds.",
+  "general_summary": "Caseflood.ai appears to sell AI intake for law firms, a job with a measurable dollar value since firms pay for leads and lose cases to slow response. The record gives no description, customers or revenue, so the odds rest on the cohort: the B2B anchor for a seed is 65 percent ever and about 52 percent for recent batches, and a 22 month window trims little, so I use 45 percent, below the anchor for a two person team with no stated traction. The odds do not rank this company against others. Series A inside the window is about 10 percent. Main risks are a thin copyable product, funded legal AI companies moving into intake, and a small slow buyer base. A pivot into a broader case workflow would be the upside path."
+ },
+ "assumptions": [
+  "Only the as of date input was used: one liner, tags, team of 2, Miami; the description is empty.",
+  "The product is assumed to be AI intake and call handling for law firms from the one liner and tags.",
+  "Window is 22 months from 2025-01-06 to 2026-11-17; seed means an outside round above about $1M, not the YC deal.",
+  "Records after 2025-01-06 were ignored, including funded legal AI news dated after that.",
+  "Funding data for 2022+ analogs is partial and right censored."
+ ],
+ "sources": [
+  "https://smith.ai",
+  "https://www.ycombinator.com/companies/hona",
+  "https://www.clio.com",
+  "https://justcall.io/product/ai-voice-agent/law-firms/",
+  "https://autocalls.ai/industries/legal"
+ ]
 }

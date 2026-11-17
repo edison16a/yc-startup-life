@@ -1,330 +1,431 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Percival",
+  "one_liner": "Accelerating data analysis for research",
+  "description": "AI copilot that helps researchers analyze and transform real world data, working on messy datasets from cleaning to analysis. Three person team in San Francisco and remote, Spring 2025 batch, tags Developer Tools, Data Science and AI. The buyer is unclear: academic labs, biotech or corporate research groups, paying for seats or usage.",
+  "as_of": "2025-04-07"
+ },
+ "yc_acceptance": {
+  "p": 0.02,
+  "p_low": 0.008,
+  "p_high": 0.045,
+  "basis": "Starting prior is about 1 percent for a random applicant (0.6 to 2 percent, references/yc_acceptance.md). Up slightly for a technical, AI native pitch in a clear pain point, since researchers spend large time cleaning data. Down because the input shows no traction, the team has three people, the buyer is unclear and general chat assistants already analyse data. Net about 2 percent; the company is already in the batch so this is for completeness.",
+  "why_it_fails": "YC would most likely say that AI data analysis is a crowded space where general assistants and Julius already let people upload data and ask questions, and that researchers, especially academics, have little budget. Partners would ask for a named paying segment and why a copilot would beat a general model for this job."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.55,
+    "source": "python3 -I scripts/base_rates.py --tag 'Developer Tools' --years 2022-2025 --calibration-only: seed cond 55% (n=29, lower 50 / upper 59), series_a cond 38% (n=16), series_b cond 0% known (n=6, upper 9%). Broad cohort python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 8 months from batch start (p75 14 to 20), series_a p25 19 and median 28 months.",
+    "adjustment_reason": "Window is 19.4 months, from 2025-04-07 to 2026-11-17, and counts a round above about 1M from outside investors closing inside it. Anchor 0.55 for Developer Tools and 0.59 for B2B, ever. A 19 month window covers the 2022 and later p75 time to seed (14 to 20 months), so about 80 percent of eventual seeds fit: 0.55 times 0.8 gives 0.44, then 0.38 for a three person team and an unclear buyer. 0.38 is 0.7x of the tag anchor. Hot AI interest is not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under 3M, common for three person developer tools teams with early users."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M if paying users grow."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Strong seed if a biotech or pharma customer base pays quickly; the 6M to 10M quartile applies to AI native companies with larger teams."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Large seed in AI for science, where a few companies raised big early rounds; rare for three people."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step fails if paying users stay as academics and students on small plans, because investors need a segment with budget such as pharma or industry research. MantleBio (scientific data tooling) raised a seed and then shut down, Deepnote needed years and a notebook niche to reach a Series A, and Julius competes for the same general analysts. A three person team also has limited capacity to sell into enterprises."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.38,
+    "source": "python3 -I scripts/base_rates.py --tag 'Developer Tools' --years 2022-2025 --calibration-only: seed cond 55% (n=29, lower 50 / upper 59), series_a cond 38% (n=16), series_b cond 0% known (n=6, upper 9%). Broad cohort python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 8 months from batch start (p75 14 to 20), series_a p25 19 and median 28 months.",
+    "adjustment_reason": "Window 19.4 months. Series A for 2022 and later companies has p25 at 19 months and median 28, so about a quarter of eventual A raisers close by the window end. Anchor 0.38 for the Developer Tools tag (n=16) and 0.26 for B2B; 0.08 is 0.3x of the B2B anchor and comes from the window and the unclear buyer."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later YC median of 14.15M (stage_benchmarks.md), led by the seed investor."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M with quartiles 10M and 20M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series A led by a top fund after fast recurring revenue, above the 2022 and later p75 of about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A inside 19 months needs recurring revenue from a segment that pays, in a space where general models improve every quarter and give the same analysis for a few dollars a month. Deepnote took years to reach its Series A and MantleBio stopped after a seed, so a quick A would be a breakout from the pattern."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --tag 'Developer Tools' --years 2022-2025 --calibration-only: seed cond 55% (n=29, lower 50 / upper 59), series_a cond 38% (n=16), series_b cond 0% known (n=6, upper 9%). Broad cohort python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 8 months from batch start (p75 14 to 20), series_a p25 19 and median 28 months.",
+    "adjustment_reason": "Window 19.4 months. Series B median is about 36 months for 2022 and later YC companies, and the Developer Tools cohort has no known Series B in n=6. Inside the window it is a tail event, so 0.03."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      140000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M after growth slows."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      140000000,
+      350000000
+     ],
+     "p_band": 0.42,
+     "rationale": "Typical Series B near the 2022 and later median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      350000000,
+      900000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Upside Series B for a breakout, above the 2022 and later p75 of 57M."
+    }
+   ],
+   "why_it_fails": "A Series B in 19 months would be a breakout where AI for research becomes a standard tool in labs and the company leads. The cohort has no known B among Developer Tools companies in n=6, and the analogs reached A only after years, so the chance stays a few percent."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": 0.0,
+    "source": "python3 -I scripts/base_rates.py --tag 'Developer Tools' --years 2022-2025 --calibration-only: seed cond 55% (n=29, lower 50 / upper 59), series_a cond 38% (n=16), series_b cond 0% known (n=6, upper 9%). Broad cohort python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 8 months from batch start (p75 14 to 20), series_a p25 19 and median 28 months.",
+    "adjustment_reason": "Window 19.4 months. The 2022 and later B2B cohort has 0 Series C in n=3 and C comes at a median of about 5 years, so 0.01 is a floor for an extreme breakout."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Smaller Series C or growth round near the 2022 and later p25 to median of 35M to 45M."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1500000000
+     ],
+     "p_band": 0.42,
+     "rationale": "Typical later round, 2022 and later Series D plus median 97.5M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      5000000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Category leader round above 120M, matching the top quartile of 2022 and later Series D plus rounds."
+    }
+   ],
+   "why_it_fails": "A Series C inside 19 months would mean a company with tens of millions of revenue after starting with three people. No analog in the data did this and the cohort base rate rests on three companies, so the number is a floor and not an estimate."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.58
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.1
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.02
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Tools for data analysis are being absorbed by general assistants, so most such companies stall, are acquired by a data platform for the team, or shut down like MantleBio. A large outcome needs a specific research workflow with budget and data that general tools cannot reach."
+ },
+ "analogs": [
+  {
+   "slug": "julius",
+   "relevance": "Build and analyze things with AI, Summer 2022 data analyst",
+   "outcome_summary": "Closest direct competitor in the same YC wedge, general purpose analysis for non technical users."
+  },
+  {
+   "slug": "deepnote",
+   "relevance": "Data science notebook, Summer 2019",
+   "outcome_summary": "Raised a seed and a Series A over years; a notebook niche with a collaborative angle."
+  },
+  {
+   "slug": "mantlebio",
+   "relevance": "Transform scientific data into discoveries, Summer 2023",
+   "outcome_summary": "Raised a seed and shut down; science data tooling lacked a paying segment."
+  },
+  {
+   "slug": "phonic",
+   "relevance": "Collect and analyze voice and video feedback for researchers, Winter 2020",
+   "outcome_summary": "Raised a seed then was acquired; small market for research tools."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "General AI assistants (ChatGPT, Claude, Gemini) analyze uploaded data well enough, so a copilot has no edge",
+   "p": 0.45,
+   "evidence": "OpenAI shipped data analysis in ChatGPT in 2023 and model providers keep adding code and chart features at no extra price.",
+   "analogs": [
+    "julius",
+    "mantlebio"
+   ],
+   "mitigation": "Win on reproducible, auditable pipelines and domain data connectors that general tools lack."
+  },
+  {
+   "risk": "Researchers have small budgets and long procurement, so revenue per seat stays low",
+   "p": 0.35,
+   "evidence": "Academic labs fund tools through grants and per seat prices for similar tools sit near 20 to 100 dollars a month.",
+   "analogs": [
+    "phonic",
+    "mantlebio"
+   ],
+   "mitigation": "Sell to pharma, biotech or corporate R and D where budgets are larger."
+  },
+  {
+   "risk": "Three person team cannot cover product, data integrations and sales at once",
+   "p": 0.25,
+   "evidence": "The input lists three people, while research data comes in many formats that need constant integration work.",
+   "analogs": [
+    "deepnote",
+    "mantlebio"
+   ],
+   "mitigation": "Focus on one data type or discipline and hire after revenue."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Julius AI",
+   "what": "AI data analyst for non technical users",
+   "traction": "YC Summer 2022 company with a paid product",
+   "source_url": "https://julius.ai"
+  },
+  {
+   "name": "Deepnote",
+   "what": "Collaborative data science notebook with AI",
+   "traction": "YC Summer 2019 company with seed and Series A",
+   "source_url": "https://deepnote.com"
+  },
+  {
+   "name": "ChatGPT data analysis",
+   "what": "Upload files and run Python analysis in a general assistant",
+   "traction": "Large user base across general users",
+   "source_url": "https://openai.com/chatgpt"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Running code, cleaning data and charting with a model is standard, and a small team can build a first copilot in three months. The hard part is reliability on messy real data, reproducibility that researchers can cite, and connectors to domain formats."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "OpenAI",
+   "Anthropic",
+   "Google",
+   "Julius AI",
+   "Databricks and Snowflake"
+  ],
+  "timeline_months": 6,
+  "rationale": "General assistants already offer file upload and code execution, and each model release improves them. A well resourced rival can add research workflows within months, so absorption risk is very high."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Researchers spend a large share of analysis time on cleaning and formatting data, which is the pain this product targets (opinion pieces cite about 80 percent)",
+    "source_url": "https://powerdrill.ai/blog/best-data-agents-for-analysis-and-research"
+   },
+   {
+    "claim": "Many AI data analysis assistants already sell to the same users, which shows demand and price pressure",
+    "source_url": "https://julius.ai"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show weekly active researchers who return",
+   "actions": [
+    "Recruit 30 researchers from one field",
+    "Measure repeat use after a first analysis"
+   ],
+   "proof": "Thirty weekly active users and five who pay"
+  },
+  {
+   "phase": "seed",
+   "goal": "Prove a segment with budget",
+   "actions": [
+    "Test pharma and biotech customers",
+    "Price by team seat",
+    "Add reproducible report export"
+   ],
+   "proof": "Three paying teams and monthly revenue above 15K"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show that the product beats general assistants",
+   "actions": [
+    "Publish accuracy comparisons on real datasets",
+    "Add compliance features"
+   ],
+   "proof": "Annual recurring revenue near 1M with a clear paying segment"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear pain point in cleaning and analysing real world data",
+   "evidence": "Commentary and vendor blogs report most analysis time goes to data preparation.",
+   "source_url": "https://powerdrill.ai/blog/best-data-agents-for-analysis-and-research"
+  },
+  {
+   "point": "Low team cost allows a long runway on a small round",
+   "evidence": "Input lists three people.",
+   "source_url": "https://percy.tech"
+  }
+ ],
+ "brand": {
+  "name": "Percival",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Percival\" --era 2022+: kind invented_or_proper, length 7 to 8, 3 syllables; cohort alive 93.0 percent, exit 5.7 percent, no outlier.",
+  "strengths": [
+   "Distinctive proper name with a knight story",
+   "Easy to remember"
+  ],
+  "weaknesses": [
+   "Nothing connects it to research or data",
+   "Long for a domain; the site uses percy.tech"
+  ],
+  "rationale": "A proper name from legend gives it character like Plaid or Hermes, but it has no tie to data, so the brand does not help explain the product. Neutral; the short domain differs from the name."
+ },
+ "narrative": {
+  "headline": "An AI data copilot for researchers facing general assistants; a seed in 19 months is possible but a Series A inside the window is unlikely.",
+  "general_summary": "Percival offers an AI copilot for analysing research data from a three person team. Cohort anchors give 55 to 59 percent seed ever and about 80 percent of those land inside 19 months, so the estimate is 38 percent after a discount for team size and an unclear buyer. The main risk is absorption by general assistants and a weak paying segment. Direct YC analogs such as Julius, Deepnote and MantleBio show both the demand and the narrow paying segment. Later rounds inside the window are tail events. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "The input has no traction data; seed odds assume a normal Spring 2025 developer tools company.",
+  "Window 19.4 months; seed means a round above about 1M from outside investors closing inside it.",
+  "A web search returned a page naming the company dated after the as of date; it was ignored (LEAK-WEB)."
+ ],
+ "sources": [
+  "https://powerdrill.ai/blog/best-data-agents-for-analysis-and-research",
+  "https://julius.ai",
+  "https://deepnote.com",
+  "https://percy.tech"
+ ]
 }

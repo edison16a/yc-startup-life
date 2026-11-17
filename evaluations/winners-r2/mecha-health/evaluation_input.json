@@ -1,330 +1,506 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Mecha Health",
+  "one_liner": "Foundation models to automate x-ray analysis for radiologists",
+  "description": "Mecha Health builds foundation models that draft x-ray reports for radiologists. Its first model was built in under two months, is small and trained on a quarter of the data, and the company says it beat large general models on clinical accuracy metrics. It says it is partnering with the largest privately owned radiology practice in the US and a multinational tele-radiology company, and charges per scan. Four people in San Francisco. The accuracy and partnership claims are unverified.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.078,
+  "basis": "Start from the roughly 1 percent applicant prior (band 0.6 to 2 percent). Adjust up about 3x for a technical team with a benchmark result, named category partners and a per scan pricing model, and YC's interest in AI for healthcare. Adjust down for regulated healthcare slowness, FDA exposure and the funded radiology AI field. Net about 3 percent.",
+  "why_it_fails": "YC would most plausibly worry that report generation needs regulatory clearance and radiologist trust, that the partnerships are unnamed pilots, and that a benchmark win over general models does not show real world accuracy. Radiology AI also has well funded incumbents, so partners may doubt a four person team can win in healthcare."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.66,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry Healthcare: seed cond 66 percent (n=59), known 66; --tag AI: 64 percent (n=183). Window is 22 months from 2025-01-06 to 2026-11-17; time_to_milestones.csv Healthcare months_to_seed p25 4, median 8.75, p75 27.",
+    "adjustment_reason": "Anchors are for ever reaching a seed; healthcare is slower to seed (p75 27 months), so a 22 month window covers about 70 percent of reachers: 0.66 times 0.72 is about 0.48, and I use 0.50 because AI foundation models were fundable in 2025. No lift for benchmark claims; the winners test says claims do not rank companies. Seed means an outside round above about $1M, not the YC deal. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a micro fund. Common for a team of two to four before a customer logo is public; the 2022 and later seed row has p25 of $2.8M, so this is the lower quartile."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed at the center of the 2022 and later table (median $3.5M to $4.1M) shifted up a little for AI native B2B. Most likely if two or three paying design partners are visible."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Large AI seed. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers big rounds more, so this band is kept below the central one."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: a hot category plus fast revenue and a lead from a multi stage fund. Rare in the YC data."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Investors will ask for regulatory clearance, validation on external datasets and signed contracts, none of which four founders can finish quickly. Radiology reporting companies in the data show how slow it is: RadMate AI, a Winter 2024 copilot for radiologists, shows only YC money and is listed inactive, and Synapsica needed years to raise a Series A of $4.2M."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.41,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry Healthcare: series_a cond 41 percent (n=39). time_to_milestones.csv Healthcare months_to_series_a p25 22.8, median 35.0.",
+    "adjustment_reason": "Window anchored: 22 months is at the p25 for healthcare time to Series A (22.8), so only the fastest eligible; 0.41 times about 0.25 gives about 0.10, more than 2x below the ever anchor because of time and not quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge style A under $10M, a down or flat round relative to the seed."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band: 2022 and later series A median $14.15M, with market medians near $17M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      160000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong A led by a top fund after clear revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside: breakout category leader, AI infrastructure style round."
+    }
+   ],
+   "why_it_fails": "A Series A in healthcare AI needs revenue from health systems or radiology groups and usually regulatory clearance, both slow. Synapsica sold AI radiology reporting and took more than a year from YC to a $4.2M A, and is listed inactive in the directory but active elsewhere, so even that case is unclear; speed here is the main risk."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.5,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry Healthcare: series_b cond 50 percent (n=16).",
+    "adjustment_reason": "Below the anchor (0.76x) since the sample is small and radiology AI faces large incumbents at the B stage."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      70000000,
+      130000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small or extension B: growth slowed after the A, so the round is modest or flat to the prior valuation."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical B, 2022 and later median about $37M to $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Large B for a category leader with strong revenue growth and a top tier lead investor."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside round if the company becomes the clear category winner with outsized growth."
+    }
+   ],
+   "why_it_fails": "A Series B requires scaled revenue from health systems with FDA cleared products, and radiology AI buyers consolidate on a few vendors that bundle. The likely failure is that report generation becomes a feature of the radiology workflow platforms, leaving a small niche and a B round below prior valuation."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry Healthcare: series_c cond 25 percent (n=8).",
+    "adjustment_reason": "At the anchor with only 8 cases; healthcare AI later rounds are rare and often come after acquisition interest."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest C with a flat valuation to the B, reflecting slower growth and tougher market multiples."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or D, 2022 and later median $74M to $150M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Large growth round for a company with strong enterprise revenue and expanding margins."
+    },
+    {
+     "raise_usd": [
+      300000000,
+      600000000
+     ],
+     "post_money_usd": [
+      3000000000,
+      8000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Category winner raising a very large round on a premium valuation."
+    }
+   ],
+   "why_it_fails": "A Series C requires a national footprint, clearances across modalities and revenue measured in tens of millions. The usual failure is acquisition by a PACS or imaging vendor, or stalling when reimbursement for AI reports does not appear and radiology groups pay little for software."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     6000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Radiology AI tends to end in acquisition by imaging vendors, as MedXT was bought by Box in 2014 in an early healthcare imaging deal, or in slow fade when clinical validation and clearance cost more than the revenue. Large outcomes require real adoption by big radiology practices."
+ },
+ "analogs": [
+  {
+   "slug": "redbrick-ai",
+   "relevance": "Medical data annotation for radiology AI firms, Winter 2022.",
+   "outcome_summary": "Raised a $4.6M seed in November 2022 led by Sequoia India's Surge; shows radiology AI picks and shovels can raise a seed in under a year."
+  },
+  {
+   "slug": "synapsica-healthcare",
+   "relevance": "AI radiology workflow and reporting, Winter 2020.",
+   "outcome_summary": "Raised a $4.2M Series A in June 2021; directory status conflicting. The nearest product analog, slow and modest rounds."
+  },
+  {
+   "slug": "radmate-ai",
+   "relevance": "Copilot for radiologists, Winter 2024, two Cornell founders.",
+   "outcome_summary": "Only YC level money on record; listed inactive and its domain lapsed in 2025: the same wedge failing within a year."
+  },
+  {
+   "slug": "bewell-digital",
+   "relevance": "AI diagnosis operating system, Winter 2021.",
+   "outcome_summary": "Two person team raising small amounts including a crowd campaign; listed inactive; shows weak healthcare AI paths without clinical partners."
+  },
+  {
+   "slug": "medxt",
+   "relevance": "Radiology cloud RIS and PACS, Winter 2013.",
+   "outcome_summary": "Acquired by Box in October 2014 within a year of launch; a small technology and talent exit."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Regulatory clearance and clinical validation slow revenue",
+   "p": 0.45,
+   "evidence": "Draft report generation is a regulated medical device use; clearance or validation takes many months and external datasets, which a four person team may not afford.",
+   "analogs": [
+    "synapsica-healthcare",
+    "radmate-ai"
+   ],
+   "mitigation": "Sell first as a radiologist productivity tool under the practice's own review and pursue clearance with a partner."
+  },
+  {
+   "risk": "Pilots with named partners never convert to per scan revenue",
+   "p": 0.35,
+   "evidence": "The partnerships are described but not priced; radiology groups often test many vendors, and procurement is slow.",
+   "analogs": [
+    "bewell-digital",
+    "redbrick-ai"
+   ],
+   "mitigation": "Sign a paid contract with minimum volume before the seed."
+  },
+  {
+   "risk": "Funded radiology AI companies and platform vendors ship report generation",
+   "p": 0.35,
+   "evidence": "Large radiology AI firms with big funding and general medical models from big tech are moving toward report drafts, so the benchmark edge may vanish.",
+   "analogs": [
+    "synapsica-healthcare",
+    "medxt"
+   ],
+   "mitigation": "Show accuracy on a private practice's real cases and own the integration."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Harrison.ai",
+   "what": "Radiology AI and a radiology focused vision language model.",
+   "traction": "Well funded Australian company with a radiology product line (Annalise.ai).",
+   "source_url": "https://harrison.ai"
+  },
+  {
+   "name": "Rad AI",
+   "what": "AI report impressions for radiologists, widely deployed in US practices.",
+   "traction": "A funded leader in radiologist dictation AI.",
+   "source_url": "https://www.radai.com"
+  },
+  {
+   "name": "Aidoc",
+   "what": "Radiology AI triage platform expanding to reports.",
+   "traction": "Raised large rounds and sells to health systems.",
+   "source_url": "https://www.aidoc.com"
+  },
+  {
+   "name": "Microsoft and Google medical models",
+   "what": "General medical imaging research models including report generation.",
+   "traction": "Research releases that set the accuracy benchmark Mecha claims to beat.",
+   "source_url": "https://research.google/"
+  },
+  {
+   "name": "Status quo: radiologist dictation",
+   "what": "Radiologists dictate and template reports.",
+   "traction": "Daily workflow in every practice, with teleradiology firms under pressure on read volume.",
+   "source_url": "https://www.rtinsights.com/foundation-models-arrive-in-radiology-one-network-many-tasks/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Training a small, accurate vision language model on x-rays is demanding, and the claim of beating larger models from a team of four after two months is a real signal if true. Hard parts are clean labeled data, privacy and clinical validation across scanners and populations; the model work is doable but regulatory and data access are not."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Rad AI",
+   "Aidoc",
+   "Harrison.ai",
+   "Microsoft",
+   "Google",
+   "GE Healthcare"
+  ],
+  "timeline_months": 18,
+  "rationale": "Incumbents have the data and distribution but must navigate clearance and clinician trust; a rival with funding could match the model in a year or so, but the practice partnerships take time. The risk is real but slower than in pure software."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Foundation models are arriving in radiology, driven by radiologist shortage and growing read volume, per trade coverage.",
+    "source_url": "https://www.rtinsights.com/foundation-models-arrive-in-radiology-one-network-many-tasks/"
+   },
+   {
+    "claim": "Large technology companies have published multimodal x-ray foundation models, showing demand and technical feasibility.",
+    "source_url": "https://research.gehealthcare.com/?p=1144"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Turn the two named partnerships into a signed pilot with measured reads per hour.",
+   "actions": [
+    "Run the model on a partner's historical cases and publish an accuracy comparison.",
+    "Get a letter of intent with a per scan price."
+   ],
+   "proof": "One signed paid pilot and a third party accuracy comparison."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show paid volume and a regulatory plan.",
+   "actions": [
+    "Start FDA discussions with a regulatory advisor.",
+    "Reach 10,000 scans a month in paid use."
+   ],
+   "proof": "$50K monthly recurring revenue and a pre submission with FDA."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Clearance and multi site deployment.",
+   "actions": [
+    "Obtain clearance for the first indication.",
+    "Add two more radiology groups."
+   ],
+   "proof": "$2M annual recurring revenue and a cleared device."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Expand modalities and reimbursement.",
+   "actions": [
+    "Add CT and MRI.",
+    "Show cost savings to payers or groups."
+   ],
+   "proof": "$12M annual recurring revenue."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "National scale in radiology reporting.",
+   "actions": [
+    "Sign health system enterprise contracts.",
+    "Expand internationally."
+   ],
+   "proof": "$40M or more annual recurring revenue."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Technical result and per scan pricing on a large workflow",
+   "evidence": "The company reports beating large general models on clinical accuracy with a small model and charges per scan; unverified.",
+   "source_url": "https://www.mecha-health.ai/"
+  },
+  {
+   "point": "Category tailwind in radiology",
+   "evidence": "Radiology foundation models are an active area with big tech and funded firms involved.",
+   "source_url": "https://www.rtinsights.com/foundation-models-arrive-in-radiology-one-network-many-tasks/"
+  }
+ ],
+ "brand": {
+  "name": "Mecha Health",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Mecha Health\" --era 2022+: two words, name_plus_descriptor, descriptor word health, 11 characters, 3 syllables",
+  "strengths": [
+   "Mecha suggests machine strength and is distinctive",
+   "Health descriptor makes the sector clear"
+  ],
+  "weaknesses": [
+   "Mecha sounds like robots or games, not clinical trust",
+   "Health suffix is generic"
+  ],
+  "rationale": "Name plus descriptor names are common in healthcare AI; Mecha is distinctive but evokes robots, which may weaken clinician trust, so effect is neutral and does not move the ladder."
+ },
+ "narrative": {
+  "headline": "A technically credible radiology model with named partner claims, but regulation and healthcare timing make a seed in 22 months about even odds and Series A unlikely.",
+  "general_summary": "Mecha Health builds small foundation models to draft x-ray reports, reports a benchmark win over big general models, and says it works with large radiology groups. Radiology has a clear need and pays per scan, but the work faces clinical validation, possible FDA clearance, slow healthcare sales and funded radiology AI companies. The healthcare anchor for a seed is 66 percent ever with a 8.75 month median and 27 month p75, so a 22 month window trims it to about 50 percent. The odds do not rank this company against others. Series A inside the window is about 10 percent. The main killers are clearance delays, pilots that do not convert, and platform vendors adding reports."
+ },
+ "assumptions": [
+  "Only the as of date input was used: description, tags, team of 4, San Francisco.",
+  "Window is 22 months from 2025-01-06 to 2026-11-17; seed means an outside round above about $1M, not the YC deal.",
+  "Benchmark results and partnership claims are unverified.",
+  "Records and web results dated after 2025-01-06 were ignored, including 2026 FDA and funding news.",
+  "Funding data for 2022+ analogs is partial and right censored."
+ ],
+ "sources": [
+  "https://www.mecha-health.ai/",
+  "https://harrison.ai",
+  "https://www.radai.com",
+  "https://www.aidoc.com",
+  "https://www.rtinsights.com/foundation-models-arrive-in-radiology-one-network-many-tasks/",
+  "https://research.gehealthcare.com/?p=1144"
+ ]
 }
