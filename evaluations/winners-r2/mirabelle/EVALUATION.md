@@ -169,7 +169,7 @@ You know it worked when: Over 3 meals per week per unit after 8 weeks.
 | Nomiku (nomiku) | Winter 2015 | Inactive | Consumer kitchen appliance, Winter 2015. | Raised over $1.3M on Kickstarter, was undercut by cheaper rivals, tried a meal subscription and suspended operations in December 2019. |
 | Replenish (replenish) | Summer 2014 | Acquired | Pod based home blender hardware, Summer 2014. | Raised a $3.8M seed in 2016; YC lists it acquired but no acquirer was found, so the outcome is unclear. |
 | Byte (byte) | Summer 2020 | Inactive | Food focused consumer startup, Summer 2020. | Reportedly raised a $2M seed in 2021, cut staff in 2023, now inactive; cause not public. |
-| Weave Robotics (weave-robotics) | Summer 2024 | Active | Home robot hardware, Summer 2024. | Founders from Apple robotics building a laundry folding home robot; hardware seed timelines and shipping targets have slipped, funding scale unknown. |
+| Weave Robotics (weave-robotics) | Summer 2024 | Active | Home robot hardware, Summer 2024. | Founders from Apple robotics and AI building a laundry folding home robot; a hardware peer whose funding scale is not public, shown only as a peer, not as an outcome. |
 
 ### Base-rate anchors
 

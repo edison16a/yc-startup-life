@@ -1,330 +1,497 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Deeptrace",
+  "one_liner": "AI agents for on-call",
+  "description": "Deeptrace builds AI agents that investigate and resolve production alerts for engineering teams, aimed at on-call load. Buyers are software companies with a pager rotation; the product reads alerts, logs and code to find root causes and propose or apply fixes. The team is four people in San Francisco and says it already has fast growing companies using it in production, which is a claim in its own description and not independently verified.",
+  "as_of": "2025-10-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.078,
+  "basis": "Start from the roughly 1 percent applicant prior (band 0.6 to 2 percent, references/yc_acceptance.md). Adjust up about 2x because AI developer tools fit YC's current priorities and the description claims live production use at fast growing customers, and a small technical team is typical of accepted AI infrastructure companies. Adjust down because AI SRE is already crowded with funded rivals and traction is unverified. Net about 3 percent, inside the 0.3 to 15 percent guardrail.",
+  "why_it_fails": "YC would most plausibly say the space is already occupied: several funded AI SRE and incident response startups exist, and a four person team has to show why its agent resolves alerts better than them. Unnamed customers and no revenue figures leave the traction claim unprovable, so an interviewer may not see founders with a unique insight or unfair access."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.64,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI: seed cond 64 percent (n=183), known only 64, lower 51, upper 71. python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2026: seed 52 percent (n=163). Window is 13 months from 2025-10-06 to 2026-11-17; time_to_milestones.csv 2022+ months_to_seed p25 3, median 6, p75 14.2.",
+    "adjustment_reason": "The anchors are for ever reaching a seed. The 13 month window covers about 75 percent of the reachers' timing (p75 is 14 months), so about 0.64 times 0.78 near 0.50, and I did not lift for the hot category or for the production claim because the winners test showed such lifts do not rank companies. The seed here means an outside round above about $1M, not the standard $500K YC deal. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a micro fund. Common for a team of two to four before a customer logo is public; the 2022 and later seed row has p25 of $2.8M, so this is the lower quartile."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed at the center of the 2022 and later table (median $3.5M to $4.1M) shifted up a little for AI native B2B. Most likely if two or three paying design partners are visible."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Large AI seed. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers big rounds more, so this band is kept below the central one."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: a hot category plus fast revenue and a lead from a multi stage fund. Rare in the YC data."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The most likely miss is that investors treat AI SRE as a category already claimed by better known rivals, and want revenue or named logos that four founders cannot yet show within 13 months. Relvy, a Fall 2024 YC company in the same area, shows only the YC money publicly, while DrDroid did land an Accel led seed in June 2024, so the category does fund but unevenly."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI: series_a cond 30 percent (n=117), lower 15, known 19, upper 36. time_to_milestones.csv 2022+ months_to_series_a p25 19.4, median 28.0.",
+    "adjustment_reason": "Window anchored: the same 13 month window ends well before the median 28 months to Series A, so only the fastest quarter of seed companies reach A inside it. 0.30 times about 0.27 gives 0.08, more than 2x below the ever anchor, because of the window and not because of company quality. Rootly took 25 months from seed to A."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge style A under $10M, a down or flat round relative to the seed."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band: 2022 and later series A median $14.15M, with market medians near $17M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      160000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong A led by a top fund after clear revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside: breakout category leader, AI infrastructure style round."
+    }
+   ],
+   "why_it_fails": "A Series A needs recurring revenue that survives a pilot, and AI SRE agents must prove they cut incidents without making wrong changes in production. Within the window the team would have to go from pilots to six figure recurring revenue; Rootly took about 25 months between its seed and A, and DrDroid shows no A after a mid 2024 seed."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.31,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI: series_b cond 31 percent (n=35), lower 5, known 6, upper 26.",
+    "adjustment_reason": "Slightly above the anchor (1.13x, inside the 1.25x cap) since a company that has raised an A in a category with public nine figure rounds can often raise a B, but this is ever and not windowed."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      70000000,
+      130000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small or extension B: growth slowed after the A, so the round is modest or flat to the prior valuation."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical B, 2022 and later median about $37M to $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Large B for a category leader with strong revenue growth and a top tier lead investor."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside round if the company becomes the clear category winner with outsized growth."
+    }
+   ],
+   "why_it_fails": "By the B the company must show enterprise scale revenue and gross margins despite large model inference costs per investigation. The likely failure is a platform vendor such as an observability incumbent offering a bundled agent, so growth stalls at mid market and investors pass. Rootly's path to A took about two years and it has not shown a B in the record."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.34,
+   "anchors": {
+    "base_rate": 0.45,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI: series_c cond 45 percent (n=11), small sample; B2B all eras 50 percent (n=28).",
+    "adjustment_reason": "Below the anchor (0.76x) because the AI cohort n is 11 and the category will be consolidating by then. Ever, not windowed."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest C with a flat valuation to the B, reflecting slower growth and tougher market multiples."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C or D, 2022 and later median $74M to $150M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Large growth round for a company with strong enterprise revenue and expanding margins."
+    },
+    {
+     "raise_usd": [
+      300000000,
+      600000000
+     ],
+     "post_money_usd": [
+      3000000000,
+      8000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Category winner raising a very large round on a premium valuation."
+    }
+   ],
+   "why_it_fails": "Reaching a C needs a category leader position in AI incident response against rivals that raised large rounds earlier and bundle with incumbents. The usual failure is a strategic acquisition at B stage valuation, or growth that plateaus once the best early adopters are saturated and enterprise sales cycles lengthen."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.18
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     6000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most AI infrastructure agent startups in a crowded category end by acquihire or fade after the seed, as Neptune.io did after a seed of about $1M in a similar alert fix idea. Incumbents in on-call such as PagerDuty ship agents of their own, which compresses independent value."
+ },
+ "analogs": [
+  {
+   "slug": "relvy-ai",
+   "relevance": "Fall 2024 YC company building AI debugging for incident response, same wedge a year earlier.",
+   "outcome_summary": "Active three person team; only about $500K YC level funding is reported by aggregators, no public customers or later round as of the record, so the category does not guarantee a seed."
+  },
+  {
+   "slug": "drdroid",
+   "relevance": "AI SRE assistant for production issues, Winter 2023 batch.",
+   "outcome_summary": "Seed round led by Accel with YC announced June 2024, after founders with relevant engineering background; evidence that investors fund this wedge."
+  },
+  {
+   "slug": "rootly",
+   "relevance": "Incident response and on-call tooling sold to engineering teams, Summer 2021.",
+   "outcome_summary": "Seed of $3.2M in July 2021 and $12M Series A in August 2023, about 25 months later: the realistic pace to an A even for a well regarded team in this niche."
+  },
+  {
+   "slug": "neptune-io",
+   "relevance": "Self healing platform that fixed server alerts automatically, Summer 2014, an earlier try at the same idea.",
+   "outcome_summary": "Raised about $1M and is now listed inactive; competing against New Relic and PagerDuty without a way to win distribution."
+  },
+  {
+   "slug": "pagerduty",
+   "relevance": "The on-call incumbent that grew out of YC.",
+   "outcome_summary": "Became a public company; shows the on-call budget is real and also that a strong incumbent owns the pager workflow Deeptrace must plug into."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Crowded AI SRE category with better funded rivals and a thin differentiation story",
+   "p": 0.45,
+   "evidence": "By late 2025 several AI incident response startups and the incumbents on-call vendors already sell similar agents, and records show Relvy stuck at YC level funding in the same wedge.",
+   "analogs": [
+    "relvy-ai",
+    "neptune-io"
+   ],
+   "mitigation": "Pick a narrow stack or customer type where resolution accuracy is provable and publish before and after numbers from a few named customers."
+  },
+  {
+   "risk": "Trust and safety: agents that act on production make costly mistakes, so buyers keep humans in the loop and pay less",
+   "p": 0.3,
+   "evidence": "Autonomous remediation touches live systems, and engineering teams adopt read only investigation first; this caps early contract value.",
+   "analogs": [
+    "drdroid",
+    "rootly"
+   ],
+   "mitigation": "Start with read only root cause with citations, earn write access through approvals and audit logs."
+  },
+  {
+   "risk": "Incumbent bundling by on-call and observability vendors",
+   "p": 0.3,
+   "evidence": "PagerDuty and similar vendors own the alert stream and can add an agent at near zero marginal price, which is how Neptune.io's niche was squeezed.",
+   "analogs": [
+    "pagerduty",
+    "neptune-io"
+   ],
+   "mitigation": "Be vendor neutral across observability stacks and win on resolution quality."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Traversal",
+   "what": "Enterprise AI SRE agent for triage, root cause and remediation.",
+   "traction": "Announced $48M across seed and Series A in June 2025 led by Sequoia and Kleiner Perkins.",
+   "source_url": "https://builtin.com/articles/traversal-raises-48m-to-launch-ai-sre-20250620"
+  },
+  {
+   "name": "Resolve AI",
+   "what": "Agentic AI for production engineering, from two ex Splunk founders.",
+   "traction": "Well funded early stage rival in autonomous incident response (details not verified before the as of date).",
+   "source_url": "https://resolve.ai"
+  },
+  {
+   "name": "Rootly and PagerDuty",
+   "what": "On-call and incident management platforms adding AI features.",
+   "traction": "Rootly raised a $12M Series A in 2023 and PagerDuty is public; both own the alert workflow.",
+   "source_url": "https://rootly.com"
+  },
+  {
+   "name": "Status quo: on-call engineers and runbooks",
+   "what": "Humans triage alerts with dashboards and runbooks.",
+   "traction": "Default for nearly every team; the switching cost is trust, not price.",
+   "source_url": "https://www.pagerduty.com"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "The hard part is accurate root cause reasoning across noisy logs, metrics, traces and code with low false positives, plus safe integrations into many observability stacks. A four person team can ship a working triage agent in three months using frontier models, but reliability across diverse customer environments is the real work and it is not a hard moat."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "PagerDuty",
+   "Datadog",
+   "incident.io",
+   "Rootly"
+  ],
+  "timeline_months": 9,
+  "rationale": "Observability and on-call vendors already hold the alert data and customer relationships, and frontier model labs ship coding agents that can read logs. A resourced rival could ship a comparable investigator in six to nine months, though depth on resolution is harder to copy."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Investors put tens of millions into AI SRE agents by mid 2025, signalling buyer demand for automating alert triage.",
+    "source_url": "https://builtin.com/articles/traversal-raises-48m-to-launch-ai-sre-20250620"
+   },
+   {
+    "claim": "On-call tooling is a proven paid category: Rootly raised a Series A and PagerDuty is a public company.",
+    "source_url": "https://rootly.com"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show production use at two or three named fast growing companies with measured time saved.",
+   "actions": [
+    "Instrument each deployment to report triage minutes saved per alert and resolution accuracy.",
+    "Get one customer to be quotable in the application and demo."
+   ],
+   "proof": "Three paying or committed customers with a written before and after metric."
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert pilots into recurring contracts that distinguish Deeptrace from Traversal and Resolve AI.",
+   "actions": [
+    "Narrow to one stack and one incident type where the agent is clearly better.",
+    "Publish accuracy benchmarks on real alert datasets."
+   ],
+   "proof": "$20K to $50K monthly recurring revenue and a lead investor term sheet."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove repeatable enterprise sales with write access to production.",
+   "actions": [
+    "Hire a first sales engineer and land three accounts above $50K a year.",
+    "Ship approval workflows and audit logs for autonomous fixes."
+   ],
+   "proof": "$1M or more annual recurring revenue with net retention above 110 percent."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Show the product scales across customers without per customer tuning.",
+   "actions": [
+    "Cut inference cost per investigation to keep gross margin above 70 percent.",
+    "Add integrations so deployment takes days."
+   ],
+   "proof": "$8M to $10M annual recurring revenue and low churn."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Be a category leader in autonomous production engineering.",
+   "actions": [
+    "Expand from alerts to deploys, capacity and reliability work.",
+    "Open a second buying center beyond SRE."
+   ],
+   "proof": "$30M or more annual recurring revenue and strategic partnerships."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real, paid on-call pain with proven budgets",
+   "evidence": "PagerDuty is public and Rootly raised a Series A, so teams already pay to manage alerts.",
+   "source_url": "https://rootly.com"
+  },
+  {
+   "point": "Fast ship cycle on frontier models",
+   "evidence": "A four person technical team can build a working agent quickly and iterate with customers, as DrDroid did before its Accel led seed.",
+   "source_url": "https://www.ycombinator.com/companies/drdroid"
+  }
+ ],
+ "brand": {
+  "name": "Deeptrace",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Deeptrace\" --era 2022+: one word, invented_or_proper, 9 characters, 2 syllables, max consonant run 3",
+  "strengths": [
+   "Short single word, easy to spell and say",
+   "Suggests tracing through logs to a cause, matching the job"
+  ],
+  "weaknesses": [
+   "Generic compound of deep and trace, close to many observability names",
+   "No distinct mascot or voice yet"
+  ],
+  "rationale": "A short invented compound like Rootly or Vapi style names is typical of YC infrastructure companies and works, but Deeptrace sits near existing trace and observability brands, so it is neutral and does not move the ladder."
+ },
+ "narrative": {
+  "headline": "A real pain with active money in the category, but a crowded AI SRE field makes a seed in 13 months about a coin flip and Series A in the window unlikely.",
+  "general_summary": "Deeptrace sells AI agents that handle production alerts for engineering teams, a category where buyers already pay for on-call software and investors were funding rivals by mid 2025. The team is four people, small and technical, and claims live use at fast growing companies. The cohort anchor for AI companies reaching a seed is about 64 percent ever, trimmed to about 50 percent for a 13 month window; Series A inside the window is only about 8 percent because the median time to A is 28 months. The odds do not rank this company against others. The main risks are crowding by better funded rivals, buyers not trusting autonomous production changes, and incumbent on-call vendors bundling similar agents. The upside is a pivot toward a narrow stack where resolution quality is provable."
+ },
+ "assumptions": [
+  "Only the as of date input was used: description, batch, team of 4, San Francisco.",
+  "Window is 13 months from 2025-10-06 to 2026-11-17; seed means an outside round above about $1M, not the YC deal.",
+  "Customer traction claims in the description are unverified.",
+  "Comparable records after 2025-10-06 were ignored. The comps tool also returned later batches and I did not use them.",
+  "Funding data for 2022+ analogs is partial and right censored."
+ ],
+ "sources": [
+  "https://builtin.com/articles/traversal-raises-48m-to-launch-ai-sre-20250620",
+  "https://rootly.com",
+  "https://resolve.ai",
+  "https://www.pagerduty.com",
+  "https://www.ycombinator.com/companies/drdroid"
+ ]
 }

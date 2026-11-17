@@ -109,7 +109,7 @@ Text.ai builds Alfi, an AI participant for friend group chats that plans meals, 
 ## Pros
 
 - **Cheap to build and iterate, with a clear daily use case in planning.**: Built from existing APIs including Yelp booking, as the description states. (https://spyglass.org/group-chatgpt-social/)
-- **Cheap to build and iterate, with a clear daily use case in planning.**: Built from existing APIs including Yelp booking, as the description states. (https://www.ycombinator.com/companies/text-ai)
+- **Cheap to build and iterate, with a clear daily use case in planning.**: Built from existing APIs including Yelp booking, as the description states. (https://spyglass.org/group-chatgpt-social/)
 - **Multiplayer AI is an open slot with several entrants but no clear winner as of early 2025.**: Search shows only small apps such as Hashchats and Shapes. (https://shapes.inc/group-chats)
 
 ## Roadmap

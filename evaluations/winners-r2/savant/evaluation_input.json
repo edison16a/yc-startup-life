@@ -1,330 +1,431 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Savant",
+  "one_liner": "Company brain every AI-native enterprise runs on",
+  "description": "Savant connects to the tools a company already uses, captures written knowledge and undocumented procedures, and serves them to employees and AI agents at decision time. Seven person team in San Francisco, Spring 2026 batch. The buyer is an enterprise or scaleup that wants its agents to act on company context, probably paid per seat or by usage.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.06,
+  "basis": "Starting prior is about 1 percent for a random applicant (0.6 to 2 percent, references/yc_acceptance.md). Up for a company brain pitch that matches the 2026 AI agent theme and a team of seven, which implies technical founders and some build capacity. Down because the company brain space is crowded with funded rivals and nothing in the input shows customers or revenue. Net about 3 percent, and the company is already in the batch so this is for completeness.",
+  "why_it_fails": "YC would most likely say that company brain and enterprise memory products are a crowded category where Glean, Notion and the model labs already ship connectors and agent memory, and that a seven person team has not shown a customer who pays. Partners may also doubt that a horizontal knowledge layer can win a first wedge."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Narrow cohort python3 -I scripts/base_rates.py --tag AI --calibration-only: seed cond 64% (n=183), series_a cond 30% (n=117), series_b cond 31% (n=35), series_c cond 45% (n=11). Time table era 2022+: seed median 8 months from batch start, p25 4, p75 20 (AI tag); series_a median 28 months.",
+    "adjustment_reason": "Window is 7.4 months, from 2026-04-06 to 2026-11-17, and counts only a round above about 1M from outside investors that closes inside it. The anchor 0.59 is for reaching seed ever. For 2022 and later B2B companies about half of eventual seeds close by month 8 (median 8, p25 4), so 0.59 times roughly 0.6 gives 0.35, which is 0.6x of the anchor. Hot agent context sector and team of seven are not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under 3M, an angel or small fund round after the demo day period."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M (round_benchmarks.csv, stage_benchmarks.md)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong seed for an AI native company in a hot category with early enterprise logos, near the 6M to 10M quartile of recent press covered rounds."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.13,
+     "rationale": "Large seed from a top fund after fast enterprise pilots; rare for seven people and a 7 month window."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step inside 7.4 months fails if the company has pilots but no paid contract by the end of the batch, because investors in this category want revenue or a named enterprise design partner. Slite reached a seed only because it won a narrow team wiki base by word of mouth, Station (a team knowledge base) shut down, and Opzi (business Q&A) never recovered after its angel round. Several well funded rivals take the same investor attention."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Narrow cohort python3 -I scripts/base_rates.py --tag AI --calibration-only: seed cond 64% (n=183), series_a cond 30% (n=117), series_b cond 31% (n=35), series_c cond 45% (n=11). Time table era 2022+: seed median 8 months from batch start, p25 4, p75 20 (AI tag); series_a median 28 months.",
+    "adjustment_reason": "Window 7.4 months. Series A for 2022 and later companies has p25 at 19 months, so only a small fraction of eventual A raisers close one inside 7 months. Anchor 0.26 times about 0.15 gives about 0.04, which is 0.15x of the anchor and is explained by the window, not by company quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later YC median of 14.15M (stage_benchmarks.md), led by the seed investor."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M with quartiles 10M and 20M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series A led by a top fund after fast recurring revenue, above the 2022 and later p75 of about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A inside 7.4 months of the batch start would need a very fast jump from pilots to recurring revenue, since the 2022 and later median is 28 months. Within (Klarity) needed years and a pivot to reach its Series A and B, and Slite raised its A two years after its seed. Almost all eventual Series A rounds for this company fall after the window."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Narrow cohort python3 -I scripts/base_rates.py --tag AI --calibration-only: seed cond 64% (n=183), series_a cond 30% (n=117), series_b cond 31% (n=35), series_c cond 45% (n=11). Time table era 2022+: seed median 8 months from batch start, p25 4, p75 20 (AI tag); series_a median 28 months.",
+    "adjustment_reason": "Window 7.4 months. Series B median is 36 months or more for 2022 and later YC companies; inside this window it is a tail event, so 0.02 against anchor 0.16 reflects timing."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      140000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M after growth slows."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      140000000,
+      350000000
+     ],
+     "p_band": 0.42,
+     "rationale": "Typical Series B near the 2022 and later median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      350000000,
+      900000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Upside Series B for a breakout, above the 2022 and later p75 of 57M."
+    }
+   ],
+   "why_it_fails": "A Series B within 7 months is essentially a breakout case such as an AI category leader with several million in annual revenue. Within needed about six years from its batch to its Series B and Slite never raised one. The company would also need to beat Glean and funded context layer startups to reach that scale this quickly."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": 0.0,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Narrow cohort python3 -I scripts/base_rates.py --tag AI --calibration-only: seed cond 64% (n=183), series_a cond 30% (n=117), series_b cond 31% (n=35), series_c cond 45% (n=11). Time table era 2022+: seed median 8 months from batch start, p25 4, p75 20 (AI tag); series_a median 28 months.",
+    "adjustment_reason": "Window 7.4 months. The B2B cohort for 2022 and later has 0 Series C in n=3 known, and the AI tag cohort has 45 percent conditional on B in a tiny n=11. A Series C or later inside the window is near impossible, so 0.01 is a floor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Smaller Series C or growth round near the 2022 and later p25 to median of 35M to 45M."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1500000000
+     ],
+     "p_band": 0.42,
+     "rationale": "Typical later round, 2022 and later Series D plus median 97.5M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      5000000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Category leader round above 120M, matching the top quartile of 2022 and later Series D plus rounds."
+    }
+   ],
+   "why_it_fails": "A Series C or later round inside 7 months of starting would require a hypergrowth company with large revenue in a category that is still being defined. No comparable YC company in the data reached this stage that fast, and the base rate itself is built on 3 to 11 companies."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company stalls or pivots after a seed, because company brain products are easy to copy by platform vendors and enterprise sales cycles are slow. Slite shows that a knowledge tool can survive but stay mid sized; Station and Opzi show how fast cheap copies or incumbents can kill the idea."
+ },
+ "analogs": [
+  {
+   "slug": "slite",
+   "relevance": "Team knowledge base that stayed mid sized in a crowded wiki market",
+   "outcome_summary": "Raised a seed and a Series A, built over a thousand customers, never reached Series B; shows a ceiling for knowledge tools."
+  },
+  {
+   "slug": "within",
+   "relevance": "Company brain and enterprise work discovery for AI agents, formerly Klarity",
+   "outcome_summary": "Pivoted from contract review, raised a Series A and Series B; reached later rounds only after a pivot and years."
+  },
+  {
+   "slug": "station",
+   "relevance": "Automated team knowledge base from Winter 2018",
+   "outcome_summary": "Shut down; a team wiki lost to Notion and Slack search."
+  },
+  {
+   "slug": "opzi",
+   "relevance": "Q&A for businesses, an early internal knowledge product",
+   "outcome_summary": "Shut down after an angel round; incumbent Yammer made the category hard."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Platform vendors (Glean, Notion, Microsoft, Atlassian) ship the same connector and agent memory layer",
+   "p": 0.45,
+   "evidence": "Glean, Notion AI and Microsoft Copilot already index workplace tools, and several 2026 startups raised seed money for the same context layer idea.",
+   "analogs": [
+    "station",
+    "slite"
+   ],
+   "mitigation": "Pick a narrow wedge such as undocumented procedures in one function and prove a measurable agent accuracy gain."
+  },
+  {
+   "risk": "Pilots do not convert to paid contracts because enterprise security reviews and data access slow deals",
+   "p": 0.35,
+   "evidence": "Tools that read all company documents need security approval, and the product must work across many systems before showing value.",
+   "analogs": [
+    "within",
+    "opzi"
+   ],
+   "mitigation": "Start with mid market buyers with fewer reviews and ship a self hosted or read only mode."
+  },
+  {
+   "risk": "Seed investors see a crowded context layer category and pass or demand revenue first",
+   "p": 0.3,
+   "evidence": "Early 2026 rounds in this category were seed sized at 3M to 16M for teams with more traction, and many had pre-seed rounds of 2.7M, so the bar is real.",
+   "analogs": [
+    "slite",
+    "station"
+   ],
+   "mitigation": "Show a named customer with agents using Savant in production before demo day."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Glean",
+   "what": "Enterprise search and assistant over company apps",
+   "traction": "Well funded leader in workplace AI search",
+   "source_url": "https://www.glean.com"
+  },
+  {
+   "name": "Qontext",
+   "what": "Independent context layer for AI agents",
+   "traction": "2.7M pre-seed in February 2026",
+   "source_url": "https://tech.eu/2026/02/05/qontext-closes-27m-pre-seed-round-to-develop-a-context-layer-for-ai/"
+  },
+  {
+   "name": "Interloom",
+   "what": "Captures expert knowledge as memory for agents",
+   "traction": "16.5M seed reported March 2026",
+   "source_url": "https://pulse2.com/interloom-16-5-million-seed-funding-raised-for-enterprise-ai-memory-platform/amp/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Connectors to many tools and permission aware retrieval are tedious but known engineering, and a seven person team can ship a first version in three months. The hard part is extracting undocumented procedures with accuracy that agents can trust and keeping permissions correct across systems."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Glean",
+   "Microsoft",
+   "Notion",
+   "Atlassian",
+   "Model labs with enterprise connectors"
+  ],
+  "timeline_months": 9,
+  "rationale": "Incumbents already own the connectors and the user base, and adding agent context is a natural feature for them. A well resourced rival could match a first version in under a year; the defense is depth in procedure capture and neutrality across vendors."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Several seed rounds of 3M to 16M in early 2026 for enterprise context layers show investor and buyer interest",
+    "source_url": "https://pulse2.com/interloom-16-5-million-seed-funding-raised-for-enterprise-ai-memory-platform/amp/"
+   },
+   {
+    "claim": "Pre-seed funding for a context layer for AI in February 2026 shows the category is forming",
+    "source_url": "https://tech.eu/2026/02/05/qontext-closes-27m-pre-seed-round-to-develop-a-context-layer-for-ai/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show one enterprise using the product with real agents",
+   "actions": [
+    "Install at three design partners",
+    "Measure agent accuracy with and without Savant"
+   ],
+   "proof": "One paying or committed pilot with a measured accuracy gain"
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert pilots to paid contracts before the seed pitch",
+   "actions": [
+    "Price per seat or per agent",
+    "Publish a case study with numbers",
+    "Pick one function (support or sales ops) as the wedge"
+   ],
+   "proof": "Two to three paid customers and monthly recurring revenue above 20K"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove repeatable enterprise sales and retention",
+   "actions": [
+    "Hire a first enterprise seller",
+    "Add security certifications",
+    "Track net revenue retention"
+   ],
+   "proof": "Annual recurring revenue near 1M to 2M with growing seats"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Timely theme as enterprises deploy agents that need company context",
+   "evidence": "Several 2026 context layer startups raised seed rounds, so investors fund the category.",
+   "source_url": "https://pulse2.com/interloom-16-5-million-seed-funding-raised-for-enterprise-ai-memory-platform/amp/"
+  },
+  {
+   "point": "Team of seven suggests shipped product capacity beyond a typical two founder start",
+   "evidence": "Input lists team size 7 in San Francisco.",
+   "source_url": "https://heysavant.com/"
+  }
+ ],
+ "brand": {
+  "name": "Savant",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Savant\" --era 2022+: kind invented_or_proper, 2 syllables, length 5 to 6; cohort alive 93.7 percent, exit 4.7 percent, nothing unusual.",
+  "strengths": [
+   "Short, easy to say and spell",
+   "Connotes a knowledgeable expert"
+  ],
+  "weaknesses": [
+   "Common word with existing companies using it",
+   "Does not hint at company memory"
+  ],
+  "rationale": "A real word with a clear meaning of a knowledgeable person fits a knowledge product, similar to short real word names like Notion and Slite, but it is not ownable and will not drive growth. Neutral for the ladder."
+ },
+ "narrative": {
+  "headline": "A well timed company brain bet in a crowded field; seed inside 7 months is roughly a one in three event.",
+  "general_summary": "Savant sells an enterprise knowledge layer for people and agents, a category that attracted many seed rounds in early 2026 and also many YC peers and platform rivals. The cohort anchors say about 59 percent of 2022 and later B2B YC companies reach a seed ever, but only about half of those close by month 8, so a 7.4 month window gives about 35 percent. Later rounds are nearly impossible inside the window. Analogs such as Slite, Station and Opzi show the ceiling and the failure modes of knowledge tools. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "The input has no traction data; seed odds assume a normal Spring 2026 company with a working product.",
+  "Window 7.4 months; seed means a round above about 1M from outside investors that closes inside it.",
+  "Coverage of funding in the data is incomplete (base rate range is shown); Spring 2026 peers were not used as analogs."
+ ],
+ "sources": [
+  "https://tech.eu/2026/02/05/qontext-closes-27m-pre-seed-round-to-develop-a-context-layer-for-ai/",
+  "https://pulse2.com/interloom-16-5-million-seed-funding-raised-for-enterprise-ai-memory-platform/amp/",
+  "https://heysavant.com/"
+ ]
 }

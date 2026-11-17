@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Confluence Labs",
+    "one_liner": "AI models that learn from experience",
+    "description": "Confluence Labs is building AI that designs experiments in data sparse domains such as new molecules, physics and materials, and learns as much as possible from the little data it has. Two founders in San Francisco, Winter 2026 batch, research stage with no stated product or customer. Forecast window runs 2026-01-05 to 2026-11-17, about 10.4 months.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.008,
+    "p_high": 0.05,
+    "basis": "Start from the roughly 1 percent prior (0.6 to 2 percent band). Two technical founders and a topic aligned with AI for science, a priority area for frontier investors, move it up about 2 times. No product, traction or named customer holds it near 2 percent. The company is described as in the Winter 2026 batch, so this is shown for completeness.",
+    "why_it_fails": "YC would most plausibly say no because the application describes a research agenda with no product, customer or revenue path, and the domain needs wet labs, partners and years of validation. Partners may doubt that two people can beat well funded autonomous science labs, and the vision statement does not show which buyer pays first."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.43,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.35,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Window of 10.4 months: about 58 percent of eventual seeds arrive by then, times about 0.60 reaching a round above $1M gives an anchor near 0.35.",
+        "adjustment_reason": "The estimate is 1.23 times the window anchor, inside the 1.25 times cap. The small lift reflects that AI for science and research lab style companies draw large early rounds from specialist funds, but the odds do not rank this company against others and no lift is given for team size."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.28,
+          "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.12,
+          "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Confluence most likely fails to reach a seed above $1M in 10 months because its pitch is a research direction without a product, and funds in AI for science fund teams with famous researchers or lab data. Osium AI took about four months after its batch to raise only $2.6M with real customers, and 20n and ROSS Intelligence show how research stage AI ventures run out of money before proof."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.1,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series A given seed 0.45 ever; the same 10.4 month window leaves little time.",
+        "adjustment_reason": "Window adjusted: about 0.45 ever times about 0.2 inside the window gives 0.09 to 0.10. More than 2 times below the ever anchor because Series A takes a median of 28 months."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin Series A or extension on modest revenue, below the 2022 and later median of $13.5M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series A near the 2022 and later median of $13.5M to $14M with growth proof."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Upside Series A from a breakout AI product with fast revenue."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A inside the window would need proof that the models find useful experiments faster than humans, which takes lab partners and months of validation. Research companies such as osium-ai stayed on a seed for years, and Ionworks had named customers but no confirmed Series A, so a quick second round is unlikely."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.4,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series B conditional 0.44, ever figure.",
+        "adjustment_reason": "Slightly below the anchor: deep tech can scale, but timelines are long and customers few."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller Series B or a down round after slower growth."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            400000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $37M median for 2022 and later rounds."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B for a category leader with fast revenue growth and a top tier lead, as seen in the 75th percentile near $57M for 2022 and later rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs commercial contracts with pharma or materials companies at scale. Benchling and Citrine style software reached later rounds slowly, and scientific AI startups often sit between a research grant economy and an enterprise sale that has long cycles."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series C 0.36 conditional, ever figure.",
+        "adjustment_reason": "Slightly below the anchor because few AI for science companies have reached growth rounds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000.0,
+            500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest Series C near the $42M to $45M median for 2022 and later."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000.0,
+            1500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a scaled company, in line with the 2022 and later Series C median of about $45M and the larger Series D plus rounds."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            4000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside growth round or a late stage mega round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Reaching a growth round requires a platform with repeatable customers or a discovery asset with clear value. Transcriptic raised later rounds but its cloud lab model struggled with costs, a reminder that science infrastructure can look large and still fail to reach the exit that investors need."
     }
   ],
   "outcomes": {
@@ -164,167 +224,230 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.72
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          10000000000.0
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end in shutdown or a stall because discovery research is slow and expensive, and well funded labs set the pace. The more likely positive path is a small acquihire by a frontier lab, while a $1B outcome would require a discovered material or molecule or a platform adopted across industries."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "osium-ai",
+      "relevance": "AI for materials discovery, S23.",
+      "outcome_summary": "Raised a $2.6M seed in Nov 2023, claims 50 plus customers, no later rounds found."
+    },
+    {
+      "slug": "20n",
+      "relevance": "AI to predict biochemistry, W15.",
+      "outcome_summary": "Inactive after years of research stage work."
+    },
+    {
+      "slug": "transcriptic",
+      "relevance": "Robotic cloud lab for life sciences, W15.",
+      "outcome_summary": "Raised several rounds but became inactive, acquired by Strateos later; costs were heavy."
+    },
+    {
+      "slug": "ross-intelligence",
+      "relevance": "Research heavy AI company that raised for model building, S15.",
+      "outcome_summary": "Shut down after legal action and funding troubles."
+    },
+    {
+      "slug": "ionworks",
+      "relevance": "Scientific simulation software with named customers, S24.",
+      "outcome_summary": "Active with customers; funding not confirmed."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "No product or paying customer inside the window",
+      "p": 0.55,
+      "evidence": "The description is a research vision with no stated product, so investors lack traction to underwrite and the pre seed market prefers proven researchers.",
       "analogs": [
-        "TODO-company-slug"
+        "osium-ai",
+        "20n"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick one domain such as battery materials and sign a paid pilot with a lab or company."
+    },
+    {
+      "risk": "Well funded autonomous science labs outspend and out hire a two person team",
+      "p": 0.45,
+      "evidence": "Large AI for science funds back labs with hundreds of millions in early rounds, which pulls talent and data access away from small teams.",
+      "analogs": [
+        "transcriptic",
+        "ross-intelligence"
+      ],
+      "mitigation": "Focus on a narrow data sparse niche where lab partners give exclusive data."
+    },
+    {
+      "risk": "Algorithm advances do not translate into lab results",
+      "p": 0.4,
+      "evidence": "Sample efficient experiment design is a known research area and real gains over human chosen experiments are hard to prove outside benchmarks.",
+      "analogs": [
+        "20n"
+      ],
+      "mitigation": "Publish a head to head validation with a partner lab."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Periodic Labs",
+      "what": "AI scientist lab for materials with large seed funding",
+      "traction": "Reported large seed round in 2025",
+      "source_url": "https://periodic.com"
+    },
+    {
+      "name": "Citrine Informatics",
+      "what": "Materials informatics platform with active learning",
+      "traction": "Years of enterprise customers",
+      "source_url": "https://citrine.io"
+    },
+    {
+      "name": "Atinary",
+      "what": "Self driving lab software with Bayesian optimization",
+      "traction": "Industry customers in Europe",
+      "source_url": "https://atinary.com"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Learning from sparse data and designing experiments is an open research problem, and validation requires physical labs; a small team can build prototypes but cannot easily prove superiority or acquire lab data, so the difficulty is a moat only if solved."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Periodic Labs",
+      "Google DeepMind",
+      "Microsoft Research",
+      "Lila Sciences"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Frontier labs have the people to replicate methods in about 18 months, but have less incentive for narrow domains. Platform risk is moderate."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Venture interest in AI for science exists: funds targeting materials, pharma and lab automation attract investment and a $114M fund for AI science startups was reported.",
+        "source_url": "https://hyper.ai/en/stories/bc04f410b9955784ae425310ca267801"
+      },
+      {
+        "claim": "Government programs such as the UK ARIA AI Scientist fund materials discovery projects, showing public demand for the capability.",
+        "source_url": "https://www.aria.org.uk/ai-scientist/funded-projects"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a concrete result in one domain",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run a pilot experiment series with a partner lab",
+        "Publish a benchmark of sample efficiency"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A validated discovery or measured experiment savings"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert research into a paid pilot",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign two paid pilots",
+        "Recruit a domain scientist advisor"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$200K in contracted pilots and a lead investor"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable product",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Package the platform for one industry",
+        "Hire sales and applied scientists"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M ARR with 5 or more customers"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale across domains",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add a second domain",
+        "Enterprise security and integrations"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$8M ARR"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Platform leadership",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Lab network partnerships",
+        "Licensing deals"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$30M ARR"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Topic is a priority for frontier funds",
+      "evidence": "A $114M fund for AI science startups and large lab rounds were reported in 2025.",
+      "source_url": "https://hyper.ai/en/stories/bc04f410b9955784ae425310ca267801"
+    },
+    {
+      "point": "Sparse data learning is a real unsolved problem with public funding behind it",
+      "evidence": "ARIA funds materials discovery projects with self learning loops.",
+      "source_url": "https://www.aria.org.uk/ai-scientist/funded-projects"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Confluence Labs",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Confluence Labs\" --era 2022+ : name_plus_descriptor, 15 letters, alive 94 percent in cohort",
     "strengths": [
-      "TODO"
+      "Suggests meeting of ideas",
+      "Labs signals research"
     ],
     "weaknesses": [
-      "TODO"
+      "Collides with the Atlassian product Confluence"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The word Confluence is already a well known Atlassian product, which hurts search and trademark clarity, similar to YC names with descriptor suffixes, while Labs suits a research company; overall neutral.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A research stage AI for science pitch from two founders gets the benefit of a hot sector but has no product to anchor a seed in 10 months.",
+    "general_summary": "Confluence Labs aims at sample efficient AI for experimental science. The topic is attractive to specialist funds and large AI lab rounds in the category show appetite, but the pitch is a research direction with no product, and funded labs and established vendors occupy the same ground. The 10.4 month window caps the odds, and the seed figure sits slightly above the window adjusted cohort anchor, so the odds do not rank this company against others. Series A inside the window is unlikely."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file and market searches were used; no investor or traction data is known.",
+    "Seed means an outside round above about $1M closing between 2026-01-05 and 2026-11-17.",
+    "Series A given seed is for the same window; Series B and C are ever figures.",
+    "Coverage: 662 researched companies; funding data partial."
   ],
   "sources": [
-    "https://"
+    "https://hyper.ai/en/stories/bc04f410b9955784ae425310ca267801",
+    "https://www.aria.org.uk/ai-scientist/funded-projects",
+    "https://citrine.io",
+    "https://atinary.com",
+    "https://periodic.com"
   ]
 }

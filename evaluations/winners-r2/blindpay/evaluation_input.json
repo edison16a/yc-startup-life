@@ -1,330 +1,440 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "BlindPay",
+  "one_liner": "Stablecoin API for global payments",
+  "description": "Stablecoin API that lets companies send and receive money worldwide using fiat, stablecoins and several blockchains, with the compliance and regulatory work handled by the provider. Nine person team in San Francisco, Winter 2025.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.088,
+  "basis": "Starting prior about 1 percent (0.6 to 2 percent range). Up for a nine person team, a payments need that is clear and timing with rising stablecoin interest, and for a developer product in an API format that YC often funds. Down because the space has funded rivals and a compliance wrapped crypto pitch. Net about 4 percent, conditional on the batch already given.",
+  "why_it_fails": "YC would most plausibly say that stablecoin payment APIs are a crowded field with funded leaders such as Bridge and BVNK, and that a compliance wrapper depends on partners the company does not control. Partners may also want proof of live payment volume instead of a regulatory plan."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.55,
+   "anchors": {
+    "base_rate": 0.57,
+    "source": "python3 -I scripts/base_rates.py --tag Payments --years 2018-2024 --calibration-only: seed cond 70% (n=10), series_a cond 14% (n=7), series_b 0% (n=1), n=12 so anecdotes. --industry Fintech --years 2022-2025 --calibration-only: seed 57% known (lower 50 / upper 62, n=23), series_a cond 23% (n=13), series_b 0% (n=3). Time table Fintech: seed median 7 months, series_a median 26.5, series_b median 42.8 from batch start.",
+    "adjustment_reason": "Window is 22.4 months from 2025-01-06 to 2026-11-17 and the number is for a round above about 1M from outside investors inside that window, not ever. Anchors are 0.57 for Fintech 2022 to 2025 and 0.70 for payments (n=10). 0.55 is 0.96x of the Fintech anchor. The 22 month window covers nearly every eventual seed, since the p75 for Fintech is 20 months. A team of 9 and a hot stablecoin theme are not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, the most common outcome for a small team that closes a first outside round quickly."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M, with market pre money near 18M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.24,
+     "rationale": "Strong seed led by a known fund, matching the upper quartile of 6.5M and above in press covered rounds."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "p_band": 0.11,
+     "rationale": "Large hot category round; rare for a team this early."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step fails if licensing and banking partners slow launch, so volume stays too small to show an investor, or if the product looks like a thin layer over providers such as Bridge and BVNK. Meson and Peg, earlier stablecoin YC companies, both shut down, and Koywe and Coco Wallet stayed small after early rounds. A crypto flavoured pitch can also narrow the investor pool."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.23,
+    "source": "python3 -I scripts/base_rates.py --tag Payments --years 2018-2024 --calibration-only: seed cond 70% (n=10), series_a cond 14% (n=7), series_b 0% (n=1), n=12 so anecdotes. --industry Fintech --years 2022-2025 --calibration-only: seed 57% known (lower 50 / upper 62, n=23), series_a cond 23% (n=13), series_b 0% (n=3). Time table Fintech: seed median 7 months, series_a median 26.5, series_b median 42.8 from batch start.",
+    "adjustment_reason": "Window 22.4 months. Fintech series A median is 26.5 months from batch start and p25 about 17, so perhaps 35 percent of eventual A raisers close inside the window. 0.23 times 0.35 is 0.08 and the payments tag gives 0.14; 0.10 sits between them."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000.0,
+      8000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later p25 of 10M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M and a market deal size near 17M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      90000000.0,
+      220000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round after fast revenue growth; the p75 is about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A inside 22 months needs a visible stream of processed payment volume and clean compliance in several corridors, while larger rivals compete on price. Verto took two years from seed to A, and NALA took five, so stablecoin API peers usually need several years of volume growth before an institutional A."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.14,
+    "source": "python3 -I scripts/base_rates.py --tag Payments --years 2018-2024 --calibration-only: seed cond 70% (n=10), series_a cond 14% (n=7), series_b 0% (n=1), n=12 so anecdotes. --industry Fintech --years 2022-2025 --calibration-only: seed 57% known (lower 50 / upper 62, n=23), series_a cond 23% (n=13), series_b 0% (n=3). Time table Fintech: seed median 7 months, series_a median 26.5, series_b median 42.8 from batch start.",
+    "adjustment_reason": "Fintech cohort shows 0 of 3 known and B2B shows 0.16; median months to B is about 43 for Fintech, so inside 22 months this is a tail event, set at 0.03."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      140000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M."
+    },
+    {
+     "raise_usd": [
+      25000000.0,
+      50000000.0
+     ],
+     "post_money_usd": [
+      140000000.0,
+      320000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B near the 2022 and later YC median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000.0,
+      100000000.0
+     ],
+     "post_money_usd": [
+      320000000.0,
+      800000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside Series B on breakout growth; the p75 is 57M."
+    }
+   ],
+   "why_it_fails": "A Series B inside 22 months would need payments volume at scale and licensing across regions, which took Verto and NALA far longer. Regulation of stablecoin intermediaries can also freeze a launch, and a 9 person team would still be proving a single product line."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --tag Payments --years 2018-2024 --calibration-only: seed cond 70% (n=10), series_a cond 14% (n=7), series_b 0% (n=1), n=12 so anecdotes. --industry Fintech --years 2022-2025 --calibration-only: seed 57% known (lower 50 / upper 62, n=23), series_a cond 23% (n=13), series_b 0% (n=3). Time table Fintech: seed median 7 months, series_a median 26.5, series_b median 42.8 from batch start.",
+    "adjustment_reason": "No base rate (0 of 3 reached C in the Fintech cohort). Placeholder 0.01 for the 22 month window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      45000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Smaller later round near the 2022 and later p25 of 35M (n=9 only)."
+    },
+    {
+     "raise_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      900000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C or later, 45M to 77M per the YC table and market monitor."
+    },
+    {
+     "raise_usd": [
+      90000000.0,
+      250000000.0
+     ],
+     "post_money_usd": [
+      900000000.0,
+      3000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout late round at unicorn scale; very rare in this cohort."
+    }
+   ],
+   "why_it_fails": "A Series C inside two years of YC is almost unseen among payments companies, whose own scale of regulated volume takes many years to build. The best known cross border payments peers such as NALA and Verto were still at Series A at comparable ages, so near zero is the honest figure."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.33
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most common ending is a quiet stall or a small acquisition by a larger payments or exchange firm, the path of Consul and Cypher. Big upside needs to become a top rail among rivals who raised tens of millions earlier, as the NALA and Verto stories show it takes many years."
+ },
+ "analogs": [
+  {
+   "slug": "nala",
+   "relevance": "Cross border payments for Africa.",
+   "outcome_summary": "Seed then Series A years later."
+  },
+  {
+   "slug": "verto",
+   "relevance": "Cross border payments and FX for businesses.",
+   "outcome_summary": "Seed then Series A after two years."
+  },
+  {
+   "slug": "meson",
+   "relevance": "Stablecoin swap protocol.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "peg",
+   "relevance": "Stablecoin wallet.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "consul",
+   "relevance": "Stablecoin payouts API from two founders.",
+   "outcome_summary": "Acquired, no post YC round."
+  },
+  {
+   "slug": "koywe",
+   "relevance": "Crypto on and off ramp for Latin America.",
+   "outcome_summary": "Seed then stayed small."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Funded stablecoin infrastructure competitors",
+   "p": 0.4,
+   "evidence": "Bridge, BVNK and Conduit offer the same API with large funding and licences, and guides group the field as crowded.",
+   "analogs": [
+    "consul",
+    "meson"
+   ],
+   "mitigation": "Pick a corridor or customer type the leaders neglect."
+  },
+  {
+   "risk": "Regulation and banking partner dependency",
+   "p": 0.35,
+   "evidence": "Stablecoin intermediaries must meet AML and licensing rules, and off ramp and local liquidity are named as the main friction.",
+   "analogs": [
+    "peg",
+    "koywe"
+   ],
+   "mitigation": "Secure one licensed partner per corridor early."
+  },
+  {
+   "risk": "Crypto cycle narrows investors",
+   "p": 0.25,
+   "evidence": "Earlier stablecoin peers Meson and Peg failed when crypto sentiment fell.",
+   "analogs": [
+    "meson",
+    "peg"
+   ],
+   "mitigation": "Present as payments infrastructure and show fiat volume."
+  },
+  {
+   "risk": "Low margin payments business",
+   "p": 0.25,
+   "evidence": "Verto and NALA needed years of volume before institutional rounds.",
+   "analogs": [
+    "verto",
+    "nala"
+   ],
+   "mitigation": "Charge for compliance tooling and not just spreads."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Bridge, BVNK and Conduit",
+   "what": "Stablecoin payment infrastructure with licences",
+   "traction": "Funded leaders in the category",
+   "source_url": "https://www.pymnts.com/cryptocurrency/2025/genius-act-clears-way-for-stablecoins-in-supply-chains-b2b-payments/"
+  },
+  {
+   "name": "Banks and SWIFT correspondent rails",
+   "what": "Status quo for cross border business payments",
+   "traction": "Trillions in annual volume",
+   "source_url": "https://tazapay.com/es/guides/stablecoin-payments-guide-global-businesses"
+  },
+  {
+   "name": "Other YC payments companies such as Verto and NALA",
+   "what": "Established corridors and FX",
+   "traction": "Series A rounds",
+   "source_url": "https://business.bitso.com/blog/four-changes-the-genius-act-could-bring-to-boost-the-stablecoin-industry"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "The API itself is straightforward, but chain integrations, custody, KYC and banking partners are the hard part, and a small team can build a first corridor in months. The moat is licences and partner relationships, which are slow, not model quality."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Stripe with Bridge",
+   "Coinbase",
+   "BVNK",
+   "Circle",
+   "Fireblocks"
+  ],
+  "timeline_months": 9,
+  "rationale": "Large payments firms already ship stablecoin APIs and have licences and distribution. A new entrant must differentiate on compliance depth or a region."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Corporates cite cross border supplier payments as the top stablecoin use, and surveys report cost savings of 10 percent or more.",
+    "source_url": "https://tazapay.com/es/guides/stablecoin-payments-guide-global-businesses"
+   },
+   {
+    "claim": "B2B accounts for most real stablecoin payment volume per industry reports.",
+    "source_url": "https://www.pymnts.com/cryptocurrency/2025/genius-act-clears-way-for-stablecoins-in-supply-chains-b2b-payments/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Prove live payment volume.",
+   "actions": [
+    "Onboard five paying business customers",
+    "Process real transfers in two corridors"
+   ],
+   "proof": "Monthly processed volume above one million dollars."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeat volume and compliance readiness.",
+   "actions": [
+    "Sign a licensed banking partner",
+    "Publish uptime and settlement times"
+   ],
+   "proof": "Volume growing monthly with retained customers."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real and growing need",
+   "evidence": "Industry reports show B2B stablecoin payments rising and corporates reporting savings.",
+   "source_url": "https://tazapay.com/es/guides/stablecoin-payments-guide-global-businesses"
+  },
+  {
+   "point": "Nine person team already in place",
+   "evidence": "The input lists 9 people, large for a Winter batch company.",
+   "source_url": "https://blindpay.com/"
+  }
+ ],
+ "brand": {
+  "name": "BlindPay",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"BlindPay\" --era 2022+: length bucket 7-8, 2 syllables, alive 93.0 percent in bucket, no signal.",
+  "strengths": [
+   "Says payments directly",
+   "Easy to spell and say"
+  ],
+  "weaknesses": [
+   "Blind suggests opacity to a compliance buyer",
+   "Generic compound"
+  ],
+  "rationale": "A compound that names the category is easy to remember like Rappi style names are not, but for a compliance buyer the word blind may raise a question about transparency. Brand is secondary here."
+ },
+ "narrative": {
+  "headline": "A nine person stablecoin API team in a crowded, licence heavy space: seed is roughly a coin flip over 22 months, later rounds are unlikely in the window.",
+  "general_summary": "BlindPay offers a stablecoin API for global payments with the compliance work handled for clients. The window is 22.4 months from 2025-01-06 to 2026-11-17, which covers nearly all eventual seeds, so seed sits at 0.55 against Fintech and payments anchors of 0.57 and 0.70. Series A given seed is 0.10 in the window. Funded rivals and licensing are the main drags. Earlier stablecoin YC companies Meson and Peg shut down, while Verto and NALA took years to reach a Series A, which is why the later rounds are priced low for a window under two years. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-01-06 using only the input.",
+  "Seed means above about 1M from outside investors inside the 22.4 month window.",
+  "Market sources were read for structure only; any page dated after the as of date was not used for facts about outcomes."
+ ],
+ "sources": [
+  "https://tazapay.com/es/guides/stablecoin-payments-guide-global-businesses",
+  "https://www.pymnts.com/cryptocurrency/2025/genius-act-clears-way-for-stablecoins-in-supply-chains-b2b-payments/",
+  "https://business.bitso.com/blog/four-changes-the-genius-act-could-bring-to-boost-the-stablecoin-industry"
+ ]
 }

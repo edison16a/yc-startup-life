@@ -1,330 +1,472 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "SalesPatriot",
+  "one_liner": "Supply chain superintelligence for distribution and procurement",
+  "description": "SalesPatriot embeds AI in the quote to cash teams of distributors, manufacturers and procurement groups, turning emails, ERPs, websites, spreadsheets and portals into one transactional layer so parts reach production faster. Customers are industrial and defense-adjacent suppliers who pay a software and deployment fee. Team of 30 listed, San Francisco.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.02,
+  "p_low": 0.01,
+  "p_high": 0.044,
+  "basis": "Starting prior about 1 percent (0.6 to 2 percent, references/yc_acceptance.md). Up for a timely AI plus supply chain and defense industrial theme, a real operating team of 30, and a concrete workflow (quote to cash). Down for a crowded order entry space and an abstract superintelligence pitch. Net about 2 percent. Blind note: batch was Winter 2025, so this is a forward estimate only.",
+  "why_it_fails": "YC partners would most plausibly say that quote automation for distributors already has funded players, that integrating with every ERP is a services heavy slog, and that a pitch of superintelligence is broader than any evidence of customers paying. A team of 30 also raises the question of who pays them and how."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.6,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, 49/59/65). Second cohort python3 -I scripts/base_rates.py --tag AI --years 2022-2025 --calibration-only: seed 61% (n=109). Window: time_to_milestones.csv industry B2B months_to_seed 3 / 7 / 20, era 2022+ 3 / 6 / 14.2, so a 22 month window captures most seeds.",
+    "adjustment_reason": "0.60 against 0.59 is 1.02x. The 22 month window lets nearly all eventual seeds in, and I do not lift for the team of 30 or the defense framing per the winners test rules. Odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.2,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. With a team already listed at 30 a small round is less likely, but a convertible from industrial angels is possible."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.15,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A seed above $1M fails if the pilots stay as services work on messy ERPs and email, so revenue looks like consulting and not software. Quote to cash and order entry has many funded rivals (Proton.ai, Motivate), and mandel-ai and jiga show supply chain AI companies raising small seeds only after a long, narrow customer proof. Investors may pass on a broad claim of superintelligence without named customers."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.16,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_a cond 26% (n=74, 13/15/29). Months to Series A B2B median 30, era 2022+ 28 (p25 19.4).",
+    "adjustment_reason": "0.16 against 0.26 is 0.62x. A 22 month window captures only about a third of eventual Series A rounds (p25 is 19.4 months, median 28), so the window cuts the ever anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A thin Series A near the 2018-2021 median of 12M or a bridge style A, when growth is steady but not explosive."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.4,
+     "rationale": "The typical Series A, near the 2022+ YC median of 15M (round_benchmarks.csv) and 17.4M US deal size."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A strong A of 18M to 30M led by a tier one fund after fast revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.1,
+     "rationale": "An outsized A in a hot AI category, as seen for a few 2024 and 2025 AI application companies."
+    }
+   ],
+   "why_it_fails": "A Series A inside 22 months needs repeatable software revenue at several industrial accounts. Order entry automation is sold into slow procurement cycles with ERP integration work per customer, and jiga and recurrency took years to reach their A rounds. If customers need heavy forward deployed engineering, growth looks like services and the A slips beyond the window."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.05,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), known-only 2%, upper 18%. Cohort cond is among those with a Series A, ever.",
+    "adjustment_reason": "Window effect: the Series B median is 26 to 46 months after batch start (time_to_milestones.csv), so only a sliver can land inside the 22 month window. The ever anchor 0.16 is cut to 0.05 for the window, which is more than 2x below because the window ends well before the usual B timing."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "A small or flat Series B, common when growth slowed after the A."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.45,
+     "rationale": "The typical B, near the 2022+ YC median of 37M to 40M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A large Series B on strong revenue growth, led by a growth fund after the A round proved repeatable sales."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.1,
+     "rationale": "A breakout Series B at unicorn scale for a category leader, rare among YC companies and needing very fast growth."
+    }
+   ],
+   "why_it_fails": "A Series B inside this window needs a Series A by about 2026 and then a fast doubling of revenue. Supply chain software analogs reach B rounds three to four years after batch start, as the 2022+ median of 35 months to Series B shows, and defense or industrial deployment cycles are slow. The tiny window probability is mostly timing."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.05,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all industries): series_c cond 36% (n=55) among those with Series B. Also stage_benchmarks.md.",
+    "adjustment_reason": "Window effect: Series C median is 61 to 66 months after batch start, far outside the 22 month window, so the ever anchor of 0.36 is cut to 0.05 here, more than 2x below it, by timing alone and not by a view on quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A modest growth round, near the 45M to 74M 2022+ YC medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A typical Series C or later in the 2022+ table (median 74M)."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A large growth round for a category leader."
+    },
+    {
+     "raise_usd": [
+      250000000,
+      600000000
+     ],
+     "post_money_usd": [
+      4000000000,
+      15000000000
+     ],
+     "p_band": 0.08,
+     "rationale": "A mega growth round for a breakout winner, seen only for a handful of YC companies in the 2022+ data."
+    }
+   ],
+   "why_it_fails": "A Series C inside this window is out of reach on timing alone, since the 2022+ median is 37 months for the few that got there. Supply chain software winners such as flexport needed years and large logistics volume before growth rounds, and industrial AI rivals could compress margins before then."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.45
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.33
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.17
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     20000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company stalls as a services heavy deployment shop that cannot move margins or is absorbed by an ERP or distribution software vendor in a small deal. The upside needs the workflow product to become the standard order layer for industrial suppliers, as flexport did in freight."
+ },
+ "analogs": [
+  {
+   "slug": "jiga",
+   "relevance": "Sourcing parts from manufacturers, W21",
+   "outcome_summary": "Bootstrapped, profitable, later priced A after years; shows slow industrial software paths."
+  },
+  {
+   "slug": "recurrency",
+   "relevance": "Automated ERP for distributors, S20",
+   "outcome_summary": "Active; sells to the same distributor buyer with ERP integration as the core work."
+  },
+  {
+   "slug": "mandel-ai",
+   "relevance": "AI coordination for supply chain communications, S23",
+   "outcome_summary": "Started as planning software, pivoted to AI supplier communication; a long path to a small seed."
+  },
+  {
+   "slug": "maderight",
+   "relevance": "Global manufacturing, S15",
+   "outcome_summary": "Shut down; a marketplace style manufacturing sourcing business that could not scale."
+  },
+  {
+   "slug": "keychain-logistics",
+   "relevance": "Connecting supply side of shippers, S12",
+   "outcome_summary": "Shut down; supply chain network never reached density."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Deployments look like services, not repeatable software",
+   "p": 0.45,
+   "evidence": "Quote to cash across emails, ERPs and portals needs custom integration per customer, which keeps margins low and slows growth.",
+   "analogs": [
+    "recurrency",
+    "mandel-ai"
+   ],
+   "mitigation": "Productize the ingestion layer and price per transaction volume."
+  },
+  {
+   "risk": "Funded rivals and ERP vendors ship order entry AI",
+   "p": 0.45,
+   "evidence": "Distribution software vendors and startups such as Proton.ai and Canals market order and quote automation to the same buyers.",
+   "analogs": [
+    "recurrency",
+    "jiga"
+   ],
+   "mitigation": "Win a specific vertical such as defense industrial supply where trust and clearance matter."
+  },
+  {
+   "risk": "Long enterprise and defense procurement cycles delay revenue",
+   "p": 0.35,
+   "evidence": "Industrial and defense-adjacent buyers run slow pilots and security reviews, which stretches a seed or A beyond the window.",
+   "analogs": [
+    "maderight",
+    "keychain-logistics"
+   ],
+   "mitigation": "Sell first to mid sized distributors with short cycles, then move up."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Proton.ai",
+   "what": "AI sales and order automation for industrial distributors.",
+   "traction": "Funded vendor with distributor customers.",
+   "source_url": "https://www.mdm.com/news/breaking-news-in-wholesale-distribution/proton-ai-launches-automated-order-quote-entry-system/"
+  },
+  {
+   "name": "Canals",
+   "what": "AI platform for distributors to automate order entry from email.",
+   "traction": "Partnered with a buying group (AD).",
+   "source_url": "https://www.canals.ai/"
+  },
+  {
+   "name": "Manual quoting and ERP add-ons",
+   "what": "Staff retyping orders, spreadsheets and EDI tools.",
+   "traction": "The status quo in most mid sized distributors.",
+   "source_url": "https://distributionstrategy.com/2023/08/transform-distributor-order-entry-with-ai/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Parsing messy emails, PDFs and portals with current language models is feasible for a small team, but connecting to many ERPs reliably, handling exceptions and proving accuracy at transaction level is the hard part. Done well with a team of 30 it is a moat."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Proton.ai",
+   "ERP vendors such as Epicor and Infor",
+   "Large model providers with agent products"
+  ],
+  "timeline_months": 9,
+  "rationale": "Order entry automation was already being marketed to distributors in 2023 and 2024, and ERP vendors have distribution and data. A well resourced rival could ship a comparable feature in under a year, so the moat must come from deployment depth."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Distributors are publicly interested in AI for order entry and quoting, with vendors launching products to serve them.",
+    "source_url": "https://distributionstrategy.com/2023/08/transform-distributor-order-entry-with-ai/"
+   },
+   {
+    "claim": "Industrial quote and order automation is marketed by several vendors, which confirms budget exists.",
+    "source_url": "https://www.mdm.com/news/breaking-news-in-wholesale-distribution/proton-ai-launches-automated-order-quote-entry-system/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show paying distributor or manufacturer customers.",
+   "actions": [
+    "Land 3 named industrial customers on paid pilots",
+    "Measure hours saved per quote"
+   ],
+   "proof": "Pilot revenue and a measured quote time reduction"
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert pilots to repeatable software contracts.",
+   "actions": [
+    "Standardize the integration layer for two or three ERPs",
+    "Move to annual contracts priced per transaction"
+   ],
+   "proof": "Annual recurring revenue above $1M with under 12 month payback"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show growth without forward deployed headcount growing at the same pace.",
+   "actions": [
+    "Reach 15 or more customers",
+    "Show gross margin above 65 percent"
+   ],
+   "proof": "Net revenue retention above 110 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large team and concrete workflow",
+   "evidence": "Thirty people listed and a defined quote to cash use case, unusual for a batch company.",
+   "source_url": "https://www.salespatriot.com/"
+  },
+  {
+   "point": "Clear paying buyer in a measurable process",
+   "evidence": "Distributors measure quote turnaround and order errors, so value is easy to test.",
+   "source_url": "https://distributionstrategy.com/2023/08/transform-distributor-order-entry-with-ai/"
+  }
+ ],
+ "brand": {
+  "name": "SalesPatriot",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"SalesPatriot\" --era 2022+ : syllable_bucket=4+, n=591, alive 94.2 percent, exit 2.2 percent",
+  "strengths": [
+   "Signals defense and domestic supply chain",
+   "Memorable compound"
+  ],
+  "weaknesses": [
+   "Sounds like a sales tool, not supply chain",
+   "Patriot ties it to one political and defense flavor"
+  ],
+  "rationale": "The name stresses sales and patriotism, which fits defense adjacent sourcing but undersells procurement and manufacturing, and may limit expansion. Past YC names tied to a narrow word often rebrand later. Small effect on the odds.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A large, workflow focused AI team in a crowded order entry market, with a 22 month window that is long enough for a seed.",
+  "general_summary": "SalesPatriot sells AI that automates quote to cash for industrial distributors and procurement teams. With a 22 month window the seed estimate sits at the cohort anchor of about 0.6, since team size and sector do not separate winners in the test. The risks are services heavy deployments and funded rivals in order entry, shown by the slow paths of jiga and recurrency. The odds do not rank this company against others.",
+  "deep_dive": {}
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-01-06; window of about 22 months to 2026-11-17.",
+  "Seed means a round above about $1M closing inside the window, excluding the YC deal.",
+  "Team size of 30 from the input is not used to lift the seed odds, per the winners test rules.",
+  "Analog records may contain later facts; only founding era facts were used. No LEAK flags."
+ ],
+ "sources": [
+  "https://distributionstrategy.com/2023/08/transform-distributor-order-entry-with-ai/",
+  "https://www.mdm.com/news/breaking-news-in-wholesale-distribution/proton-ai-launches-automated-order-quote-entry-system/",
+  "https://www.canals.ai/",
+  "https://www.salespatriot.com/"
+ ]
 }

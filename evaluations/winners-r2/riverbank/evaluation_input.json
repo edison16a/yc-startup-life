@@ -1,330 +1,458 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Riverbank",
+  "one_liner": "Infrastructure cartography",
+  "description": "Maps system topology, dependencies, interfaces and reachable pathways across heterogeneous environments including IoT, IT and cloud, to serve security and operations buyers. Pricing and customers not stated. Solo founder in Boston, Summer 2025 batch.",
+  "as_of": "2025-07-07"
+ },
+ "yc_acceptance": {
+  "p": 0.012,
+  "p_low": 0.005,
+  "p_high": 0.035,
+  "basis": "The company is listed in the Summer 2025 batch, so acceptance is already known; this reports the prior. Starting from about 1 percent with a 0.6 to 2 percent band (yc_acceptance.md); kept near that because a solo founder is slightly negative, the description is abstract with no customer, and the security infrastructure space is crowded with funded firms such as Armis and Axonius, offset by YC interest in AI native infrastructure.",
+  "why_it_fails": "YC would most plausibly decline because a solo founder with an abstract mapping pitch gives no evidence of a customer pain, a design partner or a wedge against Armis, Axonius and cloud vendors. YC prefers a sharply stated first user and a founder with proof of building and selling to security teams, and the description supplies neither."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.52,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026 --calibration-only: seed 40% / 52% / 62%, cond 52% (n=163); Series A 9% / 12% / 31%, cond 23% (n=84); seed raises median $3.4M (n=64).",
+    "adjustment_reason": "Set at 0.73 times the 52 percent B2B anchor: solo founders had a higher shutdown rate (21 percent versus 17 percent for two, yc_acceptance.md), the pitch has no customer or product description, and the 16 month window excludes about a quarter of eventual seeds. No named analog justifies a lift. Forecast window: 16.3 months, from 2025-07-07 to 2026-11-17. Seed means a financing round above about $1M from outside investors that closes inside the window; the YC deal does not count. B2B median is 7 months to seed (p75 20.0) in time_to_milestones.csv, so about 75 to 80 percent of eventual seeds land in this window. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels and a pre-seed fund, the commonest result for a thin team. The 2022 and later seed 25th percentile of $2.8M in knowledge/tables/round_benchmarks.csv sits at its top edge. The standard $500K YC deal is excluded because the window counts only rounds above $1M."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of $4.1M, in line with the 3.0M deal size in the current NVCA data cited in stage_benchmarks.md."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "A larger institutional seed, which the 2022 and later 75th percentile of $6.5M and press reported 2026 raises (median $6.0M) make plausible but not typical."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      180000000.0
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed of a hot category lead investor; rare for a small team."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A solo founder selling infrastructure cartography into heterogeneous, often industrial environments has to win enterprise or government security buyers with long cycles. The description names no customer, product form or first dollar, and investors in security want a design partner and a clear budget owner. The most likely outcome is that the company ends the window with the YC deal, a few pilots and a co-founder search, with no lead investor."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.1,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026 --calibration-only: Series A cond 23% (n=84), known only 12%, upper 31%; time to A median 29 months (n=19).",
+    "adjustment_reason": "Window limited: median months to Series A is 28 (calibration sample) so few companies reach A before month 19, and the conditional rate here counts only A rounds closing inside the same window. Reaching a Series A years later is common for companies with paying customers, so this is not the ever number."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      55000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series A or extended seed labelled A, below the 2022 and later 25th percentile of $10M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      110000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band around the 2022 and later median of $14.2M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      110000000.0,
+      220000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round near the 75th percentile of $20M and above."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      220000000.0,
+      500000000.0
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout lead round for a category leader with fast growth, rare in any cohort of the data."
+    }
+   ],
+   "why_it_fails": "A Series A needs repeatable enterprise sales and several six figure contracts, which a single founder security company rarely shows within 16 months. Appcanary and EdgeBit both sold dependency and asset visibility products and ended as acquihires or tuck-ins without a scaled A path, and the B2B 2022 and later cohort has reached A at only 12 percent known only."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.26,
+   "anchors": {
+    "base_rate": 0.44,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: Series B given Series A 44 percent known only (n=126), lower and upper bounds 8 and 53 percent unconditional. This is an ever number, not inside the window.",
+    "adjustment_reason": "Set about 0.7 times the 44 percent conditional rate because newer batches show only 16 to 23 percent in B2B 2022 and later cohorts so far (right censored). It is an ever figure and is not in the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Down or flat round below the 2022 and later 25th percentile of $25M."
+    },
+    {
+     "raise_usd": [
+      25000000.0,
+      45000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band around the 2022 and later median of $37M."
+    },
+    {
+     "raise_usd": [
+      45000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      800000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Strong round near the 75th percentile of $57M."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      800000000.0,
+      2000000000.0
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout growth round for a category leader, seen in only a few percent of Series B rounds in the data."
+    }
+   ],
+   "why_it_fails": "Most companies that raise a Series A do not raise a Series B because growth slows against the A plan, burn rises faster than revenue, or the category consolidates around two leaders. Investors at B want repeatable sales or usage economics, and a company that grew on a founder-led motion often cannot show them. Analogs such as the acquired or stalled A stage companies in the cohort show that about half stop here."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: Series C given Series B 36 percent known only (n=55); Series D or later given C 40 percent (n=20). Ever number.",
+    "adjustment_reason": "Held at 0.75 times the 36 percent anchor because the cohort is small and late stage data is incomplete; counted ever, years outside the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or down round; Series C medians fell from $64M to $45M between 2018 to 2021 and 2022 and later (n=6 and 9)."
+    },
+    {
+     "raise_usd": [
+      40000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      800000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band near the 2022 and later median of $45M."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      800000000.0,
+      2000000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round for a company that has kept compounding, above the 2022 and later median."
+    },
+    {
+     "raise_usd": [
+      150000000.0,
+      300000000.0
+     ],
+     "post_money_usd": [
+      2000000000.0,
+      6000000000.0
+     ],
+     "p_band": 0.05,
+     "rationale": "Category leader round, rare and mostly seen for companies that won their market outright."
+    }
+   ],
+   "why_it_fails": "At Series C the bar is a clear path to a very large outcome, so companies fail here when growth decelerates below what a late stage fund underwrites, when a platform owner or a better funded rival wins the category, or when the market stays smaller than the pitch. Only 6 percent of the calibration sample reached C at the known only count, and the survivors mostly had hard to copy distribution or technology."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.65
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.11
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.02
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Security visibility products tend to be bought by larger platforms as features. Appcanary was absorbed by GitHub after it launched native alerts and EdgeBit was acquired by FOSSA with a small raise. Reaching $100M or more requires winning against Armis, which raised a $435M pre IPO round at a $6.1B valuation, and a solo founder starting from topology maps has no distribution edge."
+ },
+ "analogs": [
+  {
+   "slug": "appcanary",
+   "relevance": "Dependency visibility for servers, Summer 2015.",
+   "outcome_summary": "Paid monitoring product with customers; GitHub launched native alerts in 2017 and hired the team in January 2018, a talent exit."
+  },
+  {
+   "slug": "edgebit",
+   "relevance": "Dependency and runtime visibility for software security, Winter 2023.",
+   "outcome_summary": "Five person team with CoreOS and ScaleFT alumni, small raise, acquired by FOSSA in 2025 as a tuck-in."
+  },
+  {
+   "slug": "cryptoseal",
+   "relevance": "Early security infrastructure company, Summer 2011.",
+   "outcome_summary": "Listed as acquired; shows that small security infrastructure startups often end by sale of the technology and team."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Funded incumbents: Armis and Axonius already map assets and exposure, and have broad coverage and sales teams.",
+   "p": 0.5,
+   "evidence": "Armis raised $435M pre IPO at a $6.1B valuation per GovInfoSecurity, and Axonius raised about $595M per CB Insights.",
+   "analogs": [
+    "appcanary",
+    "edgebit"
+   ],
+   "mitigation": "Pick one deep environment such as industrial control networks and win design partners."
+  },
+  {
+   "risk": "Solo founder cannot build and sell to enterprise and government security buyers at the same time.",
+   "p": 0.4,
+   "evidence": "Security sales cycles are long and need references; solo founders had 21 percent shutdown versus 17 percent for pairs in the YC sample.",
+   "analogs": [
+    "edgebit"
+   ],
+   "mitigation": "Recruit a go to market co-founder and sign two paid pilots."
+  },
+  {
+   "risk": "Platform absorption: CrowdStrike, ServiceNow or Palo Alto add topology and asset mapping to larger platforms.",
+   "p": 0.35,
+   "evidence": "CrowdStrike expanded Falcon to asset discovery and ServiceNow now hosts Armis, per search results.",
+   "analogs": [
+    "appcanary"
+   ],
+   "mitigation": "Stay data neutral across vendors, which platform owners cannot be."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Armis",
+   "what": "Asset visibility and exposure management for IT, IoT, OT and cloud.",
+   "traction": "Raised $435M pre IPO at a $6.1B valuation.",
+   "source_url": "https://www.govinfosecurity.com/armis-gets-435m-pre-ipo-funding-to-grow-exposure-management-a-29943"
+  },
+  {
+   "name": "Axonius",
+   "what": "Cyber asset attack surface management with graph based asset mapping.",
+   "traction": "About $595M raised per CB Insights.",
+   "source_url": "https://cbinsights.com/company/axonius"
+  },
+  {
+   "name": "Status quo: spreadsheets, CMDBs and diagrams",
+   "what": "Manual inventories and network diagrams.",
+   "traction": "Default in most firms, out of date quickly.",
+   "source_url": "https://www.armis.com/armis-asset-management/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Mapping topology and reachable paths across IT, IoT and cloud requires many protocol connectors, graph modelling and safe scanning, and each environment differs. One person can build a narrow slice but broad coverage takes a team, and false positives destroy trust quickly."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Armis from ServiceNow",
+   "CrowdStrike",
+   "Palo Alto Networks"
+  ],
+  "timeline_months": 12,
+  "rationale": "Large security platforms already ship asset discovery and are extending it with graph features, and they have the distribution. A new entrant must show a deeper or more neutral map than a feature inside a platform."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Armis reached a $6.1B valuation selling visibility of IT, IoT and OT assets, showing real spend.",
+    "source_url": "https://www.govinfosecurity.com/armis-gets-435m-pre-ipo-funding-to-grow-exposure-management-a-29943"
+   },
+   {
+    "claim": "Gartner has overlapping categories for external and cyber asset attack surface management, showing established budgets.",
+    "source_url": "https://research.contrary.com/company/axonius"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "One design partner with a named mapping problem.",
+   "actions": [
+    "Interview 20 security or OT teams about unknown assets.",
+    "Ship a mapper for one environment."
+   ],
+   "proof": "A signed design partner letter."
+  },
+  {
+   "phase": "seed",
+   "goal": "Paying pilots and a second team member.",
+   "actions": [
+    "Convert pilots to paid annual contracts.",
+    "Hire a go to market co-founder."
+   ],
+   "proof": "Three paying customers above $30K annual."
+  },
+  {
+   "phase": "series_a",
+   "goal": "A repeatable sales motion in one segment.",
+   "actions": [
+    "Build integrations with major security platforms.",
+    "Show net revenue retention above 110 percent."
+   ],
+   "proof": "Annual recurring revenue above $1M."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Established, large budget category with clear public comparables.",
+   "evidence": "Armis reached a $6.1B valuation on asset visibility.",
+   "source_url": "https://www.govinfosecurity.com/armis-gets-435m-pre-ipo-funding-to-grow-exposure-management-a-29943"
+  },
+  {
+   "point": "A neutral cartography layer can serve many vendors if it works across environments.",
+   "evidence": "Axonius built an adapter based graph model across IT and SaaS but is weak in OT and IoT.",
+   "source_url": "https://research.contrary.com/company/axonius"
+  }
+ ],
+ "brand": {
+  "name": "Riverbank",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Riverbank\" --era 2022+: kind invented_or_proper, 9 characters, cohort alive 92.7% (n=1826)",
+  "strengths": [
+   "Evocative map and flow imagery",
+   "Easy to spell"
+  ],
+  "weaknesses": [
+   "Reads like a bank or a nature brand, not security"
+  ],
+  "rationale": "The river imagery suits a mapping company but could be mistaken for fintech. Past YC security names such as Appcanary and EdgeBit were distinctive; brand moves nothing in the ladder.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A solo founder entering a funded security category with an abstract pitch: seed odds below the B2B anchor.",
+  "general_summary": "Riverbank sells infrastructure maps across heterogeneous environments. The need is proven by Armis and Axonius, and investors have funded this category heavily, but those companies have large teams, strong distribution and platforms behind them. A solo founder with an abstract description has little to separate from them yet. The B2B 2022 and later cohort reaches seed at 52 percent known only, and the estimate for a 16 month window is 38 percent. Series A in the window is unlikely, and outcomes resemble Appcanary and EdgeBit: small exits by platform owners.",
+  "deep_dive": null
+ },
+ "assumptions": [
+  "Description only; no customers, product form or traction known.",
+  "Window is 16.3 months; Series B and C are ever figures outside it.",
+  "The website name and the YC page were not opened."
+ ],
+ "sources": [
+  "https://www.govinfosecurity.com/armis-gets-435m-pre-ipo-funding-to-grow-exposure-management-a-29943",
+  "https://cbinsights.com/company/axonius",
+  "https://research.contrary.com/company/axonius",
+  "https://www.armis.com/armis-asset-management/"
+ ]
 }

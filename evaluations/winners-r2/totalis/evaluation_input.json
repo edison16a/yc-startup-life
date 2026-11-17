@@ -1,330 +1,456 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Totalis",
+  "one_liner": "Derivative layer for prediction markets",
+  "description": "A product that builds derivative style instruments on top of prediction market contracts, for traders. Description, team and traction not provided; New York City, Spring 2026 batch.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.015,
+  "p_low": 0.006,
+  "p_high": 0.04,
+  "basis": "The company is listed in the Spring 2026 batch, so acceptance is already known; this reports the prior. Starting from about 1 percent with a 0.6 to 2 percent band (yc_acceptance.md), nudged to 1.5 percent because prediction markets are one of the hottest areas for new fintech infrastructure, and held there because the input has no team, traction or description and regulation can stop a product overnight.",
+  "why_it_fails": "YC would most plausibly decline because the pitch is a one line category claim with no stated users, volume or technical edge, and many applicants were also pitching infrastructure on prediction markets in the same batch window. Derivative products on event contracts also face legal ambiguity that a small team cannot resolve alone."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.56,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2026 --calibration-only: seed 50% / 56% / 60%, cond 56% (n=27); Series A 10% / 11% / 20%, cond 20% (n=15); median 6 months to seed (n=15).",
+    "adjustment_reason": "Cut to 0.54 times the 56 percent Fintech anchor because the window is only 7.4 months (about 55 percent of eventual seeds land that early), the input has no description or team data, and no named analog supports a lift. The rising volume in prediction markets is a tailwind but the winners test says hot sector lifts do not separate raisers. Forecast window: 7.4 months, from 2026-04-06 to 2026-11-17. Seed means a financing round above about $1M from outside investors that closes inside the window; the YC deal does not count. Fintech median is 6 months to seed (p25 0, p75 20) in time_to_milestones.csv, so about 55 percent of eventual seeds land in this window. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels and a pre-seed fund, the commonest result for a thin team. The 2022 and later seed 25th percentile of $2.8M in knowledge/tables/round_benchmarks.csv sits at its top edge. The standard $500K YC deal is excluded because the window counts only rounds above $1M."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of $4.1M, in line with the 3.0M deal size in the current NVCA data cited in stage_benchmarks.md."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "A larger institutional seed, which the 2022 and later 75th percentile of $6.5M and press reported 2026 raises (median $6.0M) make plausible but not typical."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      180000000.0
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed of a hot category lead investor; rare for a small team."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A derivative layer for prediction markets must show real volume on a venue that is dominated by two platforms, and liquidity is thin. The input lists no team size, no description and no traction, so investors have almost nothing to underwrite. Many peer teams are pitching infrastructure and quant tools to the same investors at once, so the likely result is a pre-seed or the YC deal only inside 7 months, with regulatory risk raising the bar further."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.08,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2026 --calibration-only: Series A cond 20% (n=15), known only 11%; months to A median 16 (n=3).",
+    "adjustment_reason": "Window limited: median months to Series A is 28 (calibration sample) so few companies reach A before month 19, and the conditional rate here counts only A rounds closing inside the same window. Reaching a Series A years later is common for companies with paying customers, so this is not the ever number."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      55000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series A or extended seed labelled A, below the 2022 and later 25th percentile of $10M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      110000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band around the 2022 and later median of $14.2M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      110000000.0,
+      220000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round near the 75th percentile of $20M and above."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      220000000.0,
+      500000000.0
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout lead round for a category leader with fast growth, rare in any cohort of the data."
+    }
+   ],
+   "why_it_fails": "A Series A in 7 months would need meaningful trading volume and fee revenue on a venue that may not exist in size yet. Fintech 2022 and later cohorts have reached A at about 11 percent known only, with median 16 months (n=3), so the window is far too short for most, and prediction market rules could change quickly."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.44,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: Series B given Series A 44 percent known only (n=126), lower and upper bounds 8 and 53 percent unconditional. This is an ever number, not inside the window.",
+    "adjustment_reason": "Set about 0.7 times the 44 percent conditional rate because newer batches show only 16 to 23 percent in B2B 2022 and later cohorts so far (right censored). It is an ever figure and is not in the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Down or flat round below the 2022 and later 25th percentile of $25M."
+    },
+    {
+     "raise_usd": [
+      25000000.0,
+      45000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band around the 2022 and later median of $37M."
+    },
+    {
+     "raise_usd": [
+      45000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      800000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Strong round near the 75th percentile of $57M."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      800000000.0,
+      2000000000.0
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout growth round for a category leader, seen in only a few percent of Series B rounds in the data."
+    }
+   ],
+   "why_it_fails": "Most companies that raise a Series A do not raise a Series B because growth slows against the A plan, burn rises faster than revenue, or the category consolidates around two leaders. Investors at B want repeatable sales or usage economics, and a company that grew on a founder-led motion often cannot show them. Analogs such as the acquired or stalled A stage companies in the cohort show that about half stop here."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: Series C given Series B 36 percent known only (n=55); Series D or later given C 40 percent (n=20). Ever number.",
+    "adjustment_reason": "Held at 0.75 times the 36 percent anchor because the cohort is small and late stage data is incomplete; counted ever, years outside the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or down round; Series C medians fell from $64M to $45M between 2018 to 2021 and 2022 and later (n=6 and 9)."
+    },
+    {
+     "raise_usd": [
+      40000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      800000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Central band near the 2022 and later median of $45M."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      800000000.0,
+      2000000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round for a company that has kept compounding, above the 2022 and later median."
+    },
+    {
+     "raise_usd": [
+      150000000.0,
+      300000000.0
+     ],
+     "post_money_usd": [
+      2000000000.0,
+      6000000000.0
+     ],
+     "p_band": 0.05,
+     "rationale": "Category leader round, rare and mostly seen for companies that won their market outright."
+    }
+   ],
+   "why_it_fails": "At Series C the bar is a clear path to a very large outcome, so companies fail here when growth decelerates below what a late stage fund underwrites, when a platform owner or a better funded rival wins the category, or when the market stays smaller than the pitch. Only 6 percent of the calibration sample reached C at the known only count, and the survivors mostly had hard to copy distribution or technology."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.7
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.18
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.1
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.02
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Prediction market infrastructure startups depend on two venues, Kalshi and Polymarket, which can build or restrict what a layer on top does. Better Opinions and Inkling show that prediction market companies in YC history ended as small or niche businesses. A derivative layer could be absorbed by a venue or a market maker, or blocked by regulators, which limits the number of paths to over $100M."
+ },
+ "analogs": [
+  {
+   "slug": "better-opinions",
+   "relevance": "Prediction market product in India, Winter 2022.",
+   "outcome_summary": "Raised a small pre seed and a $2.5M seed in 2022 with fast early growth; later rounds not found and regulation is its main risk."
+  },
+  {
+   "slug": "inkling",
+   "relevance": "Prediction market software, Winter 2006.",
+   "outcome_summary": "Sold software to run prediction markets with about $20K outside capital and was acquired by Cultivate Labs: a small niche business."
+  },
+  {
+   "slug": "finary",
+   "relevance": "Retail investing app, Winter 2021.",
+   "outcome_summary": "Discord for investing; listed inactive, an example of a retail investing hype cycle that did not turn into a lasting company."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Platform dependence: Kalshi and Polymarket control liquidity and can build structured products or restrict third party access.",
+   "p": 0.5,
+   "evidence": "Kalshi controls the majority of US volume and Polymarket the offshore volume, per market reports in early 2026.",
+   "analogs": [
+    "better-opinions"
+   ],
+   "mitigation": "Stay venue neutral and build across both venues."
+  },
+  {
+   "risk": "Thin liquidity: institutional users found liquidity on prediction markets too thin and market impact too high for derivatives.",
+   "p": 0.4,
+   "evidence": "Risk.net reported that liquidity on Kalshi and Polymarket is too thin for institutional use.",
+   "analogs": [
+    "inkling"
+   ],
+   "mitigation": "Partner with market makers and start with one liquid sports or election market."
+  },
+  {
+   "risk": "Regulation: derivatives on event contracts may need licences or draw CFTC action, and state challenges continue.",
+   "p": 0.35,
+   "evidence": "Coverage of the sector notes a legal storm around sports event contracts.",
+   "analogs": [
+    "better-opinions"
+   ],
+   "mitigation": "Operate under a licensed venue partner and take legal counsel early."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Kalshi",
+   "what": "CFTC regulated event contract exchange.",
+   "traction": "Majority of US prediction market volume.",
+   "source_url": "https://blockeden.xyz/blog/2026/04/03/prediction-markets-kalshi-polymarket-institutional-product-market-fit/"
+  },
+  {
+   "name": "Polymarket",
+   "what": "Crypto based prediction market with large global volume.",
+   "traction": "Billions of dollars of monthly volume reported in early 2026.",
+   "source_url": "https://blockeden.xyz/blog/2026/03/10/prediction-markets-18b-volume-explosion-polymarket-kalshi/"
+  },
+  {
+   "name": "Institutional liquidity providers such as Wintermute and Susquehanna",
+   "what": "Market makers moving into event contracts.",
+   "traction": "Started quoting prediction markets in 2026.",
+   "source_url": "https://www.risk.net/node/7963633"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Building structured instruments on event contracts needs pricing models, risk management, venue integration and settlement logic, which a small quant team can prototype in months. The hard parts are liquidity, risk limits and compliance rather than software, and these cannot be solved by code alone."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Kalshi",
+   "Polymarket",
+   "Large market makers"
+  ],
+  "timeline_months": 9,
+  "rationale": "The venues can launch their own structured contracts and combos, and market makers can build the same logic internally. A derivative layer has no distribution outside the venues, so it is exposed to their roadmap and API terms."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Prediction market volume grew to roughly $18B in a month in early 2026, showing demand for trading event contracts.",
+    "source_url": "https://blockeden.xyz/blog/2026/03/10/prediction-markets-18b-volume-explosion-polymarket-kalshi/"
+   },
+   {
+    "claim": "Institutional users find liquidity too thin, which is a stated gap that a derivatives layer could address.",
+    "source_url": "https://www.risk.net/node/7963633"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "A working product on one venue with real users.",
+   "actions": [
+    "Build a first structured contract on one liquid market.",
+    "Trade it with own capital to prove pricing."
+   ],
+   "proof": "Volume in dollars from outside traders."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show growing volume and fee revenue plus legal clarity.",
+   "actions": [
+    "Get a legal opinion on the product structure.",
+    "Sign a venue or market maker partner."
+   ],
+   "proof": "Monthly volume above $5M with positive fee revenue."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Multi venue neutral product with institutional users.",
+   "actions": [
+    "Integrate with Kalshi and Polymarket.",
+    "Win two institutional desks."
+   ],
+   "proof": "Monthly volume above $100M."
+  }
+ ],
+ "pros": [
+  {
+   "point": "The underlying market is growing fast with rising institutional interest.",
+   "evidence": "Monthly volume reached about $18B in early 2026 and market makers began quoting.",
+   "source_url": "https://blockeden.xyz/blog/2026/03/10/prediction-markets-18b-volume-explosion-polymarket-kalshi/"
+  },
+  {
+   "point": "A real gap exists for hedging and structured exposure.",
+   "evidence": "Institutions say contracts are too thin; a derivatives layer targets that gap.",
+   "source_url": "https://www.risk.net/node/7963633"
+  }
+ ],
+ "brand": {
+  "name": "Totalis",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Totalis\" --era 2022+: kind invented_or_proper, 7 characters, cohort alive 92.7% (n=1826)",
+  "strengths": [
+   "Latin root suggests totals and wholeness, fits a derivatives product",
+   "Short and pronounceable"
+  ],
+  "weaknesses": [
+   "Not unique and hints at no product"
+  ],
+  "rationale": "The name suits a financial product that aggregates outcomes and is easy to say, similar to coined names such as Kalshi. Name cohort rates show no outlier, so brand moves nothing in the ladder.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A hot category with no stated team or traction and a short window: seed odds well under the fintech anchor.",
+  "general_summary": "Totalis proposes a derivative layer for prediction markets. Volume on these markets has grown sharply and market makers and institutions are arriving, so the timing is real, but the input gives no description, team size or traction, and the venues Kalshi and Polymarket can restrict or copy what a layer on top does. In a 7 month window the seed probability is 0.30: the Fintech cohort reached seed at 56 percent known only, but only about half of eventual seeds land that early. Series A in the window is very unlikely. Peers pitching infrastructure to the same investors make it a crowded field.",
+  "deep_dive": null
+ },
+ "assumptions": [
+  "Input has no description or team; the evaluation uses only the one liner and tags.",
+  "Window is 7.4 months; Series B and C are ever figures outside it.",
+  "Web results dated after 2026-04-06 were ignored; comps hits from later batches were not used as analogs."
+ ],
+ "sources": [
+  "https://blockeden.xyz/blog/2026/04/03/prediction-markets-kalshi-polymarket-institutional-product-market-fit/",
+  "https://blockeden.xyz/blog/2026/03/10/prediction-markets-18b-volume-explosion-polymarket-kalshi/",
+  "https://www.risk.net/node/7963633"
+ ]
 }
