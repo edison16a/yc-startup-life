@@ -46,8 +46,8 @@ Human Archive sells infrastructure for physical AI, which in January 2026 is one
 |---|---|---|---|---|---|---|---|
 | $1M–$3M | $8M–$18M | 25% | 20% | Unlikely | 9.8% | Unlikely | Thin band: a small extension on top of the YC check from angels, common for data services with slow lab sales. |
 | $3M–$7M | $20M–$45M | 40% | 31% | Reasonable | 16% | Unlikely | Typical 2022+ seed for a hot AI company; the B2B 2022+ seed median in base rates is about $3.2M and physical AI data rounds run higher. |
-| $7M–$15M | $45M–$100M | 25% | 20% | Unlikely | 9.8% | Unlikely | Upside: a named robotics lab customer lets a top fund lead a large seed. |
-| $15M–$30M | $100M–$200M | 10% | 7.8% | Unlikely | 3.9% | Very unlikely | Hot category premium round after a landmark data deal. |
+| $7M–$15M | $45M–$100M | 25% | 20% | Unlikely | 9.8% | Unlikely | Upside: a named robotics lab customer lets a top fund lead a large seed. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage. |
+| $15M–$30M | $100M–$200M | 10% | 7.8% | Unlikely | 3.9% | Very unlikely | Hot category premium round after a landmark data deal. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage. |
 
 **Why it fails here.** The seed stalls if the company cannot show paying robotics labs, because investors will see a collection operation with unclear margins and no model that depends on its data. Analogs like Saphira AI raised only a small seed, and many January 2026 rivals sell data to the same few labs, so a buyer concentration worry would cap round size.
 
@@ -56,7 +56,7 @@ Human Archive sells infrastructure for physical AI, which in January 2026 is one
 | Raise | Post-money | P of this band (given round reached) | P if in YC | Label | P from today | Label | Why this band |
 |---|---|---|---|---|---|---|---|
 | $8M–$12M | $40M–$70M | 25% | 7.4% | Unlikely | 3.7% | Very unlikely | Thin A with a flat step up after a seed, typical when revenue is lumpy and concentrated in few labs. |
-| $12M–$25M | $70M–$160M | 50% | 15% | Unlikely | 7.4% | Unlikely | Typical 2026 A; PitchBook medians cited in stage_benchmarks put the deal near $17M. |
+| $12M–$25M | $70M–$160M | 50% | 15% | Unlikely | 7.4% | Unlikely | Typical 2026 A; PitchBook medians cited in stage_benchmarks put the deal near $17M. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage. |
 | $25M–$50M | $160M–$400M | 25% | 7.4% | Unlikely | 3.7% | Very unlikely | Upside as the data standard for a leading humanoid lab, as Encord reached with a $15M A in 2021 and larger later rounds. |
 
 **Why it fails here.** Series A fails if revenue depends on two or three labs that can switch vendors or build collection in house, as Figure reportedly did when it found vendors could not meet its quality bar. Investors then ask for contracted recurring revenue that a project based data business seldom has. Encord and Linewise show the field splitting into tooling winners and small data suppliers.
@@ -66,8 +66,8 @@ Human Archive sells infrastructure for physical AI, which in January 2026 is one
 | Raise | Post-money | P of this band (given round reached) | P if in YC | Label | P from today | Label | Why this band |
 |---|---|---|---|---|---|---|---|
 | $20M–$35M | $120M–$250M | 30% | 3.2% | Very unlikely | 1.6% | Very unlikely | Thin B with a flat step up, typical when growth slowed and the lead round is mostly insiders. |
-| $35M–$70M | $250M–$600M | 50% | 5.3% | Unlikely | 2.7% | Very unlikely | Typical B; 2022+ YC median about $37M to $45M. |
-| $70M–$150M | $600M–$1.5B | 20% | 2.1% | Very unlikely | 1.1% | Very unlikely | Upside if robotics adoption scales and it is the default data layer. |
+| $35M–$70M | $250M–$600M | 50% | 5.3% | Unlikely | 2.7% | Very unlikely | Typical B; 2022+ YC median about $37M to $45M. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage. |
+| $70M–$150M | $600M–$1.5B | 20% | 2.1% | Very unlikely | 1.1% | Very unlikely | Upside if robotics adoption scales and it is the default data layer. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage. |
 
 **Why it fails here.** A Series B needs proof that data volume grows with robot deployments and that margins improve with scale. If labs shift to synthetic data and simulation, or self collect, volume falls. Encord reached a Series B three years after its A, so a path exists, but few analogs in the data got there and most of the field is still seed stage.
 
@@ -75,11 +75,11 @@ Human Archive sells infrastructure for physical AI, which in January 2026 is one
 
 | Raise | Post-money | P of this band (given round reached) | P if in YC | Label | P from today | Label | Why this band |
 |---|---|---|---|---|---|---|---|
-| $40M–$70M | $300M–$700M | 35% | 1.2% | Very unlikely | 0.6% | Very unlikely | Thin C near the 2022+ YC median of $45M. |
-| $70M–$150M | $700M–$1.8B | 45% | 1.6% | Very unlikely | 0.8% | Very unlikely | Typical C in current public benchmarks, with a median deal near $77M for the category. |
-| $150M–$300M | $1.8B–$4B | 20% | 0.7% | Very unlikely | 0.4% | Very unlikely | Upside for a category leader in embodied AI. |
+| $40M–$70M | $300M–$700M | 35% | 1.2% | Very unlikely | 0.6% | Very unlikely | Thin C near the 2022+ YC median of $45M. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage. |
+| $70M–$150M | $700M–$1.8B | 45% | 1.6% | Very unlikely | 0.8% | Very unlikely | Typical C in current public benchmarks, with a median deal near $77M for the category. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage. |
+| $150M–$300M | $1.8B–$4B | 20% | 0.7% | Very unlikely | 0.4% | Very unlikely | Upside for a category leader in embodied AI. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage. |
 
-**Why it fails here.** The company stops before a Series C if physical AI adoption arrives more slowly than the money assumed, or if foundation model labs absorb data collection. A data supplier without a software moat tends to be bought for its team or contracts rather than scale independently.
+**Why it fails here.** The company stops before a Series C if physical AI adoption arrives more slowly than the money assumed, or if foundation model labs absorb data collection. A data supplier without a software moat tends to be bought for its team or contracts rather than scale independently. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals.
 
 ### Final outcomes
 

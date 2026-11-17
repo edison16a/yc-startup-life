@@ -1,162 +1,221 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Salem Robotics Inc",
+    "one_liner": "Deploying robots to replace workers in hazardous spaces",
+    "description": "Software that turns deployed robots into independent workers in hazardous facilities, starting in nuclear. They walk sites, handle instruments, collect measurements and generate auditable compliance records. Two founders from Los Alamos robotics and deterministic manipulation research. Buyers would be nuclear operators and similar regulated industries.",
+    "as_of": "2026-07-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.6,
+    "p_low": 0.4,
+    "p_high": 0.8,
+    "basis": "Note only because the company is already accepted. A random applicant starts near 1 percent. Domain founders from a national lab, a hard tech wedge aligned with YC interest in robotics, energy and defense, and a regulated customer pull would lift this far above the base.",
+    "why_it_fails": "YC would most plausibly say no because nuclear sales cycles are long, the buyers are few and hard to reach, and a two person team would depend on robots it does not build. A reviewer might also ask whether a software claim hides a hardware services business that cannot reach revenue within a batch."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.68,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.7,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Industrials --calibration-only (seed 73 percent, n=11); --years 2022-2025 --industry Industrials: 67 percent, n=12",
+        "adjustment_reason": "About 0.97 of the average of the two Industrials anchors. Energy and defense robotics are well funded in 2026, and national lab pedigree helps, but a two person team with unproven pilots keeps it from going higher."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            16000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin band: an extension on the YC check from angels and defense focused funds. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            16000000,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ seed for a hard tech team; Industrials seed median in recent data is about $2.6M and hard tech runs higher."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            35000000,
+            80000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: defense or energy fund leading on lab pedigree and a signed nuclear pilot. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            150000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Hot round after a major utility or Department of Energy award. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if there is no paid pilot at a nuclear site, because investors cannot judge the sales cycle and security approvals take many months. Two founders cannot build manipulation software, integrate robots and navigate licensing together. Analogs such as Orangewood Labs raised a small round and moved slowly, and hardware companies often take years to reach a priced seed."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Industrials --calibration-only (series A cond 50 percent, n=8); python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (26 percent, n=74)",
+        "adjustment_reason": "At 0.76 of the Industrials anchor: regulation creates a moat, but long cycles and few buyers hurt."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            14000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A at a flat step up after a slow pilot. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         },
         {
           "raise_usd": [
-            0,
-            0
+            14000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A for hard tech; Industrials 2022+ A median in base rates is $25M, n=3. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside with defense contracts and multiple site deployments. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if pilots do not convert to recurring contracts. Nuclear operators move slowly and may prefer proven vendors such as Boston Dynamics integrators. Without a repeatable deployment kit, each site is a custom project, which investors treat as services revenue. Atomic Alchemy and Bear Flag show niche hard tech can be bought, but neither reached a large independent round."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Industrials --calibration-only (series B cond 50 percent, n=4)",
+        "adjustment_reason": "Tiny sample; kept at 0.76 of anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin B with a flat step up, typical when growth slowed and the round is mostly insiders."
         },
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            350000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B for robotics, with Industrials 2022+ series B in the data at $135M to $205M, n=2."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            250000000
+          ],
+          "post_money_usd": [
+            800000000,
+            2000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside as a defense and energy platform. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs deployments across several industries and robots that work unattended, with safety certification. If every site needs custom tuning or a human tele operator, margins look like services. Robotics hardware dependence also exposes the company to supplier changes. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py (series C cond 36 percent, n=55, stage_benchmarks)",
+        "adjustment_reason": "At 0.83 of the all cohort anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin C. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         },
         {
           "raise_usd": [
-            0,
-            0
+            100000000,
+            250000000
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000,
+            2500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical C in public benchmarks, which cite a median near $77M. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            250000000,
+            600000000
+          ],
+          "post_money_usd": [
+            2500000000,
+            8000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a national security and energy robotics platform. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The company stops before C if hazard robotics stays a set of niche, regulated markets, each requiring its own approvals. Larger rivals and defense primes can also buy or copy the capability, leaving a small independent business or an acquisition. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
     }
   ],
   "outcomes": {
@@ -164,167 +223,208 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.4
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.24
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Failure paths are slow sales to few buyers, hardware dependence and a thin runway for a two person team. If pilots stay unpaid or regulators demand extensive qualification, the company runs out of money before any contract renews. Many hard tech analogs end as small acquisitions by larger industrial or defense firms."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "bear-flag-robotics",
+      "relevance": "Autonomous farm tractors, a hardware plus software robot in a regulated and conservative industry.",
+      "outcome_summary": "Seed 2018 and 2021, acquired by John Deere in 2021 for a reported $250M, the upside case."
+    },
+    {
+      "slug": "atomic-alchemy",
+      "relevance": "Nuclear materials startup founded by a reactor engineer.",
+      "outcome_summary": "Little disclosed funding and acquired by Oklo for a reported $25M in stock, a small exit."
+    },
+    {
+      "slug": "orangewood-labs",
+      "relevance": "Robotics for enterprises with software.",
+      "outcome_summary": "A $4.5M round in 2023, still active, a slow path."
+    },
+    {
+      "slug": "oklo",
+      "relevance": "Advanced nuclear power company from YC, a possible customer and sign of the energy tailwind.",
+      "outcome_summary": "Went public, showing the nuclear theme can produce very large outcomes."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Nuclear and regulated buyers take years to buy and the team runs out of runway",
+      "p": 0.35,
+      "evidence": "Spot has been used at Fukushima and Dounreay in projects that took long and came from operators with large budgets, not startups.",
       "analogs": [
-        "TODO-company-slug"
+        "atomic-alchemy",
+        "orangewood-labs"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Start with a lower security site such as decommissioning or a national lab pilot and get one paid contract."
+    },
+    {
+      "risk": "Incumbent robot makers and integrators win the same work",
+      "p": 0.3,
+      "evidence": "Boston Dynamics already markets Spot for radiation mapping at several sites and integrators add arms and sensors.",
+      "analogs": [
+        "bear-flag-robotics",
+        "orangewood-labs"
+      ],
+      "mitigation": "Own the manipulation and audit record software and stay robot agnostic."
+    },
+    {
+      "risk": "Autonomous manipulation is not reliable enough to replace workers",
+      "p": 0.25,
+      "evidence": "Handling instruments and overcoming obstacles unattended remains a research problem, and failures in a hazardous site are costly.",
+      "analogs": [
+        "atomic-alchemy"
+      ],
+      "mitigation": "Ship supervised autonomy with a remote operator and measure intervention rate."
+    },
+    {
+      "risk": "Two person team spread across hardware, software and compliance",
+      "p": 0.2,
+      "evidence": "The company expects to expand to other hazardous industries before proving one. and this pattern is visible in the cited analogs.",
+      "analogs": [
+        "orangewood-labs"
+      ],
+      "mitigation": "Hire a robotics engineer and a safety lead early and keep one wedge."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Boston Dynamics Spot",
+      "what": "Mobile robot used for radiation mapping and sampling",
+      "traction": "Used at Fukushima Daiichi and Dounreay",
+      "source_url": "https://www.therobotreport.com/spot-goes-to-work-on-the-decommissioning-team-at-fukushima-plant/"
+    },
+    {
+      "name": "Spot at Dounreay",
+      "what": "Mapping and sampling in a closed evaporator cell",
+      "traction": "Independent coverage by World Nuclear News",
+      "source_url": "https://world-nuclear-news.org/Articles/Robot-navigates-Dounreay-evaporator-cell"
+    },
+    {
+      "name": "Human survey teams",
+      "what": "Manual surveys and inspections, the status quo",
+      "traction": "Mandated by regulation, which is the spend to replace",
+      "source_url": "https://bostondynamics.com/case-studies/spot-in-fukushima-daiichi/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Reliable manipulation of instruments, navigation of obstacles and creation of auditable records in radiation environments needs hardened robots and strong software. A two person team can demo a robot task but cannot certify it in three months, so the hard parts are a risk now and a moat only if solved."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Boston Dynamics",
+      "Robotics integrators",
+      "Defense primes"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 24,
+    "rationale": "Robot makers and integrators can add arms and software but nuclear qualification and the audit record take time. The risk is moderate because buyers are few and slow, which also slows copying."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Operators already use Spot for radiation surveys at Fukushima Daiichi, Dounreay and Chernobyl, so the use case is real and funded.",
+        "source_url": "https://www.therobotreport.com/spot-goes-to-work-on-the-decommissioning-team-at-fukushima-plant/"
+      },
+      {
+        "claim": "Manual surveys are mandatory and a robot reduces worker dose, as Boston Dynamics case studies describe.",
+        "source_url": "https://bostondynamics.com/case-studies/spot-in-fukushima-daiichi/"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A paid pilot at one hazardous site with a measured intervention rate.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign a paid pilot at a national lab or decommissioning site.",
+        "Measure survey hours replaced and the auditable record quality."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "One paid pilot and a documented drop in manual survey hours."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable deployment kit across two industries.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Package the software for two robot platforms.",
+        "Win a second hazardous industry customer."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Three paying sites and recurring annual contracts."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Founders from Los Alamos with relevant manipulation research",
+      "evidence": "Stated in the batch description, unverified."
+    },
+    {
+      "point": "Customers already spend on robotic surveys",
+      "evidence": "Spot is deployed at several nuclear sites.",
+      "source_url": "https://www.therobotreport.com/spot-goes-to-work-on-the-decommissioning-team-at-fukushima-plant/"
+    },
+    {
+      "point": "Regulation creates sticky compliance demand",
+      "evidence": "Mandatory surveys produce recurring records."
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Salem Robotics Inc",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Salem Robotics Inc\" --era 2022+ : kind name_plus_descriptor, alive 93.7 percent in cohort n=557",
     "strengths": [
-      "TODO"
+      "Descriptive: says robotics at once",
+      "Serious tone for regulated buyers"
     ],
     "weaknesses": [
-      "TODO"
+      "Inc suffix and generic descriptor are forgettable",
+      "Salem evokes witch trials more than hazard work"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A descriptor name that tells buyers the category but has no distinct identity. Cohort data show name plus descriptor companies survive at about the same rate as others, and nuclear buyers choose on trust and credentials rather than names.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A credible lab pedigree in a real but slow market, likely to raise a seed and then depend on converting pilots.",
+    "general_summary": "Salem Robotics aims to put robots to work in hazardous sites, starting in nuclear. Existing robot deployments at Fukushima and Dounreay show demand, and mandatory surveys give a clear thing to replace. The founders have the right background, but it is only two people and the work involves hardware, manipulation and regulatory qualification. A seed above the YC check is likely given the pull for energy, defense and robotics. Series A depends on paid pilots turning into recurring contracts. About 40 percent of forecast paths end in a stall or shutdown."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-07-06 using only the batch listing.",
+    "Industrials cohorts are tiny (n=11 to 12) so base rates are anecdotes; B2B was used as a cross check.",
+    "The step seed means a round above about $500K within roughly 12 months of the batch start."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://www.therobotreport.com/spot-goes-to-work-on-the-decommissioning-team-at-fukushima-plant/",
+    "https://world-nuclear-news.org/Articles/Robot-navigates-Dounreay-evaporator-cell",
+    "https://bostondynamics.com/case-studies/spot-in-fukushima-daiichi/"
+  ],
+  "mode": "summary"
 }

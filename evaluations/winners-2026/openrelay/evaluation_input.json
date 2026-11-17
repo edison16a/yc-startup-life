@@ -1,162 +1,221 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "OpenRelay",
+    "one_liner": "Distributed, hardware-agnostic AI inference",
+    "description": "No description was given beyond the one liner. A two person team building a way to run AI inference across distributed and mixed hardware. Buyers would be teams that want cheaper or more available inference.",
+    "as_of": "2026-07-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.4,
+    "p_low": 0.2,
+    "p_high": 0.6,
+    "basis": "Note only because the company is already accepted. A random applicant starts near 1 percent. A two person team in AI infrastructure with no stated traction would be near the base, lifted by the strong market pull for inference and any technical founder pedigree.",
+    "why_it_fails": "YC would most plausibly say no because the pitch is one line in a space crowded with funded inference clouds, and distributed inference has a long record of latency, trust and reliability problems. Without a named customer or a demo of mixed hardware beating a single cloud on cost, reviewers would see a clever architecture with no buyer."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.58,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (seed 59 percent known only, cond n=126); AI tag 2022-2025: 61 percent, n=109",
+        "adjustment_reason": "Near the anchor. AI infrastructure funding is strong in mid 2026, but two founders with no description and heavy competition offset it."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            16000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin band: small extension on the YC check from angels, common for infrastructure with no revenue."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            16000000,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ seed for an AI infra team; AI tag median raise is about $3.2M. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            35000000,
+            80000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside: a strong technical demo and a named design partner. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            160000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Hot round after a viral open source release or a compute provider partnership. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if the team cannot show that distributed inference on mixed hardware beats a plain managed provider on cost and reliability. Investors have seen decentralized compute pitches fail on latency and trust, and a two person team has little time to prove it. Analogs such as Mystic and Pipeshift raised only small seeds after similar low latency inference pitches."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.23,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (series A cond 26 percent, n=74); AI tag cond 23 percent, n=66",
+        "adjustment_reason": "At 0.88 of the anchor: inference demand is strong, but the market is dominated by companies valued in the billions."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A at a modest valuation. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2026 A; the 2022+ AI tag series A median in base rates is about $17M."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            150000000,
+            400000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside with a large customer and a clear cost advantage. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if revenue is small or comes from hobby workloads, because enterprise buyers want service level guarantees that a distributed network struggles to give. Baseten and DeepInfra raised large rounds in 2026, which resets the bar for what a credible inference business looks like, and a seed stage team can fall short of it."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (series B cond 16 percent, n=19); python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18)",
+        "adjustment_reason": "Between the two cohorts. Above the recent censored anchor because survivors of the A in AI infra raise big B rounds, but below the older anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin B with a flat step up, typical when growth slowed and the round is mostly insiders."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B, with 2022+ YC median near $37M to $45M and larger in AI. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            200000000
+          ],
+          "post_money_usd": [
+            700000000,
+            2000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside in the current inference boom. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs scale in production traffic and gross margins that hold against price cuts by the big inference clouds. If the network depends on third party hardware with variable quality, margins and uptime suffer. Few analogs reached B, and those that did had a differentiated moat such as kernel optimization."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py (series C cond 36 percent, n=55, stage_benchmarks)",
+        "adjustment_reason": "Slightly below the anchor at 0.83."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            1000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin C. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         },
         {
           "raise_usd": [
-            0,
-            0
+            100000000,
+            250000000
           ],
           "post_money_usd": [
-            0,
-            0
+            1000000000,
+            3000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical C for an inference platform in 2026 market conditions. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            250000000,
+            800000000
+          ],
+          "post_money_usd": [
+            3000000000,
+            10000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes a major inference layer, as Fireworks and Baseten have. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The company stops before C if the largest inference providers keep lowering prices and absorb most demand. A hardware agnostic layer can be commoditized by cloud and chip vendors who offer the same portability, leaving only a niche of cost sensitive workloads. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
     }
   ],
   "outcomes": {
@@ -164,167 +223,220 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.17
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.06
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths fail because inference is a price war led by well funded providers, and a distributed network adds latency and trust problems. If no customer needs hardware agnosticism enough to pay, the team stalls after the seed and ends as an acquihire by a compute company. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "mystic",
+      "relevance": "Low latency API to run and deploy ML models.",
+      "outcome_summary": "Raised a small seed in 2021 and is listed inactive, the failure case for a thin inference layer."
+    },
+    {
+      "slug": "pipeshift",
+      "relevance": "Inference for real time agents.",
+      "outcome_summary": "A $2.5M seed in 2025 and still active but no later round found."
+    },
+    {
+      "slug": "shadeform",
+      "relevance": "A GPU cloud marketplace across providers.",
+      "outcome_summary": "A seed in 2023 and growth to about 22 people, active."
+    },
+    {
+      "slug": "cumulus-labs",
+      "relevance": "Multimodal inference operating system from the Winter 2026 batch.",
+      "outcome_summary": "A small $500K round only, showing the thin path."
+    },
+    {
+      "slug": "cedana",
+      "relevance": "GPU live migration for AI workloads.",
+      "outcome_summary": "Active from Summer 2023, a technical moat in infrastructure."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Inference prices fall faster than a distributed network can match",
+      "p": 0.35,
+      "evidence": "Large providers raised billions in 2026 and compete on price and speed, which pushes margins toward zero for undifferentiated capacity.",
       "analogs": [
-        "TODO-company-slug"
+        "mystic",
+        "pipeshift"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Compete on a measurable niche such as sovereign or privacy sensitive workloads, not on raw price."
+    },
+    {
+      "risk": "Latency, reliability and trust issues on distributed hardware",
+      "p": 0.3,
+      "evidence": "Enterprise buyers need guarantees that mixed and remote nodes struggle to give, and similar decentralized pitches stayed small.",
+      "analogs": [
+        "shadeform",
+        "cedana"
+      ],
+      "mitigation": "Offer only workloads tolerant of delay, such as batch jobs, and publish uptime numbers."
+    },
+    {
+      "risk": "Two person team and a one line pitch with no customer",
+      "p": 0.25,
+      "evidence": "Seed investors need a demo or design partner and the listing has no description.",
+      "analogs": [
+        "cumulus-labs",
+        "pipeshift"
+      ],
+      "mitigation": "Ship an open source runtime and sign two design partners in the first 90 days."
+    },
+    {
+      "risk": "Chip and cloud vendors add hardware portability",
+      "p": 0.2,
+      "evidence": "Gimlet Labs and General Compute already build multi chip inference layers with large funding.",
+      "analogs": [
+        "mystic"
+      ],
+      "mitigation": "Build a data or integration moat with early customers."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Baseten",
+      "what": "Managed inference platform",
+      "traction": "Reported $1.5B Series F at a $13B valuation in June 2026",
+      "source_url": "https://dealroom.co/news/135561-baseten-raises-1-5b-series-f-at-13b-valuation-as-ai-inference-demand-sur/"
+    },
+    {
+      "name": "DeepInfra",
+      "what": "Dedicated inference cloud for open models",
+      "traction": "$107M funding in May 2026",
+      "source_url": "https://siliconangle.com/2026/05/04/deepinfra-lands-107m-funding-build-dedicated-inference-cloud-open-source-models/"
+    },
+    {
+      "name": "General Compute",
+      "what": "Inference cloud on alternative AI chips",
+      "traction": "$100M Series A reported",
+      "source_url": "https://pulse2.com/general-compute-raises-100-million-series-a-to-build-inference-cloud-for-alternative-ai-chips/"
+    },
+    {
+      "name": "Hyperbolic",
+      "what": "GPU marketplace and heterogeneous compute",
+      "traction": "$12M Series A in December 2024",
+      "source_url": "https://siliconangle.com/2024/12/10/hyperbolic-launches-cloud-hosted-gpu-marketplace-raising-12m-funding/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Scheduling inference across mixed hardware, keeping latency predictable and verifying results from untrusted nodes are hard distributed systems problems. A two person team can build a prototype but not an enterprise grade network in three months, so the hard parts are a risk before they are a moat."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Together AI",
+      "Fireworks",
+      "Baseten",
+      "Gimlet Labs",
+      "Cloud providers"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Funded inference platforms can add hardware portability quickly and already have customers and capital. A distributed variant is harder to copy, but the buyer is likely to be satisfied by a managed provider."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Inference demand is surging and investors funded Baseten at $13B in June 2026.",
+        "source_url": "https://dealroom.co/news/135561-baseten-raises-1-5b-series-f-at-13b-valuation-as-ai-inference-demand-sur/"
+      },
+      {
+        "claim": "DeepInfra raised $107M in May 2026 to expand a dedicated inference cloud.",
+        "source_url": "https://siliconangle.com/2026/05/04/deepinfra-lands-107m-funding-build-dedicated-inference-cloud-open-source-models/"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A working runtime with two paying design partners.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Open source a minimal runtime and publish cost and latency benchmarks versus a managed provider.",
+        "Sign two design partners with workloads tolerant of delay."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Benchmarks showing at least 30 percent lower cost and two paid pilots."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Production traffic with service levels.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add uptime guarantees and verification of results.",
+        "Hire a first enterprise sales lead."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Monthly recurring revenue above $100K with 99.5 percent uptime."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Inference demand is huge and still growing",
+      "evidence": "Multi billion dollar rounds for inference platforms in 2026.",
+      "source_url": "https://dealroom.co/news/135561-baseten-raises-1-5b-series-f-at-13b-valuation-as-ai-inference-demand-sur/"
+    },
+    {
+      "point": "Hardware shortages favor flexible supply",
+      "evidence": "General Compute and Gimlet raised large rounds around multi chip inference.",
+      "source_url": "https://pulse2.com/general-compute-raises-100-million-series-a-to-build-inference-cloud-for-alternative-ai-chips/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "OpenRelay",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"OpenRelay\" --era 2022+ : kind compound_words, alive 95.3 percent in cohort n=513",
     "strengths": [
-      "TODO"
+      "Suggests open and relaying work between nodes",
+      "Easy to spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic compound that many infrastructure projects share",
+      "The word relay is also used by other tech companies"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A descriptive compound that fits a network of nodes. Compound names show no survival difference in the cohort data and developer infrastructure rarely depends on the name, though a generic one makes search and trademark harder.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A thin one line pitch in the hottest and most crowded part of AI infrastructure, with a coin flip on seed and low odds beyond.",
+    "general_summary": "OpenRelay promises distributed, hardware agnostic inference. Demand for inference is large in mid 2026 and billion dollar companies prove it, but those companies already serve the buyers with managed clouds. A seed above the YC check is about as likely as the cohort base rate because AI infrastructure is funded and the team is early. The team must show a cost or sovereignty advantage that managed providers do not offer. Reaching Series A needs production revenue, and the price war makes that hard. About 55 percent of forecast paths end in a stall or shutdown."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-07-06 using only the one line listing, no description.",
+    "Market news used is dated before the as_of date.",
+    "The step seed means a round above about $500K within roughly 12 months of the batch start."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://dealroom.co/news/135561-baseten-raises-1-5b-series-f-at-13b-valuation-as-ai-inference-demand-sur/",
+    "https://siliconangle.com/2026/05/04/deepinfra-lands-107m-funding-build-dedicated-inference-cloud-open-source-models/",
+    "https://pulse2.com/general-compute-raises-100-million-series-a-to-build-inference-cloud-for-alternative-ai-chips/",
+    "https://siliconangle.com/2024/12/10/hyperbolic-launches-cloud-hosted-gpu-marketplace-raising-12m-funding/"
+  ],
+  "mode": "summary"
 }

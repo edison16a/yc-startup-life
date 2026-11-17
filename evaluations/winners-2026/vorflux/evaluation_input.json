@@ -1,162 +1,221 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Vorflux",
+    "one_liner": "A cloud-based AI coding agent for teams",
+    "description": "A cloud coding agent for teams that takes work from a ticket or message through planning, implementation, review, testing and a pull request. Parallel agents, different models for planning and adversarial review, codebase memory, dedicated compute per team with QA agents testing in a real browser and recording video, integrations with GitHub, Linear, Slack, Jira and others, bring your own model, and help setting up the harness. Team size unknown.",
+    "as_of": "2026-10-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.3,
+    "p_low": 0.15,
+    "p_high": 0.5,
+    "basis": "Note only because the company is already accepted. A random applicant starts near 1 percent. A polished and technically specific product in the hottest category is above the base, but cloud coding agents are the most crowded area of YC applicants and the team size is unknown.",
+    "why_it_fails": "YC would most plausibly say no because the pitch looks like a well built version of what Cursor, OpenAI and Cognition already ship, with no stated traction or reason a lab would not copy it. Reviewers have seen a very large number of coding agent applications. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.62,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.61,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only AI tag (seed 61 percent, n=109); B2B 59 percent, n=126",
+        "adjustment_reason": "At the anchor. Developer tools funding is strong in 2026, but crowding and platform risk offset a fast moving category."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            16000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Thin band: extension from angels and small funds, common when usage is mostly free. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            7000000
           ],
           "post_money_usd": [
-            0,
-            0
+            16000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ seed for an AI developer tool, with the AI tag median raise near $3.2M."
+        },
+        {
+          "raise_usd": [
+            7000000,
+            15000000
+          ],
+          "post_money_usd": [
+            40000000,
+            100000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Upside: Greptile raised $4M and Ellipsis $2M, while hot agent companies command larger seeds with usage growth."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Hot round after viral open source or enterprise traction. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if growth looks like a copy of what model labs and Cursor ship free to their users. Investors see many coding agent seeds and fund only those with unusual traction. Analogs like Squire.ai and Codeball raised little or nothing after similar pull request tools, and Vibe Kanban shut down after finding no business model."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.23,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only (series A cond 23 percent, n=66); B2B 26 percent, n=74",
+        "adjustment_reason": "At 1.1 times the anchor for AI. Coding agents see huge revenue, but most small entrants lose to leaders."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A with a flat step up after a seed, typical when revenue is lumpy and the lead is a small fund."
         },
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            90000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2026 A for AI developer tools; Greptile raised $25M at a reported $180M valuation. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            250000000,
+            700000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside with fast revenue growth. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if revenue is small pilots without expansion and token costs eat margin when routing to expensive models. Gartner says the enterprise coding agent market is led by Anthropic, Cursor, GitHub and OpenAI, so the investor question is why a small team keeps winning accounts against them. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (series B cond 16 percent, n=19); python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (39 percent, n=18)",
+        "adjustment_reason": "Above the censored recent anchor because AI coding survivors tend to raise large B rounds, as Greptile did."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin B with a flat step up, typical when growth slowed and the round is mostly insiders."
         },
         {
           "raise_usd": [
-            0,
-            0
+            45000000,
+            90000000
           ],
           "post_money_usd": [
-            0,
-            0
+            350000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B; Greptile reached a $50M B at a reported $750M valuation in the cohort. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            90000000,
+            200000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside as a standard enterprise agent. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs a durable moat beyond a harness, since model vendors update agents monthly. If customers can swap in an agent from their model vendor, retention drops. Few analogs reached B and most that did had a clear wedge such as review. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py (series C cond 36 percent, n=55, stage_benchmarks)",
+        "adjustment_reason": "At 0.83 of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin C. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         },
         {
           "raise_usd": [
-            0,
-            0
+            120000000,
+            300000000
           ],
           "post_money_usd": [
-            0,
-            0
+            1200000000,
+            4000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical C. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
+        },
+        {
+          "raise_usd": [
+            300000000,
+            1000000000
+          ],
+          "post_money_usd": [
+            4000000000,
+            15000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes a leading agent platform. The band is sized from current public benchmarks and the cohort medians in the base rates for this stage."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The company stops before C if model vendors absorb the product category. Many coding agent startups are likely to be acquired by larger tools or end as acquihires rather than reach independent scale. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
     }
   ],
   "outcomes": {
@@ -164,167 +223,223 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.5
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.18
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.07
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Failure paths come from direct competition with the labs and Cursor, rising model costs and weak differentiation. If customers can use an agent from their model vendor, the company gets squeezed, and the likely end is an acquihire at a modest price. Investors would also compare the company with the closest analogs in the data, most of which stalled at this step without clear revenue or a durable advantage over better funded rivals."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "greptile",
+      "relevance": "AI code review agent from the Winter 2024 batch.",
+      "outcome_summary": "A $4M seed in 2024 then a $25M Series A in September 2025, the upside case for a coding wedge."
+    },
+    {
+      "slug": "ellipsis",
+      "relevance": "Code review and managed agent platform.",
+      "outcome_summary": "A $2M seed in 2024 and still active with claimed installs on many repositories, a median case."
+    },
+    {
+      "slug": "squire-ai",
+      "relevance": "AI pull request assistant.",
+      "outcome_summary": "Listed inactive with no funding found, a failure case."
+    },
+    {
+      "slug": "codeball",
+      "relevance": "AI pull request approver.",
+      "outcome_summary": "A $1.5M seed in 2021, product abandoned, a failure case."
+    },
+    {
+      "slug": "pullrequest",
+      "relevance": "Code review as a service.",
+      "outcome_summary": "Seed 2017, Series A 2018 and acquired by HackerOne in 2022."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Model labs and Cursor ship the same cloud agent features",
+      "p": 0.4,
+      "evidence": "Gartner's May 2026 quadrant names Anthropic, Cursor, GitHub and OpenAI as leaders in enterprise coding agents, and they bundle agents with the models.",
       "analogs": [
-        "TODO-company-slug"
+        "squire-ai",
+        "codeball"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Be the neutral harness across models and focus on QA with video evidence for teams that use multiple vendors."
+    },
+    {
+      "risk": "Token costs and routing erode gross margins",
+      "p": 0.25,
+      "evidence": "Running parallel agents with adversarial review multiplies model calls while prices vary by vendor.",
+      "analogs": [
+        "ellipsis",
+        "greptile"
+      ],
+      "mitigation": "Route to cheaper models and price by outcomes."
+    },
+    {
+      "risk": "No traction beyond pilots in a crowded launch cycle",
+      "p": 0.25,
+      "evidence": "Coding agent launches are frequent and teams switch easily. and this pattern is visible in the cited analogs.",
+      "analogs": [
+        "squire-ai",
+        "codeball"
+      ],
+      "mitigation": "Win a small number of teams with a hands on onboarding."
+    },
+    {
+      "risk": "Enterprise security and compute demands for dedicated environments",
+      "p": 0.1,
+      "evidence": "Dedicated compute per team is costly to operate for an early company. and this pattern is visible in the cited analogs.",
+      "analogs": [
+        "pullrequest"
+      ],
+      "mitigation": "Start with fewer customers and use managed cloud."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Cursor and Anthropic and OpenAI agents",
+      "what": "Coding agents with cloud execution from the leaders",
+      "traction": "Named leaders in Gartner's May 2026 quadrant; Cursor reportedly at $2B annualized revenue in February 2026",
+      "source_url": "https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-says-the-market-for-enterprise-ai-coding-agents-is-entering-a-new-phase-of-expansion-and-competitive-realignment"
+    },
+    {
+      "name": "Cognition Devin",
+      "what": "Autonomous software engineer for teams",
+      "traction": "Listed as a Challenger by Gartner",
+      "source_url": "https://virtualizationreview.com/articles/2026/06/05/ai-firms-push-cloud-giants-from-leaders-quadrant-in-gartner-ai-coding-report.aspx"
+    },
+    {
+      "name": "Greptile and Ellipsis",
+      "what": "YC backed code review agents",
+      "traction": "Greptile $25M Series A in 2025, Ellipsis $2M seed",
+      "source_url": "https://www.beri.net/article/ai-coding-agents-2b-arr-roi-shift"
+    },
+    {
+      "name": "In house scripts and human engineers",
+      "what": "The status quo",
+      "traction": "Universal",
+      "source_url": "https://www.gartner.com/en/articles/enterprise-ai-coding-agent-market"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Orchestrating parallel agents, browser based testing with video and codebase memory is mostly engineering on top of public models. A small team can build it in three months but also a rival can, so the complexity is not a moat. The dedicated compute per team adds operational work."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 5,
     "who": [
-      "TODO"
+      "Anthropic",
+      "OpenAI",
+      "Cursor",
+      "GitHub",
+      "Cognition"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "The leaders already ship cloud agents with parallel execution and have the model access, distribution and capital to add QA video and integrations within months. This is the highest takeover risk category in the data."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 5,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Gartner puts the enterprise AI coding agent market near $9.8B to $11B annualized in April 2026 and forecasts most engineers will use agents by 2028.",
+        "source_url": "https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-says-the-market-for-enterprise-ai-coding-agents-is-entering-a-new-phase-of-expansion-and-competitive-realignment"
+      },
+      {
+        "claim": "Coding agents reached about $2B ARR for the leading product, a sign of paid demand.",
+        "source_url": "https://www.beri.net/article/ai-coding-agents-2b-arr-roi-shift"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Ten teams in weekly use and a clear reason to pick this over bundled agents.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Win ten engineering teams with hands on harness setup.",
+        "Publish results on merged pull requests per week and bug escape rate."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Ten paying teams and a measured gain in merged work."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable enterprise sales and net revenue retention.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add SSO, audit logging and compliance.",
+        "Prove gross margin with model routing."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Annual recurring revenue above $1M and gross margin above 60 percent."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Very large, fast growing market",
+      "evidence": "Gartner estimates about $10B annualized in 2026.",
+      "source_url": "https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-says-the-market-for-enterprise-ai-coding-agents-is-entering-a-new-phase-of-expansion-and-competitive-realignment"
+    },
+    {
+      "point": "Specific and complete product vision",
+      "evidence": "The description includes QA with video, model routing and onboarding help, which suggests a working product."
+    },
+    {
+      "point": "Neutral across models is a real enterprise want",
+      "evidence": "Bring your own model is in the pitch and enterprises avoid vendor lock in."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Vorflux",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Vorflux\" --era 2022+ : kind invented_or_proper, alive 92.7 percent in cohort n=1826",
     "strengths": [
-      "TODO"
+      "Distinct and easy to search",
+      "Sounds technical"
     ],
     "weaknesses": [
-      "TODO"
+      "Hard to spell and meaningless without context",
+      "Does not signal coding"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "An invented word that is unique and available but gives no clue about the product. Invented names are the most common in YC and show average survival, and developer tools such as Greptile and Ellipsis show that distinctive names work for this audience.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A well specified product in the most crowded, platform exposed category, with seed odds at the base rate and a lower tail from model lab competition.",
+    "general_summary": "Vorflux is a cloud coding agent that takes tickets to pull requests with QA video evidence. The market is large and growing, with Gartner counting about $10B and the leaders growing fast. The same facts make it the hardest category to stand out in, because Anthropic, OpenAI, Cursor and GitHub ship similar features. A seed above the YC check is as likely as the AI cohort base rate. Later rounds depend on a clear wedge, as Greptile found in code review. About 50 percent of forecast paths end in a stall or shutdown."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-10-05 using only the batch listing; team size is not stated.",
+    "Greptile's Series B in October 2026 and later events were not used as evidence.",
+    "The step seed means a round above about $500K within roughly 12 months of the batch start."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-says-the-market-for-enterprise-ai-coding-agents-is-entering-a-new-phase-of-expansion-and-competitive-realignment",
+    "https://virtualizationreview.com/articles/2026/06/05/ai-firms-push-cloud-giants-from-leaders-quadrant-in-gartner-ai-coding-report.aspx",
+    "https://www.beri.net/article/ai-coding-agents-2b-arr-roi-shift",
+    "https://www.gartner.com/en/articles/enterprise-ai-coding-agent-market"
+  ],
+  "mode": "summary"
 }
