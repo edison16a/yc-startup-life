@@ -16,6 +16,7 @@ def main():
     ap.add_argument("keywords", nargs="+")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--limit", type=int, default=30)
+    ap.add_argument("--exclude", nargs="*", default=[], help="slugs to leave out (use for backtests so a company does not see its own outcome)")
     a = ap.parse_args()
     path = DATA / "companies_enriched.csv"
     if not path.exists():
@@ -23,6 +24,8 @@ def main():
     kws = [k.lower() for k in a.keywords]
     hits = []
     for r in csv.DictReader(path.open(encoding="utf-8")):
+        if r["slug"] in a.exclude:
+            continue
         hay = " ".join((r.get(f) or "") for f in ("name", "one_liner", "long_description", "tags")).lower()
         found = [k for k in kws if k in hay]
         if (len(found) == len(kws)) if a.all else bool(found):
