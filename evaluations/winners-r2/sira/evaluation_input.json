@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Sira",
+    "one_liner": "AI Native Rippling for Deskless Workers",
+    "description": "AI powered platform for time tracking, scheduling, payroll and HR for hourly teams. Agents call workers to fill open shifts, detect timesheet anomalies and streamline payroll. Four person team in San Francisco, B2B HR.",
+    "as_of": "2025-07-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.012,
+    "p_low": 0.005,
+    "p_high": 0.03,
+    "basis": "Prior of about 1 percent (yc_acceptance.md, range 0.6 to 2 percent). Up for AI agents solving a concrete scheduling pain and a clear buyer; down because the description is a broad suite against Deputy, Homebase and Rippling, and payroll is a heavy regulatory build for four people. Net about 1.2 percent. The company is already in the Summer 2025 batch, shown for completeness.",
+    "why_it_fails": "YC would most plausibly pass because a full time, scheduling, payroll and HR suite for hourly workers is a large scope for four founders and the market has Homebase, Deputy and 7shifts. Partners would want a narrow wedge such as shift filling with paying customers before expanding to payroll."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.42,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49% / 59% / 65% (cond 59%, n=126). time_to_milestones.csv industry:B2B months_to_seed p25 3, median 7, p75 20; era:2022+ median 6, p75 14.2.",
+        "adjustment_reason": "Window is 16.3 months from 2025-07-07 to 2026-11-17 and the target is an outside round above about $1M. About 75 percent of eventual seeds in the 2022+ timing table are in by month 16. 0.59 x 0.75 x 0.95 for excluding the YC deal is about 0.42. No lift for the AI agent framing per the winners test; these odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M, like Hammr's 2023 seed from Pioneer Fund for construction workforce software."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            22000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Institutional seed with early customers, near the 2022+ B2B median of $3.5M."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            75000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Larger seed if the shift filling agents show strong usage and revenue."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            18000000
+          ],
+          "post_money_usd": [
+            75000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if growth is fast enough for a lead from a top fund."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed fails if the product looks like many existing scheduling tools with an AI label. Homebase claims 150,000 small businesses and native payroll, Deputy and 7shifts own scheduling, and earlier YC peers show the range: Zeal raised a $1.6M seed in 2020, Shift Messenger raised $1.5M in 2015 and went inactive, and Hammr raised a small seed. A four person team building payroll must also clear compliance work before it can sell."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.08,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_a cond 26% (n=74); months_to_series_a 2022+ median 28, p25 19.4.",
+        "adjustment_reason": "Window is 16.3 months total, before the 2022+ p25 of 19 months to Series A. Only a fast tail gets there, so 0.26 x about 0.3 is 0.08; this is more than 2x below the ever anchor because of timing."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            7000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller A for an HR and payroll startup with modest ARR."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ A, median $15M, with payroll revenue growing."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            35000000
+          ],
+          "post_money_usd": [
+            110000000,
+            220000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside A for rapid expansion across hourly industries."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Payroll and HR products need many customers to build revenue, and onboarding each employer is slow. Zeal took until after a 2020 seed to raise an A, and Instawork needed years. Without a segment where it dominates, investors see a feature set against established rivals."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.15,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_b cond 16% (n=19).",
+        "adjustment_reason": "At the anchor, within 2x."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series B round with solid ARR and early expansion across several industries."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B for HR software, near the 2022+ median of $40M."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            90000000
+          ],
+          "post_money_usd": [
+            500000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the company becomes a leader for deskless workforce management."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B is a stage few seed companies reach. By then the company would compete with Rippling and Paychex, which acquired Paycor in April 2025, and Deputy. Payroll margins are modest, and winning needs distribution advantages that a young startup lacks, and investors would look for net revenue retention above 100 percent."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.45,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --calibration-only: series_c cond 50% (n=28).",
+        "adjustment_reason": "Near the anchor, within 2x."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical Series C round, with the 2022+ table median at $74M and post money near $1.2B."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            1000000000,
+            2500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Strong growth case with payroll scale and a high valuation near the top of the range."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            250000000,
+            500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Flat or down round if payroll growth slows."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Few payroll startups reach this stage. Late stage payroll competition favors consolidators with large bases such as Paychex and Rippling, and a stall in customer growth would end the funding path, because late investors want rising net retention, clean payroll margins and a defensible position against the largest payroll platforms."
     }
   ],
   "outcomes": {
@@ -164,167 +224,198 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.32
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.18
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Hourly workforce software is crowded and consolidating, and payroll is slow to build. Most paths end in a stall or acquisition by a larger payroll or scheduling vendor, as with Shift Messenger which went inactive after a seed. A large exit would need Sira to out-execute Homebase and Deputy."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "zeal",
+      "relevance": "Payroll for modern work, Summer 2019.",
+      "outcome_summary": "Raised a $1.6M seed in 2020 then a Series A; active."
+    },
+    {
+      "slug": "instawork",
+      "relevance": "App connecting businesses with hourly workers.",
+      "outcome_summary": "Raised $10M including Benchmark in Feb 2018 and is active."
+    },
+    {
+      "slug": "shift-messenger",
+      "relevance": "Communication for retail and restaurant shift workers.",
+      "outcome_summary": "Raised a $1.5M seed in May 2015 and is inactive."
+    },
+    {
+      "slug": "hammr",
+      "relevance": "Rippling for the construction industry, Winter 2023.",
+      "outcome_summary": "Raised a seed from Pioneer Fund in April 2023, active."
+    },
+    {
+      "slug": "landed-2",
+      "relevance": "Generative AI for frontline worker hiring.",
+      "outcome_summary": "Raised a $1.4M seed in Feb 2021 and is active."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Established scheduling and payroll vendors dominate",
+      "p": 0.5,
+      "evidence": "Homebase claims 150,000 businesses with native payroll and Deputy and 7shifts own scheduling.",
       "analogs": [
-        "TODO-company-slug"
+        "shift-messenger",
+        "hammr"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Win one vertical, such as restaurants or healthcare staffing, with AI shift filling."
+    },
+    {
+      "risk": "Payroll compliance and trust burden for a four person team",
+      "p": 0.35,
+      "evidence": "Payroll requires tax filing and state registrations in many states, which slows launch and adds liability.",
+      "analogs": [
+        "zeal"
+      ],
+      "mitigation": "Partner with a payroll engine and sell scheduling first."
+    },
+    {
+      "risk": "Agent calling workers fails on reliability or regulation",
+      "p": 0.2,
+      "evidence": "Automated calls to workers face telecom rules and reliability issues.",
+      "analogs": [
+        "landed-2"
+      ],
+      "mitigation": "Start with text messages and opt in flows."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Homebase",
+      "what": "Scheduling, time tracking and native payroll for SMBs",
+      "traction": "Claims 150,000 businesses and 1.2 billion hours logged in a year",
+      "source_url": "https://wf.joinhomebase.com/blog/best-employee-rostering-software"
+    },
+    {
+      "name": "Deputy",
+      "what": "Scheduling with AI forecasting, payroll via Paycor partnership",
+      "traction": "Plans at $30 to $54 per month in a vendor comparison",
+      "source_url": "https://wf.joinhomebase.com/blog/deputy-alternatives"
+    },
+    {
+      "name": "7shifts",
+      "what": "Restaurant scheduling without native payroll",
+      "traction": "Restaurant focused",
+      "source_url": "https://wf.joinhomebase.com/blog/7shifts-alternatives"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Scheduling and time tracking are straightforward; payroll tax and compliance plus reliable voice or text agents are harder, and four engineers can ship scheduling in 3 months but payroll takes longer."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Homebase",
+      "Deputy",
+      "Rippling",
+      "Paychex"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Incumbents with large bases can add AI shift filling in months and already own payroll distribution, so the agent feature alone is a thin defense against copying."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Hourly workforce tools are a paid category with vendors claiming 150,000 customers and per month pricing.",
+        "source_url": "https://wf.joinhomebase.com/blog/best-employee-rostering-software"
+      },
+      {
+        "claim": "Paychex completed its Paycor acquisition on April 14, 2025, showing consolidation and demand in payroll.",
+        "source_url": "https://wf.joinhomebase.com/blog/deputy-alternatives"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show paying hourly employers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign five employers on shift filling",
+        "Track fill rate against manual calling"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Five paying employers"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove payroll attach.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add payroll via a partner for existing customers",
+        "Reach 50 locations"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$40K MRR with payroll attach above 30 percent"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large hourly workforce category that pays",
+      "evidence": "Competitors report 150,000 customers and monthly plans.",
+      "source_url": "https://wf.joinhomebase.com/blog/best-employee-rostering-software"
+    },
+    {
+      "point": "Concrete agent use case with measurable value",
+      "evidence": "Filling open shifts by calling workers has a clear before and after metric."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Sira",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Sira\" --era 2022+: invented or proper, 4 chars",
     "strengths": [
-      "TODO"
+      "Short and easy to say",
+      "Friendly tone for workers"
     ],
     "weaknesses": [
-      "TODO"
+      "No meaning in HR",
+      "Common first name"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Short coined names such as Rippling-era HR brands work when the product wins; Sira is short and friendly but meaningless, which neither helps nor hurts much."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A broad AI native suite for hourly workers against entrenched scheduling and payroll vendors.",
+    "general_summary": "Sira offers AI agents plus time, scheduling, payroll and HR for hourly teams. The forecast window is 16.3 months from 2025-07-07 to 2026-11-17. We estimate 0.42 for an outside round above about $1M closing inside the window, from the 2022 to 2025 B2B anchor of 0.59 scaled for timing, with no AI hype lift. Analogs include Zeal and Instawork that raised, and Shift Messenger that went inactive. These odds do not rank this company against others. Reaching a round later is common for companies with paying customers."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file and market searches were used.",
+    "Window 16.3 months ends 2026-11-17.",
+    "Seed means an outside round above about $1M."
   ],
   "sources": [
-    "https://"
+    "https://wf.joinhomebase.com/blog/best-employee-rostering-software",
+    "https://wf.joinhomebase.com/blog/deputy-alternatives",
+    "https://wf.joinhomebase.com/blog/7shifts-alternatives"
   ]
 }

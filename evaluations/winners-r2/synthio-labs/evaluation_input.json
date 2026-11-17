@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Synthio Labs",
+    "one_liner": "Agentic AI platform for Pharma GTM teams",
+    "description": "Synthio Labs sells an agentic AI platform to the commercial teams of pharma and life sciences companies. The agents hold compliant, continuous conversations with healthcare professionals, patients and field sales teams. Buyers are pharma go to market and marketing groups, paid per contract. Team of 29 in San Francisco, Spring 2025 batch.",
+    "as_of": "2025-04-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.008,
+    "p_high": 0.05,
+    "basis": "Already in the batch, so this is reported for completeness only. Start from the roughly 1 percent prior for a random applicant in references/yc_acceptance.md (band 0.6 to 2 percent), then adjust: a clear buyer with budget and compliance pain lifts it about 2x, a 29 person team signals real execution, and the crowded pharma AI field takes some back; no traction is stated in the input.",
+    "why_it_fails": "YC would most plausibly say no because pharma engagement AI is a crowded enterprise category with incumbents like Veeva, the input states no customers or revenue, and a 29 person team without named pharma buyers is hard to read as early product market fit."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.53,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry Healthcare: seed 49% / 53% / 57% (lower / known-only / upper), cond 53% (n=167). Window check from the same run: months_to_seed p25 4, p50 8, p75 21 (n=89).",
+        "adjustment_reason": "The anchor of 0.53 is the ever reached figure. The window is 19 months, which covers roughly 72 percent of Healthcare seed raises by timing (p75 is 21 months), giving about 0.38. I do not lift for the team of 29 or the hot AI agent theme, per the winners test rule, and this number does not rank Synthio against other companies."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            18000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small post YC round of $1M to $3M from angels and micro funds, the YC deal alone (about $500K) is excluded by the seed definition. A team of 29 already has payroll to cover, so a very small round is less likely than for a three person team."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            32000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal and reads low, so this band carries the most weight."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Larger institutional seed where press covered 2026 raises had a median of $6.0M (quartiles $4.3M and $10M, n=77, press leans to big rounds); needs live revenue or a standout team story."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside seed above $12M, seen in 2025 AI categories when several funds bid for a team with early enterprise traction."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Pharma buyers buy slowly and compliance review of any AI that talks to healthcare professionals is demanding, so investors will want named pharma logos and signed contracts, not pilots. With 29 people the burn is high and a seed at a modest size may not cover the runway, while H1 (W20) sold to the same life science commercial teams and needed a proprietary data asset to win. A pivot-then-raise path, for example to a content review or medical affairs product, is the upside route."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.1,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.18,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry Healthcare: series_a cond 18% (n=89), ever 10% known-only, range 9% to 17%. Timing: months_to_series_a p25 26, median 38 (n=16).",
+        "adjustment_reason": "The anchor is the ever reached figure. In a 19 month window only a small share of eventual Series A raisers get there, because Healthcare Series A comes at a median of 38 months from batch start, so the probability sits well under the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin or small Series A, common for vertical software with early but modest revenue. Enterprise pharma contracts can be large, which supports a faster round if two or three logos sign."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band around the 2022 and later Series A median of $15M (p25 $11M, p75 $21M)."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            220000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Strong growth round led by a top tier fund."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside where the category is hot and revenue compounds fast."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs repeatable revenue from pharma commercial groups, who run long vendor onboarding, security and medical legal review before an AI touches doctors. Inside the window Synthio would need several multi year contracts within about a year of its seed. H1 (W20) reached a Series A within months only because it sold a proprietary database, and Voiceops (W17) took two years to its Series A in a regulated phone based niche."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry Healthcare: series_b cond 19% (n=16), ever 2% known-only.",
+        "adjustment_reason": "The anchor is the ever reached rate given Series A. A Series B inside a window of 19 months is rare because months_to_series_b has a median of 32 to 47 months from the batch start in time_to_milestones.csv, so only a breakout gets there."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.1,
+          "rationale": "Thin Series B or bridge."
         },
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band; the 2022 and later Series B median is $40M."
+        },
+        {
+          "raise_usd": [
+            40000000,
+            70000000
+          ],
+          "post_money_usd": [
+            350000000,
+            700000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Hot company band; the 2022 and later post money median is $600M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            120000000
+          ],
+          "post_money_usd": [
+            700000000,
+            1500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Breakout upside."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B inside the window would need revenue measured in many millions across a dozen pharma customers, which almost no company of this kind does in under two years. Freshpaint (S19) took years from batch to a Series B in the researched data, and Voiceops (W17) shows the same slow path, so the window is too short for this step unless the company breaks out early."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry Healthcare: series_c cond 33% (n=3), ever 1% known-only; tiny sample.",
+        "adjustment_reason": "The anchor is conditional on Series B and ever reached, from a tiny sample. Inside the window almost nobody reaches Series C, so I keep a low nonzero figure for a breakout path with several fast rounds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.08,
+          "rationale": "Thin extension round."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band; the 2022 and later Series C median is $74M."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2000000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Strong growth round."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            6000000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Category leader upside."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window is close to impossible for a company that started with 29 people and no disclosed contracts, which would need several consecutive hypergrowth rounds. The researched Series C companies such as H1 (W20) took roughly four to five years from batch, and nothing visible today points to the category defining ramp that would be required."
     }
   ],
   "outcomes": {
@@ -164,167 +260,207 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.31
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.19
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely Synthio stalls as one of many pharma engagement tools: Veeva and other incumbents add agentic features to their CRM, buyers consolidate vendors, and the team pivots or sells to a larger life sciences software company. Anatomic (W20) shows a small healthcare data company that stayed active with no funding beyond YC, and Voiceops shows the slow path."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "h1",
+      "relevance": "Winter 2020 platform selling to life sciences commercial teams",
+      "outcome_summary": "Raised a Series A in 2020, a Series B in 2020 and a Series C in 2021 on a proprietary HCP database; shows the buyer pays well when the data asset is unique."
+    },
+    {
+      "slug": "voiceops",
+      "relevance": "Winter 2017 AI for regulated phone based teams",
+      "outcome_summary": "Series A in 2019 and a small round in 2025; alive but slow beside larger conversation intelligence rivals."
+    },
+    {
+      "slug": "freshpaint",
+      "relevance": "Summer 2019 healthcare compliance focused data product",
+      "outcome_summary": "Small seed, Series A in 2022 and Series B in 2024 after pivoting to HIPAA safe data flow; compliance as a wedge works but takes years."
+    },
+    {
+      "slug": "anatomic",
+      "relevance": "Winter 2020 healthcare data for medical AI",
+      "outcome_summary": "Active small team with no funding beyond YC; shows the stall outcome in healthcare AI."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Incumbent CRM vendors absorb agentic engagement",
+      "p": 0.45,
+      "evidence": "Veeva and Aktana already sell HCP engagement and describe agents that answer only from MLR approved content, with distribution Synthio lacks.",
       "analogs": [
-        "TODO-company-slug"
+        "h1",
+        "voiceops"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Win one use case where agents cut review time with measured results before widening."
+    },
+    {
+      "risk": "Pharma compliance and procurement slow every deal",
+      "p": 0.45,
+      "evidence": "Medical, legal and regulatory review gates anything that talks to doctors or patients, so pilots rarely become contracts inside a year.",
+      "analogs": [
+        "freshpaint",
+        "anatomic"
+      ],
+      "mitigation": "Sell the compliance layer first and land with one brand team per account."
+    },
+    {
+      "risk": "High burn for a 29 person team before revenue is proven",
+      "p": 0.35,
+      "evidence": "A team of 29 is large for a spring batch company and needs a bigger seed to stay alive; a small round forces layoffs.",
+      "analogs": [
+        "voiceops",
+        "anatomic"
+      ],
+      "mitigation": "Hold hiring and tie growth to signed contract value."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Veeva CRM with agentic features",
+      "what": "Life sciences CRM leader embedding AI on validated content",
+      "traction": "Standard CRM across large pharma",
+      "source_url": "https://www.veeva.com/resources/from-service-as-an-afterthought-to-agentic-service-for-hcps/"
+    },
+    {
+      "name": "Doceree RepTwin style AI sales reps",
+      "what": "AI agents that talk to HCPs using approved content",
+      "traction": "Vendor claims of HIPAA and SOC2 status, unverified",
+      "source_url": "https://doceree.com/reptwin-page.html?embed=1"
+    },
+    {
+      "name": "Field reps and agencies (status quo)",
+      "what": "Human reps and medical information call centers",
+      "traction": "Large existing spend",
+      "source_url": "https://www.veeva.com/resources/from-service-as-an-afterthought-to-agentic-service-for-hcps/"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Retrieval and generation restricted to approved content is feasible for a small team; the hard parts are audit trails, adverse event reporting, multi channel orchestration and integration with pharma CRM and content systems. A narrow product can ship in three months but a compliant enterprise one takes much longer."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Veeva",
+      "IQVIA",
+      "Salesforce",
+      "Aktana"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Incumbents own the customer relationship and data and can add an agent layer within a year, so Synthio must win on depth and speed of compliance review."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Vendors describe a shift to agentic commercial models in pharma with compliance as the design constraint, though sources are vendor pieces",
+        "source_url": "https://doceree.com/reptwin-page.html?embed=1"
+      },
+      {
+        "claim": "Veeva positions agentic service for HCPs as a product direction, showing incumbent demand and competition",
+        "source_url": "https://www.veeva.com/resources/from-service-as-an-afterthought-to-agentic-service-for-hcps/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show pharma buyers will pay for compliant agent conversations",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run paid pilots with 2 pharma brand teams",
+        "Measure HCP response and review time saved"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Signed paid pilot above $50K"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert pilots into contracts and reach institutional seed scale",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Close 3 enterprise contracts",
+        "Pass pharma security and MLR review once and reuse it"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$500K or more in contracted annual revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable multi brand sales motion",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire a life sciences enterprise seller",
+        "Add integrations with Veeva and content systems"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$2M annual recurring revenue across 8 or more brands"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large buyer budgets and urgent compliance pain",
+      "evidence": "Pharma content spend and review load are growing faster than human review capacity, per vendor sources.",
+      "source_url": "https://pmlive.com/pharma_thought_leadership/agentic-commercial-ai-redefines-field-digital-and-content-for-precision-engagement/"
+    },
+    {
+      "point": "Proven path for life sciences sellers in YC",
+      "evidence": "H1 (W20) reached Series C selling to the same buyers.",
+      "source_url": ""
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Synthio Labs",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Synthio Labs\" --era 2022+ : 11 characters, 2 words, 3 syllables",
     "strengths": [
-      "TODO"
+      "Invented word that suggests synthesis",
+      "Labs suffix fits an AI research look"
     ],
     "weaknesses": [
-      "TODO"
+      "Hard to spell on first hearing and gives no pharma signal"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "The name is distinctive but signals nothing about pharma, and many AI startups use a Labs suffix. Past YC cases such as H1 (W20) show a plain descriptive name did not stop a healthcare seller from scaling, so the name will not decide the outcome."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A large pharma buyer and a big team, but a priced seed inside 19 months is a little below even odds.",
+    "general_summary": "Synthio sells compliant agentic conversation to pharma commercial teams. The buyer has money and the need is real, but sales cycles are long, incumbents such as Veeva are adding agents, and a 29 person team needs funding soon. Inside a 19 month window the seed probability follows the Healthcare cohort timing, not a lift for team size or the AI theme. A Series A inside the window is unlikely. The odds do not rank Synthio against other companies."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file was used about the company; no site, directory page or news about it was read.",
+    "Window is 19 months from 2025-04-07 to 2026-11-17.",
+    "Seed means a round above about $1M from outside investors, not the standard YC deal of about $500K, that closes inside the window.",
+    "The company is already in YC, so the acceptance figure is reported for completeness only.",
+    "Web search covered the market only. Results dated after the as of date or naming the company were to be ignored; none named it.",
+    "Funding coverage in the repo data is incomplete (see base_rates.py ranges), so the anchors are lower to upper ranges and not exact."
   ],
   "sources": [
-    "https://"
+    "https://doceree.com/reptwin-page.html?embed=1",
+    "https://www.veeva.com/resources/from-service-as-an-afterthought-to-agentic-service-for-hcps/",
+    "https://pmlive.com/pharma_thought_leadership/agentic-commercial-ai-redefines-field-digital-and-content-for-precision-engagement/"
   ]
 }

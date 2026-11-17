@@ -6,7 +6,7 @@
 
 ## Verdict at a glance
 
-**A well staffed European copy of a proven US model, with a slightly better than even chance short of a seed inside 19 months.**
+**A well staffed European copy of a proven US model, with just under even odds of a seed inside 19 months.**
 
 **Chance of getting into YC:** 50% (range 25%–80%), likely.
 

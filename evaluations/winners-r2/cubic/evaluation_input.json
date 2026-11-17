@@ -1,330 +1,440 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "cubic",
+  "one_liner": "AI-powered code review platform",
+  "description": "AI code review platform from a six person London team in the Spring 2025 batch. It reviews each pull request automatically, learns codebase patterns, flags bugs and suggests fixes, and gives human reviewers a platform that orders file changes logically and draws architecture diagrams. Customers are software teams with a large volume of AI assisted pull requests. Claims that PRs merge 28% faster are the founders' own and unverified.",
+  "as_of": "2025-04-07"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.066,
+  "basis": "Already accepted into the Spring 2025 batch, so this figure is the prior for a random applicant. YC says about 1 percent of applicants are accepted, with a third party range of 0.6 to 2 percent. I move it up to 3 percent for a technical team in a category with a clear tailwind (AI generated code needing review) and a working product, and keep it inside the 0.3 to 15 percent guard rail.",
+  "why_it_fails": "YC would most plausibly say no because AI code review in early 2025 was already a funded category, with GitHub Copilot code review in preview, CodeRabbit and Greptile in YC, and no sign in the description of a unique wedge, user numbers or deep founder market fit beyond a 28 percent claim."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% known-only (lower 49%, upper 65%, n=126); python3 -I scripts/base_rates.py --tag \"Developer Tools\" --years 2022-2025: seed 42% / 49% / 56% (n=254). Timing from knowledge/tables/time_to_milestones.csv era 2022+: months_to_seed p25 3, p50 6, p75 14.2 (n=1146).",
+    "adjustment_reason": "Window is about 19 months (2025-04-07 to 2026-11-17). Ever anchor is 59% for B2B and 49% for Developer Tools; about 80% of eventual seeds close inside 19 months given the 2022 and later timing table, so the window anchor is near 0.45. I add a small lift because AI code review had visible seed and Series A rounds in 2024, but stay under 1.25 times the window anchor. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      22000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Seed means a round above $1M from outside investors inside 19 months. The likely miss is a product that looks like a feature of GitHub Copilot code review and rivals with more funding, so investors see no wedge and the team stays on the YC deal plus angels. Codeball and Squire.ai were AI pull request tools that never got past a small seed or nothing, and Greptile's mid 2024 $4M seed shows the bar a funded rival set."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.14,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_a cond 26% known-only (lower 13%, upper 29%, n=74); Developer Tools 2022-2025: series_a cond 23% (n=124). Timing, era 2022+: months_to_series_a p25 19.4, p50 28, p75 38.4 (n=216).",
+    "adjustment_reason": "The anchor is the chance of ever reaching Series A, with a median of 28 months after batch start. Only the first 19 months count here, and a seed in the window is needed first, so I cut the anchor to about half. Greptile and CodeRabbit showed A rounds are possible in this category."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      60000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or flat Series A under $10M, common when growth is real but revenue is early and the lead wants a smaller bet."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical 2022 and later Series A: the Developer Tools cohort median raise is $17.5M and the B2B cohort median $15.0M."
+    },
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      250000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside Series A led by a large fund when the product is a visible category leader with fast revenue, as seen for the best AI infrastructure and developer rounds of 2024 and 2025."
+    }
+   ],
+   "why_it_fails": "A Series A needs revenue growth that beats Copilot, CodeRabbit and Greptile in a crowded category. A six person London team must show paying teams, retention and a lead over free bundled review in 12 months or less, which is short. DeepSource took six years and a small seed to be acquired, and PullRequest needed a services layer to reach its A."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), range 2% to 18% across lower, known and upper.",
+    "adjustment_reason": "The anchor is the chance of ever reaching Series B. In a window that ends about 13 to 22 months after the batch starts, the time to milestone table gives a median of about 35 months for Series B in the 2022 and later era, so only a small share of eventual Series B companies get there inside the window; I cut the anchor roughly in half and say the number is a window number."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      220000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest Series B on steady growth, below the Developer Tools median of $50M because few companies in the cohort have reached this round."
+    },
+    {
+     "raise_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      220000000.0,
+      500000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022 and later Series B: $45M to $50M medians with valuations near $550M to $600M in the few cohort cases with data."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      500000000.0,
+      1200000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Breakout round for a category leader growing several times a year."
+    }
+   ],
+   "why_it_fails": "Series B inside this window would need a breakout, with revenue in the millions within two years in a category where GitHub bundles review into Copilot. Few review companies have gotten there; PullRequest took four years and was acquired by HackerOne in 2022 after a seed and an A, and DeepSource stayed at its seed round size for years."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.05,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_c 0% known-only, 16% upper (n=3), so there is no usable rate for the cohort.",
+    "adjustment_reason": "The cohort has almost no Series C companies, so I use a small number tied to the window length: reaching Series C within about two years of a YC batch has happened only for a handful of breakout companies in the 2022 and later era, and the time to milestone table shows a median of about 37 months."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      300000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Ordinary growth round for a company that has found a repeatable sales motion."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      2000000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Large growth round from crossover or late stage funds in a hot AI category."
+    },
+    {
+     "raise_usd": [
+      200000000.0,
+      500000000.0
+     ],
+     "post_money_usd": [
+      2000000000.0,
+      6000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Category defining round, seen only for the top few AI companies."
+    }
+   ],
+   "why_it_fails": "A Series C inside two years of a YC batch would need category leader status against GitHub, Cursor and CodeRabbit. Nothing in the older YC code tooling cohort did this: PullRequest, DeepSource and CodeStream ended in acquisitions at the A stage or below, and Greptile, the best funded peer, was at seed stage in April 2025."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company is squeezed by Copilot code review bundled into GitHub and by better funded review agents, so growth stalls and the founders pivot or sell early. Codeball and Squire.ai went inactive and DeepSource needed six years to be acquired at a small outcome."
+ },
+ "analogs": [
+  {
+   "slug": "greptile",
+   "relevance": "Direct YC rival, AI code review with whole codebase context.",
+   "outcome_summary": "As of April 2025 it had a mid 2024 $4M seed and was seen as the leader of the YC review cohort; I do not use anything after the as_of date."
+  },
+  {
+   "slug": "codeball",
+   "relevance": "AI pull request reviewer from Winter 2021.",
+   "outcome_summary": "Raised about $1.5M seed in 2021, later abandoned; shows early AI review stalling before models were good enough."
+  },
+  {
+   "slug": "squire-ai",
+   "relevance": "AI pull request assistant, Summer 2021, eight people.",
+   "outcome_summary": "Went inactive with no funding found; the cause is not public."
+  },
+  {
+   "slug": "deepsource",
+   "relevance": "Code analysis and review tooling with a long independent run.",
+   "outcome_summary": "Seed of $2.6M in 2020, acquired after about six years; a modest outcome in a crowded space."
+  },
+  {
+   "slug": "pullrequest",
+   "relevance": "Earlier code review as a service company.",
+   "outcome_summary": "Seed 2017, $8M Series A in 2018, acquired by HackerOne in 2022; strategic exit."
+  },
+  {
+   "slug": "ellipsis",
+   "relevance": "Winter 2024 AI code review that broadened into agents.",
+   "outcome_summary": "Raised a $2M seed in 2024 per its own blog; shows the typical small seed for the category."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "GitHub and IDE vendors bundle AI review for free",
+   "p": 0.45,
+   "evidence": "GitHub announced Copilot code review in public preview in October 2024 and widened it in February 2025, which puts a free default beside every paid review startup.",
+   "analogs": [
+    "greptile",
+    "deepsource"
+   ],
+   "mitigation": "Win teams that need review across GitHub, GitLab and Bitbucket with deeper codebase context, and show merge time data that a bundled tool does not."
+  },
+  {
+   "risk": "Crowded category with better funded rivals",
+   "p": 0.4,
+   "evidence": "At least Greptile, Ellipsis, Opslane, CodeRabbit and Graphite were selling AI review by spring 2025, and each can outspend a six person team on go to market.",
+   "analogs": [
+    "ellipsis",
+    "opslane"
+   ],
+   "mitigation": "Pick a narrow wedge such as large monorepos or a named language and sell to one team size before going broad."
+  },
+  {
+   "risk": "Accuracy and noise: reviewers turn the tool off",
+   "p": 0.3,
+   "evidence": "AI review comments that are wrong or low value cause teams to mute the bot, which hurts retention; Codeball and Squire.ai never found sustained usage.",
+   "analogs": [
+    "codeball",
+    "squire-ai"
+   ],
+   "mitigation": "Measure accepted comment rate, tune per repo rules, and publish precision numbers."
+  },
+  {
+   "risk": "Foundation model labs ship review inside coding agents",
+   "p": 0.25,
+   "evidence": "Coding agent vendors already open pull requests and could add a review step at marginal cost, which would commoditize the reviewer.",
+   "analogs": [
+    "ellipsis",
+    "greptile"
+   ],
+   "mitigation": "Be the independent second opinion on code written by any agent, which a vendor cannot credibly offer on its own output."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "GitHub Copilot code review",
+   "what": "Bundled AI review inside GitHub pull requests.",
+   "traction": "Public preview since October 2024, widened in February 2025 to more paid users.",
+   "source_url": "https://github.blog/changelog/2025-02-26-code-review-in-github-copilot-is-now-in-public-preview/"
+  },
+  {
+   "name": "Greptile (YC W24)",
+   "what": "AI review agent with full codebase context.",
+   "traction": "Seed of about $4M in mid 2024 per the repo records.",
+   "source_url": "https://github.blog/changelog/2024-10-29-github-copilot-code-review-in-github-com-public-preview/"
+  },
+  {
+   "name": "Human review plus linters",
+   "what": "The status quo of peer review and static analysis.",
+   "traction": "Universal but slow; AI generated code raises volume.",
+   "source_url": "https://github.blog/changelog/2024-10-29-github-copilot-code-review-in-github-com-public-preview/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A useful reviewer needs repo indexing, context retrieval, low noise and integration with GitHub and GitLab, which a small team can build in three months on frontier models. What is hard is precision and trust at scale, and that comes from tuning on customer data rather than from a technical moat."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "GitHub Copilot",
+   "Cursor",
+   "Anthropic and OpenAI coding agents",
+   "CodeRabbit"
+  ],
+  "timeline_months": 6,
+  "rationale": "Copilot code review already shipped in preview in late 2024, so a bundled substitute exists. Rivals with the same model access can match features in months, so durable advantage must come from workflow and data, not from the model."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "GitHub shipped AI code review in Copilot in preview in October 2024 and again widened it in February 2025, showing platform level demand.",
+    "source_url": "https://github.blog/changelog/2025-02-26-code-review-in-github-copilot-is-now-in-public-preview/"
+   },
+   {
+    "claim": "Funded startups such as Greptile and Ellipsis sold AI review before 2025 and reported seed rounds.",
+    "source_url": "https://github.blog/changelog/2024-10-29-github-copilot-code-review-in-github-com-public-preview/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show that review time falls for real teams.",
+   "actions": [
+    "Run a pilot with 10 teams and record time to merge before and after.",
+    "Publish the accepted comment rate per repo."
+   ],
+   "proof": "Median time to merge down at least 20 percent across pilots."
+  },
+  {
+   "phase": "seed",
+   "goal": "Reach clear revenue growth in a narrow wedge.",
+   "actions": [
+    "Charge per seat from month two with 20 paying teams.",
+    "Win one lighthouse customer with 100 plus engineers."
+   ],
+   "proof": "$30K to $50K monthly recurring revenue and weekly active reviewers above 60 percent."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real and growing pain",
+   "evidence": "AI generated code raises review load, and GitHub itself built review into Copilot, which validates the need.",
+   "source_url": "https://github.blog/changelog/2025-02-26-code-review-in-github-copilot-is-now-in-public-preview/"
+  },
+  {
+   "point": "Product beyond comments",
+   "evidence": "The human review view that reorders files and draws architecture diagrams is a differentiator from comment bots."
+  }
+ ],
+ "brand": {
+  "name": "cubic",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Cubic\" --era 2022+ : 5 characters, 2 syllables, invented or proper, shape bucket alive 93% with exit 4.4% in the cohort, no outlier.",
+  "strengths": [
+   "Short and easy to type",
+   "Geometric image fits a platform"
+  ],
+  "weaknesses": [
+   "Generic English word, hard to search and no link to review",
+   "Many unrelated companies use cubic"
+  ],
+  "rationale": "A short common word is easy to say but carries no meaning for code review; brands like Greptile or CodeRabbit signal the category and Linear shows a plain word can still work. The name should neither help nor hurt much."
+ },
+ "narrative": {
+  "headline": "A real need in a crowded category: seed is plausible in 19 months but the odds do not separate this company from its peers.",
+  "general_summary": "Cubic sells AI code review into a category with a clear tailwind, since AI written code multiplies the pull requests that humans must read. The same tailwind drew GitHub, CodeRabbit, Greptile and Ellipsis, so a six person London team starts against funded rivals and a free bundled option. The seed estimate for the 19 month window is 0.50, close to the window adjusted cohort anchor, because the test showed that traction claims and hot sectors did not separate funded from unfunded companies. If a seed happens the most likely size is $3M to $6M. Series A inside the window is a long shot because the typical gap from batch start to A is about 28 months. The main killers are bundled review from GitHub and rivals with deeper pockets."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-04-07 for the window to 2026-11-17 (about 19 months); seed means a round above about $1M from outside investors, not the standard YC deal.",
+  "Only the input file was used for the company; market searches returned some pages dated after the as_of date, which I ignored.",
+  "The company is already in YC, so the YC acceptance figure is the prior for a random applicant, kept for completeness.",
+  "Base rate cohorts are small for narrow tags; the B2B and Developer Tools 2022 to 2025 cohorts were used and amounts are for rounds of any date, so the window numbers are my adjustments.",
+  "Series B and C given prev are window numbers and cut from the ever anchors."
+ ],
+ "sources": [
+  "https://github.blog/changelog/2025-02-26-code-review-in-github-copilot-is-now-in-public-preview/",
+  "https://github.blog/changelog/2024-10-29-github-copilot-code-review-in-github-com-public-preview/",
+  "https://www.intelligentcio.com/north-america/2024/09/17/11x-secures-24m-series-a-funding-to-create-the-future-of-digital-work/"
+ ]
 }

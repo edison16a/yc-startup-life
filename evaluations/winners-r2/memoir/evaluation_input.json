@@ -1,330 +1,445 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Memoir",
+  "one_liner": "AI in your calls",
+  "description": "Memoir is an AI teammate that joins video calls as a participant, stays silent until addressed, and then does work live, such as drafting a plan or a document during a sales call and following up afterward. It starts with technical founders on sales and design calls in Google Meet. Revenue would come from a subscription per user or seat. One founder in San Francisco, Spring 2026 batch. Traction is unknown.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.5,
+  "p_low": 0.25,
+  "p_high": 0.8,
+  "basis": "The company is already in the Spring 2026 batch, so this is a note only. A random applicant starts near 1 percent. A solo founder is slightly down in the factor table, the agents in meetings idea fits the AI agent theme, and the meeting notetaker space is very crowded, so the number is wide.",
+  "why_it_fails": "YC would most plausibly say no because meeting assistants are a crowded and commoditizing category, with Google, Microsoft and Zoom adding the same features. A solo founder would be asked who the paying customer is, why a call is the right place for an agent, and what the product does that a notetaker with a draft button does not."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.27,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (seed 59 percent known only, range 49 to 65 percent, n=126, right censored); tag AI cohort 63 percent, n=81. python3 -I scripts/base_rates.py shows seed month quartiles 3 / 7 / 15 for B2B 2022-2025 (n=74).",
+    "adjustment_reason": "Window is 7.4 months, from 2026-04-06 to 2026-11-17. The seed month median for B2B 2022+ is 7 months, so about half of eventual raisers have raised by then, and 0.59 times about 0.5 is 0.30. A solo founder takes it down to 0.27. This is more than 2x below the ever anchor only because of the short window. The odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails in 7 months if the product is seen as a meeting notetaker feature that Google Meet, Zoom and Microsoft Copilot already bundle, so investors want proof of paid usage that the category rarely shows. A solo founder has no one to split building and selling. Speck and Sonnet, small notetaker teams, ended acquired without a priced round or inactive, and Hera raised only about $2.2M before shutting down."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --tag AI --calibration-only (series A cond 25 percent, n=51). Months to series A 2022+ median 28, 25th percentile 19, so a 7 month window is far below the fastest.",
+    "adjustment_reason": "Ever anchor 0.25. A 7 month window is far shorter than the 19 month 25th percentile of time to series A, so I use 0.02, about one twelfth of the anchor. This reflects the window only."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin A with a flat or small step up on modest recurring revenue. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      22000000
+     ],
+     "post_money_usd": [
+      60000000,
+      130000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022+ A: the YC table median is $15M and public deal size medians are $17M to $20M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      22000000,
+      40000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A after a breakout year, with a platform story. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "A Series A inside 7 months is very unlikely: it would need revenue growth that a solo founder cannot build that fast, and a differentiated product against bundled meeting AI. The usual route for meeting companies is slow, as Fathom raised a Series A years after launch with a free tier and a large user base, and Demodesk took about 18 months to its larger round."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.39,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18; 2022-2025 B2B tag AI cond 8 percent, n=13, censored). This step is an ever number, not a window number, and lies beyond the forecast window.",
+    "adjustment_reason": "At 0.64 of the 0.39 anchor because meeting AI is commoditizing and the Series B step usually needs a platform position, as Recall.ai reached by selling an API."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      120000000,
+      220000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin B with a flat step up. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      60000000
+     ],
+     "post_money_usd": [
+      220000000,
+      500000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical B: YC 2022+ median is $40M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B led by a top growth fund. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "Series B needs a large paying base or an API business with strong net retention. If Google, Microsoft and Zoom bundle live agent features free, a standalone call agent loses pricing power. Recall.ai reached a B by selling meeting bot infrastructure to other companies, a different shape from a user facing assistant."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.43,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall cond 36 to 43 percent). Ever number, beyond the window.",
+    "adjustment_reason": "At 0.70 of the 0.43 anchor because very few meeting companies reach C and platform bundling caps the market."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin C. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C, 2022+ YC median $74M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside C for a category leader. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "Series C requires a category defining collaboration platform that agents from many companies plug into, which is the stated long term vision. No meeting company in the analog set reached it without a platform shift such as the pandemic, as Daily did, and Zoom and Google control distribution, so the path is narrow."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most paths end in a stall or a small acquisition. Fathom, Speck, Bitplay and WorkLife show meeting products getting absorbed by larger tools, often with small or undisclosed prices. A full miss follows if Google Meet and Zoom ship live agents in chat, or if a solo founder runs out of money before finding a paying niche."
+ },
+ "analogs": [
+  {
+   "slug": "fathom",
+   "relevance": "AI notetaker built on Zoom distribution.",
+   "outcome_summary": "Grew on a free tier, raised $4.7M then $17M and was later acquired, so it took years to a Series A."
+  },
+  {
+   "slug": "speck",
+   "relevance": "Small team AI notetaker in a commoditizing category.",
+   "outcome_summary": "Three person team, acquired in 2025 with no price or priced round on record."
+  },
+  {
+   "slug": "sonnet",
+   "relevance": "Meeting notes and CRM automation.",
+   "outcome_summary": "Listed inactive with no round, a failure case in notetakers."
+  },
+  {
+   "slug": "hera",
+   "relevance": "Calendar and meeting tool that joins and follows up on calls.",
+   "outcome_summary": "Raised about $2.2M and then shut down."
+  },
+  {
+   "slug": "demodesk",
+   "relevance": "Sales call tool that works inside calls.",
+   "outcome_summary": "Raised a $2.3M seed and an $8M round within about a year of YC and survives as a small AI coaching company."
+  },
+  {
+   "slug": "recall-ai",
+   "relevance": "Meeting bot infrastructure.",
+   "outcome_summary": "Relaunched as an API when AI created demand and reached a Series B."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Platforms bundle live agent features",
+   "p": 0.4,
+   "evidence": "Google Meet notes and Microsoft Copilot already reach large user bases, and the market search lists bundled suite incumbents.",
+   "analogs": [
+    "fathom",
+    "speck",
+    "bitplay"
+   ],
+   "mitigation": "Win a workflow platforms ignore, such as technical founder sales calls, and integrate with the founders' tools."
+  },
+  {
+   "risk": "Notetaker category commoditizes and monetizes poorly",
+   "p": 0.3,
+   "evidence": "Fathom gave away a free tier, and Speck and Sonnet did not raise real rounds.",
+   "analogs": [
+    "speck",
+    "sonnet",
+    "fathom"
+   ],
+   "mitigation": "Charge for completed work, such as documents drafted and follow ups sent, not for notes."
+  },
+  {
+   "risk": "A solo founder cannot build and sell fast enough",
+   "p": 0.25,
+   "evidence": "Solo founders show slightly higher shutdown rates in the factor table of references/yc_acceptance.md.",
+   "analogs": [
+    "hera",
+    "sonnet"
+   ],
+   "mitigation": "Add a technical or sales cofounder early."
+  },
+  {
+   "risk": "Customers dislike a bot that joins calls",
+   "p": 0.15,
+   "evidence": "Several vendors now offer bot free notes, a sign of user pushback.",
+   "analogs": [
+    "hera",
+    "fathom"
+   ],
+   "mitigation": "Support a no bot mode and clear consent on calls."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Fathom, Otter and Fireflies",
+   "what": "Popular standalone AI meeting assistants and notetakers.",
+   "traction": "Fathom 26, Otter 22 and Fireflies 16 percent of surveyed users in one vendor survey.",
+   "source_url": "https://fellow.ai/blog/ai-meeting-assistants-ultimate-guide/"
+  },
+  {
+   "name": "Google Meet notes and Microsoft Copilot",
+   "what": "Bundled meeting AI in the suites people already use.",
+   "traction": "One source reports 110 million plus attendees in a month for Google's notes.",
+   "source_url": "https://fellow.ai/blog/ai-meeting-assistants-ultimate-guide/"
+  },
+  {
+   "name": "Meeting assistant vendors listed in the Gladia market map",
+   "what": "Dozens of notetaker and call copilot products.",
+   "traction": "A May 2026 research report maps a crowded field.",
+   "source_url": "https://gladia.io/meeting-assistant-market-map"
+  },
+  {
+   "name": "Status quo: a human taking notes and following up by hand",
+   "what": "Founders write their own plans and emails after calls.",
+   "traction": "Default for most small teams.",
+   "source_url": "https://fellow.ai/blog/ai-meeting-assistants-ultimate-guide/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A bot that joins Google Meet, listens, and acts only when addressed needs real time speech, intent detection and document generation, which one engineer can prototype in three months. The harder parts are low latency, platform bot policies and reliable follow up actions inside customers' tools."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "Google Meet",
+   "Microsoft Teams Copilot",
+   "Zoom",
+   "Fathom",
+   "Otter"
+  ],
+  "timeline_months": 6,
+  "rationale": "The platforms own the call and the meeting APIs, and rivals already ship notetakers, so a live command feature is a few months of work for them. Platform dependency is also a risk because bots depend on the platforms' policies."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "AI meeting assistants are widely used, and several standalone tools have large user shares, so people accept AI in calls.",
+    "source_url": "https://fellow.ai/blog/ai-meeting-assistants-ultimate-guide/"
+   },
+   {
+    "claim": "The category is crowded with suite incumbents and free tiers, which weakens willingness to pay for a standalone product.",
+    "source_url": "https://gladia.io/meeting-assistant-market-map"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Paid usage from a narrow user group.",
+   "actions": [
+    "Get 30 technical founders to use it weekly on real sales calls.",
+    "Charge for completed work, not notes, and track retention."
+   ],
+   "proof": "Weekly active teams that pay and keep using after 8 weeks."
+  },
+  {
+   "phase": "series_a",
+   "goal": "A durable product beyond bundled notes.",
+   "actions": [
+    "Open the platform so other agents join calls through it.",
+    "Add a second customer group beyond technical founders."
+   ],
+   "proof": "Revenue growth over 15 percent a month for six months with strong retention."
+  }
+ ],
+ "pros": [
+  {
+   "point": "A sharper idea than a plain notetaker",
+   "evidence": "The live, on demand action model differs from passive notes and gives a clear demo."
+  },
+  {
+   "point": "Fast moving agent theme",
+   "evidence": "The description argues that agents already work in email, browsers and code, a thesis many AI investors accept."
+  }
+ ],
+ "brand": {
+  "name": "Memoir",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score Memoir --era 2022+ : kind invented_or_proper, alive 92.7 percent, n=1826",
+  "strengths": [
+   "A real word that suggests memory and record",
+   "Easy to say and spell"
+  ],
+  "weaknesses": [
+   "Suggests passive note keeping, which is the opposite of the live agent pitch"
+  ],
+  "rationale": "A real English word that points to records and memory, similar to Fathom and Sonnet in the meeting space. It leans toward the notetaker image the product wants to escape, and the cohort shows no survival difference by name type, so it is neutral."
+ },
+ "narrative": {
+  "headline": "A sharper idea in the most crowded meeting AI market, with a solo founder and a short 7 month window, so a seed is possible but less likely than not.",
+  "general_summary": "Memoir is an agent that joins video calls and does work when asked. The demo is clear, but meeting AI is crowded, the platforms bundle similar features, and notetaker analogs such as Speck, Sonnet and Hera ended small or shut down. The seed estimate is for only 7.4 months, about half the time most raisers need, and the founder is alone, so the number is well under the ever anchor and does not rank this company against others. A Series A inside the window is very unlikely. The best case is a pivot toward infrastructure, as Recall.ai did."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-04-06, using the description only; the tags field was empty.",
+  "Window is 7.4 months. Seed means a round above about $1M from outside investors closing inside the window; series_a given seed is for the same window.",
+  "Anchors use the 2022-2025 B2B cohort, right censored, discounted heavily for the short window.",
+  "Traction, pricing and customer count are unknown."
+ ],
+ "sources": [
+  "https://fellow.ai/blog/ai-meeting-assistants-ultimate-guide/",
+  "https://gladia.io/meeting-assistant-market-map"
+ ]
 }

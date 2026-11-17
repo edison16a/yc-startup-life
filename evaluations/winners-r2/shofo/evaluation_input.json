@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Shofo",
+    "one_liner": "The World's Largest Video Library",
+    "description": "A searchable index of billions of videos plus agents that find, extract and label custom video datasets for AI labs, delivered in days. Customers are AI labs paying per dataset. Four person team in San Francisco. Forecast as of 2026-01-05, window to 2026-11-17 (about 10 months).",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.008,
+    "p_high": 0.05,
+    "basis": "The company is in the Winter 2026 batch, so this is shown for completeness. Start from the roughly 1 percent prior for a random applicant (0.6 to 2 percent range). Adjust up for AI data demand and a technical four person team that fits YC's AI infrastructure interest, and hold near 2 percent because data rights and customer proof are unstated.",
+    "why_it_fails": "YC would most plausibly say no because the pitch rests on a huge video index whose rights are unclear: scraped video raises copyright and platform terms of service questions that labs and YC partners both know. Data labeling is also crowded with Scale, Encord and many small vendors, and no named lab customer or revenue is stated."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.35,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --tag \"Data Labeling\" gave seed 50% / 57% / 62% (n=8, anecdote); --industry B2B gave 47% / 53% / 59% (n=1002). Window rule: time_to_milestones.csv 2022+ months to seed p25 3, p50 6, p75 14.2, so about 60 percent of ever reachers have raised by 10 months.",
+        "adjustment_reason": "Ever anchor about 0.55 times 0.62 for the 10 month window gives 0.34, so 0.35 is used. No lift for the AI data theme or team size; below the anchor only because of the short window. The odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            18000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "A small post YC round of about $1M to $3M from angels and a micro fund, the most common outcome when a team has early pilots but no repeatable sales motion. It is the largest band because the 2022 and later seed table (p25 $2.0M, median $3.5M) mixes in YC deal sized checks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.38,
+          "rationale": "A conventional institutional seed of $3M to $6M led by a seed fund, matching the 2022 and later table median of $3.5M and the p75 of $5.2M for the cohort."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A $6M to $12M seed, which happens when a lead fund prices on market heat. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers large rounds more, so this band is kept at a minority."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            100000000
+          ],
+          "p_band": 0.05,
+          "rationale": "An upside seed above $12M, reached only if the company shows unusual early revenue or a top fund competes for it; rare in the YC data and kept small."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Window is 10 months (2026-01-05 to 2026-11-17); seed means an outside round above about $1M. The most likely miss is that the company stays on the YC deal while labs delay purchases pending legal review of video rights, so there are no paid datasets for a lead to underwrite. Sieve raised about $4M within months of its batch and Lightly a $3M seed, but both sold tooling, not licensed data, which is easier to defend."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --tag \"Data Labeling\" gave series_a cond 25% (n=4, anecdote); B2B cond 26% (n=468). Time rule: 2022+ months to series A p25 19.4, p50 28.",
+        "adjustment_reason": "Ever conditional of 0.25 scaled to near 0.03 because under 10 percent of A rounds close within 10 months of a batch start (p25 is 19 months). More than 2x below the anchor for that reason alone."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "A thin or bridge style Series A of $6M to $10M, common when growth is real but revenue is still small; below the 2022 and later p25 of $11M, so it stands for the soft band."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "The central Series A of $10M to $18M, bracketing the 2022 and later median of $15M and p25 to p75 of $11M to $21M."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            90000000,
+            150000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A larger A of $18M to $30M that top funds lead when growth looks category defining; current market data shows A deal sizes near $17M to $20M."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.08,
+          "rationale": "An upside A above $30M, seen only for a few AI companies with very fast revenue; rare and kept at a small share."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A within 10 months would require a seed plus multi million dollar dataset revenue in under a year, which is rare. A faster than normal A is possible only if a few labs sign large dataset contracts, and those buyers can take back the work in house or buy from Scale. Encord shows it can happen, with a seed in June 2021 and a Series A in October 2021, but it is a rare standout among data tooling companies."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.21,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave series_b cond 21% (n=123); Data Labeling cond 100% (n=1, ignored). Long run, not window numbers.",
+        "adjustment_reason": "Equal to the B2B anchor; this is the long run chance beyond the window with no lift for the AI data demand."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "A smaller or flat Series B of $15M to $30M, typical when the A cohort slows; includes down or extension rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "The central Series B of $30M to $50M, matching the 2022 and later median of $40M with p25 to p75 of $27M to $55M."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            80000000
+          ],
+          "post_money_usd": [
+            300000000,
+            600000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A growth B of $50M to $80M for companies with clear scaled revenue."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1200000000
+          ],
+          "p_band": 0.08,
+          "rationale": "An upside B above $80M for category leaders, rare among YC companies."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B in data requires multi year contracts with several top labs, but lab spend concentrates in a few buyers whose needs shift every training run. Aquarium and Segments.ai, dataset tools with credible customers, never reached a B and were absorbed, while Encord reached one only with a broad platform. A single customer dependency makes lead investors cautious."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave series_c cond 19% (n=26); older eras 36 to 43 percent.",
+        "adjustment_reason": "Within 1.25 times the B2B anchor; no data labeling cohort big enough to use."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "A modest later round of $30M to $60M, including down rounds and structured deals."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000,
+            1400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "The central round of $60M to $120M, bracketing the 2022 and later series C median of $74M."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "A large growth round of $120M to $250M for a clear leader."
+        },
+        {
+          "raise_usd": [
+            250000000,
+            500000000
+          ],
+          "post_money_usd": [
+            2500000000,
+            6000000000
+          ],
+          "p_band": 0.05,
+          "rationale": "A mega round above $250M, which only a handful of YC companies have reached."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A growth round past B needs sticky revenue beyond a few lab contracts and clear legal rights to the data. Data vendors face pricing pressure as labs build synthetic data pipelines, and litigation about training on video could cut demand or shift it to licensed sources, so most reach a sale before a growth round."
     }
   ],
   "outcomes": {
@@ -164,167 +260,226 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The likely failure is legal and commercial: rights to the videos are contested, labs prefer licensed or synthetic data, and a small team cannot match Scale or Encord on labeling quality, so it stalls at a small revenue base. Data labeling analogs include acquisitions under $100M such as Aquarium, Segments.ai and Sepal style acqui-hires, and reaching $1B needs a market leading data supplier."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "sieve",
+      "relevance": "Multimodal and video data lab (W22)",
+      "outcome_summary": "Launched a developer video API and announced a roughly $4M seed in November 2022, then repositioned toward data for frontier labs; shows seed access for video data but a change of model."
+    },
+    {
+      "slug": "lightly",
+      "relevance": "Help ML teams pick the right data (S21)",
+      "outcome_summary": "Raised a $3M seed in May 2022 about nine months after batch, a tooling business with ETH research roots."
+    },
+    {
+      "slug": "segments-ai",
+      "relevance": "Labeling platform for computer vision datasets (W21)",
+      "outcome_summary": "Stayed a lean team of about 8 and was acquired, no large round; a modest exit."
+    },
+    {
+      "slug": "aquarium-learning",
+      "relevance": "Dataset improvement for ML teams (S20)",
+      "outcome_summary": "Raised a $2.6M Sequoia led seed in 2021, no later round, absorbed into Notion's AI team in 2024; a seed then acqui-hire path."
+    },
+    {
+      "slug": "labelflow",
+      "relevance": "Visual data labeling tool (S18)",
+      "outcome_summary": "Raised about $2.1M across six rounds, later inactive; labeling tools without a data edge stalled."
+    },
+    {
+      "slug": "encord",
+      "relevance": "Data layer for AI model builders (W21)",
+      "outcome_summary": "Seed in June 2021 and Series A in October 2021, later a Series B; the strong outcome in data tooling."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Rights to scraped video are contested, so labs refuse unlicensed data",
+      "p": 0.4,
+      "evidence": "Press on AI video licensing shows buyers paying creators and studios for licensed footage, and training on scraped video faces copyright and platform terms challenges.",
       "analogs": [
-        "TODO-company-slug"
+        "labelflow",
+        "segments-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Build the index from licensed and creator sourced video with contract provenance and publish rights documentation to buyers."
+    },
+    {
+      "risk": "Buyer concentration and lab in house or synthetic data reduce demand",
+      "p": 0.3,
+      "evidence": "A handful of frontier labs buy most video data and can build their own scraping and labeling pipelines or use synthetic video.",
+      "analogs": [
+        "aquarium-learning",
+        "sieve"
+      ],
+      "mitigation": "Sign multi dataset contracts with several labs and add recurring evaluation data services."
+    },
+    {
+      "risk": "Labeling quality and price lag Scale and Encord",
+      "p": 0.3,
+      "evidence": "Scale AI and Encord have large annotation workforces and tooling, and Defined.ai and Veritone already sell video data at a wide range of prices.",
+      "analogs": [
+        "encord",
+        "lightly"
+      ],
+      "mitigation": "Focus on narrow high value reasoning annotations on top of the search index."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Scale AI",
+      "what": "Large data labeling and AI data vendor serving frontier labs",
+      "traction": "Largest scaled supplier of labeled data to AI labs",
+      "source_url": "https://scale.com"
+    },
+    {
+      "name": "Encord",
+      "what": "Data platform for multimodal AI with labeling and curation",
+      "traction": "Series B stage YC company serving computer vision teams",
+      "source_url": "https://encord.com"
+    },
+    {
+      "name": "Defined.ai",
+      "what": "Marketplace selling licensed AI training datasets including video",
+      "traction": "Reported pricing from $2 to $4 for short clips and $100 to $300 per hour for long video",
+      "source_url": "https://www.artificialintelligence-news.com/news/ai-giants-pay-thousands-for-creators-unused-footage-to-train-models/"
+    },
+    {
+      "name": "Veritone",
+      "what": "Public AI company licensing video and audio data",
+      "traction": "Reported pricing from $1 to $1000 per hour depending on tagging",
+      "source_url": "https://www.veritone.com"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Indexing billions of videos, searching them by scene description and running agent driven extraction at scale is a heavy data engineering and compute problem; a four person team can build a narrow demo but storage, bandwidth and labeling quality at lab scale are hard and capital consuming. The index is a moat only if it is legally and cheaply held."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Scale AI",
+      "Encord",
+      "frontier labs building in house",
+      "video platforms licensing their own data"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Large data vendors can add video search and labeling within a year, and video platforms or studios can license directly to labs. Labs have the incentive to bring data in house, so risk is medium, tempered by the cost of assembling a large index."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "AI companies pay roughly $1 to $4 per minute for licensed video and creators sell unused footage to labs, which shows paid demand for video training data.",
+        "source_url": "https://www.artificialintelligence-news.com/news/ai-giants-pay-thousands-for-creators-unused-footage-to-train-models/"
+      },
+      {
+        "claim": "Big tech is spending heavily on AI training data purchases and licensing deals, and the broader AI training dataset market is projected to grow from $2.68B in 2024 to $11.16B by 2030.",
+        "source_url": "https://the-decoder.com/tech-giants-are-on-a-billion-dollar-shopping-spree-for-ai-training-data/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a lab will pay for a custom video dataset",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Deliver a paid pilot dataset to one lab with provenance documents",
+        "Document the cost per labeled hour versus competitors"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "One paid dataset delivery above $25K"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show repeat revenue from several labs with defensible rights",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign 3 labs to recurring dataset orders",
+        "Switch the index to licensed or contractually sourced video"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$50K to $100K monthly revenue and a legal opinion on data rights"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Become a standing supplier to frontier labs",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add physical AI and robotics video categories",
+        "Build evaluation datasets as a recurring product"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$3M annualized revenue across 5 or more labs"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Strong and growing demand for video data",
+      "evidence": "Labs pay per minute or per hour for licensed video and the AI training data market is forecast to quadruple by 2030.",
+      "source_url": "https://the-decoder.com/tech-giants-are-on-a-billion-dollar-shopping-spree-for-ai-training-data/"
+    },
+    {
+      "point": "On demand custom delivery is a differentiator",
+      "evidence": "Delivering a labeled dataset in days instead of months is a measurable improvement over manual procurement.",
+      "source_url": "https://www.artificialintelligence-news.com/news/ai-giants-pay-thousands-for-creators-unused-footage-to-train-models/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Shofo",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Shofo\" --era 2022+ gave kind invented_or_proper, 5 characters, 2 syllables, no suffix or digits.",
     "strengths": [
-      "TODO"
+      "Short and easy to type",
+      "Unique with no existing meaning"
     ],
     "weaknesses": [
-      "TODO"
+      "Says nothing about video or data",
+      "Could be misread when spoken"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Short invented names are common among YC infrastructure companies, and for a business to business data supplier the name matters little compared to data quality and legal rights, so the effect is neutral.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A timely bet on video training data with an unresolved rights question; seed odds within 10 months are below the ever anchor because the window is short.",
+    "general_summary": "Shofo says it has indexed billions of videos and uses agents to deliver custom labeled datasets to AI labs. Demand for video data is real and prices are visible in press, and the sector drew heavy investor interest, but a four person team must prove paid deliveries and solve the legal rights problem. In a 10 month window only about 60 percent of eventual seed raisers have raised by then, so the seed probability is 0.35 and a Series A inside the window is very unlikely at 3 percent. Odds here do not rank this company against others."
   },
   "assumptions": [
-    "TODO"
+    "Forecast made blind from the input file only; the window runs 2026-01-05 to 2026-11-17, about 10 months.",
+    "Seed means an outside round above about $1M; the YC deal alone does not count.",
+    "Seed and Series A odds are for the window; Series B and C odds are long run conditional rates.",
+    "The Data Labeling tag cohort has 8 companies and is anecdote only; B2B is the working anchor.",
+    "Web search covered the market only and returned 2025 pricing pages; no result named this company."
   ],
   "sources": [
-    "https://"
+    "https://www.artificialintelligence-news.com/news/ai-giants-pay-thousands-for-creators-unused-footage-to-train-models/",
+    "https://the-decoder.com/tech-giants-are-on-a-billion-dollar-shopping-spree-for-ai-training-data/",
+    "https://scale.com",
+    "https://encord.com",
+    "https://www.veritone.com"
   ]
 }

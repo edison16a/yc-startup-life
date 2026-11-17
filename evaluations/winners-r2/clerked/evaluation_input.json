@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Clerked",
+    "one_liner": "AI clerks that automate your payables",
+    "description": "AI accounts payable platform that automates invoice handling, answers questions about spend, builds custom reports, finds savings and advises on payment timing to protect cash flow and capture discounts. Managed from a phone, Teams, Slack or iMessage. Four person team in San Francisco, B2B finance, tags fintech, enterprise, AI.",
+    "as_of": "2025-10-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.015,
+    "p_low": 0.006,
+    "p_high": 0.035,
+    "basis": "Prior of about 1 percent (yc_acceptance.md, range 0.6 to 2 percent). Up for a clear painful workflow, an AI native angle fitting YC priorities and a 4 person team; down because AP automation has strong incumbents and many YC entrants and no traction is stated. Net about 1.5 percent. The company is already in the Fall 2025 batch, shown for completeness.",
+    "why_it_fails": "YC would most plausibly pass because AP automation is crowded with BILL, Tipalti, Ramp and earlier YC companies, and 'most advanced AI clerks in the world' is an unproven claim. Partners would want evidence that finance teams pay for a chat driven AP product rather than extending the system they already use."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49% / 59% / 65% (cond 59%, n=126). Fintech cohort seed cond 70% (n=60). time_to_milestones.csv era:2022+ months_to_seed p25 3, median 6, p75 14.2.",
+        "adjustment_reason": "Window is 13.4 months from 2025-10-06 to 2026-11-17 and the target is an outside round above about $1M. In the 2022+ timing table about 70 to 75 percent of eventual seeds are in by month 14, but this target excludes the YC deal and small checks counted in those medians. 0.59 x 0.72 x 0.9 is about 0.38. No lift for AI sector hype per the winners test; these odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M, typical for a four person AP startup with early customers; Landed and Cedalio style rounds in the cohort were in this range."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            22000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Institutional seed with pilots in production, near the 2022+ B2B median of $3.5M and the Sieve $4M seed."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            75000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Larger seed if early ARR and a clear AI finance narrative attract a top fund."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            18000000
+          ],
+          "post_money_usd": [
+            75000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside from fast revenue and a convincing agent story."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed fails if the product proves interesting but not differentiated. AP buyers can get AI features from BILL, Tipalti and Ramp, and earlier YC AP companies such as Plate IQ took years and a niche (restaurants) to scale, while Mercoa stayed at the $500K YC deal. A four person team selling to finance leaders needs paying customers fast, and phone and chat control is a feature that incumbents can add."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.07,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_a cond 26% (n=74); months_to_series_a 2022+ median 28, p25 19.4.",
+        "adjustment_reason": "Window is 13.4 months in total, while the 2022+ median to Series A is 28 months and p25 is 19. Only a fast tail would raise an A in the window, so 0.26 x about 0.27 timing share is about 0.07, more than 2x below the ever anchor for timing reasons."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            7000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller A for AP automation with modest ARR."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ A, median $15M, for strong ARR growth and low churn."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            30000000
+          ],
+          "post_money_usd": [
+            110000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside A for a breakout AI finance product."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs repeatable sales into finance teams with measurable payables volume. AP is a trust product with long procurement and integration needs with ERPs such as NetSuite and QuickBooks, so a young team often has pilots but not enough ARR. Routable needed years and a payments pivot before its $12M A."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.15,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_b cond 16% (n=19).",
+        "adjustment_reason": "At the anchor and within 2x; a Series B inside the window would require extraordinary growth."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series B on steady growth and solid retention, below the $40M 2022+ median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B for AI finance at scale."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            90000000
+          ],
+          "post_money_usd": [
+            500000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if AI AP becomes a leading category product."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B is a stage few seed companies reach. At this stage the company would face BILL, Tipalti, Ramp and ERP vendors embedding agents, making it hard to show durable differentiation and net revenue retention. Investors would want evidence that customers consolidate payables here and not in a spend management suite, and that net revenue retention stays above 110 percent."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.45,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --calibration-only: series_c cond 50% (n=28).",
+        "adjustment_reason": "Near the anchor and within 2x."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical Series C round, with the 2022+ table median at $74M and post money near $1.2B."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            1000000000,
+            2500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Strong growth case with scaled revenue and a high valuation near the top of the range."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            250000000,
+            500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Flat or down round if growth slows against bundled incumbents."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Reaching Series C would put the company in rare territory for AP startups. By then it would compete with large spend platforms that bundle AP free or cheaply, and investors would test gross margin and churn. Failure would be margin compression and slow expansion beyond the initial segment, as seen with several finance automation companies that stalled before late stage."
     }
   ],
   "outcomes": {
@@ -164,167 +224,204 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.32
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.18
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "AP automation has many funded rivals and bundling pressure from spend and ERP platforms. Most paths end in a stall or a small acquisition by a payments or accounting vendor, and our sample shows several AP companies stuck at the YC deal for years. A large outcome requires winning a distinct segment against BILL and Tipalti, which already serve many customers."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "plate-iq",
+      "relevance": "Automated accounts payable, Summer 2015.",
+      "outcome_summary": "Raised $4M in 2017 including YC Continuity, still active after focusing on restaurants."
+    },
+    {
+      "slug": "routable",
+      "relevance": "B2B payables and payouts.",
+      "outcome_summary": "Raised a $12M Series A in Aug 2020 and was later acquired."
+    },
+    {
+      "slug": "mercoa",
+      "relevance": "AI agent for billpay platforms paying invoices, Winter 2023.",
+      "outcome_summary": "Only the $500K YC deal found in our record."
+    },
+    {
+      "slug": "controlhub",
+      "relevance": "Procure to pay software, Winter 2021.",
+      "outcome_summary": "No funding found and listed inactive."
+    },
+    {
+      "slug": "saldor",
+      "relevance": "Procurement tooling, Summer 2024.",
+      "outcome_summary": "Only the $500K YC deal found."
+    },
+    {
+      "slug": "sieve",
+      "relevance": "Recent AI data company seed for scale comparison.",
+      "outcome_summary": "Raised a $4M seed in Nov 2022."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Incumbents ship the same AI features",
+      "p": 0.45,
+      "evidence": "Tipalti markets AI agents for capture and coding and BILL and Ramp are adding AP agents; AP buyers favor existing platforms.",
       "analogs": [
-        "TODO-company-slug"
+        "plate-iq",
+        "mercoa"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Win a segment with messy invoices and own the chat interface for cash flow decisions."
+    },
+    {
+      "risk": "Long finance buying cycles and ERP integrations slow revenue",
+      "p": 0.4,
+      "evidence": "AP touches payments and accounting systems, requiring security reviews and integrations; ControlHub shut down without funding.",
+      "analogs": [
+        "controlhub"
+      ],
+      "mitigation": "Sell to smaller firms using QuickBooks first."
+    },
+    {
+      "risk": "AI accuracy and trust failures on payments",
+      "p": 0.25,
+      "evidence": "Wrong payments create cash loss, so customers require approval and audit steps.",
+      "analogs": [
+        "routable"
+      ],
+      "mitigation": "Human approval defaults and an audit trail."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Tipalti",
+      "what": "AP automation with AI agents for capture, coding and reconciliation",
+      "traction": "AP plan listed at $99 per month plus transaction fees",
+      "source_url": "https://tipalti.com/en-ca/invoice-management-ptr/"
+    },
+    {
+      "name": "BILL",
+      "what": "AP and AR automation",
+      "traction": "G2 rating 4.4, tiers from $49 per user per month in a Corpay comparison",
+      "source_url": "https://www.corpay.com/en-AU/resources/blog/tipalti-vs-bill-com"
+    },
+    {
+      "name": "HighRadius",
+      "what": "Enterprise autonomous finance with outcome based pricing",
+      "traction": "Vendor claim only",
+      "source_url": "https://www.highradius.com/resources/?p=213827"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Invoice extraction, coding and approvals are now achievable with current models, but ERP integrations, payment execution and accuracy at scale are hard; four engineers can ship a working pilot in about 3 months."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "BILL",
+      "Tipalti",
+      "Ramp",
+      "ERP vendors"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Incumbents with distribution already market AI agents for AP and could copy a chat interface in months, because the interface layer sits on top of the same invoice and payment data they hold."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Established AP vendors charge per user and per transaction, showing finance teams pay for payables automation today.",
+        "source_url": "https://www.corpay.com/en-AU/resources/blog/tipalti-vs-bill-com"
+      },
+      {
+        "claim": "Tipalti is marketing AI agents for AP, indicating demand for automation beyond invoice capture.",
+        "source_url": "https://tipalti.com/en-ca/invoice-management-ptr/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show live AP customers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run three pilots on real invoices",
+        "Report accuracy and hours saved"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Three paying pilots"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable sales.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one segment such as multi-location SMBs",
+        "Add QuickBooks and NetSuite connectors"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$30K MRR"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Proven willingness to pay for AP automation",
+      "evidence": "BILL and Tipalti charge subscription plus transaction fees.",
+      "source_url": "https://www.corpay.com/en-AU/resources/blog/tipalti-vs-bill-com"
+    },
+    {
+      "point": "Distinct interface angle",
+      "evidence": "Managing payables via phone, Teams, Slack or iMessage differs from dashboard centric rivals."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Clerked",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Clerked\" --era 2022+: invented or proper, 7 chars",
     "strengths": [
-      "TODO"
+      "Memorable and tied to clerks metaphor",
+      "Easy to spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Past tense verb is slightly odd",
+      "Could suggest legal clerks"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Character-driven names like Clerked fit an agents-as-employees story, similar in spirit to how other YC brands use a persona; the name is workable and secondary to product and distribution."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real pain with proven spend, but a crowded category where incumbents are adding the same AI features.",
+    "general_summary": "Clerked automates AP with AI agents controlled from chat. The forecast window is 13.4 months from 2025-10-06 to 2026-11-17. We estimate 0.38 for an outside round above about $1M closing in the window, from the 2022 to 2025 B2B anchor of 0.59 scaled for timing, with no hype lift. The analogs show AP companies commonly sit at the YC deal for a long time (Mercoa, Saldor) or need a niche (Plate IQ). These odds do not rank this company against others. Reaching a round later is common for companies with paying customers."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file and market searches were used.",
+    "Window 13.4 months ends 2026-11-17.",
+    "Seed means an outside round above about $1M.",
+    "Search results dated after 2025-10-06 were not relied on."
   ],
   "sources": [
-    "https://"
+    "https://tipalti.com/en-ca/invoice-management-ptr/",
+    "https://www.corpay.com/en-AU/resources/blog/tipalti-vs-bill-com",
+    "https://www.highradius.com/resources/?p=213827"
   ]
 }

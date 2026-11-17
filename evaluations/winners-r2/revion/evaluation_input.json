@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Revion",
+    "one_liner": "Intelligence for Automotive Operations",
+    "description": "Revion is building an operating system for automotive retail. Its first product automates the administrative work that takes 30 to 40 percent of a service technician's day, so dealerships and auto retailers can service more vehicles and earn more high margin revenue. Buyers are auto retail service departments. Team of 10 in New York City, Winter 2026 batch.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.008,
+    "p_high": 0.05,
+    "basis": "Already in the batch, so this is reported for completeness only. Start from the roughly 1 percent prior for a random applicant in references/yc_acceptance.md (band 0.6 to 2 percent), then adjust: a clear paid pain and a ten person team lift it about 2x, an AI vertical that fits current YC interest adds a little, and the crowded dealer AI space takes some back; no traction is stated.",
+    "why_it_fails": "YC would most plausibly say no because dealer service AI had several funded players by late 2025, the input states no customers or revenue, and a technician assistant looks like a feature that dealer management vendors could ship."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.29,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.53,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B: seed 47% / 53% / 59%, cond 53% (n=878). Timing: months_to_seed p25 4, p50 8, p75 20 (n=468).",
+        "adjustment_reason": "The anchor of 0.53 is the ever reached figure. The window is only 10 months, so about 55 percent of eventual seed raisers have raised by then (median 8 months), giving about 0.29. I do not lift for the hot AI vertical or the team of 10, per the winners test rule, and this number does not rank Revion against other companies."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            18000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small post YC round of $1M to $3M from angels and micro funds, the YC deal alone (about $500K) is excluded by the seed definition. A seed right after Demo Day is the common time, and a 10 person team can use a larger round than a founder pair."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            32000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal and reads low, so this band carries the most weight."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Larger institutional seed where press covered 2026 raises had a median of $6.0M (quartiles $4.3M and $10M, n=77, press leans to big rounds); needs live revenue or a standout team story."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside seed above $12M, seen in 2025 AI categories when several funds bid for a team with early enterprise traction."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Dealer service AI is a crowded 2025 category with Toma (W24) already past a Series A and ShortLoop (W23) at seed, so investors will ask why Revion wins technician workflow instead of the phone or sales side. A first product for technicians has to prove time saved inside real shops and integrate with dealer management systems such as CDK and Tekion. Clearline (S22) restarted as a dealership product after a failed pivot and shows how slowly this niche converts into priced rounds."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B: series_a cond 26% (n=468), ever 14% known-only, range 12% to 25%. Timing: months_to_series_a p25 21, median 28 (n=123).",
+        "adjustment_reason": "The anchor is the ever reached figure. A Series A within 10 months of the batch start is rare because the p25 for months to Series A is 21, so the probability is far below the anchor and reflects only a breakout."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin or small Series A, common for vertical software with early but modest revenue. Only a breakout ramp inside the first year would produce a Series A, so the thin band stays modest."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band around the 2022 and later Series A median of $15M (p25 $11M, p75 $21M)."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            220000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Strong growth round led by a top tier fund."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside where the category is hot and revenue compounds fast."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A inside 10 months would need seven figure recurring revenue from dealer groups, which the fastest dealer AI companies reach only after about a year of selling. Toma (W24) needed about a year to reach seven figure revenue before its Series A, and ShortLoop (W23) has stayed at seed, so the window is too short unless Revion lands dealer groups unusually fast."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.01,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.21,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B: series_b cond 21% (n=123), ever 3% known-only.",
+        "adjustment_reason": "The anchor is the ever reached rate given Series A. A Series B inside a window of 10 months is rare because months_to_series_b has a median of 32 to 47 months from the batch start in time_to_milestones.csv, so only a breakout gets there."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.1,
+          "rationale": "Thin Series B or bridge."
         },
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band; the 2022 and later Series B median is $40M."
+        },
+        {
+          "raise_usd": [
+            40000000,
+            70000000
+          ],
+          "post_money_usd": [
+            350000000,
+            700000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Hot company band; the 2022 and later post money median is $600M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            120000000
+          ],
+          "post_money_usd": [
+            700000000,
+            1500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Breakout upside."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B inside the window would need scaling to hundreds of dealerships, which almost no company of this kind does in under two years. Toma (W24) took years from batch to a Series B in the researched data, and ShortLoop (W23) shows the same slow path, so the window is too short for this step unless the company breaks out early."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B: series_c cond 19% (n=26), ever 1% known-only.",
+        "adjustment_reason": "The anchor is conditional on Series B and ever reached, from a tiny sample. Inside the window almost nobody reaches Series C, so I keep a low nonzero figure for a breakout path with several fast rounds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.08,
+          "rationale": "Thin extension round."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central band; the 2022 and later Series C median is $74M."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2000000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Strong growth round."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            6000000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Category leader upside."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window is close to impossible for a ten person company in its first year, which would need several consecutive hypergrowth rounds. The researched Series C companies such as Postscript (W19) took roughly four to five years from batch, and nothing visible today points to the category defining ramp that would be required."
     }
   ],
   "outcomes": {
@@ -164,167 +260,208 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely Revion stalls as one of many dealership AI tools: Tekion, CDK and other dealer management vendors ship technician assistants, dealer groups consolidate on one vendor, and the team pivots or is acqui-hired. Clearline (S22) restarted for dealerships after a failed LLM product and has no round, and ShortLoop has stayed at seed."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "toma",
+      "relevance": "Winter 2024 AI for car dealerships",
+      "outcome_summary": "Reached seven figure revenue in under a year and raised a $17M Series A in 2025; shows the upside path for a dealership wedge."
+    },
+    {
+      "slug": "shortloop",
+      "relevance": "Winter 2023 phone AI for dealership revenue",
+      "outcome_summary": "Raised a seed and no later round found; stuck at seed in the same buyer segment."
+    },
+    {
+      "slug": "clearline",
+      "relevance": "Summer 2022 AI for automotive dealerships",
+      "outcome_summary": "Pivoted after a failed first product, restarted for dealerships, still no priced round."
+    },
+    {
+      "slug": "cardash",
+      "relevance": "Summer 2017 managed marketplace for car services",
+      "outcome_summary": "Raised a seed and was acquired; shows auto service ventures end as small exits."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Dealer management vendors ship the same assistant",
+      "p": 0.5,
+      "evidence": "Tekion and mykaarma already sell service AI agents and own the data and integrations that a technician tool needs.",
       "analogs": [
-        "TODO-company-slug"
+        "toma",
+        "shortloop"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Own one workflow such as inspection notes to repair orders with measured shop hours saved."
+    },
+    {
+      "risk": "Technician adoption and integration friction",
+      "p": 0.4,
+      "evidence": "Technicians are not software buyers, the dealer principal is; the product must integrate with legacy DMS systems and prove time saved.",
+      "analogs": [
+        "clearline",
+        "cardash"
+      ],
+      "mitigation": "Sell to service directors with a per shop ROI and install in days."
+    },
+    {
+      "risk": "Window too short for a priced round",
+      "p": 0.35,
+      "evidence": "Winter 2026 seeds cluster at Demo Day, so a 10 month window catches only the early half of eventual raises.",
+      "analogs": [
+        "shortloop",
+        "clearline"
+      ],
+      "mitigation": "Aim for revenue proof by Demo Day."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Tekion service AI",
+      "what": "Dealer management platform with AI service agents that draft repair orders and summarize technician notes",
+      "traction": "Large installed dealer base",
+      "source_url": "https://www.tekion.com/service-ai"
+    },
+    {
+      "name": "Fullbay AI service order",
+      "what": "Turns technician notes into service order text, vendor claims 20 percent less paperwork",
+      "traction": "Shop software installed base, claim unverified",
+      "source_url": "https://www.fullbay.com/products/integrations/ai-powered-service-order/"
+    },
+    {
+      "name": "Manual notes by technicians and advisors (status quo)",
+      "what": "Paperwork done by hand after each job",
+      "traction": "Universal today",
+      "source_url": "https://www.motor.com/2025/07/new-report-released-on-ai-adoption-in-dealership-service-departments/"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Speech to repair order drafting is easy to prototype; the hard parts are integrating with dealer management systems, handling parts and labor codes and reaching accuracy a service manager will trust. A small team can ship a narrow version in three months."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Tekion",
+      "CDK Global",
+      "Reynolds and Reynolds",
+      "mykaarma"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "DMS vendors already ship service AI and have the integrations, so a technician assistant is a feature for them within a year."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "A Motor report found nearly 68 percent of early adopters in dealership service report measurable AI benefits and 81 percent of dealers plan bigger AI budgets in 2025",
+        "source_url": "https://www.motor.com/2025/07/new-report-released-on-ai-adoption-in-dealership-service-departments/"
+      },
+      {
+        "claim": "One Mercedes-Benz dealership cut total repair order time from 6.5 to 4.3 days with AI, a single account",
+        "source_url": "https://wardsauto.com/news/a-mercedes-benz-dealerships-service-director-embraces-ai-to-improve-turn-t/830839"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove time saved inside real service departments",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Install in 3 dealership service departments",
+        "Measure technician hours recovered per week"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Documented hours saved and a paid pilot"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Turn pilots into recurring contracts at a dealer group",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Land one dealer group with 10 or more stores",
+        "Integrate with the two largest DMS vendors"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$30K monthly recurring revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Multi group sales motion beyond the first product",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add a second workflow from the operating system pitch",
+        "Hire a dealer industry enterprise seller"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M annual recurring revenue across 5 dealer groups"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Measured, quantifiable shop pain",
+      "evidence": "Technician administrative time of 30 to 40 percent is a claim in the input, and dealers report adoption benefits in industry surveys.",
+      "source_url": "https://www.motor.com/2025/07/new-report-released-on-ai-adoption-in-dealership-service-departments/"
+    },
+    {
+      "point": "Dealer AI is proven to reach Series A",
+      "evidence": "Toma (W24) raised a Series A after fast revenue growth in the same buyer segment.",
+      "source_url": ""
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Revion",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Revion\" --era 2022+ : 6 characters, 1 word, 2 syllables",
     "strengths": [
-      "TODO"
+      "Short and easy to say",
+      "Rev suggests revenue and revving engines"
     ],
     "weaknesses": [
-      "TODO"
+      "Invented name close to many Rev prefixed software companies"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A short invented name that hints at revenue and engines, but it sounds like many software names. YC cases such as Toma (W24) show a plain short name did not stop a dealer AI company from raising, so the name is neutral."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real dealership pain with strong comps, but a 10 month window makes a priced seed less likely than not.",
+    "general_summary": "Revion automates technician paperwork for dealership service departments. The need is measurable and Toma shows dealership AI can raise a Series A, but the space was already crowded in January 2026 and DMS vendors ship similar assistants. The window is only 10 months, so the probability uses the B2B timing curve, not a lift for team size. A Series A inside the window is very unlikely. The odds do not rank Revion against other companies."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file was used about the company; no site, directory page or news about it was read.",
+    "Window is 10 months from 2026-01-05 to 2026-11-17.",
+    "Seed means a round above about $1M from outside investors, not the standard YC deal of about $500K, that closes inside the window.",
+    "The company is already in YC, so the acceptance figure is reported for completeness only.",
+    "Web search covered the market only. Results dated after the as of date or naming the company were to be ignored; none named it.",
+    "Funding coverage in the repo data is incomplete (see base_rates.py ranges), so the anchors are lower to upper ranges and not exact."
   ],
   "sources": [
-    "https://"
+    "https://www.motor.com/2025/07/new-report-released-on-ai-adoption-in-dealership-service-departments/",
+    "https://www.tekion.com/service-ai",
+    "https://www.fullbay.com/products/integrations/ai-powered-service-order/",
+    "https://wardsauto.com/news/a-mercedes-benz-dealerships-service-director-embraces-ai-to-improve-turn-t/830839"
   ]
 }

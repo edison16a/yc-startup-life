@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Thirdlayer",
+    "one_liner": "Continual learning for enterprise AI",
+    "description": "A learning and alignment layer for enterprise AI agents: it ingests messy organizational context, processes and permission-sensitive data, grades agents against outcomes the company defines, and turns each interaction into feedback so agents improve. Customers run internal agents on it or embed it in AI products. Two person team in San Francisco; tags Productivity and AI.",
+    "as_of": "2025-01-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.05,
+    "basis": "Start from about 1 percent. Adjust up for a timely topic (enterprise agents and evals) and a technical pitch; adjust down for a two person team with no stated traction, a very abstract pitch ('learning and alignment layer') with no named customer, and a crowded set of context-layer and eval companies such as Credal and Unify. Net about 2 percent. It is already in the Winter 2025 batch.",
+    "why_it_fails": "YC would most plausibly say the pitch is a layer of buzzwords with no named customer or product proof: ingest context, grade agents and learn from feedback describes retrieval, evals and fine-tuning, each owned by funded players. With two founders and no revenue, the interview would test whether anyone has asked for this."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.55,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026 gave seed 36% lower / 44% known / 54% upper, cond 44% (n=1541); series_a cond 20% (n=679); series_b cond 19% (n=136); series_c cond 19% (n=26). Calibration-only B2B: seed 52/65/72, series_a cond 32%, series_b cond 46%.",
+        "adjustment_reason": "Window is 22.4 months (2025-01-06 to 2026-11-17); seed means an outside round above about $1M closing in it. Anchor 0.44 known-only (36 to 54 percent range) for B2B 2022+ is an ever figure for a still-maturing cohort, and the median time to seed is 6 months with p75 14, so nearly all ever-seeds close inside 22 months. For earlier cohorts the calibration-only B2B figure is 0.65. I use 0.55, the 1.25x cap, because AI infrastructure for enterprise agents drew heavy seed funding in 2024 and Credal and Unify both raised seeds, but a 2 person team with no stated customers earns no further lift. The odds do not rank the company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            28000000.0,
+            60000000.0
+          ],
+          "p_band": 0.22,
+          "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            55000000.0,
+            120000000.0
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed fails if the company cannot show enterprise customers using the loop: enterprise AI infrastructure sells slowly, and the pitch overlaps with context retrieval (Credal), model improvement (Unify) and eval and observability tools. Two founders have limited capacity to run enterprise pilots, and investors may prefer vendors with a concrete workflow over a general layer. Even with a 22 month window a vague layer can stall without a round."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_a cond 20% (n=679); time table months_to_series_a p50 28, p25 19 (era 2022+).",
+        "adjustment_reason": "Given a seed, Series A inside 22.4 months is feasible: months_to_series_a p25 is 19 and median 28 for 2022+ cohorts, so roughly a quarter of ever-A companies get there in this window. Against a 0.20 cond anchor I use 0.20 as the window cut is offset by the hot-category lift, and it is not above the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin or flat-ish Series A on modest ARR; the 2018-2021 B2B series_a p25 was $10M, so this is below the typical cohort round and covers extension-like A rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000.0,
+            120000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Central case. B2B 2022+ series_a raise p25 $13M, median $17M, p75 $22M (n=130); post-money reported for only n=3 so valuation is thin data."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band with fast ARR growth in a hot AI category; 2022+ all-industry series_a post-money p75 was $345M on n=18 reported rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs enterprise contracts with recurring revenue of about $1M to $2M, in a field where enterprises run long pilots. Customers may build the loop in-house with their model provider, and an abstract learning layer can fail to show a measurable improvement per dollar. Analogs Credal and Unify reached seed but their later rounds were slower than expected."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.18,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_b cond 19% (n=136); calibration-only B2B cond 46% (n=61); lower/known/upper ranges 1/2/19 percent ever.",
+        "adjustment_reason": "Anchor cond 19 percent; 0.18 slightly lower because a horizontal agent layer lacks a clear category and few analogs reached Series B."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000.0,
+            35000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000.0,
+            250000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin Series B below the cohort p25 of $39M, flat or modest step up."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000.0,
+            700000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Central: B2B 2022+ series_b median $42.5M raise and $600M post (n=9 valuations)."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            700000000.0,
+            1500000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category leader; era is inflated by AI rounds so use with care."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B requires the layer to become a standard part of enterprise agent stacks with net revenue retention above 120 percent. Model providers and cloud platforms are adding evals and memory, so a standalone layer may be squeezed to a feature. Pachyderm (W15), a data pipeline company, shows infrastructure can reach a Series B but then end in an acquisition."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.15,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_c cond 19% (n=26); calibration-only B2B cond 50% (n=28).",
+        "adjustment_reason": "Anchor cond 19 percent; 0.15, since horizontal infrastructure rarely reaches Series C in this cohort and no close analog has."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000.0,
+            80000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            900000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest growth round; series_c 2022+ p25 raise $50M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000.0,
+            2000000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central: 2022+ series_c median raise $74M to $101M, post-money median about $1.2B (n=3 to 34)."
+        },
+        {
+          "raise_usd": [
+            150000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            2000000000.0,
+            6000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: breakout category winner, cf. Bland-style rounds; very few companies."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C requires tens of millions in revenue and a clear lead in an enterprise category that model labs and clouds are actively entering. Competitors with larger distribution (model providers, data platforms) can bundle continual learning, and acquisition by one of them is the common end for infrastructure companies like Pachyderm."
     }
   ],
   "outcomes": {
@@ -164,153 +224,206 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.12
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          20000000000.0
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Horizontal AI infrastructure startups from this wave, such as the enterprise context and agent platform companies in the same cohort, mostly stall or are acquired small, because model providers and cloud platforms absorb context, eval and feedback features. A $1B outcome requires that continual learning become a separate enterprise product category and that Thirdlayer lead it."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "unify",
+      "relevance": "Models that keep learning, W23; closest on continual learning.",
+      "outcome_summary": "Alive with a seed round of about $8M reported; shows investor interest in the theme."
+    },
+    {
+      "slug": "credal-ai",
+      "relevance": "Context in, accurate agents out, W23; enterprise context and permissions layer.",
+      "outcome_summary": "Alive with a seed round; shows an enterprise context layer can raise."
+    },
+    {
+      "slug": "driver",
+      "relevance": "Context for codebases, W24.",
+      "outcome_summary": "Alive with a seed."
+    },
+    {
+      "slug": "ellipsis",
+      "relevance": "Managed agent platform, W24.",
+      "outcome_summary": "Alive with a seed; takeover risk rated 5."
+    },
+    {
+      "slug": "pachyderm",
+      "relevance": "Data pipelines and lineage infrastructure, W15.",
+      "outcome_summary": "Reached series_b then was acquired."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "No clear product: learning and alignment layer is abstract, and customers cannot say what to buy.",
+      "p": 0.4,
+      "evidence": "The description covers context ingestion, grading and feedback in one sentence without a concrete workflow.",
       "analogs": [
-        "TODO-company-slug"
+        "credal-ai",
+        "unify"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick one agent use case, show measured improvement and sell that."
+    },
+    {
+      "risk": "Model providers and cloud platforms ship memory, evals and fine-tuning loops for enterprises.",
+      "p": 0.35,
+      "evidence": "Major providers already add agent memory and evaluation tools to enterprise offerings.",
+      "analogs": [
+        "ellipsis",
+        "driver"
+      ],
+      "mitigation": "Stay model-agnostic and own the customer-specific outcome definitions."
+    },
+    {
+      "risk": "Long enterprise sales cycles with only two founders.",
+      "p": 0.3,
+      "evidence": "Enterprise AI pilots typically take months and need security reviews for permission-sensitive data.",
+      "analogs": [
+        "credal-ai"
+      ],
+      "mitigation": "Start with mid-market AI-product companies that embed the layer."
+    },
+    {
+      "risk": "Customers build the loop in-house with open-source evals.",
+      "p": 0.25,
+      "evidence": "Open-source eval and retrieval frameworks are widely available and free for engineering teams to adopt.",
+      "analogs": [
+        "pachyderm",
+        "unify"
+      ],
+      "mitigation": "Sell outcomes and compliance, not tooling."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Credal",
+      "what": "Enterprise context and permissions layer for agents",
+      "traction": "Seed raised in 2023 to 2024 per the researched record",
+      "source_url": "https://techcrunch.com/2023/10/26/credal-aims-to-connect-company-data-to-llms-securely/"
+    },
+    {
+      "name": "Unify",
+      "what": "Models that keep learning",
+      "traction": "About $8M raised per reported funding",
+      "source_url": "https://www.startupmag.co.uk/funding/unify-raised-8000000"
+    },
+    {
+      "name": "Model providers and clouds",
+      "what": "Memory, evals and fine-tuning services bundled with models",
+      "traction": "Large installed base",
+      "source_url": "https://www.ycombinator.com/companies/unify"
+    },
+    {
+      "name": "Status quo: in-house prompt tuning and evals",
+      "what": "Teams iterate prompts and offline evals by hand",
+      "traction": "Default for enterprises",
+      "source_url": "https://www.ycombinator.com/companies/credal-ai"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Structuring messy context, enforcing permissions and turning outcomes into reliable agent improvement is hard research and engineering; two people can build a narrow version in 3 months but a general learning layer across customers needs model training, evaluation data and security, which exceeds a small team."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "OpenAI, Anthropic, Google",
+      "Microsoft and Salesforce",
+      "data platforms such as Databricks"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Providers are adding memory and evals for enterprise agents and have distribution and the model access; a rival would need 6 to 12 months to ship a comparable feature and has the incentive, so platform dependency is real."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Enterprises struggle to get agents to work on their own context and processes, and context-layer companies like Credal raised seeds on that need.",
+        "source_url": "https://techcrunch.com/2023/10/26/credal-aims-to-connect-company-data-to-llms-securely/"
+      },
+      {
+        "claim": "Investors funded a continual learning model company (Unify) with an $8M raise.",
+        "source_url": "https://www.startupmag.co.uk/funding/unify-raised-8000000"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a measurable agent improvement for a named customer.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one use case and one design partner",
+        "Publish a before and after metric"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Task success rate improvement over weeks"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paying enterprise or AI-product customers within 22 months.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Convert pilots to contracts",
+        "Package a narrow product: outcome grading plus feedback loop",
+        "Pitch AI infrastructure seed funds with the improvement curves"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$25K+ MRR and a seed above $1M"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Timely theme with funded precedents in the same batch cohort 2023 to 2024.",
+      "evidence": "Credal and Unify both raised seeds.",
+      "source_url": "https://www.startupmag.co.uk/funding/unify-raised-8000000"
+    },
+    {
+      "point": "Technical pitch aimed at a pain enterprises report: agents that do not improve.",
+      "evidence": "Input description of grading agents against outcomes.",
+      "source_url": "https://thirdlayer.inc"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Thirdlayer",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Thirdlayer\" --era 2022+: 10 chars, 1 word, invented or proper name.",
     "strengths": [
-      "TODO"
+      "Short, memorable invented name",
+      "Suggests an infrastructure layer"
     ],
     "weaknesses": [
-      "TODO"
+      "Meaning is unclear and the spelling is ambiguous"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "An invented one-word name resembles the infrastructure names like Credal and Unify, memorable and unconstrained but meaningless without explanation; it neither helps nor hurts."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
+    "headline": "A timely but abstract enterprise AI layer with funded neighbors; a 22 month window makes a seed above $1M more likely than not, but not by much.",
+    "general_summary": "Thirdlayer sells continual learning and alignment for enterprise agents. Neighbors Credal and Unify raised seeds, which shows investors back the theme, but the pitch is abstract, the team is two, and model providers are adding the same features. The window is 22.4 months, long enough that nearly all companies that will ever raise a seed have done so, so I use the cohort anchor lifted to 0.55, the cap. The odds do not rank the company against others. The biggest risk is that no concrete product emerges.",
     "deep_dive": {
       "market_need": "TODO: 60+ words",
       "competition": "TODO: 60+ words",
@@ -322,9 +435,15 @@
     }
   },
   "assumptions": [
-    "TODO"
+    "Window is 22.4 months from 2025-01-06; seed means an outside round above about $1M.",
+    "Only the input file was used.",
+    "Market search returned only items dated after as_of for this company's topic; I ignored them and used older YC records (W23, W24) for analogs, and no result named Thirdlayer.",
+    "Sources are pre-as_of records for analogs."
   ],
   "sources": [
-    "https://"
+    "https://techcrunch.com/2023/10/26/credal-aims-to-connect-company-data-to-llms-securely/",
+    "https://www.startupmag.co.uk/funding/unify-raised-8000000",
+    "https://www.ycombinator.com/companies/unify",
+    "https://www.ycombinator.com/companies/credal-ai"
   ]
 }

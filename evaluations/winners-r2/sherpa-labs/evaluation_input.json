@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Sherpa Labs",
+    "one_liner": "Frontier Data",
+    "description": "No description beyond the one liner Frontier Data. Tags: reinforcement learning, data labeling, AI. Five person team in San Francisco, B2B, assumed to sell training data, RL environments and expert labeling to frontier AI labs.",
+    "as_of": "2025-01-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.015,
+    "p_low": 0.006,
+    "p_high": 0.035,
+    "basis": "Prior of about 1 percent (yc_acceptance.md, range 0.6 to 2 percent). Up for an AI data niche fitting YC's AI focus and a five person team; down because the pitch is a single phrase and data labeling has a dominant incumbent in Scale AI. Net about 1.5 percent. The company is already in the Winter 2025 batch, shown for completeness.",
+    "why_it_fails": "YC would most plausibly say no because 'Frontier Data' does not say what is sold, to whom or why a lab would buy from a five person startup instead of Scale AI or Surge, and customer concentration among a few labs is a known risk."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.52,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.64,
+        "source": "python3 -I scripts/base_rates.py --tag AI --calibration-only: seed 51% / 64% / 71% (cond 64%, n=183); B2B 2022-2025 cond 59% (n=126). time_to_milestones.csv era:2022+ months_to_seed p25 3, median 6, p75 14.2.",
+        "adjustment_reason": "Window is 22.4 months from 2025-01-06 to 2026-11-17, long enough for about 85 percent of eventual seeds to land in the 2022+ timing table (p75 is 14 months). The target is an outside round above about $1M, not the YC deal. 0.64 x 0.85 x about 0.95 for the exclusion is 0.52. No lift for sector heat or team size per the winners test; these odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small post YC round under $3M, common for data companies with a few lab pilots; Lightly raised $3M and Playment $1.6M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            22000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed, near Sieve's $4M seed and the 2022+ B2B median of $3.5M."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Larger seed if lab contracts show revenue; confirmed 2026 raises above $1M had median $6.0M but lean high."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            160000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if lab demand and a recognized founding team create a hot round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed fails if demand from labs is lumpy and the company lacks a repeatable edge. Scale AI raised $1B at $13.8B in May 2024 and has deep lab relationships. Past YC data companies split: Centaur reached a $15M Series A and Sieve a $4M seed, while Sepal AI stayed at the $500K YC deal and was acquired. A five person team with no stated product detail may be treated as services, which investors discount."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.15,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --tag AI --calibration-only: series_a 15% / 19% / 36%, cond 30% (n=117); months_to_series_a 2022+ median 28, p25 19.4.",
+        "adjustment_reason": "The window is 22.4 months, covering the p25 of 19 to Series A but not the median of 28, so about half of eventual Series A timing is inside the window. 0.30 x 0.5 is 0.15, within 2x of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Smaller A for a data services business with concentrated customers."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ A, median $15M, for real revenue from several labs."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            150000000,
+            400000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside A if revenue grows fast on RL environment demand."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A depends on revenue growing beyond one or two lab customers. Data vendors face customer concentration, pricing pressure and labs building in house, and investors discount service-like gross margins. Playment shows a labeling company can raise modest seeds yet not reach the scale of Scale AI."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.31,
+        "source": "python3 -I scripts/base_rates.py --tag AI --calibration-only: series_b cond 31% (n=35).",
+        "adjustment_reason": "Reduced from the anchor because the window is short for a Series B; within 2x."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series B with strong revenue but high customer concentration among a few labs."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical 2022+ Series B round, median $40M, with several labs under contract."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the company becomes a leading source of RL data."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B is reached by a small share of seed companies, and it requires diversified customers and a data moat, not just labor. If frontier labs vertically integrate or consolidate vendors around Scale AI, Surge and a few others, growth would stall and investors would pass because lab budgets can shift quickly with each model generation."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.45,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --tag AI --calibration-only: series_c cond 45% (n=11).",
+        "adjustment_reason": "At the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            90000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical Series C round, with the 2022+ table median at $74M and post money near $1.2B."
         },
         {
           "raise_usd": [
-            0,
-            0
+            90000000,
+            200000000
           ],
           "post_money_usd": [
-            0,
-            0
+            1200000000,
+            3000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Strong growth case with scaled revenue and a high valuation near the top of the range."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            50000000
+          ],
+          "post_money_usd": [
+            250000000,
+            500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Flat or down round if lab spending cools."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Few data vendors reach this stage. Late stage requires durable demand from labs that may build data in house or buy from fewer vendors; revenue tied to a small number of AI budgets can reverse quickly when a lab changes its training recipe, and a late stage investor would price in that volatility and the risk that Scale AI or an in-house team wins the next contract."
     }
   ],
   "outcomes": {
@@ -164,167 +224,198 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.4
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.32
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.21
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          6000000000
         ],
-        "p": 0.0
+        "p": 0.07
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The data vendor market is concentrated around a dominant incumbent and depends on a few lab customers. Small vendors often end in acquisition by a larger data or AI company at modest prices, as Sepal AI did, and a miss on lab demand ends in a stall."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "centaur",
+      "relevance": "Annotation and data quality for AI, Winter 2019.",
+      "outcome_summary": "Raised a $15M Series A in Sept 2021 and is active."
+    },
+    {
+      "slug": "sieve",
+      "relevance": "Multimodal data lab, Winter 2022.",
+      "outcome_summary": "Raised a $4M seed in Nov 2022 and is active."
+    },
+    {
+      "slug": "playment",
+      "relevance": "Labeling marketplace for enterprises.",
+      "outcome_summary": "Raised small seeds of $699K and $1.6M and was acquired."
+    },
+    {
+      "slug": "sepal-ai",
+      "relevance": "Data development for advanced AI, Summer 2024.",
+      "outcome_summary": "Only the $500K YC deal found; acquired."
+    },
+    {
+      "slug": "lightly",
+      "relevance": "ML data curation, Summer 2021.",
+      "outcome_summary": "Raised a $3M seed in May 2022 and is active."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Customer concentration among a few labs",
+      "p": 0.45,
+      "evidence": "Frontier AI spend is concentrated in a handful of labs that can switch vendors or build in house.",
       "analogs": [
-        "TODO-company-slug"
+        "playment",
+        "sepal-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Diversify across labs and enterprise model builders early."
+    },
+    {
+      "risk": "Scale AI and other large vendors win the contracts",
+      "p": 0.35,
+      "evidence": "Scale AI raised $1B at $13.8B in May 2024 and counts the large labs as customers.",
+      "analogs": [
+        "centaur"
+      ],
+      "mitigation": "Specialize in a hard domain with expert annotators and environments."
+    },
+    {
+      "risk": "Service-like margins and unclear moat",
+      "p": 0.35,
+      "evidence": "Data labeling is labor intensive and the input gives no product description.",
+      "analogs": [
+        "playment",
+        "lightly"
+      ],
+      "mitigation": "Build tooling and quality checks that raise margins."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Scale AI",
+      "what": "Data labeling and RLHF data for frontier labs",
+      "traction": "Raised $1B at a $13.8B valuation in May 2024",
+      "source_url": "https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b"
+    },
+    {
+      "name": "Scale AI funding history",
+      "what": "Prior raises including a $325M Series E in 2021",
+      "traction": "About $600M raised before the 2024 round",
+      "source_url": "https://www.nbcnews.com/news/rcna153327"
+    },
+    {
+      "name": "Centaur",
+      "what": "Competitive annotation for AI",
+      "traction": "$15M Series A in 2021 per our records",
+      "source_url": "https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Building quality data and RL environments needs domain expertise and pipelines for verifying outputs; a five person team can run a first lab pilot in about 3 months but scaling quality labor is hard."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Scale AI",
+      "Labs building in house",
+      "Other data vendors"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Larger vendors can add similar services quickly, and labs can build in house, but specialized expert data is hard to replicate at speed."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Scale AI's valuation doubled to $13.8B on a $1B raise in May 2024, showing large paid demand for AI training data.",
+        "source_url": "https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b"
+      },
+      {
+        "claim": "Capital flowing into foundation model companies drove Scale's revenue growth including RLHF work.",
+        "source_url": "https://www.nbcnews.com/news/rcna153327"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Land a first lab pilot.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run a paid pilot with a model team",
+        "Document data quality against a benchmark"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "One paid pilot"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeat across labs.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign three paying labs or model builders",
+        "Show gross margin above 40 percent"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$50K MRR across several customers"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large paid market near the frontier",
+      "evidence": "Scale AI's 2024 round shows investors and labs spend heavily on training data.",
+      "source_url": "https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b"
+    },
+    {
+      "point": "Sector fits YC's AI focus and recent YC data companies reached rounds",
+      "evidence": "Centaur, Sieve and Lightly all raised after YC."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Sherpa Labs",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Sherpa Labs\" --era 2022+: name plus descriptor, 10 chars",
     "strengths": [
-      "TODO"
+      "Guide metaphor fits helping labs climb",
+      "Memorable"
     ],
     "weaknesses": [
-      "TODO"
+      "Labs suffix is common",
+      "Existing Sherpa brands"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Name plus descriptor forms like Sherpa Labs are common among YC AI companies and neutral for outcomes; the guide metaphor is decent but not distinctive, and buyers are labs who care about quality not names."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A hot AI data niche with a dominant incumbent and little visible product detail.",
+    "general_summary": "Sherpa Labs appears to sell frontier training data to AI labs. The forecast window is 22.4 months from 2025-01-06 to 2026-11-17, long enough for most seed timing. We give 0.52 for an outside round above about $1M closing in the window, from the AI cohort anchor of 0.64 with no hype lift. Analogs split between Centaur and Sieve, which raised, and Sepal AI, which stayed at the YC deal. These odds do not rank this company against others. Reaching a round years later is common for companies with paying customers."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file and market searches were used.",
+    "Window 22.4 months ends 2026-11-17.",
+    "The input has no description, so the business is inferred from tags.",
+    "Search results dated after 2025-01-06 were excluded."
   ],
   "sources": [
-    "https://"
+    "https://techcrunch.com/2024/05/21/data-labeling-startup-scale-ai-raises-1b-as-valuation-doubles-to-13-8b",
+    "https://www.nbcnews.com/news/rcna153327"
   ]
 }
