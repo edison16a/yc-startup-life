@@ -251,3 +251,28 @@ Sample: 16 records drawn at random from the 330 most recently written (palla, fi
 | kaipod-learning | 4 | 2 | 1 | 0 | Aggregator pre-seed; undated competitor. |
 
 Totals: 81 fields checked. Strict: 32 wrong (39.5 percent). Middle: 14 wrong (17.3 percent). Lenient: 0 wrong (0 percent). The limit is 10 percent. Result: not accepted. The middle rate rose from about 10 percent in audit 10 to 17 percent, partly because these auditors opened more pages. The dominant defects are the same: a round or co-founder that a cited article states directly but the researcher left out or left blank (amount, investors, stage), and competitors whose sources are dated after the as_of. Action: the research prompt gets two more lessons (use the cited article's own total raised and investor list to find missing rounds; read the company story page for co-founders), the flagged records are corrected, and a completeness correction pass over earlier records is required before the final audit. AUDIT RESULT is not PASS.
+
+## Waves 31 and 32, audit 12
+
+Sample: 16 records drawn at random from the 330 most recently written (stipop, awtomic, treinta, studystream, siglo, text-blaze, kodex, rootly, zensors-inc, titipku, daedalus, synder, kodo, medpiper-technologies-inc, recall-ai, modernbanc). This is the first audit of records written after the researcher prompt gained lessons 7 to 9 (use cited articles' totals to find missing rounds, read company story pages for co-founders, date competitor sources near the batch). Two auditors opened about 10 pages each. Three counts as before.
+
+| Slug | Fields checked | Strict | Middle | Lenient | Notes |
+|---|---|---|---|---|---|
+| stipop | 4 | 3 | 1 | 0 | Rounds empty; competitor sourced to an undated page. |
+| awtomic | 3 | 4 | 3 | 0 | Two co-founders named on the company about page (opened) missing; competitor source dated after as_of. |
+| treinta | 7 | 5 | 2 | 0 | Forbes Colombia (opened) calls the 14.3M round seed with named investors; Series A investors incomplete. |
+| studystream | 6 | 2 | 0 | 0 | Aggregator rounds and competitors. |
+| siglo | 4 | 2 | 0 | 0 | Aggregator seed; competitors empty. |
+| text-blaze | 5 | 2 | 0 | 0 | Aggregator pre-seed; competitors empty. |
+| kodex | 5 | 2 | 1 | 0 | Company blog says total raised 12M, implying about 2M earlier unrecorded. |
+| rootly | 6 | 2 | 1 | 0 | Competitor citation does not support PagerDuty. |
+| zensors-inc | 3 | 3 | 0 | 0 | Aggregator co-founder and seed. |
+| titipku | 5 | 2 | 0 | 0 | Aggregator deal. |
+| daedalus | 5 | 3 | 0 | 0 | Founder via unopened page; aggregator pre-seed. |
+| synder | 6 | 2 | 0 | 0 | Aggregator seed. |
+| kodo | 4 | 2 | 0 | 0 | Co-founder via search summaries. |
+| medpiper-technologies-inc | 5 | 2 | 0 | 0 | Aggregator seeds. |
+| recall-ai | 7 | 1 | 1 | 0 | Seed investors named in the company post missing; seed source_url wrong. |
+| modernbanc | 4 | 2 | 0 | 0 | Aggregator seed. |
+
+Totals: 79 fields checked. Strict: 39 wrong (49.4 percent). Middle: 9 wrong (11.4 percent). Lenient: 0 wrong (0 percent). The limit is 10 percent. Middle fell from 17.3 percent (audit 11) to 11.4 percent, still above the limit. The two auditors differed sharply (middle 8 of 40 versus 1 of 39), which shows the count depends on which pages an auditor opens. Remaining middle defects are real: co-founders on the company's own page, seed investors and stage taken from a cited article, totals that imply a missed round. Action: correct the flagged records. The final audit will use at least 25 records and a middle-style count with the auditors told to open the company's own pages and cited articles. AUDIT RESULT is not PASS.
