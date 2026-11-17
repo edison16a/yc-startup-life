@@ -82,3 +82,20 @@ Sample: 12 records (stripe, dropbox, brex, faire, groww, algolia, retool, langfu
 | twitch | 7 | 4 | Seibel listed as co-founder without YC support; Kan education uncited; Series C omitted; exit source weak. |
 
 Totals: about 81 fields checked, about 34 wrong (about 42 percent), limit 10 percent. Result: wave NOT accepted. The error pattern is systematic: (1) founder education and prior employers filled from general knowledge without a source, (2) real, documented funding rounds left in notes as unverified when a primary source exists, (3) competitor entries whose source is dated years after founding. Action: the research prompt now forbids uncited education, requires recording rounds that a company blog or press release confirms, and forbids unstated stage labels. The 12 audited records are corrected. All depth 2 records written before this prompt change (every record in data/enrichment so far) still carry these defects at an unmeasured rate and need a completeness correction pass before the final audit can pass. AUDIT RESULT is therefore not PASS.
+
+## Wave 10 (rest shards, strict prompt with audit lessons), audit 5
+
+Sample: 8 records (armory, metaplane, humi, embrace, gaiia, mono, kovi, pachama). One auditor. A field is one founder entry, one round, the exit or the competitor list; counts are approximate.
+
+| Slug | Fields checked | Wrong | Notes |
+|---|---|---|---|
+| armory | 9 | 3 | CEO and co-founder Daniel Odio omitted; exit amount (about $7M cash, TechCrunch 2024-01-11) left null; seed investor list unsupported. |
+| metaplane | 8 | 2 | Founder employers and education omitted though TechCrunch states them; founding year conflict (2019 vs 2020) not noted. |
+| humi | 7 | 2 | Co-CEO Simon Bourgeois omitted; exit price conflict (CAD 100M vs 155M) not noted. |
+| embrace | 8 | 1 | Co-founder from a single article only (flagged in record). |
+| gaiia | 8 | 2 | Prior employer for one founder inferred, not sourced; Series A dated 2024-06 where the source says May 2024. |
+| mono | 8 | 2 | Pre-seed omitted; competitor list incomplete. |
+| kovi | 8 | 1 | Competitor name misquoted (Movida vs Movia in the source). |
+| pachama | 7 | 1 | About $9M of earlier funding not itemised as rounds. |
+
+Totals: about 63 fields checked, 14 wrong or incomplete (22 percent), limit 10 percent. Result: wave NOT accepted. Down from 42 percent in audit 4 after the prompt change, but still over the limit. Remaining error types: co-founders and CEOs named in press but not on the YC page, early rounds not itemised, exit amounts left null when a source states them, and small date errors. AUDIT RESULT is not PASS.

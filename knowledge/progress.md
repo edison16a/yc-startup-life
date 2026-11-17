@@ -18,3 +18,7 @@ Updated after every wave.
 - Parallel agents raised from 6 to 8.
 - Wave 1 (8 shards) and wave 2 (8 shards) completed with full searches: 128 records. First audit: 157 fields checked, 2 wrong (1.3%).
 - Wave 3: the shared web search budget (about 200 per turn) ran out partway. 32 records written without searches were downgraded to depth 1 and re-queued. Rule added to the extractor skill: at most 4 shards per wave, and no depth-2 records without searches.
+
+- Status at 1,418 of 6,399 depth 2 records. Calibration sample complete (663). Advice corpus done (41 notes, 19 applicant accounts). Six knowledge files written from the calibration sample. Five audits so far: error rates 1.3, 24, 15, 42 and 22 percent against a 10 percent limit, so no PASS. Prompt tightened after audit 4 (no uncited education, record primary sourced rounds, no unstated stage labels).
+- Known data weaknesses to fix before the final audit: co-founders and CEOs named in press but missing, early rounds not itemised, exit amounts null when stated by a source, competitor as_of dates moved by some researchers to clear merge warnings (as_of should follow source dates), and exits typed acquisition with no acquirer (set to unknown by the orchestrator).
+- Backtest, finalize_skills runs and final audit are not done. check_complete.py still fails.
