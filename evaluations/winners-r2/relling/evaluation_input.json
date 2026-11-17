@@ -1,330 +1,439 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Relling",
+  "one_liner": "Deploying the first billion robots for manufacturing",
+  "description": "San Francisco robotics company in Summer 2025 with the stated aim of deploying very large numbers of robots in manufacturing. The input gives no description, team size, product, customers or revenue, so the product form (arms, mobile robots, software or a robot as a service business) is unknown.",
+  "as_of": "2025-07-07"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.066,
+  "basis": "Starting prior is about 1 percent for a random applicant (0.6 to 2 percent range, references/yc_acceptance.md). Up for the hot robotics theme and a San Francisco hardware ambition that fits YC priorities. Neutral on team, since none is stated. Down because a one line pitch of a billion robots has no stated customer or product. Net about 3 percent, conditional on the batch already given.",
+  "why_it_fails": "YC would most plausibly say that deploying the first billion robots is a vision and not a wedge, and that hardware manufacturing automation needs capital and long sales cycles that do not fit a three month demo. Without a named customer or a working robot, partners may prefer a founder with prior factory deployments."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --tag Robotics --years 2018-2024 --calibration-only: seed cond 57% (n=7), series_a 0% known (n=4, anecdote). --industry Industrials --years 2022-2025: seed 67% (n=12), series_a 0% (n=8). --industry B2B --years 2022-2025: seed 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 6 months, p75 14.2; series_a p25 19.4, median 28, p75 38.4; series_b median 35.6 from batch start.",
+    "adjustment_reason": "Window is 16.3 months from 2025-07-07 to 2026-11-17 and the number is for a round above about 1M from outside investors inside that window, not ever. Anchor 0.59 (B2B) and 0.57 (robotics, n=7); 0.50 is 0.85x of the B2B anchor, because about 85 percent of eventual seeds close within 16 months (p75 14.2 months). Robotics enthusiasm in 2025 is not lifted above the anchor, per the winners test, and a vague one line pitch with no known traction gives no reason to. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, the most common outcome for a small team that closes a first outside round quickly."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M, with market pre money near 18M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.24,
+     "rationale": "Strong seed led by a known fund, matching the upper quartile of 6.5M and above in press covered rounds."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "p_band": 0.11,
+     "rationale": "Large hot category round; rare for a team this early."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step fails if the founders cannot show a working robot deployed with a paying factory inside a year, because hardware investors want pilots and not slides. Manufacturing robotics has a record of slow sales cycles and capital needs: Voodoo Manufacturing and Pashi both shut down, and Daedalus took years to a small raise. A team with no disclosed customer or product form may raise only the standard YC deal."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --tag Robotics --years 2018-2024 --calibration-only: seed cond 57% (n=7), series_a 0% known (n=4, anecdote). --industry Industrials --years 2022-2025: seed 67% (n=12), series_a 0% (n=8). --industry B2B --years 2022-2025: seed 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 6 months, p75 14.2; series_a p25 19.4, median 28, p75 38.4; series_b median 35.6 from batch start.",
+    "adjustment_reason": "Window 16.3 months. Series A for 2022 and later YC companies has p25 at 19.4 months from batch start, so only a small share of eventual A raisers close inside this window. 0.26 (B2B anchor) times about 0.25 gives 0.065, set at 0.06; robotics tag cohort has 0 of 4 known so no lift."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000.0,
+      8000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later p25 of 10M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M and a market deal size near 17M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      90000000.0,
+      220000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round after fast revenue growth; the p75 is about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A inside 16 months needs repeat factory orders and a path to margins on hardware, which almost no robotics company shows that early. Industrial Next took about three years from its 2022 seed to a Series A, and Autumn Labs has stayed at an unverified small round, so a first deployment story is the usual stopping point."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.025,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --tag Robotics --years 2018-2024 --calibration-only: seed cond 57% (n=7), series_a 0% known (n=4, anecdote). --industry Industrials --years 2022-2025: seed 67% (n=12), series_a 0% (n=8). --industry B2B --years 2022-2025: seed 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 6 months, p75 14.2; series_a p25 19.4, median 28, p75 38.4; series_b median 35.6 from batch start.",
+    "adjustment_reason": "Anchor 0.16 for B2B in 2022 and later, but median months to B is about 36 from batch start, so inside 16 months this is a tail event, set at 0.025."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      140000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M."
+    },
+    {
+     "raise_usd": [
+      25000000.0,
+      50000000.0
+     ],
+     "post_money_usd": [
+      140000000.0,
+      320000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B near the 2022 and later YC median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000.0,
+      100000000.0
+     ],
+     "post_money_usd": [
+      320000000.0,
+      800000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside Series B on breakout growth; the p75 is 57M."
+    }
+   ],
+   "why_it_fails": "A Series B inside 16 months of YC would need a breakout fleet and revenue growth, as seen only for a few humanoid and foundation model robotics leaders. A factory robot startup of unknown size has no analog among Voodoo, Daedalus or Industrial Next that reached B this fast."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --tag Robotics --years 2018-2024 --calibration-only: seed cond 57% (n=7), series_a 0% known (n=4, anecdote). --industry Industrials --years 2022-2025: seed 67% (n=12), series_a 0% (n=8). --industry B2B --years 2022-2025: seed 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 6 months, p75 14.2; series_a p25 19.4, median 28, p75 38.4; series_b median 35.6 from batch start.",
+    "adjustment_reason": "No base rate (0 of 3 reached C in the B2B 2022 and later cohort). Placeholder 0.01 for the 16 month window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      45000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Smaller later round near the 2022 and later p25 of 35M (n=9 only)."
+    },
+    {
+     "raise_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      900000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C or later, 45M to 77M per the YC table and market monitor."
+    },
+    {
+     "raise_usd": [
+      90000000.0,
+      250000000.0
+     ],
+     "post_money_usd": [
+      900000000.0,
+      3000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout late round at unicorn scale; very rare in this cohort."
+    }
+   ],
+   "why_it_fails": "A Series C within 16 months would need category leading scale in robot deployments. Even well funded industrial robotics founders took four or more years to get there, and none of the analogs did, so the odds are near zero in this window and a stated plan for a billion robots would have to be reduced to a first fleet before any later round is plausible."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.6
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.09
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company stalls at the pilot stage or sells to a larger automation firm for a small sum, as Voodoo Manufacturing and Pashi ended in shutdown. The upside needs a standardized robot cell sold repeatedly, where well funded humanoid and cell makers are competing for the same factory budgets."
+ },
+ "analogs": [
+  {
+   "slug": "voodoo-manufacturing",
+   "relevance": "Distributed manufacturing platform, same ambition of scaling factory capacity.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "pashi",
+   "relevance": "Software for operating production lines.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "daedalus",
+   "relevance": "Automation for precision manufacturing.",
+   "outcome_summary": "Alive, modest raises over years."
+  },
+  {
+   "slug": "industrial-next",
+   "relevance": "AI for manufacturing from factory veterans.",
+   "outcome_summary": "Seed 2022 then a later Series A."
+  },
+  {
+   "slug": "autumn-labs",
+   "relevance": "Software for industrial robots.",
+   "outcome_summary": "Alive, small unverified funding."
+  },
+  {
+   "slug": "tekton-dynamics",
+   "relevance": "Control layer for welding robots.",
+   "outcome_summary": "Alive with a small team, funding unclear."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "No product or customer clarity",
+   "p": 0.4,
+   "evidence": "The input gives only a vision statement. Industrial robot buyers want a pilot with a defined task, and the market search lists welding, sanding, assembly and machine loading as the funded tasks.",
+   "analogs": [
+    "pashi",
+    "voodoo-manufacturing"
+   ],
+   "mitigation": "Pick one factory task and sign one paying pilot."
+  },
+  {
+   "risk": "Capital intensity of hardware",
+   "p": 0.35,
+   "evidence": "Robots need prototypes, safety certification and field service before revenue, and trackers say robotics money concentrates in a few large rounds.",
+   "analogs": [
+    "voodoo-manufacturing",
+    "daedalus"
+   ],
+   "mitigation": "Sell robots as a service on a small fleet and use pilot revenue."
+  },
+  {
+   "risk": "Better funded robotics and humanoid players",
+   "p": 0.3,
+   "evidence": "Trackers report the top 10 robotics startups take about half of disclosed funding.",
+   "analogs": [
+    "tekton-dynamics",
+    "autumn-labs"
+   ],
+   "mitigation": "Focus on a vertical the large players ignore."
+  },
+  {
+   "risk": "Long manufacturing sales cycles",
+   "p": 0.25,
+   "evidence": "Factories evaluate for months and Industrial Next needed years to reach a Series A.",
+   "analogs": [
+    "industrial-next"
+   ],
+   "mitigation": "Target small and mid size shops with faster buying."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Industrial robot arm makers and integrators",
+   "what": "Established vendors selling arms and cells to factories",
+   "traction": "Large installed base",
+   "source_url": "https://robotsandstartups.substack.com/p/insights-into-2025-robotics-funding"
+  },
+  {
+   "name": "Funded robotics startups for welding, sanding and assembly",
+   "what": "Startups automating hard factory tasks",
+   "traction": "Top 10 hold about half of disclosed funding per trackers",
+   "source_url": "https://newmarketpitch.com/blogs/news/industrial-robotics-funding-trends"
+  },
+  {
+   "name": "Manual labour and fixed automation",
+   "what": "Status quo for most factories",
+   "traction": "Default choice",
+   "source_url": "https://www.therobotreport.com/robotics-investments-top-43b-in-july-2025/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Reliable robots in real factories need perception, grasping, safety and integration with existing lines. A small team can show a cell in months but production grade uptime takes years, and that is the moat if solved. The input does not say which part is built."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Fanuc",
+   "ABB",
+   "Tesla",
+   "Figure",
+   "Skild AI"
+  ],
+  "timeline_months": 24,
+  "rationale": "Large arm makers and funded humanoid companies could enter any broad factory task, but a narrow vertical integration takes time. A billion robots framing overlaps with the best funded players."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Robotics investment recovered in 2025 and industrial startups target welding, fastening and handling tasks that factories pay for.",
+    "source_url": "https://robotsandstartups.substack.com/p/insights-into-2025-robotics-funding"
+   },
+   {
+    "claim": "Robots as a service and modular automation are reducing the capital hurdle for smaller manufacturers.",
+    "source_url": "https://newmarketpitch.com/blogs/news/industrial-robotics-funding-trends"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show one real factory task automated.",
+   "actions": [
+    "Pick a single task such as machine loading",
+    "Run a paid pilot at one plant"
+   ],
+   "proof": "One customer paying monthly for a running robot."
+  },
+  {
+   "phase": "seed",
+   "goal": "Repeat the pilot at three or more sites.",
+   "actions": [
+    "Standardize the cell and installation",
+    "Price as robots as a service"
+   ],
+   "proof": "Three paying sites with robots running above 90 percent uptime."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Hot sector with returning capital",
+   "evidence": "Industrial robotics funding rebounded after 2025 per public trackers.",
+   "source_url": "https://robotsandstartups.substack.com/p/insights-into-2025-robotics-funding"
+  },
+  {
+   "point": "Large, paying buyer base",
+   "evidence": "Manufacturers already spend on automation and labour shortages push demand for robots.",
+   "source_url": "https://www.therobotreport.com/robotics-investments-top-43b-in-july-2025/"
+  }
+ ],
+ "brand": {
+  "name": "Relling",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Relling\" --era 2022+: length bucket 7-8, 2 syllables, alive 93.0 percent in that bucket against 93.3 percent overall, so no signal.",
+  "strengths": [
+   "Short and easy to say",
+   "Invented word with no baggage"
+  ],
+  "weaknesses": [
+   "Means nothing about robots",
+   "Resembles the word reeling"
+  ],
+  "rationale": "An invented two syllable name is common among industrial startups and carries neither meaning nor harm; unlike a descriptive name it needs the product to build its recall, as with Daedalus."
+ },
+ "narrative": {
+  "headline": "A grand robotics vision with no stated product or customer: seed is a little better than a coin flip over 16 months, later rounds are unlikely in the window.",
+  "general_summary": "Relling states the aim of deploying the first billion robots in manufacturing, and the input offers no product, team or traction. The window is 16.3 months from 2025-07-07 to 2026-11-17, long enough for most seeds, so seed sits at 0.50 against anchors of 0.57 to 0.59. Series A given seed is 0.06 in the window. The odds do not rank this company against others, and the robotics boom is not credited beyond the anchor."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-07-07 using only the input.",
+  "Seed means above about 1M from outside investors inside the 16.3 month window.",
+  "Team size and product form are unknown and no traction is assumed."
+ ],
+ "sources": [
+  "https://robotsandstartups.substack.com/p/insights-into-2025-robotics-funding",
+  "https://newmarketpitch.com/blogs/news/industrial-robotics-funding-trends",
+  "https://www.therobotreport.com/robotics-investments-top-43b-in-july-2025/"
+ ]
 }

@@ -1,330 +1,424 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Panels",
+  "one_liner": "Audio Data for AI Labs",
+  "description": "Panels sells audio data to AI labs, presumably speech and conversational audio collected or licensed for training and evaluating voice models. The input gives only the one liner and a single founder in San Francisco, Summer 2025 batch, so the data type, collection method and customers are assumed.",
+  "as_of": "2025-07-07"
+ },
+ "yc_acceptance": {
+  "p": 0.015,
+  "p_low": 0.006,
+  "p_high": 0.035,
+  "basis": "Starting rate about 1 percent for a random applicant (0.6 to 2 percent range, yc_acceptance.md). Adjusted up slightly for a timely buyer (AI labs spend on data) but down for a solo founder (slightly down in the factor table), an empty description, and a crowded data vendor category with a funded YC leader.",
+  "why_it_fails": "YC partners may ask why a solo founder with no stated edge will beat David AI and other funded audio data vendors, and whether labs will buy from a one person company. Data vendors need supply, quality control and customer trust, none of which the input shows, and a data supplier can be copied by synthetic data."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.27,
+   "anchors": {
+    "base_rate": 0.66,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry B2B --years 2022-2025: seed 59% (n=126), series_a cond 26%; --tag AI --years 2022-2025: seed 61% (n=109), series_a cond 23%; time_to_milestones era 2022+: months_to_seed p50 6, p75 14.2, months_to_series_a p25 19.4",
+    "adjustment_reason": "Window is 16.3 months from 2025-07-07 to 2026-11-17, past the 2022 and later p75 of 14.2 months to seed. Starting at 66 percent ever and the B2B cohort of 59 percent, I go down to 0.27 for a solo founder, a crowded category and a data business that depends on a few lab buyers. Not lifted for sector heat."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      10000000,
+      18000000
+     ],
+     "p_band": 0.15,
+     "rationale": "YC deal only, about $500K, counted as no seed; solo founders with thin traction often stop here."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under $3M, the likeliest raise for a solo founder with a few lab customers."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      7000000
+     ],
+     "post_money_usd": [
+      25000000,
+      55000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed if early lab contracts are signed; audio data peers raised seeds in this range."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      7000000,
+      15000000
+     ],
+     "post_money_usd": [
+      55000000,
+      120000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band if lab demand for conversational audio is large and the company shows fast revenue."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The likely miss is that a solo founder cannot build supply and quality control fast enough, and labs prefer David AI which already holds multi year licenses. Besimple AI and Mundo AI show later seeds exist but only with multi person teams, and synthetic voice data reduces demand for the low end of the market."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.35,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry B2B --years 2022-2025: seed 59% (n=126), series_a cond 26%; --tag AI --years 2022-2025: seed 61% (n=109), series_a cond 23%; time_to_milestones era 2022+: months_to_seed p50 6, p75 14.2, months_to_series_a p25 19.4",
+    "adjustment_reason": "Window of 16.3 months is below the 2022 and later p25 of 19.4 months to Series A, so about 0.06 given a seed in the window, more than 2 times below the 35 percent ever anchor, mostly a window effect."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      3600000,
+      6300000
+     ],
+     "post_money_usd": [
+      22500000,
+      40500000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series A led by a seed fund or a small multi-stage fund, near the 2022 and later median of about $7M with limited revenue proof."
+    },
+    {
+     "raise_usd": [
+      7200000,
+      12600000
+     ],
+     "post_money_usd": [
+      40500000,
+      72000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Standard Series A of $8M to $14M after clear revenue growth; the 2018 to 2021 median was $10M and 2022 and later is similar, with era inflation discounted."
+    },
+    {
+     "raise_usd": [
+      13500000,
+      27000000
+     ],
+     "post_money_usd": [
+      81000000,
+      180000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside band for a breakout in 2025 to 2026 AI categories where rounds are larger than the historical median; a pivot-then-raise path also lands here."
+    }
+   ],
+   "why_it_fails": "A Series A within about 16 months would need multi million dollar recurring lab contracts. David AI is the example that did this but with a larger team and a head start, and lab data spending is lumpy so investors want to see repeat contracts."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.44,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_b cond 44% (n=126), ever not windowed.",
+    "adjustment_reason": "Near the anchor times 0.8."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      9000000,
+      18000000
+     ],
+     "post_money_usd": [
+      54000000,
+      90000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or modest Series B after slower growth than the Series A plan assumed."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      36000000
+     ],
+     "post_money_usd": [
+      108000000,
+      225000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B of $20M to $40M on proven repeatable growth."
+    },
+    {
+     "raise_usd": [
+      36000000,
+      72000000
+     ],
+     "post_money_usd": [
+      270000000,
+      630000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a category leader whose growth outpaces peers and attracts a competitive multi-stage process."
+    }
+   ],
+   "why_it_fails": "A Series B needs durable growth in a market where a handful of labs buy and can switch vendors or build collection in house. Lab budgets shift as model methods change, and data vendors with little lock in see revenue swing, so investors cap the round."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55).",
+    "adjustment_reason": "Slightly under the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      22500000,
+      45000000
+     ],
+     "post_money_usd": [
+      135000000,
+      270000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Smaller Series C or extension, close to a flat round."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      270000000,
+      630000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Standard growth round for a company with real scale."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      225000000
+     ],
+     "post_money_usd": [
+      720000000,
+      2250000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a market leader with strong growth and margins that can command a premium at late stage."
+    }
+   ],
+   "why_it_fails": "A growth round needs a lasting franchise. Data licensing has thin margins at scale and buyers are concentrated, and the category contains stronger leaders such as David AI and AssemblyAI, so a small vendor is more likely to be acquired for its data than raise a Series C."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     1000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     3000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely outcome is a stall: a solo founder in a market led by funded vendors, with buyers who can generate synthetic data or collect their own, has a small chance of becoming a leader. Several recent YC data vendors still show no round after the batch."
+ },
+ "analogs": [
+  {
+   "slug": "david-ai",
+   "relevance": "Audio data vendor, Summer 2024.",
+   "outcome_summary": "Raised venture rounds after its batch and became the category leader."
+  },
+  {
+   "slug": "besimple-ai",
+   "relevance": "Voice data for AI, Spring 2025.",
+   "outcome_summary": "Reached a seed round, a direct peer."
+  },
+  {
+   "slug": "mundo-ai",
+   "relevance": "Data layer for perceptual intelligence, Winter 2025.",
+   "outcome_summary": "Reached Series A, shows lab data demand."
+  },
+  {
+   "slug": "ocular-ai",
+   "relevance": "Applied AI data research lab, Winter 2024.",
+   "outcome_summary": "No round found beyond YC."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Category leader with a head start",
+   "p": 0.45,
+   "evidence": "David AI sells conversational audio datasets to most leading audio labs under multi year licenses.",
+   "analogs": [
+    "david-ai"
+   ],
+   "mitigation": "Specialize in a language or scenario the leader does not cover."
+  },
+  {
+   "risk": "Solo founder building supply",
+   "p": 0.35,
+   "evidence": "Collecting audio at scale needs operations, contributors and quality control that one person cannot do.",
+   "analogs": [
+    "ocular-ai"
+   ],
+   "mitigation": "Add a cofounder early and partner for supply."
+  },
+  {
+   "risk": "Synthetic voice data substitution",
+   "p": 0.25,
+   "evidence": "Analysts note synthetic voice libraries pressure the lower end of speech datasets.",
+   "analogs": [
+    "besimple-ai"
+   ],
+   "mitigation": "Focus on verified human and rare conversational data."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "David AI",
+   "what": "Conversational audio datasets for audio labs",
+   "traction": "Multi year license deals with leading labs, self reported",
+   "source_url": "https://sacra.com/research/david-ai"
+  },
+  {
+   "name": "Pangeanic",
+   "what": "Commercially licensable speech datasets",
+   "traction": "19,500 plus hours across 55 languages",
+   "source_url": "https://pangeanic.com/datasets-for-ai/speech"
+  },
+  {
+   "name": "Troveo",
+   "what": "Rights cleared data for AI labs, expanding into audio",
+   "traction": "Expanded into audio categories",
+   "source_url": "https://itbrief.com.au/story/troveo-expands-ai-data-platform-into-five-categories"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Collecting and cleaning audio, consent and licensing, and quality scoring are buildable by a small team. The hard parts are scaling supply, speaker diversity and meeting lab specifications."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "David AI",
+   "Scale and Surge style data vendors",
+   "Labs collecting in house"
+  ],
+  "timeline_months": 9,
+  "rationale": "Established data vendors can add audio quickly and labs can build their own collection, but the business is low in lock in and depends on relationships and quality, which slows take over."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Audio labs buy conversational speech data, and scarce dialogue datasets are cited as a gap",
+    "source_url": "https://sacra.com/research/david-ai"
+   },
+   {
+    "claim": "Rights cleared data vendors are expanding into audio",
+    "source_url": "https://itbrief.com.au/story/troveo-expands-ai-data-platform-into-five-categories"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show one lab or startup paying for data.",
+   "actions": [
+    "Collect a pilot dataset in one niche",
+    "Sell it to a lab or voice startup"
+   ],
+   "proof": "First paid dataset and a repeat order"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeat lab contracts and a cofounder or hire.",
+   "actions": [
+    "Sign three paying customers",
+    "Document quality metrics"
+   ],
+   "proof": "Contracted recurring data revenue"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Buyers have money and need data",
+   "evidence": "AI labs spend on training data and conversational audio is scarce.",
+   "source_url": "https://sacra.com/research/david-ai"
+  },
+  {
+   "point": "Fast to start",
+   "evidence": "A data business can start with a small team and a pilot dataset.",
+   "source_url": "https://pangeanic.com/datasets-for-ai/speech"
+  }
+ ],
+ "brand": {
+  "name": "Panels",
+  "rating": 2,
+  "effect_on_success": "unclear",
+  "name_check": "python3 -I scripts/name_features.py --score \"Panels\" --era 2022+: 6 characters, 2 syllables, real word",
+  "strengths": [
+   "Short and common word"
+  ],
+  "weaknesses": [
+   "No link to audio",
+   "Hard to own in search, many products named Panels"
+  ],
+  "rationale": "A common word is easy to say but hard to own, and it points to screens, not audio. YC brand cases such as Stripe show common words can work, but only with strong brand work; here it is a minor drag.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A solo founder in a data category led by a funded YC peer; seed above $1M in 16 months is unlikely to be better than one in three.",
+  "general_summary": "Panels sells audio data to AI labs and the input says little beyond that. Lab demand for audio is real, but David AI already leads, the founder is solo and synthetic data can substitute at the low end. The window is 16.3 months, enough for a seed if early contracts land, while a Series A inside it is unlikely. The odds do not rank this company against others because the anchor is the cohort rate with a modest cut for solo and crowding. The key risks are a funded leader, supply building and synthetic substitution.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Only the input file (one liner, solo team, no description) and market searches were used; results dated after 2025-07-07 were ignored.",
+  "Window is 2025-07-07 to 2026-11-17, 16.3 months.",
+  "The data type and customers are assumed."
+ ],
+ "sources": [
+  "https://sacra.com/research/david-ai",
+  "https://pangeanic.com/datasets-for-ai/speech",
+  "https://itbrief.com.au/story/troveo-expands-ai-data-platform-into-five-categories"
+ ]
 }
