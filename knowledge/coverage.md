@@ -3,12 +3,12 @@
 Generated 2026-11-17.
 
 - Companies in directory: 6399
-- Depth 2 (fully researched): 1297 (20.3%)
+- Depth 2 (fully researched): 1383 (21.6%)
 - Marked unresearchable (with reason): 1
-- Remaining: 5101
+- Remaining: 5015
 - Calibration sample (unbiased base rates): 663/663 done
-- Funding data coverage among researched: complete 31, partial 785, none found 481
-- Funding rounds recorded: 1318; competitors at founding recorded: 928
+- Funding data coverage among researched: complete 35, partial 841, none found 507
+- Funding rounds recorded: 1421; competitors at founding recorded: 1033
 - Founders with a publicly sourced age: 10
-- Confidence: high 71, medium 813, low 413
-- Invalid records: 0; warnings: 227 (see data/merge_warnings.txt)
+- Confidence: high 76, medium 880, low 427
+- Invalid records: 0; warnings: 259 (see data/merge_warnings.txt)
