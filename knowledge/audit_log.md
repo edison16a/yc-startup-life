@@ -21,3 +21,24 @@ Sample: 9 records from shards 2, 3, 4, 5, 7 (reducto, botcity, wit-ai, blockspri
 Totals: 157 fields checked, 2 wrong (1.3%), limit 10%. Result: wave accepted. Also fixed after audit: pardes-bio exit amount, tenjin exit type.
 
 What the audit says about the data: the numbers that were recorded were right, but records leave things out (investor lists, education, competitors), and many fields could not be verified at all (14 of 157 in batches B and C alone). Treat sparse fields as sparse, not as zero.
+
+## Wave 1 (calibration shards 1 to 20, second queue numbering), audit 2
+
+Sample: 12 records from shards 2, 3, 6, 9, 10, 19, 20 (weav, gigster, airbyte, posthog, zapier, thunkable, mineralsoft, laika, prodigal, craftwork, porter, mocha). Two auditors. Fields checked are approximate counts, because auditors reported by item.
+
+| Slug | Fields checked | Wrong | Notes |
+|---|---|---|---|
+| weav | 7 | 1 | Plaid is an analogy in a 2021-04 article, not a dated competitor at founding. Exit unverified (403). |
+| gigster | 8 | 3 | Seed of $2.5M (2015-07, TechCrunch) missing; Series B lead (Redpoint) missing; Upwork competitor weakly supported. |
+| airbyte | 7 | 3 | Series A $26M (2021-05) and seed missing; Stitch competitor not supported by its source. |
+| posthog | 10 | 3 | Series A amount and date inconsistent ($12M 2020-12 vs $9M 2020-07); Series B has no sourced amount or date. |
+| zapier | 8 | 2 | Seed $1.2M vs $1.3M conflict needs a note; co-founders not supported by cited sources. |
+| thunkable | 5 | 1 | Series B lead (Owl Ventures) missing; earlier rounds missing. |
+| mineralsoft | 6 | 0 | Competitor list empty, nothing to check. |
+| laika | 7 | 1 | Seed date should be 2020-07. |
+| prodigal | 6 | 2 | Third co-founder Saransh Garg (left 2019) missing; Raje role should be CTO. |
+| craftwork | 5 | 1 | Co-founders beyond Tim Griffin possibly missing (unconfirmed). |
+| porter | 6 | 1 | Unsourced claim that Heroku was owned by Salesforce. |
+| mocha | 5 | 1 | Seed (2023-09, YC and Soma, amount null) missing. |
+
+Totals: about 80 fields checked, 19 wrong (about 24%), limit 10%. Result: wave NOT accepted. Most errors are omissions (missing rounds, founders, investor leads) and weakly sourced competitors, not wrong amounts. Action: shards 2, 3, 6, 9, 10, 19 and 20 are queued for a correction pass with the strict prompt; the 12 audited records are corrected from these findings. Cause: researchers used 4 to 6 calls per company and shared searches across requirements.
