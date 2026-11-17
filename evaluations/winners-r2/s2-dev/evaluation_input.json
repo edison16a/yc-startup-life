@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "s2.dev",
+    "one_liner": "API for unlimited, durable, real-time streams",
+    "description": "S2 is a serverless API for durable streams that treats streams like object storage, with unlimited streams, access control and direct internet access, aimed at AI agents, real time feeds, sandboxes and local first apps. Usage based pricing for developers and infrastructure teams.",
+    "as_of": "2025-10-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.015,
+    "p_low": 0.008,
+    "p_high": 0.035,
+    "basis": "YC publishes no acceptance rate; the working prior is about 1 percent with a band of 0.6 to 2 percent (references/yc_acceptance.md). This company is already in the batch named in the input, so the number is for completeness only. Five person technical team on a hard infrastructure primitive with a clear thesis; infrastructure and developer tools are well liked by YC but the market for streams is crowded by Kafka vendors; about 1.5 percent. Already in the batch.",
+    "why_it_fails": "A new database primitive is a slow sell with open source competitors and Kafka compatible vendors, and YC could ask why developers would leave Kafka or managed streaming services and who pays first beyond hobby projects."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.32,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.51,
+        "source": "python3 -I scripts/base_rates.py --tag \"Developer Tools\" --years 2022-2024: seed known-only ever, cond figure 0.51; the forecast window is 13.4 months so only the share reaching seed that early counts (time_to_milestones.csv p50 7 months, p75 20 months)",
+        "adjustment_reason": "Window of 13.4 months from the as of date: the ever anchor is cut by the share of seeds that happen that early, with no lift for team or hype per the winners test rules. The odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "small post YC round under $3M from angels or a micro fund, the most common outcome for companies with thin traction at 2022 and later seed data"
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "typical institutional seed; the 2022 and later table has a $3.5M median that mixes in the YC deal, so institutional seeds sit a bit higher"
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.25,
+          "rationale": "larger institutional seed for fast growth or a hot category; confirmed 2026 raises above $1M had a $6M median but press favours big rounds"
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "upside seed or seed plus, needs unusual traction or a repeat founder; rare"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed here means a round above about $1M from outside investors closing inside the 13.4 month window from the as of date. Developer tools cohort has 51 percent ever; the window cuts to about 32 percent. Infrastructure with a technical team raises on credibility, yet analogs such as Arroyo and Rivet had no verified round and Streamdal shut down after a seed, so investors may wait for paying usage."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.12,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --tag \"Developer Tools\" --years 2022-2024: series_a cond 0.26 ever, given seed",
+        "adjustment_reason": "The anchor is for reaching Series A ever; inside 13.4 months only fast seed companies get there (Series A median is 28 months from batch start), so the figure is far below the anchor by construction."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "thin or flat A, below the 2022 and later $10M p25, after a slow year; includes a bridge style A"
         },
         {
           "raise_usd": [
-            0,
-            0
+            9000000,
+            16000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "median A, 2022 and later raise median about $13.5M with few disclosed valuations"
+        },
+        {
+          "raise_usd": [
+            16000000,
+            30000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "upside A after real revenue growth, p75 of the 2022 and later table is $20M"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A given a seed in the window is about 12 percent. Developer tools cohort conditional is 26 percent ever and infrastructure needs revenue; LanceDB took years to reach A and Replicate reached B only after wide adoption."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --tag \"Developer Tools\" --years 2022-2024: series_b cond 0.19 ever",
+        "adjustment_reason": "The anchor is ever; reaching a Series B inside the window needs a Series A and then a B within about two years of the batch, which the 2022 and later data shows only for a handful of companies."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "small B near the 2018 to 2021 median of $30M, flat valuation"
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "median B, 2022 and later median $37M, p75 $57M"
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "upside B in a category leader; disclosed 2022 and later valuations around $775M"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B inside this window requires explosive adoption; Replicate reached B after years, and open source analogs mostly sell before B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --tag \"Developer Tools\" --years 2022-2024: series_c cond 0.0 ever",
+        "adjustment_reason": "The anchor is ever; a Series C or later inside the window is close to unobserved for batches this recent, so the number is a floor, not a forecast of a ceiling."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "small C or extension, 2022 and later median $42.5M"
         },
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "typical C for a company with scaled revenue"
+        },
+        {
+          "raise_usd": [
+            100000000,
+            200000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "upside growth round, only for category leaders"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window is unobserved for infrastructure companies this young; the figure is a floor."
     }
   ],
   "outcomes": {
@@ -164,167 +224,234 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.5
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.32
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Data infrastructure startups often end by acquisition for the team, as Arroyo, Jitsu and Triplit did, or shut down if adoption stays hobbyist. A large exit needs becoming a default building block, as the object storage analogy suggests."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "streamdal",
+      "relevance": "Streaming data tooling",
+      "outcome_summary": "Shut down after a seed"
+    },
+    {
+      "slug": "arroyo",
+      "relevance": "Cloud native stream processing",
+      "outcome_summary": "Acquired, no verified round"
+    },
+    {
+      "slug": "rivet",
+      "relevance": "Infrastructure for agentic workloads",
+      "outcome_summary": "Alive, no verified round"
+    },
+    {
+      "slug": "lancedb",
+      "relevance": "Open source database primitive",
+      "outcome_summary": "Series A after a few years"
+    },
+    {
+      "slug": "replicate",
+      "relevance": "Developer API for a new compute primitive",
+      "outcome_summary": "Series B then acquired"
+    },
+    {
+      "slug": "triplit",
+      "relevance": "Database for app developers",
+      "outcome_summary": "Wound down and acquired, no round"
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Developers stay on Kafka, managed streaming or Redis streams",
+      "p": 0.45,
+      "evidence": "Kafka vendors are building diskless object storage versions and cloud providers sell serverless streams",
       "analogs": [
-        "TODO-company-slug"
+        "streamdal",
+        "arroyo"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Win a use case Kafka serves poorly, such as agent state and per user streams"
+    },
+    {
+      "risk": "Hyperscalers or Cloudflare ship an equivalent",
+      "p": 0.35,
+      "evidence": "Object storage backed streams are a visible direction for large vendors",
+      "analogs": [
+        "replicate",
+        "rivet"
+      ],
+      "mitigation": "Open source the core and move faster"
+    },
+    {
+      "risk": "Slow usage revenue delays a seed",
+      "p": 0.35,
+      "evidence": "Infrastructure revenue follows adoption over many months",
+      "analogs": [
+        "triplit",
+        "arroyo"
+      ],
+      "mitigation": "Charge early and show usage growth"
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Confluent and WarpStream",
+      "what": "Kafka and diskless Kafka on object storage",
+      "traction": "Market leader",
+      "source_url": "https://www.kai-waehner.de/blog/2025/08/11/the-rise-of-diskless-kafka-rethinking-brokers-storage-and-the-kafka-protocol/"
+    },
+    {
+      "name": "AutoMQ and Redpanda",
+      "what": "Kafka compatible object storage streaming",
+      "traction": "Funded vendors",
+      "source_url": "https://www.automq.com/blog/warpstream-vs-automq-object-storage-backed-kafka"
+    },
+    {
+      "name": "Amazon MSK Serverless",
+      "what": "Managed serverless Kafka",
+      "traction": "Large cloud customer base",
+      "source_url": "https://jack-vanlightly.com/blog/2025/10/22/a-fork-in-the-road-deciding-kafkas-diskless-future"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Durable distributed logs with strong ordering, unlimited streams and low latency on object storage are hard; a small expert team can build a core in months but operating it reliably at scale is a long, risky effort."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Cloud providers and Cloudflare",
+      "Confluent and diskless Kafka vendors",
+      "Redpanda and StreamNative"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Large vendors have distribution and could add a serverless stream primitive; the Kafka diskless proposals show the industry moving in this direction, though a new API gives a differentiated model."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Vendors are rebuilding streaming on object storage, showing demand for cheaper durable streams",
+        "source_url": "https://www.kai-waehner.de/blog/2025/08/11/the-rise-of-diskless-kafka-rethinking-brokers-storage-and-the-kafka-protocol/"
+      },
+      {
+        "claim": "Kafka alternatives are a recognised buying category with paid products",
+        "source_url": "https://www.automq.com/blog/top-warpstream-alternatives-diskless-kafka-byoc"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show developer adoption and a few paying users",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Open source or free tier with docs",
+        "Reach production use at 5 companies"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Hundreds of active developers and first paid usage"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show usage revenue growth and reliability",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish uptime and benchmark data",
+        "Land agent platform customers"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Usage revenue above $30K a month"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Become a default stream layer",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add enterprise features such as access control and compliance",
+        "Hire sales engineers"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "ARR above $3M"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable expansion with a second product or segment and efficient growth",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add a second wedge sold to the same buyer",
+        "Hire a sales leader and a customer success team",
+        "Show net revenue retention above 110 percent"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue growth above 2x for a full year with stable gross margin"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category leadership with durable margins",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand to adjacent markets or geographies",
+        "Build channel or platform partnerships",
+        "Show a path to profitability or a clear exit buyer"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Large enterprise customers and net retention above 120 percent"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Technically credible team on a real infrastructure gap",
+      "evidence": "Founders describe years of data systems work and a clear architectural thesis",
+      "source_url": "https://www.kai-waehner.de/blog/2025/08/11/the-rise-of-diskless-kafka-rethinking-brokers-storage-and-the-kafka-protocol/"
+    },
+    {
+      "point": "Tailwind from AI agents needing durable state",
+      "evidence": "Agents and sandboxes need cheap per instance logs",
+      "source_url": "https://www.automq.com/blog/top-warpstream-alternatives-diskless-kafka-byoc"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "s2.dev",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"s2.dev\" --era 2022+ : invented or proper, name collides with S2 Studio style letter digit names",
     "strengths": [
-      "TODO"
+      "Very short, plays on S3",
+      "Developer friendly domain"
     ],
     "weaknesses": [
-      "TODO"
+      "Hard to search and speak, letter digit name is easily confused"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "s2.dev is a short letter plus digit name like S3 that signals the object storage analogy to engineers, but is hard to search and say aloud, so effect is neutral for a developer product."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A technically deep streaming primitive with a normal seed chance in 13 months and heavy incumbent pull.",
+    "general_summary": "s2.dev builds serverless durable streams, positioned as S3 for streams. With a five person technical team and a 13.4 month window, the developer tools cohort gives about 51 percent ever and about 32 percent for the window. Infrastructure investors may back technical credibility early, but analogs show mixed results and no verified rounds for some, so there is no lift above the anchor. The odds do not rank it against others in the batch."
   },
   "assumptions": [
-    "TODO"
+    "Window is 13.4 months from 2025-10-06 to 2026-11-17.",
+    "LEAK-WEB: s2-dev; a market search returned pages naming the company and 2026 dated pages; those were ignored.",
+    "Series C anchor n/a in cohort (0 percent), used as 0.0 for the record."
   ],
   "sources": [
-    "https://"
+    "https://www.kai-waehner.de/blog/2025/08/11/the-rise-of-diskless-kafka-rethinking-brokers-storage-and-the-kafka-protocol/",
+    "https://www.automq.com/blog/top-warpstream-alternatives-diskless-kafka-byoc",
+    "https://www.automq.com/blog/warpstream-vs-automq-object-storage-backed-kafka",
+    "https://jack-vanlightly.com/blog/2025/10/22/a-fork-in-the-road-deciding-kafkas-diskless-future"
   ]
 }

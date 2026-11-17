@@ -1,330 +1,439 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Trelium",
+  "one_liner": "AI Agents for Enterprise Wide Operations",
+  "description": "AI agents for back-office work in print, merch and apparel distribution, built by an 11 person San Francisco team in the Fall 2025 batch. Operations staff describe a task in plain English and the agent runs it: order entry, purchase order creation, PO to invoice matching and order status follow-ups. Buyers are distributors, suppliers and decorators who handle custom and bulk orders by email, PDF and spreadsheet.",
+  "as_of": "2025-10-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.066,
+  "basis": "Already in the Fall 2025 batch, so this is the prior for a random applicant. YC cites about 1 percent acceptance with a third party range of 0.6 to 2 percent. I raise it to 3 percent for a vertical with a concrete painful workflow, a team of 11 and real customers named in the description, but lower the lift because AI back office agents were an RFS style topic and thus common among applicants.",
+  "why_it_fails": "YC would most plausibly decline because AI agents for back office work was among the most crowded application themes in 2025, the description gives no usage numbers or revenue, and a team of 11 for a company at this stage might read as pre-product spending on headcount rather than founder focus."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% known-only (lower 49%, upper 65%, n=126); python3 -I scripts/base_rates.py --tag \"Developer Tools\" --years 2022-2025: seed 42% / 49% / 56% (n=254). Timing from knowledge/tables/time_to_milestones.csv era 2022+: months_to_seed p25 3, p50 6, p75 14.2 (n=1146).",
+    "adjustment_reason": "Window is about 13 months (2025-10-06 to 2026-11-17). With a 2022 and later median of 6 months to seed and a 75th percentile of 14.2 months, roughly 70 to 75 percent of eventual seeds close inside 13 months, so the window anchor is about 0.42. I add a slight lift for a team of 11 selling to a defined vertical, within 1.25 times the window anchor and without claiming this ranks it against peers."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Seed here means a round above $1M from outside investors within 13 months. It most likely fails because vertical order entry agents drew several funded rivals, investors see one more document automation tool, and the print and merch niche reads small. If revenue is not visible by demo day the team stays on the YC deal. Panora and Workflow86 show how long such companies can stay small without an institutional round."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.07,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_a cond 26% known-only (lower 13%, upper 29%, n=74); Developer Tools 2022-2025: series_a cond 23% (n=124). Timing, era 2022+: months_to_series_a p25 19.4, p50 28, p75 38.4 (n=216).",
+    "adjustment_reason": "The anchor is the chance of ever reaching Series A, which comes at a median of 28 months after batch start. A seed in the 13 month window has to come first and a Series A would follow within months, which almost never happens, so I cut the anchor to about a quarter."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      60000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or flat Series A under $10M, common when growth is real but revenue is early and the lead wants a smaller bet."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical 2022 and later Series A: the Developer Tools cohort median raise is $17.5M and the B2B cohort median $15.0M."
+    },
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      250000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside Series A led by a large fund when the product is a visible category leader with fast revenue, as seen for the best AI infrastructure and developer rounds of 2024 and 2025."
+    }
+   ],
+   "why_it_fails": "A Series A inside the window would need a seed closed within about six months and then annual recurring revenue near $1M to $2M, which is unusual for a vertical that sells to small print and merch distributors with long onboarding. Artisan, the closest funded AI worker comp, reached its A after about a year from a hot sales use case with fast revenue growth, not a niche back office."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), range 2% to 18% across lower, known and upper.",
+    "adjustment_reason": "The anchor is the chance of ever reaching Series B. In a window that ends about 13 to 22 months after the batch starts, the time to milestone table gives a median of about 35 months for Series B in the 2022 and later era, so only a small share of eventual Series B companies get there inside the window; I cut the anchor roughly in half and say the number is a window number."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      220000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest Series B on steady growth, below the Developer Tools median of $50M because few companies in the cohort have reached this round."
+    },
+    {
+     "raise_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      220000000.0,
+      500000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022 and later Series B: $45M to $50M medians with valuations near $550M to $600M in the few cohort cases with data."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      500000000.0,
+      1200000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Breakout round for a category leader growing several times a year."
+    }
+   ],
+   "why_it_fails": "Series B inside this window is very unlikely: it needs a Series A and growth of several times in a year. Companies in the AI workflow cohort that reached later rounds, such as Artisan, did so on much larger markets than print, merch and apparel distribution, and few B2B 2022 and later companies have had a Series B at all."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.05,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_c 0% known-only, 16% upper (n=3), so there is no usable rate for the cohort.",
+    "adjustment_reason": "The cohort has almost no Series C companies, so I use a small number tied to the window length: reaching Series C within about two years of a YC batch has happened only for a handful of breakout companies in the 2022 and later era, and the time to milestone table shows a median of about 37 months."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      300000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Ordinary growth round for a company that has found a repeatable sales motion."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      2000000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Large growth round from crossover or late stage funds in a hot AI category."
+    },
+    {
+     "raise_usd": [
+      200000000.0,
+      500000000.0
+     ],
+     "post_money_usd": [
+      2000000000.0,
+      6000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Category defining round, seen only for the top few AI companies."
+    }
+   ],
+   "why_it_fails": "A Series C inside two years of a batch would require a breakout across industries, not only print and merch. The niche limits revenue and the horizontal workflow automation market is dominated by large platforms such as UiPath and Microsoft, so a Series C inside this window is extremely unlikely."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The usual failure is a vertical automation tool that becomes a service business: each distributor needs custom set up, margins look like consulting, and a bigger horizontal agent platform or an ERP vendor adds the same features. Payflow ended inactive and Panora stayed small, so the common end is a quiet stall or an acqui-hire."
+ },
+ "analogs": [
+  {
+   "slug": "panora",
+   "relevance": "Turns messy inboxes into ERP ready data, a close wedge, Summer 2024.",
+   "outcome_summary": "Active in the records with no round above the YC deal known at the as_of date."
+  },
+  {
+   "slug": "artisan",
+   "relevance": "AI employees for real work, a YC company with fast early growth.",
+   "outcome_summary": "Winter 2024; had raised a Series A by late 2024 on sales automation, a hotter market than print and merch."
+  },
+  {
+   "slug": "workflow86",
+   "relevance": "Agentic workflows for long running business operations.",
+   "outcome_summary": "Winter 2022 and still active but small, showing slow paths for operations automation."
+  },
+  {
+   "slug": "abstra",
+   "relevance": "Automating finance operations with AI and code, Summer 2021.",
+   "outcome_summary": "Active; a modest seed history typical for workflow tools."
+  },
+  {
+   "slug": "payflow-2",
+   "relevance": "AI finance agent, a back office use case.",
+   "outcome_summary": "Summer 2020, ended inactive with no post YC round found."
+  },
+  {
+   "slug": "keystroke",
+   "relevance": "Internal agents and workflows platform, Winter 2024.",
+   "outcome_summary": "Active, no large round found, a horizontal peer of Trelium's no code agent builder."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Niche vertical caps revenue and investor interest",
+   "p": 0.4,
+   "evidence": "Print, merch and apparel distribution is a small slice of wholesale; investors that want a billion dollar market may pass at seed unless the company shows a clear path to other verticals.",
+   "analogs": [
+    "panora",
+    "workflow86"
+   ],
+   "mitigation": "Show two adjacent distribution verticals converting with the same agent templates."
+  },
+  {
+   "risk": "Services creep: every customer needs custom set up",
+   "p": 0.4,
+   "evidence": "Order entry from email, PDFs and ERPs varies per customer, so onboarding can eat margin and slow growth; the founders cite custom and bulk operations as the market.",
+   "analogs": [
+    "abstra",
+    "payflow-2"
+   ],
+   "mitigation": "Productize connectors to the three biggest ERPs used in the vertical and charge for setup."
+  },
+  {
+   "risk": "Horizontal AI agent platforms and ERP vendors copy the use case",
+   "p": 0.3,
+   "evidence": "Document automation and agent builders were already sold by UiPath, Microsoft and a growing YC cohort such as Keystroke and Workflow86.",
+   "analogs": [
+    "keystroke",
+    "workflow86"
+   ],
+   "mitigation": "Own the vertical data model for orders, POs and invoices and ship integrations rivals do not."
+  },
+  {
+   "risk": "Accuracy and trust: an agent that mis-enters an order loses a customer",
+   "p": 0.25,
+   "evidence": "Errors in orders and purchase orders cost money directly, so enterprises keep humans in the loop and shrink the savings.",
+   "analogs": [
+    "panora",
+    "artisan"
+   ],
+   "mitigation": "Ship confidence scores and a review queue before full automation."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "UiPath",
+   "what": "Robotic process automation incumbent adding agents.",
+   "traction": "Public company with large enterprise base.",
+   "source_url": "https://www.mi-3.com.au/12-11-2024/andreessen-horowitz-backed-11x-secures-50m-series-b-funding-help-develop-digital-workers"
+  },
+  {
+   "name": "11x and Artisan style digital workers",
+   "what": "Horizontal AI workers sold per role.",
+   "traction": "11x $24M Series A in September 2024 and $50M Series B in November 2024.",
+   "source_url": "https://www.intelligentcio.com/north-america/2024/09/17/11x-secures-24m-series-a-funding-to-create-the-future-of-digital-work/"
+  },
+  {
+   "name": "Manual order entry by staff and email",
+   "what": "The status quo of customer service reps retyping orders.",
+   "traction": "Universal in distribution.",
+   "source_url": "https://www.intelligentcio.com/north-america/2024/09/17/11x-secures-24m-series-a-funding-to-create-the-future-of-digital-work/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Reading orders from email, PDFs and spreadsheets and writing to ERPs is doable on frontier models in a few months. The hard part is reliability, edge cases per customer and integration with legacy ERPs, which a team of 11 can handle for a niche but which slows expansion."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "UiPath",
+   "Microsoft Copilot Studio",
+   "ERP vendors",
+   "other YC order entry startups"
+  ],
+  "timeline_months": 9,
+  "rationale": "Agent builders and order automation were crowded by late 2025, so a rival can add print and merch templates in months. The moat is vertical data and integrations, which takes longer but is copyable by a funded specialist."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Digital worker companies such as 11x raised a $24M Series A in September 2024 and a $50M Series B in November 2024, showing investor appetite for agents that replace back office roles.",
+    "source_url": "https://www.mi-3.com.au/12-11-2024/andreessen-horowitz-backed-11x-secures-50m-series-b-funding-help-develop-digital-workers"
+   },
+   {
+    "claim": "Enterprise trust and cost remain adoption hurdles for autonomous agents.",
+    "source_url": "https://sifted.eu/articles/autonomous-companies-ai"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Prove an agent can enter orders accurately for paying customers.",
+   "actions": [
+    "Measure straight through rate and error rate on real orders.",
+    "Sign three paying distributors on usage pricing."
+   ],
+   "proof": "Over 85 percent of orders processed without human edits at three paying customers."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeatable revenue and a path beyond print and merch.",
+   "actions": [
+    "Package the agent templates for two more distribution verticals.",
+    "Reach $30K monthly recurring revenue before the raise."
+   ],
+   "proof": "$30K or more monthly recurring revenue and net revenue retention above 100 percent."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Concrete paid workflow",
+   "evidence": "Order entry and PO to invoice matching are daily tasks with a clear labor cost for distributors, which supports willingness to pay."
+  },
+  {
+   "point": "Team of 11 at batch start",
+   "evidence": "A larger team than most batch companies suggests a live product and early customers, though it also raises burn."
+  }
+ ],
+ "brand": {
+  "name": "Trelium",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Trelium\" --era 2022+ : 7 characters, 2 syllables, suffix coinage ending in ium; no outlier in the cohort tables.",
+  "strengths": [
+   "Distinctive and available as a coined word",
+   "Sounds technical and enterprise ready"
+  ],
+  "weaknesses": [
+   "Says nothing about agents or operations",
+   "Resembles Trello and other tools, which may cause confusion"
+  ],
+  "rationale": "A coined word with an ium ending sounds like a materials or software brand and is easy to own, similar to coined YC names like Brex or Vapi, but it carries no meaning for back office automation and may be confused with Trello. Brand will neither help nor hurt much."
+ },
+ "narrative": {
+  "headline": "A plausible vertical agent company whose seed odds in 13 months are near the cohort anchor, not above it.",
+  "general_summary": "Trelium sells AI agents for back office order handling to print, merch and apparel distributors, with a team of 11. The need is real and paid, yet the category drew many funded AI worker companies in 2024 and 2025, and a niche vertical can cap the size investors see. For a 13 month window I put the seed probability at 0.45, a little above the window adjusted anchor of about 0.42 and under the 1.25 times cap, because the winners test showed no skill from traction claims. If a seed closes, the most likely sizes are $3M to $6M and $6M to $12M since a team of 11 with a live product fits the AI native shape. Series A inside the window is unlikely at 0.07. The central risk is a service like business in a small vertical."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-10-06 for a window of about 13 months to 2026-11-17; seed means above about $1M from outside investors.",
+  "Only the input file was used for the company. Market search results dated after the as_of date or naming other companies were not used.",
+  "Company is already in YC; the YC odds are the prior for a random applicant, kept for completeness.",
+  "Analog outcomes use records known at the as_of date; later events were ignored where I could tell.",
+  "Seed bands use the AI native shape because the team is 11 with a described live product; this is my reading of the description."
+ ],
+ "sources": [
+  "https://www.mi-3.com.au/12-11-2024/andreessen-horowitz-backed-11x-secures-50m-series-b-funding-help-develop-digital-workers",
+  "https://www.intelligentcio.com/north-america/2024/09/17/11x-secures-24m-series-a-funding-to-create-the-future-of-digital-work/",
+  "https://sifted.eu/articles/autonomous-companies-ai"
+ ]
 }

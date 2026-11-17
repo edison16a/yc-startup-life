@@ -63,7 +63,7 @@ Stratify automates user research with AI agents run by a two person team in San 
 | $18M–$30M | $90M–$150M | 22% | 0.7% | Very unlikely | <0.1% | Very unlikely | A larger A of $18M to $30M that top funds lead when growth looks category defining; current market data shows A deal sizes near $17M to $20M. |
 | $30M–$60M | $150M–$350M | 8.0% | 0.3% | Very unlikely | <0.1% | Very unlikely | An upside A above $30M, seen only for a few AI companies with very fast revenue; rare and kept at a small share. |
 
-**Why it fails here.** A Series A in 19 months would need enterprise contracts with repeat usage, but market research budgets move slowly and enterprises trial several AI interview tools. Great Question took two years from YC to its A, and Outset and Rally, the leading AI entrants, needed more than a year after their seeds. A two person team will likely lack the sales capacity to show that growth in time.
+**Why it fails here.** A Series A in 19 months would need enterprise contracts with repeat usage, but market research budgets move slowly and enterprises trial several AI interview tools. Great Question raised only a $2.5M seed in its first year and grew on a small base before a $13M A, and Rally waited about two years after its batch for its seed. A two person team will likely lack the sales capacity to show that growth in time.
 
 ### Series B: P(reach this round | in YC) = 22% after the previous step; 0.7% cumulative if in YC; <0.1% from today
 
@@ -74,7 +74,7 @@ Stratify automates user research with AI agents run by a two person team in San 
 | $50M–$80M | $300M–$600M | 22% | 0.2% | Very unlikely | <0.1% | Very unlikely | A growth B of $50M to $80M for companies with clear scaled revenue. |
 | $80M–$150M | $600M–$1.2B | 8.0% | <0.1% | Very unlikely | <0.1% | Very unlikely | An upside B above $80M for category leaders, rare among YC companies. |
 
-**Why it fails here.** A Series B requires winning the enterprise research budget against UserTesting, Qualtrics and funded AI rivals, and many research teams build only small, project based budgets. Outset reached a B in about two years of fast enterprise growth, an exception; a typical tool in this category stalls after an A because buyers consolidate vendors.
+**Why it fails here.** A Series B requires winning the enterprise research budget against UserTesting, Qualtrics and funded AI rivals, and many research teams build only small, project based budgets. Outset's quick rise after its 2023 seed is an exception; a typical tool in this category stalls after an A because buyers consolidate vendors.
 
 ### Series C+: P(reach this round | in YC) = 25% after the previous step; 0.2% cumulative if in YC; <0.1% from today
 

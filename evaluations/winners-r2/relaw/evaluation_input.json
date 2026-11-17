@@ -1,330 +1,426 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Relaw",
+  "one_liner": "AI Legal OS",
+  "description": "Relaw is an AI operating system for law firms that are built around AI from the start. The buyer is the AI native firm, a new kind of practice, and the product runs its legal work and operations. Two person team in Los Angeles, Fall 2025 batch. The description is one sentence, so the product details are assumed.",
+  "as_of": "2025-10-06"
+ },
+ "yc_acceptance": {
+  "p": 0.025,
+  "p_low": 0.01,
+  "p_high": 0.05,
+  "basis": "Starting rate about 1 percent for a random applicant (0.6 to 2 percent range, yc_acceptance.md). Adjusted up about 2.5 times for a timely wedge and a vertical with many funded AI legal companies. Held back because the description is a single sentence with no customers named, and the AI legal space is crowded.",
+  "why_it_fails": "YC partners will see many AI legal applications and a customer set of AI native law firms is tiny today. The one line description gives no traction, no named firms and no distinct technical edge versus Harvey, Legora or the firms building their own tools."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.4,
+   "anchors": {
+    "base_rate": 0.66,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry B2B --years 2022-2025: seed 59% (n=126), series_a cond 26%; --tag Legal: seed 75% (n=4, anecdote only); time_to_milestones era 2022+: months_to_seed p50 6, p75 14.2",
+    "adjustment_reason": "Window is 13.4 months from 2025-10-06 to 2026-11-17. The 2022 and later p75 for months to seed is 14.2, so most eventual seeds fall near or after the window; I take 0.40 against the 66 percent ever anchor and the B2B cohort 59 percent. Team size and sector heat are not used to lift it."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      10000000,
+      18000000
+     ],
+     "p_band": 0.12,
+     "rationale": "YC deal only, about $500K; counted as no seed for the window."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M; AI native law firm startups raised $2.5M and $4M rounds in this period."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      60000000
+     ],
+     "p_band": 0.43,
+     "rationale": "Institutional seed; a reported $9M seed for another AI native firm and strong legal tech funding set the high end."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      160000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band if legal AI interest produces a competitive round; legal tech funding rose strongly in 2025."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The likely miss is that the customer set is tiny: AI native law firms are new, so Relaw may have a handful of paying firms and investors prefer horizontal legal software. Ross Intelligence shows legal AI can raise and still fail, and PointOne and Lexter reached later rounds only with broader customer bases."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.35,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry B2B --years 2022-2025: seed 59% (n=126), series_a cond 26%; --tag Legal: seed 75% (n=4, anecdote only); time_to_milestones era 2022+: months_to_seed p50 6, p75 14.2",
+    "adjustment_reason": "Window of 13.4 months is shorter than the 2022 and later p25 of 19.4 months to Series A, so about 0.06 given a seed in the window, more than 2 times below the 35 percent ever anchor because of timing not the company."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      3600000,
+      6300000
+     ],
+     "post_money_usd": [
+      22500000,
+      40500000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series A led by a seed fund or a small multi-stage fund, near the 2022 and later median of about $7M with limited revenue proof."
+    },
+    {
+     "raise_usd": [
+      7200000,
+      12600000
+     ],
+     "post_money_usd": [
+      40500000,
+      72000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Standard Series A of $8M to $14M after clear revenue growth; the 2018 to 2021 median was $10M and 2022 and later is similar, with era inflation discounted."
+    },
+    {
+     "raise_usd": [
+      13500000,
+      27000000
+     ],
+     "post_money_usd": [
+      81000000,
+      180000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside band for a breakout in 2025 to 2026 AI categories where rounds are larger than the historical median; a pivot-then-raise path also lands here."
+    }
+   ],
+   "why_it_fails": "Series A inside 13 months requires strong revenue growth from a customer segment that barely exists yet. Funded rivals such as Eudia and Legora absorb investor attention, and law firm software typically sells slowly, so Relaw likely needs more than one year before a lead investor commits."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.44,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_b cond 44% (n=126), ever not windowed.",
+    "adjustment_reason": "Near the anchor times 0.8."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      9000000,
+      18000000
+     ],
+     "post_money_usd": [
+      54000000,
+      90000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or modest Series B after slower growth than the Series A plan assumed."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      36000000
+     ],
+     "post_money_usd": [
+      108000000,
+      225000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B of $20M to $40M on proven repeatable growth."
+    },
+    {
+     "raise_usd": [
+      36000000,
+      72000000
+     ],
+     "post_money_usd": [
+      270000000,
+      630000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a category leader whose growth outpaces peers and attracts a competitive multi-stage process."
+    }
+   ],
+   "why_it_fails": "A Series B depends on law firms becoming a durable customer base, and the market for AI native firms may remain small while large incumbents win firm wide contracts. Ross Intelligence reached a Series A and still shut down after litigation, a reminder that legal AI companies can lose the platform race."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55).",
+    "adjustment_reason": "Slightly under the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      22500000,
+      45000000
+     ],
+     "post_money_usd": [
+      135000000,
+      270000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Smaller Series C or extension, close to a flat round."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      270000000,
+      630000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Standard growth round for a company with real scale."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      225000000
+     ],
+     "post_money_usd": [
+      720000000,
+      2250000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a market leader with strong growth and margins that can command a premium at late stage."
+    }
+   ],
+   "why_it_fails": "A growth round needs revenue far beyond what AI native boutique firms can pay, so Relaw would have to become a broad legal platform and beat Harvey and Legora, which raised far larger rounds. Few YC legal companies in the data reached Series C, so this step is a long shot."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.6
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     1000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     4000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely outcome is a stall: legal AI is a land grab among well funded players and bar rules restrict non lawyer ownership, which limits how the OS can monetize an AI native firm. Ross Intelligence shut down, and many YC legal tools sit at seed with no later round."
+ },
+ "analogs": [
+  {
+   "slug": "ross-intelligence",
+   "relevance": "AI legal research, Summer 2015.",
+   "outcome_summary": "Raised through Series A and then shut down, so legal AI can fail even with funding."
+  },
+  {
+   "slug": "lexter-ai",
+   "relevance": "LLM for legal in Brazil, Winter 2022.",
+   "outcome_summary": "Reached Series A, shows a regional legal AI can raise."
+  },
+  {
+   "slug": "pointone",
+   "relevance": "AI time platform for law firms, Winter 2024.",
+   "outcome_summary": "Reached Series A, a firm workflow product."
+  },
+  {
+   "slug": "flo",
+   "relevance": "Talent platform for legal, Summer 2019.",
+   "outcome_summary": "Reached Series A, a legal vertical with narrow wedge."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Tiny customer segment",
+   "p": 0.4,
+   "evidence": "AI native law firms are few and new, and many of them build tools in house or buy from large vendors.",
+   "analogs": [
+    "pointone",
+    "lexter-ai"
+   ],
+   "mitigation": "Sell to all law firms that are adopting AI, not only AI native ones."
+  },
+  {
+   "risk": "Funded horizontal rivals",
+   "p": 0.4,
+   "evidence": "Harvey, Legora and Eudia raised hundreds of millions and can add firm operations modules.",
+   "analogs": [
+    "ross-intelligence"
+   ],
+   "mitigation": "Specialize in firm operations that the large vendors ignore."
+  },
+  {
+   "risk": "Ownership and ethics rules",
+   "p": 0.2,
+   "evidence": "In most states non lawyers cannot own firms or share fees, which constrains the business model.",
+   "analogs": [
+    "flo"
+   ],
+   "mitigation": "Use a software license model and partner with lawyer owned firms."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Eudia",
+   "what": "AI platform for in house legal teams",
+   "traction": "Reported $105M Series A in 2025",
+   "source_url": "https://www.eudia.com/news/2025-sparked-a-legal-tech-funding-frenzy-here-were-some-of-the-notable-deals"
+  },
+  {
+   "name": "Moritz",
+   "what": "AI native law firm",
+   "traction": "Reported $9M seed",
+   "source_url": "https://letsdatascience.com/news/moritz-raises-9-million-for-ai-native-law-firm-2d0b28eb"
+  },
+  {
+   "name": "Legora alumni AI native firm",
+   "what": "AI native law firm spun out of a legal AI company",
+   "traction": "$2.5M raised",
+   "source_url": "https://dealroom.co/news/169200-legora-alumni-raise-2-5m-to-build-an-ai-native-law-firm/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Workflow, document drafting and matter management are buildable with LLMs by a small team. Hard parts are accuracy, confidentiality and integrating with firm systems, and the product depends on foundation model quality."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Harvey and Legora",
+   "Thomson Reuters and Clio",
+   "Model labs"
+  ],
+  "timeline_months": 9,
+  "rationale": "Well funded legal AI vendors could ship an operations module within months, and incumbent legal software firms bundle AI. A small team needs a distinct customer segment to avoid being absorbed."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Legal tech funding rose strongly in 2025 amid the AI boom, which signals buyer and investor interest",
+    "source_url": "https://law360.com/articles/2321847/legal-tech-funding-surge-amid-ai-boom"
+   },
+   {
+    "claim": "AI native law firms raised seed rounds of $2.5M to $9M",
+    "source_url": "https://letsdatascience.com/news/moritz-raises-9-million-for-ai-native-law-firm-2d0b28eb"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Have paying AI native firms using the product.",
+   "actions": [
+    "Sign three firms as design partners",
+    "Measure hours saved per matter"
+   ],
+   "proof": "Three firms using it weekly"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show growth from a narrow segment.",
+   "actions": [
+    "Reach ten paying firms",
+    "Publish revenue per firm"
+   ],
+   "proof": "Recurring revenue and expansion in firms"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Hot sector with active investors",
+   "evidence": "Legal tech funding rose strongly in 2025.",
+   "source_url": "https://law360.com/articles/2321847/legal-tech-funding-surge-amid-ai-boom"
+  },
+  {
+   "point": "Customers pay for software",
+   "evidence": "Law firms spend heavily on tools and AI native firms are early adopters.",
+   "source_url": "https://letsdatascience.com/news/moritz-raises-9-million-for-ai-native-law-firm-2d0b28eb"
+  }
+ ],
+ "brand": {
+  "name": "Relaw",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Relaw\" --era 2022+: 5 characters, 2 syllables, invented name",
+  "strengths": [
+   "Short",
+   "Hints at law"
+  ],
+  "weaknesses": [
+   "Reads as \"re law\", may be confused with other legal names"
+  ],
+  "rationale": "A short invented name with a hint of the vertical is typical of YC brands and works for a B2B legal product. It will not change the odds much but is easy to say and own.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A timely but crowded legal AI wedge; a seed above $1M in 13 months is possible but under even.",
+  "general_summary": "Relaw offers an AI legal OS to AI native law firms. Legal AI funding is hot, which helps, and the company is early with two people. The 13.4 month window is shorter than the median time to a Series A and close to the time to a seed. The odds do not rank this company against peers because the anchor is the cohort rate and the lifts are small. Risks are a small first customer base, funded horizontal rivals and ownership rules.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Only the input file and market searches were used; results dated after 2025-10-06 (such as large legal AI rounds in 2026) were ignored.",
+  "Window is 2025-10-06 to 2026-11-17, 13.4 months.",
+  "Legal cohort rates are anecdotes (n=4)."
+ ],
+ "sources": [
+  "https://law360.com/articles/2321847/legal-tech-funding-surge-amid-ai-boom",
+  "https://letsdatascience.com/news/moritz-raises-9-million-for-ai-native-law-firm-2d0b28eb",
+  "https://dealroom.co/news/169200-legora-alumni-raise-2-5m-to-build-an-ai-native-law-firm/",
+  "https://www.eudia.com/news/2025-sparked-a-legal-tech-funding-frenzy-here-were-some-of-the-notable-deals"
+ ]
 }

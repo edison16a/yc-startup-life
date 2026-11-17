@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Char",
+    "one_liner": "The AI notepad that knows and works for you",
+    "description": "Char is a daily notepad that finishes your todos for you. Type a checkbox, and an agent picks it up \u2014 researching, drafting, or scheduling on your behalf. Stay in command. Char does the work.",
+    "as_of": "2025-07-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.015,
+    "p_high": 0.075,
+    "basis": "Start from about 1 percent with a band of 0.6 to 2 percent (references/yc_acceptance.md). Up: open source with a visible community, a team of three, a distinct idea of tasks completed from checkboxes. Down: productivity and notes is a crowded space with many YC deaths, consumer style usage often lacks repeat paid use (consumer 35 percent inactive), and the founders are based in Seoul and remote. Net about 3 percent.",
+    "why_it_fails": "YC would most plausibly say no because AI notepads and meeting assistants are already crowded and the pitch reads as a feature of Notion or Granola. Without strong usage numbers or a paying segment, interviewers would doubt that this notepad beats general assistants on the problems that matter."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.42,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed 49% / 59% / 65%, cond 59% (n=126), months_to_seed 3 / 7 / 15 (n=74). Tag AI cohort: 50% / 61% / 67%. ",
+        "adjustment_reason": "The 59% anchor is for ever reaching seed. The forecast window is 16.3 months (from 2025-07-07 to 2026-11-17), and the cohort median time to seed is 7 months with a 75th percentile of 15 months, so about 60 to 70 percent of eventual seeds land inside it. That gives a window anchor near 0.37 to 0.42, and a round must also exceed $1M, which removes YC-deal-only cases. Set at 0.42, within 1.25 times the window anchor and not lifted for the open source community or the AI label. Meeting and note apps have been crowded and several YC analogs died, which keeps it from rising further. The odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.38,
+          "rationale": "Small post YC round of $1M to $3M, usually a pre-seed or angel led round that closes quickly. Cohort data for 2022 and later shows a 25th percentile near $2M, and a team this early often takes the first credible check."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.37,
+          "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median $3.2M to $3.5M, 75th percentile about $5M) lifted slightly because only rounds above $1M count here."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.18,
+          "rationale": "Hot sector seed of $6M to $12M. The 2026 winners test found 42 percent of confirmed raises here, but that sample leans to press covered rounds, so this band is held below that share."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            30000000
+          ],
+          "post_money_usd": [
+            70000000,
+            200000000
+          ],
+          "p_band": 0.07,
+          "rationale": "Upside band above $12M, reached only with fast revenue or a standout founder story. Rare for a team of this size."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Window: 16.3 months, to 2026-11-17. Window: 16.3 months, to 2026-11-17. A notepad that completes todos competes with Notion, Granola, Fathom and Circleback, and the strongest YC analogs in this space raised only a seed or sold early while Sidenote, Sonnet and Hypercontext shut down. Investors will want to see weekly active users and a paid conversion rate, and a three person team with an open source product has to prove that people pay. A common outcome is a small angel round under $3M after the batch."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.06,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_a cond 26% (n=74), months_to_series_a 22 / 29 / 38 (n=19). Tag AI: cond 23% (n=66).",
+        "adjustment_reason": "Same 16.3 month window as the seed step. The 26% anchor is for ever reaching Series A after a seed, but the cohort 25th percentile for reaching Series A is 22 months from batch start, so only about 10 to 15 percent of eventual Series A rounds close inside a window this short. Set at 0.06 given the longer 16 month window and the long timeline to Series A for similar productivity companies."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or bridge Series A near the 2022 and later 25th percentile of $11M, taken when growth is real but the story is narrow."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series A, anchored on the 2022 and later median of $14M to $15M and public medians of $17M."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            120000000,
+            300000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series A of $20M or more for a category leader with fast ARR growth, as seen in the top AI cases."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A inside 16 months would need rapid paid growth in a category where Granola raised $43M in May 2025 at a $250M valuation and Notion is shipping agents. Fathom reached a Series A years after its batch. Most notepad and meeting companies in the YC data stopped at seed or sold early, so a Series A by November 2026 is unlikely."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.14,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series_b cond 16% (n=19); calibration sample all years: 44% (n=126).",
+        "adjustment_reason": "This step is for ever reaching a Series B given a Series A, with no time window, because recent cohorts are right censored. Set between the recent cohort figure of 16% (n=19, few years of follow up) and the all years figure of 44%, at 0.14 for a conservative read."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series B near the 25th percentile of the 2022 and later table ($25M to $27M), likely a flat or small step up."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B, median $37M to $40M with post money around $600M in the sparse data."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside Series B for a breakout. Few cohort examples, so the band is deliberately small."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B requires a standout productivity product with revenue at scale. Notion, Microsoft and Google bundle assistants and meeting tools into products users already pay for, and prosumer productivity apps churn quickly, which caps revenue. Fathom was acquired, and none of the notepad analogs shows a Series B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55) across all years. The 2022 to 2025 B2B cohort has no Series C yet (n=3).",
+        "adjustment_reason": "Anchor taken from the all years calibration sample because recent cohorts have not had time. Set at 0.25, about 0.7 times the anchor, since most Series B companies in this category face a very crowded late stage market."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Series C near the 2022 and later 25th percentile ($35M to $50M), in a flat market."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000,
+            2000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series C or D, median $74M with post money about $1.2B."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            400000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            6000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Late stage breakout round. Very few researched cases, so this is a thin tail."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Late stage funding would require Char to become a category leader against Notion and Granola, both far ahead on funding. The more likely end for note and agent assistant companies in the data is a small acquisition, an acquihire or a stall at seed stage."
     }
   ],
   "outcomes": {
@@ -164,167 +224,211 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most outcomes are stalls or small sales because notes and todo assistants are bundled into larger suites, users churn between tools, and paid conversion for individuals is low. A path to a larger outcome needs a pivot to a team or enterprise segment with a clear buyer."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "circleback",
+      "relevance": "AI meeting notes and automations, close product neighbor.",
+      "outcome_summary": "Winter 2024 company, raised a seed, active."
+    },
+    {
+      "slug": "fathom",
+      "relevance": "AI notetaker that went through YC and competes with the same big players.",
+      "outcome_summary": "Series A, later acquired."
+    },
+    {
+      "slug": "sidenote",
+      "relevance": "Meeting follow up automation.",
+      "outcome_summary": "Summer 2023 company, no post YC round, inactive."
+    },
+    {
+      "slug": "khoj",
+      "relevance": "Open source personal AI assistant.",
+      "outcome_summary": "Summer 2023 company, seed, active."
+    },
+    {
+      "slug": "hypercontext",
+      "relevance": "Meeting agendas and notes tool.",
+      "outcome_summary": "Seed, then inactive."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Notion, Microsoft, Google and Granola absorb notes plus agent features",
+      "p": 0.5,
+      "evidence": "Notion shipped its own transcription in 2025 and Granola raised $43M in May 2025 to add collaboration and agents.",
       "analogs": [
-        "TODO-company-slug"
+        "sidenote",
+        "hypercontext"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick a narrow job where completion of the todo is verifiable and own that workflow."
+    },
+    {
+      "risk": "Low willingness to pay for a personal notepad",
+      "p": 0.35,
+      "evidence": "Individual productivity apps often have free alternatives and high churn, and YC consumer style apps show high inactivity.",
+      "analogs": [
+        "capture",
+        "mindmesh"
+      ],
+      "mitigation": "Sell to teams with admin features and pricing per seat, track paid retention early."
+    },
+    {
+      "risk": "Agents that act on tasks are unreliable and cause trust failures",
+      "p": 0.3,
+      "evidence": "Researching, drafting and scheduling on a user's behalf requires access to email and calendars, and errors lose trust quickly.",
+      "analogs": [
+        "speck",
+        "sonnet"
+      ],
+      "mitigation": "Keep humans in command with approvals, and start with narrow task types."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Granola",
+      "what": "AI notepad for meetings with collaboration features and agent features planned.",
+      "traction": "Raised $43M Series B at $250M valuation in May 2025",
+      "source_url": "https://techcrunch.com/2025/05/14/ai-note-taking-app-granola-raises-43m-at-250m-valuation-launches-collaborative-features"
+    },
+    {
+      "name": "Notion",
+      "what": "Workspace that added its own transcription in 2025 and is moving into agents.",
+      "traction": "Large installed base",
+      "source_url": "https://aragonresearch.com/granola-ai-notetaker-rakes-in-funding/"
+    },
+    {
+      "name": "Zoom and Microsoft first party notes",
+      "what": "Built in AI summaries bundled with meeting tools.",
+      "traction": "Bundled with existing subscriptions",
+      "source_url": "https://www.maginative.com/article/granola-raises-20-million-for-ai-powered-notetaking/"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "A notepad with checkbox triggers is easy to build, but reliable agents that research, draft and schedule with calendar and email access need careful permissions and evaluation. A team of three can ship a working version in three months, though quality and trust take longer."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Notion",
+      "Granola",
+      "Microsoft",
+      "Google"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "Notion and Granola have users, distribution and models, and agent features on top of notes are an obvious next step. A rival needs about six months, and the incentive is strong."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "AI note taking is a funded category: Granola raised $43M in May 2025 and is crowded with first party tools.",
+        "source_url": "https://techcrunch.com/2025/05/14/ai-note-taking-app-granola-raises-43m-at-250m-valuation-launches-collaborative-features"
+      },
+      {
+        "claim": "The field is crowded, with Zoom and Microsoft bundled tools plus third party apps.",
+        "source_url": "https://www.maginative.com/article/granola-raises-20-million-for-ai-powered-notetaking/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show active daily usage and an example of completed tasks.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish the open source repo and track weekly active users",
+        "Collect examples of tasks completed without edits"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "1,000 weekly active users or 30 daily users completing tasks"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paid conversion and a clear segment.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch paid plans and measure conversion",
+        "Choose one segment such as founders or sales teams and ship a template for it"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$10K monthly recurring revenue and paid retention above 80 percent after three months"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove the agent is the reason users stay, not the notes.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Show task completion rates and time saved",
+        "Add team plans with shared workspaces"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M annual recurring revenue growing 15 percent a month"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Open source with a distinct angle",
+      "evidence": "The tags list open source, and the concept of a checkbox that triggers an agent is simple and demonstrable.",
+      "source_url": "https://techcrunch.com/2025/05/14/ai-note-taking-app-granola-raises-43m-at-250m-valuation-launches-collaborative-features"
+    },
+    {
+      "point": "Category with active investor interest",
+      "evidence": "Granola's 2025 raise shows investors fund AI notepads.",
+      "source_url": "https://techcrunch.com/2025/05/14/ai-note-taking-app-granola-raises-43m-at-250m-valuation-launches-collaborative-features"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Char",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "helps",
+    "name_check": "python3 -I scripts/name_features.py --score \"Char\" --era 2022+: invented or proper, 4 characters, 1 syllable",
     "strengths": [
-      "TODO"
+      "Very short and memorable",
+      "Easy domain-like word"
     ],
     "weaknesses": [
-      "TODO"
+      "Ordinary word with other meanings, hard to search for"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Four letter single syllable names such as Ramp and Brex have worked for startups, and Char is easy to say. A common word is harder to rank in search, so the effect is mildly positive at best."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A crowded AI notepad with a clear idea, an open source angle and a strong chance of being absorbed by bigger tools.",
+    "general_summary": "Char is an open source notepad where typing a checkbox triggers an agent to do the work. The idea is simple and fits where investors are putting money, as Granola's 2025 round showed. The weakness is that Notion, Microsoft and Granola can add the same feature, and several YC note and meeting analogs died or sold small. Over the 16 month window the chance of a round above $1M sits near the cohort window anchor. The odds do not rank this company against others."
   },
   "assumptions": [
-    "TODO"
+    "Team of three, open source product, no disclosed traction as of 2025-07-07.",
+    "Web results dated after the as of date were ignored.",
+    "The seed probability is for a window of 16.3 months and a round above about $1M. It does not rank this company against others: in the 2026 winners test the average seed probability was 0.65 for companies that raised and 0.62 for companies confirmed to have raised nothing beyond the YC deal.",
+    "Series B and C plus steps are for ever reaching the round, not inside the window. Reaching a round years later is common for companies with paying customers.",
+    "Knowledge base coverage: calibration cohorts are 2022 to 2025 B2B (n=150 researched), with funding coverage partial for most, so known-only rates are biased low."
   ],
   "sources": [
-    "https://"
+    "https://techcrunch.com/2025/05/14/ai-note-taking-app-granola-raises-43m-at-250m-valuation-launches-collaborative-features",
+    "https://www.maginative.com/article/granola-raises-20-million-for-ai-powered-notetaking/",
+    "https://aragonresearch.com/granola-ai-notetaker-rakes-in-funding/"
   ]
 }

@@ -140,7 +140,7 @@ You know it worked when: Annual contract value per site and pilots converting to
 |---|---|---|---|
 | LanguageLine Solutions | Incumbent phone and video interpreter service moving to simple access | Large installed base across hospitals | https://www.languageline.com/en-gb/blog/case-study-how-we-made-interpreter-access-as-simple-as-siri-and-alexa |
 | Princeton Keller Center note on interpreter gaps | Reports 97 percent of hospitals see patients with limited English and 46 percent lack translation services | Demand evidence rather than a competitor | https://kellercenter.princeton.edu/node/3282 |
-| Google Translate and general models | Free general translation that clinics already use informally | Very wide use, no clinical guarantees | https://www.nobarrier.ai/post/what-you-need-to-look-for-in-a-ai-medical-translation |
+| Medical AI translation vendors such as No Barrier | AI interpreting aimed at clinical language; page undated so not used for timing | Vendor claims up to 70 percent cost reduction, unverified | https://www.nobarrier.ai/post/what-you-need-to-look-for-in-a-ai-medical-translation |
 
 ### Demand evidence
 

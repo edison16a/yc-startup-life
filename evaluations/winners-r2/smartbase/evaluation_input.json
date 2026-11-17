@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Smartbase",
+    "one_liner": "AI-native ERP for manufacturers",
+    "description": "An ERP built around AI for small and mid sized manufacturers, covering inventory, production planning, purchasing and finance, sold as a subscription that replaces legacy ERP and spreadsheets. Description in the input is a single sentence.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.012,
+    "p_low": 0.006,
+    "p_high": 0.03,
+    "basis": "YC publishes no acceptance rate; the working prior is about 1 percent with a band of 0.6 to 2 percent (references/yc_acceptance.md). This company is already in the batch named in the input, so the number is for completeness only. Two founders and a one sentence description with no traction; ERP for manufacturers is a real, large, painful market but a well worn one, so about 1.2 percent. Already in the batch.",
+    "why_it_fails": "ERP is a huge schlep with long sales cycles and a rewrite risk, and a one sentence pitch with two founders gives no evidence of manufacturing domain knowledge or customers. YC may also ask why this succeeds where several recent AI ERP entrants and Recurrency style companies are already active."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.53,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024: seed known-only ever, cond figure 0.53; the forecast window is 7.4 months so only the share reaching seed that early counts (time_to_milestones.csv p50 7 months, p75 20 months)",
+        "adjustment_reason": "Window of 7.4 months from the as of date: the ever anchor is cut by the share of seeds that happen that early, with no lift for team or hype per the winners test rules. The odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "small post YC round under $3M from angels or a micro fund, the most common outcome for companies with thin traction at 2022 and later seed data"
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.37,
+          "rationale": "typical institutional seed; the 2022 and later table has a $3.5M median that mixes in the YC deal, so institutional seeds sit a bit higher"
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.2,
+          "rationale": "larger institutional seed for fast growth or a hot category; confirmed 2026 raises above $1M had a $6M median but press favours big rounds"
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.08,
+          "rationale": "upside seed or seed plus, needs unusual traction or a repeat founder; rare"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed here means a round above about $1M from outside investors closing inside the 7.4 month window from the as of date. The B2B cohort has about 53 percent ever and a median of 8 months to seed, but with a window this short, only about 40 percent of eventual seeds land, so about 22 percent. The likely miss is no manufacturer in production use by the time investors ask; Recurrency and Tailor needed long product building before raising."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024: series_a cond 0.26 ever, given seed",
+        "adjustment_reason": "The anchor is for reaching Series A ever; inside 7.4 months only fast seed companies get there (Series A median is 28 months from batch start), so the figure is far below the anchor by construction."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "thin or flat A, below the 2022 and later $10M p25, after a slow year; includes a bridge style A"
         },
         {
           "raise_usd": [
-            0,
-            0
+            9000000,
+            16000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "median A, 2022 and later raise median about $13.5M with few disclosed valuations"
+        },
+        {
+          "raise_usd": [
+            16000000,
+            30000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.15,
+          "rationale": "upside A after real revenue growth, p75 of the 2022 and later table is $20M"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A given a seed in a 7 month window is about 5 percent. The Series A median is 28 months from batch start, and ERP companies must prove migration and retention; Recurrency and Epsilon3 reached A only after years of customer deployments."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.04,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.21,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024: series_b cond 0.21 ever",
+        "adjustment_reason": "The anchor is ever; reaching a Series B inside the window needs a Series A and then a B within about two years of the batch, which the 2022 and later data shows only for a handful of companies."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "small B near the 2018 to 2021 median of $30M, flat valuation"
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "median B, 2022 and later median $37M, p75 $57M"
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "upside B in a category leader; disclosed 2022 and later valuations around $775M"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B inside this window is nearly unobserved. It would need an A and then enterprise scale in a category where sales cycles run long, and analogs reaching A have not reached B yet."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024: series_c cond 0.19 ever",
+        "adjustment_reason": "The anchor is ever; a Series C or later inside the window is close to unobserved for batches this recent, so the number is a floor, not a forecast of a ceiling."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "small C or extension, 2022 and later median $42.5M"
         },
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "typical C for a company with scaled revenue"
+        },
+        {
+          "raise_usd": [
+            100000000,
+            200000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "upside growth round, only for category leaders"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C inside the window is close to impossible for a batch this recent; the number is a floor. Later, a C needs a platform with thousands of manufacturers."
     }
   ],
   "outcomes": {
@@ -164,167 +224,225 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "ERP migrations are slow and the buyer is risk averse; many ERP startups stall at a few customers, or are bought cheaply by a larger software company. A big result requires becoming the system of record for many plants."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "recurrency",
+      "relevance": "Automated ERP for distributors",
+      "outcome_summary": "Series A after years of building"
+    },
+    {
+      "slug": "tailor",
+      "relevance": "Headless ERP for retail operations",
+      "outcome_summary": "Series A, complex product, long build"
+    },
+    {
+      "slug": "epsilon3-inc",
+      "relevance": "AI powered ERP and MES for complex operations",
+      "outcome_summary": "Series A after several years"
+    },
+    {
+      "slug": "canix",
+      "relevance": "Vertical operations software with compliance",
+      "outcome_summary": "Series A"
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Long sales cycles and migration fear mean little revenue early",
+      "p": 0.5,
+      "evidence": "Trade press on ERP shows migrations are risky and costly, and incumbents like Syspro modernise slowly but keep customers",
       "analogs": [
-        "TODO-company-slug"
+        "recurrency",
+        "tailor"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Start with a module that sits beside the incumbent ERP"
+    },
+    {
+      "risk": "Two person team cannot build breadth of an ERP",
+      "p": 0.4,
+      "evidence": "ERP spans inventory, MRP, finance and compliance, each large",
+      "analogs": [
+        "tailor",
+        "epsilon3-inc"
+      ],
+      "mitigation": "Pick a narrow manufacturer type"
+    },
+    {
+      "risk": "Incumbents and well funded AI ERP rivals out sell",
+      "p": 0.3,
+      "evidence": "SAP, Epicor and Syspro all announce AI features and new AI native vendors market to mid-sized plants",
+      "analogs": [
+        "recurrency",
+        "canix"
+      ],
+      "mitigation": "Go deep on one subsector"
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Syspro and Epicor",
+      "what": "Incumbent manufacturing ERP adding AI",
+      "traction": "Large installed bases",
+      "source_url": "https://www.techfinitive.com/features/syspros-industry-4-0-pivot-how-a-legacy-manufacturing-erp-is-reinventing-itself-with-ai-and-iot/"
+    },
+    {
+      "name": "Digit Technologies",
+      "what": "AI native workflow software for manufacturers",
+      "traction": "Vendor marketed, details unverified",
+      "source_url": "https://manufacturing-erp.manufacturingtechnologyinsights.com/vendor/erp-wasn-t-built-for-you-digit-is-cid-3876-mid-372.html"
+    },
+    {
+      "name": "Spreadsheets and legacy ERP",
+      "what": "Status quo for small plants",
+      "traction": "Most small manufacturers",
+      "source_url": "https://www.epicor.com/en-au/blog/technology-and-data/your-erp-is-not-broken/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "ERP covers inventory, bills of materials, scheduling and accounting with data migration from messy legacy systems; two people can build a narrow slice in three months but not a full ERP, and data quality at manufacturers is poor."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "SAP, Epicor and Syspro",
+      "Other AI ERP startups",
+      "Accounting platforms like NetSuite"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Incumbents can bolt on AI quickly but replacing core architecture is slow; startups with similar claims exist, so the risk is more from other startups than incumbents."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Mid sized manufacturers are held back by outdated ERP systems",
+        "source_url": "https://www.automationworld.com/factory/digital-transformation/article/55355640/sap-ai-enabled-erp-is-closing-the-automation-gap-for-mid-sized-manufacturers"
+      },
+      {
+        "claim": "Customisation of legacy ERP can take months and tens of thousands of dollars",
+        "source_url": "https://www.epicor.com/en-au/blog/technology-and-data/your-erp-is-not-broken/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Get two manufacturers using a narrow module in production",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Interview 50 plants and pick one subsector",
+        "Build the module beside their current ERP"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Two paying plants using it weekly"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show paid deployments and a migration playbook",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Replace one legacy ERP end to end",
+        "Document implementation time and savings"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "5 to 10 paying plants and ARR above $300K"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale deployments with a repeatable motion",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire implementation engineers and a sales lead",
+        "Build integrations to common machines"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "ARR above $3M and logo retention above 90 percent"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable expansion with a second product or segment and efficient growth",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add a second wedge sold to the same buyer",
+        "Hire a sales leader and a customer success team",
+        "Show net revenue retention above 110 percent"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue growth above 2x for a full year with stable gross margin"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category leadership with durable margins",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand to adjacent markets or geographies",
+        "Build channel or platform partnerships",
+        "Show a path to profitability or a clear exit buyer"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Large enterprise customers and net retention above 120 percent"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large and painful market with documented dissatisfaction",
+      "evidence": "Trade press describes legacy ERP as slow and costly to change",
+      "source_url": "https://www.automationworld.com/factory/digital-transformation/article/55355640/sap-ai-enabled-erp-is-closing-the-automation-gap-for-mid-sized-manufacturers"
+    },
+    {
+      "point": "AI makes customisation and migration cheaper than before",
+      "evidence": "Reports describe AI reducing ERP migration effort",
+      "source_url": "https://erp.today/ai-is-breaking-the-erp-migration-bottleneck/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Smartbase",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Smartbase\" --era 2022+ : suffix coinage ending in base, nine characters",
     "strengths": [
-      "TODO"
+      "Descriptive and easy to say",
+      "Implies a data foundation"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic Smart prefix and base suffix are common and hard to trademark"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Smartbase is a suffix coinage like Airtable or Supabase style names but with a generic Smart prefix, so it is clear and forgettable at once; neutral."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "An ambitious ERP with a short 7 month window means a low seed chance by construction, close to cohort anchors.",
+    "general_summary": "Smartbase is an AI native ERP for manufacturers with two founders and a one line description. The window is only 7.4 months, shorter than the median 8 months to seed in the B2B cohort, so about 22 percent is the honest estimate with no lift for AI. These numbers do not rank it against other companies; they reflect timing and the slow, schlep heavy category."
   },
   "assumptions": [
-    "TODO"
+    "Only one sentence of description; nothing known about traction.",
+    "Window is 7.4 months from 2026-04-06 to 2026-11-17.",
+    "Comps from batches after the as of date were not used as analogs."
   ],
   "sources": [
-    "https://"
+    "https://www.automationworld.com/factory/digital-transformation/article/55355640/sap-ai-enabled-erp-is-closing-the-automation-gap-for-mid-sized-manufacturers",
+    "https://www.epicor.com/en-au/blog/technology-and-data/your-erp-is-not-broken/",
+    "https://erp.today/ai-is-breaking-the-erp-migration-bottleneck/",
+    "https://www.techfinitive.com/features/syspros-industry-4-0-pivot-how-a-legacy-manufacturing-erp-is-reinventing-itself-with-ai-and-iot/",
+    "https://manufacturing-erp.manufacturingtechnologyinsights.com/vendor/erp-wasn-t-built-for-you-digit-is-cid-3876-mid-372.html"
   ]
 }

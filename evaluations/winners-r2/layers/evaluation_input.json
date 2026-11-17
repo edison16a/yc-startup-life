@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Layers",
+    "one_liner": "Measure, understand and track how you look to improve it",
+    "description": "A consumer product that treats appearance and health as an engineering problem, measuring the body and face, explaining the results and tracking change over time. Revenue model is most likely a subscription or products sold on top of the measurements.",
+    "as_of": "2025-10-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.012,
+    "p_low": 0.006,
+    "p_high": 0.03,
+    "basis": "YC publishes no acceptance rate; the working prior is about 1 percent with a band of 0.6 to 2 percent (references/yc_acceptance.md). This company is already in the batch named in the input, so the number is for completeness only. Two person team, consumer health, no traction stated: slightly below the typical applicant on team depth, near it on idea novelty, so about 1.2 percent.",
+    "why_it_fails": "The description is a thesis, not a product: it names no measurement method, no customer and no revenue. YC partners tend to pass on consumer appearance ideas where the repeat usage is unclear, and the looksmaxxing app category is crowded with free face scoring apps, so the most plausible no is weak differentiation and unproven retention."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.42,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2022-2024: seed known-only ever, cond figure 0.42; the forecast window is 13.4 months so only the share reaching seed that early counts (time_to_milestones.csv p50 7 months, p75 20 months)",
+        "adjustment_reason": "Window of 13.4 months from the as of date: the ever anchor is cut by the share of seeds that happen that early, with no lift for team or hype per the winners test rules. The odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "small post YC round under $3M from angels or a micro fund, the most common outcome for companies with thin traction at 2022 and later seed data"
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "typical institutional seed; the 2022 and later table has a $3.5M median that mixes in the YC deal, so institutional seeds sit a bit higher"
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.18,
+          "rationale": "larger institutional seed for fast growth or a hot category; confirmed 2026 raises above $1M had a $6M median but press favours big rounds"
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.07,
+          "rationale": "upside seed or seed plus, needs unusual traction or a repeat founder; rare"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed here means a round above about $1M from outside investors closing inside the 13.4 month window from the as of date. Consumer cohort anchor is 42 percent ever and the window cuts it to about 25 percent. The most likely failure is that a two person consumer team shows downloads but not retention, so investors pass; Lalabox and Clear stayed small after seed funding or none, and consumer beauty seeds like Lion Pose took years and a brand partner."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.12,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.13,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2022-2024: series_a cond 0.13 ever, given seed",
+        "adjustment_reason": "The anchor is for reaching Series A ever; inside 13.4 months only fast seed companies get there (Series A median is 28 months from batch start), so the figure is far below the anchor by construction."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "thin or flat A, below the 2022 and later $10M p25, after a slow year; includes a bridge style A"
         },
         {
           "raise_usd": [
-            0,
-            0
+            9000000,
+            16000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "median A, 2022 and later raise median about $13.5M with few disclosed valuations"
+        },
+        {
+          "raise_usd": [
+            16000000,
+            30000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.1,
+          "rationale": "upside A after real revenue growth, p75 of the 2022 and later table is $20M"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A given a seed inside the window is about 12 percent. Consumer cohorts have a 13 percent conditional rate, and a Series A needs paid subscribers at scale. Function of Beauty reached A only after manufacturing and sales growth proof, and Proven Group needed years; most consumer seeds stall at a few thousand paying users."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.38,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2022-2024: series_b cond 0.38 ever",
+        "adjustment_reason": "The anchor is ever; reaching a Series B inside the window needs a Series A and then a B within about two years of the batch, which the 2022 and later data shows only for a handful of companies."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "small B near the 2018 to 2021 median of $30M, flat valuation"
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "median B, 2022 and later median $37M, p75 $57M"
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "upside B in a category leader; disclosed 2022 and later valuations around $775M"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs a durable brand or hardware moat and strong margins. Consumer health apps that grow on social trends usually plateau, as many beauty companies in the data did, and the few that reached B owned manufacturing or distribution."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2022-2024: series_c cond 0.33 ever",
+        "adjustment_reason": "The anchor is ever; a Series C or later inside the window is close to unobserved for batches this recent, so the number is a floor, not a forecast of a ceiling."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "small C or extension, 2022 and later median $42.5M"
         },
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "typical C for a company with scaled revenue"
+        },
+        {
+          "raise_usd": [
+            100000000,
+            200000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "upside growth round, only for category leaders"
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C requires a category leading consumer brand. In the beauty and wellness analogs only Function of Beauty got there, with owned factories and large revenue, and nothing in this description suggests that path yet."
     }
   ],
   "outcomes": {
@@ -164,167 +224,239 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.66
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most consumer health and beauty companies in the data end as small independent businesses or shut down quietly. A good result here is a niche subscription business sold to a larger wellness company; failure comes from fad driven demand, privacy and regulatory exposure for body data, and cheap copies."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "function-of-beauty",
+      "relevance": "Beauty and personalization, the one clear winner in the set",
+      "outcome_summary": "Raised A and a $150M B after owning manufacturing and fast sales growth"
+    },
+    {
+      "slug": "lion-pose",
+      "relevance": "YC consumer skincare with a small seed",
+      "outcome_summary": "Raised a $3M seed after retail traction and stayed a small independent brand"
+    },
+    {
+      "slug": "clear",
+      "relevance": "Skin health data and AI layer",
+      "outcome_summary": "Alive as a small team with a premium tier, funding unconfirmed"
+    },
+    {
+      "slug": "lalabox",
+      "relevance": "Consumer beauty app by a small team",
+      "outcome_summary": "Shut down after a seed round, cause unclear"
+    },
+    {
+      "slug": "proven-group",
+      "relevance": "Data driven personalized skincare",
+      "outcome_summary": "Seed, Reg A and a $12M A from insiders after years of work"
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Retention collapses after the first measurement",
+      "p": 0.45,
+      "evidence": "Consumer appearance apps are mostly free to download and monetise by subscription, third party estimates show many with tiny monthly revenue",
       "analogs": [
-        "TODO-company-slug"
+        "lalabox",
+        "clear"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Tie tracking to a result people see over weeks, such as a routine or product regimen"
+    },
+    {
+      "risk": "Crowded and copyable by free face scoring apps and big beauty brands",
+      "p": 0.4,
+      "evidence": "App stores list dozens of face analysis and looksmaxxing apps with similar features",
+      "analogs": [
+        "clear",
+        "dear-brightly"
+      ],
+      "mitigation": "Own a proprietary dataset or clinical validation"
+    },
+    {
+      "risk": "Privacy and regulatory exposure for face and health data",
+      "p": 0.2,
+      "evidence": "Guides advise users to check whether apps keep uploaded photos, and health claims can draw regulators",
+      "analogs": [
+        "soteri-skin"
+      ],
+      "mitigation": "Process on device and avoid medical claims"
+    },
+    {
+      "risk": "Founders are only two and consumer growth is channel dependent",
+      "p": 0.3,
+      "evidence": "Team size 2 in the input and beauty analogs needed supply chain or retail partners",
+      "analogs": [
+        "lion-pose",
+        "glitzi"
+      ],
+      "mitigation": "Add a growth hire and a distribution partner early"
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Face and looksmaxxing analysis apps",
+      "what": "Free face scoring with paid plans",
+      "traction": "Many apps, small revenue per third party estimates",
+      "source_url": "https://looksmaxxing-app.pages.dev"
+    },
+    {
+      "name": "Skincare personalization brands",
+      "what": "Prescription and personalised skincare with intake quizzes",
+      "traction": "Proven and Curology scale in revenue",
+      "source_url": "https://apps.apple.com/us/app/id6756380805"
+    },
+    {
+      "name": "Status quo: dermatologists and self research",
+      "what": "Doing nothing or ad hoc advice from forums and creators",
+      "traction": "Large social conversation, over 806,000 mentions in six months",
+      "source_url": "https://mwm.ai/apps/looksmaxxing-ai-face-rating/6745803931"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "Face and body measurement with computer vision is available off the shelf and a small team can ship an app in weeks; the hard part is validated accuracy and clinically sound advice, which a two person team cannot easily build."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Free face scoring apps",
+      "Large beauty and wellness brands",
+      "Camera and phone makers with built in skin analysis"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "A rival can copy the measurement features within months; the moat would be data and brand, which a new startup lacks. Large beauty brands already run skin analysis tools but lack the engineering culture."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Looksmaxxing and face analysis apps attract large social attention but weak revenue",
+        "source_url": "https://appgoblin.info/apps/6747984800"
+      },
+      {
+        "claim": "Many competing apps charge a few dollars to about $30 a month, showing willingness to pay among some users",
+        "source_url": "https://mwm.ai/apps/looksmax-ai-private-face-rater/6747439381"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Ship a working measurement and tracking product to real users",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch to a niche community with a clear before and after",
+        "Track week 4 retention and paid conversion"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Week 4 retention above 25 percent and paid users in the hundreds"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show revenue growth and a repeatable acquisition channel",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run paid and creator channels with payback under 6 months",
+        "Add a product or service attach to lift revenue per user"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Monthly revenue above $50K growing 15 percent a month"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show subscriber scale and low churn",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build brand and community",
+        "Hire a head of growth and a clinical advisor"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue above $2M a year with stable churn"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable expansion with a second product or segment and efficient growth",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add a second wedge sold to the same buyer",
+        "Hire a sales leader and a customer success team",
+        "Show net revenue retention above 110 percent"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue growth above 2x for a full year with stable gross margin"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category leadership with durable margins",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand to adjacent markets or geographies",
+        "Build channel or platform partnerships",
+        "Show a path to profitability or a clear exit buyer"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Large enterprise customers and net retention above 120 percent"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large and visible consumer interest in appearance improvement",
+      "evidence": "Hundreds of thousands of social mentions and many paying app users",
+      "source_url": "https://appgoblin.info/apps/6747984800"
+    },
+    {
+      "point": "Low build cost for a measurement product",
+      "evidence": "Off the shelf vision models let two people ship quickly",
+      "source_url": "https://looksmaxxing-app.pages.dev"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Layers",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Layers\" --era 2022+ : one syllable real word, six characters",
     "strengths": [
-      "TODO"
+      "Short real word that fits tracking change over time",
+      "Easy to say and spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic word that is hard to search for and likely to be taken in other domains"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Layers is a short real word like Brex or Ramp style names that are easy to recall, but it conveys little about appearance and is shared with many products, so it is neutral for success."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A thesis stage consumer appearance app with a normal seed chance inside a 13 month window and little reason to expect more.",
+    "general_summary": "Layers has a broad thesis about measuring and improving appearance with a two person team. Within the 13.4 month window the cohort anchor for consumer seed rounds is about 42 percent ever, so the window figure is near 25 percent. Consumer appearance is a crowded category with weak monetisation data, so there is no reason to lift above the anchor. These odds do not separate this company from others in the batch."
   },
   "assumptions": [
-    "TODO"
+    "Description is a thesis with no product detail, so odds follow cohort anchors.",
+    "Funding amounts in comps are partial, using lower and upper ranges.",
+    "Window is 13.4 months from 2025-10-06 to 2026-11-17."
   ],
   "sources": [
-    "https://"
+    "https://looksmaxxing-app.pages.dev",
+    "https://appgoblin.info/apps/6747984800",
+    "https://mwm.ai/apps/looksmaxxing-ai-face-rating/6745803931",
+    "https://mwm.ai/apps/looksmax-ai-private-face-rater/6747439381",
+    "https://apps.apple.com/us/app/id6756380805"
   ]
 }
