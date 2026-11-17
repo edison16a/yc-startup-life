@@ -308,3 +308,11 @@ Two independent auditors, 8 records each: enveloop, lovage, sift, cashmere, home
 Batch A: 51 fields, strict 20, middle 7, lenient 1. Batch B: 45 fields, strict 10, middle 3, lenient 1.
 
 Totals: 96 fields checked. Strict: 30 wrong (31.3 percent). Middle: 10 wrong (10.4 percent). Lenient: 2 wrong (2.1 percent). The limit is 10 percent, so the middle count is still just above it, but it has fallen from 13.3 percent in audit 15 and 12.9 percent in audit 13 since prompt lesson 10 began to apply. The two clear errors are a malformed founder entry (lovd) and a competitor dated after the record date (tumult). The rest are omitted or unverified rounds, a stale founder role (godutch), a mismatched as_of (close, gobuild, homebreeze) and null founded_year values. Action: correct the flagged records. AUDIT RESULT is not PASS.
+
+## Audit 17 (records from waves 42 and 43)
+
+Two independent auditors, 8 records each: vango, skylights, direct-match, anasen, elpha, dosedr, torch, vizy, medinas-health, poppy, blok, frey, lunasec, priime, cambridge-cancer-genomics, saida.
+
+Batch A: 40 fields, strict 16, middle 9, lenient 2. Batch B: 45 fields, strict 13, middle 5, lenient 0.
+
+Totals: 85 fields checked. Strict: 29 wrong (34.1 percent). Middle: 14 wrong (16.5 percent). Lenient: 2 wrong (2.4 percent). The limit is 10 percent, so this audit is above it. The sample leaned toward small, inactive companies from 2015 to 2019 with thin public coverage, where co-founders and early rounds are hardest to find. Defects: missed co-founders (skylights, direct-match, elpha), missed or incomplete early rounds (frey, poppy, medinas-health, cambridge-cancer-genomics, torch, elpha), a merger left out of the exit (torch), and two clearly wrong facts (skylights founded_year contradicts YC, direct-match lists a sole founder who was a former founder). Action: correct the flagged records, then run the completeness pass described for the final audit. AUDIT RESULT is not PASS.
