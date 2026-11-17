@@ -11,4 +11,4 @@ Generated 2026-11-17.
 - Funding rounds recorded: 2051; competitors at founding recorded: 3616
 - Founders with a publicly sourced age: 37
 - Confidence: high 175, medium 1992, low 993
-- Invalid records: 0; warnings: 379 (see data/merge_warnings.txt)
+- Invalid records: 0; warnings: 377 (see data/merge_warnings.txt)
