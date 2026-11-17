@@ -226,3 +226,28 @@ Sample: 16 records drawn at random from the 330 most recently written (kamion, a
 | haddock | 5 | 4 | 1 | 0 | Seed investors incomplete; undated competitors. |
 
 Totals: 91 fields checked. Strict: 35 wrong (38.5 percent). Middle: 9 wrong (9.9 percent). Lenient: 1 wrong (1.1 percent). The limit is 10 percent. The middle count is just under the limit and is a lower bound, so this is not evidence of a pass. Errors cluster in older companies with real funding history (Kapital Bank, Julius, Haddock, SaveIN, Kamion): the researcher found a seed but missed later rounds, stages and extra investors. Action: the records with middle errors are being corrected. AUDIT RESULT is not PASS.
+
+## Waves 29 and 30, audit 11
+
+Sample: 16 records drawn at random from the 330 most recently written (palla, fintoc, kaya, velt, parallel-bio, coderhouse, echoes-hq, hubuc, medium-biosciences, meru-com, infracost, coloop, dailybot, jabu, upbanx, kaipod-learning). Two auditors who opened more cited pages than in earlier audits (about 10 each). Three counts as in audit 10.
+
+| Slug | Fields checked | Strict | Middle | Lenient | Notes |
+|---|---|---|---|---|---|
+| palla | 5 | 2 | 1 | 0 | Third co-founder (CTO) listed on the Cowboy Ventures page is missing. |
+| fintoc | 5 | 2 | 2 | 0 | 3M seed (LatamList, opened) missing; only competitor sourced to 2024 against an as_of of 2021-03. |
+| kaya | 4 | 1 | 0 | 0 | Aggregator note only. |
+| velt | 4 | 2 | 0 | 0 | Aggregator co-founder and possible earlier round. |
+| parallel-bio | 6 | 2 | 0 | 0 | Aggregator round; competitor sourced to a blog title. |
+| coderhouse | 5 | 4 | 2 | 0 | Co-founder named on the company story page missing; competitors undated. |
+| echoes-hq | 3 | 1 | 0 | 0 | Aggregator round. |
+| hubuc | 6 | 3 | 2 | 0 | Pre-seed amount of 350K euros stated by the cited source left null; undated competitors. |
+| medium-biosciences | 4 | 2 | 0 | 0 | Aggregator seed; competitors empty. |
+| meru-com | 8 | 2 | 2 | 0 | TechCrunch's total raised implies an earlier round; competitors undated. |
+| infracost | 7 | 1 | 0 | 0 | Competitor list possibly incomplete. |
+| coloop | 5 | 3 | 2 | 0 | Research-Live calls it Pre-Series A and gives totals implying an earlier round; competitors empty. |
+| dailybot | 4 | 2 | 0 | 0 | Aggregator note; competitors empty. |
+| jabu | 5 | 2 | 1 | 0 | Series A investors incomplete; date; competitor dated after as_of. |
+| upbanx | 6 | 1 | 1 | 0 | Competitor dated after as_of. |
+| kaipod-learning | 4 | 2 | 1 | 0 | Aggregator pre-seed; undated competitor. |
+
+Totals: 81 fields checked. Strict: 32 wrong (39.5 percent). Middle: 14 wrong (17.3 percent). Lenient: 0 wrong (0 percent). The limit is 10 percent. Result: not accepted. The middle rate rose from about 10 percent in audit 10 to 17 percent, partly because these auditors opened more pages. The dominant defects are the same: a round or co-founder that a cited article states directly but the researcher left out or left blank (amount, investors, stage), and competitors whose sources are dated after the as_of. Action: the research prompt gets two more lessons (use the cited article's own total raised and investor list to find missing rounds; read the company story page for co-founders), the flagged records are corrected, and a completeness correction pass over earlier records is required before the final audit. AUDIT RESULT is not PASS.
