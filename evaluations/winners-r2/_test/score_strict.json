@@ -1,0 +1,7168 @@
+{
+ "all": {
+  "label": "all known",
+  "n_forecasts": 120,
+  "n_raised": 19,
+  "n_none": 49,
+  "n_unknown": 52,
+  "mean_p_seed_raised": 0.46263157894736845,
+  "mean_p_seed_none": 0.4079591836734694,
+  "brier_seed": 0.20603529411764707,
+  "auc_raised_vs_none": 0.6987110633727175,
+  "share_raised_of_known": 0.27941176470588236,
+  "mean_p_seed_all_known": 0.42323529411764704,
+  "baseline_brier_constant_at_sample_rate": 0.20134083044982698,
+  "brier_skill_vs_constant": -0.023316004296455528,
+  "overconfidence_mean_p_minus_rate": 0.14382352941176468,
+  "calibration_bins": {
+   "high (0.5 and up)": {
+    "n": 18,
+    "actual_rate": 0.3888888888888889
+   },
+   "low (<0.35)": {
+    "n": 10,
+    "actual_rate": 0.1
+   },
+   "mid (0.35 to 0.5)": {
+    "n": 40,
+    "actual_rate": 0.275
+   }
+  },
+  "band_coverage": 1.0,
+  "mean_p_band_on_actual": 0.31894736842105265,
+  "median_actual_over_forecast_mode_band_mid": 0.9663792676216149,
+  "share_actual_above_top_band": 0.0,
+  "share_actual_above_all_band_hi_or_below_lo": 0.0
+ },
+ "no_leak_flags": {
+  "label": "no leak flags",
+  "n_forecasts": 111,
+  "n_raised": 15,
+  "n_none": 47,
+  "n_unknown": 49,
+  "mean_p_seed_raised": 0.47333333333333333,
+  "mean_p_seed_none": 0.40702127659574466,
+  "brier_seed": 0.19813387096774193,
+  "auc_raised_vs_none": 0.7368794326241135,
+  "share_raised_of_known": 0.24193548387096775,
+  "mean_p_seed_all_known": 0.4230645161290323,
+  "baseline_brier_constant_at_sample_rate": 0.18340270551508844,
+  "brier_skill_vs_constant": -0.0803214184397163,
+  "overconfidence_mean_p_minus_rate": 0.18112903225806454,
+  "calibration_bins": {
+   "high (0.5 and up)": {
+    "n": 17,
+    "actual_rate": 0.35294117647058826
+   },
+   "low (<0.35)": {
+    "n": 9,
+    "actual_rate": 0.0
+   },
+   "mid (0.35 to 0.5)": {
+    "n": 36,
+    "actual_rate": 0.25
+   }
+  },
+  "band_coverage": 1.0,
+  "mean_p_band_on_actual": 0.33066666666666666,
+  "median_actual_over_forecast_mode_band_mid": 0.9663792676216149,
+  "share_actual_above_top_band": 0.0,
+  "share_actual_above_all_band_hi_or_below_lo": 0.0
+ },
+ "winners": {
+  "label": "winners",
+  "n_forecasts": 0,
+  "n_raised": 0,
+  "n_none": 0,
+  "n_unknown": 0
+ },
+ "controls": {
+  "label": "controls",
+  "n_forecasts": 0,
+  "n_raised": 0,
+  "n_none": 0,
+  "n_unknown": 0
+ },
+ "rows": [
+  {
+   "slug": "godela",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.46,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      2900000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round of $1M to $3M, usually angels or a small seed fund. Hard tech investors often write a first $1M to $3M check while waiting for customer data."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, the modal outcome in 2022 and later data (median $3.5M to $4.1M in round_benchmarks.csv, which mixes in the YC deal). Physics AI is a funded category, so a $3M to $6M seed from a deep tech fund is the central case."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed of $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test. A 10 person team with a working engine could attract a $6M to $12M round from a top fund."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band above $12M, reserved for a standout demo with a named lead. Only with a named aerospace customer and strong accuracy benchmarks."
+    }
+   ]
+  },
+  {
+   "slug": "topological",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      2900000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round of $1M to $3M, usually angels or a small seed fund. A research heavy two person team often gets a $1M to $3M check from deep tech angels first."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, the modal outcome in 2022 and later data (median $3.5M to $4.1M in round_benchmarks.csv, which mixes in the YC deal). The central case is a $3M to $6M seed from a deep tech fund on the strength of the benchmark claim."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed of $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test. Possible for a standout technical result with a named lead, as AI design tool rounds have been large."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band above $12M, reserved for a standout demo with a named lead. Needs a named manufacturing customer."
+    }
+   ]
+  },
+  {
+   "slug": "ondeck-ai",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.45,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      2900000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round of $1M to $3M, usually angels or a small seed fund. Canadian and defense angels often start with a $1M to $3M check."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, the modal outcome in 2022 and later data (median $3.5M to $4.1M in round_benchmarks.csv, which mixes in the YC deal). The central case is a $3M to $6M seed from an AI or defense tech fund."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed of $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test. A defense contract plus a benchmark win over Gemini could pull a $6M to $12M round."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band above $12M, reserved for a standout demo with a named lead. Requires a government contract or a large enterprise win."
+    }
+   ]
+  },
+  {
+   "slug": "sila",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.33,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      2900000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round of $1M to $3M, usually angels or a small seed fund. A two person AI team with a viral demo can get a $1M to $3M angel round quickly."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, the modal outcome in 2022 and later data (median $3.5M to $4.1M in round_benchmarks.csv, which mixes in the YC deal). The central case is a $3M to $6M seed from an AI focused fund."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed of $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test. AI native team products have drawn large rounds in 2025, so a $6M to $12M seed is possible with strong usage."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band above $12M, reserved for a standout demo with a named lead. Only with rapid organic growth inside startups."
+    }
+   ]
+  },
+  {
+   "slug": "uno-wallet",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.25,
+   "p_a": 0.02,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      2900000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round of $1M to $3M, usually angels or a small seed fund. Fintech angels often write $1M to $3M for a payments founder with a regulated partner."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, the modal outcome in 2022 and later data (median $3.5M to $4.1M in round_benchmarks.csv, which mixes in the YC deal). The central case is a $3M to $6M seed from a fintech fund if a bank partner and a launch are in place."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed of $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test. Large rounds need a viral launch or a distribution deal."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band above $12M, reserved for a standout demo with a named lead. Needs NFC access and a clear user acquisition engine."
+    }
+   ]
+  },
+  {
+   "slug": "cranston-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.55,
+   "p_a": 0.12,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      28000000.0,
+      60000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      120000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
+    }
+   ]
+  },
+  {
+   "slug": "scope",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.05,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      28000000.0,
+      60000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      120000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
+    }
+   ]
+  },
+  {
+   "slug": "arc-prize-foundation",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.07,
+   "p_a": 0.05,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      28000000.0,
+      60000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      120000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
+    }
+   ]
+  },
+  {
+   "slug": "agentphone",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": true,
+   "p_seed": 0.45,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      28000000.0,
+      60000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      120000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
+    }
+   ]
+  },
+  {
+   "slug": "thirdlayer",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.55,
+   "p_a": 0.2,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      28000000.0,
+      60000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      120000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
+    }
+   ]
+  },
+  {
+   "slug": "blueshoe",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.48,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ]
+  },
+  {
+   "slug": "altur",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ]
+  },
+  {
+   "slug": "mendelia",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.35,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ]
+  },
+  {
+   "slug": "lucis",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 20000000,
+   "leak": true,
+   "p_seed": 0.45,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ]
+  },
+  {
+   "slug": "memoir",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.27,
+   "p_a": 0.02,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ]
+  },
+  {
+   "slug": "panta",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Common for a 3 person team that sells services revenue first."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Brokerage is a revenue business, so a seed funds licensing, brokers and carrier relationships."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside seed led by a top fund. AI native brokerages were drawing large seeds in late 2025, for example a $7.5M seed for an adjacent broker workflow company."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Large seed, only with a landmark traction story or a hot thesis. Needs a standout growth number such as fast premium placed, not available at a batch start."
+    }
+   ]
+  },
+  {
+   "slug": "instinct-xyz",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Angel round from crypto and fintech operators."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Typical seed for an AI trading product with early users."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Upside seed led by a top fund. AI plus crypto and prediction market themes drew large seeds in 2025 and 2026."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Large seed, only with a landmark traction story or a hot thesis. Needs visible assets under management or trading volume growth."
+    }
+   ]
+  },
+  {
+   "slug": "costream",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.48,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Small round on top of the YC deal."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Typical seed for AI plus consumer with a team of 8."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Upside seed led by a top fund. Consumer AI and voice products drew large seeds in 2025, for example Wispr Flow raised $30M in June 2025 at a later stage."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Large seed, only with a landmark traction story or a hot thesis. A hot consumer AI story with fast user growth."
+    }
+   ]
+  },
+  {
+   "slug": "q2q",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.32,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Likely for a 2 person team selling to a narrow buyer list."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Typical seed if revenue from several PE firms shows up."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside seed led by a top fund. Needs fast revenue growth from outbound services."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Large seed, only with a landmark traction story or a hot thesis. Unlikely for a niche services heavy outbound product."
+    }
+   ]
+  },
+  {
+   "slug": "visibl-semiconductors",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.36,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Common for design services revenue funding early engagements."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Typical seed for a hard tech company with an anchor customer."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Upside seed led by a top fund. Chip and power infrastructure investors fund larger seeds when a named customer commits to a tape out."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Large seed, only with a landmark traction story or a hot thesis. Needs a funded customer program and a marquee lead."
+    }
+   ]
+  },
+  {
+   "slug": "aegis",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.36,
+   "p_a": 0.12,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typical when a two to four person team raises from angels and micro funds soon after demo day. Healthcare seed rounds after 2022 had a median of $3.3M in the Healthcare cohort (n=73), so the middle bands carry the most weight."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal so it reads low. Healthcare seed rounds after 2022 had a median of $3.3M in the Healthcare cohort (n=73), so the middle bands carry the most weight."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M, where press covered 2026 raises had their median of $6.0M; needs live revenue or a standout founder story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed above $12M, seen in 2025 voice, document and agent categories when a lab style team is bid up by several funds."
+    }
+   ]
+  },
+  {
+   "slug": "unsiloed-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.36,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typical when a two to four person team raises from angels and micro funds soon after demo day. Pulse (S24) raised a $3.9M seed and Reducto an $8.4M seed, which sets the document parsing range."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal so it reads low. Pulse (S24) raised a $3.9M seed and Reducto an $8.4M seed, which sets the document parsing range."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M, where press covered 2026 raises had their median of $6.0M; needs live revenue or a standout founder story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside seed above $12M, seen in 2025 voice, document and agent categories when a lab style team is bid up by several funds."
+    }
+   ]
+  },
+  {
+   "slug": "talking-computers",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.34,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round of $1M to $3M, typical when a two to four person team raises from angels and micro funds soon after demo day. Voice model teams drew larger early checks in 2025 than typical software, so I keep the upper bands slightly fatter within the default shape."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.34,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal so it reads low. Voice model teams drew larger early checks in 2025 than typical software, so I keep the upper bands slightly fatter within the default shape."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.24,
+     "rationale": "Larger institutional seed of $6M to $12M, where press covered 2026 raises had their median of $6.0M; needs live revenue or a standout founder story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.14,
+     "rationale": "Upside seed above $12M, seen in 2025 voice, document and agent categories when a lab style team is bid up by several funds."
+    }
+   ]
+  },
+  {
+   "slug": "normal",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.37,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Small post YC round of $1M to $3M, typical when a two to four person team raises from angels and micro funds soon after demo day. Hardware design tools such as Hestus raised a small first seed of $1.5M in early 2025 and Adam raised $4.1M later, so the low and middle bands are most likely."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.34,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal so it reads low. Hardware design tools such as Hestus raised a small first seed of $1.5M in early 2025 and Adam raised $4.1M later, so the low and middle bands are most likely."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.19,
+     "rationale": "Larger institutional seed of $6M to $12M, where press covered 2026 raises had their median of $6.0M; needs live revenue or a standout founder story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.09,
+     "rationale": "Upside seed above $12M, seen in 2025 voice, document and agent categories when a lab style team is bid up by several funds."
+    }
+   ]
+  },
+  {
+   "slug": "travo",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.28,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Small post YC round of $1M to $3M, typical when a two to four person team raises from angels and micro funds soon after demo day. Construction AI seeds in the records ran from $5.5M for PermitFlow to small rounds, and with no information I keep the default shape tilted low."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.34,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal so it reads low. Construction AI seeds in the records ran from $5.5M for PermitFlow to small rounds, and with no information I keep the default shape tilted low."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Larger institutional seed of $6M to $12M, where press covered 2026 raises had their median of $6.0M; needs live revenue or a standout founder story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, seen in 2025 voice, document and agent categories when a lab style team is bid up by several funds."
+    }
+   ]
+  },
+  {
+   "slug": "onestop",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.3,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels and pre-seed funds, the common outcome for a two person consumer team with early density in one neighborhood. Consumer rounds at 2018 to 2021 had median $3.5M but many were small (cohort p25 $500K)."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed if the invite-only New York launch shows weekly retention. Consumer 2022+ seed median is $3.4M (n=16, p75 $6.6M)."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A growth-story seed led by a top consumer fund if usage spreads beyond Hell's Kitchen; the winners test median of confirmed raises above $1M was $6.0M but leans high."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: breakout density across several neighborhoods and a hot narrative about a post-Nextdoor local network."
+    }
+   ]
+  },
+  {
+   "slug": "runtime",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.34,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      20000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M, as with Diligent's $2.5M seed in 2026 for AI fintech risk operations."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      22000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed for an AI agent product with live fintech pilots, near Coris at $3.7M and the 2022+ B2B median of $3.5M."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed led by a top fund for an agent infrastructure story; Sphinx, a close AI compliance analog, raised $7.1M in Feb 2026."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      80000000,
+      140000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside from multiple named fintech customers in production and platform positioning."
+    }
+   ]
+  },
+  {
+   "slug": "clerked",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      20000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M, typical for a four person AP startup with early customers; Landed and Cedalio style rounds in the cohort were in this range."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      22000000,
+      40000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed with pilots in production, near the 2022+ B2B median of $3.5M and the Sieve $4M seed."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      75000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Larger seed if early ARR and a clear AI finance narrative attract a top fund."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      18000000
+     ],
+     "post_money_usd": [
+      75000000,
+      120000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside from fast revenue and a convincing agent story."
+    }
+   ]
+  },
+  {
+   "slug": "sherpa-labs",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.52,
+   "p_a": 0.15,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      20000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M, common for data companies with a few lab pilots; Lightly raised $3M and Playment $1.6M."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      22000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed, near Sieve's $4M seed and the 2022+ B2B median of $3.5M."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed if lab contracts show revenue; confirmed 2026 raises above $1M had median $6.0M but lean high."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      160000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside if lab demand and a recognized founding team create a hot round."
+    }
+   ]
+  },
+  {
+   "slug": "sira",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 3400000,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      20000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M, like Hammr's 2023 seed from Pioneer Fund for construction workforce software."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      22000000,
+      40000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed with early customers, near the 2022+ B2B median of $3.5M."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      75000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Larger seed if the shift filling agents show strong usage and revenue."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      18000000
+     ],
+     "post_money_usd": [
+      75000000,
+      120000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside if growth is fast enough for a lead from a top fund."
+    }
+   ]
+  },
+  {
+   "slug": "uplane",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 4500000,
+   "leak": false,
+   "p_seed": 0.47,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round of about $1M to $3M, often angels and a micro fund. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, the common case. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed of $6M to $12M after fast early traction. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Hot seed above $12M, up to about $25M, for an unusually strong story. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    }
+   ]
+  },
+  {
+   "slug": "promptless",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.52,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of about $1M to $3M, often angels and a micro fund. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M, the common case. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M after fast early traction. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Hot seed above $12M, up to about $25M, for an unusually strong story. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    }
+   ]
+  },
+  {
+   "slug": "fed10",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of about $1M to $3M, often angels and a micro fund. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M, the common case. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M after fast early traction. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Hot seed above $12M, up to about $25M, for an unusually strong story. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    }
+   ]
+  },
+  {
+   "slug": "bramante",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of about $1M to $3M, often angels and a micro fund. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M, the common case. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M after fast early traction. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Hot seed above $12M, up to about $25M, for an unusually strong story. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    }
+   ]
+  },
+  {
+   "slug": "probo",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of about $1M to $3M, often angels and a micro fund. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M, the common case. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M after fast early traction. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Hot seed above $12M, up to about $25M, for an unusually strong story. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
+    }
+   ]
+  },
+  {
+   "slug": "vantel",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 2000000,
+   "leak": false,
+   "p_seed": 0.45,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.35,
+     "rationale": "A small post YC round of about $1M to $3M from angels and a micro fund, the most common outcome when a team has early pilots but no repeatable sales motion. It is the largest band because the 2022 and later seed table (p25 $2.0M, median $3.5M) mixes in YC deal sized checks."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.38,
+     "rationale": "A conventional institutional seed of $3M to $6M led by a seed fund, matching the 2022 and later table median of $3.5M and the p75 of $5.2M for the cohort."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A $6M to $12M seed, which happens when a lead fund prices on market heat. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers large rounds more, so this band is kept at a minority."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      100000000
+     ],
+     "p_band": 0.05,
+     "rationale": "An upside seed above $12M, reached only if the company shows unusual early revenue or a top fund competes for it; rare in the YC data and kept small."
+    }
+   ]
+  },
+  {
+   "slug": "blaxel",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 7300000,
+   "leak": true,
+   "p_seed": 0.5,
+   "p_a": 0.12,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.2,
+     "rationale": "A small post YC round of about $1M to $3M from angels and a micro fund, the most common outcome when a team has early pilots but no repeatable sales motion. It is the largest band because the 2022 and later seed table (p25 $2.0M, median $3.5M) mixes in YC deal sized checks."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "A conventional institutional seed of $3M to $6M led by a seed fund, matching the 2022 and later table median of $3.5M and the p75 of $5.2M for the cohort."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A $6M to $12M seed, which happens when a lead fund prices on market heat. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers large rounds more, so this band is kept at a minority."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      100000000
+     ],
+     "p_band": 0.15,
+     "rationale": "An upside seed above $12M, reached only if the company shows unusual early revenue or a top fund competes for it; rare in the YC data and kept small."
+    }
+   ]
+  },
+  {
+   "slug": "permitify",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.35,
+     "rationale": "A small post YC round of about $1M to $3M from angels and a micro fund, the most common outcome when a team has early pilots but no repeatable sales motion. It is the largest band because the 2022 and later seed table (p25 $2.0M, median $3.5M) mixes in YC deal sized checks."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.38,
+     "rationale": "A conventional institutional seed of $3M to $6M led by a seed fund, matching the 2022 and later table median of $3.5M and the p75 of $5.2M for the cohort."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A $6M to $12M seed, which happens when a lead fund prices on market heat. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers large rounds more, so this band is kept at a minority."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      100000000
+     ],
+     "p_band": 0.05,
+     "rationale": "An upside seed above $12M, reached only if the company shows unusual early revenue or a top fund competes for it; rare in the YC data and kept small."
+    }
+   ]
+  },
+  {
+   "slug": "shofo",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.35,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.35,
+     "rationale": "A small post YC round of about $1M to $3M from angels and a micro fund, the most common outcome when a team has early pilots but no repeatable sales motion. It is the largest band because the 2022 and later seed table (p25 $2.0M, median $3.5M) mixes in YC deal sized checks."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.38,
+     "rationale": "A conventional institutional seed of $3M to $6M led by a seed fund, matching the 2022 and later table median of $3.5M and the p75 of $5.2M for the cohort."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A $6M to $12M seed, which happens when a lead fund prices on market heat. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers large rounds more, so this band is kept at a minority."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      100000000
+     ],
+     "p_band": 0.05,
+     "rationale": "An upside seed above $12M, reached only if the company shows unusual early revenue or a top fund competes for it; rare in the YC data and kept small."
+    }
+   ]
+  },
+  {
+   "slug": "stratify",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.35,
+     "rationale": "A small post YC round of about $1M to $3M from angels and a micro fund, the most common outcome when a team has early pilots but no repeatable sales motion. It is the largest band because the 2022 and later seed table (p25 $2.0M, median $3.5M) mixes in YC deal sized checks."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.38,
+     "rationale": "A conventional institutional seed of $3M to $6M led by a seed fund, matching the 2022 and later table median of $3.5M and the p75 of $5.2M for the cohort."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A $6M to $12M seed, which happens when a lead fund prices on market heat. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers large rounds more, so this band is kept at a minority."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      100000000
+     ],
+     "p_band": 0.05,
+     "rationale": "An upside seed above $12M, reached only if the company shows unusual early revenue or a top fund competes for it; rare in the YC data and kept small."
+    }
+   ]
+  },
+  {
+   "slug": "opusense-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": true,
+   "p_seed": 0.45,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round between 1M and 3M from angels and a pre seed fund; likely for a two person vertical team with domain credibility but early revenue. Excludes the standard 500K YC deal."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Typical institutional seed near the 2022 and later median of 4.1M in round_benchmarks, from a construction tech or vertical AI fund."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      65000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Strong seed if pilots with named inspection firms convert; 2026 raises above 1M had a quartile of 4.3M to 10M, but press leans large."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      65000000,
+      120000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Rare large seed in construction tech for a two person team."
+    }
+   ]
+  },
+  {
+   "slug": "jinba",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under 3M, likely if a few bank pilots stay unpaid."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed with live enterprise product and a team of 8 or more, using the AI native shape of 35 percent in the 3M to 6M range."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong seed led by a known fund if the financial institution usage is real and paid, 30 percent per the AI native shape."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      160000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Large seed in a hot agent category if there is revenue."
+    }
+   ]
+  },
+  {
+   "slug": "a0-dev",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.52,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round under 3M, common for a three person developer tools team with traction from consumer apps."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.34,
+     "rationale": "Institutional seed near the 2022 and later median 4.1M."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong seed if the tool shows fast paid growth in the AI coding boom, near the quartile of 6.5M to 10M in recent press covered rounds."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.13,
+     "rationale": "Large round in the AI app builder category, where well known entrants raised big seeds; rare for three people."
+    }
+   ]
+  },
+  {
+   "slug": "tago-health",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.44,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, likely when the company has billing teams piloting but little revenue."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      35000000
+     ],
+     "p_band": 0.34,
+     "rationale": "Typical institutional seed in healthcare AI near the 2022 and later median of 4.1M; Cofactor AI raised 4M in a denials focused seed."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      75000000
+     ],
+     "p_band": 0.26,
+     "rationale": "Strong seed for a hot agent category with a named design partner and recovered dollars."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      75000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Large seed in revenue cycle AI, rare for a three person team."
+    }
+   ]
+  },
+  {
+   "slug": "asimov",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under 3M, likely if revenue is concentrated in one or two labs."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.33,
+     "rationale": "Typical institutional seed near the 2022 and later median of 4.1M."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Strong seed from a robotics or AI fund if lab contracts are real and recurring."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      170000000
+     ],
+     "p_band": 0.14,
+     "rationale": "Large seed in the physical AI category, where recent raises were large; rare for three people."
+    }
+   ]
+  },
+  {
+   "slug": "amika",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 13 months from 2025-10-06 to 2026-11-17; rounds under $1M and the YC deal itself do not count."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.12,
+     "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
+    }
+   ]
+  },
+  {
+   "slug": "maximal",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.6,
+   "p_a": 0.13,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 16 months from 2025-07-07 to 2026-11-17; the YC deal alone does not count."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.12,
+     "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
+    }
+   ]
+  },
+  {
+   "slug": "rivet-design",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 13 months from 2025-10-06 to 2026-11-17."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.12,
+     "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
+    }
+   ]
+  },
+  {
+   "slug": "paper-instruments",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.58,
+   "p_a": 0.14,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 19 months from 2025-04-07 to 2026-11-17; rounds under $1M and the YC deal itself do not count."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.12,
+     "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
+    }
+   ]
+  },
+  {
+   "slug": "waffle",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.35,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 19 months from 2025-04-07 to 2026-11-17; the YC deal alone does not count."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.12,
+     "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
+    }
+   ]
+  },
+  {
+   "slug": "traceroot-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": 3500000,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
+    }
+   ]
+  },
+  {
+   "slug": "arlo-industries",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.45,
+   "p_a": 0.05,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.17,
+     "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
+    }
+   ]
+  },
+  {
+   "slug": "imagine-ai",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.52,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
+    }
+   ]
+  },
+  {
+   "slug": "ruvo",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 4600000,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.17,
+     "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
+    }
+   ]
+  },
+  {
+   "slug": "truthsystems",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 4000000,
+   "leak": false,
+   "p_seed": 0.48,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
+    }
+   ]
+  },
+  {
+   "slug": "synthio-labs",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 5000000,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round of $1M to $3M from angels and micro funds, the YC deal alone (about $500K) is excluded by the seed definition. A team of 29 already has payroll to cover, so a very small round is less likely than for a three person team."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal and reads low, so this band carries the most weight."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed where press covered 2026 raises had a median of $6.0M (quartiles $4.3M and $10M, n=77, press leans to big rounds); needs live revenue or a standout team story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed above $12M, seen in 2025 AI categories when several funds bid for a team with early enterprise traction."
+    }
+   ]
+  },
+  {
+   "slug": "revion",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.29,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round of $1M to $3M from angels and micro funds, the YC deal alone (about $500K) is excluded by the seed definition. A seed right after Demo Day is the common time, and a 10 person team can use a larger round than a founder pair."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal and reads low, so this band carries the most weight."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed where press covered 2026 raises had a median of $6.0M (quartiles $4.3M and $10M, n=77, press leans to big rounds); needs live revenue or a standout team story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed above $12M, seen in 2025 AI categories when several funds bid for a team with early enterprise traction."
+    }
+   ]
+  },
+  {
+   "slug": "spott",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 21000000,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.11,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round of $1M to $3M from angels and micro funds, the YC deal alone (about $500K) is excluded by the seed definition. A 50 person team has high payroll, so a very small round is unlikely to be enough."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal and reads low, so this band carries the most weight."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed where press covered 2026 raises had a median of $6.0M (quartiles $4.3M and $10M, n=77, press leans to big rounds); needs live revenue or a standout team story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed above $12M, seen in 2025 AI categories when several funds bid for a team with early enterprise traction."
+    }
+   ]
+  },
+  {
+   "slug": "calltree",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.41,
+   "p_a": 0.11,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round of $1M to $3M from angels and micro funds, the YC deal alone (about $500K) is excluded by the seed definition. Voice AI funding grew sharply in 2024, which raises the chance of a larger round for teams with enterprise pilots."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal and reads low, so this band carries the most weight."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed where press covered 2026 raises had a median of $6.0M (quartiles $4.3M and $10M, n=77, press leans to big rounds); needs live revenue or a standout team story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed above $12M, seen in 2025 AI categories when several funds bid for a team with early enterprise traction."
+    }
+   ]
+  },
+  {
+   "slug": "verne-robotics",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.35,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round of $1M to $3M from angels and micro funds, the YC deal alone (about $500K) is excluded by the seed definition. Physical AI labs can be bid up, so the upper bands stay populated, though a Sacramento team with no stated lab pedigree may sit lower."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal and reads low, so this band carries the most weight."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed where press covered 2026 raises had a median of $6.0M (quartiles $4.3M and $10M, n=77, press leans to big rounds); needs live revenue or a standout team story."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed above $12M, seen in 2025 AI categories when several funds bid for a team with early enterprise traction."
+    }
+   ]
+  },
+  {
+   "slug": "kinro",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      12000000,
+      20000000
+     ],
+     "p_band": 0.1,
+     "rationale": "YC deal only, about $500K, counted as no seed for this window. The winners test found 13 of 90 confirmed companies with nothing beyond it."
+    },
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels or pre-seed funds, common for a first year brokerage still proving commission per customer."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      60000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Institutional seed of $3M to $8M; 2025 to 2026 AI brokerages raised 3.1M to 7.5M pre-seed and seed rounds (Delegance, Comeryx, 1Fort)."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band if early volume looks like the fast AI brokerages that closed large rounds in early 2026."
+    }
+   ]
+  },
+  {
+   "slug": "vocality-health",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": true,
+   "p_seed": 0.48,
+   "p_a": 0.14,
+   "bands": [
+    {
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      10000000,
+      18000000
+     ],
+     "p_band": 0.12,
+     "rationale": "YC deal only, about $500K, and nothing institutional in the window; 13 of 90 confirmed companies in the winners test stopped here."
+    },
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.33,
+     "rationale": "Small post YC round under $3M from angels or healthtech pre-seed funds while a first hospital pilot is proven."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      7000000
+     ],
+     "post_money_usd": [
+      25000000,
+      55000000
+     ],
+     "p_band": 0.43,
+     "rationale": "Institutional seed of $3M to $7M after a pilot or design partner; 2022 and later seed median $3.5M with the YC deal mixed in, so institutional rounds sit higher."
+    },
+    {
+     "raise_usd": [
+      7000000,
+      15000000
+     ],
+     "post_money_usd": [
+      55000000,
+      120000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band if a large health system signs and AI voice interest drives a competitive round."
+    }
+   ]
+  },
+  {
+   "slug": "relaw",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      10000000,
+      18000000
+     ],
+     "p_band": 0.12,
+     "rationale": "YC deal only, about $500K; counted as no seed for the window."
+    },
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M; AI native law firm startups raised $2.5M and $4M rounds in this period."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      60000000
+     ],
+     "p_band": 0.43,
+     "rationale": "Institutional seed; a reported $9M seed for another AI native firm and strong legal tech funding set the high end."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      160000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band if legal AI interest produces a competitive round; legal tech funding rose strongly in 2025."
+    }
+   ]
+  },
+  {
+   "slug": "kimpton",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.33,
+   "p_a": 0.05,
+   "bands": [
+    {
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      12000000,
+      20000000
+     ],
+     "p_band": 0.12,
+     "rationale": "YC deal only, about $500K; counted as no seed in this window."
+    },
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels or fintech pre-seed funds."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      60000000
+     ],
+     "p_band": 0.43,
+     "rationale": "Institutional seed of $3M to $8M; AI research tools for funds raised $5M to $8M rounds before this window (Portrait, Multiplier, Pinegap)."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band: AI labs buying financial RL environments could make a competitive round, which is a hot area in 2026."
+    }
+   ]
+  },
+  {
+   "slug": "panels",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.27,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      10000000,
+      18000000
+     ],
+     "p_band": 0.15,
+     "rationale": "YC deal only, about $500K, counted as no seed; solo founders with thin traction often stop here."
+    },
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under $3M, the likeliest raise for a solo founder with a few lab customers."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      7000000
+     ],
+     "post_money_usd": [
+      25000000,
+      55000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed if early lab contracts are signed; audio data peers raised seeds in this range."
+    },
+    {
+     "raise_usd": [
+      7000000,
+      15000000
+     ],
+     "post_money_usd": [
+      55000000,
+      120000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band if lab demand for conversational audio is large and the company shows fast revenue."
+    }
+   ]
+  },
+  {
+   "slug": "teaflask",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Small post YC round of $1M to $3M, usually a pre-seed or angel led round that closes quickly. Cohort data for 2022 and later shows a 25th percentile near $2M, and a team this early often takes the first credible check."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.37,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median $3.2M to $3.5M, 75th percentile about $5M) lifted slightly because only rounds above $1M count here."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Hot sector seed of $6M to $12M. The 2026 winners test found 42 percent of confirmed raises here, but that sample leans to press covered rounds, so this band is held below that share."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      70000000,
+      200000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Upside band above $12M, reached only with fast revenue or a standout founder story. Rare for a team of this size."
+    }
+   ]
+  },
+  {
+   "slug": "klaus-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.28,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Small post YC round of $1M to $3M, usually a pre-seed or angel led round that closes quickly. Cohort data for 2022 and later shows a 25th percentile near $2M, and a team this early often takes the first credible check."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median $3.2M to $3.5M, 75th percentile about $5M) lifted slightly because only rounds above $1M count here."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Hot sector seed of $6M to $12M. The 2026 winners test found 42 percent of confirmed raises here, but that sample leans to press covered rounds, so this band is held below that share."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      70000000,
+      200000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Upside band above $12M, reached only with fast revenue or a standout founder story. Rare for a team of this size."
+    }
+   ]
+  },
+  {
+   "slug": "char",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Small post YC round of $1M to $3M, usually a pre-seed or angel led round that closes quickly. Cohort data for 2022 and later shows a 25th percentile near $2M, and a team this early often takes the first credible check."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.37,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median $3.2M to $3.5M, 75th percentile about $5M) lifted slightly because only rounds above $1M count here."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Hot sector seed of $6M to $12M. The 2026 winners test found 42 percent of confirmed raises here, but that sample leans to press covered rounds, so this band is held below that share."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      70000000,
+      200000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Upside band above $12M, reached only with fast revenue or a standout founder story. Rare for a team of this size."
+    }
+   ]
+  },
+  {
+   "slug": "userlens",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Small post YC round of $1M to $3M, usually a pre-seed or angel led round that closes quickly. Cohort data for 2022 and later shows a 25th percentile near $2M, and a team this early often takes the first credible check."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.37,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median $3.2M to $3.5M, 75th percentile about $5M) lifted slightly because only rounds above $1M count here."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.16,
+     "rationale": "Hot sector seed of $6M to $12M. The 2026 winners test found 42 percent of confirmed raises here, but that sample leans to press covered rounds, so this band is held below that share."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      70000000,
+      200000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Upside band above $12M, reached only with fast revenue or a standout founder story. Rare for a team of this size."
+    }
+   ]
+  },
+  {
+   "slug": "compyle",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.05,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Small post YC round of $1M to $3M, usually a pre-seed or angel led round that closes quickly. Cohort data for 2022 and later shows a 25th percentile near $2M, and a team this early often takes the first credible check."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.37,
+     "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median $3.2M to $3.5M, 75th percentile about $5M) lifted slightly because only rounds above $1M count here."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Hot sector seed of $6M to $12M. The 2026 winners test found 42 percent of confirmed raises here, but that sample leans to press covered rounds, so this band is held below that share."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      70000000,
+      200000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Upside band above $12M, reached only with fast revenue or a standout founder story. Rare for a team of this size."
+    }
+   ]
+  },
+  {
+   "slug": "text-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": true,
+   "p_seed": 0.4,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels and a pre-seed fund, the commonest result for a thin team. The 2022 and later seed 25th percentile of $2.8M in knowledge/tables/round_benchmarks.csv sits at its top edge. The standard $500K YC deal is excluded because the window counts only rounds above $1M."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of $4.1M, in line with the 3.0M deal size in the current NVCA data cited in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "A larger institutional seed, which the 2022 and later 75th percentile of $6.5M and press reported 2026 raises (median $6.0M) make plausible but not typical."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      180000000.0
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed of a hot category lead investor; rare for a small team."
+    }
+   ]
+  },
+  {
+   "slug": "mirabelle",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.33,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels and a pre-seed fund, the commonest result for a thin team. The 2022 and later seed 25th percentile of $2.8M in knowledge/tables/round_benchmarks.csv sits at its top edge. The standard $500K YC deal is excluded because the window counts only rounds above $1M."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of $4.1M, in line with the 3.0M deal size in the current NVCA data cited in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "A larger institutional seed, which the 2022 and later 75th percentile of $6.5M and press reported 2026 raises (median $6.0M) make plausible but not typical."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      180000000.0
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed of a hot category lead investor; rare for a small team."
+    }
+   ]
+  },
+  {
+   "slug": "linewise",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 1100000,
+   "leak": false,
+   "p_seed": 0.55,
+   "p_a": 0.15,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      22000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M, about 20 percent of institutional AI seeds per the winners test shape."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      22000000.0,
+      40000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed from $3M to $6M, the central band for AI native teams with a live product."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed from $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      220000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Hot category seed above $12M led by a top tier fund."
+    }
+   ]
+  },
+  {
+   "slug": "riverbank",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels and a pre-seed fund, the commonest result for a thin team. The 2022 and later seed 25th percentile of $2.8M in knowledge/tables/round_benchmarks.csv sits at its top edge. The standard $500K YC deal is excluded because the window counts only rounds above $1M."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of $4.1M, in line with the 3.0M deal size in the current NVCA data cited in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "A larger institutional seed, which the 2022 and later 75th percentile of $6.5M and press reported 2026 raises (median $6.0M) make plausible but not typical."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      180000000.0
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed of a hot category lead investor; rare for a small team."
+    }
+   ]
+  },
+  {
+   "slug": "totalis",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.3,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels and a pre-seed fund, the commonest result for a thin team. The 2022 and later seed 25th percentile of $2.8M in knowledge/tables/round_benchmarks.csv sits at its top edge. The standard $500K YC deal is excluded because the window counts only rounds above $1M."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of $4.1M, in line with the 3.0M deal size in the current NVCA data cited in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "A larger institutional seed, which the 2022 and later 75th percentile of $6.5M and press reported 2026 raises (median $6.0M) make plausible but not typical."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      180000000.0
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed of a hot category lead investor; rare for a small team."
+    }
+   ]
+  },
+  {
+   "slug": "cubic",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.14,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      22000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
+    }
+   ]
+  },
+  {
+   "slug": "trelium",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.45,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
+    }
+   ]
+  },
+  {
+   "slug": "jarmin",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.05,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.17,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.05,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
+    }
+   ]
+  },
+  {
+   "slug": "dotwave",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.45,
+   "p_a": 0.14,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      22000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
+    }
+   ]
+  },
+  {
+   "slug": "sourcebot",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      22000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.18,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.07,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
+    }
+   ]
+  },
+  {
+   "slug": "layers",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.25,
+   "p_a": 0.12,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.4,
+     "rationale": "small post YC round under $3M from angels or a micro fund, the most common outcome for companies with thin traction at 2022 and later seed data"
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.35,
+     "rationale": "typical institutional seed; the 2022 and later table has a $3.5M median that mixes in the YC deal, so institutional seeds sit a bit higher"
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.18,
+     "rationale": "larger institutional seed for fast growth or a hot category; confirmed 2026 raises above $1M had a $6M median but press favours big rounds"
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.07,
+     "rationale": "upside seed or seed plus, needs unusual traction or a repeat founder; rare"
+    }
+   ]
+  },
+  {
+   "slug": "kaizen",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.2,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.22,
+     "rationale": "small post YC round under $3M from angels or a micro fund, the most common outcome for companies with thin traction at 2022 and later seed data"
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.38,
+     "rationale": "typical institutional seed; the 2022 and later table has a $3.5M median that mixes in the YC deal, so institutional seeds sit a bit higher"
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.28,
+     "rationale": "larger institutional seed for fast growth or a hot category; confirmed 2026 raises above $1M had a $6M median but press favours big rounds"
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.12,
+     "rationale": "upside seed or seed plus, needs unusual traction or a repeat founder; rare"
+    }
+   ]
+  },
+  {
+   "slug": "smartbase",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.22,
+   "p_a": 0.05,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.35,
+     "rationale": "small post YC round under $3M from angels or a micro fund, the most common outcome for companies with thin traction at 2022 and later seed data"
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.37,
+     "rationale": "typical institutional seed; the 2022 and later table has a $3.5M median that mixes in the YC deal, so institutional seeds sit a bit higher"
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.2,
+     "rationale": "larger institutional seed for fast growth or a hot category; confirmed 2026 raises above $1M had a $6M median but press favours big rounds"
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.08,
+     "rationale": "upside seed or seed plus, needs unusual traction or a repeat founder; rare"
+    }
+   ]
+  },
+  {
+   "slug": "youshift",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.22,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.28,
+     "rationale": "small post YC round under $3M from angels or a micro fund, the most common outcome for companies with thin traction at 2022 and later seed data"
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.37,
+     "rationale": "typical institutional seed; the 2022 and later table has a $3.5M median that mixes in the YC deal, so institutional seeds sit a bit higher"
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "larger institutional seed for fast growth or a hot category; confirmed 2026 raises above $1M had a $6M median but press favours big rounds"
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.1,
+     "rationale": "upside seed or seed plus, needs unusual traction or a repeat founder; rare"
+    }
+   ]
+  },
+  {
+   "slug": "s2-dev",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 3850000,
+   "leak": true,
+   "p_seed": 0.32,
+   "p_a": 0.12,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.25,
+     "rationale": "small post YC round under $3M from angels or a micro fund, the most common outcome for companies with thin traction at 2022 and later seed data"
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.4,
+     "rationale": "typical institutional seed; the 2022 and later table has a $3.5M median that mixes in the YC deal, so institutional seeds sit a bit higher"
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "larger institutional seed for fast growth or a hot category; confirmed 2026 raises above $1M had a $6M median but press favours big rounds"
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.1,
+     "rationale": "upside seed or seed plus, needs unusual traction or a repeat founder; rare"
+    }
+   ]
+  },
+  {
+   "slug": "semiotic",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.48,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.37,
+     "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.27,
+     "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
+    }
+   ]
+  },
+  {
+   "slug": "decuff",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.22,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.33,
+     "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.17,
+     "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.05,
+     "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
+    }
+   ]
+  },
+  {
+   "slug": "confluence-labs",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.43,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.12,
+     "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
+    }
+   ]
+  },
+  {
+   "slug": "doe",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.37,
+     "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.27,
+     "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
+    }
+   ]
+  },
+  {
+   "slug": "light-anchor",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.35,
+   "p_a": 0.05,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.33,
+     "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.37,
+     "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
+    }
+   ]
+  },
+  {
+   "slug": "candor-security",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.52,
+   "p_a": 0.12,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typically angels and a micro fund. This is the second most common outcome for a 2 to 5 person team with early pilots and no scaled revenue, and it is more likely here than in the winners test sample because press favours big rounds. The plain YC deal of about $500K does not count as seed in this forecast."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M led by a seed fund. This is the center of the 2022 and later benchmark (median about $4.1M in our table) and of the 2026 confirmed raises (lower quartile $4.3M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M. Reachable if a design partner or demo produces competitive tension, as in the 2026 winners where the median confirmed raise was $6.0M, a sample that leans high."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      110000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, reserved for a hot category with a standout team. Rare for a team this small and early."
+    }
+   ]
+  },
+  {
+   "slug": "notte",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 2500000,
+   "leak": true,
+   "p_seed": 0.42,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typically angels and a micro fund. This is the second most common outcome for a 2 to 5 person team with early pilots and no scaled revenue, and it is more likely here than in the winners test sample because press favours big rounds. The plain YC deal of about $500K does not count as seed in this forecast."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M led by a seed fund. This is the center of the 2022 and later benchmark (median about $4.1M in our table) and of the 2026 confirmed raises (lower quartile $4.3M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M. Reachable if a design partner or demo produces competitive tension, as in the 2026 winners where the median confirmed raise was $6.0M, a sample that leans high."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      110000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, reserved for a hot category with a standout team. Rare for a team this small and early."
+    }
+   ]
+  },
+  {
+   "slug": "unisson",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.34,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typically angels and a micro fund. This is the second most common outcome for a 2 to 5 person team with early pilots and no scaled revenue, and it is more likely here than in the winners test sample because press favours big rounds. The plain YC deal of about $500K does not count as seed in this forecast."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M led by a seed fund. This is the center of the 2022 and later benchmark (median about $4.1M in our table) and of the 2026 confirmed raises (lower quartile $4.3M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M. Reachable if a design partner or demo produces competitive tension, as in the 2026 winners where the median confirmed raise was $6.0M, a sample that leans high."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      110000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, reserved for a hot category with a standout team. Rare for a team this small and early."
+    }
+   ]
+  },
+  {
+   "slug": "sponge",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typically angels and a micro fund. This is the second most common outcome for a 2 to 5 person team with early pilots and no scaled revenue, and it is more likely here than in the winners test sample because press favours big rounds. The plain YC deal of about $500K does not count as seed in this forecast."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M led by a seed fund. This is the center of the 2022 and later benchmark (median about $4.1M in our table) and of the 2026 confirmed raises (lower quartile $4.3M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M. Reachable if a design partner or demo produces competitive tension, as in the 2026 winners where the median confirmed raise was $6.0M, a sample that leans high."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      110000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, reserved for a hot category with a standout team. Rare for a team this small and early."
+    }
+   ]
+  },
+  {
+   "slug": "nomi",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typically angels and a micro fund. This is the second most common outcome for a 2 to 5 person team with early pilots and no scaled revenue, and it is more likely here than in the winners test sample because press favours big rounds. The plain YC deal of about $500K does not count as seed in this forecast."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M led by a seed fund. This is the center of the 2022 and later benchmark (median about $4.1M in our table) and of the 2026 confirmed raises (lower quartile $4.3M)."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M. Reachable if a design partner or demo produces competitive tension, as in the 2026 winners where the median confirmed raise was $6.0M, a sample that leans high."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      110000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, reserved for a hot category with a standout team. Rare for a team this small and early."
+    }
+   ]
+  },
+  {
+   "slug": "savant",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.35,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under 3M, an angel or small fund round after the demo day period."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M (round_benchmarks.csv, stage_benchmarks.md)."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong seed for an AI native company in a hot category with early enterprise logos, near the 6M to 10M quartile of recent press covered rounds."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.13,
+     "rationale": "Large seed from a top fund after fast enterprise pilots; rare for seven people and a 7 month window."
+    }
+   ]
+  },
+  {
+   "slug": "fuse-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under 3M, common for AI sales tools that sell self serve."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M, the typical result for a live product."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong seed for an AI native company with a live product and a team of 12 or more, matching the winners test band shape."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Large seed after fast revenue growth; Clay level attention is rare for a new entrant."
+    }
+   ]
+  },
+  {
+   "slug": "zavo",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.45,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small round under 3M, likely from angels or a lab alumni syndicate for a London team."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong seed if one or two frontier labs are paying customers and revenue grows fast; matches the 6M to 10M press covered quartile."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.13,
+     "rationale": "Large seed in the frontier data category, where a few companies raised big early rounds; rare for eight people with no disclosed revenue."
+    }
+   ]
+  },
+  {
+   "slug": "goodshelf",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under 3M, typical for consumer e-commerce with modest early sales."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M if the agent traffic thesis shows early orders."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Strong seed if agent driven sales grow fast and a known fund backs the thesis; the 6M to 10M quartile is rare for retail."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "Large seed only if the company becomes the reference shopping layer for assistants; very rare for a retailer."
+    }
+   ]
+  },
+  {
+   "slug": "percival",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": true,
+   "p_seed": 0.38,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round under 3M, common for three person developer tools teams with early users."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M if paying users grow."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Strong seed if a biotech or pharma customer base pays quickly; the 6M to 10M quartile applies to AI native companies with larger teams."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Large seed in AI for science, where a few companies raised big early rounds; rare for three people."
+    }
+   ]
+  },
+  {
+   "slug": "minerva",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.48,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. Accounting is a funded category in 2025 (see Quanta $4.7M seed). Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. Accounting is a funded category in 2025 (see Quanta $4.7M seed). "
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.24,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
+    }
+   ]
+  },
+  {
+   "slug": "standout",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.33,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. AI recruiting has seen many small and mid size seeds. Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. AI recruiting has seen many small and mid size seeds. "
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.26,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
+    }
+   ]
+  },
+  {
+   "slug": "scott-ai",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.41,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. Developer tools seeds for agent workflows were common in 2025. Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. Developer tools seeds for agent workflows were common in 2025. "
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.24,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
+    }
+   ]
+  },
+  {
+   "slug": "trava",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.4,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.32,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. A solo founder with a compliance niche tends to raise smaller rounds. Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. A solo founder with a compliance niche tends to raise smaller rounds. "
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
+    }
+   ]
+  },
+  {
+   "slug": "atlasgrid",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 4000000,
+   "leak": false,
+   "p_seed": 0.41,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. Product analytics and design tooling seeds are typically modest. Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. Product analytics and design tooling seeds are typically modest. "
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
+    }
+   ]
+  },
+  {
+   "slug": "deeptrace",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 5000000,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a micro fund. Common for a team of two to four before a customer logo is public; the 2022 and later seed row has p25 of $2.8M, so this is the lower quartile."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed at the center of the 2022 and later table (median $3.5M to $4.1M) shifted up a little for AI native B2B. Most likely if two or three paying design partners are visible."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Large AI seed. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers big rounds more, so this band is kept below the central one."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: a hot category plus fast revenue and a lead from a multi stage fund. Rare in the YC data."
+    }
+   ]
+  },
+  {
+   "slug": "callab-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.38,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a micro fund. Common for a team of two to four before a customer logo is public; the 2022 and later seed row has p25 of $2.8M, so this is the lower quartile."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed at the center of the 2022 and later table (median $3.5M to $4.1M) shifted up a little for AI native B2B. Most likely if two or three paying design partners are visible."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Large AI seed. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers big rounds more, so this band is kept below the central one."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: a hot category plus fast revenue and a lead from a multi stage fund. Rare in the YC data."
+    }
+   ]
+  },
+  {
+   "slug": "caseflood-ai",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 3200000,
+   "leak": false,
+   "p_seed": 0.45,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      7000000,
+      15000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Small post YC round under $3M. Vertical SaaS teams with a handful of firms paying often take a $1M to $3M round first, as hona did with $2.1M in 2023."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.37,
+     "rationale": "Institutional seed. Needs recurring revenue and a repeatable channel to buyers."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      55000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Large seed from a multi stage fund if revenue is clearly growing; unusual for a two person vertical team."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      18000000
+     ],
+     "post_money_usd": [
+      55000000,
+      90000000
+     ],
+     "p_band": 0.07,
+     "rationale": "Upside tail: a vertical leader with fast revenue growth and a lead from a multi stage fund."
+    }
+   ]
+  },
+  {
+   "slug": "tensorpool",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a micro fund. Common for a team of two to four before a customer logo is public; the 2022 and later seed row has p25 of $2.8M, so this is the lower quartile."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed at the center of the 2022 and later table (median $3.5M to $4.1M) shifted up a little for AI native B2B. Most likely if two or three paying design partners are visible."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Large AI seed. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers big rounds more, so this band is kept below the central one."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: a hot category plus fast revenue and a lead from a multi stage fund. Rare in the YC data."
+    }
+   ]
+  },
+  {
+   "slug": "mecha-health",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 4100000,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under $3M from angels and a micro fund. Common for a team of two to four before a customer logo is public; the 2022 and later seed row has p25 of $2.8M, so this is the lower quartile."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed at the center of the 2022 and later table (median $3.5M to $4.1M) shifted up a little for AI native B2B. Most likely if two or three paying design partners are visible."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Large AI seed. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers big rounds more, so this band is kept below the central one."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      110000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside: a hot category plus fast revenue and a lead from a multi stage fund. Rare in the YC data."
+    }
+   ]
+  },
+  {
+   "slug": "relling",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.5,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, the most common outcome for a small team that closes a first outside round quickly."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M, with market pre money near 18M."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.24,
+     "rationale": "Strong seed led by a known fund, matching the upper quartile of 6.5M and above in press covered rounds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "p_band": 0.11,
+     "rationale": "Large hot category round; rare for a team this early."
+    }
+   ]
+  },
+  {
+   "slug": "blindpay",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 3300000,
+   "leak": false,
+   "p_seed": 0.55,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, the most common outcome for a small team that closes a first outside round quickly."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M, with market pre money near 18M."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.24,
+     "rationale": "Strong seed led by a known fund, matching the upper quartile of 6.5M and above in press covered rounds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "p_band": 0.11,
+     "rationale": "Large hot category round; rare for a team this early."
+    }
+   ]
+  },
+  {
+   "slug": "stormy",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 1700000,
+   "leak": false,
+   "p_seed": 0.52,
+   "p_a": 0.07,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, the most common outcome for a small team that closes a first outside round quickly."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M, with market pre money near 18M."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.24,
+     "rationale": "Strong seed led by a known fund, matching the upper quartile of 6.5M and above in press covered rounds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "p_band": 0.11,
+     "rationale": "Large hot category round; rare for a team this early."
+    }
+   ]
+  },
+  {
+   "slug": "standard-gaussian",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.3,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round under 3M, for a three person research team raising quickly."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.33,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Strong seed for a research heavy AI finance team, since press covered AI seeds run above the median."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      250000000.0
+     ],
+     "p_band": 0.17,
+     "rationale": "Large lab style seed; foundation model teams with quant pedigree sometimes raise 20M, rare at three people."
+    }
+   ]
+  },
+  {
+   "slug": "scheduling-wizard",
+   "kind": "random",
+   "outcome": "none",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.3,
+   "p_a": 0.04,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, the most common outcome for a small team that closes a first outside round quickly."
+    },
+    {
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M, with market pre money near 18M."
+    },
+    {
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.24,
+     "rationale": "Strong seed led by a known fund, matching the upper quartile of 6.5M and above in press covered rounds."
+    },
+    {
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "p_band": 0.11,
+     "rationale": "Large hot category round; rare for a team this early."
+    }
+   ]
+  },
+  {
+   "slug": "units",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.1,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. Most likely for a solo founder selling to families, where an angel round of $1M to $2M is the realistic ceiling."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
+    }
+   ]
+  },
+  {
+   "slug": "salespatriot",
+   "kind": "random",
+   "outcome": "raised",
+   "amount": 5000000,
+   "leak": false,
+   "p_seed": 0.6,
+   "p_a": 0.16,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.2,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. With a team already listed at 30 a small round is less likely, but a convertible from industrial angels is possible."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.15,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
+    }
+   ]
+  },
+  {
+   "slug": "preseen",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.45,
+   "p_a": 0.08,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. Most plausible for a solo technical founder with a demo and a few paying funds, where angels and small funds lead."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
+    }
+   ]
+  },
+  {
+   "slug": "soren",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.42,
+   "p_a": 0.06,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. A services business with early client revenue often gets a $1M to $2.5M round from angels, since investors price it near a consultancy."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
+    }
+   ]
+  },
+  {
+   "slug": "gojiberry-ai",
+   "kind": "random",
+   "outcome": "unknown",
+   "amount": null,
+   "leak": false,
+   "p_seed": 0.34,
+   "p_a": 0.03,
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. A Paris based team with early revenue could close a European angel and pre-seed round of $1M to $3M quickly; many in this category do."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
+    }
+   ]
+  }
+ ]
+}

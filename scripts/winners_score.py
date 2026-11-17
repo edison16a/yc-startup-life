@@ -23,6 +23,9 @@ def load_truth(d):
     return out
 
 
+LENIENT_NONE = False
+
+
 def outcome(t):
     conf = (t.get("confidence") or "low").lower()
     amt = t.get("largest_nonYC_round_usd")
@@ -30,7 +33,7 @@ def outcome(t):
     good_src = any(r.get("source_type") in ("press", "company", "investor", "filing") for r in rounds)
     if amt and amt >= 1_000_000 and (conf in ("high", "medium") or good_src):
         return "raised", amt
-    if t.get("standard_yc_deal_only") is True and conf in ("high", "medium"):
+    if t.get("standard_yc_deal_only") is True and (conf in ("high", "medium") or LENIENT_NONE):
         return "none", None
     return "unknown", amt
 
@@ -68,10 +71,11 @@ def auc(pos, neg):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--truth", required=True); ap.add_argument("--kinds", required=True)
-    ap.add_argument("--leaks"); ap.add_argument("--json"); ap.add_argument("--forecast-dir", default="winners-2026")
+    ap.add_argument("--leaks"); ap.add_argument("--json"); ap.add_argument("--forecast-dir", default="winners-2026"); ap.add_argument("--lenient-none", action="store_true")
     a = ap.parse_args()
-    global FORECAST_DIR
+    global FORECAST_DIR, LENIENT_NONE
     FORECAST_DIR = a.forecast_dir
+    LENIENT_NONE = a.lenient_none
     truth = load_truth(a.truth)
     kinds = {i["slug"]: i.get("kind", "random") for i in json.loads(open(a.kinds).read())}
     leaked = set()

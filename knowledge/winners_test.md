@@ -43,3 +43,23 @@ Not changed: the overall stage odds and the knowledge tables. A uniform 1.5 time
 - Whether the evaluator discriminates, until there are more confirmed negatives. The next test should draw a random sample of 2026 companies without choosing winners and spend the research on confirming what each one raised.
 - Anything about Series A and later steps. No company here has had time to reach them.
 - Whether the changes help. The rules were fitted on this set, so the next check must use new companies.
+
+## Round 2: a random held-out sample (120 companies)
+
+Design: 20 random companies from each of six batches (Winter 2025 to Spring 2026), none from round 1, with the live page text stripped of any sentence about funding or investors. Each was forecast blind with the tuned evaluator and a stated window from its batch start to 2026-11-17, where seed means an outside round above $1M that closes inside the window. Twelve verification agents then ran at least four searches per company. Of 120 outcomes, 19 are confirmed raises above $1M, 49 are confirmed no raise beyond the YC deal, and 52 are unresolved (mostly low confidence). A second reading counts low confidence "nothing found" as no raise (82 no raise, 19 unresolved). Nine forecasts were flagged for web leaks and dropped from the clean scores. Files are in `evaluations/winners-r2/` and `_test/`.
+
+| Measure | Confirmed only | Low confidence counted as no raise |
+|---|---|---|
+| Raised / none (clean, no leak flags) | 15 / 47 | 15 / 78 |
+| Mean seed probability | 0.42 | 0.41 |
+| Actual rate | 0.24 | 0.16 |
+| Area under the curve, raised against none | 0.74 | 0.77 |
+| Brier score | 0.198 | 0.183 |
+| Brier of a constant guess at the sample rate | 0.183 | 0.135 |
+| Raised in the low, mid and high probability bins | 0%, 25%, 35% | 0%, 17%, 29% |
+
+Reading: the ranking is better than round 1 (area under the curve 0.74 to 0.77 against 0.59) and the bins rise steadily, so the odds do carry some signal. The level is too high, and without a correction the Brier score is no better than a constant guess. Raise sizes were forecast well: all 19 raises fell in a band and the median raise was 0.97 times the central band midpoint.
+
+Change made: a 0.6 multiplier on the windowed seed probability (rule 6 in the skill). Chosen on this same sample, it beat no correction in 85 percent of random half splits and moves the Brier score below the constant guess (0.171 against 0.183 confirmed only; 0.1325 against 0.1353 in the lenient reading). It must be checked on a new sample.
+
+Limits: only 15 to 19 confirmed raises, so every number here has wide uncertainty. 52 outcomes are unresolved and companies this young may raise later. Sizes are judged on raises that press covered. Web leaks were reduced, not removed: market searches still returned pages dated after a batch start, and I counted only ones naming the company. Series A and later steps still cannot be tested.
