@@ -292,3 +292,11 @@ Two independent auditors, 8 records each: sleep-reset, protonet, 80-000-hours, h
 Batch A: 48 fields, strict 23, middle 10, lenient 0. Batch B: 64 fields, strict 15, middle 5, lenient 0.
 
 Totals: 112 fields checked. Strict: 38 wrong (33.9 percent). Middle: 15 wrong (13.4 percent). Lenient: 0 wrong (0 percent). The limit is 10 percent. Both auditors found no recorded fact contradicted by a source. Every middle defect is an omission: rounds that only databases such as CB Insights or Seedtable report were left out of rounds and kept in notes, totals that imply a missing round, null amounts where press gives them, and investors missing from a round. A few are weak competitor sources (mirror-ai, sleep-reset). Action: correct flagged records, and add prompt lesson 10 for later waves: a round reported by a named database or by two outlets is recorded in rounds with valuation_basis estimated where relevant and a note naming the single source, instead of being left only in notes. AUDIT RESULT is not PASS.
+
+## Audit 15 (records from waves 38 and 39)
+
+Two independent auditors, 8 records each: recurse-center, alma, vango-ai, people-ai, picktrace, tab, videopixie, flaviar, povio, anylist, aptdeco, lantern-2, pave, q2q, protocol-labs, 9gag.
+
+Batch A: 45 fields, strict 18, middle 7, lenient 0. Batch B: 45 fields, strict 12, middle 5, lenient 0.
+
+Totals: 90 fields checked. Strict: 30 wrong (33.3 percent). Middle: 12 wrong (13.3 percent). Lenient: 0 wrong (0 percent). The limit is 10 percent. Both auditors again found no stated fact contradicted by a source. Every middle defect is an omission or a weak source: rounds known from press or an SEC filing but not recorded (aptdeco, protocol-labs, flaviar, videopixie), a missed co-founder or prior startup (q2q, alma, people-ai), a competitor source dated years from founding (alma), and a majority investment recorded with exit none (picktrace). Several of these records predate prompt lesson 10. Action: correct the flagged records. AUDIT RESULT is not PASS.
