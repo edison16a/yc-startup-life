@@ -1,0 +1,50 @@
+{
+  "slug": "chamber",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "ML and AI infrastructure teams running GPU clusters",
+  "problem": "ML engineers lose hours to failed training jobs, idle GPUs and unhealthy nodes. Chamber agents monitor GPU workloads, diagnose failures, fix them and reclaim idle capacity.",
+  "business_model": "B2B SaaS for GPU infrastructure operations, installed in the customer environment (Helm install shown on site)",
+  "product_category": "AIOps agents for ML and GPU infrastructure",
+  "founded_year": null,
+  "founders": [
+    {"name": "Charles Ding", "role": "CEO", "prior_employers": ["Meta", "Amazon", "Microsoft"], "education": [], "technical": true, "previous_startups": ["Prior startup with an exit (name not given on the YC page)"], "age_at_founding": null, "age_source": null, "background_notes": "Per the YC page: second-time founder, engineering leader at Meta and Amazon."},
+    {"name": "Andreas Bloomquist", "role": "Founder", "prior_employers": ["AWS", "Amazon"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Per the YC page: built observability products including CloudWatch Application Signals and led launch of a central GPU orchestration service at Amazon."},
+    {"name": "Jason Ong", "role": "CPO", "prior_employers": ["Amount", "Avant", "Flexport", "Amazon"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Per the YC page: moved from Malaysia to the US in 2016; worked on GPU scheduling tooling."},
+    {"name": "Shaocheng Wang", "role": "CTO", "prior_employers": ["Amazon (senior software engineer, 9+ years on AWS products)"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Per the YC page."}
+  ],
+  "funding_data_coverage": "none_found",
+  "rounds": [],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/chamber"},
+  "competition_at_founding": {
+    "as_of": "2025-04",
+    "competitors": [
+      {"name": "NVIDIA Run:ai", "what": "GPU orchestration and scheduling for Kubernetes AI workloads", "traction_then": "NVIDIA open sourced KAI Scheduler from Run:ai in April 2025", "funding_then": "Acquired by NVIDIA (n/a)", "source_date": "2025-04", "source_url": "https://zenml.io/blog/kai-scheduler-vs-runai"},
+      {"name": "Volcano and Kueue", "what": "Open source batch scheduling for AI on Kubernetes", "traction_then": "Kueue described as production mature for AI workloads in 2025 comparisons", "funding_then": "n/a (open source)", "source_date": "2025", "source_url": "https://introl.com/blog/kubernetes-gpu-orchestration-multi-thousand-clusters"}
+    ]
+  },
+  "technical_complexity": {"rating": 3, "rationale": "Agents that diagnose failures across Kubernetes, schedulers and clouds and take safe remediation actions need deep infrastructure knowledge and integrations; the founders have AWS and Amazon GPU orchestration experience."},
+  "defensibility": {"rating": 2, "moat_types": ["switching_costs"], "rationale": "Schedulers are open source or owned by NVIDIA; the agent layer could be copied by observability vendors, but deep installation in clusters gives some stickiness."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["NVIDIA (Run:ai)", "Datadog", "cloud providers"], "outcome": "Too early at the W26 batch; NVIDIA already owned the leading GPU scheduler and open sourced it."},
+  "market_need_then": "GPU spend and utilization pain were prominent in 2025; comparisons describe clusters with poor utilization and Kubernetes schedulers that struggle with AI workloads.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "real_word",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say"],
+    "name_problems": ["generic", "confusable"],
+    "domain_note": "Uses usechamber.io, with a prefix and a .io; chamber.com was not used.",
+    "identity": {"logo": "Likely a white sidelong wordmark (file name suggests it, not confirmed)", "mascot_or_character": "Chambie, the Slack-based agent", "visual_style": "Console-style UI labels and a terminal Helm snippet", "voice_and_tone": "Short, dry and operational, for example 'The pager never rang.'"},
+    "brand_signature": "Chambie, the agent that sits on call in Slack",
+    "rebrands": [],
+    "community_and_virality": "Product Hunt launch and a YC launch post; no evidence of wider community.",
+    "brand_strength": {"rating": 2, "rationale": "Generic name that collides with US Chamber of Commerce and Chamber Cardio results; the mascot agent Chambie and a distinct voice help slightly."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://www.usechamber.io"]
+  },
+  "pivots": [],
+  "success_factors": ["founder_market_fit"],
+  "failure_factors": [],
+  "outcome_analysis": "Chamber is an active W26 company with four founders from Amazon, AWS, Meta and Flexport who worked on GPU orchestration and observability. No exit, shutdown or layoffs were found. Strong founder-market fit is offset by competition from NVIDIA and open source schedulers; funding is unverified.",
+  "sources": ["https://www.ycombinator.com/companies/chamber", "https://www.usechamber.io", "https://zenml.io/blog/kai-scheduler-vs-runai"],
+  "notes": "Funding unverified: one aggregator (lavx.hu) reports a $2.5M seed led by Neotribe Ventures with Essence VC and angels (a directory says March 2026); VCBacked lists $500K pre-seed in January 2026 with YC; another shows $130K. A second outlet (finsmes) returned 403 so no cross-check; none recorded as a round. Founders' education not on opened pages. Founding year not stated in sources opened. Competitor sources are not launch coverage from the batch period, so the list is thin."
+}
