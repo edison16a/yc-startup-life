@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "10x Science",
+    "one_liner": "The AI-native platform for next-generation protein characterization.",
+    "description": "AI models with deep memory that automate the months of manual protein characterization pharma teams do before advancing a protein therapeutic. Enterprise pharma and biotech teams pay. Five person team from a Stanford chemical biology lab, with a repeat YC founder.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.5,
+    "p_low": 0.3,
+    "p_high": 0.7,
+    "basis": "The company is already accepted to YC, so this is a note only. A random applicant starts near 1 percent. Strong domain founders, a prior YC founder, claimed enterprise pharma customers and a technical team would lift a typical application well above that, so a bounded but high number is shown for completeness.",
+    "why_it_fails": "YC would most plausibly say no because biotech tooling sells slowly and the traction claim is unverified, with five people selling into pharma where procurement and data security reviews take quarters. A reviewer could also read the pitch as an academic method looking for a market, and ask why a model would beat the incumbent analytical vendors."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.75,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.81,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (B2B 2018-2021: seed 81 percent known only, cond n=69; 2022-2025 B2B cohort 59 percent, n=126, censored)",
+        "adjustment_reason": "The 2022-2025 cohort is the same sector but right censored; this company claims paying pharma customers and a repeat YC founder, and AI plus biotech funding is strong, so close to the older cohort but with a discount for the 12 month window and the above-$500K requirement."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Thin band: a small extension on top of the YC check from angels or a small fund, common when pharma sales cycles are slow. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ seed for a technical AI team with enterprise pilots; the 2022+ seed median in the base rates is about $3.3M. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Upside: AI for drug development funds a large seed on pedigree and a named pharma logo, as with Nabla Bio's $11M seed. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            150000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Hot AI bio seed led by a top fund after a pivot-then-expand story or a landmark pharma contract. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if the claimed pharma traction is mostly pilots or paid proofs of concept that do not renew, because bio investors then see a services business with a long sales cycle. Five people also limits how many enterprise deals can be run at once. Analogs like Trident Bioscience and Radix Labs got only the YC check, and Menten AI needed a quantum and ML narrative to reach a $4M seed."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.34,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.32,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (B2B 2018-2021 series A cond 32 percent, n=56; AI tag 44 percent, n=32); python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (26 percent, censored)",
+        "adjustment_reason": "Close to the anchor; enterprise pharma revenue and domain pedigree help, but bio tooling sells slowly and 2026 Series A bars are higher."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A: modest revenue, extension style raise at a flat to small step up. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            130000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A in current benchmarks: PitchBook reports a median deal near $17M, and Adaptyv's later A in the data was $40M for a stronger story. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            45000000
+          ],
+          "post_money_usd": [
+            130000000,
+            300000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside: platform narrative with several large pharma contracts and ARR growth. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if revenue is lumpy and concentrated in two or three pharma accounts, with no repeatable land and expand motion. Investors may also decide the product is a feature that Genedata, Dotmatics or Benchling can add. Several analogs in the data, such as Diffuse Bio and Invitris, stayed small after seed because model research did not turn into recurring contracts."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.36,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18)",
+        "adjustment_reason": "Slightly below the anchor because of the small sample and the long enterprise cycle; at 0.92 of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            220000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin B with a flat step up. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            220000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B: the 2022+ median in YC data is about $37M, pre money near $187M in public benchmarks. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            500000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside with a platform deal or top fund lead. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs repeatable net revenue retention above 120 percent in pharma, and a path to a second modality beyond proteins. If growth depends on a handful of pharma champions who leave or whose budgets are cut, investors pass. Nabla Bio's partnership revenue is the benchmark that this company would have to approach, and few of the sampled analogs got there."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall cond 43 percent, n=510)",
+        "adjustment_reason": "Below the 0.43 all-cohort anchor at 0.77 of it because few drug tooling companies reach C and the sample is small."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin C, similar in scale to the 2022+ YC median of $45M. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical C in public data, with a median deal near $77M. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the standard characterization layer for biologics. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The company stops before Series C if biologics characterization stays a niche analytics tool with a ceiling near $50M of revenue, or if pharma builds this capability in house. Growth also depends on whether AI drug discovery volume actually keeps rising, since a funding downturn in AI biotech would hit demand directly. Few sampled bio tool companies reached C."
     }
   ],
   "outcomes": {
@@ -164,167 +224,230 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most failure paths come from slow pharma sales and a thin moat. If customers use the models as one input among many, incumbents like Genedata, Dotmatics and Revvity can bundle similar features, and the company ends as a small acquisition by a tools vendor. A full miss happens if the pilots never convert to annual contracts before the seed money runs out."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "nabla-bio",
+      "relevance": "AI for biologics sold to pharma by an academic spinout.",
+      "outcome_summary": "Raised an $11M seed in 2021, then a Series A, with large pharma collaborations; shows the upside of pedigree plus pharma contracts."
+    },
+    {
+      "slug": "adaptyv",
+      "relevance": "Protein engineering data and tooling for AI protein design.",
+      "outcome_summary": "Small pre-seed, then a seed in 2025 and a Series A in 2026, so reaching A took about five years."
+    },
+    {
+      "slug": "trident-bioscience",
+      "relevance": "Protein engineering tooling from a very small team.",
+      "outcome_summary": "Only the YC check was found and it is listed inactive, the failure case."
+    },
+    {
+      "slug": "radix-labs",
+      "relevance": "Software for biology labs, sold to scientists.",
+      "outcome_summary": "Raised a seed but shut down; lab software was hard to sell at scale."
+    },
+    {
+      "slug": "menten-ai",
+      "relevance": "AI protein and peptide design for therapeutics.",
+      "outcome_summary": "A $4M seed in 2020 from Khosla and others, then stayed at seed."
+    },
+    {
+      "slug": "diffuse-bio",
+      "relevance": "Generative AI for protein design with a research heavy team.",
+      "outcome_summary": "Still active, thin funding on record, no clear commercial scale."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Pharma sales cycles and security reviews outlast the seed runway",
+      "p": 0.35,
+      "evidence": "Biotech tooling analogs such as Radix Labs and Trident Bioscience never moved from early pilots to recurring contracts, and Menten AI stayed at seed.",
       "analogs": [
-        "TODO-company-slug"
+        "radix-labs",
+        "trident-bioscience",
+        "menten-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Land two reference customers with annual contracts and publish validation against standard wet lab results."
+    },
+    {
+      "risk": "Incumbent analytical and data platforms bundle comparable AI features",
+      "p": 0.3,
+      "evidence": "Genedata, Dotmatics, Revvity Signals and Ginkgo already sell developability and biologics analytics software and add AI modules.",
+      "analogs": [
+        "radix-labs",
+        "diffuse-bio"
+      ],
+      "mitigation": "Own a data advantage from the founders' lab methods, and integrate into rather than compete with existing suites."
+    },
+    {
+      "risk": "Revenue concentrated in a few pharma pilots that do not renew",
+      "p": 0.3,
+      "evidence": "Early traction claims are unverified and enterprise pilots often end at proof of concept; Adaptyv needed years to reach a Series A.",
+      "analogs": [
+        "adaptyv",
+        "menten-ai"
+      ],
+      "mitigation": "Convert pilots to multi year contracts and report net revenue retention before raising."
+    },
+    {
+      "risk": "A downturn in AI drug discovery funding reduces demand for characterization",
+      "p": 0.15,
+      "evidence": "The product's thesis relies on more AI generated candidates, and outcomes in the sector depend on biotech capital cycles.",
+      "analogs": [
+        "nabla-bio",
+        "diffuse-bio"
+      ],
+      "mitigation": "Serve established biologics programs, not only AI native biotechs."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Genedata Biologics",
+      "what": "Software suite covering developability and biologics analysis.",
+      "traction": "Established enterprise vendor.",
+      "source_url": "https://www.genedata.com/fileadmin/4.Resources/Product-sheets/Gd_Biologics_Brochure_1-27-2025.pdf"
+    },
+    {
+      "name": "Revvity Signals One",
+      "what": "Automated developability assessment and multiparameter optimization for antibodies.",
+      "traction": "Large installed base in pharma.",
+      "source_url": "https://revvitysignals.com/antibody-therapeutics-drug-discovery"
+    },
+    {
+      "name": "Dotmatics with BioGlyph",
+      "what": "AI biologics design tools added to its Luma platform.",
+      "traction": "Incumbent platform with pharma customers.",
+      "source_url": "https://tours.dotmatics.com/answers/aet-2025-full-stack-ai-for-antibody-discovery"
+    },
+    {
+      "name": "Ginkgo developability product",
+      "what": "Antibody developability data generation for AI ready datasets.",
+      "traction": "Public company with a large lab footprint.",
+      "source_url": "https://ginkgobioworks.com/?p=11792"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Characterization models need scarce labeled analytical data and scientific validation that customers will trust. The founders' lab pedigree helps, but a five person team must integrate with pharma instruments and data systems while proving accuracy against wet lab results."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Genedata",
+      "Dotmatics",
+      "Revvity Signals",
+      "Benchling",
+      "Ginkgo Bioworks"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Incumbent biologics software vendors have distribution and could add AI characterization in a year or two, but data and validation are hard to copy quickly, and pharma buyers often prefer a specialist."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Vendors across the category market developability and characterization as a bottleneck for AI generated candidates, and several suites add AI modules.",
+        "source_url": "https://www.benchling.com/blog/3-challenges-in-ai-antibody-rd-and-how-to-tackle-them"
+      },
+      {
+        "claim": "Pharma outsources analytical testing at scale, estimated at about $10 billion in 2023, which shows existing spend.",
+        "source_url": "https://drug-dev.com/special-feature-analytical-testing-diverse-demands-therapies-require-diverse-analyses/"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Two or more pharma customers on paid annual contracts.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Convert paid pilots into annual contracts with a measured time saving.",
+        "Publish validation against wet lab characterization results."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Annual recurring revenue from at least two named pharma accounts."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable sales motion and expansion within accounts.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire a first enterprise seller with biologics experience.",
+        "Add a second assay type to expand each account."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 120 percent and five or more paying accounts."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Founders with deep field expertise",
+      "evidence": "The team says it built next-generation protein characterization in a Nobel laureate's lab, with many publications."
+    },
+    {
+      "point": "Customers already spend on this problem",
+      "evidence": "Analytical testing outsourcing is a multi billion dollar market and vendors sell competing software.",
+      "source_url": "https://drug-dev.com/special-feature-analytical-testing-diverse-demands-therapies-require-diverse-analyses/"
+    },
+    {
+      "point": "Repeat YC founder and claimed enterprise pharma traction",
+      "evidence": "Stated in the batch description; unverified."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "10x Science",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"10x Science\" --era 2022+ : kind compound_words, alive 95.3 percent in cohort n=513",
     "strengths": [
-      "TODO"
+      "Short and easy to say",
+      "Signals big productivity gains"
     ],
     "weaknesses": [
-      "TODO"
+      "The 10x phrase is common in tech and says nothing about protein work"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name is a generic productivity claim, comparable to other plain two word YC names, and the cohort data show no survival difference for compound names. It is fine for enterprise sales and will not decide the outcome.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A credible domain team in a real but slow enterprise bio market, with a good chance of a seed and a coin flip at best beyond Series A.",
+    "general_summary": "10x Science sells AI models that speed up protein characterization for drug developers. The problem is real, pharma already pays for analytics, and the team has academic credibility plus a repeat YC founder. The difficulty is that biotech tooling is sold slowly, incumbents like Genedata, Dotmatics and Revvity already bundle comparable features, and early traction is unverified. A seed above the standard YC check within a year is likely given AI and bio funding conditions. Series A depends on turning pilots into recurring contracts, and reaching a Series B or later is closer to the cohort base rates than to a breakout. About 45 percent of forecast paths end in a stall or shutdown."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of the batch start 2026-01-05 using only the batch description.",
+    "Funding anchors use older B2B cohorts because 2022-2025 batches are right censored.",
+    "The step 'seed' means a round above about $500K within roughly 12 months of the batch start."
   ],
   "sources": [
-    "https://"
+    "https://www.benchling.com/blog/3-challenges-in-ai-antibody-rd-and-how-to-tackle-them",
+    "https://drug-dev.com/special-feature-analytical-testing-diverse-demands-therapies-require-diverse-analyses/",
+    "https://www.genedata.com/fileadmin/4.Resources/Product-sheets/Gd_Biologics_Brochure_1-27-2025.pdf",
+    "https://revvitysignals.com/antibody-therapeutics-drug-discovery",
+    "https://tours.dotmatics.com/answers/aet-2025-full-stack-ai-for-antibody-discovery",
+    "https://ginkgobioworks.com/?p=11792"
   ]
 }

@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Grep AI",
+    "one_liner": "Self-improving agents that automate your growth bottlenecks",
+    "description": "Grep AI builds self improving agents for tedious operational work such as compliance alert review, onboarding, underwriting, due diligence, document verification and merchant categorization. The founders ran the platform team at Brex. Per its description customers include IG.com, Airwallex, Worldpay, Citizens Bank, FV Bank and Shopmonkey, and agents have automated over 250,000 units of work. Six people in San Francisco, selling to fintech and financial operations teams, probably on usage or per workflow pricing.",
+    "as_of": "2026-10-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.12,
+    "p_low": 0.05,
+    "p_high": 0.22,
+    "basis": "Starting rate about 1 percent (YC investor line, third party range 0.6 to 2 percent). Test setup: already accepted, reference only. Strongly up for founder market fit from Brex, named enterprise customers with live deployments, a claimed concrete result at IG.com and a team of 6. Down for the crowded AI agent field. Net about 12 percent as a plain applicant.",
+    "why_it_fails": "YC would most plausibly object to breadth: automating compliance, underwriting, rev ops and research reads like a horizontal agent platform with no single wedge, and horizontal agent builders face the labs and many funded peers. The reviewer would also check whether the customer claims are production contracts or pilots and how much of the work is custom services."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.85,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.61,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025: seed cond 61% (n=226), series_a cond 22% (n=137), series_b 17% (n=30), series_c 20% (n=5). B2B 2022-2025: seed 51, A 22, B 19, C 19.",
+        "adjustment_reason": "Anchor 51 percent (Fintech cohort 61 percent), ours 85 percent. Named enterprise customers and Brex pedigree make a seed above 500K very likely; within 1.4x of the Fintech anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Fintech 2022+ seed median 3.3M with p75 5.0M; strong customers support a seed above the median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Hot agent infrastructure with named enterprise logos can pull a large seed, reflecting 2025 and 2026 pricing."
+        },
+        {
+          "raise_usd": [
+            1500000,
+            3000000
+          ],
+          "post_money_usd": [
+            10000000,
+            22000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Smaller seed if investors see services heavy revenue. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            90000000,
+            160000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside from a breakout lead and fast growth. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails if investors see another horizontal agent builder instead of a product with one wedge, and customer lists turn out to be pilots rather than paid production contracts. The team is six people and the work spans many functions. Fragment and Surface Labs show that operations agent startups get acquired or stay small, and in fintech the closest peer Sphinx took until after its batch to raise a seed."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.36,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 22 percent, ours 36 percent. Real enterprise customers and a measurable result raise the odds above the cohort, within the 2x limit."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower end of 2022+ B2B Series A, p25 13M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            18000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            110000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median 17M, p75 22M and above for strong agent companies; known post money 80M to 140M is thin."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            10000000
+          ],
+          "post_money_usd": [
+            25000000,
+            60000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Small A or extension. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            50000000
+          ],
+          "post_money_usd": [
+            200000000,
+            400000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside with large enterprise growth. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A requires a few workflows that scale across many customers and expand revenue. Custom compliance and underwriting agents are costly to deploy, banks procure slowly, and customers may build in house. Companies like Coris and Sphinx took more than a year to raise past seed, and Zaam shows that onboarding software can stall without enough revenue."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.26,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 19 percent, ours 26 percent. Companies with strong A traction usually continue, but horizontal agent competition caps the lift."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            45000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower end of cohort B, p25 39M. Sized from the cohort round tables and the current funding climate."
         },
         {
           "raise_usd": [
-            0,
-            0
+            45000000,
+            65000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median 42.5M with post money 500M to 750M where known."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Down or small B. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            65000000,
+            120000000
+          ],
+          "post_money_usd": [
+            800000000,
+            1500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside as an agent platform. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs a platform that many financial institutions standardize on. Large vendors, cloud providers and agent builders compete, and regulated buyers want audit trails and low error. Two Dots reached A but later rounds are unclear, and horizontal agent platforms often hit a ceiling where customers keep control in house."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.24,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 19 percent, ours 24 percent. Near the cohort because outcomes depend on platform durability."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower end of Series C, median 101M. Sized from the cohort round tables and the current funding climate."
         },
         {
           "raise_usd": [
-            0,
-            0
+            100000000,
+            160000000
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000,
+            1600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Cohort p25 to p75 for 2022+ Series C. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Extension or down. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            160000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1600000000,
+            4000000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C needs scale across industries. A horizontal agent platform faces model labs and large automation vendors, and enterprise churn is common once models improve. Few B2B companies reach this stage, and outcomes vary widely, with many agent platforms ending in acquisition by a larger automation or fintech vendor before any Series C."
     }
   ],
   "outcomes": {
@@ -164,167 +260,232 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.42
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.21
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          6000000000
         ],
-        "p": 0.0
+        "p": 0.07
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The most likely failure is that the platform stays a set of custom deployments for a few banks, with revenue that does not compound, while model labs and larger automation vendors offer similar self improving agents. Operations agent peers in the cohort ended as acquihires or small independent companies, so a sale under 100M is the likeliest positive result."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "sphinx",
+      "relevance": "AI compliance analysts for banks and fintechs.",
+      "outcome_summary": "Founders with prior exit, seed of 7.1M only after more than a year in production work."
+    },
+    {
+      "slug": "coris",
+      "relevance": "AI risk and operations platform for payment processors and banks.",
+      "outcome_summary": "3.7M seed in February 2024 after a 2022 batch, with named customers."
+    },
+    {
+      "slug": "two-dots",
+      "relevance": "AI fraud and underwriting agent.",
+      "outcome_summary": "500K pre-seed in 2022 then a reported Series A in 2024, 28 staff."
+    },
+    {
+      "slug": "fragment",
+      "relevance": "Operations processes at KYC providers scaled with AI plus review.",
+      "outcome_summary": "Two person team, no round, later acquired as an acquihire."
+    },
+    {
+      "slug": "zaam",
+      "relevance": "Business onboarding software, failure case.",
+      "outcome_summary": "Raised about 200K and became inactive."
+    },
+    {
+      "slug": "surface-labs",
+      "relevance": "Agent teams that run critical business operations.",
+      "outcome_summary": "Pivoted after YC, named customers, no confirmed funding."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Horizontal scope: too many workflows with no single wedge, so each deployment is custom",
+      "p": 0.4,
+      "evidence": "Compliance, underwriting, research and rev ops each need different data and rules, which pushes the work toward services.",
       "analogs": [
-        "TODO-company-slug"
+        "surface-labs",
+        "fragment"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick one workflow, such as compliance alert review, and productize it."
+    },
+    {
+      "risk": "Banks and regulated buyers are slow and may build in house or pick incumbents",
+      "p": 0.35,
+      "evidence": "Sphinx and Coris both needed more than a year after YC to raise a seed, showing slow regulated sales.",
+      "analogs": [
+        "sphinx",
+        "coris"
+      ],
+      "mitigation": "Use existing customers as references and offer audit trails and fixed pricing."
+    },
+    {
+      "risk": "Model labs and agent builders offer similar agents, shrinking the self improvement edge",
+      "p": 0.35,
+      "evidence": "Self improving agents are a feature that model providers and platforms add, and many YC agent startups share the pitch.",
+      "analogs": [
+        "two-dots",
+        "zaam"
+      ],
+      "mitigation": "Build a data and evaluation loop on customer work that is hard to copy."
+    },
+    {
+      "risk": "Claimed customer traction is pilots rather than recurring revenue",
+      "p": 0.25,
+      "evidence": "The customer names are from the company's own description, with 250,000 units of work, not contract values.",
+      "analogs": [
+        "fragment"
+      ],
+      "mitigation": "Convert to annual contracts quickly."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Sphinx and other compliance agent startups",
+      "what": "AI compliance analysts for banks and fintechs.",
+      "traction": "Seed of 7.1M reported in 2026 after a Fall 2024 batch.",
+      "source_url": "https://www.ycombinator.com/companies"
+    },
+    {
+      "name": "Horizontal agent platforms (workflow automation vendors)",
+      "what": "Tools to build and run agents for operations.",
+      "traction": "Many funded vendors in 2025 and 2026.",
+      "source_url": "https://www.ycombinator.com/companies"
+    },
+    {
+      "name": "Status quo: offshore operations teams and in house analysts",
+      "what": "People reviewing alerts, documents and applications.",
+      "traction": "Default practice at banks and fintechs.",
+      "source_url": "https://www.ycombinator.com/companies"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Agents that review compliance alerts and documents are now well within reach of a small team using strong models, but making them accurate, auditable and cheaper over time via learning from each run needs evaluation infrastructure and data access agreements. Reliability in regulated work is the hard part."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Model labs and agent platforms",
+      "Fintech infrastructure vendors such as compliance software incumbents",
+      "Banks building in house"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Self improving agents are a general capability, and many funded companies build the same layer. Incumbent compliance vendors have the data and customers and can add agents in under a year, though regulated deployments slow them."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Banks and fintechs spend heavily on manual compliance and onboarding review, and recent YC startups in the space reached seed rounds.",
+        "source_url": "https://www.ycombinator.com/companies"
+      },
+      {
+        "claim": "The company says customers use agents for over 250,000 units of operational work.",
+        "source_url": "https://www.ycombinator.com/companies"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show paid production use in a narrow workflow.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Convert the strongest customer into a contract with measured savings.",
+        "Choose the first productized workflow."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "One paid production workflow with measured cost per case."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Evidence of repeatable deployment.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Deploy the same agent at two more customers in under a month.",
+        "Publish error rate and cost per case trends."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Three customers on the same workflow and recurring revenue."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A product that scales without custom work.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build a self service builder and evaluation tooling.",
+        "Hire enterprise sales and a security lead."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "About 2M annual recurring revenue and under 50 percent services share."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Expand across workflows and customers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Land a second workflow in existing accounts.",
+        "Win a top ten bank."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 130 percent."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Founder market fit",
+      "evidence": "Founders ran the platform team at Brex and say they hit these workflow bottlenecks themselves."
+    },
+    {
+      "point": "Named enterprise customers and a measured outcome",
+      "evidence": "The description cites IG.com, Airwallex, Worldpay and Citizens Bank and an 80 percent automated onboarding result, unverified."
+    },
+    {
+      "point": "Costs fall as agents learn",
+      "evidence": "Self improving agents lower unit cost over time if the claim holds."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Grep AI",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Grep AI\" --era 2022+: 6 characters, 2 syllables, kind name_plus_descriptor; cohort alive 93.7 percent, no outlier signal.",
     "strengths": [
-      "TODO"
+      "Short and memorable for engineers",
+      "Suggests search and precision"
     ],
     "weaknesses": [
-      "TODO"
+      "Descriptor AI is generic and tied to a command line tool, not finance buyers"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Grep is a known developer term, giving personality, like past YC names borrowed from tech culture. It suits an engineering led product but feels less natural for compliance buyers at banks, so the effect on success is neutral."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Strong founders and named enterprise customers make a seed very likely; the horizontal scope is the risk at Series A.",
+    "general_summary": "Grep AI has the best signals in this group: founders from the Brex platform team, named enterprise customers in fintech and a claimed concrete outcome at a brokerage. That makes a round above 500K within a year very likely and lifts the Series A above the cohort anchor. The risks are breadth, slow regulated sales and competition from model providers and agent platforms that offer the same self improving idea. Close YC peers such as Sphinx and Coris raised seeds of a few million but needed more than a year, and Zaam shows what happens without revenue. Customer claims come from the company itself and are unverified."
   },
   "assumptions": [
-    "TODO"
+    "Seed means a round above about 500K within about 12 months of the batch start.",
+    "Customer and traction claims are from the company description and are unverified.",
+    "Base rates mix Fintech and B2B 2022 to 2025 cohorts; recent batches are right censored.",
+    "The company is in the Fall 2026 batch, so no funding after 2026-10-05 was used."
   ],
   "sources": [
-    "https://"
+    "https://www.ycombinator.com/companies"
   ]
 }

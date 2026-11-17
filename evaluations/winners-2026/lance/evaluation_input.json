@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Lance",
+    "one_liner": "AI Agents That Run Hotel Operations.",
+    "description": "Autonomous AI agents for hotels that answer calls, close sales and run operations by using the hotel's existing software through computer use. Claims 50 plus hotels under Marriott, Hilton and Hyatt brands. Ten person team.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.5,
+    "p_low": 0.3,
+    "p_high": 0.7,
+    "basis": "Already accepted, so this is a note. A random applicant starts near 1 percent. Paying hotel customers across major brands and a ten person team are strong traction signals, offset by a crowded AI voice agent category.",
+    "why_it_fails": "YC would most plausibly say no because AI voice agents for hotels are crowded, and Canary Technologies already sells one to thousands of hotels. A reviewer might also see the 50 hotels as small and question whether computer use agents are reliable enough to run operations."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.8,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.81,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (seed 81 percent, n=69); B2B 2022-2025 59 percent, n=126",
+        "adjustment_reason": "Near the older anchor: real customers across major brands and a ten person team are better than the typical batch company, and AI agents raise easily in 2026."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            22000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Thin round if investors see a crowded voice agent category. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical seed for vertical AI agents with real customers. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            90000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Upside seed led by a strong fund on hotel traction. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            90000000,
+            180000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Hot round after rapid hotel count growth. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if investors think hotel voice AI is already won by Canary Technologies and others, and that 50 hotels, possibly on pilots, is too little to show a repeatable sale. Flowtel and Conduit had similar claims and only reached seeds. A hotel group's long procurement and IT security reviews could also slow growth."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.32,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series A cond 32 percent, n=56); AI tag 44 percent, n=32",
+        "adjustment_reason": "At 1.2 times the anchor: paying customers under big brands and a vertical focus are positives, but the category is crowded."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            28000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A for a vertical AI company with ARR. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            28000000,
+            50000000
+          ],
+          "post_money_usd": [
+            180000000,
+            400000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if hotel groups roll out across portfolios. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if hotel agents stay at the pilot level and churn when a brand mandates a platform. Canary and property management systems like Mews and Apaleo can bundle voice agents into suites hotels already pay for. Canary reached Series D, which means a well funded rival owns the buyers. Computer use agents may also prove too slow and brittle for operations."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.36,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18)",
+        "adjustment_reason": "At 0.92 of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin B. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B for vertical AI. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside with a large hotel portfolio. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B fails if the product stays a call answering tool with thin margins, so hotels do not pay for operations automation. Property management vendors may block integrations or build agents. Growth has to expand from calls to sales and operations, and customer concentration in a few hotel groups is a risk."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.32,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall 43 percent, n=510)",
+        "adjustment_reason": "At 0.75 of the all cohort anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            90000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin C. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            90000000,
+            180000000
           ],
           "post_money_usd": [
-            0,
-            0
+            700000000,
+            1800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical C. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            180000000,
+            350000000
+          ],
+          "post_money_usd": [
+            1800000000,
+            4000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside as the operating layer for hotels. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C fails if hospitality proves a limited market and the company cannot expand to other service industries, or if an incumbent suite or Canary consolidates the segment. Canary's own path to Series D shows what the winner looks like, so a second player often ends in a sale."
     }
   ],
   "outcomes": {
@@ -164,167 +224,197 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.38
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.26
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          4000000000
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The common failure is losing to a larger hospitality platform that bundles voice and operations agents into existing contracts. A smaller miss is an acquisition by a property management or hotel tech vendor before the company reaches scale. Most analogs in the cohort that did not reach a later round also lacked a repeatable paying customer base, and exits in this category tend to be small."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "canary-technologies",
+      "relevance": "Hotel tech platform that now sells an AI voice product.",
+      "outcome_summary": "Summer 2018 batch, reached Series D or later, the incumbent winner in the segment."
+    },
+    {
+      "slug": "flowtel",
+      "relevance": "AI voice agents for hotels.",
+      "outcome_summary": "Winter 2025 batch, active; funding after the batch was not used."
+    },
+    {
+      "slug": "conduit-ai",
+      "relevance": "AI agents for hospitality.",
+      "outcome_summary": "Winter 2024 batch, raised a seed."
+    },
+    {
+      "slug": "retell-ai",
+      "relevance": "AI phone agents for contact centers.",
+      "outcome_summary": "Winter 2024 batch, raised a seed, a horizontal voice agent."
+    },
+    {
+      "slug": "guruhotel",
+      "relevance": "Direct booking software for hotels.",
+      "outcome_summary": "Winter 2020 batch, seed only."
+    },
+    {
+      "slug": "elyos-ai",
+      "relevance": "AI customer service agents for field services.",
+      "outcome_summary": "Summer 2023 batch, reached a Series A, a vertical agent win."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Canary and PMS vendors bundle AI voice and agents",
+      "p": 0.4,
+      "evidence": "Canary says its AI voice platform has four hotel specific agents and works with thousands of hotels; PMS vendors like Mews already integrate AI.",
       "analogs": [
-        "TODO-company-slug"
+        "canary-technologies",
+        "flowtel"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Win brand level contracts and sell operations beyond voice."
+    },
+    {
+      "risk": "Computer use agents are too slow or unreliable for operations",
+      "p": 0.25,
+      "evidence": "Agents that navigate legacy hotel software depend on UI stability and can break when the software changes.",
+      "analogs": [
+        "conduit-ai",
+        "retell-ai"
+      ],
+      "mitigation": "Build direct integrations where available and add human review."
+    },
+    {
+      "risk": "Pilot to contract conversion is weak",
+      "p": 0.25,
+      "evidence": "The 50 hotels claim may include small pilots, and hotel groups buy slowly.",
+      "analogs": [
+        "guruhotel",
+        "conduit-ai"
+      ],
+      "mitigation": "Report paid hotel count and annual contract value."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Canary Technologies AI Voice",
+      "what": "Four hotel specific voice agents for front desk, concierge, reservations and booking.",
+      "traction": "Claims over 20,000 hotels as customers of its platform.",
+      "source_url": "https://www.canarytechnologies.com/press/ai-voice-platform-hospitality"
+    },
+    {
+      "name": "HiJiffy",
+      "what": "Hospitality voice and messaging bot.",
+      "traction": "Operates in several languages, details not found.",
+      "source_url": "https://www.stork.ai/compare/hijiffy-vs-canary-technologies"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Voice agents and computer use agents are available through models, so a small team can ship quickly, though reliability across many hotel systems is hard to maintain. Integrations and brand compliance add work."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Canary Technologies",
+      "Mews",
+      "Apaleo",
+      "Marriott and Hilton in house teams",
+      "Voice platforms such as Retell AI"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Canary already ships a voice platform and PMS vendors can bundle agents. The hotel brands could also build with generic voice tools, so copy risk is high."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Hotels miss a large share of calls, which Canary cites as up to 40 percent, a vendor figure, creating a clear paid use case.",
+        "source_url": "https://www.canarytechnologies.com/press/ai-voice-platform-hospitality"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove paid hotel growth beyond pilots.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Report paid hotels and annual contract value.",
+        "Win one brand level approval."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "100 paying hotels."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Expand from calls to sales and operations.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch an agent for reservations upsell.",
+        "Build direct PMS integrations."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "ARR growth above 3 times in a year."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Customers under major brands",
+      "evidence": "Stated 50 plus hotels under Marriott, Hilton and Hyatt brands."
+    },
+    {
+      "point": "Clear ROI use case",
+      "evidence": "Missed calls are lost bookings.",
+      "source_url": "https://www.canarytechnologies.com/press/ai-voice-platform-hospitality"
+    },
+    {
+      "point": "Larger team than most batch companies",
+      "evidence": "Ten people at the batch start."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Lance",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Lance\" --era 2022+ : kind invented_or_proper, alive 92.7 percent, n=1826",
     "strengths": [
-      "TODO"
+      "Short, human name fits an agent persona"
     ],
     "weaknesses": [
-      "TODO"
+      "Does not say hotels"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A short human name suits an AI employee positioned as a team member, similar to other agent brands. It is easy to say and spell, and hotel buyers care about results.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Real hotel customers and a hot category make a seed likely, but a well funded incumbent makes later rounds a toss up.",
+    "general_summary": "Lance sells AI agents that answer calls, sell rooms and run operations for hotels, using computer use agents on existing software. It claims 50 plus hotels under major brands and has ten people, which is stronger traction than most batch companies. The need is concrete, since hotels miss calls and pay for software. The weaknesses are a crowded segment led by Canary Technologies, bundling by property management vendors, and reliability limits of computer use agents. A seed above the YC check within a year is likely, a Series A is above the cohort rate, and later rounds follow base rates. About 38 percent of simulated paths stall or shut down."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-01-05 using only the batch description.",
+    "2026 batch records were not used as funding evidence."
   ],
   "sources": [
-    "https://"
+    "https://www.canarytechnologies.com/press/ai-voice-platform-hospitality",
+    "https://www.stork.ai/compare/hijiffy-vs-canary-technologies"
   ]
 }

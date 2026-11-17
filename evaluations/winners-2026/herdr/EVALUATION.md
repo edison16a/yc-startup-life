@@ -180,8 +180,8 @@ You know it worked when: ARR above 10M
 |---|---|---|---|---|
 | Seed | 67% | 80% | python3 -I scripts/base_rates.py --years 2018-2025 --tag "Developer Tools" --calibration-only: seed cond 67 percent (n=42), known 67 percent | Within 1.2x. Lift because 25k stars and 340k downloads give investors a visible signal, in a field where open source developer tools raise on adoption. |
 | Series A | 39% | 33% | python3 -I scripts/base_rates.py --years 2018-2025 --tag "Developer Tools" --calibration-only: series_a cond 39 percent (n=28) | Within 0.85x. Open source dev tools reach A less than half the time, and the monetization path for terminal tools is unclear. |
-| Series B | 18% | 25% | python3 -I scripts/base_rates.py --years 2018-2025 --tag "Developer Tools" --calibration-only: series_b cond 18 percent (n=11) | Within 1.4x, lifted for an exceptional open source following. |
-| Series C+ | 36% | 20% | python3 -I scripts/base_rates.py --years 2018-2025 --tag "Developer Tools" --calibration-only: series_c cond 50 percent (n=2); tiny sample, overall table cond 36 percent | Discounted for a tiny sample and a young company. |
+| Series B | 18% | 25% | python3 -I scripts/base_rates.py --years 2018-2025 --tag "Developer Tools" --calibration-only: series_b cond 18 percent (n=11) | Within 1.4x, lifted for an exceptional open source following. Set below the cohort anchor because this company has a narrow buyer set, a long path to scale, and the cohort sample is small and right censored. |
+| Series C+ | 36% | 20% | python3 -I scripts/base_rates.py --years 2018-2025 --tag "Developer Tools" --calibration-only: series_c cond 50 percent (n=2); tiny sample, overall table cond 36 percent | Discounted for a tiny sample and a young company. Set below the cohort anchor because this company has a narrow buyer set, a long path to scale, and the cohort sample is small and right censored. |
 
 ## Assumptions and limits
 

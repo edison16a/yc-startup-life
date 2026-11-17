@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Aikido Technologies",
+    "one_liner": "Clean marine AI datacenters",
+    "description": "Floating offshore platform that carries a 15MW plus wind turbine, battery storage, backup diesel power and 10MW plus of data halls cooled by the ocean, aimed at gigawatt scale AI datacenters. Customers would be AI compute buyers and offshore power buyers. Five person team.",
+    "as_of": "2026-10-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.4,
+    "p_low": 0.2,
+    "p_high": 0.6,
+    "basis": "Already accepted, so this is a note. A random applicant starts near 1 percent. Energy and AI infrastructure sit close to YC's interest in hard problems, the pitch is specific and the platform is described as proprietary, which would lift odds, while capital intensity and permitting lower them.",
+    "why_it_fails": "YC would most plausibly decline because a floating offshore platform needs hundreds of millions of dollars, years of permitting and marine engineering, which does not fit a three month batch or a small seed check. Reviewers would also doubt that a five person team can show traction before Demo Day."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.55,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.73,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Industrials --calibration-only (11 researched, seed 73 percent, anecdote); B2B 2022-2025 seed 59 percent, n=126",
+        "adjustment_reason": "The Industrials cohort has only 11 companies. The company is mature in concept and sits in a hot AI power theme, but hardware and a 12 month window below $500K check size reduce odds, so about 0.75 of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            25000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin band: grants plus angels to fund engineering and a scale model test. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            60000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical seed for hard energy hardware pitched as AI infrastructure. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside from climate or energy infrastructure funds attracted by AI power demand. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            50000000
+          ],
+          "post_money_usd": [
+            150000000,
+            400000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Large round with an anchor compute or utility partner. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if investors see a shipyard business that needs project finance, not venture capital. With five people and no demonstration unit, the proof is a design and simulations, and generalist seed funds may pass. Kitekraft and OutSail show that hardware teams in wind and marine often raise only small rounds or fail on unsolved physics."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Industrials --calibration-only (Industrials series A cond 50 percent, n=8, anecdote); overall B2B 2018-2021 cond 32 percent, n=56",
+        "adjustment_reason": "Below the 0.32 B2B anchor at about 0.85 of it, since demonstrations are expensive and the thin sample says little."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A funding a scale demonstrator. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            90000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A for energy hardware with a pilot and offtake letters. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            40000000,
+            80000000
+          ],
+          "post_money_usd": [
+            250000000,
+            600000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if hyperscaler interest in offshore power is real. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if the demonstrator is delayed or the offtake letters are non binding. Compute buyers want power on a known date, and floating wind projects face delays, rising costs and subsidy changes. Microsoft's underwater Natick project ended despite technical success, which shows how hard the cost case is. Posh and Rewbi pivoted after claims on data center speed."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18)",
+        "adjustment_reason": "At 0.85 of the anchor; few hardware companies reach B and capital need is far larger."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin B with project partners. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            350000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical large hardware B with infrastructure investors. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            400000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside with a first commercial project funded. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B fails if the first commercial platform cannot be financed. Offshore projects need banks and utilities, which want a proven unit and a bankable customer. Without a signed compute buyer, investors will not fund fabrication. The nearest analogs, Kitekraft and OutSail, stayed small or shut down."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall 43 percent, n=510)",
+        "adjustment_reason": "Below the all-cohort anchor at 0.7 of it, justified by capital intensity; infrastructure funding may come as project debt that is not a venture round."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            100000000,
+            250000000
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000,
+            1500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Large growth round or first project equity. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
           "post_money_usd": [
-            0,
-            0
+            1500000000,
+            4000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical infrastructure scale round. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            600000000,
+            1500000000
+          ],
+          "post_money_usd": [
+            4000000000,
+            10000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside gigawatt project funding. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The company stops before a Series C if the first projects are late or uneconomic, because later rounds fund construction, not engineering. A hyperscaler building onshore power faster, or cheaper onshore nuclear and gas, would remove the reason to go offshore. Capital can also arrive as project finance that does not count as an equity round."
     }
   ],
   "outcomes": {
@@ -164,167 +224,193 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.6
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.17
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The most likely failure is that the economics of offshore datacenters do not beat onshore power, and the platform never gets built at scale. Delays in permitting, marine engineering and financing stretch the timeline beyond seed and Series A runway. If it does exit, the buyer is more likely an offshore wind or shipbuilding firm than a hyperscaler."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "networkocean",
+      "relevance": "Floating and underwater data centers.",
+      "outcome_summary": "Began in 2024 with an underwater data center plan that drew regulator scrutiny for lacking permits; no funding was confirmed."
+    },
+    {
+      "slug": "kitekraft",
+      "relevance": "Wind energy hardware from a small team.",
+      "outcome_summary": "Small pre-seed and a $1.6M round after years, a grid connected flight, still small."
+    },
+    {
+      "slug": "outsail-technologies",
+      "relevance": "Marine hardware with hard physics.",
+      "outcome_summary": "Raised pre-seed and seed, then was shut down after fundamental physics problems."
+    },
+    {
+      "slug": "posh",
+      "relevance": "Modular AI data centers built for speed.",
+      "outcome_summary": "Seed of $3.8M in 2022 for another business, pivoted to modular data centers, no later priced round found."
+    },
+    {
+      "slug": "rewbi",
+      "relevance": "Fast deployment of data centers.",
+      "outcome_summary": "Four person team from a repeat YC founder, pivoted into data centers, no verified round."
+    },
+    {
+      "slug": "traverse-technologies",
+      "relevance": "Engineering for renewable developers with a small team.",
+      "outcome_summary": "Small seed only, then shut down."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Capital intensity and offshore permitting outrun venture runway",
+      "p": 0.4,
+      "evidence": "Floating wind faces delays, higher costs and interest rates, and OutSail and Kitekraft struggled to fund marine and wind hardware.",
       "analogs": [
-        "TODO-company-slug"
+        "outsail-technologies",
+        "kitekraft"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Partner with a shipyard and a utility for project finance, and stage the build with a small demonstration."
+    },
+    {
+      "risk": "Offshore economics lose to onshore power and gas for AI datacenters",
+      "p": 0.3,
+      "evidence": "Microsoft ended its underwater Natick project after a technical success, and hyperscalers are building onshore at scale.",
+      "analogs": [
+        "networkocean",
+        "posh"
+      ],
+      "mitigation": "Target regions with grid constraints and sell power plus compute as a package."
+    },
+    {
+      "risk": "No bankable compute customer signs before fabrication",
+      "p": 0.3,
+      "evidence": "Rewbi and Posh pivoted after data center claims without confirmed rounds, a sign that buyers are slow to commit to unproven capacity.",
+      "analogs": [
+        "rewbi",
+        "posh"
+      ],
+      "mitigation": "Secure non binding then binding offtake with a neocloud and show a scale test."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Microsoft Project Natick",
+      "what": "Underwater data center experiment, ended in 2024 after servers failed less than on land.",
+      "traction": "Technical success but discontinued.",
+      "source_url": "https://www.datacenterdynamics.com/en/news/microsoft-confirms-project-natick-underwater-data-center-is-no-more/"
+    },
+    {
+      "name": "Onshore hyperscale and neocloud builders",
+      "what": "Conventional data centers and power deals that the offshore idea must beat on cost and speed.",
+      "traction": "Large scale ongoing builds.",
+      "source_url": "https://techradar.com/pro/microsoft-has-ditched-its-project-natick-underwater-data-center"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Marine structures, floating wind turbines, battery integration, cooling and data hall reliability at sea are each hard, and the pitch combines them. A five person team can design but cannot easily build or certify it without partners."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 2,
     "who": [
-      "TODO"
+      "Offshore wind developers",
+      "Shipbuilders",
+      "Hyperscalers"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 48,
+    "rationale": "Replicating a floating platform plus data halls takes years of engineering and certification, and few large firms have the incentive to move first, so a quick copy is unlikely, though a large wind firm could partner or acquire."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "AI compute demand is power constrained, and operators look for new sites; offshore concepts are explored by several groups, though the concept itself is unproven.",
+        "source_url": "https://techradar.com/pro/microsoft-has-ditched-its-project-natick-underwater-data-center"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a credible scale test and a first customer letter.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build a small scale platform or tank test with a shipyard partner.",
+        "Sign a non binding offtake with a compute buyer."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Test data and a named buyer letter."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Fund a demonstrator and a project site.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Secure site and permit pathway in one jurisdiction.",
+        "Line up a project finance partner."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Permit application accepted and a funded demonstrator."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Rides the AI power bottleneck",
+      "evidence": "Compute demand is limited by power and sites, so any new power plus compute supply gets attention."
+    },
+    {
+      "point": "Free ocean cooling is real physics",
+      "evidence": "Natick found fewer server failures than on land.",
+      "source_url": "https://techradar.com/pro/microsoft-has-ditched-its-project-natick-underwater-data-center"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Aikido Technologies",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Aikido Technologies\" --era 2022+ : kind name_plus_descriptor, alive 93.7 percent, n=557",
     "strengths": [
-      "TODO"
+      "Aikido suggests using the force of the wave",
+      "Memorable word"
     ],
     "weaknesses": [
-      "TODO"
+      "Technologies suffix is generic and tells nothing"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The martial art name hints at working with natural forces and is distinctive, while the Technologies suffix is typical of industrial firms. It will not affect infrastructure buyers who decide on cost and risk.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A bold, power hungry AI infrastructure bet that probably gets a seed but faces large capital and proof hurdles after that.",
+    "general_summary": "Aikido Technologies proposes gigawatt scale floating wind platforms with data halls cooled by the ocean. The need is real, since AI compute is constrained by power, and the pitch connects to a hot theme, which makes a seed above the YC check likely though not certain. The difficulty is that offshore marine hardware is expensive, slow to permit and slow to build, onshore power competes, and the nearest analogs in marine and wind hardware stayed small or failed. Reaching Series A needs a demonstrator and a named buyer, and later rounds depend on project finance, not venture capital. About 60 percent of simulated paths stall or shut down, and the upside is large but rare."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-10-05 using only the batch description.",
+    "Industrials cohort is only 11 companies, so B2B cohorts were also used.",
+    "Web results that named the company were ignored."
   ],
   "sources": [
-    "https://"
+    "https://www.datacenterdynamics.com/en/news/microsoft-confirms-project-natick-underwater-data-center-is-no-more/",
+    "https://techradar.com/pro/microsoft-has-ditched-its-project-natick-underwater-data-center"
   ]
 }

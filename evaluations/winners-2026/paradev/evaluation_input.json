@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Paradev (formerly Superset)",
+    "one_liner": "Building self-improving software",
+    "description": "Open-source desktop IDE that runs hundreds of coding agents in parallel, with tens of thousands of engineers using it and plans for a collaborative cross-platform tool. Four person team; developers and engineering teams would pay.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.5,
+    "p_low": 0.3,
+    "p_high": 0.7,
+    "basis": "Already accepted, so this is a note. A random applicant starts near 1 percent. Real open source usage in the tens of thousands, a technical team and a hot category would lift odds sharply, while a crowded category of parallel agent tools lowers them.",
+    "why_it_fails": "YC would most plausibly say no because parallel agent IDEs are crowded, with Conductor, Cursor and others offering the same worktree workflow, and open source usage does not show willingness to pay. A reviewer may see a feature that the model labs will absorb into their own coding apps."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.85,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.81,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (seed 81 percent, n=69); python3 -I scripts/base_rates.py --years 2018-2021 --tag AI --calibration-only (AI tag seed 94 percent, n=34); B2B 2022-2025 59 percent",
+        "adjustment_reason": "About 1.05 times the older B2B anchor: open source traction of tens of thousands of users is the sort of signal AI devtool seeds in 2026 are funded on."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.15,
+          "rationale": "Thin: small angel round if investors worry about commoditization. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical seed for a developer tool with strong usage. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            45000000,
+            100000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Hot devtool seed; Capy and cmux comps and the 2022+ YC seed median near $3.3M show a wide range. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside from a top fund leading on open source momentum. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A seed above the YC check is blocked if investors decide the product is a thin layer over Claude Code and Codex that model labs will bundle, or that usage will not turn into revenue. Vibe Kanban and CodeStory had similar developer interest and still shut down or stalled. A rename and rebuild cycle may also dilute community momentum."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.4,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.32,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series A cond 32 percent, n=56); AI tag 44 percent, n=32",
+        "adjustment_reason": "About 1.25 times the anchor: a strong open source base can convert to team plans, and the category is attracting capital."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A with modest revenue. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A for an AI devtool with team revenue. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if enterprise adoption takes off. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A fails if usage is free and individual, and teams will not pay on top of their model subscriptions. Conductor charges about $50 a month and bundles with the same model subscriptions. If Cursor, Claude Code or Codex ship strong parallel agent features, the standalone tool loses its reason to exist. Continue and CodeStory show how fast this can end."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.37,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18)",
+        "adjustment_reason": "At 0.95 of the anchor; devtools with a large installed base are better than average, but the sample is small."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin B. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            45000000,
+            90000000
           ],
           "post_money_usd": [
-            0,
-            0
+            350000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B in a fast category. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            90000000,
+            200000000
+          ],
+          "post_money_usd": [
+            800000000,
+            2000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside with enterprise growth. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B fails if growth plateaus when the novelty of parallel agents fades, or enterprise buyers pick the large platforms they already pay. The business has to show net revenue retention and a moat beyond the interface, such as shared team workflows, otherwise investors treat it like a commodity."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall 43 percent, n=510)",
+        "adjustment_reason": "At 0.77 of the all cohort anchor; most devtools in this wave are acquired before C."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Thin growth round. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            120000000,
+            250000000
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000,
+            2500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical large devtool C. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            250000000,
+            500000000
+          ],
+          "post_money_usd": [
+            2500000000,
+            6000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside as a leading agent platform. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C fails because companies in this category are often acquired early, as Continue was in the data, so independence to C is rare. Model labs and IDE vendors are the natural buyers, and a large lab shipping the same product removes the market."
     }
   ],
   "outcomes": {
@@ -164,167 +224,215 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.35
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.1
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The common failure is commoditization: model providers and large IDEs ship parallel agent features for free, and open source forks reproduce the interface. The company then either sells early for its team and users or fades when the community moves on. Most analogs in the cohort that did not reach a later round also lacked a repeatable paying customer base, and exits in this category tend to be small."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "continue",
+      "relevance": "Open source coding agent and IDE extension.",
+      "outcome_summary": "Raised a seed and was acquired, an early exit rather than an independent scale up."
+    },
+    {
+      "slug": "codestory",
+      "relevance": "AI native IDE built on an editor.",
+      "outcome_summary": "Shut down with no later round despite early attention."
+    },
+    {
+      "slug": "vibe-kanban",
+      "relevance": "Tool for planning and reviewing coding agent work.",
+      "outcome_summary": "Raised a seed; the record shows shutdown while the directory lists it active."
+    },
+    {
+      "slug": "capy",
+      "relevance": "IDE for parallel agents.",
+      "outcome_summary": "Fall 2024 batch, active, no later round found."
+    },
+    {
+      "slug": "cmux",
+      "relevance": "Open source applied AI lab building devtools.",
+      "outcome_summary": "Summer 2024 batch, open source devtools lab."
+    },
+    {
+      "slug": "conductor",
+      "relevance": "Mac app that runs many coding agents.",
+      "outcome_summary": "Summer 2024 batch, the closest direct rival; its later funding was not used."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Model labs and IDE vendors bundle parallel agents",
+      "p": 0.4,
+      "evidence": "Cursor already runs parallel agents in worktrees and other IDEs added the feature in 2026, leaving little room for a standalone product.",
       "analogs": [
-        "TODO-company-slug"
+        "continue",
+        "codestory"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Stay agent agnostic and own team collaboration and review workflows."
+    },
+    {
+      "risk": "Open source usage never converts to revenue",
+      "p": 0.3,
+      "evidence": "Free individual usage with users paying for their own model subscriptions gives limited pricing power, as with Vibe Kanban.",
+      "analogs": [
+        "vibe-kanban",
+        "capy"
+      ],
+      "mitigation": "Launch team plans with shared cloud workspaces and track conversion."
+    },
+    {
+      "risk": "Fast follower competition from many similar tools",
+      "p": 0.2,
+      "evidence": "The comps show a dozen similar parallel agent tools in 2024 to 2026 batches.",
+      "analogs": [
+        "conductor",
+        "cmux",
+        "capy"
+      ],
+      "mitigation": "Move to cross platform and cloud collaboration before rivals."
+    },
+    {
+      "risk": "Distraction from a rename and pivot to self-improving software",
+      "p": 0.1,
+      "evidence": "The new tagline is broader than the product with traction, which can dilute focus.",
+      "analogs": [
+        "codestory"
+      ],
+      "mitigation": "Ship the core product improvements first."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Conductor",
+      "what": "Mac app that runs Claude Code, Codex and Cursor agents in worktrees.",
+      "traction": "Free local use, paid plans from $50 a month.",
+      "source_url": "https://www.morphllm.com/conductor-ai-coding"
+    },
+    {
+      "name": "Cursor",
+      "what": "AI first editor with parallel agents in worktrees.",
+      "traction": "Large installed base.",
+      "source_url": "https://tooldirectory.ai/tools/conductor"
+    },
+    {
+      "name": "Zed parallel agents",
+      "what": "April 2026 feature that runs external agents over ACP.",
+      "traction": "Part of an established editor.",
+      "source_url": "https://docs.kanaries.net/topics/AICoding/parallel-code-agents"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Worktree management, agent adapters and a desktop app are buildable by a small team in months, so complexity is moderate. The hard part is cross platform collaboration and keeping up with changing agent interfaces."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 5,
     "who": [
-      "TODO"
+      "Anthropic",
+      "OpenAI",
+      "Cursor",
+      "Zed",
+      "Microsoft"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "Model labs and IDEs ship similar features within months and already distribute to the same developers, and several have added parallel agent features, so copy risk is extremely high."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Many engineers run several coding agents at once, and a set of paid tools has appeared to manage them.",
+        "source_url": "https://www.morphllm.com/conductor-ai-coding"
+      },
+      {
+        "claim": "Review burden and the need for orchestration are recurring complaints, which supports demand for a control layer.",
+        "source_url": "https://docs.kanaries.net/topics/AICoding/parallel-code-agents"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show that usage turns into paid teams.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch a paid team plan with shared workspaces.",
+        "Measure weekly active teams and conversion."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "First recurring revenue from teams."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show retention and a moat beyond the interface.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Ship cloud and cross platform sessions.",
+        "Sign engineering teams at companies of 100 or more."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 110 percent."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large organic usage for a four person team",
+      "evidence": "The team says tens of thousands of engineers use the app."
+    },
+    {
+      "point": "Open source distribution",
+      "evidence": "Open source builds developer trust, which devtool investors value."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Paradev",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Paradev\" --era 2022+ : kind invented_or_proper, alive 92.7 percent, n=1826",
     "strengths": [
-      "TODO"
+      "Short and developer flavored",
+      "The dev suffix signals audience"
     ],
     "weaknesses": [
-      "TODO"
+      "Rename from Superset can lose search and community equity"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Paradev is a short invented name that hints at parallel development, which fits the product. A rename risks lost recognition after the open source community knew it as Superset, but the effect on outcomes is small compared with distribution.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Strong early usage in a crowded, fast moving category, so a seed is likely but independence to later rounds is uncertain.",
+    "general_summary": "Paradev is an open source desktop IDE that lets engineers run many coding agents in parallel, and it claims tens of thousands of users. In 2026 that is the kind of traction that attracts seed money, so a round above the YC check within a year is likely. The risk is structural: Cursor, Zed and the model labs ship parallel agents themselves, there are a dozen similar YC companies, and free usage does not prove revenue. Analogs split between an early acquisition and shutdowns. A pivot to team collaboration and cloud workspaces is the upside path. About 35 percent of simulated paths end in a stall."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-04-06 using only the batch description.",
+    "Search results from the company's own comparison pages were ignored.",
+    "2026 batch records were not used as funding evidence."
   ],
   "sources": [
-    "https://"
+    "https://www.morphllm.com/conductor-ai-coding",
+    "https://tooldirectory.ai/tools/conductor",
+    "https://docs.kanaries.net/topics/AICoding/parallel-code-agents"
   ]
 }

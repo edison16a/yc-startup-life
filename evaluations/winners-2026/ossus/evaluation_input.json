@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Ossus",
+    "one_liner": "Intelligence for cultural institutions",
+    "description": "AI-native operating system for school and public libraries that saves librarians time on cataloging and routine tasks. Customers are libraries and school districts. Three person team.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.25,
+    "p_low": 0.1,
+    "p_high": 0.4,
+    "basis": "Already accepted, so this is a note. A random applicant starts near 1 percent. A small team, an unusual market with little venture precedent and no stated traction hold the estimate down, while a clear user and a technical product keep it above the base.",
+    "why_it_fails": "YC would most plausibly say no because libraries are a small, budget constrained, slow buying market with entrenched vendors, and the pitch gives no revenue or pilots. Reviewers may doubt that a three person team can displace Follett's Destiny and still reach a venture sized outcome."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.45,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (2022-2025 B2B seed 59 percent, n=126); python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (81 percent, n=69)",
+        "adjustment_reason": "About 0.75 of the recent B2B anchor: a small public sector market with low prices and slow budgets, and a 12 month window for a round above $500K."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            700000,
+            1500000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            12000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin: a small angel or pre-seed extension is the likely outcome for a niche. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical small seed from edtech or AI app investors. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            6000000
+          ],
+          "post_money_usd": [
+            25000000,
+            50000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if early district contracts show fast adoption. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            10000000
+          ],
+          "post_money_usd": [
+            50000000,
+            90000000
+          ],
+          "p_band": 0.05,
+          "rationale": "Rare larger round if the story expands to museums and archives. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if investors conclude libraries are too small and slow, with school budgets cut and procurement by district. Revenue per library is low, so a venture sized outcome needs thousands of customers. Openbase and other niche tooling companies in the data raised little and stopped. A pivot to broader cultural institutions would need to happen quickly."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.26,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.32,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series A cond 32 percent, n=56); B2B 2022-2025 26 percent, n=74",
+        "adjustment_reason": "At 0.8 of the anchor given a niche market and low ticket sizes."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Thin A at modest revenue. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical A for vertical AI with a few hundred paying sites. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            25000000
+          ],
+          "post_money_usd": [
+            80000000,
+            150000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside by expanding into museums and other institutions. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if per library prices stay near a few thousand dollars and sales cycles run through district budgets, so annual revenue grows too slowly to justify a priced round. Destiny from Follett dominates school libraries and is adding AI, which cuts the room for a new entrant. Scout, the K-12 operating system, shows how slowly school software scales."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18)",
+        "adjustment_reason": "At 0.77 of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            140000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Thin B. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
           "post_money_usd": [
-            0,
-            0
+            140000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical B for a vertical suite. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            80000000
+          ],
+          "post_money_usd": [
+            300000000,
+            600000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside with a platform for all cultural institutions. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B fails if growth has not moved beyond libraries and the market ceiling is a few tens of millions of dollars of annual revenue, so investors pass. Roll ups of public sector software are rare, and Series B investors in vertical software expect a path to $100M of revenue."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.32,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall 43 percent, n=510)",
+        "adjustment_reason": "At 0.75 of the all cohort anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Thin C. Sized from the YC round size tables and current PitchBook figures."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical C. Sized from the YC round size tables and current PitchBook figures."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2000000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside only with a large new market. Sized from the YC round size tables and current PitchBook figures."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The company stops before a Series C because the library market is small and consolidated into a few vendors, so growth beyond Series B is more likely to end in a sale to an incumbent like Follett or Clarivate than in a large independent round."
     }
   ],
   "outcomes": {
@@ -164,167 +224,183 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.5
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          3000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.38
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.11
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          3000000000
         ],
-        "p": 0.0
+        "p": 0.01
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "A venture sized outcome is unlikely because the market is small and prices are low. Most failure paths are a stall once the seed money runs out without district contracts, or a small acquisition by an incumbent library vendor. Most analogs in the cohort that did not reach a later round also lacked a repeatable paying customer base, and exits in this category tend to be small."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "scout-4",
+      "relevance": "AI student information system for K-12 schools.",
+      "outcome_summary": "Winter 2025 batch, active, no funding found; shows slow school software."
+    },
+    {
+      "slug": "openbase",
+      "relevance": "Niche library discovery tool.",
+      "outcome_summary": "Raised a seed and shut down."
+    },
+    {
+      "slug": "broccoli-ai",
+      "relevance": "AI native operating system for a vertical of small businesses.",
+      "outcome_summary": "Winter 2022 batch, reached a Series B, a positive case for vertical AI OS."
+    },
+    {
+      "slug": "radix-labs",
+      "relevance": "Operating system for a niche lab market.",
+      "outcome_summary": "Raised a seed and shut down."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Small and slow public sector market with low prices",
+      "p": 0.45,
+      "evidence": "Library budgets are limited, buying runs through districts and Follett's Destiny already dominates school libraries.",
       "analogs": [
-        "TODO-company-slug"
+        "scout-4",
+        "openbase"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Sell to public library systems with larger budgets first and price on time saved."
+    },
+    {
+      "risk": "Incumbents add AI to existing systems",
+      "p": 0.3,
+      "evidence": "Destiny AI is already described by reviewers and Clarivate keeps releasing updates to Sierra.",
+      "analogs": [
+        "radix-labs",
+        "scout-4"
+      ],
+      "mitigation": "Be a layer that works with existing catalogs rather than replacing them."
+    },
+    {
+      "risk": "Venture ceiling stalls the raise",
+      "p": 0.3,
+      "evidence": "Niche vertical tools in the data raised small seeds and stopped when revenue stayed flat.",
+      "analogs": [
+        "openbase",
+        "radix-labs"
+      ],
+      "mitigation": "Expand to museums, archives and universities early."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Follett Destiny",
+      "what": "Library manager that leads the school library market, now with an AI assistant.",
+      "traction": "Market share reported at five times the next rival in a 2019 report.",
+      "source_url": "https://americanlibrariesmagazine.org/2019/05/01/library-systems-report-2019/"
+    },
+    {
+      "name": "Innovative Sierra and Polaris",
+      "what": "Library systems for public libraries.",
+      "traction": "Active releases in 2026.",
+      "source_url": "https://librarytechnology.org/products/sales-statistics.pl"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "Cataloging, search and workflow automation with current language models are within reach of a three person team in months. The harder part is integrating with entrenched library systems and meeting school data privacy rules."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Follett",
+      "Clarivate",
+      "Innovative",
+      "SirsiDynix"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Incumbents already ship AI assistants and own the customer relationships, so they could match the main features within a year, though they move slowly."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "School and public libraries already pay for library systems, and vendors are adding AI features, so spend exists but is modest.",
+        "source_url": "https://americanlibrariesmagazine.org/2022/05/02/2022-library-systems-report/"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show paid library customers beyond pilots.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign ten paying libraries with annual contracts.",
+        "Document hours saved per librarian."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Ten paid sites and a reference district."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove a larger sales motion.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Win a district or consortium with many libraries.",
+        "Add a second institution type."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Several hundred paid sites."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Clear user with repetitive tasks",
+      "evidence": "Librarians do tedious cataloging and routine tasks that language models handle well."
+    },
+    {
+      "point": "Low technical risk",
+      "evidence": "The product is software on existing models, buildable by a small team."
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Ossus",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Ossus\" --era 2022+ : kind invented_or_proper, alive 92.7 percent, n=1826",
     "strengths": [
-      "TODO"
+      "Short and distinctive"
     ],
     "weaknesses": [
-      "TODO"
+      "Meaning unclear to librarians",
+      "Hard to connect to libraries"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Ossus is short and invented, like many YC names, but it does not signal libraries or culture. Public sector buyers rely on references and price, so the name will not move the outcome much.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real but small market for a tiny team, with a coin flip on a seed and a hard road to Series A.",
+    "general_summary": "Ossus builds an AI native operating system for school and public libraries. Librarians do tedious work that models can automate, and the product is technically simple. The problem is the market: budgets are small, buying is slow, Follett's Destiny dominates school libraries and is adding AI, and the three person team has no stated traction. A seed larger than the YC check within a year is possible but below the B2B cohort rate, and a venture sized outcome would need expansion to museums and other cultural institutions. About half of simulated paths stall, and most of the rest end in a small sale."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-01-05 using only the batch description.",
+    "Anchors use B2B cohorts because no library or culture cohort exists."
   ],
   "sources": [
-    "https://"
+    "https://americanlibrariesmagazine.org/2019/05/01/library-systems-report-2019/",
+    "https://americanlibrariesmagazine.org/2022/05/02/2022-library-systems-report/",
+    "https://librarytechnology.org/products/sales-statistics.pl"
   ]
 }
