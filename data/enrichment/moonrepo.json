@@ -1,0 +1,51 @@
+{
+  "slug": "moonrepo",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Engineering teams with large codebases and monorepos",
+  "problem": "Slow builds, long CI times and unhealthy repositories in large codebases.",
+  "business_model": "Open source build system (moon) with a paid cloud service (moonbase) offering caching and CI insights, free tier",
+  "product_category": "Developer tooling, monorepo build system",
+  "founded_year": 2022,
+  "founders": [
+    {"name": "Miles Johnson", "role": "Founder", "prior_employers": [], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Says he has 15 years of industry experience; the YC page credits the founders jointly with tenure at Airbnb and Coinbase but does not say who worked where."},
+    {"name": "James Pozdena", "role": "Technical co-founder", "prior_employers": [], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Portland, OR (YC page). Employers not individually attributed."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "pre_seed", "date": "2023-04", "amount_usd": 500000, "post_money_usd": null, "valuation_basis": null, "investors": ["Y Combinator"], "source_url": "https://www.vcbacked.co/company/moonrepo"}
+  ],
+  "exit": {"type": "unknown", "date": null, "amount_usd": null, "acquirer": null, "reason": "YC lists as inactive but the company still operates moon and proto; the paid moonbase service was sunset on 2025-03-31", "source_url": "https://moonrepo.dev/blog/moonbase-sunset"},
+  "competition_at_founding": {
+    "as_of": "2022-12",
+    "competitors": [
+      {"name": "Turborepo (Vercel)", "what": "JavaScript monorepo build system with remote caching", "traction_then": "not stated in the source", "funding_then": "Turborepo had no outside funding before Vercel acquired it in Dec 2021; terms undisclosed", "source_date": "2021-12", "source_url": "https://techcrunch.com/2021/12/09/vercel-acquires-turborepo"}
+    ]
+  },
+  "technical_complexity": {"rating": 3, "rationale": "A language agnostic task runner with affected change detection, hashing and caching in Rust is substantial but within reach of two experienced engineers."},
+  "defensibility": {"rating": 2, "moat_types": [], "rationale": "Open source tool facing Nx, Turborepo and Bazel; the paid caching service was replaceable by self hosted options using the Bazel remote API."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["Vercel (Turborepo)", "Nx", "Bazel"], "outcome": "The company itself moved to the Bazel Remote Execution API in 2025 rather than selling its own cache."},
+  "market_need_then": "Large monorepos with slow CI were a known pain; moon launched on GitHub in Oct 2021 (repo creation date per a search result).",
+  "branding": {
+    "name_origin": null,
+    "name_type": "compound",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say", "evocative"],
+    "name_problems": ["generic"],
+    "domain_note": "Uses moonrepo.dev rather than a .com.",
+    "identity": {"logo": "moon themed mark with light and dark variants listed in icon libraries", "mascot_or_character": null, "visual_style": "unclear", "voice_and_tone": "Developer focused"},
+    "brand_signature": "Product family named moon and proto",
+    "rebrands": [],
+    "community_and_virality": "About 2.9k GitHub stars on the main repo per a search snapshot; GitHub sponsors page exists; LogRocket published a tutorial.",
+    "brand_strength": {"rating": 2, "rationale": "Some open source recognition but smaller community than Nx or Turborepo per one comparison; no brand press found."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://moonrepo.dev", "https://blog.logrocket.com/improve-repo-management-moon/"]
+  },
+  "pivots": [
+    {"date": "2025-03", "from": "moon plus paid moonbase cloud caching and CI insights", "to": "moon and proto only, with remote caching via the Bazel Remote Execution API", "why": "Chose the Bazel API over making moonbase self hostable, freeing resources for moon and proto (company blog)"}
+  ],
+  "success_factors": [],
+  "failure_factors": ["other"],
+  "outcome_analysis": "moonrepo built a respected open source build tool but its paid moonbase service was shut down on 31 March 2025 in favor of the Bazel remote cache standard, per the founder blog. YC marks the company inactive though moon and proto are still maintained, so this looks like a stalled venture backed business that continued as an open source project. No funding beyond the YC note was found.",
+  "sources": ["https://www.ycombinator.com/companies/moonrepo", "https://www.ycombinator.com/launches/I4q-moonrepo-simplifying-codebase-management-and-organization", "https://moonrepo.dev", "https://moonrepo.dev/blog/moonbase-sunset", "https://www.vcbacked.co/company/moonrepo", "https://techcrunch.com/2021/12/09/vercel-acquires-turborepo"],
+  "notes": "The $500K pre-seed rests on aggregators (VCBacked and Employbl via Diffbot) listing YC. failure_factors uses other because the sunset reason is a product strategy choice, not a classic failure code. The moonrepo site shows a Backed by heading with no names. Turborepo source is dated Dec 2021, about a year before the W23 batch."
+}
