@@ -1,330 +1,478 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Gojiberry AI",
+  "one_liner": "AI Go-To-Market agents for B2B teams",
+  "description": "Gojiberry sells an AI outbound team to B2B companies: it finds buyers showing intent, enriches them, sends outreach, follows up, handles replies and books meetings, claiming 2 to 5 times more positive replies than traditional outbound, and plans to expand to inbound, CRM and account expansion. Team of 7, Paris and remote, with a live product and customers stated in the pitch.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.02,
+  "p_low": 0.01,
+  "p_high": 0.044,
+  "basis": "Starting prior about 1 percent (0.6 to 2 percent, references/yc_acceptance.md). Up for a live product with stated results, a team of 7, an AI agent theme with real paid spend, and European founders with a clear wedge. Down for a very crowded AI SDR space and unproven retention. Net about 2 percent. Blind note: Spring 2026 batch, forward estimate only.",
+  "why_it_fails": "YC would most plausibly say that AI SDR is the most crowded category of 2024 and 2025, with funded leaders such as 11x and Artisan, that outbound results decay as inboxes and LinkedIn limit automation, and that a claim of 2 to 5 times more replies is self reported. Partners may want a wedge beyond outbound."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.34,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, 49/59/65). Second cohort python3 -I scripts/base_rates.py --tag AI --years 2022-2025 --calibration-only: seed 61% (n=109). Window: time_to_milestones.csv era 2022+ months_to_seed 3 / 6 / 14.2 (n=1146), so only about half of eventual seeds land within 7 months of batch start.",
+    "adjustment_reason": "0.34 against 0.59 is 0.58x, below the 0.75 floor, justified by the 7 month window alone (the median time to seed is 6 months from batch start, so about 55 to 60 percent of eventual seeds fit). I do not lift for the live product or the 2 to 5x claim. Counted against: a very crowded AI SDR space where champ and slik stalled. The odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. A Paris based team with early revenue could close a European angel and pre-seed round of $1M to $3M quickly; many in this category do."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A seed above $1M fails if outbound results do not hold: AI SDR products often show high first month reply rates that decay as lists burn and inboxes flag spam, and investors know it. The category is crowded with funded players, and the analogs champ and slik stalled with no post YC round, coffeeai shut down, and bluebirds was acquired small. A 7 month window also leaves little time before the batch ends."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_a cond 26% (n=74). Months to Series A median 28, p25 19.4 (time_to_milestones.csv).",
+    "adjustment_reason": "0.03 versus 0.26 is 0.12x. Window effect only: 7 months is before almost any Series A in the data (p25 of 19.4 months), so a Series A in the window is a rare fast case, which a hot AI category with a seed already closed occasionally produces."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A thin Series A near the 2018-2021 median of 12M or a bridge style A, when growth is steady but not explosive."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.4,
+     "rationale": "The typical Series A, near the 2022+ YC median of 15M (round_benchmarks.csv) and 17.4M US deal size."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A strong A of 18M to 30M led by a tier one fund after fast revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.1,
+     "rationale": "An outsized A in a hot AI category, as seen for a few 2024 and 2025 AI application companies."
+    }
+   ],
+   "why_it_fails": "A Series A inside 7 months of batch start requires a seed closed and then outsized revenue growth in a few months. Fast AI SDR leaders such as artisan took about two years from seed to Series A, and most outbound tools see churn after a few months. For Gojiberry the realistic Series A is a year or more beyond the window."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), known-only 2%, upper 18%. Cohort cond is among those with a Series A, ever.",
+    "adjustment_reason": "Window effect: the Series B median is 26 to 46 months after batch start (time_to_milestones.csv), so only a sliver can land inside the 7 month window. The ever anchor 0.16 is cut to 0.03 for the window, which is more than 2x below because the window ends well before the usual B timing."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "A small or flat Series B, common when growth slowed after the A."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.45,
+     "rationale": "The typical B, near the 2022+ YC median of 37M to 40M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A large Series B on strong revenue growth, led by a growth fund after the A round proved repeatable sales."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.1,
+     "rationale": "A breakout Series B at unicorn scale for a category leader, rare among YC companies and needing very fast growth."
+    }
+   ],
+   "why_it_fails": "A Series B inside 7 months is not realistic: it would need two rounds in roughly half a year. The 2022+ median from batch to Series B is about 35 months, and outbound tools face churn that makes a growth round hard until retention is proven across a year or more of cohorts."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all industries): series_c cond 36% (n=55) among those with Series B. Also stage_benchmarks.md.",
+    "adjustment_reason": "Window effect: Series C median is 61 to 66 months after batch start, far outside the 7 month window, so the ever anchor of 0.36 is cut to 0.03 here, more than 2x below it, by timing alone and not by a view on quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A modest growth round, near the 45M to 74M 2022+ YC medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A typical Series C or later in the 2022+ table (median 74M)."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A large growth round for a category leader."
+    },
+    {
+     "raise_usd": [
+      250000000,
+      600000000
+     ],
+     "post_money_usd": [
+      4000000000,
+      15000000000
+     ],
+     "p_band": 0.08,
+     "rationale": "A mega growth round for a breakout winner, seen only for a handful of YC companies in the 2022+ data."
+    }
+   ],
+   "why_it_fails": "A Series C inside 7 months has no precedent in the data, whose 2022+ median is about 37 months. Outbound AI analogs such as warmly and usergems took years to reach later rounds, and the category may consolidate into large sales platforms before any growth round."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     20000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the product stays a mid sized point tool that loses to funded suites and to LinkedIn and email policy changes, ending as a small acquisition by a sales data or CRM company. A $100M or higher outcome needs the broader GTM team vision to work, which no outbound analog in the data has shown."
+ },
+ "analogs": [
+  {
+   "slug": "champ",
+   "relevance": "AI SDR, S22",
+   "outcome_summary": "Active with no post YC round found; an early AI SDR that did not break out."
+  },
+  {
+   "slug": "slik",
+   "relevance": "Automates sales, S17",
+   "outcome_summary": "Shut down with no post YC round; sales automation failed to hold results."
+  },
+  {
+   "slug": "coffeeai",
+   "relevance": "Personalized AI outreach messages, W22",
+   "outcome_summary": "Inactive and shut down; outreach message tools were commoditized."
+  },
+  {
+   "slug": "bluebirds",
+   "relevance": "Automate outbound with buyer signals, W23",
+   "outcome_summary": "Raised a seed and was acquired; shows signal based outbound can sell but exits small."
+  },
+  {
+   "slug": "aisdr",
+   "relevance": "AI that finds buyers and books meetings, S23",
+   "outcome_summary": "Raised a seed; stayed a point product in a crowded field."
+  },
+  {
+   "slug": "artisan",
+   "relevance": "AI employees starting with sales, W24",
+   "outcome_summary": "Raised a seed then a Series A in about two years; the category leader path."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Outbound results decay and customers churn",
+   "p": 0.5,
+   "evidence": "Mass outreach loses effectiveness as lists burn and email and LinkedIn tighten filters, so month three retention is weak.",
+   "analogs": [
+    "slik",
+    "coffeeai",
+    "champ"
+   ],
+   "mitigation": "Show cohort retention above 12 months and add the multi channel learning loop."
+  },
+  {
+   "risk": "Crowded field of funded AI SDR vendors",
+   "p": 0.55,
+   "evidence": "11x raised a reported $50M Series B and Artisan raised $11.5M seed in 2024, giving rivals large marketing budgets.",
+   "analogs": [
+    "artisan",
+    "aisdr",
+    "bluebirds"
+   ],
+   "mitigation": "Specialize in a vertical or in signal quality instead of generic volume."
+  },
+  {
+   "risk": "Platform risk from LinkedIn and email providers",
+   "p": 0.35,
+   "evidence": "Automation depends on LinkedIn and mailbox providers, which can restrict accounts and scraping.",
+   "analogs": [
+    "slik",
+    "coffeeai"
+   ],
+   "mitigation": "Diversify channels and use compliant enrichment sources."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "11x",
+   "what": "AI SDR agents (Alice) for outbound sales.",
+   "traction": "Reported $50M Series B led by a16z in September 2024.",
+   "source_url": "https://techcrunch.com/2024/09/30/11x-ai-a-developer-of-ai-sales-reps-has-raised-50m-series-b-led-by-a16z-sources-say"
+  },
+  {
+   "name": "Artisan",
+   "what": "AI BDR (Ava) and AI employees for sales teams.",
+   "traction": "$11.5M seed reported in 2024.",
+   "source_url": "https://venturebeat.com/business/artisan-raises-11-5m-to-deploy-ai-employees-for-sales-teams"
+  },
+  {
+   "name": "Human SDRs, agencies and tool stacks",
+   "what": "The status quo of hiring SDRs or agencies plus Apollo, Clay and sequencers.",
+   "traction": "Dominant way B2B outbound is done today.",
+   "source_url": "https://venturebeat.com/business/artisan-raises-11-5m-to-deploy-ai-employees-for-sales-teams"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "Intent signals, enrichment, sequencing and reply handling can be built by a team of 7 from existing language models and data vendors. The hard part is deliverability, avoiding platform bans and showing results that last, which is operational, not deep technical."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "11x and Artisan",
+   "HubSpot, Salesforce and Apollo",
+   "LinkedIn and email platforms"
+  ],
+  "timeline_months": 3,
+  "rationale": "Many funded vendors already offer the same outbound loop, and CRM platforms are adding AI agents. A rival could match the feature set in a few months, so differentiation depends on results data and customer learning loops."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Buyers pay for AI SDR tools: Artisan raised an $11.5M seed and 11x a reported $50M Series B in 2024.",
+    "source_url": "https://techcrunch.com/2024/09/30/11x-ai-a-developer-of-ai-sales-reps-has-raised-50m-series-b-led-by-a16z-sources-say"
+   },
+   {
+    "claim": "Outbound sales is a large budget line that AI sales agents target, shown by funding in the category.",
+    "source_url": "https://venturebeat.com/business/artisan-raises-11-5m-to-deploy-ai-employees-for-sales-teams"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show paying customers and reply rate results.",
+   "actions": [
+    "Publish case studies with booked meetings",
+    "Show monthly recurring revenue and churn"
+   ],
+   "proof": "Revenue and positive reply rate figures across several customers"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show retention and a wedge beyond generic outbound.",
+   "actions": [
+    "Show 6 month net revenue retention",
+    "Pick one vertical or signal where results are strongest"
+   ],
+   "proof": "Monthly recurring revenue above $150K with logo churn under 5 percent a month"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove the GTM team vision and multi channel learning loop.",
+   "actions": [
+    "Launch inbound and CRM actions",
+    "Show cross customer learning raises reply rates"
+   ],
+   "proof": "ARR above $3M with net revenue retention above 110 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Live product and stated results in a category with paying demand",
+   "evidence": "AI SDR vendors raised rounds in 2024, showing buyers pay for outbound automation.",
+   "source_url": "https://venturebeat.com/business/artisan-raises-11-5m-to-deploy-ai-employees-for-sales-teams"
+  },
+  {
+   "point": "A team of 7 with a broader GTM vision",
+   "evidence": "Seven people at the start of the batch means shipping capacity beyond a solo founder.",
+   "source_url": "https://techcrunch.com/2024/09/30/11x-ai-a-developer-of-ai-sales-reps-has-raised-50m-series-b-led-by-a16z-sources-say"
+  }
+ ],
+ "brand": {
+  "name": "Gojiberry AI",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Gojiberry\" --era 2022+ : syllable_bucket=4+, n=591, alive 94.2 percent, exit 2.2 percent",
+  "strengths": [
+   "Distinct and memorable",
+   "Playful fruit name stands out in sales tech"
+  ],
+  "weaknesses": [
+   "Hard to spell and says nothing about sales",
+   "AI suffix is generic"
+  ],
+  "rationale": "Gojiberry is a distinctive fruit name that stands out among sales tools and gives room for a mascot, similar to how past YC brands like Gusto or Mercury built identity. It is longer, harder to spell and tells buyers nothing about outbound. Small effect on the odds.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A live AI outbound product in the most crowded AI sales category, with a 7 month window that cuts the seed odds.",
+  "general_summary": "Gojiberry runs AI outbound for B2B teams and plans a wider GTM agent. The seed estimate starts at the 59 percent B2B anchor and is cut to 0.34 only because the 7 month window includes about half of eventual seeds; I do not lift for the live product or hot category. Analogs are mixed: champ and slik stalled, coffeeai shut down, bluebirds sold small, and artisan took about two years to its Series A. Series A and later within the window are near zero on timing. The odds do not rank this company against others.",
+  "deep_dive": {}
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-04-06; window of about 7 months to 2026-11-17.",
+  "Seed means a round above about $1M closing inside the window, excluding the YC deal.",
+  "Team of 7 is below the 8 person AI native band shape, so the standard 2022+ band shape is used.",
+  "Search results dated after the as of date were ignored; only 2024 sources are cited. Analog records may contain later facts; only founding era facts were used. No LEAK flags."
+ ],
+ "sources": [
+  "https://venturebeat.com/business/artisan-raises-11-5m-to-deploy-ai-employees-for-sales-teams",
+  "https://techcrunch.com/2024/09/30/11x-ai-a-developer-of-ai-sales-reps-has-raised-50m-series-b-led-by-a16z-sources-say",
+  "https://www.ycombinator.com/deal"
+ ]
 }
