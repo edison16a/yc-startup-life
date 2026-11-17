@@ -1,49 +1,164 @@
 {
-  "slug": "compresr",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Teams building LLM agents, coding agents and RAG pipelines that pay per token",
-  "problem": "Long contexts in agents and RAG inflate token costs and latency and can hurt accuracy. Compresr compresses context while keeping the details that matter to the query.",
-  "business_model": "usage-based API plus open-source proxy (Context Gateway) and on-prem deployment",
-  "product_category": "LLM context compression infrastructure",
-  "founded_year": null,
-  "founders": [
-    {"name": "Ivan Zakazov", "role": "CEO", "prior_employers": ["Microsoft", "Philips Research"], "education": ["EPFL, PhD researching LLM context compression"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Per YC company page"},
-    {"name": "Berke Argin", "role": "Chief AI Officer", "prior_employers": ["UBS"], "education": ["EPFL, computer science"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Per YC company page"},
-    {"name": "Kamel Charaf", "role": "CPO (bio says co-founder and COO)", "prior_employers": ["Bell Labs"], "education": ["EPFL, Master's in data science"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Per YC company page; title differs between listing and bio"}
+ "slug": "compresr",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Teams building LLM agents, coding agents and RAG pipelines that pay per token",
+ "problem": "Long contexts in agents and RAG inflate token costs and latency and can hurt accuracy. Compresr compresses context while keeping the details that matter to the query.",
+ "business_model": "usage-based API plus open-source proxy (Context Gateway) and on-prem deployment",
+ "product_category": "LLM context compression infrastructure",
+ "founded_year": null,
+ "founders": [
+  {
+   "name": "Ivan Zakazov",
+   "role": "CEO",
+   "prior_employers": [
+    "Microsoft",
+    "Philips Research"
+   ],
+   "education": [
+    "EPFL, PhD researching LLM context compression"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Per YC company page"
+  },
+  {
+   "name": "Berke Argin",
+   "role": "Chief AI Officer",
+   "prior_employers": [
+    "UBS"
+   ],
+   "education": [
+    "EPFL, computer science"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Per YC company page"
+  },
+  {
+   "name": "Kamel Charaf",
+   "role": "CPO (bio says co-founder and COO)",
+   "prior_employers": [
+    "Bell Labs"
+   ],
+   "education": [
+    "EPFL, Master's in data science"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Per YC company page; title differs between listing and bio"
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "pre_seed",
+   "date": null,
+   "amount_usd": 500000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [],
+   "source_url": "https://www.employbl.com/companies/compresr"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/compresr"
+ },
+ "competition_at_founding": {
+  "as_of": "2026-01",
+  "competitors": [
+   {
+    "name": "LLMLingua-2 (Microsoft Research)",
+    "what": "Open-source token-level prompt compression library",
+    "traction_then": "Widely cited as the default production choice for token pruning",
+    "funding_then": "Research project, not a venture company",
+    "source_date": "2026",
+    "source_url": "https://www.pointfive.co/guides/top-prompt-compression-solutions-2026"
+   },
+   {
+    "name": "The Token Company",
+    "what": "Hosted prompt compression API",
+    "traction_then": "Not stated in sources",
+    "funding_then": "unknown",
+    "source_date": "2026",
+    "source_url": "https://www.pointfive.co/guides/top-prompt-compression-solutions-2026"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Question-aware compression models need research skill, and the CEO's PhD was on this topic, but the product is an API and proxy a small team can ship."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [
+   "technical_moat"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/compresr"},
-  "competition_at_founding": {
-    "as_of": "2026-01",
-    "competitors": [
-      {"name": "LLMLingua-2 (Microsoft Research)", "what": "Open-source token-level prompt compression library", "traction_then": "Widely cited as the default production choice for token pruning", "funding_then": "Research project, not a venture company", "source_date": "2026", "source_url": "https://www.pointfive.co/guides/top-prompt-compression-solutions-2026"},
-      {"name": "The Token Company", "what": "Hosted prompt compression API", "traction_then": "Not stated in sources", "funding_then": "unknown", "source_date": "2026", "source_url": "https://www.pointfive.co/guides/top-prompt-compression-solutions-2026"}
-    ]
+  "rationale": "Open-source alternatives such as LLMLingua exist and one commentary says the logic can be approximated with a cheap LLM. A third-party review disputed some benchmark claims."
+ },
+ "takeover_risk_then": {
+  "rating": 4,
+  "incumbents": [
+   "Model providers with prompt caching and native compaction",
+   "Microsoft LLMLingua"
+  ],
+  "outcome": "Too early to know. The company is active as of the batch."
+ },
+ "market_need_then": "Agent token costs were rising as coding agents carried long histories, and Compresr's open-source Context Gateway proxy drew developer attention in early 2026 (reported 451 GitHub stars after about six weeks).",
+ "branding": {
+  "name_origin": null,
+  "name_type": "suffix_coinage",
+  "name_qualities": [
+   "short",
+   "evocative",
+   "distinctive"
+  ],
+  "name_problems": [
+   "hard_to_spell"
+  ],
+  "domain_note": "Uses compresr.ai, not a .com",
+  "identity": {
+   "logo": "not described in sources",
+   "mascot_or_character": null,
+   "visual_style": "developer tool, minimal",
+   "voice_and_tone": "Direct, confident and cost-focused imperative headlines such as stop paying for context your model does not need"
   },
-  "technical_complexity": {"rating": 3, "rationale": "Question-aware compression models need research skill, and the CEO's PhD was on this topic, but the product is an API and proxy a small team can ship."},
-  "defensibility": {"rating": 2, "moat_types": ["technical_moat"], "rationale": "Open-source alternatives such as LLMLingua exist and one commentary says the logic can be approximated with a cheap LLM. A third-party review disputed some benchmark claims."},
-  "takeover_risk_then": {"rating": 4, "incumbents": ["Model providers with prompt caching and native compaction", "Microsoft LLMLingua"], "outcome": "Too early to know. The company is active as of the batch."},
-  "market_need_then": "Agent token costs were rising as coding agents carried long histories, and Compresr's open-source Context Gateway proxy drew developer attention in early 2026 (reported 451 GitHub stars after about six weeks).",
-  "branding": {
-    "name_origin": null,
-    "name_type": "suffix_coinage",
-    "name_qualities": ["short", "evocative", "distinctive"],
-    "name_problems": ["hard_to_spell"],
-    "domain_note": "Uses compresr.ai, not a .com",
-    "identity": {"logo": "not described in sources", "mascot_or_character": null, "visual_style": "developer tool, minimal", "voice_and_tone": "Direct, confident and cost-focused imperative headlines such as stop paying for context your model does not need"},
-    "brand_signature": "Context Gateway open-source proxy",
-    "rebrands": [],
-    "community_and_virality": "Open-source Context Gateway repo got third-party write-ups and about 451 GitHub stars within six weeks of release.",
-    "brand_strength": {"rating": 2, "rationale": "Early stage with press on the product, nothing found about the brand itself."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://compresr.ai", "https://lilting.ch/en/articles/compresr-context-gateway-agent-proxy"]
+  "brand_signature": "Context Gateway open-source proxy",
+  "rebrands": [],
+  "community_and_virality": "Open-source Context Gateway repo got third-party write-ups and about 451 GitHub stars within six weeks of release.",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "Early stage with press on the product, nothing found about the brand itself."
   },
-  "pivots": [],
-  "success_factors": ["timing_tailwind", "founder_market_fit"],
-  "failure_factors": [],
-  "outcome_analysis": "Compresr is an active W26 company with no exit, shutdown or layoffs found. The CEO researched context compression in his PhD, giving founder market fit, and rising agent token costs give timing tailwind. Risks are open-source rivals and model providers building native compaction.",
-  "sources": ["https://www.ycombinator.com/companies/compresr", "https://compresr.ai", "https://www.pointfive.co/guides/top-prompt-compression-solutions-2026", "https://lilting.ch/en/articles/compresr-context-gateway-agent-proxy"],
-  "notes": "Funding: an aggregator (Employbl, citing Diffbot) lists a $500K pre-seed with no investors, and Crunchbase lists pre-seed stage. Single-source aggregator figure, unverified, so not recorded as a round. A directory also lists a fourth co-founder, Oussama Gabouj, not on the YC page, so omitted. Outcome search found nothing about Compresr."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://compresr.ai",
+   "https://lilting.ch/en/articles/compresr-context-gateway-agent-proxy"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [
+  "timing_tailwind",
+  "founder_market_fit"
+ ],
+ "failure_factors": [],
+ "outcome_analysis": "Compresr is an active W26 company with no exit, shutdown or layoffs found. The CEO researched context compression in his PhD, giving founder market fit, and rising agent token costs give timing tailwind. Risks are open-source rivals and model providers building native compaction.",
+ "sources": [
+  "https://www.ycombinator.com/companies/compresr",
+  "https://compresr.ai",
+  "https://www.pointfive.co/guides/top-prompt-compression-solutions-2026",
+  "https://lilting.ch/en/articles/compresr-context-gateway-agent-proxy"
+ ],
+ "notes": "Funding: an aggregator (Employbl, citing Diffbot) lists a $500K pre-seed with no investors, and Crunchbase lists pre-seed stage. Single-source aggregator figure, unverified, so not recorded as a round. A directory also lists a fourth co-founder, Oussama Gabouj, not on the YC page, so omitted. Outcome search found nothing about Compresr. Update: the 500K pre-seed is recorded from Employbl (citing Diffbot), a single database; CB Insights lists the same 500K as a convertible note. No press found. Fourth co-founder Oussama Gabouj still rests on a directory only, so not added."
 }
