@@ -61,3 +61,24 @@ Sample: 10 records from 10 different shards (papa, flexport, wanderlog, candid-h
 | wibond | 6 | 1 | Co-founder conflict (Porta vs Silvestre) between low-quality sources. |
 
 Totals: about 74 fields checked, 11 wrong (about 15%), limit 10%. Result: wave NOT accepted. Improved from audit 2 (24%) after the strict prompt, but errors are still mostly omitted rounds and investor leads. The 10 audited records are corrected from these findings. Records from before the strict prompt (wave 1) and this wave need a further correction pass focused on completeness of funding rounds before the final audit.
+
+## Wave 5 (rest shards, priority tier public or top), audit 4
+
+Sample: 12 records (stripe, dropbox, brex, faire, groww, algolia, retool, langfuse, helicone, flowiseai, honeylove, twitch). Two auditors. Fields checked are approximate counts of items the auditors examined.
+
+| Slug | Fields checked | Wrong | Notes |
+|---|---|---|---|
+| stripe | 8 | 3 | Founder education uncited (general knowledge); competitor source dates 2013 vs 2009 founding; seed date conflict. Series B and C omitted. |
+| dropbox | 7 | 3 | Founder education uncited; Accel unconfirmed in Series A; Series B investor list unclear. |
+| brex | 8 | 4 | Founders both listed CEO; education and prior exit uncited; exit close confirmed 2026-04-07 but recorded unconfirmed; early rounds omitted. |
+| faire | 9 | 5 | Fourth founder missing; no education; wrong round date and valuation for 2022; Series A, G and earlier rounds omitted. |
+| groww | 9 | 4 | Education empty; Series A ($6.2M, Sequoia India, 2019-01) and earlier rounds omitted; competitor dates late. |
+| algolia | 7 | 4 | Prior employer Exalead omitted; seed omitted; pivot unsourced; round dates year only. |
+| retool | 7 | 2 | Series A and B omitted though the company blog confirms the Sequoia led Series B; Oxford education uncited. |
+| langfuse | 5 | 1 | Exit date conflict (2026-01 vs 2026-07 on source). |
+| helicone | 5 | 2 | Education incomplete; Gottdank co-founder status unverified from YC page. |
+| flowiseai | 4 | 1 | Workday director note unsourced. |
+| honeylove | 5 | 1 | Seed omitted although Seedtable and Caplight support it. |
+| twitch | 7 | 4 | Seibel listed as co-founder without YC support; Kan education uncited; Series C omitted; exit source weak. |
+
+Totals: about 81 fields checked, about 34 wrong (about 42 percent), limit 10 percent. Result: wave NOT accepted. The error pattern is systematic: (1) founder education and prior employers filled from general knowledge without a source, (2) real, documented funding rounds left in notes as unverified when a primary source exists, (3) competitor entries whose source is dated years after founding. Action: the research prompt now forbids uncited education, requires recording rounds that a company blog or press release confirms, and forbids unstated stage labels. The 12 audited records are corrected. All depth 2 records written before this prompt change (every record in data/enrichment so far) still carry these defects at an unmeasured rate and need a completeness correction pass before the final audit can pass. AUDIT RESULT is therefore not PASS.
