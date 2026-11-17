@@ -1,330 +1,428 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Vocality Health",
+  "one_liner": "Voice AI for medical language translation",
+  "description": "Voice AI app that lets clinicians speak any language with patients, replacing human medical interpreters and call center interpreter lines. Buyers are hospitals and clinics that already pay billions for in person and remote interpreters. The pitch stresses accuracy and compliance across voice and video. Two person team in San Francisco, Winter 2025 batch.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.06,
+  "basis": "Starting rate about 1 percent for a random applicant (0.6 to 2 percent range, yc_acceptance.md). Adjusted up about 3 times for a clear large paid incumbent market, a specific buyer and a technical voice AI angle. Held back because two founders, no stated traction and hospital sales cycles are slow, and the factor table gives no lift for a pitch alone.",
+  "why_it_fails": "YC partners may doubt that a two person team can win hospital procurement, HIPAA review and clinical accuracy standards against LanguageLine and other incumbents. General translation models keep improving, so they may also ask what stays defensible if hospitals can use a foundation model directly."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.48,
+   "anchors": {
+    "base_rate": 0.66,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry Healthcare --years 2022-2025: seed 50% (n=22, anecdote only), series_a cond 9% (n=11); time_to_milestones era 2022+: months_to_seed p50 6, p75 14.2, months_to_series_a p50 28, p25 19.4",
+    "adjustment_reason": "Window is 22.4 months from 2025-01-06 to 2026-11-17, long enough to cover most of the time to seed distribution (2022 and later p75 is 14.2 months). Starting from the 66 percent ever anchor and the healthcare cohort 50 percent, I hold at 0.48, below the anchor because healthcare has a lower seed rate and a two person team has no stated traction."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      10000000,
+      18000000
+     ],
+     "p_band": 0.12,
+     "rationale": "YC deal only, about $500K, and nothing institutional in the window; 13 of 90 confirmed companies in the winners test stopped here."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.33,
+     "rationale": "Small post YC round under $3M from angels or healthtech pre-seed funds while a first hospital pilot is proven."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      7000000
+     ],
+     "post_money_usd": [
+      25000000,
+      55000000
+     ],
+     "p_band": 0.43,
+     "rationale": "Institutional seed of $3M to $7M after a pilot or design partner; 2022 and later seed median $3.5M with the YC deal mixed in, so institutional rounds sit higher."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      7000000,
+      15000000
+     ],
+     "post_money_usd": [
+      55000000,
+      120000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band if a large health system signs and AI voice interest drives a competitive round."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The likely miss is that hospitals move slowly: security review, interpreter vendor contracts and clinical validation can take 6 to 12 months, so a two person team may reach month 22 with pilots but no revenue to show a seed investor. Speak and Unbabel show language AI can raise, but Dubjoy shows small translation startups can stall."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.14,
+   "anchors": {
+    "base_rate": 0.35,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry Healthcare --years 2022-2025: seed 50% (n=22, anecdote only), series_a cond 9% (n=11); time_to_milestones era 2022+: months_to_seed p50 6, p75 14.2, months_to_series_a p50 28, p25 19.4",
+    "adjustment_reason": "Window of 22.4 months is shorter than the 2022 and later median of 28 months to Series A, so the in window chance is about 0.14 against a 35 percent ever anchor, a window effect larger than 2 times. Healthcare cohort conditional is only 9 percent."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      3600000,
+      6300000
+     ],
+     "post_money_usd": [
+      22500000,
+      40500000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series A led by a seed fund or a small multi-stage fund, near the 2022 and later median of about $7M with limited revenue proof."
+    },
+    {
+     "raise_usd": [
+      7200000,
+      12600000
+     ],
+     "post_money_usd": [
+      40500000,
+      72000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Standard Series A of $8M to $14M after clear revenue growth; the 2018 to 2021 median was $10M and 2022 and later is similar, with era inflation discounted."
+    },
+    {
+     "raise_usd": [
+      13500000,
+      27000000
+     ],
+     "post_money_usd": [
+      81000000,
+      180000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside band for a breakout in 2025 to 2026 AI categories where rounds are larger than the historical median; a pivot-then-raise path also lands here."
+    }
+   ],
+   "why_it_fails": "A Series A inside 22 months needs hospital contracts in the millions of dollars. Healthcare AI cohorts of 2022 to 2025 show only one in ten seed companies reaching Series A, because pilots rarely convert to enterprise revenue quickly and general model vendors compress the price of translation."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.44,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_b cond 44% (n=126), ever not windowed.",
+    "adjustment_reason": "Near the anchor times 0.8; ever reached step beyond the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      9000000,
+      18000000
+     ],
+     "post_money_usd": [
+      54000000,
+      90000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or modest Series B after slower growth than the Series A plan assumed."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      36000000
+     ],
+     "post_money_usd": [
+      108000000,
+      225000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B of $20M to $40M on proven repeatable growth."
+    },
+    {
+     "raise_usd": [
+      36000000,
+      72000000
+     ],
+     "post_money_usd": [
+      270000000,
+      630000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a category leader whose growth outpaces peers and attracts a competitive multi-stage process."
+    }
+   ],
+   "why_it_fails": "A Series B would need a national footprint of hospitals and an AI interpreter that replaces a large share of human minutes at a profit. Incumbents with existing contracts can bundle AI interpreting, so growth could flatten before the scale investors expect, as Unbabel found when generative AI compressed its revenue."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55).",
+    "adjustment_reason": "Slightly under the anchor, healthcare services AI rarely scales past B in the data."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      22500000,
+      45000000
+     ],
+     "post_money_usd": [
+      135000000,
+      270000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Smaller Series C or extension, close to a flat round."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      270000000,
+      630000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Standard growth round for a company with real scale."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      225000000
+     ],
+     "post_money_usd": [
+      720000000,
+      2250000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a market leader with strong growth and margins that can command a premium at late stage."
+    }
+   ],
+   "why_it_fails": "A growth round needs a path to hundreds of millions in revenue, but language access is a cost center for hospitals and per minute prices fall as models improve. Unbabel reached Series C and then shrank, which is the pattern for a language AI business without a durable moat."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.58
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     1000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     4000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely result is a stall or a small acquisition: hospitals buy language access on price per minute, foundation model vendors cut costs, and compliance expectations favour large incumbents. Unbabel and Dubjoy show language AI companies end small or shut down when the model layer commoditizes."
+ },
+ "analogs": [
+  {
+   "slug": "unbabel",
+   "relevance": "Language AI platform, Winter 2014.",
+   "outcome_summary": "Raised through Series C and was acquired after revenue dropped when machine translation became cheap."
+  },
+  {
+   "slug": "dubjoy",
+   "relevance": "Voice over translation startup, Summer 2011.",
+   "outcome_summary": "Inactive with no funding round found; shows the commodity risk."
+  },
+  {
+   "slug": "speak",
+   "relevance": "AI language tutor, Winter 2017.",
+   "outcome_summary": "Raised a Series B in 2022 on strong product pull, a better case for voice AI."
+  },
+  {
+   "slug": "fluently",
+   "relevance": "AI speaking coach, Winter 2024.",
+   "outcome_summary": "Raised a $2M seed in June 2024 right after YC."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Hospital sales cycles and procurement",
+   "p": 0.45,
+   "evidence": "Hospitals require security, privacy and clinical review before deploying new tools and most voice tools go through pilots.",
+   "analogs": [
+    "unbabel"
+   ],
+   "mitigation": "Land one health system champion and sell narrow use cases first, such as intake."
+  },
+  {
+   "risk": "Foundation model commoditization",
+   "p": 0.35,
+   "evidence": "General translation and speech models improve quickly, which lowers the price of the core capability and brings in large model vendors.",
+   "analogs": [
+    "unbabel",
+    "dubjoy"
+   ],
+   "mitigation": "Own compliance, clinical vocabulary and workflow integration."
+  },
+  {
+   "risk": "Accuracy and liability in clinical settings",
+   "p": 0.25,
+   "evidence": "A mistranslation can harm a patient, and buyers ask for evidence that AI matches certified human interpreters.",
+   "analogs": [
+    "speak"
+   ],
+   "mitigation": "Publish validation studies and keep human escalation."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "LanguageLine Solutions",
+   "what": "Incumbent phone and video interpreter service moving to simple access",
+   "traction": "Large installed base across hospitals",
+   "source_url": "https://www.languageline.com/en-gb/blog/case-study-how-we-made-interpreter-access-as-simple-as-siri-and-alexa"
+  },
+  {
+   "name": "Princeton Keller Center note on interpreter gaps",
+   "what": "Reports 97 percent of hospitals see patients with limited English and 46 percent lack translation services",
+   "traction": "Demand evidence rather than a competitor",
+   "source_url": "https://kellercenter.princeton.edu/node/3282"
+  },
+  {
+   "name": "Google Translate and general models",
+   "what": "Free general translation that clinics already use informally",
+   "traction": "Very wide use, no clinical guarantees",
+   "source_url": "https://www.nobarrier.ai/post/what-you-need-to-look-for-in-a-ai-medical-translation"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Real time speech to speech with clinical accuracy, low latency, rare languages and diarization is hard, and errors have patient safety cost. A two person team can ship a demo with off the shelf models but proving compliance and accuracy takes months."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "LanguageLine and interpreter vendors",
+   "Epic and EHR vendors",
+   "Big model labs"
+  ],
+  "timeline_months": 12,
+  "rationale": "Incumbent interpreter companies already have hospital contracts and can add AI, and large model vendors can match the base translation. A startup advantage would have to be clinical accuracy and workflow fit."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "One source puts US spending on formal medical interpretation at about 3.8 billion dollars a year, a vendor claim",
+    "source_url": "https://www.timekettle.co/blogs/tips-and-tricks/top-10-healthcare-interpreting-providers"
+   },
+   {
+    "claim": "A Princeton note says 97 percent of hospitals see limited English patients and 46 percent lack translation services",
+    "source_url": "https://kellercenter.princeton.edu/node/3282"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a working clinical demo with a named clinic user.",
+   "actions": [
+    "Build a voice demo for the top five languages",
+    "Run a pilot in one clinic and record accuracy"
+   ],
+   "proof": "Pilot letter of intent and measured accuracy"
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert pilots to paid contracts.",
+   "actions": [
+    "Sign two health systems at per minute pricing",
+    "Publish accuracy validation"
+   ],
+   "proof": "Annual contract value per site and pilots converting to paid"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large paid market with legal demand",
+   "evidence": "Hospitals must provide language access and already spend on interpreters.",
+   "source_url": "https://kellercenter.princeton.edu/node/3282"
+  },
+  {
+   "point": "Speech AI timing",
+   "evidence": "Voice models are good enough now to make real time translation possible.",
+   "source_url": "https://www.nobarrier.ai/post/what-you-need-to-look-for-in-a-ai-medical-translation"
+  }
+ ],
+ "brand": {
+  "name": "Vocality Health",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Vocality Health\" --era 2022+: 14 characters, 2 words, name plus descriptor",
+  "strengths": [
+   "Descriptive of voice and health",
+   "Signals the vertical"
+  ],
+  "weaknesses": [
+   "Long two word name",
+   "Generic compared with invented brand names"
+  ],
+  "rationale": "A name plus descriptor shows the category at once, which helps trust in a regulated market, but it is less ownable than a short invented name. It neither helps nor hurts the funding odds much.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A real, paid problem with slow hospital buyers; seed in 22 months is a bit under even and Series A is unlikely.",
+  "general_summary": "Vocality sells voice AI interpretation to hospitals that already pay for human interpreters. The need is large and legal, the technical bar is high and incumbents can add AI. The 22.4 month window is long enough for a seed round above $1M to land if a pilot converts, but a Series A inside it is unlikely. The odds do not rank this company against others in the batch because the anchor is the cohort rate. The main risks are hospital procurement time, commoditization and accuracy liability.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Only the input file and market web searches were used; search results naming this company or dated after 2025-01-06 were ignored.",
+  "Window is 2025-01-06 to 2026-11-17, 22.4 months.",
+  "Healthcare cohort base rates are anecdotes because n is under 30.",
+  "Competitor vendors with undated pages are not used for timing."
+ ],
+ "sources": [
+  "https://www.timekettle.co/blogs/tips-and-tricks/top-10-healthcare-interpreting-providers",
+  "https://kellercenter.princeton.edu/node/3282",
+  "https://www.languageline.com/en-gb/blog/case-study-how-we-made-interpreter-access-as-simple-as-siri-and-alexa",
+  "https://www.nobarrier.ai/post/what-you-need-to-look-for-in-a-ai-medical-translation"
+ ]
 }

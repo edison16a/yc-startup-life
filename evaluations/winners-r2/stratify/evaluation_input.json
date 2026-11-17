@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "stratify",
+    "one_liner": "AI agents that help you understand your customers' needs",
+    "description": "An AI user researcher that recruits participants, runs interviews, analyzes responses and returns insights. Customers are product, design and research teams paying subscription fees. Two person team in San Francisco. Forecast as of 2025-04-07, window to 2026-11-17 (about 19 months).",
+    "as_of": "2025-04-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.015,
+    "p_low": 0.005,
+    "p_high": 0.04,
+    "basis": "The company is in the Spring 2025 batch, so this is shown for completeness. Start from the roughly 1 percent prior for a random applicant (0.6 to 2 percent range). Adjust up for a clear AI moderated interview wedge and a technical two person team; adjust down because several YC companies, including Outset, Rally and Great Question, already hold this space and no traction is stated.",
+    "why_it_fails": "YC would most plausibly say no because AI moderated user research already has YC backed competitors with funding and enterprise logos, such as Outset and Rally, plus Great Question and UserTesting. Without a differentiated recruiting panel or paying customers, the partners would see a thin wrapper over interview scripting and summarization."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.4,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.53,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave seed 47% / 53% / 59% (n=1002, cond 53%); --tag \"Conversational AI\" gave 74% / 78% / 79% but n=19, anecdote only. Time rule: 2022+ months to seed p50 6, p75 14.2, about 85 percent of ever reachers by 19 months.",
+        "adjustment_reason": "Ever anchor 0.53 scaled by 0.88 for the 19 month window gives 0.47, cut to 0.40 because of a crowded category with funded YC rivals and a two person team. Below the anchor, no lift for AI theme. The odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            18000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "A small post YC round of about $1M to $3M from angels and a micro fund, the most common outcome when a team has early pilots but no repeatable sales motion. It is the largest band because the 2022 and later seed table (p25 $2.0M, median $3.5M) mixes in YC deal sized checks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.38,
+          "rationale": "A conventional institutional seed of $3M to $6M led by a seed fund, matching the 2022 and later table median of $3.5M and the p75 of $5.2M for the cohort."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A $6M to $12M seed, which happens when a lead fund prices on market heat. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers large rounds more, so this band is kept at a minority."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            100000000
+          ],
+          "p_band": 0.05,
+          "rationale": "An upside seed above $12M, reached only if the company shows unusual early revenue or a top fund competes for it; rare in the YC data and kept small."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Window is 19 months (2025-04-07 to 2026-11-17); seed means an outside round above about $1M. The most likely miss is that the product is judged a feature: Outset raised a $3.8M seed and Rally an $8.8M seed in April 2024, so investors will ask why a later two person entrant wins. Versive and Monterey AI, small YC teams in feedback and research, did not show a priced round, and Great Question grew slowly on a $2.5M seed."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.08,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave series_a cond 26% (n=468). Time rule: 2022+ months to series A p25 19.4, p50 28, so under a third of ever reachers close an A inside 19 months.",
+        "adjustment_reason": "Ever conditional of 0.26 scaled by about 0.3 for the 19 month window, because most A rounds arrive near 28 months. More than 2x below the anchor for that reason."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "A thin or bridge style Series A of $6M to $10M, common when growth is real but revenue is still small; below the 2022 and later p25 of $11M, so it stands for the soft band."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "The central Series A of $10M to $18M, bracketing the 2022 and later median of $15M and p25 to p75 of $11M to $21M."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            90000000,
+            150000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A larger A of $18M to $30M that top funds lead when growth looks category defining; current market data shows A deal sizes near $17M to $20M."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.08,
+          "rationale": "An upside A above $30M, seen only for a few AI companies with very fast revenue; rare and kept at a small share."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A in 19 months would need enterprise contracts with repeat usage, but market research budgets move slowly and enterprises trial several AI interview tools. Great Question took two years from YC to its A, and Outset and Rally, the leading AI entrants, needed more than a year after their seeds. A two person team will likely lack the sales capacity to show that growth in time."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.21,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave series_b cond 21% (n=123). Long run, not window numbers.",
+        "adjustment_reason": "Equal to the B2B anchor; long run chance beyond the window."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "A smaller or flat Series B of $15M to $30M, typical when the A cohort slows; includes down or extension rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "The central Series B of $30M to $50M, matching the 2022 and later median of $40M with p25 to p75 of $27M to $55M."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            80000000
+          ],
+          "post_money_usd": [
+            300000000,
+            600000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A growth B of $50M to $80M for companies with clear scaled revenue."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1200000000
+          ],
+          "p_band": 0.08,
+          "rationale": "An upside B above $80M for category leaders, rare among YC companies."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B requires winning the enterprise research budget against UserTesting, Qualtrics and funded AI rivals, and many research teams build only small, project based budgets. Outset reached a B in about two years of fast enterprise growth, an exception; a typical tool in this category stalls after an A because buyers consolidate vendors."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave series_c cond 19% (n=26); older eras 36 to 43 percent.",
+        "adjustment_reason": "Within 1.25 times the B2B anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "A modest later round of $30M to $60M, including down rounds and structured deals."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000,
+            1400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "The central round of $60M to $120M, bracketing the 2022 and later series C median of $74M."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "A large growth round of $120M to $250M for a clear leader."
+        },
+        {
+          "raise_usd": [
+            250000000,
+            500000000
+          ],
+          "post_money_usd": [
+            2500000000,
+            6000000000
+          ],
+          "p_band": 0.05,
+          "rationale": "A mega round above $250M, which only a handful of YC companies have reached."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A growth round past B needs a platform that becomes the system for customer insight, which collides with Qualtrics and UserTesting. Most research software companies end with a sale to a larger insights or feedback platform, as with Monterey AI, rather than a Series C."
     }
   ],
   "outcomes": {
@@ -164,167 +260,225 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The likely failure is commoditization: AI moderated interviews become a feature of UserTesting, Qualtrics or Great Question, and a two person team cannot out sell funded YC rivals. User research tools exit small, as Monterey AI to Reforge or a G2 style acquisition suggests, and a $1B outcome would need a category defining platform."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "great-question",
+      "relevance": "User research platform (W21)",
+      "outcome_summary": "Raised a $2.5M seed in July 2021 and a $13M Series A, a capital efficient but slow path; the closest incumbent among YC peers."
+    },
+    {
+      "slug": "rallyuxr",
+      "relevance": "AI user research platform (W22)",
+      "outcome_summary": "Raised an $8.8M seed in April 2024 about two years after its batch, showing a seed arrives late for this segment."
+    },
+    {
+      "slug": "outset",
+      "relevance": "AI moderated user interviews (S23)",
+      "outcome_summary": "Raised a $3.8M seed and quickly grew with enterprise names; the strongest direct competitor."
+    },
+    {
+      "slug": "user-hero",
+      "relevance": "Hub for user research (S18)",
+      "outcome_summary": "Inactive with no funding found; a user research tool that did not grow."
+    },
+    {
+      "slug": "versive",
+      "relevance": "AI first user research platform (W23)",
+      "outcome_summary": "Three people, still operating, no priced round found; shows the small outcome path."
+    },
+    {
+      "slug": "monterey-ai",
+      "relevance": "Feedback to insights (S22)",
+      "outcome_summary": "Small team acquired by Reforge around January 2025 with undisclosed terms; a soft exit."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Funded YC rivals and incumbents own the AI interview niche",
+      "p": 0.45,
+      "evidence": "Outset and Rally raised seeds and have enterprise logos, while UserTesting and Great Question already serve research teams.",
       "analogs": [
-        "TODO-company-slug"
+        "outset",
+        "rallyuxr"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Win a vertical such as consumer apps or fintech and own the participant panel."
+    },
+    {
+      "risk": "Quality of AI moderated interviews stays below human research, limiting trust",
+      "p": 0.3,
+      "evidence": "Comparisons describe audio only moderators missing nonverbal cues and analysis overemphasizing outliers, which researchers distrust.",
+      "analogs": [
+        "versive",
+        "user-hero"
+      ],
+      "mitigation": "Publish validation studies against human moderated research and add human review options."
+    },
+    {
+      "risk": "Participant recruiting depends on third party panels and has thin margins",
+      "p": 0.25,
+      "evidence": "Recruiting costs are a large part of study cost and Great Question and UserTesting maintain panels at scale.",
+      "analogs": [
+        "great-question",
+        "monterey-ai"
+      ],
+      "mitigation": "Integrate customer lists and build a proprietary panel in a niche."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "UserTesting",
+      "what": "Incumbent user research platform with its own participant panel",
+      "traction": "Large enterprise customer base",
+      "source_url": "https://www.usertesting.com"
+    },
+    {
+      "name": "Great Question",
+      "what": "User research CRM and interview platform from YC W21",
+      "traction": "Raised a seed and Series A and serves product teams",
+      "source_url": "https://greatquestion.co"
+    },
+    {
+      "name": "Outset",
+      "what": "AI moderated customer interviews for enterprises, from YC S23",
+      "traction": "Raised a seed and grew with enterprise customers by 2024",
+      "source_url": "https://outset.ai"
+    },
+    {
+      "name": "Maze",
+      "what": "Product research and testing platform",
+      "traction": "Established design research tool",
+      "source_url": "https://maze.co"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "Interview scripting, voice or chat moderation, transcription and synthesis are buildable by two people in three months with current language models. The harder parts are recruiting real participants and trust in analysis, not the core technology, so the technical moat is thin."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "UserTesting",
+      "Qualtrics",
+      "Great Question",
+      "Outset"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "Incumbent research platforms and funded rivals can add AI moderated interviews within about six months and already own panels and enterprise distribution. The incentive to defend customers is strong, so the takeover risk is high."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Companies pay for user research tools, and incumbents such as UserTesting serve large enterprise research budgets; AI interview startups such as Outset raised funding in 2023 and 2024.",
+        "source_url": "https://www.usertesting.com"
+      },
+      {
+        "claim": "Research teams want faster qualitative insight; AI moderated interviews are marketed as faster and cheaper than human led research, though these are vendor claims.",
+        "source_url": "https://outset.ai"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show research teams pay for AI interviews",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run 20 paid studies for product teams",
+        "Compare insight quality against human moderated interviews"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "10 paying teams and a quality benchmark"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable subscription revenue with a niche panel",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one vertical and own its participants",
+        "Sell annual plans of $10K to $30K"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$20K to $40K monthly recurring revenue and 80 percent logo retention"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Move from project spend to platform budgets",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add continuous research and integrations to product tools",
+        "Hire enterprise sales"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1.5M ARR and 120 percent net revenue retention"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Clear workflow pain and active buyers",
+      "evidence": "Product and design teams buy research tools and AI interview startups raised funding in 2023 and 2024.",
+      "source_url": "https://www.usertesting.com"
+    },
+    {
+      "point": "Low build cost for a two person team",
+      "evidence": "Core stack is available through current language and voice models, so a small team can reach a usable product quickly.",
+      "source_url": "https://outset.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "stratify",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"stratify\" --era 2022+ gave kind suffix_coinage (ends in ify), 8 characters, 3 syllables.",
     "strengths": [
-      "TODO"
+      "Suggests layers of insight",
+      "Easy to say and spell"
     ],
     "weaknesses": [
-      "TODO"
+      "The ify suffix is generic",
+      "The word is used by other data and analytics products"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A suffix coinage that hints at layers of insight works as a plain business name, but it is not distinctive and shares its stem with other analytics companies, so the effect is neutral and does not move the ladder.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A reasonable idea in a category that already has funded YC rivals; seed is plausible but below the base rate within 19 months.",
+    "general_summary": "Stratify automates user research with AI agents run by a two person team in San Francisco. Demand exists, but Outset, Rally and Great Question already sell to the same teams, and a two person team has limited sales capacity. In a 19 month window the B2B anchor gives a seed above $1M near 40 percent after discounting for crowding, and a Series A within the window near 8 percent given seed. Takeover risk is high because incumbents can add AI interviews within months. Odds here do not rank this company against others."
   },
   "assumptions": [
-    "TODO"
+    "Forecast made blind from the input file only; the window runs 2025-04-07 to 2026-11-17, about 19 months.",
+    "Seed means an outside round above about $1M; the YC deal alone does not count.",
+    "Seed and Series A odds are for the window; Series B and C odds are long run conditional rates.",
+    "The Conversational AI tag cohort has 19 companies and is anecdote only.",
+    "Web search covered the market only; funding results dated after the as_of date were ignored."
   ],
   "sources": [
-    "https://"
+    "https://www.usertesting.com",
+    "https://greatquestion.co",
+    "https://outset.ai",
+    "https://maze.co"
   ]
 }

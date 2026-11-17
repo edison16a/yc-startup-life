@@ -35,8 +35,11 @@ def outcome(t):
     return "unknown", amt
 
 
+FORECAST_DIR = "winners-2026"
+
+
 def forecast(slug):
-    p = ROOT / "evaluations" / "winners-2026" / slug / "evaluation_input.json"
+    p = ROOT / "evaluations" / FORECAST_DIR / slug / "evaluation_input.json"
     if not p.exists():
         return None
     d = json.loads(p.read_text())
@@ -65,10 +68,12 @@ def auc(pos, neg):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--truth", required=True); ap.add_argument("--kinds", required=True)
-    ap.add_argument("--leaks"); ap.add_argument("--json")
+    ap.add_argument("--leaks"); ap.add_argument("--json"); ap.add_argument("--forecast-dir", default="winners-2026")
     a = ap.parse_args()
+    global FORECAST_DIR
+    FORECAST_DIR = a.forecast_dir
     truth = load_truth(a.truth)
-    kinds = {i["slug"]: i["kind"] for i in json.loads(open(a.kinds).read())}
+    kinds = {i["slug"]: i.get("kind", "random") for i in json.loads(open(a.kinds).read())}
     leaked = set()
     if a.leaks:
         for l in open(a.leaks):
@@ -92,6 +97,16 @@ def main():
             res["brier_seed"] = statistics.mean((r["p_seed"] - (1 if r["outcome"] == "raised" else 0)) ** 2 for r in known)
             res["auc_raised_vs_none"] = auc([r["p_seed"] for r in raised], [r["p_seed"] for r in none])
             res["share_raised_of_known"] = len(raised) / len(known)
+            pbar = len(raised) / len(known)
+            res["mean_p_seed_all_known"] = statistics.mean(r["p_seed"] for r in known)
+            res["baseline_brier_constant_at_sample_rate"] = pbar * (1 - pbar)
+            res["brier_skill_vs_constant"] = 1 - res["brier_seed"] / (pbar * (1 - pbar)) if 0 < pbar < 1 else None
+            res["overconfidence_mean_p_minus_rate"] = res["mean_p_seed_all_known"] - pbar
+            bins = {}
+            for r in known:
+                k = "low (<0.35)" if r["p_seed"] < 0.35 else "mid (0.35 to 0.5)" if r["p_seed"] < 0.5 else "high (0.5 and up)"
+                bins.setdefault(k, []).append(1 if r["outcome"] == "raised" else 0)
+            res["calibration_bins"] = {k: {"n": len(v), "actual_rate": sum(v) / len(v)} for k, v in sorted(bins.items())}
         if raised:
             hits = [band_hit(r["bands"], r["amount"]) for r in raised]
             res["band_coverage"] = sum(h > 0 for h in hits) / len(hits)
