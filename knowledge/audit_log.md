@@ -300,3 +300,11 @@ Two independent auditors, 8 records each: recurse-center, alma, vango-ai, people
 Batch A: 45 fields, strict 18, middle 7, lenient 0. Batch B: 45 fields, strict 12, middle 5, lenient 0.
 
 Totals: 90 fields checked. Strict: 30 wrong (33.3 percent). Middle: 12 wrong (13.3 percent). Lenient: 0 wrong (0 percent). The limit is 10 percent. Both auditors again found no stated fact contradicted by a source. Every middle defect is an omission or a weak source: rounds known from press or an SEC filing but not recorded (aptdeco, protocol-labs, flaviar, videopixie), a missed co-founder or prior startup (q2q, alma, people-ai), a competitor source dated years from founding (alma), and a majority investment recorded with exit none (picktrace). Several of these records predate prompt lesson 10. Action: correct the flagged records. AUDIT RESULT is not PASS.
+
+## Audit 16 (records from waves 40 and 41)
+
+Two independent auditors, 8 records each: enveloop, lovage, sift, cashmere, homebreeze, ruleset, lovd, gobuild-fka-brick, nino-foods, gigs-live, godutch, paneau, tumult, close, comet-health, zoltar-labs.
+
+Batch A: 51 fields, strict 20, middle 7, lenient 1. Batch B: 45 fields, strict 10, middle 3, lenient 1.
+
+Totals: 96 fields checked. Strict: 30 wrong (31.3 percent). Middle: 10 wrong (10.4 percent). Lenient: 2 wrong (2.1 percent). The limit is 10 percent, so the middle count is still just above it, but it has fallen from 13.3 percent in audit 15 and 12.9 percent in audit 13 since prompt lesson 10 began to apply. The two clear errors are a malformed founder entry (lovd) and a competitor dated after the record date (tumult). The rest are omitted or unverified rounds, a stale founder role (godutch), a mismatched as_of (close, gobuild, homebreeze) and null founded_year values. Action: correct the flagged records. AUDIT RESULT is not PASS.
