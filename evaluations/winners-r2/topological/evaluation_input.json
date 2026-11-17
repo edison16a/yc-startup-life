@@ -1,330 +1,435 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Topological",
+  "one_liner": "Physics-based foundation models for CAD optimization.",
+  "description": "Physics based foundation model for topology optimization and CAD design, aimed at hardware teams that want software speed iteration. First model UToP-v1 is claimed (by the company) to have under 5 percent compliance error and be 1930 times faster than current methods. Two person team in San Francisco; buyers would be mechanical and design engineers paying for software.",
+  "as_of": "2025-07-07"
+ },
+ "yc_acceptance": {
+  "p": 0.97,
+  "p_low": 0.9,
+  "p_high": 0.99,
+  "basis": "The input file places this company in the Summer 2025 batch, so acceptance is already known and this figure is reported for completeness only. The starting prior for a random applicant is about 1 percent (references/yc_acceptance.md, 0.6 to 2 percent third party range); the near certainty comes from the stated batch, not from a model of the company.",
+  "why_it_fails": "YC is already past, so the only residual risk is a data error in the input about batch membership. Had the company been an ordinary applicant, the most plausible rejection reason would be: Two founders proposing a narrow research model in a crowded engineering software area with claims that cannot be checked from the application alone."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.4,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: seed known-only 61% (lower 50%, upper 68%), cond 61% (n=88). Median months to seed 9 (p25 4, p75 19); time_to_milestones.csv era 2022+ p75 is 14 months. ",
+    "adjustment_reason": "Window is 16 months from the as_of date to 2026-11-17. The ever anchor of 61% counts the YC deal as a seed, but this forecast counts only a financing above about $1M from outside investors that closes inside the window, so the anchor is cut to cover only rounds above $1M and only the share that close within 16 months (about 75 to 80 percent of eventual seed raisers close by month 14 to 20). A two person team with a research stage model is held at the anchor, not lifted, and the Hard Tech tag cohort (n=13) shows a 60 percent seed rate with only YC sized checks in the data, so I cut slightly for team size and for the lack of stated customers. Odds are not lifted for team or hot sector, per the winners test, and do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      2900000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round of $1M to $3M, usually angels or a small seed fund. A research heavy two person team often gets a $1M to $3M check from deep tech angels first."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, the modal outcome in 2022 and later data (median $3.5M to $4.1M in round_benchmarks.csv, which mixes in the YC deal). The central case is a $3M to $6M seed from a deep tech fund on the strength of the benchmark claim."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed of $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test. Possible for a standout technical result with a named lead, as AI design tool rounds have been large."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band above $12M, reserved for a standout demo with a named lead. Needs a named manufacturing customer."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Window of 16 months. The most likely miss is that investors cannot tell if a topology optimizer that is 1930 times faster (a company claim) wins real purchase orders, since Altair and Ansys already sell topology optimization and CAD vendors can bundle it. Camfer (AI mechanical engineer, S24) shows only a small pre-seed in the first year, and a two person team has few customer signals before the window ends at 16 months."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: series_a cond 33% (n=54), known-only 20%; months to series A median 30 (p25 22, p75 39).",
+    "adjustment_reason": "The ever anchor is 33 percent, but only about a fifth of eventual Series A raisers have closed it by month 16 (p25 is 19 to 22 months from batch start), so the windowed value is much lower. Reaching a Series A in later years is common for companies with paying customers, but it falls outside this window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      45000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge style Series A below the 2022 and later median of $14M to $15M, the down or flat band."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      18000000
+     ],
+     "post_money_usd": [
+      40000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series A near the 2022 and later quartiles ($11M to $21M raise)."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      40000000
+     ],
+     "post_money_usd": [
+      100000000,
+      250000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside Series A led by a top tier fund once revenue is visible; current US medians are about $17M raise on $60M pre money."
+    }
+   ],
+   "why_it_fails": "A Series A within 16 months needs repeat revenue from engineering teams, but median time to Series A is about 28 months from batch start. Pathmind and Vorticity show that simulation and optimization tools raise their A on technical proof but slowly, and a two person team has to hire before it can sell to enterprises."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.015,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: series_b cond 17% (n=18); median months to series B 46 overall, 35.5 for 2022 and later (n=40).",
+    "adjustment_reason": "Median time to a Series B is about three years from batch start, so inside a 16 month window almost only extreme outliers get there; windowed probability is far below the 17 percent ever anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or small Series B, near the 2018 to 2021 median of $32M but with a lower valuation."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      180000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B, in line with the 2022 and later median of about $40M."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B for a category leader; 2022 and later posts reach $600M to $1B."
+    }
+   ],
+   "why_it_fails": "A Series B inside 16 months would need enterprise revenue and a Series A first, and the median B2B path takes about three years from batch start (B2B median months to series B 47). Rescale, a simulation platform, took years of enterprise selling before its Series B. The likely failure is timing rather than a verdict on the idea."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55) overall; B2B 2022-2024 cohort has 0 of 3 at Series C. Median months to series C about 61.",
+    "adjustment_reason": "Series C normally lands about five years after the batch, so a window of 16 months makes it very unlikely; the ever anchor is cut to a token value."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C at the 2022 and later median of $74M."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      2000000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round for a scaled leader, near the 2022 and later p75 of $103M."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      6000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round for a breakout company; only a few percent of YC companies get here."
+    }
+   ],
+   "why_it_fails": "Series C inside 16 months is almost outside the data: the median is about five years after batch start, and only 8 companies in the 2022 and later cohort have reached it. Failing here means the company has not scaled past a niche or the window closed first, not that the idea is bad."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.58
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most paths end in a stall or a small acqui-hire because CAD and simulation vendors can add a similar optimizer, and a model with no customer lock in is copyable. Camfer and Pathmind show AI engineering tools that stalled; a large exit needs becoming the default optimizer inside CAD workflows."
+ },
+ "analogs": [
+  {
+   "slug": "camfer",
+   "relevance": "AI mechanical engineer for CAD from Summer 2024, same buyers.",
+   "outcome_summary": "Only a small pre-seed reported in 2024; the site stayed live and free to use, a signal of slow monetisation."
+  },
+  {
+   "slug": "hestus-inc",
+   "relevance": "AI powered CAD software from Summer 2024.",
+   "outcome_summary": "Active batch company with no confirmed priced round as of mid 2025; shows a crowded AI CAD wedge."
+  },
+  {
+   "slug": "rescale",
+   "relevance": "Engineering simulation sold to hardware companies.",
+   "outcome_summary": "Series B in 2018 and Series C in 2021 after long enterprise sales, the best case for engineering software."
+  },
+  {
+   "slug": "pathmind",
+   "relevance": "Optimization and simulation tools for industrial engineers.",
+   "outcome_summary": "Raised 3M seed and 11.5M later, then went inactive as larger frameworks dominated."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Altair, Ansys and CAD vendors add AI topology optimization, so there is no wedge.",
+   "p": 0.35,
+   "evidence": "Altair already sells topology optimization and Ansys markets AI surrogates inside its suite.",
+   "analogs": [
+    "rescale",
+    "pathmind"
+   ],
+   "mitigation": "Integrate as a plug in inside the CAD tools engineers already use."
+  },
+  {
+   "risk": "Speed claims do not turn into purchases because manufacturability and certification still need human review.",
+   "p": 0.3,
+   "evidence": "Vendors say AI augments rather than replaces physics, and compliance error of 5 percent may not satisfy aerospace.",
+   "analogs": [
+    "camfer",
+    "hestus-inc"
+   ],
+   "mitigation": "Show a full part through manufacturing with a customer."
+  },
+  {
+   "risk": "Two person team cannot sell to hardware enterprises and run research at once.",
+   "p": 0.3,
+   "evidence": "Team size is two in the input, and no customers are named.",
+   "analogs": [
+    "camfer",
+    "carbic"
+   ],
+   "mitigation": "Hire a founding sales engineer after the first paid pilot."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Altair",
+   "what": "Established CAE vendor with topology optimization tools.",
+   "traction": "Large installed base in aerospace and auto.",
+   "source_url": "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+  },
+  {
+   "name": "Ansys AI modules",
+   "what": "Surrogate models and AI add ons inside the market leading simulation suite.",
+   "traction": "Part of a roughly $10B simulation market.",
+   "source_url": "https://www.ansys.com/blog/how-ai-is-quietly-transforming-simulation"
+  },
+  {
+   "name": "Status quo: engineers iterate manually in CAD and run solvers",
+   "what": "Manual design loops with overnight solver runs.",
+   "traction": "Default behaviour in most hardware teams.",
+   "source_url": "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "A physics aware model that returns manufacturable geometry is research level work; two founders can build a demo but guaranteeing quality on arbitrary load cases takes a large training corpus."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Altair",
+   "Ansys (Synopsys)",
+   "Autodesk",
+   "nTop"
+  ],
+  "timeline_months": 12,
+  "rationale": "Vendors already own topology optimization and distribution, so a competing AI feature within a year is plausible; the startup survives only if its model is clearly better."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Simulation and analysis is about a $10B market, mostly aerospace, auto, high tech and heavy equipment.",
+    "source_url": "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+   },
+   {
+    "claim": "Incumbents are adding AI to simulation, showing buyers want faster design loops.",
+    "source_url": "https://www.ansys.com/blog/how-ai-is-quietly-transforming-simulation"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "A reproducible benchmark on public design problems.",
+   "actions": [
+    "Publish compliance error and runtime against a standard solver.",
+    "Release a demo part that is printed or machined."
+   ],
+   "proof": "A benchmark table and one manufactured part."
+  },
+  {
+   "phase": "seed",
+   "goal": "A design partner that pays, to support a $3M to $6M seed.",
+   "actions": [
+    "Run two paid pilots with hardware teams.",
+    "Add manufacturability constraints for one process."
+   ],
+   "proof": "Two paid pilots and a lead investor."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Repeat revenue inside engineering teams.",
+   "actions": [
+    "Ship a CAD plug in.",
+    "Hire a sales engineer."
+   ],
+   "proof": "About $500K ARR."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large engineering software spend and a clear speed story.",
+   "evidence": "A $10B simulation market and incumbents investing in AI.",
+   "source_url": "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+  },
+  {
+   "point": "A published style benchmark claim that can be verified by customers.",
+   "evidence": "Company states under 5 percent compliance error, a testable number.",
+   "source_url": "https://www.ansys.com/blog/how-ai-is-quietly-transforming-simulation"
+  }
+ ],
+ "brand": {
+  "name": "Topological",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Topological\" --era 2022+: invented_or_proper, flag 4+ syllables, cohort alive 92.7%, n=1826",
+  "strengths": [
+   "Describes the technique and sounds technical"
+  ],
+  "weaknesses": [
+   "Four plus syllables and a generic mathematical term, hard to own"
+  ],
+  "rationale": "A descriptive technical word like several research brands; it fits a technical buyer but is not distinctive, and brand matters little against proof of accuracy."
+ },
+ "narrative": {
+  "headline": "A strong technical claim in a crowded CAE market; 40 percent for a seed above $1M in 16 months.",
+  "general_summary": "Topological builds a physics based model for topology optimization, selling to mechanical engineers. The need exists and the technical claim is notable, but incumbents such as Altair and Ansys already offer related tools and the team is two people. Inside a 16 month window a seed above $1M is a bit below the cohort anchor because there is no named customer, and a Series A is unlikely before the median of about 28 months. The ladder does not rank this company above others. The main failure path is that vendors add similar features and hardware teams do not change habits.",
+  "deep_dive": {
+   "market_need": "Summary mode, see the general summary.",
+   "competition": "Summary mode, see the general summary.",
+   "technical_complexity": "Summary mode, see the general summary.",
+   "takeover": "Summary mode, see the general summary.",
+   "economics_and_distribution": "Summary mode, see the general summary.",
+   "team": "Summary mode, see the general summary.",
+   "yc_specific": "Summary mode, see the general summary."
+  }
+ },
+ "assumptions": [
+  "The 1930 times faster and under 5 percent error figures are company claims, not verified.",
+  "Blind forecast made as of 2025-07-07 for the window to 2026-11-17 (16 months). Seed means an outside round above about $1M closing in the window, not the standard YC deal of about $500K.",
+  "Coverage limit: 662 of 6,399 companies are researched, and the B2B 2022-2024 cohort has 107 companies, so cohort rates are wide.",
+  "Probabilities do not rank this company against others; the winners test found no separation between raisers and non-raisers."
+ ],
+ "sources": [
+  "https://www.ansys.com/blog/how-ai-is-quietly-transforming-simulation",
+  "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+ ]
 }
