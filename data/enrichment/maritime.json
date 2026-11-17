@@ -1,49 +1,153 @@
 {
-  "slug": "maritime",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Startups that sell AI agents and need to run many of them in isolated persistent environments",
-  "problem": "Running thousands of agents each with its own persistent computer requires infrastructure, scaling and monitoring work. Maritime manages that for $1 per agent per month.",
-  "business_model": "usage-based hosting, $1 per month per 2 GB agent machine, per second billing for sandboxes",
-  "product_category": "managed cloud infrastructure for AI agents",
-  "founded_year": 2026,
-  "founders": [
-    {"name": "Maria Gorskikh", "role": "CEO", "prior_employers": ["MIT (visiting lecturer)", "NANDA (researcher)"], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": null},
-    {"name": "Aryaman Shrivastava", "role": "CTO", "prior_employers": ["MIT NANDA Lab (researcher, AI agent coordination at scale)"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": null}
+ "slug": "maritime",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Startups that sell AI agents and need to run many of them in isolated persistent environments",
+ "problem": "Running thousands of agents each with its own persistent computer requires infrastructure, scaling and monitoring work. Maritime manages that for $1 per agent per month.",
+ "business_model": "usage-based hosting, $1 per month per 2 GB agent machine, per second billing for sandboxes",
+ "product_category": "managed cloud infrastructure for AI agents",
+ "founded_year": 2026,
+ "founders": [
+  {
+   "name": "Maria Gorskikh",
+   "role": "CEO",
+   "prior_employers": [
+    "MIT (visiting lecturer)",
+    "NANDA (researcher)"
+   ],
+   "education": [],
+   "technical": null,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": null
+  },
+  {
+   "name": "Aryaman Shrivastava",
+   "role": "CTO",
+   "prior_employers": [
+    "MIT NANDA Lab (researcher, AI agent coordination at scale)"
+   ],
+   "education": [],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": null
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "seed",
+   "date": null,
+   "amount_usd": 125000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": null,
+   "source_url": "https://dealroom.co/just-founded/maritime/"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://www.ycombinator.com/companies/maritime"
+ },
+ "competition_at_founding": {
+  "as_of": "2026-08",
+  "competitors": [
+   {
+    "name": "OpenComputer (DiggerHQ)",
+    "what": "Persistent Linux VMs with hibernate and wake and checkpoints for agents",
+    "traction_then": "launched July 25, 2026, priced from 0.004 dollars per minute",
+    "funding_then": null,
+    "source_date": "2026-07-25",
+    "source_url": "https://dev.to/tekmag/the-managed-agent-infrastructure-stack-why-opencomputer-nebius-and-anthropic-are-building-vercel-19gi"
+   },
+   {
+    "name": "Anthropic Claude Managed Agents",
+    "what": "Composable APIs to deploy cloud hosted agents",
+    "traction_then": "launched April 8, 2026",
+    "funding_then": null,
+    "source_date": "2026-04-08",
+    "source_url": "https://dev.to/tekmag/the-managed-agent-infrastructure-stack-why-opencomputer-nebius-and-anthropic-are-building-vercel-19gi"
+   },
+   {
+    "name": "Microsoft Foundry hosted agents",
+    "what": "Each agent session gets a VM isolated sandbox with persistent file system",
+    "traction_then": "launched 2026, date not captured",
+    "funding_then": null,
+    "source_date": "2026",
+    "source_url": "https://www.neowin.net/news/microsoft-launches-hosted-agents-in-foundry-with-secure-sandboxes/"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Isolated micro-VMs with persistence, sleep and wake, scaling and Windows and Android desktops are standard infrastructure engineering with some hard parts, built by a team of three."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [],
+  "rationale": "Large clouds and funded sandbox vendors sell the same primitive, and low price is the main wedge."
+ },
+ "takeover_risk_then": {
+  "rating": 5,
+  "incumbents": [
+   "Microsoft",
+   "Anthropic",
+   "OpenComputer",
+   "DigitalOcean"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/maritime"},
-  "competition_at_founding": {
-    "as_of": "2026-08",
-    "competitors": [
-      {"name": "OpenComputer (DiggerHQ)", "what": "Persistent Linux VMs with hibernate and wake and checkpoints for agents", "traction_then": "launched July 25, 2026, priced from 0.004 dollars per minute", "funding_then": null, "source_date": "2026-07-25", "source_url": "https://dev.to/tekmag/the-managed-agent-infrastructure-stack-why-opencomputer-nebius-and-anthropic-are-building-vercel-19gi"},
-      {"name": "Anthropic Claude Managed Agents", "what": "Composable APIs to deploy cloud hosted agents", "traction_then": "launched April 8, 2026", "funding_then": null, "source_date": "2026-04-08", "source_url": "https://dev.to/tekmag/the-managed-agent-infrastructure-stack-why-opencomputer-nebius-and-anthropic-are-building-vercel-19gi"},
-      {"name": "Microsoft Foundry hosted agents", "what": "Each agent session gets a VM isolated sandbox with persistent file system", "traction_then": "launched 2026, date not captured", "funding_then": null, "source_date": "2026", "source_url": "https://www.neowin.net/news/microsoft-launches-hosted-agents-in-foundry-with-secure-sandboxes/"}
-    ]
+  "outcome": "Large vendors launched managed agent hosting in 2026, before and around the batch."
+ },
+ "market_need_then": "Growth of AI agent startups in 2026 creates demand for per agent compute. The company gives no demand figures, and it lists use cases such as coding, evals and computer-use agents.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "real_word",
+  "name_qualities": [
+   "easy_to_spell",
+   "easy_to_say",
+   "evocative"
+  ],
+  "name_problems": [
+   "generic",
+   "confusable"
+  ],
+  "domain_note": "Uses maritime.sh, a .sh domain, not a .com.",
+  "identity": {
+   "logo": "not described by any source seen",
+   "mascot_or_character": null,
+   "visual_style": "practical, spec heavy site written partly as a briefing for AI agents",
+   "voice_and_tone": "direct and practical, ending with Get yours a computer today"
   },
-  "technical_complexity": {"rating": 3, "rationale": "Isolated micro-VMs with persistence, sleep and wake, scaling and Windows and Android desktops are standard infrastructure engineering with some hard parts, built by a team of three."},
-  "defensibility": {"rating": 2, "moat_types": [], "rationale": "Large clouds and funded sandbox vendors sell the same primitive, and low price is the main wedge."},
-  "takeover_risk_then": {"rating": 5, "incumbents": ["Microsoft", "Anthropic", "OpenComputer", "DigitalOcean"], "outcome": "Large vendors launched managed agent hosting in 2026, before and around the batch."},
-  "market_need_then": "Growth of AI agent startups in 2026 creates demand for per agent compute. The company gives no demand figures, and it lists use cases such as coding, evals and computer-use agents.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "real_word",
-    "name_qualities": ["easy_to_spell", "easy_to_say", "evocative"],
-    "name_problems": ["generic", "confusable"],
-    "domain_note": "Uses maritime.sh, a .sh domain, not a .com.",
-    "identity": {"logo": "not described by any source seen", "mascot_or_character": null, "visual_style": "practical, spec heavy site written partly as a briefing for AI agents", "voice_and_tone": "direct and practical, ending with Get yours a computer today"},
-    "brand_signature": "A page written as a briefing for AI agents",
-    "rebrands": [],
-    "community_and_virality": "A Product Hunt post under the CEO's name invited beta users, with no engagement data seen.",
-    "brand_strength": {"rating": 2, "rationale": "Search for maritime brand results returns many unrelated shipping companies, so the name is generic and hard to find, though the product site is clear."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://maritime.sh/", "https://www.producthunt.com/p/maritime"]
+  "brand_signature": "A page written as a briefing for AI agents",
+  "rebrands": [],
+  "community_and_virality": "A Product Hunt post under the CEO's name invited beta users, with no engagement data seen.",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "Search for maritime brand results returns many unrelated shipping companies, so the name is generic and hard to find, though the product site is clear."
   },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "outcome_analysis": "Maritime is a Fall 2026 company with no public outcome. It sells a low priced managed hosting product for AI agents with research backed founders from MIT NANDA, but it enters a market where large cloud vendors and a funded startup launched similar persistent agent computers within months. A generic name also makes search discovery harder.",
-  "sources": ["https://www.ycombinator.com/companies/maritime", "https://maritime.sh/", "https://dealroom.co/just-founded/maritime/", "https://dev.to/tekmag/the-managed-agent-infrastructure-stack-why-opencomputer-nebius-and-anthropic-are-building-vercel-19gi", "https://www.neowin.net/news/microsoft-launches-hosted-agents-in-foundry-with-secure-sandboxes/", "https://www.producthunt.com/p/maritime"],
-  "notes": "Dealroom lists 125k dollars at seed with a September 2026 founding date and names only Shrivastava as founder in one result, and I found no second source, so it is unverified and not recorded as a round. Education was not found for either founder. DigitalOcean managed agents and other items dated after the batch are excluded from competition."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://maritime.sh/",
+   "https://www.producthunt.com/p/maritime"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [],
+ "failure_factors": [],
+ "outcome_analysis": "Maritime is a Fall 2026 company with no public outcome. It sells a low priced managed hosting product for AI agents with research backed founders from MIT NANDA, but it enters a market where large cloud vendors and a funded startup launched similar persistent agent computers within months. A generic name also makes search discovery harder.",
+ "sources": [
+  "https://www.ycombinator.com/companies/maritime",
+  "https://maritime.sh/",
+  "https://dealroom.co/just-founded/maritime/",
+  "https://dev.to/tekmag/the-managed-agent-infrastructure-stack-why-opencomputer-nebius-and-anthropic-are-building-vercel-19gi",
+  "https://www.neowin.net/news/microsoft-launches-hosted-agents-in-foundry-with-secure-sandboxes/",
+  "https://www.producthunt.com/p/maritime"
+ ],
+ "notes": "Dealroom lists 125k dollars at seed with a September 2026 founding date and names only Shrivastava as founder in one result, and I found no second source, so it is unverified and not recorded as a round. Education was not found for either founder. DigitalOcean managed agents and other items dated after the batch are excluded from competition. Completeness pass: one seed round of 125K USD recorded from a single database (Dealroom, no round date or investors given). Everydev reports other figures (500K YC seed, a June 2026 pre-seed led by Two Lanterns Venture Capital) that are not confirmed elsewhere and not recorded."
 }

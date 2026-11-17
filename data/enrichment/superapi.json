@@ -1,45 +1,125 @@
 {
-  "slug": "superapi",
-  "depth": 2,
-  "confidence": "low",
-  "target_customer": "Engineering teams with high traffic fetch APIs that want caching without rewriting code",
-  "problem": "Caching APIs correctly takes months of engineering to handle invalidation. SuperAPI sits in front of APIs and invalidates cache entries by watching writes and database changes.",
-  "business_model": "Usage-based developer infrastructure subscription with pricing page",
-  "product_category": "Programmable API gateway and cache",
-  "founded_year": 2022,
-  "founders": [
-    {"name": "Adithya Kavuluru", "role": "Co-founder", "prior_employers": ["Unnamed Tiger Global backed Indian tech company"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he was the first engineer and later led engineering that grew from 6 to about 55 people."},
-    {"name": "Aditya", "role": "Co-founder", "prior_employers": ["Unnamed Tiger Global backed Indian tech company"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he headed platform engineering and brought API latencies under 50 ms. Last name not given on the page; an aggregator says Agrawal, unverified."}
+ "slug": "superapi",
+ "depth": 2,
+ "confidence": "low",
+ "target_customer": "Engineering teams with high traffic fetch APIs that want caching without rewriting code",
+ "problem": "Caching APIs correctly takes months of engineering to handle invalidation. SuperAPI sits in front of APIs and invalidates cache entries by watching writes and database changes.",
+ "business_model": "Usage-based developer infrastructure subscription with pricing page",
+ "product_category": "Programmable API gateway and cache",
+ "founded_year": 2022,
+ "founders": [
+  {
+   "name": "Adithya Kavuluru",
+   "role": "Co-founder",
+   "prior_employers": [
+    "Unnamed Tiger Global backed Indian tech company"
+   ],
+   "education": [],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page says he was the first engineer and later led engineering that grew from 6 to about 55 people."
+  },
+  {
+   "name": "Aditya",
+   "role": "Co-founder",
+   "prior_employers": [
+    "Unnamed Tiger Global backed Indian tech company"
+   ],
+   "education": [],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page says he headed platform engineering and brought API latencies under 50 ms. Last name not given on the page; an aggregator says Agrawal, unverified."
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "other",
+   "date": "2023-01",
+   "amount_usd": 500000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Y Combinator"
+   ],
+   "source_url": "https://www.cbinsights.com/company/superapi/financials"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://trysuperapi.com"
+ },
+ "competition_at_founding": {
+  "as_of": "2023-01",
+  "competitors": []
+ },
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Correct automatic invalidation through change data capture and request monitoring is hard but done on top of existing CDNs and databases."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [
+   "switching_costs"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://trysuperapi.com"},
-  "competition_at_founding": {
-    "as_of": "2023-01",
-    "competitors": []
+  "rationale": "Sits in the request path of customer APIs which creates some stickiness, but CDN vendors and gateways can add caching features."
+ },
+ "takeover_risk_then": {
+  "rating": 4,
+  "incumbents": [
+   "Cloudflare",
+   "Fastly",
+   "AWS CloudFront"
+  ],
+  "outcome": "The company explicitly runs on top of Cloudflare and CloudFront rather than competing with them. No copying or acquisition found."
+ },
+ "market_need_then": "Founders cite scaling API latency at their prior company. No dated third party source on demand was found.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "compound",
+  "name_qualities": [
+   "short",
+   "easy_to_say",
+   "easy_to_spell"
+  ],
+  "name_problems": [
+   "generic",
+   "confusable"
+  ],
+  "domain_note": "Uses trysuperapi.com, a prefix variant.",
+  "identity": {
+   "logo": "Not described in sources",
+   "mascot_or_character": null,
+   "visual_style": "unclear",
+   "voice_and_tone": "Terse and metric driven: 10x faster APIs, zero engineering effort"
   },
-  "technical_complexity": {"rating": 3, "rationale": "Correct automatic invalidation through change data capture and request monitoring is hard but done on top of existing CDNs and databases."},
-  "defensibility": {"rating": 2, "moat_types": ["switching_costs"], "rationale": "Sits in the request path of customer APIs which creates some stickiness, but CDN vendors and gateways can add caching features."},
-  "takeover_risk_then": {"rating": 4, "incumbents": ["Cloudflare", "Fastly", "AWS CloudFront"], "outcome": "The company explicitly runs on top of Cloudflare and CloudFront rather than competing with them. No copying or acquisition found."},
-  "market_need_then": "Founders cite scaling API latency at their prior company. No dated third party source on demand was found.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "compound",
-    "name_qualities": ["short", "easy_to_say", "easy_to_spell"],
-    "name_problems": ["generic", "confusable"],
-    "domain_note": "Uses trysuperapi.com, a prefix variant.",
-    "identity": {"logo": "Not described in sources", "mascot_or_character": null, "visual_style": "unclear", "voice_and_tone": "Terse and metric driven: 10x faster APIs, zero engineering effort"},
-    "brand_signature": "Tagline 10x faster APIs",
-    "rebrands": [],
-    "community_and_virality": null,
-    "brand_strength": {"rating": 1, "rationale": "Generic name shared with other products and no press about the brand found."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://trysuperapi.com"]
+  "brand_signature": "Tagline 10x faster APIs",
+  "rebrands": [],
+  "community_and_virality": null,
+  "brand_strength": {
+   "rating": 1,
+   "rationale": "Generic name shared with other products and no press about the brand found."
   },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "outcome_analysis": "SuperAPI remains a two person YC W23 team with a live website showing a 2026 copyright and a pricing page. No funding beyond YC is confirmed, no customers are named, and no exit or shutdown was found, so the outcome is unclear and traction cannot be rated.",
-  "sources": ["https://www.ycombinator.com/companies/superapi", "https://trysuperapi.com"],
-  "notes": "Funding unverified: CB Insights says $500K over two rounds including a convertible note dated 2023-01-01; PitchBook and extruct list a pre-seed in April or May 2023 with Y Combinator, Other People's Capital and Relentless VC. Aggregators only, with conflicting instrument types, so no round recorded. YC page lists Chennai while others say Bengaluru. CB Insights names a second founder Vishnu Vinjam which conflicts with the YC launch post; not recorded. No dated competitor sources near early 2023 were found (the Fastly page says Stellate ran on Fastly from November 2023), so the competitor list is empty."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://trysuperapi.com"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [],
+ "failure_factors": [],
+ "outcome_analysis": "SuperAPI remains a two person YC W23 team with a live website showing a 2026 copyright and a pricing page. No funding beyond YC is confirmed, no customers are named, and no exit or shutdown was found, so the outcome is unclear and traction cannot be rated.",
+ "sources": [
+  "https://www.ycombinator.com/companies/superapi",
+  "https://trysuperapi.com"
+ ],
+ "notes": "Funding unverified: CB Insights says $500K over two rounds including a convertible note dated 2023-01-01; PitchBook and extruct list a pre-seed in April or May 2023 with Y Combinator, Other People's Capital and Relentless VC. Aggregators only, with conflicting instrument types, so no round recorded. YC page lists Chennai while others say Bengaluru. CB Insights names a second founder Vishnu Vinjam which conflicts with the YC launch post; not recorded. No dated competitor sources near early 2023 were found (the Fastly page says Stellate ran on Fastly from November 2023), so the competitor list is empty. Completeness pass: one 500K round recorded from CB Insights (convertible note dated 2023-01-01, investor Y Combinator). Extruct and FundedIQ call a 500K pre-seed in April or May 2023 with Other People's Capital and Relentless VC; the amounts match but type and date conflict, so they are treated as one round and not summed. Single database basis; no press coverage found."
 }
