@@ -1,0 +1,56 @@
+{
+  "slug": "citus-data",
+  "depth": 2,
+  "confidence": "high",
+  "target_customer": "Engineering teams at SaaS and analytics companies running PostgreSQL who need to scale out, for multi-tenant apps and real-time analytics",
+  "problem": "Scaling a relational database beyond one machine meant giving up transactions, joins and foreign keys or rebuilding on NoSQL.",
+  "business_model": "Open source Postgres extension with paid enterprise software and a managed database service (Citus Cloud, 2016)",
+  "product_category": "Distributed PostgreSQL database",
+  "founded_year": 2011,
+  "founders": [
+    {"name": "Ozgun Erdogan", "role": "CTO and co-founder", "prior_employers": ["Amazon"], "education": ["Stanford, graduate school"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Conceived the idea while working on NoSQL data architectures."},
+    {"name": "Sumedh Pathak", "role": "Co-founder (YC page lists founder and engineer)", "prior_employers": ["Amazon"], "education": ["Stanford, graduate school"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": null},
+    {"name": "Umur Cubukcu", "role": "Co-founder", "prior_employers": ["Boston Consulting Group"], "education": ["Stanford, graduate school"], "technical": false, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Business side, from consulting; technical flag inferred from role at BCG only."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "series_a", "date": "2015-10", "amount_usd": 9500000, "post_money_usd": null, "valuation_basis": null, "investors": ["Khosla Ventures", "Data Collective"], "source_url": "https://www.citusdata.com/about/our-story/"}
+  ],
+  "exit": {"type": "acquisition", "date": "2019-01", "amount_usd": null, "acquirer": "Microsoft", "reason": null, "source_url": "https://venturebeat.com/2019/01/24/microsoft-acquires-citus-data-for-its-open-source-postgresql-tool"},
+  "competition_at_founding": {
+    "as_of": "2013-02",
+    "competitors": [
+      {"name": "Cloudera Impala", "what": "SQL on Hadoop engine based on Google Dremel", "traction_then": "Described by TechCrunch as similar to CitusDB at its Feb 2013 launch", "funding_then": null, "source_date": "2013-02", "source_url": "https://techcrunch.com/2013/02/20/citus-data-launches-citusdb-an-analytics-database-based-on-google-dremel-with-parallel-processing-at-its-core"},
+      {"name": "Apache Drill", "what": "Open source SQL on Hadoop engine based on Google Dremel", "traction_then": "Named in the same TechCrunch launch coverage", "funding_then": null, "source_date": "2013-02", "source_url": "https://techcrunch.com/2013/02/20/citus-data-launches-citusdb-an-analytics-database-based-on-google-dremel-with-parallel-processing-at-its-core"},
+      {"name": "Pivotal Greenplum", "what": "MPP database forked from PostgreSQL", "traction_then": "A 451 Group note flagged its open source push as a threat to becoming the default MPP Postgres", "funding_then": "Backed by Pivotal", "source_date": "2013", "source_url": "https://www.dbms2.com/category/products-and-vendors/citus-data-citusdb"},
+      {"name": "Vertica, Teradata Aster, Amazon Redshift", "what": "Other MPP analytic databases", "traction_then": "Listed by the 451 Group as other MPP databases Citus faced", "funding_then": null, "source_date": "2013", "source_url": "https://www.dbms2.com/category/products-and-vendors/citus-data-citusdb"}
+    ]
+  },
+  "technical_complexity": {"rating": 4, "rationale": "Building a distributed query engine on top of PostgreSQL, later as an unforked extension that tracks every Postgres release, is deep database engineering."},
+  "defensibility": {"rating": 3, "moat_types": ["technical", "switching_costs"], "rationale": "Hard to replicate technically and data-resident customers face high switching costs, but the engine became open source and cloud providers could offer alternatives."},
+  "takeover_risk_then": {"rating": 3, "incumbents": ["Pivotal", "Cloudera", "Amazon"], "outcome": "Greenplum and Hadoop engines crowded the space in 2013; in January 2019 Microsoft bought Citus Data, with terms undisclosed, for its Azure Postgres offering."},
+  "market_need_then": "By 2012 to 2013 SQL on Hadoop was crowded and fast moving, and the founders wanted scale-out SQL that kept transactions, joins and foreign keys.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "invented",
+    "name_qualities": ["short", "easy_to_say", "distinctive"],
+    "name_problems": [],
+    "domain_note": "Uses citusdata.com, not citus.com; the exact .com was not obtained.",
+    "identity": {"logo": "Elicorn icon, described only by its label on the site", "mascot_or_character": "Elicorn, an elephant and unicorn style character implied by its name (not confirmed by a source)", "visual_style": "Open source developer brand", "voice_and_tone": "Plain engineering tone: Distributed Postgres. At any scale."},
+    "brand_signature": "The elicorn icon",
+    "rebrands": [],
+    "community_and_virality": "Donated 1% of stock to PostgreSQL non-profits in November 2018; open source project has about 10,100 GitHub stars.",
+    "brand_strength": {"rating": 3, "rationale": "Distinctive name and mascot with strong open source community goodwill, though not a household brand."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["http://citusdata.com", "https://www.citusdata.com/about/our-story/"]
+  },
+  "pivots": [
+    {"date": "2013-02", "from": "General scalable SQL database", "to": "CitusDB analytics database for Hadoop data", "why": "Positioned as real-time SQL analytics over HDFS using Postgres foreign data wrappers; reasons not stated."},
+    {"date": "2016-03", "from": "Forked CitusDB", "to": "Open source Postgres extension, plus Citus Cloud in July 2016", "why": "Company says it unforked Citus and made it an extension to track Postgres releases."}
+  ],
+  "success_factors": ["technical_moat", "successful_pivot", "founder_market_fit"],
+  "failure_factors": [],
+  "outcome_analysis": "Citus Data began in the Summer 2011 YC batch as scale-out SQL, launched CitusDB for Hadoop in 2013 into a crowded SQL-on-Hadoop field, then in 2016 unforked and open sourced Citus as a Postgres extension and launched a cloud service. It raised a $9.5M Series A led by Khosla in October 2015 and was acquired by Microsoft in January 2019, with terms undisclosed. The extension strategy and Postgres community goodwill explain the positive exit.",
+  "sources": ["https://www.ycombinator.com/companies/citus-data", "https://www.citusdata.com/about/our-story/", "http://citusdata.com", "https://venturebeat.com/2019/01/24/microsoft-acquires-citus-data-for-its-open-source-postgresql-tool", "https://techcrunch.com/2013/02/20/citus-data-launches-citusdb-an-analytics-database-based-on-google-dremel-with-parallel-processing-at-its-core", "https://globalventuring.com/microsoft-seizes-citus-data"],
+  "notes": "Seed: Global Venturing reports a $1.6M seed in 2012 from Digital Garage, Trinity Ventures and angels, while an aggregator lists $2.0M in June 2013; conflicting and single source each, so not recorded as a round. Series A amount comes from the company timeline link and secondary reports; Data Collective participation from secondary reports. Total raised estimates range from $11.1M to over $13M. Founders' technical flag for Cubukcu is a judgment. Elicorn expansion not confirmed by a source."
+}
