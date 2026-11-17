@@ -1,0 +1,46 @@
+{
+  "slug": "pipelinedb",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Engineering teams building real-time analytics and dashboards on streaming time-series data, using PostgreSQL",
+  "problem": "Storing raw streams and re-aggregating them repeatedly is slow and costly. PipelineDB lets teams define continuous SQL views that aggregate streams on the fly and store only the summaries.",
+  "business_model": "Open source PostgreSQL extension with a planned commercial enterprise version",
+  "product_category": "Streaming SQL database",
+  "founded_year": 2013,
+  "founders": [
+    {"name": "Derek Nelson", "role": "Co-founder and CEO", "prior_employers": ["AdRoll"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "TechCrunch 2015 says he conceived the idea while at AdRoll and left to build it; other co-founders are not named in sources opened."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "seed", "date": null, "amount_usd": null, "post_money_usd": null, "valuation_basis": null, "investors": ["SV Angel", "Data Collective", "Paul Buchheit", "Susa Ventures", "TenOneTen"], "source_url": "https://techcrunch.com/?p=1179610"}
+  ],
+  "exit": {"type": "acquisition", "date": "2019-05-01", "amount_usd": null, "acquirer": "Confluent", "reason": null, "source_url": "https://www.confluent.io/blog/pipelinedb-team-joins-confluent/"},
+  "competition_at_founding": {
+    "as_of": "2014-02",
+    "competitors": []
+  },
+  "technical_complexity": {"rating": 4, "rationale": "Building continuous views with ACID semantics inside a forked PostgreSQL core required deep database engineering for a two to four person team."},
+  "defensibility": {"rating": 2, "moat_types": ["technical_moat"], "rationale": "Open source release meant anyone could copy or fork it, and the value depended on keeping up with PostgreSQL versions."},
+  "takeover_risk_then": {"rating": 3, "incumbents": ["Confluent", "Apache streaming projects"], "outcome": "Confluent built KSQL for similar continuous aggregation on Kafka and hired the PipelineDB team in May 2019. The open source project stopped getting new releases after 1.0.0."},
+  "market_need_then": "Real-time reporting such as live A/B test results was a stated use case; TechCrunch in July 2015 positioned the SQL interface as the advantage over streaming tools needing special programming languages.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "compound",
+    "name_qualities": ["descriptive", "easy_to_say"],
+    "name_problems": ["generic"],
+    "domain_note": "pipelinedb.com now redirects to an unrelated site, so the domain was lost after the acquisition.",
+    "identity": {"logo": null, "mascot_or_character": null, "visual_style": null, "voice_and_tone": null},
+    "brand_signature": null,
+    "rebrands": [],
+    "community_and_virality": "Open source community on GitHub that questioned maintenance after the Confluent deal, per a repository issue snippet.",
+    "brand_strength": {"rating": 2, "rationale": "Known in the PostgreSQL and streaming community, but no brand assets found and the name and domain disappeared after acquisition."},
+    "brand_effect_on_outcome": "neutral",
+    "sources": ["https://techcrunch.com/?p=1179610", "https://www.confluent.io/blog/pipelinedb-team-joins-confluent/"]
+  },
+  "pivots": [],
+  "success_factors": ["technical_moat"],
+  "failure_factors": ["acquihire_soft_landing"],
+  "outcome_analysis": "PipelineDB built a streaming SQL extension for PostgreSQL out of YC Winter 2014, released it as open source in July 2015 and raised a seed from SV Angel, Data Collective and others. Its team joined Confluent on May 1, 2019 to bring continuous views to Kafka, and the open source project stopped getting new releases. The announcement said the team joined and did not describe the product's future, so this reads as an acquihire; the deal terms are not public.",
+  "sources": ["https://www.ycombinator.com/companies/pipelinedb", "https://techcrunch.com/?p=1179610", "https://www.confluent.io/blog/pipelinedb-team-joins-confluent/", "https://www.pipelinedb.com"],
+  "notes": "Seed round amount and date not disclosed; investors come from a TechCrunch article dated July 7, 2015 and a second search snippet of the same coverage, so the round date is left null. Search results show DCVC lists the company as acquired by Confluent in 2019. TechCrunch also says the company had four employees in 2015, while the YC page lists two. The pipelinedb.com redirect target was not opened. No dated competitor sources found; the closest comparisons found (KSQL) appeared later, so the list is empty. Co-founder names beyond Derek Nelson are not sourced."
+}
