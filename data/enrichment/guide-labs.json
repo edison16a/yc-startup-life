@@ -1,98 +1,54 @@
 {
   "slug": "guide-labs",
-  "depth": 1,
-  "confidence": "low",
-  "target_customer": "Enterprises and regulated users needing auditable AI models",
-  "problem": "Large language models are opaque; users cannot trace outputs to training data or concepts.",
-  "business_model": "Models and agents, possibly API/enterprise (not sourced)",
-  "product_category": "Interpretable foundation models",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Enterprises, regulated industries (such as finance) and scientific users that need AI models whose outputs can be audited and traced; no named customers yet",
+  "problem": "Large language models are opaque; users cannot trace an output to training data or internal concepts, which blocks debugging, auditing and trust.",
+  "business_model": "Interpretable foundation models, open-sourced base model (Apache 2.0) with a platform called Clarity and planned API and agent access (pricing not found)",
+  "product_category": "Interpretable and auditable AI models",
   "founded_year": 2023,
   "founders": [
-    {
-      "name": "Julius Adebayo",
-      "role": "Founder/CEO",
-      "prior_employers": [],
-      "education": [
-        "PhD, MIT (company page says team has PhDs from MIT, UMD, MILA; individual not attributed)"
-      ],
-      "technical": true,
-      "previous_startups": [],
-      "age_at_founding": null,
-      "age_source": null,
-      "background_notes": "Machine learning researcher in interpretability per YC page."
-    }
+    {"name": "Julius Adebayo", "role": "CEO", "prior_employers": [], "education": ["MIT, PhD research in interpretability"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Co-authored a widely cited 2018 paper on the unreliability of saliency methods for understanding deep models (per TechCrunch)."},
+    {"name": "Aya Abdelsalam Ismail", "role": "Chief science officer", "prior_employers": [], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Co-founder per TechCrunch; no further background found."}
   ],
   "funding_data_coverage": "partial",
-  "rounds": [],
-  "exit": {
-    "type": "none",
-    "date": null,
-    "amount_usd": null,
-    "acquirer": null,
-    "reason": null,
-    "source_url": "https://www.ycombinator.com/companies/guide-labs"
-  },
+  "rounds": [
+    {"stage": "seed", "date": "2024-11", "amount_usd": 9300000, "post_money_usd": null, "valuation_basis": null, "investors": ["Initialized Capital (lead)", "Tectonic Ventures", "Lombard Street Ventures", "Pioneer Fund", "Y Combinator", "E14 Fund"], "source_url": "https://guidelabs.ai/post/introducing-guide-labs-engineering-interpretable-and-auditable-ai-systems"}
+  ],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/guide-labs"},
   "competition_at_founding": {
-    "as_of": "2023-12",
+    "as_of": "2024-01",
     "competitors": []
   },
-  "technical_complexity": {
-    "rating": 5,
-    "rationale": "Building interpretable foundation models is research-grade; the company says it built the first interpretable diffusion model and LLM."
-  },
-  "defensibility": {
-    "rating": 3,
-    "moat_types": [
-      "technical_moat"
-    ],
-    "rationale": "Research talent and a model line others do not have, but unproven commercially."
-  },
-  "takeover_risk_then": {
-    "rating": 2,
-    "incumbents": [
-      "OpenAI",
-      "Anthropic",
-      "Google"
-    ],
-    "outcome": "Large labs had interpretability research efforts but were not shipping inherently interpretable models as products; not verified with a dated source."
-  },
-  "market_need_then": "Regulation and enterprise caution about black-box AI created demand for auditing, per the company's positioning; no data read.",
+  "technical_complexity": {"rating": 5, "rationale": "Building an inherently interpretable LLM with a concept layer that traces each token to training data and concepts is research-grade; it needs extra data annotation and had to match the capability of ordinary models (the company claims about 90% at 8B parameters, per TechCrunch)."},
+  "defensibility": {"rating": 3, "moat_types": ["technical", "data"], "rationale": "A novel architecture and published research give a head start, but the model is open-sourced under Apache 2.0, so defensibility rests on speed, the annotated data and the platform rather than secrecy."},
+  "takeover_risk_then": {"rating": 3, "incumbents": ["Frontier labs with interpretability teams"], "outcome": "No source found showing an incumbent copying or buying the approach as of the sources read (Feb 2026)."},
+  "market_need_then": "Regulated sectors and enterprises were asking for explainability and audit trails for LLMs; the company cites finance and science as uses, but no customer demand figures or named customers were found.",
   "branding": {
     "name_origin": null,
     "name_type": "compound",
-    "name_qualities": [
-      "short",
-      "easy_to_say"
-    ],
-    "name_problems": [
-      "generic"
-    ],
-    "domain_note": null,
-    "identity": {
-      "logo": "ten purple slits oriented in a circle (company site)",
-      "mascot_or_character": null,
-      "visual_style": "purple, minimal",
-      "voice_and_tone": "Technical, research-led"
-    },
-    "brand_signature": null,
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say"],
+    "name_problems": ["generic"],
+    "domain_note": "Uses guidelabs.ai rather than an exact .com.",
+    "identity": {"logo": null, "mascot_or_character": null, "visual_style": null, "voice_and_tone": "Technical and research-led; blog posts titled around interpretability scaling laws and papers."},
+    "brand_signature": "Steerling-8B, the first inherently interpretable model released openly",
     "rebrands": [],
-    "community_and_virality": null,
-    "brand_strength": {
-      "rating": null,
-      "rationale": "Little brand evidence beyond the logo."
-    },
+    "community_and_virality": "Open-source release got coverage from TechCrunch, Dataconomy and international tech blogs in February 2026; no merch or community found.",
+    "brand_strength": {"rating": 2, "rationale": "Generic descriptive name; recognition comes from the Steerling-8B release and research papers rather than from the brand itself."},
     "brand_effect_on_outcome": "unclear",
-    "sources": [
-      "https://www.guidelabs.ai/"
-    ]
+    "sources": ["https://techcrunch.com/2026/02/23/guide-labs-debuts-a-new-kind-of-interpretable-llm/", "https://www.guidelabs.ai/llms.txt"]
   },
   "pivots": [],
-  "success_factors": [],
+  "success_factors": ["technical_moat", "founder_market_fit", "timing_tailwind"],
   "failure_factors": [],
-  "outcome_analysis": "Guide Labs is an active Winter 2024 research-heavy company that released Steerling-8B, described as the largest inherently interpretable model, and open-sourced it in February 2026 per the YC page. Investors listed include Initialized, Tectonic, Lombardstreet, Pioneer and E14, but no amounts were found; commercial traction is unknown, so the outcome is still open.",
+  "outcome_analysis": "Guide Labs, a Winter 2024 YC company, raised a $9.3M seed led by Initialized in November 2024 and in February 2026 open-sourced Steerling-8B, an 8B-parameter model that traces every output token to training data and concepts. It is still early: no named customers, no later round found, and no exit, so the outcome is open; its strengths are the founders' interpretability research and a research-grade technical lead, while the open license and well-funded frontier labs and interpretability rivals are the main risks.",
   "sources": [
     "https://www.ycombinator.com/companies/guide-labs",
-    "https://www.guidelabs.ai/"
+    "https://guidelabs.ai/post/introducing-guide-labs-engineering-interpretable-and-auditable-ai-systems",
+    "https://techcrunch.com/2026/02/23/guide-labs-debuts-a-new-kind-of-interpretable-llm/",
+    "https://pulse2.com/guide-labs-9-million-seed-funding/",
+    "https://seedtable.com/companies/guide-labs/funding-rounds/seed-2024-11",
+    "https://guidelabs.ai/post/steerling-8b-base-model-release/"
   ],
-  "notes": "Investor list from company site; no round amounts or dates found, not recorded as rounds. Company site lists a product called Clarity; the YC page speaks of Steerling-8B. Searches blocked by budget. Competitor search not possible: the shared WebSearch budget was exhausted before any search ran, so competition_at_founding is left empty rather than filled from memory or today's market. Downgraded to depth 1: written after the shared web search budget ran out (no outcome, funding cross-check or competitor search). Redo with full searches."
+  "notes": "Seed: company blog (2024-11-17) says $9.3M led by Initialized; TechCrunch says $9M; Pulse 2.0 and Seedtable agree on about $9M and November 2024 (Pulse 2.0 article is dated December 2025). One job site shows $130K, which conflicts and is ignored. Founding year 2023 per YC listing as relayed by search; another source says 2024. Founders' prior employers and education beyond MIT PhD not found. Competition: no dated sources near the Winter 2024 batch found; the interpretability startup Goodfire announced a seed only in August 2024, after the batch, so competitor list is empty. Name origin not found. The company site mentions a product called Clarity. Web Archive skipped."
 }
