@@ -1,93 +1,51 @@
 {
   "slug": "compose",
-  "depth": 1,
-  "confidence": "low",
-  "target_customer": "Developers and companies needing managed databases (MongoDB, Redis, PostgreSQL and others)",
-  "problem": "Running and scaling databases yourself is operational work; Compose hosts them fully managed.",
-  "business_model": "Usage-based managed database hosting (subscription)",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Developers and companies that need managed, hosted databases (originally MongoDB, later Elasticsearch, Redis, PostgreSQL, RethinkDB)",
+  "problem": "Running, scaling and securing a database yourself is operational work; MongoHQ/Compose hosted and managed it for a monthly fee.",
+  "business_model": "Usage/plan-based subscription for managed database hosting, also sold through PaaS add-on marketplaces (Heroku, CloudBees)",
   "product_category": "Database-as-a-service / DevOps",
-  "founded_year": 2011,
+  "founded_year": 2009,
   "founders": [
-    {
-      "name": "Jason McCay",
-      "role": "Founder",
-      "prior_employers": [],
-      "education": [],
-      "technical": null,
-      "previous_startups": [],
-      "age_at_founding": null,
-      "age_source": null
-    },
-    {
-      "name": "Ben Wyrosdick",
-      "role": "Founder",
-      "prior_employers": [],
-      "education": [],
-      "technical": null,
-      "previous_startups": [],
-      "age_at_founding": null,
-      "age_source": null
-    }
+    {"name": "Jason McCay", "role": "Co-founder", "prior_employers": [], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Named as co-founder in TechCrunch 2011 and CloudBees post; bio not found."},
+    {"name": "Ben Wyrosdick", "role": "Co-founder", "prior_employers": [], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Company release says MongoHQ was founded by Wyrosdick and McCay in 2009."},
+    {"name": "Kurt Mackey", "role": "CEO (by 2014-2015)", "prior_employers": [], "education": [], "technical": null, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Quoted as co-founder and CEO at the 2014 rename and 2015 IBM deal; not named in 2011 coverage."}
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {
-    "type": "acquisition",
-    "date": null,
-    "amount_usd": null,
-    "acquirer": null,
-    "reason": null,
-    "source_url": "https://www.ycombinator.com/companies/compose"
-  },
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "seed", "date": "2011-06", "amount_usd": 417000, "post_money_usd": null, "valuation_basis": null, "investors": ["Y Combinator", "SV Angel", "Lerer Ventures", "Start Fund"], "source_url": "https://techcrunch.com/2011/06/24/mongohq-raises-417k-from-y-combinator-lehrer-and-sv-angel/"},
+    {"stage": "series_a", "date": "2012-10", "amount_usd": 6000000, "post_money_usd": null, "valuation_basis": null, "investors": ["Trinity Ventures", "SV Angel", "Webb Investment Network", "Data Collective", "Scott McNealy", "Ashton Kutcher"], "source_url": "https://techcrunch.com/2012/10/18/mongohq-raises-6-million-for-database-as-service-engine/"}
+  ],
+  "exit": {"type": "acquisition", "date": "2015-07", "amount_usd": null, "acquirer": "IBM", "reason": null, "source_url": "https://www.ycombinator.com/blog/compose-yc-s11-acquired-by-ibm"},
   "competition_at_founding": {
-    "as_of": "2011",
-    "competitors": []
-  },
-  "technical_complexity": {
-    "rating": null,
-    "rationale": "Not assessed; no sourced detail."
-  },
-  "defensibility": {
-    "rating": null,
-    "moat_types": [],
-    "rationale": "Not assessed; no sourced detail."
-  },
-  "takeover_risk_then": {
-    "rating": null,
-    "incumbents": [],
-    "outcome": "Not researched; no sourced information."
-  },
-  "market_need_then": "Not researched: no contemporaneous source on demand at the time of founding was reached, so no evidence of need is asserted here.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "other",
-    "name_qualities": [],
-    "name_problems": [],
-    "domain_note": null,
-    "identity": {
-      "logo": "Not documented",
-      "mascot_or_character": null,
-      "visual_style": "not documented",
-      "voice_and_tone": "not documented"
-    },
-    "brand_signature": null,
-    "rebrands": [],
-    "community_and_virality": null,
-    "brand_strength": {
-      "rating": 2,
-      "rationale": "No brand sources reached. The directory website field still points to mongohq.com, which suggests an earlier name MongoHQ, but no fetched source confirms a rebrand."
-    },
-    "brand_effect_on_outcome": "unclear",
-    "sources": [
-      "https://www.ycombinator.com/companies/compose"
+    "as_of": "2011-06",
+    "competitors": [
+      {"name": "MongoLab", "what": "Hosted MongoDB as a service", "traction_then": "not stated in snippet", "funding_then": "not stated", "source_date": "2011-06", "source_url": "https://techcrunch.com/2011/06/24/mongohq-raises-417k-from-y-combinator-lehrer-and-sv-angel/"}
     ]
   },
-  "pivots": [],
-  "success_factors": [],
+  "technical_complexity": {"rating": 3, "rationale": "Operating replica-set MongoDB reliably for many tenants was standard but demanding infrastructure engineering; no research-grade problem. Rating is my judgment from product description."},
+  "defensibility": {"rating": 2, "moat_types": ["switching_costs"], "rationale": "Hosted databases are copyable and dependent on the underlying open-source engine and cloud hosts; some stickiness once data lives there."},
+  "takeover_risk_then": {"rating": 3, "incumbents": ["10gen/MongoDB Inc", "Amazon", "Heroku add-on competitors"], "outcome": "In 2015 IBM bought the company rather than copying it (Cloud Data Services group, Bluemix). Later cloud providers shipped managed MongoDB; not researched in detail."},
+  "market_need_then": "Hosted MongoDB was already being asked for in 2009 (AVC post), and by 2011 PaaS platforms (Heroku, CloudBees) integrated MongoHQ as an add-on; in 2012 the company reported being profitable with about 20% month-over-month growth for the prior year (company statement via TechCrunch).",
+  "branding": {
+    "name_origin": "MongoHQ: hosted-MongoDB headquarters, derived from the MongoDB product name (inferred by name only; no source on intent). Compose (Aug 2014): CEO Kurt Mackey tied it to the computing idea of composition, combining existing functions into new ones, as the company moved beyond MongoDB.",
+    "name_type": "real_word",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say"],
+    "name_problems": ["outgrown_by_pivot"],
+    "domain_note": "Compose used compose.io after the Aug 2014 rename; MongoHQ domain mongohq.com remained the directory website.",
+    "identity": {"logo": "not examined", "mascot_or_character": null, "visual_style": "not sourced", "voice_and_tone": "not sourced"},
+    "brand_signature": null,
+    "rebrands": [{"date": "2014-08", "from": "MongoHQ", "to": "Compose", "why": "Expansion beyond MongoDB (Elasticsearch launched at the same time); name tied to MongoDB was limiting"}],
+    "community_and_virality": null,
+    "brand_strength": {"rating": 2, "rationale": "Coverage shows a functional developer-tool brand known through add-on marketplaces; no sourced evidence of mascot, community or merch. Rating is a weak judgment."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://dataconomy.com/2014/08/07/mongohq-rebrands-compose-adds-elasticsearch-support", "https://www.prnewswire.com/news-releases/mongohq-becomes-compose-270174611.html", "https://datacenterknowledge.com/business/mongohq-in-open-relationship-with-mongodb-changes-name-to-compose"]
+  },
+  "pivots": [{"date": "2014-08", "from": "MongoDB-only hosting (MongoHQ)", "to": "Multi-database platform (Compose: Elasticsearch, Redis, PostgreSQL, others)", "why": "Broaden beyond MongoDB"}],
+  "success_factors": ["timing_tailwind", "distribution_advantage", "capital_efficiency"],
   "failure_factors": [],
-  "outcome_analysis": "Compose (YC S11) is listed as Acquired with a team of 51 and a growth stage. The acquirer, date, price and the reasons it succeeded could not be established from the sources reached, so no causal story is asserted.",
-  "sources": [
-    "https://www.ycombinator.com/companies/compose"
-  ],
-  "notes": "Directory status Acquired matches exit.type acquisition; acquirer and date not sourced (WebFetch of YC page only). The YC page links mongohq.com, hinting at a former name MongoHQ; unverified. Wikipedia and TechCrunch URLs tried returned 404; compose.com not reachable from session. Research limit: the session WebSearch budget was exhausted before any search could run, so the required outcome, funding, competitor and branding searches were NOT performed; only the YC page and the company site were fetched (guessed URLs for Wikipedia, TechCrunch and Crunchbase returned 404, 403 or unresolvable). Funding, competitors and name origin are unknown, not zero. Downgraded to depth 1: written after the shared web search budget ran out (no outcome, funding cross-check or competitor search). Redo with full searches."
+  "outcome_analysis": "Compose (MongoHQ) rode the growth of MongoDB and PaaS platforms, distributing through Heroku and CloudBees add-ons, reported profitability and 20% monthly growth in 2012, raised about 6.4M in total, broadened into a multi-database platform in 2014 and was acquired by IBM in July 2015 with undisclosed terms and about 3,600 customers. It is a modest but real exit; the price is not public.",
+  "sources": ["https://www.ycombinator.com/companies/compose", "https://techcrunch.com/2011/06/24/mongohq-raises-417k-from-y-combinator-lehrer-and-sv-angel/", "https://techcrunch.com/2012/10/18/mongohq-raises-6-million-for-database-as-service-engine/", "https://blog.ycombinator.com/mongohq-yc-s11-raises-6m-from-trinity-venture/", "https://www.ycombinator.com/blog/compose-yc-s11-acquired-by-ibm", "https://techcrunch.com/?p=1186651", "https://www.theregister.com/2015/07/24/ibm_slurps_databaseasaservice_outfit_compose/", "https://www.cloudbees.com/press/cloudbees-announces-mongohq-partnership-extends-powerful-mongodb-technology-cloudbees-platform"],
+  "notes": "Founding year: company release says 2009, YC batch S11 (the directory-era depth-1 said 2011). Search snippets only; I did not fetch the pages (company website and YC page not fetched). Funding totals: 417K + 6M matches the 6.4M total in 2015 coverage, so coverage is likely near complete but marked partial. The 2011 MongoLab competitor entry has no traction data; MongoLab was cited only in the TechCrunch snippet. Founder backgrounds not found. Acquisition price undisclosed."
 }
