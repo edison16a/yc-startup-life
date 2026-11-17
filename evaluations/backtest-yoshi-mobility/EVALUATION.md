@@ -77,7 +77,7 @@ Yoshi Mobility offers car owners a membership for mobile fueling and maintenance
 | $15M–$30M | $70M–$150M | 35% | 1.5% | Very unlikely | <0.1% | Very unlikely | Down or flat round or debt heavy financing if growth slows. |
 | $70M–$150M | $400M–$900M | 15% | 0.6% | Very unlikely | <0.1% | Very unlikely | Upside only if autonomy or electrification service networks make it a strategic asset. |
 
-**Why it fails here.** A Series C is unlikely because by then the company must show a profitable, repeatable network and a defense against OEMs, dealers and large fuel retailers, and by 2016 the industry expected electric and later autonomous vehicles to change both fueling and servicing demand. Without a clear lead, investors would see a regional service operator with capital needs and limited upside, as with the later stages of kovi style asset heavy models.
+**Why it fails here.** A Series C is unlikely because by then the company must show a profitable, repeatable network and a defense against OEMs, dealers and large fuel retailers, and by 2016 the industry expected electric and later autonomous vehicles to change both fueling and servicing demand. Without a clear lead, investors would see a regional service operator with capital needs and limited upside.
 
 ### Final outcomes
 
