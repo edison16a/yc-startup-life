@@ -1,0 +1,60 @@
+{
+  "slug": "autumn",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "AI startups and B2B software companies that sell usage-based, credit-based or subscription plans and run on Stripe",
+  "problem": "Teams building AI products with credits, usage limits and changing plans have to wire Stripe webhooks, metering and feature access by hand, and every pricing change means new code and migrations.",
+  "business_model": "Open-source billing layer over Stripe with a hosted paid tier; free starting tier and demo-led sales for larger contracts",
+  "product_category": "Billing and pricing infrastructure",
+  "founded_year": 2025,
+  "founders": [
+    {"name": "Ayush Rodrigues", "role": "Founder/CEO", "prior_employers": ["Checkout.com (product manager)"], "education": [], "technical": false, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page lists his Checkout.com PM role but no education."},
+    {"name": "John Yeo", "role": "Founder/CTO", "prior_employers": [], "education": ["Imperial College London, computer engineering"], "technical": true, "previous_startups": ["Recase (low-code backend platform)"], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he had built software for about 6 years."}
+  ],
+  "funding_data_coverage": "none_found",
+  "rounds": [],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.useautumn.com/blog"},
+  "competition_at_founding": {
+    "as_of": "2025-06",
+    "competitors": [
+      {"name": "Lago", "what": "Open-source usage-based billing engine, self-hostable", "traction_then": "not stated in the sources opened", "funding_then": "not stated", "source_date": "2025", "source_url": "https://getlago.com/blog/metronome-alternatives"},
+      {"name": "Orb", "what": "Usage metering and invoicing platform for usage-priced companies", "traction_then": "not stated", "funding_then": "not stated", "source_date": "2025", "source_url": "https://openalternative.co/alternatives/autumn"},
+      {"name": "Metronome", "what": "Usage metering and billing platform for end-of-period invoicing", "traction_then": "not stated", "funding_then": "not stated", "source_date": "2025", "source_url": "https://docs.useautumn.com/welcome.md"},
+      {"name": "Stripe Billing", "what": "Default subscription and metered billing on Stripe, which Autumn builds on top of", "traction_then": "dominant default for startups", "funding_then": "not applicable", "source_date": "2025", "source_url": "https://openalternative.co/alternatives/autumn"}
+    ]
+  },
+  "technical_complexity": {"rating": 3, "rationale": "Correct metering, entitlement checks, plan versioning and migrations on top of Stripe are standard engineering with some hard edge cases around money and consistency, and the product reached many customers with a team of five."},
+  "defensibility": {"rating": 2, "moat_types": ["switching_costs"], "rationale": "Billing logic embedded in a customer's app is sticky once adopted, but the code is open source under a permissive license and several open-source and venture-backed billing tools target the same buyer."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["Stripe", "Orb", "Metronome", "Lago"], "outcome": "Stripe is reported to have acquired Metronome in January 2026 per a secondary source, which shows the incumbent moving into usage billing. Autumn's own June 2026 post says it builds around Stripe Billing rather than replacing it."},
+  "market_need_then": "AI products shifted pricing from seats to usage and credits in 2024 and 2025, and founders interviewed about billing by the company (a January 2025 post on talking to 30 YC founders) reported rebuilding pricing often.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "real_word",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say", "friendly_tone"],
+    "name_problems": ["generic", "confusable"],
+    "domain_note": "Uses useautumn.com, not autumn.com.",
+    "identity": {"logo": "unclear", "mascot_or_character": null, "visual_style": "unclear", "voice_and_tone": "Confident, concise and benefit-led B2B copy per the company site."},
+    "brand_signature": null,
+    "rebrands": [],
+    "community_and_virality": "Launched on Product Hunt on 2025-08-13 and was reported as the number one product of the day with 738 upvotes (secondary summary); also a Show HN launch.",
+    "brand_strength": {"rating": 2, "rationale": "Plain real-word name with a prefixed domain and many unrelated products named Autumn; traction came from the product and launch channels, not the brand."},
+    "brand_effect_on_outcome": "neutral",
+    "sources": ["https://useautumn.com", "https://feedbagel.com/post/show-hn-autumn-open-source-infra-over-stripe"]
+  },
+  "pivots": [
+    {"date": "2024", "from": "Software for banks (F24 batch)", "to": "Billing infrastructure over Stripe for AI startups", "why": "YC page says the team pivoted shortly before Demo Day of the F24 batch; the reason is not stated."}
+  ],
+  "success_factors": ["timing_tailwind", "product_led_growth", "successful_pivot"],
+  "failure_factors": [],
+  "outcome_analysis": "Autumn is active and growing as of late 2026, with named customers such as Mintlify, Firecrawl, Mastra, Browser Use and T3.chat on its site. It pivoted out of a banking software idea in the F24 batch into AI billing, rode the shift to usage and credit pricing, and spread through open source, Product Hunt and Hacker News. The main risk is that Stripe and well funded billing vendors cover the same wedge, and Metronome was reportedly bought by Stripe in January 2026.",
+  "sources": [
+    "https://www.ycombinator.com/companies/autumn",
+    "https://useautumn.com",
+    "https://www.useautumn.com/blog",
+    "https://docs.useautumn.com/welcome.md",
+    "https://getlago.com/blog/metronome-alternatives",
+    "https://openalternative.co/alternatives/autumn",
+    "https://www.trysignalbase.com/news/funding/autumn-yc-s25-raises-6"
+  ],
+  "notes": "YC page says the team was in F24 then S25 (dataset batch is Summer 2025); one article calls it W2026, treated as an error. Funding is unverified: an aggregator (Signalbase, 2025-12-30) reports a $6.7M seed with no investors named, VCBacked and CB Insights list a pre-seed of about $500K to $600K, and none has a company or press release source, so no round is recorded. Competitor entries come from vendor comparison pages without clear dates. Metronome acquisition by Stripe comes from a secondary search summary."
+}
