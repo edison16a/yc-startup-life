@@ -1,48 +1,146 @@
 {
-  "slug": "miden",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Businesses, fintechs and financial institutions in Sub-Saharan Africa that need to issue cards and run payment products",
-  "problem": "Card programs and financial products in Sub-Saharan Africa are slow to launch, fraud-prone and unstable on legacy processors. Miden sells an API-first issuer-processor and banking stack.",
-  "business_model": "B2B API infrastructure, card issuing and processing fees tied to card volume",
-  "product_category": "Card issuing and payments infrastructure (fintech)",
-  "founded_year": 2023,
-  "founders": [
-    {"name": "Okiemute Avworhokai", "role": "CEO", "prior_employers": [], "education": [], "technical": null, "previous_startups": ["Student-loan credit firm (per YC page, disbursed over $1.5M in 18 months)"], "age_at_founding": null, "age_source": null, "background_notes": "YC page cites more than a decade in commercial banking and fintech without naming employers."},
-    {"name": "Ini Udoh", "role": "CTO", "prior_employers": ["First Bank of Nigeria", "Heritage Bank", "Mukuru"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page also lists him as CTO of Tyrus Technologies, the parent B2B fintech."}
+ "slug": "miden",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Businesses, fintechs and financial institutions in Sub-Saharan Africa that need to issue cards and run payment products",
+ "problem": "Card programs and financial products in Sub-Saharan Africa are slow to launch, fraud-prone and unstable on legacy processors. Miden sells an API-first issuer-processor and banking stack.",
+ "business_model": "B2B API infrastructure, card issuing and processing fees tied to card volume",
+ "product_category": "Card issuing and payments infrastructure (fintech)",
+ "founded_year": 2023,
+ "founders": [
+  {
+   "name": "Okiemute Avworhokai",
+   "role": "CEO",
+   "prior_employers": [],
+   "education": [],
+   "technical": null,
+   "previous_startups": [
+    "Student-loan credit firm (per YC page, disbursed over $1.5M in 18 months)"
+   ],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page cites more than a decade in commercial banking and fintech without naming employers."
+  },
+  {
+   "name": "Ini Udoh",
+   "role": "CTO",
+   "prior_employers": [
+    "First Bank of Nigeria",
+    "Heritage Bank",
+    "Mukuru"
+   ],
+   "education": [],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "YC page also lists him as CTO of Tyrus Technologies, the parent B2B fintech."
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "other",
+   "date": null,
+   "amount_usd": 500000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Y Combinator"
+   ],
+   "source_url": "https://yespress.io/miden-yc-w24"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": "https://techcabal.com/2026/03/09/miden-tap-to-pay/"
+ },
+ "competition_at_founding": {
+  "as_of": "2023-12",
+  "competitors": [
+   {
+    "name": "Union54",
+    "what": "Zambian card issuing API startup, YC backed, issued virtual dollar cards to African fintechs",
+    "traction_then": "Halted virtual dollar cards in July 2022 after chargeback fraud surge",
+    "funding_then": "$12M led by Tiger Global (April 2022)",
+    "source_date": "2022-04",
+    "source_url": "https://techcrunch.com/2022/04/18/zambian-card-issuing-startup-union54-raises-12m-led-by-tiger-global"
+   },
+   {
+    "name": "Sudo Africa",
+    "what": "Nigerian platform for programmable virtual cards named as an alternative after the Union54 outage",
+    "traction_then": null,
+    "funding_then": null,
+    "source_date": "2022-07",
+    "source_url": "https://techcrunch.com/2022/07/18/african-fintechs-halt-virtual-dollar-cards-after-union54-chargeback-fraud-surge"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Card issuing needs processor integrations, PCI DSS compliance, fraud monitoring and multi-currency settlement, which is standard but regulated engineering. The company says it holds PCI DSS and ISO certifications."
+ },
+ "defensibility": {
+  "rating": 3,
+  "moat_types": [
+   "regulatory",
+   "switching_costs"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://techcabal.com/2026/03/09/miden-tap-to-pay/"},
-  "competition_at_founding": {
-    "as_of": "2023-12",
-    "competitors": [
-      {"name": "Union54", "what": "Zambian card issuing API startup, YC backed, issued virtual dollar cards to African fintechs", "traction_then": "Halted virtual dollar cards in July 2022 after chargeback fraud surge", "funding_then": "$12M led by Tiger Global (April 2022)", "source_date": "2022-04", "source_url": "https://techcrunch.com/2022/04/18/zambian-card-issuing-startup-union54-raises-12m-led-by-tiger-global"},
-      {"name": "Sudo Africa", "what": "Nigerian platform for programmable virtual cards named as an alternative after the Union54 outage", "traction_then": null, "funding_then": null, "source_date": "2022-07", "source_url": "https://techcrunch.com/2022/07/18/african-fintechs-halt-virtual-dollar-cards-after-union54-chargeback-fraud-surge"}
-    ]
+  "rationale": "Compliance certifications, bank and scheme relationships and integration into customer payment flows raise switching costs, but competitors offer similar APIs."
+ },
+ "takeover_risk_then": {
+  "rating": 3,
+  "incumbents": [
+   "Sudo Africa",
+   "Union54"
+  ],
+  "outcome": "Local card issuers existed at founding. Union54 stumbled in 2022. No incumbent is reported to have copied or bought Miden as of 2026."
+ },
+ "market_need_then": "Account ownership in Sub-Saharan Africa had risen but the region was under one percent of global card volume (per company positioning). Union54's July 2022 halt left fintechs looking for virtual card providers.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "invented",
+  "name_qualities": [
+   "short",
+   "easy_to_say"
+  ],
+  "name_problems": [
+   "confusable"
+  ],
+  "domain_note": "Uses miden.co. Not the .com.",
+  "identity": {
+   "logo": "Not verified",
+   "mascot_or_character": null,
+   "visual_style": "Enterprise fintech marketing site",
+   "voice_and_tone": "Confident, enterprise-focused, benefit-driven short copy such as 'Integrate smarter. Scale faster.'"
   },
-  "technical_complexity": {"rating": 3, "rationale": "Card issuing needs processor integrations, PCI DSS compliance, fraud monitoring and multi-currency settlement, which is standard but regulated engineering. The company says it holds PCI DSS and ISO certifications."},
-  "defensibility": {"rating": 3, "moat_types": ["regulatory", "switching_costs"], "rationale": "Compliance certifications, bank and scheme relationships and integration into customer payment flows raise switching costs, but competitors offer similar APIs."},
-  "takeover_risk_then": {"rating": 3, "incumbents": ["Sudo Africa", "Union54"], "outcome": "Local card issuers existed at founding. Union54 stumbled in 2022. No incumbent is reported to have copied or bought Miden as of 2026."},
-  "market_need_then": "Account ownership in Sub-Saharan Africa had risen but the region was under one percent of global card volume (per company positioning). Union54's July 2022 halt left fintechs looking for virtual card providers.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "invented",
-    "name_qualities": ["short", "easy_to_say"],
-    "name_problems": ["confusable"],
-    "domain_note": "Uses miden.co. Not the .com.",
-    "identity": {"logo": "Not verified", "mascot_or_character": null, "visual_style": "Enterprise fintech marketing site", "voice_and_tone": "Confident, enterprise-focused, benefit-driven short copy such as 'Integrate smarter. Scale faster.'"},
-    "brand_signature": null,
-    "rebrands": [],
-    "community_and_virality": null,
-    "brand_strength": {"rating": 2, "rationale": "Regional B2B brand with trade press coverage (TechCabal, Condia). The name is shared with an unrelated privacy blockchain Miden that raised $25M in 2025, which crowds search results."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://www.miden.co", "https://techcabal.com/2024/02/21/yc-backed-miden-in-virtual-cards-space/"]
+  "brand_signature": null,
+  "rebrands": [],
+  "community_and_virality": null,
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "Regional B2B brand with trade press coverage (TechCabal, Condia). The name is shared with an unrelated privacy blockchain Miden that raised $25M in 2025, which crowds search results."
   },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "outcome_analysis": "Miden remains active as of March 2026, shipping NFC tap to pay and wallet support, and claims top five card issuer volume in Sub-Saharan Africa within eight months of launch. Those traction figures are self reported and differ across sources, and no verified funding round was found, so the outcome is still open and the data on funding is thin rather than negative.",
-  "sources": ["https://www.ycombinator.com/companies/miden", "https://www.miden.co", "https://techcabal.com/2024/01/29/y-combinator-picks-miden-a-nigerian-api-fintech-startup/", "https://techcabal.com/2024/02/21/yc-backed-miden-in-virtual-cards-space/", "https://techcabal.com/2026/03/09/miden-tap-to-pay/"],
-  "notes": "Unverified: YesPress profile reports about $630K total funding with about $500K from YC, one aggregator only. A $25M seed in April 2025 belongs to an unrelated privacy blockchain also named Miden. TechCabal says launched 2022, YC page says founded 2023. Traction figures (100K, 1M or 2M cards) vary by source and are company claims. USPTO shows a MIDEN mark owned by Tyrus Tech Inc, search snippet only. Competitor sources are dated 2022 because no later pre-batch coverage was found."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://www.miden.co",
+   "https://techcabal.com/2024/02/21/yc-backed-miden-in-virtual-cards-space/"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [],
+ "failure_factors": [],
+ "outcome_analysis": "Miden remains active as of March 2026, shipping NFC tap to pay and wallet support, and claims top five card issuer volume in Sub-Saharan Africa within eight months of launch. Those traction figures are self reported and differ across sources, and no verified funding round was found, so the outcome is still open and the data on funding is thin rather than negative.",
+ "sources": [
+  "https://www.ycombinator.com/companies/miden",
+  "https://www.miden.co",
+  "https://techcabal.com/2024/01/29/y-combinator-picks-miden-a-nigerian-api-fintech-startup/",
+  "https://techcabal.com/2024/02/21/yc-backed-miden-in-virtual-cards-space/",
+  "https://techcabal.com/2026/03/09/miden-tap-to-pay/"
+ ],
+ "notes": "Unverified: YesPress profile reports about $630K total funding with about $500K from YC, one aggregator only. A $25M seed in April 2025 belongs to an unrelated privacy blockchain also named Miden. TechCabal says launched 2022, YC page says founded 2023. Traction figures (100K, 1M or 2M cards) vary by source and are company claims. USPTO shows a MIDEN mark owned by Tyrus Tech Inc, search snippet only. Competitor sources are dated 2022 because no later pre-batch coverage was found. Completeness pass: the roughly $500K from Y Combinator is recorded undated from a single outlet (YesPress; TheFounder.africa also mentions $500K). YesPress states about $630K total, so about $130K is unaccounted and unrecorded; Employbl's $25M figure is treated as the unrelated Miden."
 }
