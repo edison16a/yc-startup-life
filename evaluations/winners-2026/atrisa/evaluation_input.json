@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Atrisa",
+    "one_liner": "AI Agents for Analog Circuit Design",
+    "description": "AI agents that build, debug and automate analog circuit design. Customers are semiconductor and electronics design teams that spend scarce expert hours on analog layout, sizing and verification. Three people, San Francisco, Spring 2026.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.95,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is already accepted to YC for its batch, so the acceptance estimate is a placeholder near certainty rather than a forecast. The unconditional prior for a random applicant is about 1 percent (0.6 to 2 percent, third party figures in yc_acceptance.md).",
+    "why_it_fails": "Not applicable in this test because the company was accepted. Had it been assessed as an applicant, the most plausible reason for a no would be a very small team with a research heavy product and no customer proof. The founders would also need to show in the interview that they can ship quickly and have a specific first customer in mind, since YC weighs team speed and clear user need over market size."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.55,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.49,
+        "source": "python3 -I scripts/base_rates.py --years 2023-2025 --industry B2B : seed 42% / 49% / 56% (lower / known / upper), cond 49% (n=950)",
+        "adjustment_reason": "Close to the 49 percent B2B anchor. Chip design AI is a funded theme (Silimate raised a 2M seed, Diode a 11.4M Series A) but a team of three with a deep technical product has a long path to a first demo."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            600000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin case for Atrisa at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2500000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            38000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Atrisa at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            18000000
+          ],
+          "post_money_usd": [
+            50000000,
+            110000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Hot case for Atrisa at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The likely stopper is proof. Analog design is hard to automate because circuits depend on process design kits, layout parasitics and designer taste, and a three person team may only show demos on textbook blocks. Investors in chip design AI such as those behind Silimate funded digital verification first, and Silogy only shows a 500K check, so a larger seed needs a named fab or design house pilot."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "same command: series_a 9% / 11% / 23%, cond 22% (n=465)",
+        "adjustment_reason": "Slightly above the 22 percent anchor, within 1.4x: analog is a scarce specialty with expensive engineers, and acquirers such as Cadence and Synopsys pay for it, but sales cycles are long."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            22000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Atrisa at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            11000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Atrisa at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            24000000,
+            45000000
+          ],
+          "post_money_usd": [
+            150000000,
+            320000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Atrisa at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs paying design teams and evidence that agent output is accepted in tape out flows. The likely miss is that foundry PDKs are locked under NDA, customers will not share netlists with a startup, and pilots stay free. Silogy and Bronco show chip AI companies with no verified round beyond early funding, while Diode only reached A with a clear board design wedge."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "same command: series_b 2% / 2% / 16%, cond 20% (n=101)",
+        "adjustment_reason": "Near the 20 percent anchor; chip design tools that reach A tend to keep growing through enterprise contracts."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            14000000,
+            28000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            140000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Atrisa at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            32000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            170000000,
+            330000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Atrisa at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            65000000,
+            130000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1100000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Atrisa at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B needs enterprise expansion across multiple customers and a defensible data moat. The likely stop is that Cadence and Synopsys ship agent features inside their tools, and analog customers are a small market of a few thousand teams, so growth flattens and the company becomes an acquisition target."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series_c 0% / 1% / 15%, cond 25% (n=20)",
+        "adjustment_reason": "Near the 25 percent anchor; few EDA startups scale beyond B without being acquired."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            220000000,
+            450000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Atrisa at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            140000000
           ],
           "post_money_usd": [
-            0,
-            0
+            550000000,
+            1100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Atrisa at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            180000000,
+            450000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            4500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Atrisa at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C is a stretch in a niche tool market. The likely path ends with an acquisition by an EDA incumbent or a chip company, since customers buy through Cadence and Synopsys suites and few point tools grow past B. The records show very few comparable companies reaching this stage, and those that did had durable revenue and a defensible position, which this company would need to show well before then."
     }
   ],
   "outcomes": {
@@ -164,167 +212,208 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.12
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The most common ending is a tools company that never gets past pilots, or a small acquisition by an EDA vendor. Analog design is a narrow market with slow sales, and the incumbents control the design flow and the licences. Analogs such as Silimate, Silogy and Bronco AI were Active but with no verified round beyond seed, while Rain Neuromorphics was acquired."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "silimate",
+      "relevance": "Agents for chip design and debug, closest peer.",
+      "outcome_summary": "Summer 2023 batch, 2M seed in 2023, active with no later round in the record."
+    },
+    {
+      "slug": "silogy",
+      "relevance": "AI debug platform for chip developers.",
+      "outcome_summary": "Winter 2024 batch, 500K recorded, no later round."
+    },
+    {
+      "slug": "diode-computers-inc",
+      "relevance": "AI circuit board design.",
+      "outcome_summary": "Summer 2024 batch, 11.4M Series A in 2025."
+    },
+    {
+      "slug": "bronco-ai",
+      "relevance": "AI for ASIC verification.",
+      "outcome_summary": "Summer 2023 batch, pre seed only recorded."
+    },
+    {
+      "slug": "jitx",
+      "relevance": "Automatic circuit board design, early EDA player.",
+      "outcome_summary": "Summer 2018 batch, 12M Series A in 2022, four years after the batch."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Analog design resists automation and agent output is not trusted for tape out.",
+      "p": 0.4,
+      "evidence": "Analog layout depends on process data and designer judgment that large language models handle poorly.",
       "analogs": [
-        "TODO-company-slug"
+        "silimate",
+        "bronco-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Start with a narrow verifiable task such as testbench generation and sizing for a single block family."
+    },
+    {
+      "risk": "Cadence and Synopsys add agents inside their analog tools and control distribution.",
+      "p": 0.3,
+      "evidence": "Both incumbents have already announced AI features for design flows.",
+      "analogs": [
+        "silogy",
+        "jitx"
+      ],
+      "mitigation": "Partner with a foundry or design house and integrate into the incumbent flow rather than replace it."
+    },
+    {
+      "risk": "Customers cannot share PDKs and netlists, so pilots stall.",
+      "p": 0.25,
+      "evidence": "Foundry design kits sit under NDA and chip teams are secretive.",
+      "analogs": [
+        "silogy"
+      ],
+      "mitigation": "Run on premise or in a customer virtual private cloud and use open PDKs for demos."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Cadence",
+      "what": "Dominant analog and custom design suite with AI optimisation features.",
+      "traction": "Public EDA leader.",
+      "source_url": "https://www.cadence.com"
+    },
+    {
+      "name": "Synopsys",
+      "what": "EDA leader with AI assisted design tools.",
+      "traction": "Public EDA leader.",
+      "source_url": "https://www.synopsys.com"
+    },
+    {
+      "name": "Silimate",
+      "what": "YC agents for chip design and debug.",
+      "traction": "2M seed in 2023.",
+      "source_url": "https://www.ycombinator.com/companies/silimate"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Analog circuits need accurate simulation, layout awareness and foundry data. A three person team can build a narrow demo but producing production ready designs is a research problem."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Cadence",
+      "Synopsys",
+      "Siemens EDA"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "The incumbents own the design environment and the foundry relationships and have the incentive to ship agents, but analog is hard enough that startups can lead for a time."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Analog designers are scarce and expensive, and chip design cycles are long, so tools that save engineer time have paying buyers.",
+        "source_url": "https://www.cadence.com"
+      },
+      {
+        "claim": "Venture funding has flowed into AI chip design startups since 2023.",
+        "source_url": "https://www.ycombinator.com/companies/silimate"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Arrive at the batch with a sharp wedge and one named paying design partner.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one narrow customer and workflow and write down the measurable result it should produce.",
+        "Sign a letter of intent or paid pilot before demo day."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "At least one pilot signed with a named buyer."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show an agent that sizes and verifies a real analog block with a design partner.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one circuit family such as op amps or bandgaps.",
+        "Work on open PDKs and publish benchmark results against expert designs."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A seed round above the YC check from chip focused investors."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert pilots into paid annual contracts at two or more design teams.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Integrate with Cadence Virtuoso flows.",
+        "Hire a senior analog designer to review outputs."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Two paid customers with measured designer hours saved."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "A scarce skill with expensive labor makes a clear value case.",
+      "evidence": "Analog designers are hard to hire.",
+      "source_url": "https://www.cadence.com"
+    },
+    {
+      "point": "Investors already fund chip design AI.",
+      "evidence": "Silimate seed and Diode Series A.",
+      "source_url": "https://www.ycombinator.com/companies/silimate"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Atrisa",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Atrisa\" --era 2022+ : kind invented_or_proper, 6 chars, 3 syllables",
     "strengths": [
-      "TODO"
+      "Invented, short and ownable in search."
     ],
     "weaknesses": [
-      "TODO"
+      "Says nothing about circuits."
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Atrisa is an invented name with three syllables that is easy to spell and own, like many YC infrastructure names. It carries no meaning, which is fine for a tools company in a niche."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A deep tech chip design agent company with a real expert labor wedge, likely to get a seed and then test whether analog automation works.",
+    "general_summary": "Atrisa builds agents for analog circuit design, a field where experts are scarce and incumbents Cadence and Synopsys dominate. The three person team is typical for YC. Peers in chip design AI show a mixed picture: Silimate raised a small seed, Diode reached a Series A, and others stalled. The seed is roughly a coin flip above the YC check, and later steps follow the B2B anchors because the technical risk is high and the market is narrow. The estimates are anchored on the 2023 to 2025 B2B cohort and adjusted only with the stated reasons, keeping each step within 0.75 times its anchor. Reaching a later round years after the batch is common for companies with paying customers, and a pivot followed by a raise is part of the upside band, so the ladder asks whether a round is reached and not how fast."
   },
   "assumptions": [
-    "TODO"
+    "No team background was given, so founder market fit is treated as unknown.",
+    "Blind test: only the batch input file and market web searches were used; no company specific records. The seed step is read as a round above the standard YC deal of about 500K dollars within roughly 12 months of batch start.",
+    "Extraction coverage is 662 of 6,399 companies researched in the calibration sample, plus recent cohort records; later cohorts are right censored, so base rates for 2023 to 2025 batches understate eventual progress."
   ],
   "sources": [
-    "https://"
+    "https://www.ycombinator.com/deal",
+    "https://www.equidam.com/?p=32620",
+    "https://www.cadence.com",
+    "https://www.synopsys.com",
+    "https://www.ycombinator.com/companies/silimate"
   ]
 }

@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Speko",
+    "one_liner": "OpenRouter for Voice AI: one API, every call on the best speech model",
+    "description": "A router for voice models. One API key sends each call to the speech to text, LLM and text to speech models that public benchmarks show are best for the language and use case, and re-routes when the numbers change. The founders ran the bake off by hand for four years shipping production voice for Fortune 500 clients. Four people, San Francisco, Summer 2026.",
+    "as_of": "2026-07-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.95,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is already accepted to YC for its batch, so the acceptance estimate is a placeholder near certainty rather than a forecast. The unconditional prior for a random applicant is about 1 percent (0.6 to 2 percent, third party figures in yc_acceptance.md).",
+    "why_it_fails": "Not applicable in this test because the company was accepted. Had it been assessed as an applicant, the most plausible reason for a no would be a thin routing layer with no clear moat against voice platforms. The founders would also need to show in the interview that they can ship quickly and have a specific first customer in mind, since YC weighs team speed and clear user need over market size."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.6,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.49,
+        "source": "python3 -I scripts/base_rates.py --years 2023-2025 --industry B2B : seed 42% / 49% / 56% (lower / known / upper), cond 49% (n=950)",
+        "adjustment_reason": "Above the 49 percent anchor but within 1.25x: developer tools in voice AI raise well (Vapi 2.1M seed, Vocode 3.25M, Freya 3.5M), and four years of production experience is real founder market fit."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            600000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin case for Speko at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2500000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            38000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Speko at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            16000000
+          ],
+          "post_money_usd": [
+            45000000,
+            100000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Hot case for Speko at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The most plausible stop is that routing looks like a feature. Investors saw Vocode and Vapi raise small seeds and then face model vendors who give their own bundles, and a router that sits between customers and vendors has little pricing power. If the founders cannot show real traffic and a margin per call, a round above the YC check is hard."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "same command: series_a 9% / 11% / 23%, cond 22% (n=465)",
+        "adjustment_reason": "At the 22 percent anchor: a router tends to win usage quickly but gross margin pressure and model vendor moves cap Series A size."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            22000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Speko at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            11000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Speko at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            24000000,
+            45000000
+          ],
+          "post_money_usd": [
+            150000000,
+            320000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Speko at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs a few hundred thousand dollars of annual revenue and proof that customers stay when the routing gain is small. The likely miss is that voice platforms like Vapi and LiveKit add multi model routing themselves, and benchmarks are easy to copy, so the company cannot show a lasting edge."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "same command: series_b 2% / 2% / 16%, cond 20% (n=101)",
+        "adjustment_reason": "Near the 20 percent anchor; routers rarely get past A because they are thin layers."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            14000000,
+            28000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            140000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Speko at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            32000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            170000000,
+            330000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Speko at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            65000000,
+            130000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1100000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Speko at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B needs scale in voice minutes and gross margin after paying model vendors. The likely stop is that vendors cut prices or bundle, or that a platform acquires the router, so independence ends before a B. Past voice companies such as Vocode and PlayAI were acquired instead."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series_c 0% / 1% / 15%, cond 25% (n=20)",
+        "adjustment_reason": "Near the 25 percent anchor; very few infrastructure layers of this type reach C."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            220000000,
+            450000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Speko at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            140000000
           ],
           "post_money_usd": [
-            0,
-            0
+            550000000,
+            1100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Speko at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            180000000,
+            450000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            4500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Speko at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C requires a durable infrastructure position, such as becoming the default voice gateway. Few infrastructure routers reach that scale, and the likely end is acquisition by a voice platform or cloud vendor. The records show very few comparable companies reaching this stage, and those that did had durable revenue and a defensible position, which this company would need to show well before then."
     }
   ],
   "outcomes": {
@@ -164,167 +212,209 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.5
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.33
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the company ends as an acquired feature or a small independent tool. Voice platforms control the customer and can add routing, while model vendors control price. Analogs such as Vocode and PlayAI exited by acquisition after a seed, and Lyrebird was also acquired, so the common path is a sale to a platform before a large round."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "vocode",
+      "relevance": "Open source voice agent tooling, same buyers.",
+      "outcome_summary": "Winter 2023 batch, 3.25M seed in 2024, later acquired."
+    },
+    {
+      "slug": "vapi",
+      "relevance": "Voice AI developer platform, a likely competitor and customer.",
+      "outcome_summary": "Winter 2021 batch, 2.1M seed in 2023 and 20M Series A in late 2024."
+    },
+    {
+      "slug": "playai",
+      "relevance": "Voice AI models and API.",
+      "outcome_summary": "Winter 2023 batch, 21M seed in 2024, later acquired."
+    },
+    {
+      "slug": "assemblyai",
+      "relevance": "Speech to text API company.",
+      "outcome_summary": "Summer 2017 batch, Series A in 2022 and Series B after."
+    },
+    {
+      "slug": "freya",
+      "relevance": "Voice AI for enterprises.",
+      "outcome_summary": "Summer 2025 batch, 3.5M seed in late 2025."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Routing is a feature that voice platforms and model vendors absorb.",
+      "p": 0.4,
+      "evidence": "Platforms like Vapi already select models and vendors publish their own bundles.",
       "analogs": [
-        "TODO-company-slug"
+        "vocode",
+        "vapi"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Own the benchmark data and sell to enterprises that need vendor neutrality."
+    },
+    {
+      "risk": "Margins are squeezed because model vendors set the cost.",
+      "p": 0.3,
+      "evidence": "Routers pay per minute to vendors and cannot control price.",
+      "analogs": [
+        "assemblyai",
+        "playai"
+      ],
+      "mitigation": "Charge for evaluation and observability, not just usage."
+    },
+    {
+      "risk": "Benchmarks are easy to copy and customers build their own evaluation.",
+      "p": 0.25,
+      "evidence": "Open evaluation tools for speech models already exist. and this was visible from the market at the batch start date.",
+      "analogs": [
+        "vocode"
+      ],
+      "mitigation": "Maintain proprietary language and domain test sets and ship new model results within a day."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "OpenRouter",
+      "what": "Model router for text LLMs, the template for the pitch.",
+      "traction": "Large developer usage and funding.",
+      "source_url": "https://openrouter.ai"
+    },
+    {
+      "name": "Vapi",
+      "what": "Voice agent platform that lets users pick models.",
+      "traction": "Series A in late 2024.",
+      "source_url": "https://vapi.ai"
+    },
+    {
+      "name": "Deepgram and ElevenLabs",
+      "what": "Speech vendors who sell direct APIs and bundles.",
+      "traction": "Well funded model providers.",
+      "source_url": "https://elevenlabs.io"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Calling many speech APIs and measuring them is straightforward for a small team. The hard part is fair benchmarks across languages, latency under real calls and reliability of fallback."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Vapi",
+      "LiveKit",
+      "ElevenLabs",
+      "Cloud vendors"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "Voice platforms have customers and can add routing in months, and the router depends on vendor APIs. A well resourced rival would need roughly the stated time and would have the incentive if the category proves valuable."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Voice agent usage is growing quickly and teams struggle to choose between many speech models.",
+        "source_url": "https://vapi.ai"
+      },
+      {
+        "claim": "Text LLM routing shows developers pay for model choice and fallback.",
+        "source_url": "https://openrouter.ai"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Arrive at the batch with a sharp wedge and one named paying design partner.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one narrow customer and workflow and write down the measurable result it should produce.",
+        "Sign a letter of intent or paid pilot before demo day."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "At least one pilot signed with a named buyer."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove routing beats a fixed vendor on cost or quality for paying customers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish the benchmarks and track wins per language.",
+        "Convert three voice agent builders to paid usage."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A seed above the YC check with call volume disclosed."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show revenue growth with positive gross margin after vendor costs.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add evaluation and observability products.",
+        "Sign an enterprise contract that needs vendor neutrality."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Monthly recurring revenue at or above 100K dollars."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Founders ran the same bake off for four years in production.",
+      "evidence": "Stated in the description input.",
+      "source_url": "https://vapi.ai"
+    },
+    {
+      "point": "Voice AI is a fast growing category with funded peers.",
+      "evidence": "Seeds for Vapi, Vocode and Freya.",
+      "source_url": "https://vapi.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Speko",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Speko\" --era 2022+ : kind invented_or_proper, 5 chars, 2 syllables",
     "strengths": [
-      "TODO"
+      "Short, speech sounding and easy to spell."
     ],
     "weaknesses": [
-      "TODO"
+      "Close to generic speak names."
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Speko is short and hints at speech, a pattern used by Vapi and Vocode. It is easy to say and register. The name helps a little for a developer audience."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A sharp but thin voice routing layer with real founder experience, likely to raise a small seed and then fight platform absorption.",
+    "general_summary": "Speko routes voice calls to the best speech model using public benchmarks. The founders have four years of production experience, and voice AI developer tools have raised seeds quickly. The risk is that routing is a feature: voice platforms and model vendors can copy it, and vendor pricing caps margin. The ladder follows B2B anchors with a higher seed and flat later steps, and exits by platform acquisition are the common path. The estimates are anchored on the 2023 to 2025 B2B cohort and adjusted only with the stated reasons, keeping each step within 0.75 times its anchor. Reaching a later round years after the batch is common for companies with paying customers, and a pivot followed by a raise is part of the upside band, so the ladder asks whether a round is reached and not how fast."
   },
   "assumptions": [
-    "TODO"
+    "Benchmark and traction claims are founder statements.",
+    "Blind test: only the batch input file and market web searches were used; no company specific records. The seed step is read as a round above the standard YC deal of about 500K dollars within roughly 12 months of batch start.",
+    "Extraction coverage is 662 of 6,399 companies researched in the calibration sample, plus recent cohort records; later cohorts are right censored, so base rates for 2023 to 2025 batches understate eventual progress."
   ],
   "sources": [
-    "https://"
+    "https://www.ycombinator.com/deal",
+    "https://www.equidam.com/?p=32620",
+    "https://openrouter.ai",
+    "https://vapi.ai",
+    "https://elevenlabs.io"
   ]
 }

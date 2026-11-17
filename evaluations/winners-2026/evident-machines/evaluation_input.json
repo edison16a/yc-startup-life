@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Evident Machines",
+    "one_liner": "Real-world benchmarks and RL environments for electrical engineering",
+    "description": "Benchmarks and reinforcement learning environments for AI doing real electrical engineering, covering design, simulation and physical experiments in an SF lab. The experiments become training data and environments sold to frontier AI labs. Two people, San Francisco, Fall 2026.",
+    "as_of": "2026-10-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.95,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is already accepted to YC for its batch, so the acceptance estimate is a placeholder near certainty rather than a forecast. The unconditional prior for a random applicant is about 1 percent (0.6 to 2 percent, third party figures in yc_acceptance.md).",
+    "why_it_fails": "Not applicable in this test because the company was accepted. Had it been assessed as an applicant, the most plausible reason for a no would be a tiny team in a crowded RL environment market with a capital heavy lab. The founders would also need to show in the interview that they can ship quickly and have a specific first customer in mind, since YC weighs team speed and clear user need over market size."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.6,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.49,
+        "source": "python3 -I scripts/base_rates.py --years 2023-2025 --industry B2B : seed 42% / 49% / 56% (lower / known / upper), cond 49% (n=950)",
+        "adjustment_reason": "Above the 49 percent anchor within 1.25x: RL environment and data companies drew early funding in 2025 (Klavis, Cartpole, Aviro, Refresh) and two founders can sell a narrow lab dataset fast, but the buyer list is small."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            600000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            18000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Thin case for Evident Machines at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Evident Machines at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            160000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Hot case for Evident Machines at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The likely stopper is buyer concentration. Frontier labs buy environments but have many vendors and in house teams, and a two person company with a physical lab has high cost per task. Klavis recorded only 500K and Sherpa Labs only 500K, so a round above that needs a signed lab customer or a standout benchmark."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "same command: series_a 9% / 11% / 23%, cond 22% (n=465)",
+        "adjustment_reason": "Near the 22 percent anchor, slightly higher at 25 percent only if revenue from one or two labs is real; otherwise concentration risk lowers it."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            22000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Evident Machines at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            11000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Evident Machines at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            24000000,
+            45000000
+          ],
+          "post_money_usd": [
+            150000000,
+            320000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Evident Machines at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs repeat revenue from several labs and proof the data improves model scores. The likely miss is that labs run one off pilots, pay low prices for environments, and then bring electrical engineering data collection in house or buy from larger vendors like Scale and Surge."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "same command: series_b 2% / 2% / 16%, cond 20% (n=101)",
+        "adjustment_reason": "Near the 20 percent anchor; environment vendors depend on a few buyers and labs may build in house."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            14000000,
+            28000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            140000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Evident Machines at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            32000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            170000000,
+            330000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Evident Machines at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            65000000,
+            130000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1100000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Evident Machines at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B needs a product beyond bespoke data, such as a standard benchmark that labs license annually. The likely stop is that the RL environment market commoditises, buyers consolidate, and the physical lab model does not scale like software environments. The analogs in the records suggest only a minority of companies in this cohort that reach a seed ever reach this round, and the company would need clear paying customers and improving margins to be among them."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series_c 0% / 1% / 15%, cond 25% (n=20)",
+        "adjustment_reason": "Near the 25 percent anchor; few vendors in this category will survive to C."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            220000000,
+            450000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Evident Machines at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            140000000
           ],
           "post_money_usd": [
-            0,
-            0
+            550000000,
+            1100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Evident Machines at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            180000000,
+            450000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            4500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Evident Machines at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C needs a platform position. Likely the company ends as a services style data vendor or is acquired by a lab or a data company, since no vendor of this type has reached C in the YC records. The records show very few comparable companies reaching this stage, and those that did had durable revenue and a defensible position, which this company would need to show well before then."
     }
   ],
   "outcomes": {
@@ -164,167 +212,208 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.11
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the company stalls as a niche data vendor or is absorbed. The buyers are a handful of frontier labs that can switch or build in house, and many RL environment startups chase the same budgets. Analogs such as Klavis, Sherpa Labs and Refresh show small recorded rounds and no verified later raises."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "klavis-ai",
+      "relevance": "RL environments and training data for labs.",
+      "outcome_summary": "Spring 2025 batch, 500K seed in 2025, no later round in the record."
+    },
+    {
+      "slug": "sherpa-labs",
+      "relevance": "Frontier data vendor.",
+      "outcome_summary": "Winter 2025 batch, 500K pre seed recorded."
+    },
+    {
+      "slug": "afterquery",
+      "relevance": "Applied research lab curating data for foundation models.",
+      "outcome_summary": "Winter 2025 batch, Series A of 30M recorded in April 2026."
+    },
+    {
+      "slug": "aviro",
+      "relevance": "RL environments for long horizon work.",
+      "outcome_summary": "Spring 2025 batch, active, no verified round."
+    },
+    {
+      "slug": "diode-computers-inc",
+      "relevance": "Electronics focus with a funded outcome.",
+      "outcome_summary": "Summer 2024 batch, 11.4M Series A in 2025."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Few buyers and in house teams cap demand.",
+      "p": 0.4,
+      "evidence": "Frontier labs are a handful of customers and run their own data teams.",
       "analogs": [
-        "TODO-company-slug"
+        "klavis-ai",
+        "sherpa-labs"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Sign two or three labs on multi quarter contracts early."
+    },
+    {
+      "risk": "Physical lab experiments are slow and costly, so unit economics fail versus simulation based environments.",
+      "p": 0.3,
+      "evidence": "Software environments scale at zero marginal cost while a lab needs equipment and staff.",
+      "analogs": [
+        "aviro"
+      ],
+      "mitigation": "Use simulation for most tasks and the lab for verified gold labels."
+    },
+    {
+      "risk": "Larger data vendors add electrical engineering.",
+      "p": 0.25,
+      "evidence": "Scale AI and others sell expert data across domains. and this was visible from the market at the batch start date.",
+      "analogs": [
+        "afterquery"
+      ],
+      "mitigation": "Specialise on hardware in the loop tasks others cannot run."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Scale AI",
+      "what": "Expert data and evaluations for labs.",
+      "traction": "Largest data vendor.",
+      "source_url": "https://scale.com"
+    },
+    {
+      "name": "Surge AI",
+      "what": "High quality expert data for frontier labs.",
+      "traction": "Large revenue reported in the press.",
+      "source_url": "https://surgehq.ai"
+    },
+    {
+      "name": "Mercor",
+      "what": "Expert marketplace supplying domain data for labs.",
+      "traction": "Rapid growth in 2025.",
+      "source_url": "https://mercor.com"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Building valid benchmarks that link simulation to physical measurements needs electrical engineering depth and lab equipment. A two person team can start with narrow tasks."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Scale AI",
+      "Surge AI",
+      "Mercor",
+      "Frontier labs in house"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Data vendors can add an electrical engineering domain with expert hires, but physical experiments are harder to copy. A well resourced rival would need roughly the stated time and would have the incentive if the category proves valuable."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Frontier labs pay for expert training data and RL environments across domains.",
+        "source_url": "https://scale.com"
+      },
+      {
+        "claim": "Hardware and electrical engineering are weak spots for current models, creating demand for evaluations.",
+        "source_url": "https://surgehq.ai"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Arrive at the batch with a sharp wedge and one named paying design partner.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one narrow customer and workflow and write down the measurable result it should produce.",
+        "Sign a letter of intent or paid pilot before demo day."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "At least one pilot signed with a named buyer."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Sign a lab customer for a first benchmark or environment pack.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish an open electrical engineering benchmark.",
+        "Deliver a paid pilot dataset to one frontier lab."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A seed above the YC check with a named lab customer."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show repeat purchases from several labs and score gains from the data.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build simulation backed environments that scale.",
+        "Add a licensing model for the benchmark."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Three paying labs with renewals."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Hardware focus is rare among RL environment vendors.",
+      "evidence": "Most comparable startups target software tasks.",
+      "source_url": "https://scale.com"
+    },
+    {
+      "point": "Labs have large budgets for data.",
+      "evidence": "Data vendor revenue reported across 2025.",
+      "source_url": "https://surgehq.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Evident Machines",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Evident Machines\" --era 2022+ : kind compound_words, 15 chars, 2 words",
     "strengths": [
-      "TODO"
+      "Conveys evidence and engineering."
     ],
     "weaknesses": [
-      "TODO"
+      "Long and generic machines suffix."
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Evident Machines is a descriptive compound that fits a benchmark brand, where trust in the measurement matters. It is longer than most YC names but acceptable for a B2B data vendor."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A narrow but timely hardware benchmark and RL environment vendor that can likely raise a seed and then must prove labs keep paying.",
+    "general_summary": "Evident Machines sells electrical engineering benchmarks and RL environments to frontier labs. RL environment startups drew many small seeds in 2025 and buyer concentration is the main danger. The physical lab is a differentiator and a cost. The ladder sits near the B2B anchors with a higher seed because lab budgets are large and the founders can sell a narrow dataset quickly. The estimates are anchored on the 2023 to 2025 B2B cohort and adjusted only with the stated reasons, keeping each step within 0.75 times its anchor. Reaching a later round years after the batch is common for companies with paying customers, and a pivot followed by a raise is part of the upside band, so the ladder asks whether a round is reached and not how fast."
   },
   "assumptions": [
-    "TODO"
+    "Founder backgrounds were not given.",
+    "Blind test: only the batch input file and market web searches were used; no company specific records. The seed step is read as a round above the standard YC deal of about 500K dollars within roughly 12 months of batch start.",
+    "Extraction coverage is 662 of 6,399 companies researched in the calibration sample, plus recent cohort records; later cohorts are right censored, so base rates for 2023 to 2025 batches understate eventual progress."
   ],
   "sources": [
-    "https://"
+    "https://www.ycombinator.com/deal",
+    "https://www.equidam.com/?p=32620",
+    "https://scale.com",
+    "https://surgehq.ai",
+    "https://mercor.com"
   ]
 }

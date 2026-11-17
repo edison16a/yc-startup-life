@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Derya",
+    "one_liner": "AI Brokers for Industrial Trade",
+    "description": "Supply chain automations that run a customer's supply chain function from prospecting and procurement to distribution of goods, for startups, SMEs and enterprises in robotics, commodities and food and beverage. Derya procures goods and manages operations for them. Two people, San Francisco, Summer 2026.",
+    "as_of": "2026-07-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.95,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is already accepted to YC for its batch, so the acceptance estimate is a placeholder near certainty rather than a forecast. The unconditional prior for a random applicant is about 1 percent (0.6 to 2 percent, third party figures in yc_acceptance.md).",
+    "why_it_fails": "Not applicable in this test because the company was accepted. Had it been assessed as an applicant, the most plausible reason for a no would be a broad pitch with a brokerage model that investors may see as low margin. The founders would also need to show in the interview that they can ship quickly and have a specific first customer in mind, since YC weighs team speed and clear user need over market size."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.42,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.49,
+        "source": "python3 -I scripts/base_rates.py --years 2023-2025 --industry B2B : seed 42% / 49% / 56% (lower / known / upper), cond 49% (n=950)",
+        "adjustment_reason": "Below the 49 percent anchor (0.86x): brokerage style supply chain companies need working capital and customers before investors fund them, and the description is broad and not tied to one wedge."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            600000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            14000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin case for Derya at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2500000,
+            5000000
           ],
           "post_money_usd": [
-            0,
-            0
+            14000000,
+            32000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Derya at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            35000000,
+            80000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Hot case for Derya at seed. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The likely stopper is that the pitch is too broad. Procurement, prospecting and distribution across robotics, commodities and food is three businesses, and investors want one wedge with margin. Mentum raised a 4.2M seed with a focused procurement assistant, while Alima raised 1.5M in food supply and then went inactive, which shows the risk of the food side."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "same command: series_a 9% / 11% / 23%, cond 22% (n=465)",
+        "adjustment_reason": "Near the 22 percent anchor, set at 0.9x: a company that moves goods and takes margin can show revenue early, but gross margin per trade is thin."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            22000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Derya at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            11000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Derya at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            24000000,
+            45000000
+          ],
+          "post_money_usd": [
+            150000000,
+            320000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Derya at series_a. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs repeat gross profit per customer and a path from services to software. The likely miss is that the company acts as a broker with low margins and working capital needs, so growth is capital hungry and investors see a trading business. Alima and Bulk MRO show how slow that can be."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "same command: series_b 2% / 2% / 16%, cond 20% (n=101)",
+        "adjustment_reason": "At the 20 percent anchor; supply chain intermediaries rarely scale into software multiples."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            14000000,
+            28000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            140000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Derya at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            32000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            170000000,
+            330000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Derya at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            65000000,
+            130000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1100000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Derya at series_b. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B needs automation to lower cost per order across many customers. The likely stop is that incumbent platforms like Flexport, Zycus and Coupa add agents, and customers keep buying through relationships that agents do not replace. The analogs in the records suggest only a minority of companies in this cohort that reach a seed ever reach this round, and the company would need clear paying customers and improving margins to be among them."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series_c 0% / 1% / 15%, cond 25% (n=20)",
+        "adjustment_reason": "Near the 25 percent anchor; few intermediaries reach C."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            220000000,
+            450000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or flat case for Derya at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            140000000
           ],
           "post_money_usd": [
-            0,
-            0
+            550000000,
+            1100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical case for Derya at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
+        },
+        {
+          "raise_usd": [
+            180000000,
+            450000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            4500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside case for Derya at series_c_plus. Sized from the 2022+ YC round medians in stage_benchmarks.md and the current PitchBook and Carta ranges quoted there, with raise and post money set to what a company of this type and traction would plausibly price."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C needs a platform for industrial trade with network effects. The likely end is a regional broker with low margins or an acquisition by a distributor or logistics company. The records show very few comparable companies reaching this stage, and those that did had durable revenue and a defensible position, which this company would need to show well before then."
     }
   ],
   "outcomes": {
@@ -164,167 +212,207 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.62
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.26
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the company stalls as a thin margin broker or pivots. Industrial trade runs on relationships and working capital, and agents reduce effort without owning the transaction. Alima went inactive and Mentum was acquired, while Arnata, with a narrower freight wedge, raised a 6.5M seed in 2023."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "mentum",
+      "relevance": "AI assistant for procurement and sourcing.",
+      "outcome_summary": "Summer 2021 batch, 4.2M seed in 2022, later acquired."
+    },
+    {
+      "slug": "alima",
+      "relevance": "Fresh food procurement, a food and beverage supply chain peer.",
+      "outcome_summary": "Winter 2022 batch, 1.5M seed in 2022, now inactive."
+    },
+    {
+      "slug": "arnata",
+      "relevance": "AI workers for logistics.",
+      "outcome_summary": "Winter 2021 batch, 6.5M seed in 2023."
+    },
+    {
+      "slug": "salespatriot",
+      "relevance": "Supply chain AI for distribution and procurement.",
+      "outcome_summary": "Winter 2025 batch, 5M seed in October 2025."
+    },
+    {
+      "slug": "bulk-mro-industrial-supply",
+      "relevance": "Global trade supply platform.",
+      "outcome_summary": "Winter 2017 batch, still active after many years."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "The pitch is broad and brokerage margins are thin.",
+      "p": 0.4,
+      "evidence": "Procurement brokerage earns small percentages and needs working capital. and this was visible from the market at the batch start date.",
       "analogs": [
-        "TODO-company-slug"
+        "alima",
+        "bulk-mro-industrial-supply"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick one commodity and customer type and show gross profit per order."
+    },
+    {
+      "risk": "Incumbent procurement and logistics platforms add agents.",
+      "p": 0.3,
+      "evidence": "Procurement suites already sell AI features to enterprise buyers. and this was visible from the market at the batch start date.",
+      "analogs": [
+        "mentum",
+        "alpas"
+      ],
+      "mitigation": "Own the transaction and supplier network where platforms only advise."
+    },
+    {
+      "risk": "Working capital and trade risk strain a two person team.",
+      "p": 0.25,
+      "evidence": "Buying goods on behalf of customers requires credit and carries default risk.",
+      "analogs": [
+        "alima"
+      ],
+      "mitigation": "Use customer prepayment and insured payment terms."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Flexport",
+      "what": "Freight and trade platform that also sells procurement tools.",
+      "traction": "Large venture backed logistics company.",
+      "source_url": "https://www.flexport.com"
+    },
+    {
+      "name": "Coupa",
+      "what": "Procurement software for enterprises.",
+      "traction": "Established suite.",
+      "source_url": "https://www.coupa.com"
+    },
+    {
+      "name": "Traditional brokers and trading houses",
+      "what": "Human intermediaries who run industrial trade.",
+      "traction": "Entrenched relationships.",
+      "source_url": "https://www.flexport.com"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Agents for email, quoting and order handling are buildable by two people. The hard part is operations: payments, compliance and supplier trust across countries."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Flexport",
+      "Coupa",
+      "Large distributors"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Platforms can add agents quickly but moving goods and owning supplier relationships is operational work they avoid. A well resourced rival would need roughly the stated time and would have the incentive if the category proves valuable."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "SMEs and robotics startups struggle with procurement and sourcing and pay brokers and services firms.",
+        "source_url": "https://www.flexport.com"
+      },
+      {
+        "claim": "Procurement software is an established paid category.",
+        "source_url": "https://www.coupa.com"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Arrive at the batch with a sharp wedge and one named paying design partner.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one narrow customer and workflow and write down the measurable result it should produce.",
+        "Sign a letter of intent or paid pilot before demo day."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "At least one pilot signed with a named buyer."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove gross profit per order in one commodity and customer type.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Close three paying customers in one vertical.",
+        "Track gross margin and repeat orders."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A seed above the YC check backed by a repeat revenue base."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show automation lowering cost per order and margin rising.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Productize the quoting and supplier matching steps.",
+        "Raise a Series A tied to gross profit growth."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Gross profit above 300K dollars annualised."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Revenue can start early because the company handles real orders.",
+      "evidence": "Services style model across several verticals.",
+      "source_url": "https://www.flexport.com"
+    },
+    {
+      "point": "Procurement and logistics agents are a funded theme.",
+      "evidence": "Mentum, Arnata and SalesPatriot seeds.",
+      "source_url": "https://www.coupa.com"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Derya",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Derya\" --era 2022+ : kind invented_or_proper, 5 chars, 2 syllables",
     "strengths": [
-      "TODO"
+      "Short and easy to say."
     ],
     "weaknesses": [
-      "TODO"
+      "Unclear meaning for industrial trade; also a personal name."
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "Derya is short and easy to say and is a given name in some languages, which can sound friendly but does not signal industrial trade. It has little effect either way."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A broad AI brokerage pitch with thin margins that needs one sharp wedge to raise beyond a small seed.",
+    "general_summary": "Derya runs supply chain functions for customers using AI agents across robotics, commodities and food. The wedge is wide and brokerage margins are thin, which is why the seed is set a little below the B2B anchor. Analogs split: Mentum and Arnata raised seeds, Alima went inactive. Later steps follow the B2B anchors with a small discount for working capital needs, and a small acquisition is the likeliest exit. The estimates are anchored on the 2023 to 2025 B2B cohort and adjusted only with the stated reasons, keeping each step within 0.75 times its anchor. Reaching a later round years after the batch is common for companies with paying customers, and a pivot followed by a raise is part of the upside band, so the ladder asks whether a round is reached and not how fast."
   },
   "assumptions": [
-    "TODO"
+    "Customer and revenue facts were not given.",
+    "Blind test: only the batch input file and market web searches were used; no company specific records. The seed step is read as a round above the standard YC deal of about 500K dollars within roughly 12 months of batch start.",
+    "Extraction coverage is 662 of 6,399 companies researched in the calibration sample, plus recent cohort records; later cohorts are right censored, so base rates for 2023 to 2025 batches understate eventual progress."
   ],
   "sources": [
-    "https://"
+    "https://www.ycombinator.com/deal",
+    "https://www.equidam.com/?p=32620",
+    "https://www.flexport.com",
+    "https://www.coupa.com"
   ]
 }

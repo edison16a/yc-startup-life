@@ -1,330 +1,421 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Surtr Defense Systems",
+  "one_liner": "The hardware-agnostic operating system for drone defense",
+  "description": "Surtr builds ParallaxOS, the open operating system for counter-UAS. It takes sensor data from any radar, RF detector, camera, or acoustic array and fuses it into a single unified picture with AI-driven threat classification and engagement recommendations. One interface, any hardware, human in the loop.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.06,
+  "basis": "Assumed accepted in this test, so this is a note. Published rate is about 1 percent of over 10,000 applicants (references/yc_acceptance.md). Two founders building defense software in a year of heavy drone and defense interest give a lift, but the description shows no defense contracts, clearances or customers.",
+  "why_it_fails": "YC could pass because the counter drone software space is crowded with funded firms, the description lists no sensors integrated, defense customers or security credentials, and a two person team may not be able to sell to the Pentagon. Investors in the batch also see many counter drone pitches in 2026, so a two person team must stand out against teams that already hold prototypes, contracts or security clearances."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.68,
+   "anchors": {
+    "base_rate": 0.72,
+    "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2019-2022 --calibration-only: seed cond 67% (n=12), A cond 38% (n=8), B cond 67% (n=3), C cond 0% (n=2); anecdotes. --tag Defense returned zero companies, so B2B 2020-2023 was used as the broad cohort: seed cond 72%, A 31%, B 26%, C 33%. Median months to seed for Industrials 6.",
+    "adjustment_reason": "Close to the B2B anchor of 72%. Counter drone is one of the fastest growing defense categories in 2026, and defense software is attractive to funds. Slightly discounted for a two person team that has no listed customer."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      500000.0,
+      1500000.0
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small SAFE round. Sized from the stage benchmarks and the cohort round sizes."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000.0,
+      5000000
+     ],
+     "post_money_usd": [
+      15000000,
+      40000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Standard defense tech seed. Sized from the stage benchmarks and the cohort round sizes."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      5000000,
+      15000000
+     ],
+     "post_money_usd": [
+      40000000,
+      120000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside given strong defense investor demand and drone threat news."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails if investors judge that a two person team cannot win trust with defense buyers, who want field tested systems and security clearances. Defense funds also see many counter drone pitches, so without a government pilot or SBIR the round may stay under $500K."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.38,
+    "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2019-2022 --calibration-only: seed cond 67% (n=12), A cond 38% (n=8), B cond 67% (n=3), C cond 0% (n=2); anecdotes. --tag Defense returned zero companies, so B2B 2020-2023 was used as the broad cohort: seed cond 72%, A 31%, B 26%, C 33%.",
+    "adjustment_reason": "Slightly below the Industrials anchor of 38% and close to the B2B anchor of 31%. Defense sales cycles are long but the counter UAS budget is growing, and software companies in the sector have raised."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      40000000,
+      90000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin round to bridge government cycles. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      250000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Defense tech Series A; market median $17M. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      80000000
+     ],
+     "post_money_usd": [
+      250000000,
+      700000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside with a program of record or large contract."
+    }
+   ],
+   "why_it_fails": "The Series A needs deployments with real operators and a funded contract. The risk is that Anduril and other platform vendors already ship their own fusion layers, and buyers prefer an integrated stack to an open operating system. Guardian RF and ApolloShield, other YC counter drone companies, show only slow progress to later rounds."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.32,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2019-2022 --calibration-only: seed cond 67% (n=12), A cond 38% (n=8), B cond 67% (n=3), C cond 0% (n=2); anecdotes. --tag Defense returned zero companies, so B2B 2020-2023 was used as the broad cohort: seed cond 72%, A 31%, B 26%, C 33%.",
+    "adjustment_reason": "Between the B2B anchor of 26% and the Industrials 67% (n=3, anecdotal). Defense companies that get to a Series A and a contract often continue to large rounds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      45000000
+     ],
+     "post_money_usd": [
+      100000000,
+      300000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat round. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      120000000
+     ],
+     "post_money_usd": [
+      300000000,
+      900000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Defense growth round. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      900000000,
+      2500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside, with defense tech investor appetite. Sized from the stage benchmarks and the cohort round sizes."
+    }
+   ],
+   "why_it_fails": "Series B requires a program of record, which can take years of government budget cycles. It fails if a prime or Anduril wins the integration role or if buyers standardize on a closed vendor stack. The analogs show that drone software companies, from Airware to ApolloShield, needed years and real government contracts before a large round, and many never found a scalable buyer, so the milestone is slow to hit."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.32,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2019-2022 --calibration-only: seed cond 67% (n=12), A cond 38% (n=8), B cond 67% (n=3), C cond 0% (n=2); anecdotes. --tag Defense returned zero companies, so B2B 2020-2023 was used as the broad cohort: seed cond 72%, A 31%, B 26%, C 33%.",
+    "adjustment_reason": "At the B2B anchor of 33%."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      60000000,
+      150000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Standard Series C. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Defense scale round. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      400000000,
+      1000000000
+     ],
+     "post_money_usd": [
+      3000000000,
+      10000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside on the Anduril style path. Sized from the stage benchmarks and the cohort round sizes."
+    }
+   ],
+   "why_it_fails": "At this size the company competes with primes and Anduril for national contracts and needs hardware production. It fails if the open operating system is commoditized, or if defense budgets shift away. The analogs show that drone software companies, from Airware to ApolloShield, needed years and real government contracts before a large round, and many never found a scalable buyer, so the milestone is slow to hit."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.68
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.06
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Defense software companies from a two person start often remain subcontractors or are bought by a prime. Reaching $100M or more requires a program of record and surviving the integration battle with Anduril style platforms. The analogs show that drone software companies, from Airware to ApolloShield, needed years and real government contracts before a large round, and many never found a scalable buyer, so the milestone is slow to hit."
+ },
+ "analogs": [
+  {
+   "slug": "apolloshield",
+   "relevance": "Summer 2016 drone detection and mitigation.",
+   "outcome_summary": "Still active after ten years with funding only partly visible and no exit; slow."
+  },
+  {
+   "slug": "iris-automation",
+   "relevance": "Summer 2016 drone detect and avoid AI.",
+   "outcome_summary": "Acquired; drone software that ended in a sale."
+  },
+  {
+   "slug": "airware",
+   "relevance": "Winter 2013 drone software platform.",
+   "outcome_summary": "Shut down after the drone market was slower than expected; an operating system for drones that did not scale."
+  },
+  {
+   "slug": "guardian-rf",
+   "relevance": "Summer 2024 drone detection for defense.",
+   "outcome_summary": "Won SBIR and defense challenges and reached a seed; evidence of a viable path."
+  },
+  {
+   "slug": "volansi",
+   "relevance": "Winter 2017 autonomous VTOL.",
+   "outcome_summary": "Acquired; drone hardware case."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Integrated vendors beat an open hardware agnostic layer",
+   "p": 0.45,
+   "evidence": "Anduril, Dedrone and primes sell integrated stacks with their own sensor fusion; customers may prefer one vendor.",
+   "analogs": [
+    "airware"
+   ],
+   "mitigation": "Win integration contracts by being the neutral layer for existing sensors held by the military."
+  },
+  {
+   "risk": "Long defense sales cycles and the need for clearances",
+   "p": 0.45,
+   "evidence": "Defense buying runs on years and a two person team without cleared staff is slow to reach contracts.",
+   "analogs": [
+    "apolloshield"
+   ],
+   "mitigation": "Use SBIR and OTAs and hire a cleared advisor."
+  },
+  {
+   "risk": "Crowded counter drone field with funded rivals",
+   "p": 0.4,
+   "evidence": "Several YC and non YC counter drone companies compete for the same budgets.",
+   "analogs": [
+    "guardian-rf",
+    "apolloshield"
+   ],
+   "mitigation": "Be the open standard that other vendors integrate with."
+  },
+  {
+   "risk": "Technology risk of false alarms and classification",
+   "p": 0.3,
+   "evidence": "AI threat classification must perform in the field with low false alarm rates.",
+   "analogs": [
+    "iris-automation"
+   ],
+   "mitigation": "Test on public datasets and at government ranges."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Anduril Lattice",
+   "what": "Autonomous command and control and sensor fusion platform sold to the US military.",
+   "traction": "Multi billion dollar company.",
+   "source_url": "https://www.anduril.com"
+  },
+  {
+   "name": "Dedrone",
+   "what": "Airspace security software for detection and mitigation, owned by Axon.",
+   "traction": "Deployed across many sites.",
+   "source_url": "https://www.dedrone.com"
+  },
+  {
+   "name": "DroneShield",
+   "what": "Listed counter drone detection and DroneSentry C2 software.",
+   "traction": "Public company with large orders.",
+   "source_url": "https://www.droneshield.com"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Fusing radar, RF, camera and acoustic feeds with real time classification is demanding but feasible for strong engineers. Field tests and certifications make the full product slow to build, so a small team needs a demo with recorded data."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Anduril",
+   "Dedrone",
+   "DroneShield",
+   "Primes such as Lockheed or RTX"
+  ],
+  "timeline_months": 12,
+  "rationale": "Competitors have distribution and funds, and sensor fusion is a feature of their command software, so they can absorb it quickly."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Drone attacks and incursions have pushed governments to buy counter drone systems in large volumes.",
+    "source_url": "https://www.anduril.com"
+   },
+   {
+    "claim": "Counter UAS vendors report large defense orders.",
+    "source_url": "https://www.droneshield.com"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a working fusion demo with real sensor data.",
+   "actions": [
+    "Integrate two real sensors.",
+    "Present to two defense officers."
+   ],
+   "proof": "A live demo and one letter of interest."
+  },
+  {
+   "phase": "seed",
+   "goal": "Win a government pilot.",
+   "actions": [
+    "Apply for SBIR or OTA funding.",
+    "Pilot with one base."
+   ],
+   "proof": "A paid pilot or SBIR award."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large and growing budgets and strong timing.",
+   "evidence": "Counter drone spending has risen sharply after drone incidents in Ukraine and at bases.",
+   "source_url": "https://www.droneshield.com"
+  },
+  {
+   "point": "Hardware agnostic positioning avoids building sensors.",
+   "evidence": "The description shows software only, a lower capital need.",
+   "source_url": "https://surtrdefense.com"
+  }
+ ],
+ "brand": {
+  "name": "Surtr Defense Systems",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Surtr Defense Systems\" --era 2022+ returned name_plus_descriptor, 3 words.",
+  "strengths": [
+   "Norse fire giant name fits defense",
+   "Distinct"
+  ],
+  "weaknesses": [
+   "Hard to spell and say",
+   "Long with a descriptor"
+  ],
+  "rationale": "A mythic name with a descriptor, typical of defense startups like Anduril, which uses a fantasy name. Spelling difficulty is a minor cost since defense is sold by relationship.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Right market and timing for counter drone software, but a two person team faces long sales cycles and integrated rivals.",
+  "general_summary": "Surtr sells an open operating system for counter drone sensors in a year of heavy demand. Funding is likely at the seed stage given defense interest. Later rounds depend on government contracts and on beating integrated vendors. It is a forecast from the input file and the base rates only, with no knowledge of what happened after the batch started, and the numbers should be read with wide error bars because the cohorts for these categories are small. It is a forecast from the input file and the base rates only, with no knowledge of what happened after the batch started, and the numbers should be read with wide error bars because the defense cohorts are tiny."
+ },
+ "assumptions": [
+  "Accepted to YC is assumed.",
+  "Seed means a round above $500K within 12 months of 2026-04-06.",
+  "Defense tag had no companies in the data, so cohorts are broad."
+ ],
+ "sources": [
+  "https://www.anduril.com",
+  "https://www.dedrone.com",
+  "https://www.droneshield.com",
+  "https://surtrdefense.com"
+ ]
 }

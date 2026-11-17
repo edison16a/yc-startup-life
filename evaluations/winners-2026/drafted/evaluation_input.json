@@ -1,330 +1,431 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Drafted",
+  "one_liner": "Design your home instantly with AI",
+  "description": "Drafted is building multimodal generative models for residential architecture and spatial design.\n\nThe product allows users to design homes by combining sketches and direct spatial input to generate coherent floor plans and elevations that can be explored in both 2D and 3D. Users can define footprints, lot boundaries, room placement, relationships, room programs, and square footage constraints that persist across generations and iterative design exploration, then export CAD, PDF, and other files into the rest of the home design and construction process.\n\nMore info on the company:\n\u2043 In the past month, we've had 120k users come to the site, generating 325k+ floor plans through socials and word-of-mouth. \n\u2043 A team of 9, made up of researchers from Stanford, Autodesk, Brown, Adobe, and Architects from WeWork, Atmos, and design families\n\u2043 Raised $17.5M from investors such as Buckley Ventures (Josh Buckley), YC (Aaron Epstein), Patrick Collison, Evan Moore, Convective Capital (Bill Clerico), Ben Silbermann, Jack Altman, Samsung, Starship Ventures, Charlie Songhurst, Ryan Tedder, Moses Moody, Alex Blania, and Kevin Mahaffey",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.15,
+  "p_low": 0.08,
+  "p_high": 0.3,
+  "basis": "Assumed accepted in this test, so this is a note. Published rate is about 1 percent of over 10,000 applicants (references/yc_acceptance.md). This company stated 120k monthly visitors, 325k plans generated, a nine person technical team and $17.5M raised from named angels and funds, which lifts it far above the starting rate.",
+  "why_it_fails": "YC could say no because consumer AI design tools often show viral traffic without paying users, and the website visits may be curiosity from social posts. Residential architecture is also slow to monetize, and the company already has large funding so does not need YC."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.72,
+   "anchors": {
+    "base_rate": 0.87,
+    "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2019-2022 --calibration-only: seed cond 87% (n=39), series_a cond 38% (n=34), series_b cond 46% (n=13), series_c cond 17% (n=6). Cross check --industry B2B 2020-2023: seed cond 72%, A 31%, B 26%. Median months to seed for Consumer 14 (n=34).",
+    "adjustment_reason": "Below the Consumer anchor of 87%, because the company already raised $17.5M before the batch and the test only counts a new round above $500K within 12 months of the batch start. It may not need to raise again that quickly, though it has traction to do so."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      80000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small extension or insider round. Sized from the stage benchmarks and the cohort round sizes."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      10000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.5,
+     "rationale": "A priced round of seed plus or Series A size; hot AI companies with traction raised this in 2025 to 2026."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      25000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside given 120k users and well known angels."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The main reason this step fails is that the company has $17.5M in the bank and 9 people, so it may delay a new round past 12 months or raise it only after revenue shows. Investors would also hold back if the 325k plans are free usage with no conversion."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.38,
+    "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2019-2022 --calibration-only: seed cond 87% (n=39), series_a cond 38% (n=34), series_b cond 46% (n=13), series_c cond 17% (n=6). Cross check --industry B2B 2020-2023: seed cond 72%, A 31%, B 26%.",
+    "adjustment_reason": "Higher than the Consumer anchor of 38% but within 2x (cap 76%). The company already has traction, a strong investor set and a nine person research team. Raised above the anchor because of those facts, but not much because monetization is unproven."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series A with conversion unclear. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Strong AI Series A, well above the market median of $17M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      400000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside with paid conversion at scale. Sized from the stage benchmarks and the cohort round sizes."
+    }
+   ],
+   "why_it_fails": "Investors will ask whether homeowners and small builders pay. Floor plan generation is a one time task, so subscription retention is a risk, and Autodesk and Planner 5D tools can add generative features. Without paid conversion data a Series A at a higher price would not happen."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.46,
+    "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2019-2022 --calibration-only: seed cond 87% (n=39), series_a cond 38% (n=34), series_b cond 46% (n=13), series_c cond 17% (n=6). Cross check --industry B2B 2020-2023: seed cond 72%, A 31%, B 26%.",
+    "adjustment_reason": "At the Consumer anchor of 46% and about 1.5x the B2B anchor. Teams that reach Series A with strong AI usage often continue, but the category has few large winners."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat or modest round. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Growth round typical of 2025 to 2026 AI application leaders."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside as a design platform. Sized from the stage benchmarks and the cohort round sizes."
+    }
+   ],
+   "why_it_fails": "A Series B needs revenue growth beyond viral traffic, and residential design and construction software is sold through professionals, which is slow. Investors would pass if foundation model makers or Autodesk can offer comparable generation, or if users stay free. The analogs show that consumer facing design and construction tools need paying professional users before investors will fund larger rounds, and a free product with strong traffic still has to prove it can charge."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2019-2022 --calibration-only: seed cond 87% (n=39), series_a cond 38% (n=34), series_b cond 46% (n=13), series_c cond 17% (n=6). Cross check --industry B2B 2020-2023: seed cond 72%, A 31%, B 26%.",
+    "adjustment_reason": "Above the Consumer anchor of 17% (n=6, anecdotal) but close to the B2B anchor of 33%. Two times the Consumer anchor is 34%."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      400000000,
+      900000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Standard Series C. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      900000000,
+      2500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Growth round. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      250000000,
+      500000000
+     ],
+     "post_money_usd": [
+      2500000000,
+      6000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it becomes the standard tool across construction."
+    }
+   ],
+   "why_it_fails": "At scale it has to connect design to permitting and construction, which means incumbents like Autodesk and homebuilders. It fails if it stays a free top of funnel tool, or if the generative advantage is matched by general purpose models. The analogs show that consumer facing design and construction tools need paying professional users before investors will fund larger rounds, and a free product with strong traffic still has to prove it can charge."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.1
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Design software for homes is slow to monetize, and the strongest incumbents in the space, Autodesk and Matterport style players, have either bought or built similar tools. A generative design tool that does not become the workflow of record is likely to be sold small or fade."
+ },
+ "analogs": [
+  {
+   "slug": "matterport",
+   "relevance": "Winter 2012 3D capture for buildings.",
+   "outcome_summary": "Reached public markets and was later acquired, showing that real estate and construction 3D software can build large businesses, over a decade."
+  },
+  {
+   "slug": "resolve",
+   "relevance": "Winter 2015 construction 3D BIM issue finding.",
+   "outcome_summary": "Active; construction software that sold to professionals rather than consumers."
+  },
+  {
+   "slug": "agave",
+   "relevance": "Winter 2022 applied AI for construction.",
+   "outcome_summary": "Active AI company in the same industry."
+  },
+  {
+   "slug": "drillbit",
+   "relevance": "Summer 2024 automation for residential contractors.",
+   "outcome_summary": "Reached a seed; shows contractors as a paying buyer."
+  },
+  {
+   "slug": "namaste-business",
+   "relevance": "Summer 2019 consumer web builder.",
+   "outcome_summary": "Shut down after small notes; the viral product, no monetization failure mode."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Viral free usage does not convert to payment",
+   "p": 0.5,
+   "evidence": "120k visitors and 325k generated plans came from social media and word of mouth, which suggests curiosity usage; no revenue is stated.",
+   "analogs": [
+    "namaste-business"
+   ],
+   "mitigation": "Introduce paid export and pro tiers and report conversion."
+  },
+  {
+   "risk": "Autodesk and general models add floor plan generation",
+   "p": 0.4,
+   "evidence": "Autodesk has generative design products and large models can produce layouts from sketches.",
+   "analogs": [
+    "matterport"
+   ],
+   "mitigation": "Win on constraints, CAD export and architect trust."
+  },
+  {
+   "risk": "Floor plans are a one time use case",
+   "p": 0.35,
+   "evidence": "A homeowner designs a house rarely, so retention and lifetime value are low.",
+   "analogs": [
+    "resolve"
+   ],
+   "mitigation": "Sell to builders, architects and developers who design repeatedly."
+  },
+  {
+   "risk": "Accuracy and code compliance",
+   "p": 0.3,
+   "evidence": "Generated plans that break building codes or structural rules lose professionals' trust.",
+   "analogs": [
+    "resolve"
+   ],
+   "mitigation": "Embed codes and have licensed architects review outputs."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Maket",
+   "what": "AI floor plan generator for residential design.",
+   "traction": "Consumer and architect users.",
+   "source_url": "https://www.maket.ai"
+  },
+  {
+   "name": "Autodesk Forma and Revit",
+   "what": "Incumbent building design software with generative features.",
+   "traction": "Industry standard.",
+   "source_url": "https://www.autodesk.com"
+  },
+  {
+   "name": "Planner 5D",
+   "what": "Consumer home design app.",
+   "traction": "Large installed user base.",
+   "source_url": "https://planner5d.com"
+  },
+  {
+   "name": "TestFit",
+   "what": "Generative site planning for developers.",
+   "traction": "Real estate developer customers.",
+   "source_url": "https://www.testfit.io"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Multimodal generative models that respect constraints and output CAD files are hard, and the team of research engineers from Stanford, Autodesk and Adobe is suited to it. Data and spatial validity are the barriers."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Autodesk",
+   "Large model labs",
+   "Planner 5D",
+   "Zillow style real estate sites"
+  ],
+  "timeline_months": 12,
+  "rationale": "Autodesk has distribution and could build comparable generation inside 12 months, and general models are improving quickly. Mitigated by the head start in users and data."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Homebuyers and builders pay architects and design services for plans, a large spend that software could capture.",
+    "source_url": "https://www.autodesk.com"
+   },
+   {
+    "claim": "Existing AI floor plan tools such as Maket have users, showing demand.",
+    "source_url": "https://www.maket.ai"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Convert traffic into revenue.",
+   "actions": [
+    "Add a paid tier for exports.",
+    "Interview 30 architects and builders."
+   ],
+   "proof": "Paid conversion above 2% of active users."
+  },
+  {
+   "phase": "seed",
+   "goal": "Raise a priced round on revenue.",
+   "actions": [
+    "Show monthly paid users and retention.",
+    "Sign pilots with homebuilders."
+   ],
+   "proof": "A round above $500K with recurring revenue."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Strong early traction: 120k users in a month and 325k plans.",
+   "evidence": "The description states these figures; they come from the company.",
+   "source_url": "https://www.drafted.ai/"
+  },
+  {
+   "point": "Large pre batch funding and named investors.",
+   "evidence": "The description lists $17.5M raised from named investors.",
+   "source_url": "https://www.drafted.ai/"
+  },
+  {
+   "point": "A technical team of 9 with relevant research backgrounds.",
+   "evidence": "The description lists Stanford, Autodesk and Adobe researchers.",
+   "source_url": "https://www.drafted.ai/"
+  }
+ ],
+ "brand": {
+  "name": "Drafted",
+  "rating": 4,
+  "effect_on_success": "helps",
+  "name_check": "python3 -I scripts/name_features.py --score \"Drafted\" --era 2022+ returned real_word, 1 word, 2 syllables.",
+  "strengths": [
+   "Real word tied to architecture",
+   "Short and easy to say"
+  ],
+  "weaknesses": [
+   "Common word so search and domain are harder"
+  ],
+  "rationale": "A real word with a clear tie to drawing plans, similar to other YC real word brands. It helps consumer pull, though the generic word can be hard to find in search.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Unusually strong early traction and funding for a 2026 YC company; the risk is monetizing a one time consumer use.",
+  "general_summary": "Drafted arrives with funding, a research team and visible usage, so each funding step starts well above a typical YC company. The weakness is that floor plan design is episodic and incumbents can add similar tools, so the later rounds depend on turning free usage into paid professional use. It is a forecast from the input file and the base rates only, with no knowledge of what happened after the batch started, and the numbers should be read with wide error bars because the cohorts for these categories are small."
+ },
+ "assumptions": [
+  "Accepted to YC is assumed.",
+  "Pre batch $17.5M is counted as already raised, and seed means a new round above $500K within 12 months of 2026-04-06.",
+  "Traction figures are company claims from the input file."
+ ],
+ "sources": [
+  "https://www.maket.ai",
+  "https://www.autodesk.com",
+  "https://planner5d.com",
+  "https://www.testfit.io",
+  "https://www.drafted.ai/"
+ ]
 }

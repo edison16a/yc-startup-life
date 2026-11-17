@@ -1,330 +1,421 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Asakana",
+  "one_liner": "Automating away manual admin for food distributors: texts to ERP",
+  "description": "Restaurants send orders to food distributors by email, text, and photo. Someone at the distributor retypes every one of them into the ERP. Asakana does that entry instead: orders land in the ERP already entered, and anything unclear goes to a person before it goes in. Live at US seafood distributors today, returning 40%+ of order-desk time to selling. Founded by a seafood distributor and a Gemini builder.",
+  "as_of": "2026-10-05"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.08,
+  "basis": "Assumed accepted in this test, so this is a note. The published rate is about 1 percent of over 10,000 applicants (references/yc_acceptance.md). A team of four with a seafood distributor founder, a live product at US distributors and a stated 40 percent time saving gives a lift, offset by many AI order entry companies applying in 2025 to 2026.",
+  "why_it_fails": "YC could pass because AI order entry for distributors is a well known idea with funded rivals such as Choco, and several earlier YC companies have the same pitch. The claimed 40 percent time savings is unverified and the niche of seafood could be too small."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.68,
+   "anchors": {
+    "base_rate": 0.72,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2020-2023 --calibration-only: seed 60/72/77 cond 72% (n=103), series_a cond 31% (n=74), series_b cond 26% (n=23), series_c cond 33% (n=6). Cross check --tag SaaS --years 2020-2023: seed cond 75%, A 31%. Median months to seed for B2B 8.",
+    "adjustment_reason": "Slightly below the B2B anchor of 72% because there are several YC and funded rivals in the same category, though the live deployments and a domain insider founder add confidence. Within 0.75 times anchor."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      500000.0,
+      1500000.0
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small SAFE round. Sized from the stage benchmarks and the cohort round sizes."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000.0,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical B2B AI seed; market median about $3M on $18M pre money."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      80000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside if live customers and revenue grow, as with other YC order automation companies."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails if investors judge the category crowded, with Choco and several YC companies already selling AI order entry, and ask for more than a handful of seafood distributors. A narrow seafood start might also make the market look small. The analogs show that order entry automation for distributors attracted many YC teams at once, so investors can compare several nearly identical pitches and fund only the one with clear revenue and retention."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.31,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2020-2023 --calibration-only: seed 60/72/77 cond 72% (n=103), series_a cond 31% (n=74), series_b cond 26% (n=23), series_c cond 33% (n=6). Cross check --tag SaaS --years 2020-2023: seed cond 75%, A 31%.",
+    "adjustment_reason": "At the B2B anchor of 31%. Vertical B2B AI with real deployments has a decent path, but crowding with funded rivals limits upside."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin Series A. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      160000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series A; market median about $17M. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      160000000,
+      350000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside as a leader in food distribution. Sized from the stage benchmarks and the cohort round sizes."
+    }
+   ],
+   "why_it_fails": "A Series A requires multiple distributors paying with strong retention and expansion beyond seafood. Choco and others will target the same distributors, and ERP vendors can build order intake. Panora, Comena, Ventura and Stockline show many YC teams chasing the same wedge, so winning needs clear leadership."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2020-2023 --calibration-only: seed 60/72/77 cond 72% (n=103), series_a cond 31% (n=74), series_b cond 26% (n=23), series_c cond 33% (n=6). Cross check --tag SaaS --years 2020-2023: seed cond 75%, A 31%.",
+    "adjustment_reason": "At the B2B anchor of 26%."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat or down round. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Growth round; market median $39M. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside from being the standard order desk automation."
+    }
+   ],
+   "why_it_fails": "Series B needs a business of several million in revenue. Risks include low per customer pricing, long ERP integrations, and larger competitors with funds such as Choco, which can bundle features. The analogs show that order entry automation for distributors attracted many YC teams at once, so investors can compare several nearly identical pitches and fund only the one with clear revenue and retention."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2020-2023 --calibration-only: seed 60/72/77 cond 72% (n=103), series_a cond 31% (n=74), series_b cond 26% (n=23), series_c cond 33% (n=6). Cross check --tag SaaS --years 2020-2023: seed cond 75%, A 31%.",
+    "adjustment_reason": "At the B2B anchor of 33% with few comps."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      250000000,
+      600000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Standard Series C. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Growth round. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside as a broad distribution platform. Sized from the stage benchmarks and the cohort round sizes."
+    }
+   ],
+   "why_it_fails": "At this stage the company needs to expand beyond order entry into broader distributor workflows, where ERP vendors and marketplaces like Choco hold the relationships. It fails if the product stays a point feature that distributors treat as a commodity. The analogs show that order entry automation for distributors attracted many YC teams at once, so investors can compare several nearly identical pitches and fund only the one with clear revenue and retention."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.66
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.11
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Vertical AI order entry is likely to be bought by an ERP vendor or a distribution platform for a modest price, or crowded out by several funded rivals. Reaching $100M or more needs leadership across many distributors. The analogs show that order entry automation for distributors attracted many YC teams at once, so investors can compare several nearly identical pitches and fund only the one with clear revenue and retention."
+ },
+ "analogs": [
+  {
+   "slug": "panora",
+   "relevance": "Summer 2024 ERP ready data from inboxes.",
+   "outcome_summary": "Moved from integration API to purchase order automation; single person and no verified funding."
+  },
+  {
+   "slug": "mercura",
+   "relevance": "Winter 2025 quoting and order processing for technical distributors.",
+   "outcome_summary": "Profitable before raising; seed of about 1.8M euros in January 2026; a path worth copying."
+  },
+  {
+   "slug": "comena",
+   "relevance": "Summer 2025 order entry agents for distributors.",
+   "outcome_summary": "Active with named customers, outcome open."
+  },
+  {
+   "slug": "stockline",
+   "relevance": "Summer 2025 AI ERP for food wholesalers; a founder from a fish wholesale business.",
+   "outcome_summary": "Early, funded competitor Choco already sold AI order entry."
+  },
+  {
+   "slug": "smartbase",
+   "relevance": "Spring 2026 AI native ERP for manufacturers.",
+   "outcome_summary": "Listed inactive; shows that this category has failures."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Crowded category with funded rivals",
+   "p": 0.5,
+   "evidence": "Choco and several YC companies sell AI order entry to distributors.",
+   "analogs": [
+    "stockline",
+    "comena"
+   ],
+   "mitigation": "Own the seafood niche and expand from there, with deep ERP integrations."
+  },
+  {
+   "risk": "ERP vendors add order intake themselves",
+   "p": 0.35,
+   "evidence": "ERP and EDI vendors can build email and photo order capture inside their systems.",
+   "analogs": [
+    "panora"
+   ],
+   "mitigation": "Integrate with many ERPs and become the neutral layer."
+  },
+  {
+   "risk": "Seafood vertical is small",
+   "p": 0.35,
+   "evidence": "Seafood distribution is a narrow slice of food distribution, limiting early revenue.",
+   "analogs": [
+    "stockline"
+   ],
+   "mitigation": "Expand to adjacent proteins and produce distributors."
+  },
+  {
+   "risk": "Accuracy and trust in order entry",
+   "p": 0.3,
+   "evidence": "Errors in orders cost distributors money, so reliability must be very high; the design sends unclear cases to people.",
+   "analogs": [
+    "mercura"
+   ],
+   "mitigation": "Publish accuracy rates and keep a human in the loop."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Choco",
+   "what": "Funded platform for food ordering and AI order intake between restaurants and suppliers.",
+   "traction": "Large funding and many suppliers.",
+   "source_url": "https://choco.com"
+  },
+  {
+   "name": "Pepper",
+   "what": "Food distribution commerce and ordering platform.",
+   "traction": "Funded and deployed across distributors.",
+   "source_url": "https://www.pepper.com"
+  },
+  {
+   "name": "Spreadsheets and manual order desks",
+   "what": "The status quo of retyping orders into the ERP.",
+   "traction": "Universal.",
+   "source_url": "https://choco.com"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Parsing email, text and photo orders with models and writing them to ERPs is feasible for a small team. ERP integrations and handling messy product catalogs take work, but are not research problems."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Choco",
+   "ERP vendors",
+   "Pepper",
+   "General AI agent platforms"
+  ],
+  "timeline_months": 9,
+  "rationale": "Rivals have funds and distribution and can add order capture within months. A domain founder and live deployments provide a lead but it is narrow."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Distributors employ order desk staff who retype orders, a measured cost that automation can cut.",
+    "source_url": "https://choco.com"
+   },
+   {
+    "claim": "Funded vendors such as Choco sell AI order intake, so there is a market that pays.",
+    "source_url": "https://choco.com"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show live accuracy and time savings.",
+   "actions": [
+    "Measure orders per hour saved at three distributors.",
+    "Document accuracy by channel."
+   ],
+   "proof": "Three paying distributors and a measured 40 percent time saving."
+  },
+  {
+   "phase": "seed",
+   "goal": "Prove repeatability beyond seafood.",
+   "actions": [
+    "Add two non seafood distributors.",
+    "Build integrations for two more ERPs."
+   ],
+   "proof": "A round above $500K with at least 8 paying customers."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Founder from the seafood distribution industry.",
+   "evidence": "The description states a seafood distributor cofounder.",
+   "source_url": "https://www.asakana.co/"
+  },
+  {
+   "point": "Live product at US distributors.",
+   "evidence": "The description claims live deployments and 40 percent time returned to selling.",
+   "source_url": "https://www.asakana.co/"
+  }
+ ],
+ "brand": {
+  "name": "Asakana",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Asakana\" --era 2022+ returned invented_or_proper, 1 word, 4 syllables.",
+  "strengths": [
+   "Sounds like sakana, Japanese for fish, which fits seafood",
+   "Pronounceable"
+  ],
+  "weaknesses": [
+   "Does not signal order entry",
+   "Narrow tie to seafood may limit"
+  ],
+  "rationale": "The name echoes fish in Japanese, a neat fit for the starting niche, but it may feel narrow if the company expands to other foods. Like many invented YC names it works if the product wins.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A domain insider with live customers in a crowded AI order entry category; seed is likely, later rounds depend on beating funded rivals.",
+  "general_summary": "Asakana has the strongest early signals among order entry teams in the batch: a founder from seafood distribution and live use at US distributors. The category is crowded with funded and YC rivals, so each later round is about average for B2B. The likely path is a small to normal seed and then a contest for the Series A. It is a forecast from the input file and the base rates only, with no knowledge of what happened after the batch started, and the numbers should be read with wide error bars because the cohorts for these categories are small."
+ },
+ "assumptions": [
+  "Accepted to YC is assumed.",
+  "Seed means a round above $500K within 12 months of 2026-10-05.",
+  "Claims in the description are the company's own.",
+  "Analogs from 2025 and 2026 batches are used only for their description, not their funding as evidence."
+ ],
+ "sources": [
+  "https://choco.com",
+  "https://www.pepper.com",
+  "https://www.asakana.co/"
+ ]
 }

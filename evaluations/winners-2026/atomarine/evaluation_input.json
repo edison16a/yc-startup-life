@@ -1,330 +1,423 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Atomarine",
+  "one_liner": "Floating nuclear powered data centers at sea.",
+  "description": "We are building nuclear power delivery ships to power our floating compute barges at sea. Our systems are fully standalone, have better cooling, and avoid all the resource competition that leads to local community opposition. Our centralized manufacturing allows us to deploy anywhere on Earth, four times faster than on land.",
+  "as_of": "2026-07-06"
+ },
+ "yc_acceptance": {
+  "p": 0.02,
+  "p_low": 0.01,
+  "p_high": 0.04,
+  "basis": "Assumed accepted in this test, so this is a note and not a forecast. The published rate is about 1 percent of over 10,000 applicants per batch (references/yc_acceptance.md). Floating nuclear data centers with a two person team would start at that rate, with a lift for YC's stated appetite for energy and hard tech and a cut for no demonstrated nuclear or maritime founder market fit in the description.",
+  "why_it_fails": "YC could plausibly pass because a two person team proposing nuclear powered ships has no stated reactor, naval or licensing credentials, a decade long regulatory path through nuclear and maritime regulators, and no near term product a user can touch. The pitch reads as a thesis more than a company with a first customer."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.58,
+   "anchors": {
+    "base_rate": 0.67,
+    "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2019-2022 --calibration-only: seed cond 67% (n=12), series_a cond 38% (n=8), series_b cond 67% (n=3), series_c cond 0% (n=2); only 12 researched, so anecdotes. Wider cross check: --industry B2B --years 2019-2022 gave seed 63/77/81, A cond 31%, B cond 30%, C cond 33%. Median months to seed for Industrials 6, B2B 6 to 8.",
+    "adjustment_reason": "Slightly below the Industrials anchor of 67% because the test counts only a round above $500K inside about 12 months of the batch start, and the team is two people with no product. Held above 0.75 times the anchor because nuclear power for AI data centers is the hottest energy theme of 2026 and YC batch status draws hard tech seed investors."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      500000.0,
+      1500000.0
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small SAFE round from angels and a few hard tech funds, enough to fund a design study and licensing counsel. The commonest outcome for a two person hard tech team that has no hardware yet."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000.0,
+      5000000
+     ],
+     "post_money_usd": [
+      15000000,
+      40000000
+     ],
+     "p_band": 0.45,
+     "rationale": "A standard 2026 seed. Market median seed deal is about $3M on an $18M pre money (Equidam summary of PitchBook, per references/stage_benchmarks.md), and YC hard tech seeds in the data run $2M to $4M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      5000000,
+      20000000
+     ],
+     "post_money_usd": [
+      40000000,
+      150000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside band for a hot nuclear and AI infrastructure story, helped by comps such as Oklo and Ferveret that investors know. Needs a credible reactor partner or letters of intent from data center buyers."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The most likely miss is that investors want a named reactor vendor, a path through the Nuclear Regulatory Commission and maritime flag state review, and a buyer for the compute, none of which a two person team can show in 12 months. Seed funds that back nuclear (Oklo, Ferveret in the YC data) invest after technical proof, so the round would stall at a small SAFE of under $500K."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.38,
+    "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2019-2022 --calibration-only: seed cond 67% (n=12), series_a cond 38% (n=8), series_b cond 67% (n=3), series_c cond 0% (n=2); only 12 researched, so anecdotes. Wider cross check: --industry B2B --years 2019-2022 gave seed 63/77/81, A cond 31%, B cond 30%, C cond 33%.",
+    "adjustment_reason": "Close to the Industrials anchor and the B2B anchor of 31%. Not raised because capital need is huge and the physical milestones take years, but not cut below 0.75 times the anchor because investors fund nuclear hardware on narrative; Oklo raised a venture Series A in 2018 on a design and a licensing plan."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      40000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin or bridge Series A that funds engineering only. Typical when no reactor partner exists yet."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      40000000
+     ],
+     "post_money_usd": [
+      80000000,
+      250000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Median 2022+ YC Series A is $14M, market $17M; hard tech with infrastructure scale story prices higher."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      100000000
+     ],
+     "post_money_usd": [
+      250000000,
+      700000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside from a signed power and compute offtake with a hyperscaler or a government pilot."
+    }
+   ],
+   "why_it_fails": "The Series A milestone for this company is a licensable ship reactor design with a named partner, plus a first compute customer. A small team cannot do that in 18 to 24 months, since nuclear regulators and shipyards move on multi year clocks. Atomic Alchemy and Ferveret show the pattern: technically real nuclear YC companies stayed small and slow before any institutional round."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2019-2022 --calibration-only: seed cond 67% (n=12), series_a cond 38% (n=8), series_b cond 67% (n=3), series_c cond 0% (n=2); only 12 researched, so anecdotes. Wider cross check: --industry B2B --years 2019-2022 gave seed 63/77/81, A cond 31%, B cond 30%, C cond 33%. Energy tag cohort had only 4 companies (series_b cond 75%), ignored as too small.",
+    "adjustment_reason": "Near the B2B anchor of 30%. If a company has survived to a Series A on a nuclear thesis it has probably cleared the biggest technical doubt, and capital intensive projects need large rounds quickly, which raises the chance of a Series B."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      50000000
+     ],
+     "post_money_usd": [
+      100000000,
+      300000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Down or flat round to keep a design team alive."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      150000000
+     ],
+     "post_money_usd": [
+      300000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical growth round for nuclear and energy infrastructure in 2025 to 2026, where Series B rounds above $50M are common."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      500000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside, comparable to the Helion style raises in the YC data once a demonstrator exists."
+    }
+   ],
+   "why_it_fails": "The Series B ask is a prototype reactor or ship hull in the water, which needs hundreds of millions for even a pilot. Investors will pass if the regulatory path is still open, if land based small reactors from better funded firms can serve the same data centers, or if the floating concept cannot show a cost advantage."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2019-2022 --calibration-only: seed cond 67% (n=12), series_a cond 38% (n=8), series_b cond 67% (n=3), series_c cond 0% (n=2); only 12 researched, so anecdotes. Wider cross check: --industry B2B --years 2019-2022 gave seed 63/77/81, A cond 31%, B cond 30%, C cond 33%.",
+    "adjustment_reason": "Slightly above the B2B anchor of 33% because the few nuclear companies that reach a B round tend to keep raising very large rounds (Helion, Oklo in the YC data), but within 2x."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      80000000,
+      200000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1200000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Standard capital intensive Series C. Sized from the stage benchmarks and the cohort round sizes."
+    },
+    {
+     "raise_usd": [
+      200000000,
+      600000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      4000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Project scale round for a first commercial vessel."
+    },
+    {
+     "raise_usd": [
+      600000000,
+      2000000000
+     ],
+     "post_money_usd": [
+      4000000000,
+      15000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside on the model of the largest energy raises of 2025 and 2026."
+    }
+   ],
+   "why_it_fails": "At this stage the company needs project finance for a nuclear vessel and compute fleet, with a utility style customer base. It fails if a first unit overruns cost and schedule, if a flag state or port refuses entry, or if cheap grid and gas power at land sites keeps winning, as it did against earlier novel data center ideas such as Microsoft Natick."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.74
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.08
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most nuclear and ocean infrastructure plans never leave the design stage. Even companies that raised money, such as the YC fusion and fission names in the data, take a decade to a first commercial output. A two person start needs both a licensing breakthrough and many hundreds of millions in capital before an acquirer or public market will pay $100M or more."
+ },
+ "analogs": [
+  {
+   "slug": "oklo",
+   "relevance": "Summer 2014 nuclear fission company; raised a venture Series A in 2018 and went public by SPAC in 2024.",
+   "outcome_summary": "Shows the best case: a very long road, thesis funded early, public after about ten years."
+  },
+  {
+   "slug": "atomic-alchemy",
+   "relevance": "Winter 2019 private isotope reactor company.",
+   "outcome_summary": "Stayed small in disclosed funding and was acquired by Oklo for a reported $25M in stock, a small exit despite real nuclear work."
+  },
+  {
+   "slug": "ferveret-inc",
+   "relevance": "Summer 2021 nuclear inspired data center cooling company.",
+   "outcome_summary": "Raised a seed described as about $10M with Aramco Ventures, no later round found; hard tech but no Series A."
+  },
+  {
+   "slug": "networkocean",
+   "relevance": "Summer 2024 floating data center company, closest direct overlap.",
+   "outcome_summary": "Started with an underwater plan that met regulator scrutiny, pivoted to floating solar; no funding confirmed."
+  },
+  {
+   "slug": "helion-energy",
+   "relevance": "Summer 2014 fusion company.",
+   "outcome_summary": "Raised very large later rounds; the extreme upside case for energy hard tech, rare."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Nuclear and maritime regulation takes longer than any funding cycle",
+   "p": 0.55,
+   "evidence": "No private company has licensed a commercial floating nuclear power barge in the US or most flag states; the only operating floating plant is Russian and state built.",
+   "analogs": [
+    "oklo",
+    "atomic-alchemy"
+   ],
+   "mitigation": "Hire a regulatory lead early, pick one jurisdiction and one reactor vendor, and seek a government pilot to share licensing cost."
+  },
+  {
+   "risk": "A two person team cannot build a reactor, a ship and a data center",
+   "p": 0.45,
+   "evidence": "The description bundles three hard industries, power ships, barges and compute, with two founders and no stated nuclear or shipbuilding background.",
+   "analogs": [
+    "ferveret-inc",
+    "networkocean"
+   ],
+   "mitigation": "Narrow to one wedge such as a licensed partner reactor on a standard hull, and add technical cofounders from the nuclear navy or industry."
+  },
+  {
+   "risk": "Land based nuclear and gas power serve the same data centers sooner",
+   "p": 0.4,
+   "evidence": "Hyperscalers are signing power deals with land based small reactors and fission or fusion providers already funded far beyond a YC seed.",
+   "analogs": [
+    "oklo",
+    "helion-energy"
+   ],
+   "mitigation": "Compete on speed to power in places with no grid, or on cooling, and prove a price per megawatt advantage on paper."
+  },
+  {
+   "risk": "Capital intensity makes a venture round structure fail",
+   "p": 0.35,
+   "evidence": "A first vessel costs far more than a YC style seed or Series A, so the company depends on project finance and government support.",
+   "analogs": [
+    "atomic-alchemy"
+   ],
+   "mitigation": "Seek non dilutive funding and offtake agreements before raising a large equity round."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Core Power",
+   "what": "Maritime nuclear propulsion and floating power developer working with reactor vendors.",
+   "traction": "Funded and backed by shipping and nuclear partners.",
+   "source_url": "https://corepower.energy"
+  },
+  {
+   "name": "Karpowership",
+   "what": "Operates floating gas and fuel power ships delivering electricity to national grids.",
+   "traction": "Dozens of power ships in operation across several countries.",
+   "source_url": "https://karpowership.com"
+  },
+  {
+   "name": "Oklo and other land based small reactor developers",
+   "what": "Offer advanced fission power for data centers on land.",
+   "traction": "Public company with hyperscaler interest.",
+   "source_url": "https://oklo.com"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "A floating reactor, a ship, an offshore data center and ocean networking are each decade scale engineering and licensing problems. A two person team cannot build any of them in 3 months, so the company depends on partners and regulators."
+ },
+ "takeover_risk": {
+  "rating": 2,
+  "who": [
+   "Core Power",
+   "Oklo",
+   "Hyperscalers with their own energy teams"
+  ],
+  "timeline_months": 36,
+  "rationale": "Incumbents have the capital and licenses but are focused on land. Absorbing this idea would take years because of the regulatory work, so copy risk is low but the field is also being solved by simpler land alternatives."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Hyperscalers have said power access is the main limit on AI data center growth and are signing nuclear power deals.",
+    "source_url": "https://oklo.com"
+   },
+   {
+    "claim": "Local opposition to data centers over water and power use is a documented source of project delay.",
+    "source_url": "https://www.datacenterdynamics.com"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a credible technical and regulatory path.",
+   "actions": [
+    "Recruit a nuclear or naval architecture cofounder or advisor.",
+    "Write a two page regulatory path for one flag state and one reactor vendor."
+   ],
+   "proof": "A named reactor partner willing to sign a nonbinding letter of intent."
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert the story into one funded design study.",
+   "actions": [
+    "Sign letters of intent from two data center operators or compute buyers.",
+    "Apply for a government or DOE style grant for the design work."
+   ],
+   "proof": "A round above $500K with at least one nuclear specialist investor."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Pairs two scarce inputs for AI, power and sites, in a way that sidesteps land permitting.",
+   "evidence": "The description names local community opposition as the problem it avoids; data center opposition is a recognised issue.",
+   "source_url": "https://www.datacenterdynamics.com"
+  },
+  {
+   "point": "Timing is strong: nuclear for AI is a funded theme and past YC nuclear companies found investors.",
+   "evidence": "Oklo went public in 2024 and Ferveret raised a seed with Aramco Ventures per the YC data.",
+   "source_url": "https://oklo.com"
+  }
+ ],
+ "brand": {
+  "name": "Atomarine",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Atomarine\" --era 2022+ returned kind invented_or_proper, 1 word, 4 syllables.",
+  "strengths": [
+   "Atom plus marine tells the story",
+   "Memorable and short enough"
+  ],
+  "weaknesses": [
+   "Nuclear in the name will draw regulators and some investors cautiously",
+   "Spelling is slightly awkward"
+  ],
+  "rationale": "The name states the product directly, which helps a technical pitch, like Oklo and other single word YC energy names. It has no known conflict in the YC data, and for an infrastructure company the brand matters little compared with licenses and partners.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A bold nuclear and ocean thesis from a two person team: fundable on narrative at the seed stage, but the physical and regulatory milestones make later rounds and any exit improbable.",
+  "general_summary": "Atomarine is the hardest kind of company to forecast: a long regulatory and engineering road with a very small team. The seed step is plausible because nuclear power for AI data centers is a hot funding theme and past YC nuclear companies such as Oklo, Ferveret and Atomic Alchemy found investors. The harder steps are Series A and beyond, where investors ask for a partner reactor, a licensing path and a first buyer. Most likely it raises a small seed and then stalls or changes scope."
+ },
+ "assumptions": [
+  "Accepted to YC is assumed, so yc_acceptance is a note.",
+  "Seed means a round above about $500K within roughly 12 months of 2026-07-06.",
+  "Only the input file was used for the company. Market claims come from general knowledge and a few homepage URLs, not re-verified in this test.",
+  "Industrials cohort has only 12 researched companies and the Energy tag only 4, so base rates are anecdotal."
+ ],
+ "sources": [
+  "https://corepower.energy",
+  "https://karpowership.com",
+  "https://oklo.com",
+  "https://www.datacenterdynamics.com"
+ ]
 }
