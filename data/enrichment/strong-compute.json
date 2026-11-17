@@ -1,95 +1,119 @@
 {
   "slug": "strong-compute",
-  "depth": 1,
-  "confidence": "low",
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {
-    "type": "none",
-    "date": null,
-    "amount_usd": null,
-    "acquirer": null,
-    "reason": null,
-    "source_url": null
-  },
-  "competition_at_founding": {
-    "as_of": "2022-03",
-    "competitors": []
-  },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
-  "target_customer": "Teams training neural networks (ML/AI developers) paying for cloud compute",
-  "problem": "Neural network training on cloud compute is slow and priced by consumption; Strong Compute claims 10x-1000x speedups and pricing by performance.",
-  "business_model": "Cloud compute priced by performance rather than consumption (software plus hardware optimizations)",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Teams training neural networks (vision startups, research labs, enterprise AI groups) that spend heavily on GPU compute",
+  "problem": "Neural network training pipelines waste GPU and CPU time on bottlenecks; the company claims 10x-1000x speedups and wants cloud compute priced by performance rather than consumption.",
+  "business_model": "Cloud compute and training-optimization platform priced by performance (software plus hardware optimizations)",
   "product_category": "AI/ML training infrastructure",
   "founded_year": 2021,
   "founders": [
     {
       "name": "Ben Sand",
       "role": "Founder/CEO",
-      "prior_employers": [
-        "Meta (co-founder, YC S13, as listed on YC page)"
-      ],
+      "prior_employers": ["Meta (AR company; co-founder per TechCrunch)"],
       "education": [],
-      "technical": null,
-      "previous_startups": [],
+      "technical": true,
+      "previous_startups": ["Meta (AR company, co-founder per TechCrunch 2022; the YC page lists it as YC S13)", "Brainworth (program teaching kids to build neural networks, per 2025 interview)"],
       "age_at_founding": null,
       "age_source": null,
-      "background_notes": "YC page lists him as co-founder of Meta (YC S13); no other background sourced."
+      "background_notes": "A 2025 interview says he has built over a thousand computers by hand and worked in or invested in AI for about 15 years. The AR company Meta is not Facebook/Meta Platforms."
     }
   ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {
+      "stage": "seed",
+      "date": "2022-05",
+      "amount_usd": 7800000,
+      "post_money_usd": null,
+      "valuation_basis": null,
+      "investors": ["Sequoia Capital India", "Blackbird", "Folklore Ventures", "Skip Capital", "Y Combinator", "Starburst Ventures", "angels from Cruise, Waymo, OpenAI, SpaceX, Virgin Galactic"],
+      "source_url": "https://techcrunch.com/2022/05/30/strong-compute-raises-7-8m-seed-round-to-speed-up-ml-training-pipelines"
+    }
+  ],
+  "exit": {
+    "type": "none",
+    "date": null,
+    "amount_usd": null,
+    "acquirer": null,
+    "reason": null,
+    "source_url": "https://www.ycombinator.com/companies/strong-compute"
+  },
+  "competition_at_founding": {
+    "as_of": "2022-03",
+    "competitors": [
+      {
+        "name": "MosaicML",
+        "what": "Cheaper, more efficient ML training software and cloud, emerged from stealth Oct 2021",
+        "traction_then": "Just launched; no traction figures in the source",
+        "funding_then": "Not stated in the source",
+        "source_date": "2021-10",
+        "source_url": "https://www.hpcwire.com/2021/10/15/mosaicml-led-by-naveen-rao-comes-out-of-stealth-aiming-to-ease-ml-training/"
+      },
+      {
+        "name": "Determined AI",
+        "what": "Open-source deep learning training platform; bought by Hewlett Packard Enterprise in mid-2021",
+        "traction_then": "Part of HPE by then",
+        "funding_then": "Acquired 2021 (per CB Insights comparison page, undated snippet)",
+        "source_date": "2021-06",
+        "source_url": "https://www.cbinsights.com/compare/determined-ai-vs-lambda-labs"
+      }
+    ]
+  },
   "technical_complexity": {
     "rating": 4,
-    "rationale": "Claims of 10x-1000x training speedups and 1000x file transfer require systems and hardware-level optimization; claims are the company's own and unverified."
+    "rationale": "Claims of 10x-1000x speedups need low-level CPU/GPU profiling and optimization; TechCrunch (2022-05) says it builds tools showing how user code interacts with hardware. A customer (LayerJot) reportedly ran Nvidia's reference implementation about 20 times faster. Claims are company-reported."
   },
   "defensibility": {
     "rating": 2,
-    "moat_types": [
-      "technical_moat"
-    ],
-    "rationale": "Moat depends on whether the claimed optimizations are real and hard to copy; not evidenced in sources read."
+    "moat_types": ["technical_moat"],
+    "rationale": "Optimization expertise is real but services-like at first (customer-by-customer work, focus on computer vision); hyperscalers and well-funded training platforms were present. No lock-in evidenced."
   },
   "takeover_risk_then": {
     "rating": 4,
-    "incumbents": [
-      "AWS",
-      "Google Cloud",
-      "Microsoft Azure",
-      "NVIDIA"
-    ],
-    "outcome": "Not researched; hyperscalers were the obvious incumbents in cloud compute."
+    "incumbents": ["AWS", "Google Cloud", "Microsoft Azure", "NVIDIA", "HPE (Determined AI)", "MosaicML"],
+    "outcome": "No source shows incumbents copying or buying Strong Compute. Of the 2021-22 peers, Determined AI was bought by HPE in 2021 and MosaicML later sits under Databricks (StartupHub listing, undated)."
   },
-  "market_need_then": "YC page frames a $500B cloud market; no independent demand evidence gathered.",
+  "market_need_then": "In 2022 TechCrunch reported inbound interest from large companies spending $50M or more on compute, plus finance and NLP teams; a 2025 interview says even well-funded AI orgs struggle to train efficiently at scale.",
   "branding": {
     "name_origin": null,
     "name_type": "compound",
-    "name_qualities": [],
-    "name_problems": [],
-    "domain_note": null,
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say"],
+    "name_problems": ["generic"],
+    "domain_note": "Operates on strongcompute.com; acquisition history not found.",
     "identity": {
-      "logo": null,
+      "logo": "Wordmark/logo shown on directories; no description found",
       "mascot_or_character": null,
       "visual_style": null,
-      "voice_and_tone": null
+      "voice_and_tone": "Scrappy, engineer-to-engineer; a job-board profile has the tagline 'Shipping like we're funded' (undated)"
     },
     "brand_signature": null,
     "rebrands": [],
-    "community_and_virality": null,
+    "community_and_virality": "Runs GPU hackathons in San Francisco and Sydney; a 2025 interview says over 600 engineers have used the platform.",
     "brand_strength": {
-      "rating": null,
-      "rationale": "No sources on brand strength found; site title only is 'Strong Compute - AI Infrastructure Management'."
+      "rating": 2,
+      "rationale": "Plain descriptive-sounding name, little press about the brand itself; some community activity through hackathons."
     },
     "brand_effect_on_outcome": "unclear",
     "sources": [
-      "https://www.ycombinator.com/companies/strong-compute",
+      "https://cerebralvalley.beehiiv.com/p/strong-compute-your-high-performance-training-infra-platform",
       "https://strongcompute.com"
     ]
   },
-  "outcome_analysis": "Strong Compute is still listed Active with 8 people in Merritt Island, FL and Sydney. The YC page cites a $7.8M seed in May 2022 reported by TechCrunch. No exit, shutdown or later-round information was found, so the outcome is unresolved and the speedup claims remain unverified.",
+  "pivots": [],
+  "success_factors": ["technical_moat"],
+  "failure_factors": [],
+  "outcome_analysis": "Strong Compute, YC W22, raised a $7.8M seed in May 2022 from Sequoia India, Blackbird and others, riding the surge in GPU training demand. Searches found no later round, exit or shutdown, and it is still listed Active with about 8 people, so the outcome is unresolved: it has funding and a technical wedge but no visible larger round since 2022 and faces hyperscalers and better-funded training platforms.",
   "sources": [
     "https://www.ycombinator.com/companies/strong-compute",
-    "https://strongcompute.com"
+    "https://strongcompute.com",
+    "https://techcrunch.com/2022/05/30/strong-compute-raises-7-8m-seed-round-to-speed-up-ml-training-pipelines",
+    "https://www.businessnewsaus.com.au/articles/strong-compute-raises--10-9m-to-help-build-the-future-of-cloud-computing.html",
+    "https://www.blackbird.vc/portfolio/strong-compute",
+    "https://cerebralvalley.beehiiv.com/p/strong-compute-your-high-performance-training-infra-platform",
+    "https://www.hpcwire.com/2021/10/15/mosaicml-led-by-naveen-rao-comes-out-of-stealth-aiming-to-ease-ml-training/",
+    "https://www.cbinsights.com/compare/determined-ai-vs-lambda-labs"
   ],
-  "notes": "YC page cites TechCrunch reporting a $7.8M seed in May 2022 (not independently cross-checked, so not recorded as a round; unverified). Company site fetch returned only a title. Research limit: the shared WebSearch budget was exhausted before any outcome, funding, competitor or branding search could run, so only the YC page and company site were read; competition_at_founding is left empty (no dated sources), and funding and brand origin facts are unverified or null. Downgraded to depth 1: written after the shared web search budget ran out (no outcome, funding cross-check or competitor search). Redo with full searches."
+  "notes": "Seed amount confirmed by TechCrunch and Business News Australia (AU$10.9M = US$7.8M) and Blackbird's portfolio page (Seed, 2022). CB Insights snippet says total raised $8.3M over 3 rounds including an earlier convertible note; not verified, so not recorded. A search snippet mentions a 2023 report that the company moved money after the SVB collapse; unverified. Searches found no 2025 funding, layoffs or exit. The Meta in Ben Sand's bio is the AR company, per TechCrunch. Competitor entries come from sources dated 2021; the Determined AI date is approximate (mid-2021 per CB Insights snippet). Name origin not found."
 }
