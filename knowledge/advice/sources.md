@@ -38,7 +38,7 @@ Seed list. Verify each URL still resolves and add sources as you find them (extr
 | Acceptance rate estimates (Round Funded) | https://www.roundfunded.com/en/blogs/yc-acceptance-rate-2026 | read, note p1-acceptance-rate-estimates; YC publishes no official rate |
 | Listen Notes W18 interview | https://www.listennotes.com/blog/my-y-combinator-interview-experience-w18-22 | read, note p1-acct-listennotes-w18 |
 | Close, seven attempts | https://www.close.com/blog/my-seven-attempts-to-get-into-y-combinator | read, note p1-acct-close-efti |
-| Relate, six applications | https://www.relate.so/blog/six-applications-y-combinator | read via mirror hn.jakechampion.name, note p1-acct-relate-six-applications |
+| Relate, six applications | https://www.relate.so/blog/six-applications-y-combinator | not used: only reachable through a third-party mirror, which the skill forbids; note removed |
 | Buffer rejected application | https://buffer.com/resources/buffers-y-combinator-application/ | read, note p1-acct-buffer-rejection |
 | Stable pivot before interview | https://usestable.com/blog/what-happened-when-we-pivoted-2-weeks-before-the-y-combinator-interview-advice-on-applying | read, note p1-acct-stable-pivot |
 | Neu-ner rejected from YC | https://liorn.substack.com/p/rejected-from-ycombinator | read, note p1-acct-neuner-s22 |
