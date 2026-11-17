@@ -1,24 +1,7 @@
 {
   "slug": "unsiloed-ai",
-  "depth": 1,
-  "confidence": "low",
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {
-    "type": "none",
-    "date": null,
-    "amount_usd": null,
-    "acquirer": null,
-    "reason": null,
-    "source_url": null
-  },
-  "competition_at_founding": {
-    "as_of": "2025-09",
-    "competitors": []
-  },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
+  "depth": 2,
+  "confidence": "medium",
   "target_customer": "AI teams and enterprises (banks, NASDAQ-listed firms, startups) building RAG and document workflows",
   "problem": "Generic LLM parsers and OCR fail on multimodal documents (text, tables, charts, images), which cripples RAG pipelines.",
   "business_model": "usage-based API (plus on-premise deployment option)",
@@ -61,38 +44,64 @@
       "age_source": null
     }
   ],
+  "funding_data_coverage": "none_found",
+  "rounds": [],
+  "exit": {
+    "type": "none",
+    "date": null,
+    "amount_usd": null,
+    "acquirer": null,
+    "reason": null,
+    "source_url": null
+  },
+  "competition_at_founding": {
+    "as_of": "2025-09",
+    "competitors": [
+      {
+        "name": "Extend",
+        "what": "AI document processing cloud (parsing, extraction)",
+        "traction_then": "Press release states a $17M raise; customer counts not recorded",
+        "funding_then": "$17M seed and Series A combined, announced June 2025",
+        "source_date": "2025-06",
+        "source_url": "https://www.businesswire.com/news/home/20250617790342/en"
+      }
+    ]
+  },
   "technical_complexity": {
     "rating": 3,
-    "rationale": "Vision models plus OCR and layout-aware chunking; standard applied ML with hard parts. Rated from the YC page description only."
+    "rationale": "Vision models plus OCR and layout-aware chunking; applied ML with hard parts. The company claims a first place on OlmOCR-Bench (self-reported on Show HN, unverified)."
   },
   "defensibility": {
     "rating": 2,
     "moat_types": [],
-    "rationale": "Claimed benchmark lead over LlamaIndex, Gemini, Mistral and Unstructured.io is the company's own claim; parsing models are copyable and big labs ship OCR."
+    "rationale": "Benchmark lead is the company's own claim; parsing models are copyable and Reducto, Extend, LlamaParse and Unstructured.io already sell the same API."
   },
   "takeover_risk_then": {
     "rating": 4,
     "incumbents": [
-      "Google (Gemini)",
-      "Mistral",
-      "LlamaIndex",
-      "Unstructured.io"
+      "Reducto",
+      "LlamaIndex (LlamaParse)",
+      "Unstructured.io",
+      "Extend",
+      "Google Gemini",
+      "Mistral"
     ],
-    "outcome": "Not researched; the company itself names these players as benchmarks in 2025."
+    "outcome": "No acquisition, shutdown or layoff of Unsiloed found as of 2026-11; incumbents are alive and funded, outcome not yet visible."
   },
-  "market_need_then": "YC page states AI teams spend 6+ months on document workflows and under 10% reach production (company claim, unverified).",
+  "market_need_then": "YC page claims AI teams spend 6+ months on document workflows and under 10% reach production (company claim, unverified). Peer funding in 2025 (Extend $17M in June 2025; Reducto Series A with Benchmark) shows investor demand for document parsing.",
   "branding": {
     "name_origin": null,
     "name_type": "compound",
     "name_qualities": [
-      "evocative"
+      "evocative",
+      "distinctive"
     ],
     "name_problems": [],
     "domain_note": null,
     "identity": {
       "logo": null,
       "mascot_or_character": null,
-      "visual_style": null,
+      "visual_style": "Text and link heavy site, index of technical blog posts",
       "voice_and_tone": "Informational, engineering-focused technical guides (company site)."
     },
     "brand_signature": null,
@@ -108,11 +117,16 @@
       "https://www.unsiloed.ai/"
     ]
   },
-  "outcome_analysis": "Too early to judge: Unsiloed AI was in the Fall 2025 batch, Active, with two founders and no public priced round found. It sells a parsing API into a crowded document-AI space where foundation-model vendors are also improving; whether benchmark claims convert into durable revenue is not yet visible.",
+  "pivots": [],
+  "success_factors": [],
+  "failure_factors": [],
+  "outcome_analysis": "Too early to judge: Unsiloed AI joined YC in Fall 2025 and is Active with two founders. No priced round was verified (aggregators disagree at roughly 0.5M to 1M, one outlier 7.5M). It sells a parsing API into a crowded document-AI space where Reducto, Extend and LlamaParse are better funded, so whether benchmark claims turn into durable revenue is not yet visible.",
   "sources": [
     "https://www.ycombinator.com/companies/unsiloed-ai",
     "https://www.unsiloed.ai/",
-    "https://www.cbinsights.com/company/unsiloedai/financials"
+    "https://www.businesswire.com/news/home/20250617790342/en",
+    "https://www.cbinsights.com/company/unsiloedai/financials",
+    "https://www.everydev.ai/developers/unsiloed-ai"
   ],
-  "notes": "The web search budget was exhausted before the required outcome, funding cross-check, dated-competitor and branding searches could run, so competition_at_founding is empty and brand fields rest only on the YC page and the company site. Funding: a search snippet from CB Insights (aggregator) said about $500K raised, a $0.5M convertible note dated 2025-10-01 with YC; another profile said $1M; unverified and not recorded as a round. Site claims 'millions of pages weekly' while YC page says hundreds of thousands of documents (company claims). Founding year 2024 vs 2025 differs across profiles. Early-stage; outcome not yet known. Downgraded to depth 1: written after the shared web search budget ran out (no outcome, funding cross-check or competitor search). Redo with full searches."
+  "notes": "Funding is aggregator-only and conflicting, so no round is recorded: CB Insights snippet says about $500K (convertible note dated 2025-10-01, investors incl. YC, Transpose Platform, Orange Collective, Spot VC, Eight Capital Group); Neuronfeed says $1M over 2 rounds incl. a Jan 2025 seed; Standout says $7.5M (outlier). No primary announcement found. Outcome search found nothing on Unsiloed. A YC-F25 profile (yespress) names Reducto, LlamaParse, Unstructured.io, Extend, Nanonets and Datalab as competitors but is undated, so only Extend (dated press release) is listed. No name-origin source found. Company site claims millions of pages while YC page says hundreds of thousands of documents. Founding year 2024 vs 2025 differs across profiles. Depth-1 record overwritten with a depth-2 record after the required searches."
 }

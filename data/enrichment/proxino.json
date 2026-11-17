@@ -1,28 +1,11 @@
 {
   "slug": "proxino",
-  "depth": 1,
-  "confidence": "low",
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {
-    "type": "shutdown",
-    "date": null,
-    "amount_usd": null,
-    "acquirer": null,
-    "reason": null,
-    "source_url": "https://www.ycombinator.com/companies/proxino"
-  },
-  "competition_at_founding": {
-    "as_of": "2011-06",
-    "competitors": []
-  },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
+  "depth": 2,
+  "confidence": "medium",
   "target_customer": "Web developers needing client-side JavaScript error monitoring",
-  "problem": "Client-side JavaScript errors in production are hard to see and debug.",
-  "business_model": "SaaS monitoring (not confirmed)",
-  "product_category": "JavaScript monitoring and debugging",
+  "problem": "Client-side JavaScript errors in production are hard to see; developers had to wrap code in handlers by hand.",
+  "business_model": "SaaS proxy with free tier (under 1,000 page views a month) and paid tiers from $30 a month for 10,000 page views (TechCrunch 2011-08)",
+  "product_category": "JavaScript error monitoring and debugging proxy",
   "founded_year": 2011,
   "founders": [
     {
@@ -46,29 +29,57 @@
       "age_source": null
     }
   ],
+  "funding_data_coverage": "none_found",
+  "rounds": [],
+  "exit": {
+    "type": "shutdown",
+    "date": null,
+    "amount_usd": null,
+    "acquirer": null,
+    "reason": null,
+    "source_url": "https://www.ycombinator.com/companies/proxino"
+  },
+  "competition_at_founding": {
+    "as_of": "2011-08",
+    "competitors": [
+      {
+        "name": "Errorception",
+        "what": "Client-side JavaScript error tracking service",
+        "traction_then": "Demoed at JSFoo 2011 (1 Oct 2011)",
+        "funding_then": "Not stated",
+        "source_date": "2011-10",
+        "source_url": "https://hasgeek.com/jsfoo/2011/sub/errorception-com-painless-client-side-javascript-error-tracking-9LaRMZxGaDgapt8Jo2YzQf"
+      }
+    ]
+  },
   "technical_complexity": {
     "rating": 3,
-    "rationale": "Browser-side instrumentation; rating from description only."
+    "rationale": "A proxy that rewrites JavaScript to inject error reporting, minify and cache it, and compile CoffeeScript, with failover to the origin server (TechCrunch 2011-08)."
   },
   "defensibility": {
     "rating": 1,
     "moat_types": [],
-    "rationale": "Monitoring snippets are easy to copy; no source examined."
+    "rationale": "Instrumentation snippets are easy to copy; nothing in the sources suggests a data or integration moat."
   },
   "takeover_risk_then": {
-    "rating": null,
-    "incumbents": [],
-    "outcome": "Not researched."
+    "rating": 2,
+    "incumbents": [
+      "Sentry",
+      "Airbrake"
+    ],
+    "outcome": "No acquisition of Proxino found; an aggregator says the market got crowded with competitors such as Sentry before the company ended (weak source)."
   },
-  "market_need_then": "Not researched with dated sources; the YC page frames the need as monitoring and debugging client-side JavaScript in production.",
+  "market_need_then": "TechCrunch (2011-08-22) says the founders saw few good tools for detecting browser errors, with developers relying on manual handlers or cross-browser test suites; demand was asserted by the founders, not measured.",
   "branding": {
     "name_origin": null,
     "name_type": "invented",
     "name_qualities": [
       "distinctive"
     ],
-    "name_problems": [],
-    "domain_note": null,
+    "name_problems": [
+      "confusable"
+    ],
+    "domain_note": "proxino.com; returned 503 when fetched.",
     "identity": {
       "logo": null,
       "mascot_or_character": null,
@@ -84,12 +95,21 @@
     },
     "brand_effect_on_outcome": "unclear",
     "sources": [
-      "https://www.ycombinator.com/companies/proxino"
+      "https://www.ycombinator.com/companies/proxino",
+      "https://techcrunch.com/2011/08/22/yc-funded-proxino-automated-error-reporting-for-your-client-side-javascript/"
     ]
   },
-  "outcome_analysis": "The cause of Proxino's inactivity is not public in the sources gathered: the YC page only lists it as Inactive, and the site returned 503 when fetched. No post-mortem, acquisition or funding evidence was found, so no failure factors are asserted.",
+  "pivots": [],
+  "success_factors": [],
+  "failure_factors": [],
+  "outcome_analysis": "The cause of Proxino's shutdown is not public: the YC directory lists it as Inactive, the site returned 503, and no post-mortem or acquisition was found. A startup-failure aggregator gives a 2014 end and about $120K burned and says the market became crowded (unsourced), so no failure factors are asserted. The proxy approach had little moat against error-tracking services.",
   "sources": [
-    "https://www.ycombinator.com/companies/proxino"
+    "https://www.ycombinator.com/companies/proxino",
+    "https://techcrunch.com/2011/08/22/yc-funded-proxino-automated-error-reporting-for-your-client-side-javascript/",
+    "https://legacy.xconomy.com/2011/08/24/y-combinators-summer-2011-demo-day-the-definitive-debrief-part-1/4",
+    "https://www.cbinsights.com/company/proxino",
+    "https://www.loot-drop.io/startup/1600-proxino",
+    "https://hasgeek.com/jsfoo/2011/sub/errorception-com-painless-client-side-javascript-error-tracking-9LaRMZxGaDgapt8Jo2YzQf"
   ],
-  "notes": "The web search budget was exhausted before the required outcome, funding cross-check, dated-competitor and branding searches could run, so competition_at_founding is empty and brand fields rest only on the YC page and the company site. Directory says Inactive; exit.type=shutdown is inferred from that status only, date and reason not public as far as checked. proxino.com returned 503. Cause of shutdown not found. Founder details not listed on YC page. No failure factors asserted because the cause is not public. Downgraded to depth 1: written after the shared web search budget ran out (no outcome, funding cross-check or competitor search). Redo with full searches."
+  "notes": "Directory status Inactive; exit.type=shutdown inferred from that status, date and reason not public (an aggregator says 2014, unverified, so exit.date left null). CB Insights lists seed stage, dead, $20K total raised (single aggregator, unverified, not recorded as a round); no cross-check found, so funding coverage is none_found. Founders named via Xconomy Demo Day coverage; backgrounds not found. Errorception is dated 2011-10, shortly after the Aug 2011 batch demo day; TechCrunch named only generic alternatives. No branding sources found. Depth-1 record overwritten after the required searches."
 }

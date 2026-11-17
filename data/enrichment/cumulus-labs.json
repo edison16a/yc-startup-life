@@ -1,27 +1,10 @@
 {
   "slug": "cumulus-labs",
-  "depth": 1,
+  "depth": 2,
   "confidence": "low",
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {
-    "type": "none",
-    "date": null,
-    "amount_usd": null,
-    "acquirer": null,
-    "reason": null,
-    "source_url": null
-  },
-  "competition_at_founding": {
-    "as_of": "2026-01",
-    "competitors": []
-  },
-  "pivots": [],
-  "success_factors": [],
-  "failure_factors": [],
   "target_customer": "Engineering teams shipping AI in production without a dedicated ML platform team",
   "problem": "Teams juggle separate tools for routing, observability, evaluation, fine-tuning and inference, and overpay for GPU compute.",
-  "business_model": "usage-based inference and GPU platform (not confirmed)",
+  "business_model": "usage-based inference API and GPU platform (not confirmed)",
   "product_category": "AI inference and GPU orchestration platform",
   "founded_year": 2025,
   "founders": [
@@ -53,23 +36,68 @@
       "age_source": null
     }
   ],
+  "funding_data_coverage": "none_found",
+  "rounds": [],
+  "exit": {
+    "type": "none",
+    "date": null,
+    "amount_usd": null,
+    "acquirer": null,
+    "reason": null,
+    "source_url": null
+  },
+  "competition_at_founding": {
+    "as_of": "2026-01",
+    "competitors": [
+      {
+        "name": "Together AI",
+        "what": "Hosted open-model inference API",
+        "traction_then": "Not recorded",
+        "funding_then": "Not recorded",
+        "source_date": "2026",
+        "source_url": "https://www.digitalocean.com/resources/articles/together-ai-alternatives"
+      },
+      {
+        "name": "Fireworks AI",
+        "what": "Hosted open-model inference API",
+        "traction_then": "Not recorded",
+        "funding_then": "Not recorded",
+        "source_date": "2026",
+        "source_url": "https://www.digitalocean.com/resources/articles/fireworks-ai-alternatives"
+      },
+      {
+        "name": "Baseten",
+        "what": "Inference platform for production AI workloads",
+        "traction_then": "Not recorded",
+        "funding_then": "Not recorded",
+        "source_date": "2026",
+        "source_url": "https://www.tooljunction.io/alternatives/baseten"
+      }
+    ]
+  },
   "technical_complexity": {
     "rating": 4,
-    "rationale": "Custom inference engine claimed 30-50% faster than vLLM or SGLang (company claim, unverified)."
+    "rationale": "Custom C++ inference engine with CUDA kernels targeting NVIDIA GH200; company claims 30-50% more throughput than vLLM or SGLang and 7,167 tok/s on one chip (self-reported, unverified)."
   },
   "defensibility": {
     "rating": 2,
     "moat_types": [
       "technical_moat"
     ],
-    "rationale": "Performance claims unverified; inference stack is contested by well-funded players."
+    "rationale": "Performance claims unverified; the inference market is contested by well-funded players and open-source engines."
   },
   "takeover_risk_then": {
-    "rating": null,
-    "incumbents": [],
-    "outcome": "Not researched."
+    "rating": 4,
+    "incumbents": [
+      "Together AI",
+      "Fireworks AI",
+      "Baseten",
+      "vLLM",
+      "SGLang"
+    ],
+    "outcome": "No acquisition or shutdown found as of 2026-11; incumbents are established and the product launched only in March 2026."
   },
-  "market_need_then": "Not researched with dated sources; the company claims teams overpay for GPU compute and juggle many separate AI tooling products.",
+  "market_need_then": "Company claims enterprises struggle to stitch together vendors and overpay for GPUs; OpenRouter-style routing and many 2026 'alternatives' guides show a busy inference market. No independent demand measure collected.",
   "branding": {
     "name_origin": null,
     "name_type": "real_word",
@@ -77,7 +105,9 @@
       "evocative",
       "easy_to_spell"
     ],
-    "name_problems": [],
+    "name_problems": [
+      "generic"
+    ],
     "domain_note": null,
     "identity": {
       "logo": null,
@@ -85,7 +115,7 @@
       "visual_style": null,
       "voice_and_tone": "Short, direct imperatives; tagline 'Beat the frontier. Own your AI.' (company site)."
     },
-    "brand_signature": "Product names Paladin, Ion and Talos.",
+    "brand_signature": "Product names Ion (engine), IonRouter (API), Paladin and Talos.",
     "rebrands": [],
     "community_and_virality": null,
     "brand_strength": {
@@ -95,13 +125,21 @@
     "brand_effect_on_outcome": "unclear",
     "sources": [
       "https://www.ycombinator.com/companies/cumulus-labs",
-      "https://cumuluslabs.io"
+      "https://cumuluslabs.io",
+      "https://www.producthunt.com/posts/ionrouter"
     ]
   },
-  "outcome_analysis": "Cumulus Labs (Winter 2026, Active) is a two-person team at the earliest stage, with no funding disclosed and unverified performance claims. No outcome can be assessed yet.",
+  "pivots": [],
+  "success_factors": [],
+  "failure_factors": [],
+  "outcome_analysis": "Cumulus Labs (Winter 2026, Active) is a two-person team that launched IonRouter in March 2026. Funding is unverified (aggregators suggest about 500K USD from YC and others; a 63M USD figure is implausible). Performance claims are self-reported and the market has funded incumbents, so no outcome can be assessed yet.",
   "sources": [
     "https://www.ycombinator.com/companies/cumulus-labs",
-    "https://cumuluslabs.io"
+    "https://cumuluslabs.io",
+    "https://www.producthunt.com/posts/ionrouter",
+    "https://www.everydev.ai/developers/cumulus-labs",
+    "https://www.caplight.com/company/cumuluslabs",
+    "https://www.vcbacked.co/company/cumulus-labs"
   ],
-  "notes": "The web search budget was exhausted before the required outcome, funding cross-check, dated-competitor and branding searches could run, so competition_at_founding is empty and brand fields rest only on the YC page and the company site. Site lists NVIDIA Inception membership. Founding date 2025 per site structured data. Performance and savings figures are company claims. Downgraded to depth 1: written after the shared web search budget ran out (no outcome, funding cross-check or competitor search). Redo with full searches."
+  "notes": "Funding aggregator-only and conflicting, not recorded as a round: Caplight seed 2026-01 $500K (YC, Toloka.vc), total $1M; EveryDev $500K+ (YC, NVIDIA Inception); VCBacked $500K grant; StartupHub $63M Series A (outlier, rejected); PitchBook seed 2026-03-03 is for 'Cumulus Compute Labs', possibly a different entity. Outcome search found nothing on shutdown or acquisition. Competitors come from undated-month 2026 comparison guides, not near-batch dated launch coverage, hence low confidence. No name-origin source found. IonRouter launch 2026-03-16 (Product Hunt/HN). Depth-1 record overwritten after the required searches."
 }
