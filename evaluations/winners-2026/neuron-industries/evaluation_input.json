@@ -1,330 +1,406 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.06,
+  "basis": "Starting from the roughly 1 percent prior (range 0.6 to 2 percent). The company is already accepted, so this is a note: a bold idea to replace the industrial controller with an AI native one and credible domain claims from chemicals to nuclear would move it up, while two founders, no named customer and a safety certified hardware market with entrenched vendors hold it down.",
+  "why_it_fails": "YC would most plausibly say no because replacing PLCs is a hardware and certification problem dominated by Siemens and Rockwell, two founders cannot show a customer, and the claimed weeks to hours gain may be matched by AI copilots from the incumbents, so the interview would find the business hard to start quickly."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.55,
+   "anchors": {
+    "base_rate": 0.68,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2019-2025 --industry Industrials: seed cond 68% (n=22, anecdote, only 22 companies).",
+    "adjustment_reason": "0.55 against anchor 0.68 of a tiny sample, 0.81 ratio: two founders, a hardware controller and safety critical buyers, offset by strong AI plus industrial interest."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin band: angel and strategic money on top of the YC deal, common for hardware startups before a first paying plant."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      2000000,
+      4500000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core band: 2022+ Industrials seeds had a median of 1.4M with wide spread (n=5), and B2B seeds near 3.4M; a deep tech hardware pitch lands between."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4500000,
+      9000000
+     ],
+     "post_money_usd": [
+      35000000,
+      70000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band: a lead investor betting on AI plus industrial control with a named plant or nuclear customer."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Neuron is two founders who plan to replace PLCs, the safety critical controllers from Siemens, Rockwell and Schneider that hold about 77 percent of a roughly 12 billion dollar market. Hardware, certification and safety approvals for chemical and nuclear plants take years, and plant engineers rarely trust a new controller. Investors will back a seed only if a named pilot exists. Pivot Robotics and AiSupervision show how slow YC industrial startups can be to a funded step."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.2,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2019-2025 --industry Industrials: series_a cond 20% (n=15); B2B 2022-2025 cond 26% (n=74).",
+    "adjustment_reason": "0.20 equal to the Industrials anchor of 0.20."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin Series A on a few pilot plants and slow hardware revenue."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      140000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core Series A: Industrials 2022+ medians were large (36M, n=2) but B2B median is 13M."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      140000000,
+      300000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A as for Tractian, which grew from seed to a 15M A in 2022 on industrial demand."
+    }
+   ],
+   "why_it_fails": "Series A needs paying plants and a certified product. Controllers must meet safety standards, plant buyers run long evaluations and the incumbents control the engineering software ecosystem. Siemens and Schneider have already launched AI copilots that cut programming time by 30 to 50 percent, which erodes the weeks to hours pitch. Two founders must handle hardware, firmware, certification and sales. Hardware heavy Industrials had only 20 percent conditional Series A in the benchmark."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.18,
+   "anchors": {
+    "base_rate": 0.24,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2019-2024 --industry B2B: series_b cond 24% (n=33); Industrials 67% on n=3, ignored.",
+    "adjustment_reason": "0.18 against anchor 0.24: 0.75 ratio, services drift risk."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest Series B on slow plant by plant sales cycles."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      220000000,
+      500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core Series B for an industrial automation platform."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B as industrial AI winners were priced in 2023 to 2026."
+    }
+   ],
+   "why_it_fails": "Series B requires a repeatable product with several plants live and recurring revenue. The risk is that the company becomes a services business that writes control code for each project, which investors discount. AiSupervision ended up inactive after selling production tracking to factories, and Pathmind never scaled industrial simulation beyond a niche. A B needs evidence of expansion across plants rather than one off installations."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2019-2024 --industry B2B: series_c cond 25% (n=8).",
+    "adjustment_reason": "0.20 against anchor 0.25 from a small sample."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      350000000,
+      800000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical later round for a scaled industrial software and hardware company."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      180000000
+     ],
+     "post_money_usd": [
+      800000000,
+      1800000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Platform scale across industries such as chemicals, energy and nuclear."
+    },
+    {
+     "raise_usd": [
+      180000000,
+      350000000
+     ],
+     "post_money_usd": [
+      1800000000,
+      5000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Category leader outcome as the standard controller for AI driven plants."
+    }
+   ],
+   "why_it_fails": "A Series C needs a large installed base and a defensible position against the PLC majors. Tractian is the rare YC industrial example that kept raising, because it sold cheap sensors into an underserved segment. Most others were acquired or stayed small. A controller company must also win the ecosystem of integrators and software, which takes a decade."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.18
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company stalls because industrial buyers adopt new controllers slowly, certification takes years and incumbents add AI to the products customers already own. Analogs such as AiSupervision and Pathmind faded or went inactive. Tractian is the exception because it entered through a cheap, underserved segment and grew, which a safety critical controller cannot easily do."
+ },
+ "analogs": [
+  {
+   "slug": "tractian",
+   "relevance": "YC industrial company selling into plants, founders from the industry.",
+   "outcome_summary": "Seed 3.2M in 2021, A 15M in 2022, B 46.9M in 2023, C 120M in 2024."
+  },
+  {
+   "slug": "pivot-robotics",
+   "relevance": "AI software for industrial robot arms, small team.",
+   "outcome_summary": "Seed in July 2024 with undisclosed amount, no later round found."
+  },
+  {
+   "slug": "aisupervision",
+   "relevance": "Production software and hardware sold to factories.",
+   "outcome_summary": "About 500K raised around its batch, later marked inactive."
+  },
+  {
+   "slug": "pathmind",
+   "relevance": "Industrial simulation and AI, technical team.",
+   "outcome_summary": "Seed 3M and A 11.5M, then closed or acqui hired."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Safety certification and plant trust make sales cycles longer than the seed runway",
+   "p": 0.4,
+   "evidence": "Chemical and nuclear plants require certified controllers, and full autonomous code generation for safety applications remains unsupported per industry commentary.",
+   "analogs": [
+    "aisupervision",
+    "pivot-robotics"
+   ],
+   "mitigation": "Start with non safety, brownfield add on use cases and sell a design tool on top of existing PLCs."
+  },
+  {
+   "risk": "Incumbents add AI copilots and erase the weeks to hours advantage",
+   "p": 0.35,
+   "evidence": "Siemens launched an Industrial Copilot and Schneider reports 30 to 50 percent time savings, with the top five vendors holding 77 percent of the market.",
+   "analogs": [
+    "tractian",
+    "pathmind"
+   ],
+   "mitigation": "Integrate with incumbent hardware rather than replacing it first."
+  },
+  {
+   "risk": "Two founders cannot cover hardware, firmware, certification and sales",
+   "p": 0.3,
+   "evidence": "The team is two people and the plan spans chemical processing to nuclear reactors.",
+   "analogs": [
+    "pivot-robotics",
+    "aisupervision"
+   ],
+   "mitigation": "Pick one sector, hire an industry sales lead early, and use contract manufacturing."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Siemens, Rockwell and Schneider Electric",
+   "what": "Dominant PLC makers with AI copilots for code generation.",
+   "traction": "Top five vendors hold about 77 percent of a roughly 12 billion dollar PLC market.",
+   "source_url": "https://www.marketsandmarkets.com/Market-Reports/programmable-logic-controller-plc-market-65496581.html"
+  },
+  {
+   "name": "Schneider and Siemens AI copilots",
+   "what": "AI assistants inside PLC programming suites.",
+   "traction": "Schneider claims 30 to 50 percent less development time.",
+   "source_url": "https://www.packworld.com/home/article/22921735/schneider-electric-and-siemens-add-an-ai-copilot-to-their-plc-programming-suites"
+  },
+  {
+   "name": "Tractian",
+   "what": "YC industrial monitoring company that sells into plants.",
+   "traction": "Raised through Series C by 2024.",
+   "source_url": "https://www.ycombinator.com/companies/tractian"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "A purpose built industrial controller means hardware, real time firmware, safety certification and an AI layer for generating control logic. A two person team can build a software demo in three months but not a certified controller, so complexity is the main risk and also a moat if solved."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Siemens",
+   "Rockwell Automation",
+   "Schneider Electric",
+   "ABB"
+  ],
+  "timeline_months": 24,
+  "rationale": "The incumbents have the installed base and copilots but are slow to ship a new controller architecture, which gives a window of a few years. They could also copy the software workflow quickly."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "The PLC market is about 12 billion dollars and growing, so spend exists, but dominated by five vendors.",
+    "source_url": "https://www.marketsandmarkets.com/Market-Reports/programmable-logic-controller-plc-market-65496581.html"
+   },
+   {
+    "claim": "Vendors already sell AI programming assistants because controls projects are slow and costly.",
+    "source_url": "https://www.packworld.com/home/article/22921735/schneider-electric-and-siemens-add-an-ai-copilot-to-their-plc-programming-suites"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Prove one plant will run the product on a real process.",
+   "actions": [
+    "Land one design partner in chemicals or a pilot plant",
+    "Show a controls project cut from weeks to days on a non safety loop"
+   ],
+   "proof": "One paid pilot with measured time saved."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Repeatable deployments across several plants.",
+   "actions": [
+    "Complete safety certification for one controller class",
+    "Hire a systems integrator partner and an industry sales lead"
+   ],
+   "proof": "Five plants live and 1M annual recurring revenue."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large market with legacy technology that customers know is slow to program.",
+   "evidence": "PLC market of about 12 billion dollars with incumbent AI copilots showing demand.",
+   "source_url": "https://www.marketsandmarkets.com/Market-Reports/programmable-logic-controller-plc-market-65496581.html"
+  },
+  {
+   "point": "A YC industrial analog went from seed to a late stage round.",
+   "evidence": "Tractian raised through Series C.",
+   "source_url": "https://www.ycombinator.com/companies/tractian"
+  }
+ ],
+ "brand": {
+  "name": "Neuron Industries",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Neuron Industries\" --era 2022+ : kind compound_words, 2 words, 5 syllables",
+  "strengths": [
+   "Industries signals an industrial buyer",
+   "Neuron signals AI"
+  ],
+  "weaknesses": [
+   "Neuron is used by many companies, so it is hard to search"
+  ],
+  "rationale": "An AI themed word with an industrial suffix reads clearly to plant buyers, though neuron is a very common brand word. Industrial buyers care more about certification and references than the name."
+ },
+ "narrative": {
+  "headline": "A bold attempt to replace the PLC that needs a plant pilot and certification before investors will follow.",
+  "general_summary": "Neuron Industries is a two person Summer 2026 company building an industrial controller designed for AI, aimed at replacing PLCs in sectors from chemicals to nuclear. The market is large and the legacy tools are slow, but five vendors hold most of it, buyers need certified safety products, and Siemens and Schneider already ship AI assistants. The most likely path is a modest seed if a pilot exists, then a difficult Series A tied to hardware certification. Tractian shows a large outcome is possible in industrial YC companies, but it took a different route."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-07-06 using only the input file and market searches.",
+  "Industrials cohorts have only 22 researched companies, so base rates are anecdotes and B2B rates were used for later stages.",
+  "Seed means a round above 500K within about 12 months of the batch start."
+ ],
+ "sources": [
+  "https://www.marketsandmarkets.com/Market-Reports/programmable-logic-controller-plc-market-65496581.html",
+  "https://www.packworld.com/home/article/22921735/schneider-electric-and-siemens-add-an-ai-copilot-to-their-plc-programming-suites",
+  "https://www.ycombinator.com/companies/tractian"
+ ],
+ "mode": "summary",
+ "startup": {
+  "name": "Neuron Industries",
+  "one_liner": "Industrial Controllers built for AI",
+  "description": "Neuron is crafting the world’s first purpose-built industrial controller for AI, replacing the antiquated PLCs running every machine and factory. We help customers from chemical processing to nuclear reactors compress controls projects from weeks to hours. ",
+  "as_of": "2026-07-06"
+ }
 }
