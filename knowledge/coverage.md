@@ -8,7 +8,7 @@ Generated 2026-11-17.
 - Remaining: 4986
 - Calibration sample (unbiased base rates): 663/663 done
 - Funding data coverage among researched: complete 39, partial 857, none found 516
-- Funding rounds recorded: 1462; competitors at founding recorded: 1082
+- Funding rounds recorded: 1462; competitors at founding recorded: 1078
 - Founders with a publicly sourced age: 12
 - Confidence: high 81, medium 899, low 432
-- Invalid records: 0; warnings: 269 (see data/merge_warnings.txt)
+- Invalid records: 0; warnings: 262 (see data/merge_warnings.txt)
