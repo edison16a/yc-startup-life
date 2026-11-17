@@ -10,5 +10,5 @@ Generated 2026-11-17.
 - Funding data coverage among researched: complete 62, partial 1506, none found 1879
 - Funding rounds recorded: 2215; competitors at founding recorded: 3700
 - Founders with a publicly sourced age: 37
-- Confidence: high 188, medium 2131, low 1128
-- Invalid records: 0; warnings: 376 (see data/merge_warnings.txt)
+- Confidence: high 187, medium 2132, low 1128
+- Invalid records: 0; warnings: 375 (see data/merge_warnings.txt)
