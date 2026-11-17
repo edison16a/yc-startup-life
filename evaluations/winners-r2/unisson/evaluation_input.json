@@ -1,330 +1,453 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Unisson",
+  "one_liner": "AI agents that automate B2B software implementation",
+  "description": "AI subject matter experts for customer success, implementation and sales engineering teams at B2B software companies. The agents learn a product in about 20 minutes, work in Slack, text or email, gather requirements from existing tools and handle onboarding, health audits, product administration and custom integrations. Pays: per team or per agent subscription from software vendors that have large implementation backlogs.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.97,
+  "p_low": 0.95,
+  "p_high": 0.99,
+  "basis": "The input file places Unisson in the Winter 2026 batch with the batch start as the as_of date, so acceptance is treated as already happened. The prior for a random applicant is about 1 percent (references/yc_acceptance.md), but conditional on being listed in the batch the residual doubt is only data error or a deferral. Seed odds below are conditional on being in YC.",
+  "why_it_fails": "The only way the YC step fails here is a clerical error in the batch listing or a deferral to a later batch. Unisson was reported in the batch directory as of the as_of date, so the reason to say no has already been resolved in its favor."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.34,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025 (150 researched: seed 49% / 59% / 65%, series_a cond 26% n=74, series_b cond 16% n=19); seed cond known-only 59% (n=126); months_to_seed median 7 (p25 3, p75 15) from knowledge/tables/time_to_milestones.csv calibration sample",
+    "adjustment_reason": "The anchor is the 59 percent ever rate for B2B 2022 to 2025. The window is only 10 months from the Winter 2026 batch start and the median time to seed is 7 months with p75 of 15, so about 55 to 60 percent of eventual seed raisers have raised by month 10, giving about 0.34. A two person AI native team gets no lift, because the winners test showed hot sector lifts did not separate winners, and I stay under the 1.25 times cap."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typically angels and a micro fund. This is the second most common outcome for a 2 to 5 person team with early pilots and no scaled revenue, and it is more likely here than in the winners test sample because press favours big rounds. The plain YC deal of about $500K does not count as seed in this forecast."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M led by a seed fund. This is the center of the 2022 and later benchmark (median about $4.1M in our table) and of the 2026 confirmed raises (lower quartile $4.3M)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M. Reachable if a design partner or demo produces competitive tension, as in the 2026 winners where the median confirmed raise was $6.0M, a sample that leans high."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      110000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, reserved for a hot category with a standout team. Rare for a team this small and early."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Unisson most likely misses a seed because two founders with a horizontal agent that can do many tasks have to prove depth in one workflow. The closest YC peers sero and onboard-io from 2022 are still alive without big rounds, and lume was acquired after a seed. Investors in 2026 see many AI SME and implementation agents, and want revenue from named customers within months, which a two person team may not have by the time they raise."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025 (150 researched: seed 49% / 59% / 65%, series_a cond 26% n=74, series_b cond 16% n=19); series_a cond 26% (n=74) (ever); months_to_series_a median 29 from batch start (B2B 2022 to 2025, n=19)",
+    "adjustment_reason": "A Series A within 10 months of the batch, and after a seed, is very rare: the B2B median time from batch to A is 29 months (n=19). The ever conditional rate is 26 percent, and the window cuts that to about 0.03."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000.0,
+      9000000.0
+     ],
+     "post_money_usd": [
+      25000000.0,
+      45000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or small Series A, close to a large seed, for a company with some revenue but unproven repeatability. Current 2022 and later YC Series A lower quartile is $10.0M, so this is the thin end."
+    },
+    {
+     "raise_usd": [
+      9000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      100000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series A of $9M to $18M, matching the 2022 and later YC median of $14.15M (n=52) and public market medians near $17M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      100000000.0,
+      250000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside Series A with a clear ARR ramp; AI native companies have printed larger A rounds in 2025 and 2026 but these remain the minority."
+    }
+   ],
+   "why_it_fails": "An A in this window needs a seed already raised in the first months and revenue near $1M annualized, which an implementation agent product has rarely reached within a year. Buyers are customer success leaders who run long pilots, and trust is a barrier before agents touch customer data. The likely path is a seed, then a long slog to repeatable revenue."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025: series_b cond 16% (n=19) ever, lower 2% known-only",
+    "adjustment_reason": "The window is 10 months, and Series B needs a median of 46 months from batch start (all eras, n=510 in time_to_milestones.csv; B2B 2022 to 2025 median 26 months on n=3, right censored). The probability is a floor for a fast outlier, far below the 16 percent ever rate, because only a company that raised both a seed and an A inside the window can get here."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series B or extension, near the 2022 and later lower quartile of $25M."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B, around the YC 2022 and later median of $37M (n=22)."
+    },
+    {
+     "raise_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      900000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B on breakout growth, in line with the few 2022 and later B valuations near $775M."
+    }
+   ],
+   "why_it_fails": "A Series B within 10 months is effectively a tail event that needs two earlier rounds in a few months. The floor reflects only an extraordinary growth story."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": 0.12,
+    "source": "Series C cond is 0% of n=3 in the B2B 2022 to 2025 cohort; the older all-era calibration sample gives about 30 to 35 percent of series_b reaching C, discounted here for the window",
+    "adjustment_reason": "The window ends 10 months after the as_of date and a Series C needs a median of 61 months from batch start (all eras, n=221 in time_to_milestones.csv). The probability is a small floor rather than an anchor ratio, because 3 companies in the recent cohort cannot support a rate."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      300000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Series C or growth round near the 2022 and later YC median of $45M (n=9), with a flat or modest step up."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      1500000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical growth round of $80M to $150M for a category leader with strong net retention, as seen in the larger 2022 and later rounds in the YC data."
+    },
+    {
+     "raise_usd": [
+      150000000.0,
+      300000000.0
+     ],
+     "post_money_usd": [
+      1500000000.0,
+      4000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round for a category winner; the sample of 2022 and later C rounds is tiny (n=9) so this band is judgment."
+    }
+   ],
+   "why_it_fails": "A Series C within 10 months is essentially impossible given round timing, so the number is a floor and not a forecast."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.6
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.24
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most failures are a stall at the pilot stage or a pivot, because the product is horizontal, the buyer segment is small and the big platforms and the fast followers copy it. Lume from the same wedge was acquired at seed stage, a typical good outcome here, and a venture scale win would need a repeatable deployment engine that the founders have not shown."
+ },
+ "analogs": [
+  {
+   "slug": "sero",
+   "relevance": "Implementation platform for B2B from Winter 2022, the same buyer and problem.",
+   "outcome_summary": "Alive with no post YC round recorded, a sign that implementation tooling is slow to raise."
+  },
+  {
+   "slug": "onboard-io",
+   "relevance": "Customer onboarding and implementation automation from Winter 2022.",
+   "outcome_summary": "Acquired with no post YC round recorded, an exit for the wedge rather than a venture outcome."
+  },
+  {
+   "slug": "lume-2",
+   "relevance": "Speed up customer implementation with AI, Winter 2023.",
+   "outcome_summary": "Raised a seed and was acquired; shows both fundability and the likely small exit."
+  },
+  {
+   "slug": "giga",
+   "relevance": "AI support agent for enterprises, Summer 2023, same agent for customer teams pattern.",
+   "outcome_summary": "Alive and reached a Series A according to the record, a stronger result because it sells to support teams with clear ROI."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Pilot purgatory: customer success buyers try the agent but never move it to production access",
+   "p": 0.35,
+   "evidence": "Agents need admin level access to customer products, which security reviews slow; neighbors in the YC data stayed small.",
+   "analogs": [
+    "sero",
+    "onboard-io"
+   ],
+   "mitigation": "Land one workflow such as onboarding audits with measured hours saved."
+  },
+  {
+   "risk": "Horizontal positioning without depth: any product agent is generic",
+   "p": 0.3,
+   "evidence": "The description lists audits, onboarding, administration and integrations, a broad scope for two founders.",
+   "analogs": [
+    "lume-2"
+   ],
+   "mitigation": "Pick one vertical class of software and one task."
+  },
+  {
+   "risk": "Fast follower and platform copy: Salesforce, ServiceNow and Slack agents absorb the use case",
+   "p": 0.3,
+   "evidence": "Agent features are being added to suites and to chat tools that already hold the context.",
+   "analogs": [
+    "giga",
+    "onboard-io"
+   ],
+   "mitigation": "Build integrations and a knowledge base that suites do not offer."
+  },
+  {
+   "risk": "Two person team runs out of time before revenue shows",
+   "p": 0.25,
+   "evidence": "Team size 2 from the input; many YC teams of two raise a seed only after showing revenue.",
+   "analogs": [
+    "sero"
+   ],
+   "mitigation": "Show paid pilots by demo day."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Supersonik",
+   "what": "AI demo and sales agent for software vendors.",
+   "traction": "Raised a $5M seed led by Andreessen Horowitz in September 2025 per press.",
+   "source_url": "https://www.channelinsider.com/ai/llms-chatbots-and-agents/agentic-ai-software-demo-funding/"
+  },
+  {
+   "name": "Truva AI",
+   "what": "AI agents for software onboarding and retention, a Y Combinator company.",
+   "traction": "Reported a $4M seed round.",
+   "source_url": "https://india.entrepreneur.com/growth-strategies/ai-agents-startup-secures-4m-to-revolutionize-customer/474513"
+  },
+  {
+   "name": "Status quo: implementation teams and services firms",
+   "what": "Human implementation, solutions engineering and system integrators plus Slack knowledge bots.",
+   "traction": "Thousands of hours of backlog is the pain the pitch cites.",
+   "source_url": "https://india.entrepreneur.com/growth-strategies/ai-agents-startup-secures-4m-to-revolutionize-customer/474513"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Agents that learn to use any product in 20 minutes means computer use, documentation reading and tool integration with high reliability needs. A two person team can ship a narrow demo, but general reliability across arbitrary products is hard and a dependency on frontier models."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Salesforce Agentforce",
+   "ServiceNow",
+   "Intercom Fin",
+   "OpenAI and Anthropic computer use agents"
+  ],
+  "timeline_months": 9,
+  "rationale": "Large platforms already add agents inside customer success and support suites, and model labs offer computer use. A rival could ship a similar agent for implementation in about 9 months using the same models."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Funded startups are selling AI agents for software onboarding and demos, showing investor interest and buyer budget.",
+    "source_url": "https://www.channelinsider.com/ai/llms-chatbots-and-agents/agentic-ai-software-demo-funding/"
+   },
+   {
+    "claim": "A YC graduate reported a $4M seed for AI agents handling software onboarding and retention.",
+    "source_url": "https://india.entrepreneur.com/growth-strategies/ai-agents-startup-secures-4m-to-revolutionize-customer/474513"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show one team pays for it.",
+   "actions": [
+    "Run 3 paid pilots with onboarding teams",
+    "Measure hours saved per implementation"
+   ],
+   "proof": "3 paid pilots and a number of hours saved"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show a repeatable workflow and growth.",
+   "actions": [
+    "Pick one product category",
+    "Convert pilots to annual contracts"
+   ],
+   "proof": "$20K monthly recurring revenue"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show repeatable sales into customer success teams.",
+   "actions": [
+    "Hire a first account executive",
+    "Build integrations library"
+   ],
+   "proof": "$1M annualized revenue and 120 percent net retention"
+  },
+  {
+   "phase": "series_b",
+   "goal": "Expand across the customer lifecycle.",
+   "actions": [
+    "Add support and renewals",
+    "Move upmarket"
+   ],
+   "proof": "$8M annualized revenue"
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Become the deployment layer for B2B software.",
+   "actions": [
+    "Add partner channels",
+    "Expand globally"
+   ],
+   "proof": "$30M annualized revenue"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Recent peers show seed funding for this agent pattern",
+   "evidence": "Truva AI and Supersonik raised seeds for onboarding and demo agents.",
+   "source_url": "https://india.entrepreneur.com/growth-strategies/ai-agents-startup-secures-4m-to-revolutionize-customer/474513"
+  },
+  {
+   "point": "Clear ROI story in hours saved",
+   "evidence": "Implementation and sales engineering are costly human services, giving a measurable value case."
+  }
+ ],
+ "brand": {
+  "name": "Unisson",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Unisson\" --era 2022+ : 7 chars, 1 word, 3 syllables, kind invented_or_proper, no suffix",
+  "strengths": [
+   "Evokes working together in unison",
+   "Easy to say"
+  ],
+  "weaknesses": [
+   "Spelling with a double s invites typos",
+   "Generic positive word, does not signal agents"
+  ],
+  "rationale": "Unisson is a pronounceable coined variant of unison, in line with other invented YC names, but it does not hint at agents or implementation. A neutral name does not change the ladder."
+ },
+ "narrative": {
+  "headline": "Unisson is a two person team in a crowded agent category with a short window, so a seed is possible but not likely, and the odds do not rank it.",
+  "general_summary": "Unisson sells AI subject matter experts to customer success and implementation teams. The wedge is real, with peers that raised seeds, but older YC peers sero and onboard-io raised little and lume was acquired. With only 10 months from the batch start to the judging date and a two person team, the seed is about a third likely and a Series A is a floor. A seed if reached is most likely $3M to $6M, and the success path needs one workflow with measurable savings."
+ },
+ "assumptions": [
+  "Window is 10 months from 2026-01-05 to 2026-11-17; seed means above about $1M from outside investors, excluding the YC deal.",
+  "Tags field is empty and team size is 2 from the input.",
+  "Funding search results dated after the as_of date were ignored; Supersonik September 2025 and Truva (date not stated) were used as context only. LEAK-WEB: none for unisson",
+  "No result named Unisson."
+ ],
+ "sources": [
+  "https://www.channelinsider.com/ai/llms-chatbots-and-agents/agentic-ai-software-demo-funding/",
+  "https://india.entrepreneur.com/growth-strategies/ai-agents-startup-secures-4m-to-revolutionize-customer/474513"
+ ]
 }

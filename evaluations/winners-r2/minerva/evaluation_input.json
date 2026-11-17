@@ -1,330 +1,456 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Minerva",
+  "one_liner": "AI native financial institution",
+  "description": "Minerva is a five person Spring 2025 YC company in San Francisco that says it will make financial services fast and affordable for everyone, starting with accounting. It is read as an AI native accounting and bookkeeping service for businesses, with banking and other financial products as the later plan. The window for the forecast is 19.3 months, from 2025-04-07 to 2026-11-17.",
+  "as_of": "2025-04-07"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.09,
+  "basis": "Minerva is already in the Spring 2025 batch, so this is shown for completeness only. Starting rate is about 1 percent (YC states roughly 1 percent of 10,000 applicants per cycle, range 0.6 to 2). A five person team with a technical story is above average, but the one line pitch shows no traction, so the estimate is about 3 percent with a wide band.",
+  "why_it_fails": "YC would most plausibly pass because accounting automation is crowded (Basis, Pilot, Digits, Quanta) and the one liner does not say what makes the team better placed than others; an 'AI native financial institution' sounds like a large ambition with no wedge or evidence of customers. Without a clear first customer, a measurable accuracy claim or a reason this team will win the category, the application reads like a thesis and not a company."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.48,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : seed 50% lower / 61% known-only / 68% upper, cond 61% (n=88). Time to seed (B2B 2022-24) p25 4, median 9, p75 19 months (n=54); time_to_milestones.csv calibration_sample p25 3, median 7, p75 19.5 (n=363).",
+    "adjustment_reason": "Window forecast, 19.3 months. Ever-reached seed is about 61% to 68% (anchor 0.61, midpoint of known-only and upper bound, since funding coverage is partial). The B2B time-to-seed distribution has about 75% of eventual seed raisers closing within 19 months (p75 is 19 to 20 months), so 0.65 times 0.75 gives about 0.49. I did not lift for team size or the AI accounting story, per the winners test calibration, and these odds do not rank Minerva against other companies. A seed here means an outside round above about $1M, not the YC deal."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. Accounting is a funded category in 2025 (see Quanta $4.7M seed). Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. Accounting is a funded category in 2025 (see Quanta $4.7M seed). "
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.24,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The most likely miss is a thin story: a five person team with a one line mission ('financial institution') but, as far as the input shows, a narrow accounting wedge that investors already see in Basis, Pilot and Quanta. Sway Finance (AI bookkeeping, 2016) never raised beyond its start and is listed inactive, and Paid and Hellobill are also inactive. If the batch ends without clear revenue per customer and gross margin that is not services labour, the round stays at the YC deal or a sub $1M angel check inside the 19 month window."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_a cond 33% (n=54), lower 17%, known-only 20%, upper 35%. Time: months_to_series_a p25 22, median 30 (n=18); calibration_sample p25 19.3, median 28.",
+    "adjustment_reason": "Window forecast. The ever anchor is 0.33 given seed. Median time to Series A is 28 to 30 months from batch start and p25 is 19 to 22 months, so in a 19.3 month window only about the fastest quarter of Series A companies appear: about 0.33 to 0.40 times 0.25 gives roughly 0.09 to 0.10. This is more than 2x below the anchor because of the window, not because of a view on the company."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Thin or flat Series A of $5M to $8M for a company with revenue but no clear breakout; this is the 'reached A, barely' case. Below the 2022+ A median of $14.9M (B2B 2022-24, n=18)."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core band around the 2022+ B2B median raise of about $15M (p25 $11M, p50 $15M); post money from public seed-to-A step ups, valuations are sparse in our data."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      90000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong band: AI-native companies with fast revenue growth drew A rounds near the p75 of $23M (B2B 2022-24)."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      180000000,
+      400000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band for a breakout; rare in our cohorts and press-driven."
+    }
+   ],
+   "why_it_fails": "Reaching a Series A within 19 months of batch start needs about $1M or more in annual revenue run rate and an obvious growth line, which only the fastest AI accounting companies show. Minerva would have to move from a pilot service to a repeatable product that replaces bookkeepers at the margin. Fondo (2018 batch) took years to get from services to a small round, and Sway did not get past the first stage. Most likely it misses by timing, with the A closing after November 2026."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_b cond 17% (n=18); overall calibration conditional 44% (n=126). This step is an ever-reached figure beyond the forecast window.",
+    "adjustment_reason": "Ever-reached, beyond the window. Anchor 0.17 in the B2B 2022-24 cohort (n=18, small) and 0.44 in the full calibration sample; 0.22 sits between, reflecting that Series B needs proven financial-services economics."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge-like Series B near $15M to $25M, a flat or slightly down step from the A valuation; this happens when growth slows after the A and investors reprice, as in many 2022 to 2024 B2B rounds."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core: B2B 2022+ Series B raise $35M to $60M (n=3), market median about $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round of $45M to $80M for a company growing well over 2x a year; the 2022+ Series B table has p75 $55M (round_benchmarks.csv, n=192 all companies)."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside breakout case of $80M to $150M led by a growth fund; rare and mostly seen for AI leaders with very fast revenue, so it carries only a tenth of the mass."
+    }
+   ],
+   "why_it_fails": "Series B requires a repeatable motion past about $5M to $10M ARR with margins that investors accept as software, not an accounting practice. A regulated bank-like ambition adds capital and licensing demands. Analogs such as Fondo stayed a services-flavoured bookkeeper without a B, and Paid shut down."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "base_rates.py calibration sample: series_c cond 36% (n=55); B2B 2022-24 has n=3 so the broad figure is used. Ever-reached figure beyond the window.",
+    "adjustment_reason": "Ever-reached, beyond the window; close to the 36% calibration conditional with a small discount for regulation."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      50000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series C of $30M to $50M at a flat valuation, typical when growth normalises after a B and the company raises mainly to extend runway or fund acquisitions."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core C (2022+ median about $45M to $74M)."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong Series C of $100M to $200M, around the 2022+ p75 of $103M for all companies (round_benchmarks.csv), for a clear category leader with durable revenue."
+    },
+    {
+     "raise_usd": [
+      200000000,
+      500000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      5000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout round above $200M for a market leader; the 2022+ Series C p75 is about $103M, so this is a tail band with 5 percent of the mass."
+    }
+   ],
+   "why_it_fails": "Series C needs a category-scale business: tens of millions in revenue and a path to a financial institution charter or partner bank economics. Few YC accounting and finance companies in our data reached C, and those that did (Pilot-like firms outside this test set) had years of compounding. Failure is mainly regulatory and credit risk when moving from bookkeeping to lending or banking."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most such companies stall as small bookkeeping services or are folded into a larger platform for under $100M (Sway-like drift, acquihires). A large exit needs the bank-like expansion to work, which adds regulation, credit loss and capital needs that kill many fintech wedges."
+ },
+ "analogs": [
+  {
+   "slug": "sway-finance",
+   "relevance": "AI bookkeeping startup, 2016 batch, Slack bot to automated bookkeeping.",
+   "outcome_summary": "Got a Slack investment and press, never raised a follow-on round and is listed inactive; QuickBooks was the status quo."
+  },
+  {
+   "slug": "fondo",
+   "relevance": "Bookkeeping and tax for startups, services plus software.",
+   "outcome_summary": "Active, raised about $3M pre-seed in 2023 after years; shows slow, services-heavy growth."
+  },
+  {
+   "slug": "paid",
+   "relevance": "Finance back office (accounts receivable) from 2014.",
+   "outcome_summary": "Listed inactive; an example of a narrow finance tool that did not scale."
+  },
+  {
+   "slug": "finta",
+   "relevance": "Accounting and tax software for startups, 2023 batch.",
+   "outcome_summary": "Active two to a few person team, funding unverified; no clear Series A."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Crowded AI accounting field with well funded rivals",
+   "p": 0.5,
+   "evidence": "Quanta raised a $4.7M seed in February 2025 to automate bookkeeping, and Basis and Pilot are established; a 5 person team has no stated edge.",
+   "analogs": [
+    "sway-finance",
+    "finta"
+   ],
+   "mitigation": "Pick one segment (for example startups or ecommerce) and show retention and accuracy numbers."
+  },
+  {
+   "risk": "Services economics mislabeled as software",
+   "p": 0.4,
+   "evidence": "Bookkeeping needs human review; Bench, a human based rival, failed to automate fully with AI according to the Quanta coverage, so margins may look like an accounting practice.",
+   "analogs": [
+    "fondo",
+    "paid"
+   ],
+   "mitigation": "Report gross margin per client and the share of work done without humans."
+  },
+  {
+   "risk": "Broad mission, no wedge",
+   "p": 0.35,
+   "evidence": "The one liner says financial institution while the description says starting with accounting; investors may see no sequence from bookkeeping to banking.",
+   "analogs": [
+    "sway-finance",
+    "hellobill"
+   ],
+   "mitigation": "State the sequence and the license or partner bank path."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Quanta Financial",
+   "what": "AI native accounting platform that keeps books updated in real time.",
+   "traction": "$4.7M seed announced 2025-02-27.",
+   "source_url": "https://techcrunch.com/2025/02/27/accounting-hasnt-fully-embraced-ai-yet-quanta-just-raised-4-7m-to-change-that"
+  },
+  {
+   "name": "Pilot",
+   "what": "Bookkeeping, tax and CFO services for startups; the incumbent AI plus human model.",
+   "traction": "Large customer base and funding; status quo for startups.",
+   "source_url": "https://pilot.com"
+  },
+  {
+   "name": "Basis",
+   "what": "AI agents for accounting firms.",
+   "traction": "Well funded; sells to accounting firms rather than directly.",
+   "source_url": "https://www.getbasis.ai"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Ingesting bank and ledger data and posting entries with high accuracy is doable for a small team using current models, but finance needs near zero error and audit trails, and moving to banking adds licensing and partner bank work a five person team cannot do in three months."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Intuit QuickBooks",
+   "Xero",
+   "Pilot",
+   "Basis"
+  ],
+  "timeline_months": 9,
+  "rationale": "Incumbents and funded rivals can add AI categorisation and agents within a year, with distribution already in place; Minerva depends on bank data aggregators and model vendors for its core flow."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Funded rivals show paid demand for AI bookkeeping and accounting automation in early 2025.",
+    "source_url": "https://siliconangle.com/2025/02/27/ai-native-accounting-startup-quanta-financial-raises-4-7m-automate-bookkeeping-real-time/"
+   },
+   {
+    "claim": "A human led rival, Bench, struggled with automation, which shows both the demand and the difficulty.",
+    "source_url": "https://techcrunch.com/2025/02/27/accounting-hasnt-fully-embraced-ai-yet-quanta-just-raised-4-7m-to-change-that"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a paying customer base in one segment with measured accuracy.",
+   "actions": [
+    "Sign 20 paying small businesses in one niche",
+    "Publish error rate against human bookkeeper review"
+   ],
+   "proof": "Monthly recurring revenue above $20K with logo retention above 90 percent."
+  },
+  {
+   "phase": "seed",
+   "goal": "Convince outside investors that margins are software margins.",
+   "actions": [
+    "Cut human review time per client by half",
+    "Raise a $3M to $6M round from fintech investors after showing growth"
+   ],
+   "proof": "Gross margin above 60 percent with over $50K MRR."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large, paid market and recent funded precedent",
+   "evidence": "Several AI accounting companies raised seed rounds in early 2025.",
+   "source_url": "https://siliconangle.com/2025/02/27/ai-native-accounting-startup-quanta-financial-raises-4-7m-automate-bookkeeping-real-time/"
+  },
+  {
+   "point": "YC batch brings investor attention at demo day",
+   "evidence": "The accounting niche is attracting seed capital, and YC alumni raise at higher rates than the general market (calibration seed 61 percent to 68 percent).",
+   "source_url": "https://techcrunch.com/2025/02/27/accounting-hasnt-fully-embraced-ai-yet-quanta-just-raised-4-7m-to-change-that"
+  }
+ ],
+ "brand": {
+  "name": "Minerva",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Minerva\" --era 2022+ : invented_or_proper, 7 chars, 3 syllables.",
+  "strengths": [
+   "Short, easy to say",
+   "Roman goddess of wisdom fits finance"
+  ],
+  "weaknesses": [
+   "Common name used by many other companies, hard to search"
+  ],
+  "rationale": "The name is pronounceable and credible for finance, but it is a common proper name, so it gives little distinctiveness; past YC proper-name brands such as Stripe-like short names show names rarely decide outcomes."
+ },
+ "narrative": {
+  "headline": "A broad fintech mission with a crowded accounting wedge; seed is a coin flip inside 19 months.",
+  "general_summary": "Minerva is an early AI accounting company whose one liner promises a whole financial institution. In a 19 month window the base rate for a B2B YC company to raise an outside seed above $1M is about half, and a Series A in that window is rare. The input gives no traction, so the forecast sits near the cohort anchor and the odds do not rank this company against others. The company describes itself as an AI native financial institution that starts with accounting, a sequence that needs both product depth and regulatory partners. Funded rivals such as Quanta and Basis were already visible when the batch started. The cohort anchors do not separate winners from losers in the earlier winners test, so treat the number as a base rate."
+ },
+ "assumptions": [
+  "Only the input file was used: name, one liner, description, team size 5, batch Spring 2025.",
+  "Forecast window is 19.3 months from 2025-04-07 to 2026-11-17.",
+  "Series B and C steps are ever-reached odds, not window odds.",
+  "Coverage of funding data is partial, so base rates are given as ranges."
+ ],
+ "sources": [
+  "https://siliconangle.com/2025/02/27/ai-native-accounting-startup-quanta-financial-raises-4-7m-automate-bookkeeping-real-time/",
+  "https://techcrunch.com/2025/02/27/accounting-hasnt-fully-embraced-ai-yet-quanta-just-raised-4-7m-to-change-that",
+  "https://pilot.com",
+  "https://www.getbasis.ai"
+ ]
 }

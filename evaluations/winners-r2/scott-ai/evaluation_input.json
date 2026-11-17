@@ -1,330 +1,457 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Scott AI",
+  "one_liner": "The planning layer for teams that build with coding agents",
+  "description": "Scott AI is a planning workspace where engineering teams align on what to build before their coding agents start building it. Three person team in New York, Fall 2025. Customers are engineering teams using agents such as Claude Code or Cursor; the product is a collaborative spec and plan layer. The forecast window is 13.4 months, from 2025-10-06 to 2026-11-17.",
+  "as_of": "2025-10-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.09,
+  "basis": "Scott AI is already in Fall 2025, so shown for completeness. Starting rate about 1 percent. The idea fits a YC area (AI developer tools) and the team is small and technical, but the space is crowded, so about 3 percent.",
+  "why_it_fails": "YC would most plausibly say no because planning tools for coding agents are an obvious wedge for many teams and no usage or revenue is stated. Fable, a planning tool for product teams, was copied by incumbents and shut in 2022, which is the pattern a reviewer would worry about."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.41,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : seed 50% lower / 61% known-only / 68% upper, cond 61% (n=88). Time to seed (B2B 2022-24) p25 4, median 9, p75 19 months (n=54); time_to_milestones.csv calibration_sample p25 3, median 7, p75 19.5 (n=363).",
+    "adjustment_reason": "Window forecast, 13.4 months. Anchor 0.61 to 0.68 ever; about 62 to 65 percent of eventual seed raisers close within 13 months (median 7 to 9, p75 19 to 20), so 0.65 times 0.63 is about 0.41. Developer tools aimed at AI coding were a hot area in late 2025, but I did not lift above the anchor, per the winners test. The odds do not rank Scott AI against other companies."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. Developer tools seeds for agent workflows were common in 2025. Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. Developer tools seeds for agent workflows were common in 2025. "
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.24,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The category is moving faster than a three person team can lock in: GitHub Spec Kit, Tessl and coding agents' own plan modes already offer planning for free or bundled, and Fable (command center for product teams) shut down in 2022 after incumbents copied it. If no team pays and adoption stays at individual developers, investors treat it as a feature of the agents and pass."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_a cond 33% (n=54), lower 17%, known-only 20%, upper 35%. Time: months_to_series_a p25 22, median 30 (n=18); calibration_sample p25 19.3, median 28.",
+    "adjustment_reason": "Window forecast, 13.4 months. Series A median 28 to 30 months after batch start, p25 about 19 to 22; so about 10 percent of Series A companies appear by 13 months. 0.33 times about 0.12 is 0.04. The gap to the anchor is due to the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Thin or flat Series A of $5M to $8M for a company with revenue but no clear breakout; this is the 'reached A, barely' case. Below the 2022+ A median of $14.9M (B2B 2022-24, n=18)."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core band around the 2022+ B2B median raise of about $15M (p25 $11M, p50 $15M); post money from public seed-to-A step ups, valuations are sparse in our data."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      90000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong band: AI-native companies with fast revenue growth drew A rounds near the p75 of $23M (B2B 2022-24)."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      180000000,
+      400000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band for a breakout; rare in our cohorts and press-driven."
+    }
+   ],
+   "why_it_fails": "A Series A by late 2026 needs fast team adoption and real revenue from paying engineering orgs. Planning tools struggle to show retention because the workflow can move into the coding agent itself, and Vibe Kanban style tools and Nuanced show how thin the layer is."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.18,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_b cond 17% (n=18); overall calibration conditional 44% (n=126). This step is an ever-reached figure beyond the forecast window.",
+    "adjustment_reason": "Ever-reached beyond the window; anchor 0.17 (B2B 2022-24 n=18), a small discount for platform risk."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge-like Series B near $15M to $25M, a flat or slightly down step from the A valuation; this happens when growth slows after the A and investors reprice, as in many 2022 to 2024 B2B rounds."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core: B2B 2022+ Series B raise $35M to $60M (n=3), market median about $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round of $45M to $80M for a company growing well over 2x a year; the 2022+ Series B table has p75 $55M (round_benchmarks.csv, n=192 all companies)."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside breakout case of $80M to $150M led by a growth fund; rare and mostly seen for AI leaders with very fast revenue, so it carries only a tenth of the mass."
+    }
+   ],
+   "why_it_fails": "Series B needs enterprise seats and net revenue retention in the face of GitHub, Atlassian and Linear shipping planning features inside their suites. Reaching Series B would require enterprise engineering organisations to pay per seat for a planning layer that sits next to Jira, Linear and the coding agents themselves. The analog Fable lost its position when larger tools added the same collaborative surface, and net revenue retention is hard to prove for a tool teams can switch off."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "base_rates.py calibration sample: series_c cond 36% (n=55); B2B 2022-24 has n=3 so the broad figure is used. Ever-reached figure beyond the window.",
+    "adjustment_reason": "Ever-reached beyond the window; just under the 36% calibration conditional due to the platform ceiling."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      50000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series C of $30M to $50M at a flat valuation, typical when growth normalises after a B and the company raises mainly to extend runway or fund acquisitions."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core C (2022+ median about $45M to $74M)."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong Series C of $100M to $200M, around the 2022+ p75 of $103M for all companies (round_benchmarks.csv), for a clear category leader with durable revenue."
+    },
+    {
+     "raise_usd": [
+      200000000,
+      500000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      5000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout round above $200M for a market leader; the 2022+ Series C p75 is about $103M, so this is a tail band with 5 percent of the mass."
+    }
+   ],
+   "why_it_fails": "Series C requires becoming a system of record for software planning. Incumbents (Atlassian, GitHub, Linear) own that spot, so most dev tool wedges stop at B or are acquired. A Series C planning platform would need to be the shared source of truth for agent driven software work. Atlassian, GitHub and the model vendors have much larger installed bases, so the likely outcome is acquisition by one of them before a Series C."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.66
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.19
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.11
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most agent-era dev tools are absorbed by the coding agent vendors or by workflow suites, and shut or sell for under $100M. A breakout needs the planning layer to become the standard shared context for agent teams. Dev tool wedges in the agent era are consolidating quickly, and a three person team with no stated revenue is more likely to be acquihired or to fade than to build a large company. A large outcome needs planning to become a distinct paid layer instead of a built in mode of coding agents."
+ },
+ "analogs": [
+  {
+   "slug": "fable",
+   "relevance": "Command center for product teams (2021).",
+   "outcome_summary": "Shut down in 2022; incumbents copied it and willingness to pay was weak."
+  },
+  {
+   "slug": "nuanced",
+   "relevance": "AI coding app for thinking, 2024 batch.",
+   "outcome_summary": "Active; early dev tool in the same area."
+  },
+  {
+   "slug": "codevisor",
+   "relevance": "Native app for agentic engineering, 2025.",
+   "outcome_summary": "Active; shows crowded agent workspace field."
+  },
+  {
+   "slug": "sudocode",
+   "relevance": "Orchestration of coding agents (2023).",
+   "outcome_summary": "Active; thin layer on top of agents."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Planning becomes a built-in feature of coding agents",
+   "p": 0.5,
+   "evidence": "Plan modes in Claude Code and Cursor, and GitHub Spec Kit, already cover planning; GitHub open-sourced Spec Kit in September 2025.",
+   "analogs": [
+    "fable",
+    "nuanced"
+   ],
+   "mitigation": "Focus on multi person alignment, which a single agent session does not solve."
+  },
+  {
+   "risk": "Individuals adopt, teams do not pay",
+   "p": 0.4,
+   "evidence": "Dev tools often get bottom-up free use; seat conversion needs a shared artifact tied to review and approvals.",
+   "analogs": [
+    "fable",
+    "sudocode"
+   ],
+   "mitigation": "Sell to engineering managers with approvals and audit trails."
+  },
+  {
+   "risk": "Three person team cannot out ship funded spec-driven players",
+   "p": 0.35,
+   "evidence": "Tessl is reported as funded around $125M and Codeplain raised $3M.",
+   "analogs": [
+    "codevisor",
+    "nuanced"
+   ],
+   "mitigation": "Stay narrow on team alignment and integrate with every agent."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "GitHub Spec Kit",
+   "what": "Open source spec-driven development toolkit released September 2025.",
+   "traction": "Widely referenced in coverage of spec-driven development.",
+   "source_url": "https://thenewstack.io/spec-driven-development-the-key-to-scalable-ai-agents/"
+  },
+  {
+   "name": "Tessl",
+   "what": "Spec-as-source platform and spec registry.",
+   "traction": "Reported to have raised about $125M.",
+   "source_url": "https://tessl.io/blog/why-codeplain-is-betting-on-spec-driven-software-development"
+  },
+  {
+   "name": "Linear and Notion",
+   "what": "Existing planning and docs tools where teams already write specs.",
+   "traction": "Large installed bases.",
+   "source_url": "https://linear.app"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "A collaborative planning workspace with agent hand-off is within reach of a small team in three months; the hard part is integrating with many agents and keeping plans in sync with code, which depends on third party APIs."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "GitHub",
+   "Anthropic",
+   "Cursor",
+   "Atlassian",
+   "Linear"
+  ],
+  "timeline_months": 6,
+  "rationale": "Coding agent vendors and issue trackers can ship planning features in months and already own the developer workflow; platform dependence is high."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Spec-driven development became a named practice in 2025 with several frameworks.",
+    "source_url": "https://thenewstack.io/spec-driven-development-the-key-to-scalable-ai-agents/"
+   },
+   {
+    "claim": "Spec-first startups raised funding (Codeplain seed, Tessl).",
+    "source_url": "https://www.tamradar.com/funding-rounds/codeplain-seed-3m"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Prove teams, not individuals, use the plan layer.",
+   "actions": [
+    "Onboard 10 engineering teams of 5 or more",
+    "Measure plans approved before agent runs"
+   ],
+   "proof": "10 teams using it weekly for a month."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show willingness to pay.",
+   "actions": [
+    "Charge per seat",
+    "Show retention across 3 months"
+   ],
+   "proof": "$10K MRR with 80 percent team retention."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real coordination pain when agents speed up code",
+   "evidence": "The pitch matches the emergence of spec-driven development as a category in 2025.",
+   "source_url": "https://thenewstack.io/spec-driven-development-the-key-to-scalable-ai-agents/"
+  },
+  {
+   "point": "Hot investor interest in AI developer tools",
+   "evidence": "Spec-driven startups such as Tessl and Codeplain raised funding.",
+   "source_url": "https://www.tamradar.com/funding-rounds/codeplain-seed-3m"
+  }
+ ],
+ "brand": {
+  "name": "Scott AI",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Scott AI\" --era 2022+ : name_plus_descriptor, 7 chars, 2 words.",
+  "strengths": [
+   "Human first name feels friendly"
+  ],
+  "weaknesses": [
+   "Generic person name plus AI suffix, hard to search",
+   "AI suffix dates quickly"
+  ],
+  "rationale": "A first name plus AI is a pattern many 2023 to 2025 companies used, so it is hard to own in search; past YC names with human first names worked only when the product was strongly tied to the persona."
+ },
+ "narrative": {
+  "headline": "A crowded, platform exposed planning layer for coding agents; seed in 13 months is plausible but below even.",
+  "general_summary": "Scott AI targets coordination among engineers using coding agents. The 13.4 month window gives about two fifths seed odds from the B2B base rate, and a Series A is unlikely in that time. Spec-driven development was a hot but fast copied category, so the strongest risk is that the agents absorb the feature. The odds do not rank this company against others. The company has three people and a thesis that planning becomes the bottleneck once code is cheap. That thesis is credible and also widely shared, with Spec Kit, Tessl and plan modes appearing in the same months. The cohort anchors do not separate winners from losers in the earlier winners test, so treat the number as a base rate."
+ },
+ "assumptions": [
+  "Only the input file used.",
+  "Window 13.4 months from 2025-10-06 to 2026-11-17.",
+  "Pages dated after 2025-10-06 ignored.",
+  "B and C steps are ever-reached odds."
+ ],
+ "sources": [
+  "https://thenewstack.io/spec-driven-development-the-key-to-scalable-ai-agents/",
+  "https://www.tamradar.com/funding-rounds/codeplain-seed-3m",
+  "https://tessl.io/blog/why-codeplain-is-betting-on-spec-driven-software-development",
+  "https://linear.app"
+ ]
 }

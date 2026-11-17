@@ -1,330 +1,438 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Scheduling Wizard",
+  "one_liner": "Logistics infrastructure to modernize healthcare operations",
+  "description": "Washington DC team of 3 in Winter 2026 that does physician scheduling for hospital departments as a service, using its own scheduling programming language and AI workflows. It states 20 departments across 16 hospitals as clients and is expanding into patient triage and provider management.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.088,
+  "basis": "Starting prior about 1 percent (0.6 to 2 percent range). Up for real paying clients at 16 hospitals including well known academic centers, which is traction. Down for a three person service heavy team in a slow procurement field and healthcare IT competitors. Net about 4 percent, conditional on the batch already given.",
+  "why_it_fails": "YC would most plausibly say that physician scheduling outsourcing looks like a service business with limited scale, and that incumbents QGenda and Amion own the category. Partners may also doubt that a three person team can scale to triage and provider management together, and may ask why hospitals would not simply buy software."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.5,
+    "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2022-2025 --calibration-only: seed 50% known (lower 46 / upper 54, n=22), series_a cond 9% (n=11), series_b 0% (n=1). Time table Healthcare: seed p25 4, median 8.75, p75 27 months from batch start; series_a median 35. Healthcare IT tag 2018-2024: seed 50% (n=2).",
+    "adjustment_reason": "Window is 10.4 months from 2026-01-05 to 2026-11-17 and the number is for a round above about 1M from outside investors inside that window, not ever. Anchor 0.50 ever for Healthcare; Healthcare is slow to seed (median 8.75 months, p75 27) so only about 60 percent of eventual seeds close inside 10.4 months, giving 0.30, which is 0.6x of the anchor because of the window. Existing hospital clients are not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, the most common outcome for a small team that closes a first outside round quickly."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M, with market pre money near 18M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.24,
+     "rationale": "Strong seed led by a known fund, matching the upper quartile of 6.5M and above in press covered rounds."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "p_band": 0.11,
+     "rationale": "Large hot category round; rare for a team this early."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step fails if scheduling as a service looks like a consultancy, with revenue that scales by headcount and not by software, and if hospital procurement cycles slow new departments. Durate, Axle Health and Untether Labs sell similar scheduling software and raised little or nothing for years, and ReSchedule Med shut down. A three person team may take the YC deal and grow on revenue."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.09,
+    "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2022-2025 --calibration-only: seed 50% known (lower 46 / upper 54, n=22), series_a cond 9% (n=11), series_b 0% (n=1). Time table Healthcare: seed p25 4, median 8.75, p75 27 months from batch start; series_a median 35. Healthcare IT tag 2018-2024: seed 50% (n=2).",
+    "adjustment_reason": "Window 10.4 months. Healthcare series A medians are 35 months from batch start and p25 22.8, so almost none close inside 10.4 months. Anchor 0.09 (n=11) times about 0.4 gives 0.04."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000.0,
+      8000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later p25 of 10M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M and a market deal size near 17M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      90000000.0,
+      220000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round after fast revenue growth; the p75 is about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A inside ten months needs scalable software revenue across many hospitals while the product still relies on service workflows. Axle Health took three years from batch to a 10M Series A and Bemlo stayed at a seed, so scheduling peers rarely raise an A this early even with hospital customers."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": 0.1,
+    "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2022-2025 --calibration-only: seed 50% known (lower 46 / upper 54, n=22), series_a cond 9% (n=11), series_b 0% (n=1). Time table Healthcare: seed p25 4, median 8.75, p75 27 months from batch start; series_a median 35. Healthcare IT tag 2018-2024: seed 50% (n=2).",
+    "adjustment_reason": "Healthcare cohort has 1 company at B level (n=1); B2B 0.16 conditional. Median months to B near 46, so this is near impossible inside 10.4 months, set at 0.01."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      140000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M."
+    },
+    {
+     "raise_usd": [
+      25000000.0,
+      50000000.0
+     ],
+     "post_money_usd": [
+      140000000.0,
+      320000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B near the 2022 and later YC median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000.0,
+      100000000.0
+     ],
+     "post_money_usd": [
+      320000000.0,
+      800000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside Series B on breakout growth; the p75 is 57M."
+    }
+   ],
+   "why_it_fails": "A Series B inside ten months of YC is essentially unobserved in healthcare IT, where median months to B is about 46. It would need broad hospital system contracts and a software margin that a three person team does not yet show, and no scheduling analog got there."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.005,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2022-2025 --calibration-only: seed 50% known (lower 46 / upper 54, n=22), series_a cond 9% (n=11), series_b 0% (n=1). Time table Healthcare: seed p25 4, median 8.75, p75 27 months from batch start; series_a median 35. Healthcare IT tag 2018-2024: seed 50% (n=2).",
+    "adjustment_reason": "No base rate; no Healthcare IT company in the cohort reached C. Placeholder 0.005 for the 10.4 month window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      45000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Smaller later round near the 2022 and later p25 of 35M (n=9 only)."
+    },
+    {
+     "raise_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      900000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C or later, 45M to 77M per the YC table and market monitor."
+    },
+    {
+     "raise_usd": [
+      90000000.0,
+      250000000.0
+     ],
+     "post_money_usd": [
+      900000000.0,
+      3000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout late round at unicorn scale; very rare in this cohort."
+    }
+   ],
+   "why_it_fails": "A Series C inside ten months would need a category defining platform across health systems, as the largest hospital operations companies became only after many years. Qventus, a hospital operations YC peer from 2015, needed close to a decade, so the probability here is effectively zero."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.33
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company stays a small, profitable service heavy business or sells to a scheduling or workforce vendor, the path of Bemlo and Untether Labs. Upside depends on turning the scheduling language into software that departments buy directly, against entrenched incumbents with thousands of hospital customers."
+ },
+ "analogs": [
+  {
+   "slug": "durate",
+   "relevance": "Self running physician scheduling.",
+   "outcome_summary": "Alive, no verified round."
+  },
+  {
+   "slug": "axle-health",
+   "relevance": "Scheduling for home health.",
+   "outcome_summary": "Seed then Series A years later."
+  },
+  {
+   "slug": "untether-labs",
+   "relevance": "Scheduling for digital health clinics.",
+   "outcome_summary": "Alive, no verified round."
+  },
+  {
+   "slug": "bemlo",
+   "relevance": "AI scheduling and workforce for healthcare.",
+   "outcome_summary": "Seed and an acquisition."
+  },
+  {
+   "slug": "reschedule-med",
+   "relevance": "Residency program scheduling.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "qventus",
+   "relevance": "Hospital operations automation.",
+   "outcome_summary": "Many rounds over years."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Service business that does not scale",
+   "p": 0.4,
+   "evidence": "Departments outsource scheduling to the company, so revenue may track staff and not software.",
+   "analogs": [
+    "reschedule-med",
+    "untether-labs"
+   ],
+   "mitigation": "Productize the scheduling language so departments self serve."
+  },
+  {
+   "risk": "Entrenched incumbents",
+   "p": 0.35,
+   "evidence": "QGenda claims 5,000 hospitals and Amion is widely used per KLAS.",
+   "analogs": [
+    "durate",
+    "reschedule-med"
+   ],
+   "mitigation": "Win departments the incumbents serve poorly."
+  },
+  {
+   "risk": "Slow hospital procurement",
+   "p": 0.3,
+   "evidence": "Healthcare median to seed is 8.75 months and to Series A 35.",
+   "analogs": [
+    "axle-health",
+    "bemlo"
+   ],
+   "mitigation": "Land departments with small contracts and expand."
+  },
+  {
+   "risk": "Scope creep into triage",
+   "p": 0.2,
+   "evidence": "The plan adds patient triage and provider management with three people.",
+   "analogs": [
+    "qventus"
+   ],
+   "mitigation": "Win scheduling first."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "QGenda",
+   "what": "Enterprise physician scheduling with AI optimization",
+   "traction": "Claims 5,000 hospitals",
+   "source_url": "https://www.perfectserve.com/compare/best-qgenda-competitors/"
+  },
+  {
+   "name": "Amion and Shift Admin",
+   "what": "Department and ED scheduling tools",
+   "traction": "High KLAS scores",
+   "source_url": "https://www.beckershospitalreview.com/artificial-intelligence/top-automated-physician-scheduling-tools-as-ranked-by-klas.html"
+  },
+  {
+   "name": "Spreadsheets and the department scheduler",
+   "what": "Status quo in many departments",
+   "traction": "Default choice",
+   "source_url": "https://www.opentempo.com/providers"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Scheduling is a constraint problem with hospital rules, and a domain specific language is a reasonable approach. A small team can build a solver in months, but EHR integrations and change management are the hard part, and rules coverage across departments is the moat."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "QGenda",
+   "Epic",
+   "Amion",
+   "symplr"
+  ],
+  "timeline_months": 18,
+  "rationale": "Incumbents already have AI optimization features and customers, and Epic could add scheduling, but outsourced scheduling labour is not a target for them."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "KLAS tracks automated physician scheduling vendors and enterprise wide deployment is growing.",
+    "source_url": "https://www.beckershospitalreview.com/artificial-intelligence/top-automated-physician-scheduling-tools-as-ranked-by-klas.html"
+   },
+   {
+    "claim": "Incumbents claim thousands of hospitals, proving spend on scheduling.",
+    "source_url": "https://www.perfectserve.com/compare/best-qgenda-competitors/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Prove departments renew and expand.",
+   "actions": [
+    "Track renewal and expansion across the 20 departments",
+    "Document hours saved per schedule"
+   ],
+   "proof": "Renewal above 90 percent with added departments."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show software margins.",
+   "actions": [
+    "Automate the most common scheduling rules",
+    "Price by department seat"
+   ],
+   "proof": "Gross margin above 70 percent with schedulers per client falling."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real customers at major hospitals",
+   "evidence": "The company lists Mass General, Johns Hopkins, UT Southwestern and UCSF as clients across 16 hospitals.",
+   "source_url": "https://www.schedulingwiz.com"
+  },
+  {
+   "point": "Proven spend category",
+   "evidence": "Incumbents serve thousands of hospitals for scheduling.",
+   "source_url": "https://www.perfectserve.com/compare/best-qgenda-competitors/"
+  }
+ ],
+ "brand": {
+  "name": "Scheduling Wizard",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Scheduling Wizard\" --era 2022+: length bucket 12+, 4 or more syllables, alive 94.7 percent in bucket, no signal.",
+  "strengths": [
+   "Says exactly what it does",
+   "Friendly and memorable"
+  ],
+  "weaknesses": [
+   "Descriptive and hard to own",
+   "Playful for hospital buyers"
+  ],
+  "rationale": "A descriptive name states the product clearly like Instawork, but is generic and hard to trademark, and wizard may sound light for hospital procurement. Brand is secondary to renewal data."
+ },
+ "narrative": {
+  "headline": "A three person scheduling service already inside 16 hospitals: seed is held to about 30 percent mainly by the 10 month window and slow healthcare timing, later rounds are near zero.",
+  "general_summary": "Scheduling Wizard schedules physicians for hospital departments with its own scheduling language and AI workflows, and states 20 departments at 16 hospitals as clients. The window is 10.4 months from 2026-01-05 to 2026-11-17, short for healthcare where the median seed comes near 9 months and the p75 near 27, so seed is 0.30 against a Healthcare anchor of 0.50 for ever. Series A given seed is 0.04 in the window. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-01-05 using only the input.",
+  "Seed means above about 1M from outside investors inside the 10.4 month window.",
+  "Client counts are company stated and not verified."
+ ],
+ "sources": [
+  "https://www.beckershospitalreview.com/artificial-intelligence/top-automated-physician-scheduling-tools-as-ranked-by-klas.html",
+  "https://www.perfectserve.com/compare/best-qgenda-competitors/",
+  "https://www.opentempo.com/providers"
+ ]
 }

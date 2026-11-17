@@ -1,330 +1,455 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Trava",
+  "one_liner": "AI agents for global trade compliance",
+  "description": "Trava builds AI agents for global trade compliance. It audits customs entries to find duty overpayments and filing errors and automates tariff classification for importers. A single founder in San Francisco, Winter 2025, tagged Generative AI, Compliance, Logistics and Supply Chain. The forecast window is 22.4 months, from 2025-01-06 to 2026-11-17.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.09,
+  "basis": "Trava is already in Winter 2025, so shown for completeness. Starting rate about 1 percent. Solo founders are slightly down in our table, and a compliance niche with pain from importers is a plus. About 3 percent.",
+  "why_it_fails": "YC would most plausibly say no because a solo founder in a regulated niche with licensed broker constraints is risky and the description gives no customer or revenue numbers. Reviewers would also ask how a one person company obtains customs broker credentials and enterprise trust."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.4,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : seed 50% lower / 61% known-only / 68% upper, cond 61% (n=88). Time to seed (B2B 2022-24) p25 4, median 9, p75 19 months (n=54); time_to_milestones.csv calibration_sample p25 3, median 7, p75 19.5 (n=363).",
+    "adjustment_reason": "Window forecast, 22.4 months. Anchor 0.61 to 0.68 ever. About 78 percent of seed raisers close within 22 months (p75 19 to 22), giving 0.65 times 0.78, about 0.5. I then cut about 20 percent for a solo founder (solo shutdown 21 percent versus 17 percent for two founders in our data, and investors prefer teams) to get 0.40. No lift for the tariff tailwind, per the winners test. The odds do not rank Trava against other companies."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.32,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. A solo founder with a compliance niche tends to raise smaller rounds. Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. A solo founder with a compliance niche tends to raise smaller rounds. "
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A solo founder must build the product, sell to importers and manage licensed broker questions at once. The category needs customs broker licences or partnerships, because only licensed brokers may make entry decisions, and trade software buyers are slow. Semantics3 (cross border data) sold early, and Forge and Pax are better staffed competitors from the previous batches; if the first customers do not pay for audit recoveries, investors stay away and the round stays at the YC deal."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_a cond 33% (n=54), lower 17%, known-only 20%, upper 35%. Time: months_to_series_a p25 22, median 30 (n=18); calibration_sample p25 19.3, median 28.",
+    "adjustment_reason": "Window forecast, 22.4 months. Anchor 0.33 ever given seed; about 30 percent of Series A reachers close by 22 months (p25 19 to 22, median 28 to 30), so 0.33 times 0.3 is 0.10; a 20 percent solo founder discount gives 0.08."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Thin or flat Series A of $5M to $8M for a company with revenue but no clear breakout; this is the 'reached A, barely' case. Below the 2022+ A median of $14.9M (B2B 2022-24, n=18)."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core band around the 2022+ B2B median raise of about $15M (p25 $11M, p50 $15M); post money from public seed-to-A step ups, valuations are sparse in our data."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      90000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong band: AI-native companies with fast revenue growth drew A rounds near the p75 of $23M (B2B 2022-24)."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      180000000,
+      400000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band for a breakout; rare in our cohorts and press-driven."
+    }
+   ],
+   "why_it_fails": "A Series A by November 2026 would need several hundred thousand dollars of recurring revenue from importers, and a contingency fee model on duty recoveries can produce lumpy revenue. Solo founders in our data rarely hit this by month 22 without a co-founder; Forge raised more with a bigger team."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.18,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_b cond 17% (n=18); overall calibration conditional 44% (n=126). This step is an ever-reached figure beyond the forecast window.",
+    "adjustment_reason": "Ever-reached beyond the window; anchor 0.17 (B2B 2022-24, n=18) and a small solo discount offset by tariff driven demand."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge-like Series B near $15M to $25M, a flat or slightly down step from the A valuation; this happens when growth slows after the A and investors reprice, as in many 2022 to 2024 B2B rounds."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core: B2B 2022+ Series B raise $35M to $60M (n=3), market median about $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round of $45M to $80M for a company growing well over 2x a year; the 2022+ Series B table has p75 $55M (round_benchmarks.csv, n=192 all companies)."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside breakout case of $80M to $150M led by a growth fund; rare and mostly seen for AI leaders with very fast revenue, so it carries only a tenth of the mass."
+    }
+   ],
+   "why_it_fails": "Series B needs a platform covering classification, filing and audit at enterprise scale, with licensed broker capability. Large incumbents such as Descartes and Flexport already sell customs software. Reaching a Series B would require filing volume with licensed broker coverage across many ports and a sales team selling to enterprise importers, none of which a solo founder can staff early. Competitors in the previous batches have larger teams and are already contesting the same customers."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "base_rates.py calibration sample: series_c cond 36% (n=55); B2B 2022-24 has n=3 so the broad figure is used. Ever-reached figure beyond the window.",
+    "adjustment_reason": "Ever-reached beyond the window, under the 36% calibration conditional because trade software companies rarely scale past B."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      50000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series C of $30M to $50M at a flat valuation, typical when growth normalises after a B and the company raises mainly to extend runway or fund acquisitions."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core C (2022+ median about $45M to $74M)."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong Series C of $100M to $200M, around the 2022+ p75 of $103M for all companies (round_benchmarks.csv), for a clear category leader with durable revenue."
+    },
+    {
+     "raise_usd": [
+      200000000,
+      500000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      5000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout round above $200M for a market leader; the 2022+ Series C p75 is about $103M, so this is a tail band with 5 percent of the mass."
+    }
+   ],
+   "why_it_fails": "Series C requires customs filing volume at scale and regulatory standing; logistics software outcomes in our data skew to acquisition by larger forwarders and platforms. A Series C trade compliance company has to run as a regulated filing platform with consistent accuracy and audit records. The analog Semantics3 sold to a media company instead of scaling, which is the more common ending for trade data tools."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.64
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.11
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most trade compliance startups stall as niche audit services or are acquired by a broker or logistics platform under $100M. A large outcome needs tariff volatility to persist and the product to become the default filing engine. Trade compliance software outcomes in our data skew to modest acquisitions by logistics platforms and brokers, and a solo founder faces survival risk before scale. A large outcome needs durable tariff complexity, a licensed filing capability and a team that can sell to enterprise importers."
+ },
+ "analogs": [
+  {
+   "slug": "semantics3",
+   "relevance": "Data and AI platform for ecommerce and cross border logistics (2013).",
+   "outcome_summary": "Acquired by Hearst Media; shows exit by acquisition for trade data."
+  },
+  {
+   "slug": "forge",
+   "relevance": "AI native freight forwarder and customs broker (Winter 2024).",
+   "outcome_summary": "Active with a larger team; direct competitor for customs."
+  },
+  {
+   "slug": "pax",
+   "relevance": "AI native operating system for global trade (Summer 2024).",
+   "outcome_summary": "Active; direct competitor."
+  },
+  {
+   "slug": "send",
+   "relevance": "Digital freight forwarder and customs broker for Africa (2020).",
+   "outcome_summary": "Active, capital intensive logistics play."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Regulatory limits: only licensed brokers may decide entries",
+   "p": 0.4,
+   "evidence": "Analysis of CBP ruling H350722 suggests AI can research but a licensed broker must decide the entry classification.",
+   "analogs": [
+    "forge",
+    "send"
+   ],
+   "mitigation": "Partner with or become a licensed customs broker."
+  },
+  {
+   "risk": "Solo founder bandwidth",
+   "p": 0.45,
+   "evidence": "Team size is 1; solo founders in our YC sample shut down at 21 percent versus 17 percent for two.",
+   "analogs": [
+    "semantics3",
+    "pax"
+   ],
+   "mitigation": "Add a technical or sales co-founder in the first 6 months."
+  },
+  {
+   "risk": "Incumbent customs software and brokers add AI",
+   "p": 0.35,
+   "evidence": "Camtom and Zonos already market AI classification and reasonable care documentation.",
+   "analogs": [
+    "forge",
+    "pax"
+   ],
+   "mitigation": "Lead with audit recoveries, which are paid on results."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Camtom",
+   "what": "AI customs classification tool for importers.",
+   "traction": "Marketing claims error finding in 10 to 15 percent of classifications.",
+   "source_url": "https://camtomx.com/blog/ai-transforming-customs-classification"
+  },
+  {
+   "name": "Zonos",
+   "what": "Landed cost and classification API for ecommerce.",
+   "traction": "Established cross border ecommerce vendor.",
+   "source_url": "https://zonos.com"
+  },
+  {
+   "name": "Forge (YC W24)",
+   "what": "AI native freight forwarder and customs broker.",
+   "traction": "Active, earlier batch.",
+   "source_url": "https://www.ycombinator.com/companies/forge"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Classifying products under the Harmonized Tariff Schedule and auditing entries with language models is feasible for one engineer, but accuracy standards are high and entry filing needs CBP integration and licensing, which a solo founder cannot build in three months."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Descartes",
+   "Flexport",
+   "Zonos",
+   "Customs brokers"
+  ],
+  "timeline_months": 12,
+  "rationale": "Large trade software vendors can add AI audit features but move slowly; brokers are slow to change; the dependence is on CBP data and model vendors."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Importers face duty overpayments and filing errors, and vendors market error rates of 10 to 15 percent in active classifications.",
+    "source_url": "https://camtomx.com/blog/ai-transforming-customs-classification"
+   },
+   {
+    "claim": "Tariff changes in 2025 raised the cost of getting classification wrong.",
+    "source_url": "https://camtomx.com/blog/ai-transforming-customs-classification"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show recovered duties for a real importer.",
+   "actions": [
+    "Audit entries for 3 importers",
+    "Document dollars recovered"
+   ],
+   "proof": "$100K in documented duty recovery."
+  },
+  {
+   "phase": "seed",
+   "goal": "Turn audits into recurring revenue and add a co-founder.",
+   "actions": [
+    "Add a licensed broker partner",
+    "Move from contingency to subscription"
+   ],
+   "proof": "$20K MRR and 10 importers."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Pain is measurable in dollars",
+   "evidence": "Duty overpayments and classification errors have a direct dollar value to importers.",
+   "source_url": "https://camtomx.com/blog/ai-transforming-customs-classification"
+  },
+  {
+   "point": "Contingency model aligns with buyers",
+   "evidence": "Audit based recovery fees reduce buyer risk.",
+   "source_url": "https://camtomx.com/blog/ai-transforming-customs-classification"
+  }
+ ],
+ "brand": {
+  "name": "Trava",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Trava\" --era 2022+ : invented_or_proper, 5 chars, 2 syllables.",
+  "strengths": [
+   "Short invented word, easy to type",
+   "Hints at travel or trade (trav-)"
+  ],
+  "weaknesses": [
+   "Meaningless on its own for compliance buyers"
+  ],
+  "rationale": "A short invented name is easy to remember and gets a clean domain-like identity, but gives no signal about compliance; many B2B YC companies with invented names grew through product rather than brand."
+ },
+ "narrative": {
+  "headline": "A solo founder in a regulated trade niche with real dollar pain; seed within 22 months is about two in five.",
+  "general_summary": "Trava audits customs entries and automates tariff classification for importers. The 22 month window gives the highest window fraction of the five, but a solo founder and the licensed broker constraint pull the seed probability down to about 40 percent. A Series A in the window is unlikely. The odds do not rank this company against others. With one founder, the main uncertainty is whether a co-founder joins and whether the audit recovery revenue shows up early. The tariff environment in 2025 raises the value of getting classification right, which helps the need, but the cohort anchors do not separate winners from losers in the earlier winners test, so treat the number as a base rate."
+ },
+ "assumptions": [
+  "Only the input file used.",
+  "Window 22.4 months from 2025-01-06 to 2026-11-17.",
+  "Market search results dated after 2025-01-06 ignored (Tarifflo and 2026 reports).",
+  "B and C steps are ever-reached odds."
+ ],
+ "sources": [
+  "https://camtomx.com/blog/ai-transforming-customs-classification",
+  "https://zonos.com",
+  "https://www.ycombinator.com/companies/forge"
+ ]
 }

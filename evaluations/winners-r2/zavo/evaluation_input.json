@@ -1,330 +1,435 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Zavo",
+  "one_liner": "Data research lab for frontier AI.",
+  "description": "Research lab that builds data for frontier AI developers across complex domains, in the style of the expert data and evaluation labs that sell to model companies. Eight person team in London, Fall 2025 batch, tags B2B, Big Data and AI. The description gives no customers, domains or pricing, so the buyer is assumed to be a small number of frontier labs paying per project.",
+  "as_of": "2025-10-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.06,
+  "basis": "Starting prior is about 1 percent for a random applicant (0.6 to 2 percent, references/yc_acceptance.md). Up for the timing, since model labs spent heavily on expert data in 2025, and for a team of eight with a research framing. Down because the description is thin and names no customers, and because Surge, Mercor, Scale and a wave of YC data labs already serve the same buyers. Net about 3 percent; the company is already in the batch so this is for completeness.",
+  "why_it_fails": "YC would most likely say that selling data to a handful of frontier labs is a concentrated, lumpy business where Surge, Mercor and Scale hold the relationships, and that a London team with no named lab customer has not shown it can win a contract. Partners would also ask what domain edge a new lab has that the larger vendors cannot buy."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.64,
+    "source": "python3 -I scripts/base_rates.py --tag AI --calibration-only: seed cond 64% (n=183, lower 51 / upper 71), series_a cond 30% (n=117), series_b cond 31% (n=35), series_c cond 45% (n=11). Broad cohort python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 8 months from batch start (p25 4, p75 20 for the AI tag), series_a median 28 months.",
+    "adjustment_reason": "Window is 13.4 months, from 2025-10-06 to 2026-11-17, and counts a round above about 1M from outside investors closing inside it. Anchor 0.64 for the AI tag and 0.59 for B2B, ever. By month 13 to 14 about 65 to 70 percent of eventual 2022 and later seeds close (median 8, p75 14 to 20), so 0.64 times about 0.7 is 0.45, which is 0.7x of the anchor. Hot demand for training data is not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small round under 3M, likely from angels or a lab alumni syndicate for a London team."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.27,
+     "rationale": "Strong seed if one or two frontier labs are paying customers and revenue grows fast; matches the 6M to 10M press covered quartile."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.13,
+     "rationale": "Large seed in the frontier data category, where a few companies raised big early rounds; rare for eight people with no disclosed revenue."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step inside 13.4 months fails if no frontier lab becomes a repeat customer, because demand for expert data is concentrated in a few buyers who can move volume to Surge or Mercor within weeks. Sepal AI, a data company from the Summer 2024 batch, was acquired without a recorded priced round, and Centaur and Superb AI show that labeling businesses can take years to reach a Series B. Investors will also ask why gross margin is not eaten by expert labor costs."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --tag AI --calibration-only: seed cond 64% (n=183, lower 51 / upper 71), series_a cond 30% (n=117), series_b cond 31% (n=35), series_c cond 45% (n=11). Broad cohort python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 8 months from batch start (p25 4, p75 20 for the AI tag), series_a median 28 months.",
+    "adjustment_reason": "Window 13.4 months. Series A for 2022 and later companies has p25 at 19 months and median 28 months, so under a fifth of eventual A raisers close one by month 13. Anchor 0.30 (AI tag) times about 0.27 is 0.08, which is 0.27x of the anchor and reflects the window and the lumpy customer base."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later YC median of 14.15M (stage_benchmarks.md), led by the seed investor."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M with quartiles 10M and 20M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series A led by a top fund after fast recurring revenue, above the 2022 and later p75 of about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A within 13 months needs revenue from several frontier labs with margins that survive contractor payouts, while customers may bring this work in house or switch vendors after one project. Centaur needed years from its Winter 2019 start to reach a Series B and Superb AI reached later rounds on a much slower path, so a fast A is a breakout case."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --tag AI --calibration-only: seed cond 64% (n=183, lower 51 / upper 71), series_a cond 30% (n=117), series_b cond 31% (n=35), series_c cond 45% (n=11). Broad cohort python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 8 months from batch start (p25 4, p75 20 for the AI tag), series_a median 28 months.",
+    "adjustment_reason": "Window 13.4 months. Series B median is about 36 months for 2022 and later YC companies and the B2B conditional rate is 16 percent. Inside 13 months it is a tail event, so 0.03."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      140000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M after growth slows."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      140000000,
+      350000000
+     ],
+     "p_band": 0.42,
+     "rationale": "Typical Series B near the 2022 and later median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      350000000,
+      900000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Upside Series B for a breakout, above the 2022 and later p75 of 57M."
+    }
+   ],
+   "why_it_fails": "A Series B in 13 months would be a Mercor style hypergrowth outcome, with revenue measured in tens of millions. Such growth has happened in the category but only for the few leaders, and Zavo has no stated customer, so the chance rests on a rare breakout and not on the cohort rate."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": 0.0,
+    "source": "python3 -I scripts/base_rates.py --tag AI --calibration-only: seed cond 64% (n=183, lower 51 / upper 71), series_a cond 30% (n=117), series_b cond 31% (n=35), series_c cond 45% (n=11). Broad cohort python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 8 months from batch start (p25 4, p75 20 for the AI tag), series_a median 28 months.",
+    "adjustment_reason": "Window 13.4 months. The 2022 and later B2B cohort has 0 Series C in n=3, and C comes at a median of about 5 years from batch start, so 0.01 is a floor for an extreme breakout."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Smaller Series C or growth round near the 2022 and later p25 to median of 35M to 45M."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1500000000
+     ],
+     "p_band": 0.42,
+     "rationale": "Typical later round, 2022 and later Series D plus median 97.5M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      5000000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Category leader round above 120M, matching the top quartile of 2022 and later Series D plus rounds."
+    }
+   ],
+   "why_it_fails": "A Series C inside 13 months would put Zavo next to Mercor and Surge, which are valued in the billions. The Series C base rate for recent cohorts rests on three companies, and the data labs in the records stop at a Series A or B, so this stays a floor value."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Data vendors to frontier labs often fail when customers insource or concentrate on the leaders, or get bought early for their experts and pipelines as Sepal AI was. A large outcome needs a recurring product beyond one off projects, and that is not visible in the description."
+ },
+ "analogs": [
+  {
+   "slug": "centaur",
+   "relevance": "Annotation company for AI data, Winter 2019",
+   "outcome_summary": "Reached a Series B after years; shows a data business can last but slowly."
+  },
+  {
+   "slug": "superb-ai",
+   "relevance": "Computer vision data and MLOps platform, Winter 2019",
+   "outcome_summary": "Raised through Series C; platform rather than labor based."
+  },
+  {
+   "slug": "sepal-ai",
+   "relevance": "Data development for advanced AI, Summer 2024",
+   "outcome_summary": "Acquired with no priced post YC round in the record."
+  },
+  {
+   "slug": "datacurve",
+   "relevance": "Frontier coding data for training and evaluating LLMs, Winter 2024",
+   "outcome_summary": "Reached Series A per the record; closest peer with named niche."
+  },
+  {
+   "slug": "besimple-ai",
+   "relevance": "Voice data for AI, Spring 2025",
+   "outcome_summary": "Seed stage company; a narrow domain focus."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Customer concentration: two or three frontier labs account for most revenue and can switch vendors",
+   "p": 0.45,
+   "evidence": "Reports in 2025 describe labs leaving Scale within weeks after the Meta investment and moving work to Surge and Mercor, showing how fast volume moves.",
+   "analogs": [
+    "sepal-ai",
+    "centaur"
+   ],
+   "mitigation": "Sign multi quarter contracts with several labs and build a repeatable evaluation product."
+  },
+  {
+   "risk": "Margins: expert labor costs of 50 to 200 dollars an hour leave thin margins for a small vendor",
+   "p": 0.3,
+   "evidence": "Frontier expert rates of 50 to 200 dollars per hour are reported in 2025 market analyses, and large platforms have scale in sourcing experts.",
+   "analogs": [
+    "superb-ai",
+    "centaur"
+   ],
+   "mitigation": "Invest in tooling and quality checks that make each expert hour worth more."
+  },
+  {
+   "risk": "Description is thin and no domain edge is stated, so the company is a generic data vendor",
+   "p": 0.3,
+   "evidence": "The input gives only a research lab framing and a contact email, with no named domain, customer or product.",
+   "analogs": [
+    "datacurve",
+    "besimple-ai"
+   ],
+   "mitigation": "Pick a domain with scarce expertise, such as a regulated field, and publish a benchmark."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Surge AI",
+   "what": "Expert data and RLHF for frontier labs",
+   "traction": "Reported revenue over 1B in 2024 per Sacra estimates",
+   "source_url": "https://sacra.com/chat/h/788a8536-fc24-4b8d-a389-3318e4f79b68"
+  },
+  {
+   "name": "Mercor",
+   "what": "Expert talent marketplace that supplies labs with trainers",
+   "traction": "Reported 500M annualized revenue by August 2025",
+   "source_url": "https://research.contrary.com/report/mercor"
+  },
+  {
+   "name": "Scale AI",
+   "what": "Largest labeling vendor, repositioned after Meta stake in mid 2025",
+   "traction": "Cut about 200 data labeling roles in July 2025",
+   "source_url": "https://sacra.com/chat/h/f1122c63-1fb9-4fa2-8a20-0abd89b211da/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Recruiting and vetting experts, quality control and pipelines for evaluations are operational skills, not deep research, and a small team can start in three months. The hard part is quality at scale and understanding what labs need, which depends on research talent and lab relationships."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Surge AI",
+   "Mercor",
+   "Scale AI",
+   "Labs building in house data teams"
+  ],
+  "timeline_months": 6,
+  "rationale": "Large vendors can add any domain by recruiting experts, and labs can insource. A small lab competes on speciality and trust, not on technology, so copy and absorption risk is high."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Mercor reported about 500M annualized revenue by August 2025 and Surge more than 1B, showing paid demand from labs",
+    "source_url": "https://research.contrary.com/report/mercor"
+   },
+   {
+    "claim": "Labs moved volume away from Scale to Surge and Mercor within weeks of Meta's investment, so buyers want multiple vendors",
+    "source_url": "https://sacra.com/chat/h/f1122c63-1fb9-4fa2-8a20-0abd89b211da/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Win one named frontier lab project",
+   "actions": [
+    "Offer a paid pilot in one scarce domain",
+    "Produce a benchmark that labs cite"
+   ],
+   "proof": "One paid project from a recognised model developer"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeat orders and margin",
+   "actions": [
+    "Sign two more labs",
+    "Track gross margin per project",
+    "Build tooling for quality control"
+   ],
+   "proof": "Monthly revenue above 100K from at least three customers"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Diversify beyond project work",
+   "actions": [
+    "Build a recurring evaluation or data product",
+    "Reduce dependence on one lab"
+   ],
+   "proof": "Largest customer under 40 percent of revenue and positive gross margin"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Demand for expert training data was growing fast in 2025",
+   "evidence": "Mercor and Surge reported revenue in the hundreds of millions to billions, and labs bought from several vendors.",
+   "source_url": "https://research.contrary.com/report/mercor"
+  },
+  {
+   "point": "Eight person team with a research framing and London base gives access to talent",
+   "evidence": "Input lists team size 8 in London.",
+   "source_url": "https://zavo.ai"
+  }
+ ],
+ "brand": {
+  "name": "Zavo",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Zavo\" --era 2022+: kind invented_or_proper, length 4 or less, 2 syllables; cohort alive 92.7 percent, exit 5.2 percent, no outlier.",
+  "strengths": [
+   "Short, invented, easy to say",
+   "Domain name zavo.ai is available to the company"
+  ],
+  "weaknesses": [
+   "No meaning tied to data or research",
+   "Resembles several other short brand names"
+  ],
+  "rationale": "A short invented name is the most common type in the 2022 and later cohort (1826 companies) and is neutral; it gives no descriptive link to data, similar to Scale or Surge, which also use short generic words."
+ },
+ "narrative": {
+  "headline": "A late entrant to frontier AI data with a thin description; a seed in 13 months is close to a coin flip.",
+  "general_summary": "Zavo is a data research lab selling to frontier AI developers, a category with huge demand in 2025 and with strong leaders in Surge, Mercor and Scale. Cohort anchors for AI and B2B companies give about 59 to 64 percent seed ever, and about 70 percent of those land in 13 months, so the window estimate is 45 percent. Later rounds in the window are tail events. Customer concentration and thin margins are the main risks. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "The input has no customers or revenue; seed odds assume a normal Fall 2025 AI B2B company.",
+  "Window 13.4 months; seed means a round above about 1M from outside investors closing inside it.",
+  "Data lab analog records were read for categories only; later dated outcomes of analogs are not used as evidence."
+ ],
+ "sources": [
+  "https://research.contrary.com/report/mercor",
+  "https://sacra.com/chat/h/788a8536-fc24-4b8d-a389-3318e4f79b68",
+  "https://sacra.com/chat/h/f1122c63-1fb9-4fa2-8a20-0abd89b211da/",
+  "https://zavo.ai"
+ ]
 }

@@ -1,330 +1,453 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Standout",
+  "one_liner": "Agentic hiring marketplace",
+  "description": "Standout gives each candidate and each company an autonomous agent that represents them, assesses the other side and arranges introductions, with talent anonymous until they accept. It claims 10,000 talent, 60 companies and 100 intros in one month. Seven people, Spring 2026. The forecast window is 7.4 months, from 2026-04-06 to 2026-11-17.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.09,
+  "basis": "Standout is already in the Spring 2026 batch; the estimate is shown for completeness. Starting rate about 1 percent. Claimed early usage of 10,000 talent in one month and a team of seven help, but the marketplace model is a negative in our factor table (marketplace shutdown 43 percent of n=14), so about 3 percent.",
+  "why_it_fails": "YC would most plausibly say no because AI recruiting is crowded and the traction numbers (sign ups and intros) do not show employers paying or candidates being hired. Triplebyte and similar hiring marketplaces in our data needed years and large rounds to show liquidity, and YC partners know the cold start problem of two sided markets well."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : seed 50% lower / 61% known-only / 68% upper, cond 61% (n=88). Time to seed (B2B 2022-24) p25 4, median 9, p75 19 months (n=54); time_to_milestones.csv calibration_sample p25 3, median 7, p75 19.5 (n=363).",
+    "adjustment_reason": "Window forecast, 7.4 months. Ever-reached anchor 0.61 to 0.68. Time to seed in B2B has median 7 to 9 months from batch start, so about 45 to 50 percent of eventual seed raisers close within 7.4 months; 0.65 times 0.5 is about 0.33. No lift for team size or the early traction claim, per the winners test. A two sided marketplace with 60 companies is not proof of revenue. These odds do not rank Standout against other companies."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. AI recruiting has seen many small and mid size seeds. Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. AI recruiting has seen many small and mid size seeds. "
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.26,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Marketplaces need liquidity on both sides, and the claimed numbers (60 companies, 100 intros) are small and may be free usage. Hiring marketplaces from the YC data such as Triplebyte raised large rounds early but ended acquired by Karat, and Fastpad and similar tools went inactive. In a 7 month window investors will want paid placements or subscription revenue; without it the company stays on the YC deal or a small angel round."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_a cond 33% (n=54), lower 17%, known-only 20%, upper 35%. Time: months_to_series_a p25 22, median 30 (n=18); calibration_sample p25 19.3, median 28.",
+    "adjustment_reason": "Window forecast of 7.4 months. Series A median is 28 to 30 months after batch start and p25 about 19 to 22 months, so almost no companies reach A in 7 months; about 0.33 times 0.07 gives 0.02 to 0.03. The ratio to the 0.33 anchor is under 2x only in spirit; the reason is purely the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Thin or flat Series A of $5M to $8M for a company with revenue but no clear breakout; this is the 'reached A, barely' case. Below the 2022+ A median of $14.9M (B2B 2022-24, n=18)."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core band around the 2022+ B2B median raise of about $15M (p25 $11M, p50 $15M); post money from public seed-to-A step ups, valuations are sparse in our data."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      90000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong band: AI-native companies with fast revenue growth drew A rounds near the p75 of $23M (B2B 2022-24)."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      180000000,
+      400000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band for a breakout; rare in our cohorts and press-driven."
+    }
+   ],
+   "why_it_fails": "A Series A within 7 months of the batch start would need revenue growth that only breakout companies show, and marketplace revenue (placement fees) arrives slowly because hiring cycles take months. Even strong AI recruiting companies in our data raised A rounds well after two years."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_b cond 17% (n=18); overall calibration conditional 44% (n=126). This step is an ever-reached figure beyond the forecast window.",
+    "adjustment_reason": "Ever-reached, beyond the window. Anchor 0.17 (B2B 2022-24, n=18); 0.20 given marketplace winner-take-most dynamics offsets the risk."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge-like Series B near $15M to $25M, a flat or slightly down step from the A valuation; this happens when growth slows after the A and investors reprice, as in many 2022 to 2024 B2B rounds."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core: B2B 2022+ Series B raise $35M to $60M (n=3), market median about $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round of $45M to $80M for a company growing well over 2x a year; the 2022+ Series B table has p75 $55M (round_benchmarks.csv, n=192 all companies)."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside breakout case of $80M to $150M led by a growth fund; rare and mostly seen for AI leaders with very fast revenue, so it carries only a tenth of the mass."
+    }
+   ],
+   "why_it_fails": "Series B needs liquidity at scale and a defensible matching dataset. LinkedIn and job boards can copy agent features, and the marketplace analog set (Triplebyte, 10 By 10) shows slow economics and later acquisition or stalls. Reaching a Series B would require tens of thousands of active candidates and hundreds of paying employers with measured hires, and a take rate that survives LinkedIn adding its own agents. In our hiring analogs, growth stalled once the early adopter pool in San Francisco startups was exhausted."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "base_rates.py calibration sample: series_c cond 36% (n=55); B2B 2022-24 has n=3 so the broad figure is used. Ever-reached figure beyond the window.",
+    "adjustment_reason": "Ever-reached, beyond the window, slightly below the 36% calibration conditional because few recruiting marketplaces reach Series C."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      50000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series C of $30M to $50M at a flat valuation, typical when growth normalises after a B and the company raises mainly to extend runway or fund acquisitions."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core C (2022+ median about $45M to $74M)."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong Series C of $100M to $200M, around the 2022+ p75 of $103M for all companies (round_benchmarks.csv), for a clear category leader with durable revenue."
+    },
+    {
+     "raise_usd": [
+      200000000,
+      500000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      5000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout round above $200M for a market leader; the 2022+ Series C p75 is about $103M, so this is a tail band with 5 percent of the mass."
+    }
+   ],
+   "why_it_fails": "Series C needs a category defining marketplace with take rate economics. Hiring is cyclical and spam from both sides can erode trust in intros; most analogs plateau at small revenue. A Series C marketplace needs repeated annual hiring volume across industries and geographies, which is a different go to market from startup hiring. Hiring cycles also fall in downturns, so revenue is cyclical and investors discount it."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.65
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.11
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most recruiting marketplaces stall for lack of liquidity or are acquired for under $100M by a larger HR platform. A large outcome needs the anonymous agent matching to become the default way passive candidates are found. Marketplace winners are few, and the data show most small recruiting platforms end as acquihires or fade. The agent to agent design adds a novel trust question, whether candidates and employers believe automated intros are better than human recruiters."
+ },
+ "analogs": [
+  {
+   "slug": "triplebyte",
+   "relevance": "Technical hiring marketplace with vetted candidates.",
+   "outcome_summary": "Raised large rounds, was acquired by Karat in 2023; shows marketplace growth then consolidation."
+  },
+  {
+   "slug": "hiresweet",
+   "relevance": "AI assisted sourcing for recruiting teams (2020).",
+   "outcome_summary": "Active; sells software to recruiters rather than running a marketplace."
+  },
+  {
+   "slug": "fastpad",
+   "relevance": "Hiring software for India (2017).",
+   "outcome_summary": "Listed inactive; hiring tools often stall."
+  },
+  {
+   "slug": "10-by-10",
+   "relevance": "Marketplace for recruiting agencies (2017).",
+   "outcome_summary": "Active; a marketplace with slow growth."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "No marketplace liquidity or paid conversion",
+   "p": 0.5,
+   "evidence": "10k talent and 60 companies in a month are sign ups; intros are not placements and recruiting revenue comes only on hires.",
+   "analogs": [
+    "triplebyte",
+    "fastpad"
+   ],
+   "mitigation": "Charge a subscription from companies from the start and report hires made."
+  },
+  {
+   "risk": "LinkedIn and AI recruiters copy agent matching",
+   "p": 0.4,
+   "evidence": "Funded AI recruiting rivals such as Paraform and Boomband were already raising seeds in early 2026.",
+   "analogs": [
+    "hiresweet",
+    "10-by-10"
+   ],
+   "mitigation": "Build a proprietary dataset of anonymous candidate preferences."
+  },
+  {
+   "risk": "Trust, spam and cold start on both sides",
+   "p": 0.35,
+   "evidence": "Agents that talk to agents may produce more noise, and anonymous talent needs verification.",
+   "analogs": [
+    "triplebyte"
+   ],
+   "mitigation": "Verify candidates and limit intros per company."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Paraform",
+   "what": "Marketplace connecting independent recruiters to startup hiring.",
+   "traction": "Raised a $3.6M seed.",
+   "source_url": "https://pulse2.com/boomband-4-million-seed-funding-raised-for-ai-native-talent-marketplace"
+  },
+  {
+   "name": "Boomband",
+   "what": "AI native talent marketplace from the founder of Monster.com.",
+   "traction": "$4M seed ahead of a March 2026 launch.",
+   "source_url": "https://pulse2.com/boomband-4-million-seed-funding-raised-for-ai-native-talent-marketplace"
+  },
+  {
+   "name": "LinkedIn Talent",
+   "what": "Default recruiting platform with an AI assistant.",
+   "traction": "Hundreds of millions of members.",
+   "source_url": "https://business.linkedin.com/talent-solutions"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Agent matching and assessing candidates is buildable with current models in a few months, but good matching needs rich candidate data and evaluation, and privacy while anonymous adds engineering and trust work."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "LinkedIn",
+   "Indeed",
+   "Greenhouse",
+   "AI recruiting startups"
+  ],
+  "timeline_months": 9,
+  "rationale": "Incumbents hold the candidate graph and can ship agent features quickly; platform dependence on model vendors is low but distribution advantage is theirs."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "AI recruiting startups raised seeds in early 2026, showing investor demand for the category.",
+    "source_url": "https://pulse2.com/boomband-4-million-seed-funding-raised-for-ai-native-talent-marketplace"
+   },
+   {
+    "claim": "The application spam problem on both sides is described in the company pitch and widely reported.",
+    "source_url": "https://business.linkedin.com/talent-solutions"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Prove one side pays.",
+   "actions": [
+    "Convert 10 of the 60 companies to paid subscriptions",
+    "Track hires made from intros"
+   ],
+   "proof": "First 5 paid hires and monthly revenue above $10K."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show liquidity and repeat hiring.",
+   "actions": [
+    "Show intro to interview rate above 30 percent",
+    "Raise a $3M to $6M seed with a clear paid pilot list"
+   ],
+   "proof": "Repeat employers above 50 percent after 3 months."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real pain: spam applications and spam outreach on both sides",
+   "evidence": "The problem statement is shared by recruiters and candidates; claimed 10k talent in one month suggests supply.",
+   "source_url": "https://business.linkedin.com/talent-solutions"
+  },
+  {
+   "point": "Seven person team with a live product",
+   "evidence": "Input lists team of 7 and usage numbers (10k talent, 60 companies, 100 intros).",
+   "source_url": "https://standout.work"
+  }
+ ],
+ "brand": {
+  "name": "Standout",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Standout\" --era 2022+ : invented_or_proper, 8 chars, 2 syllables.",
+  "strengths": [
+   "Real word, meaningful for candidates",
+   "Easy to spell and say"
+  ],
+  "weaknesses": [
+   "Generic adjective, hard to own in search"
+  ],
+  "rationale": "Standout is a common English word with a positive meaning for job seekers, but it is generic, so distinctiveness is weak; similar plain-word YC names grew on product quality rather than the name."
+ },
+ "narrative": {
+  "headline": "An AI hiring marketplace with early sign ups but no proof of revenue; a seed inside 7 months is less likely than not.",
+  "general_summary": "Standout is a Spring 2026 two sided hiring marketplace using agents. The window is only 7.4 months, and in B2B YC data only about half of eventual seed raisers close in that time, so the seed probability is about a third. Hiring marketplaces have a mixed record and the odds do not rank this company against others. The company claims 10,000 talent, 60 companies and 100 intros in its first month, which shows supply interest but not revenue, and the market already has funded AI recruiting rivals. The cohort anchors do not separate winners from losers in the earlier winners test, so treat the number as a base rate, not a judgment of quality."
+ },
+ "assumptions": [
+  "Only the input file used; funding sentences absent from the input.",
+  "Forecast window 7.4 months from 2026-04-06 to 2026-11-17.",
+  "Search results dated after 2026-04-06 ignored.",
+  "B and C steps are ever-reached odds."
+ ],
+ "sources": [
+  "https://pulse2.com/boomband-4-million-seed-funding-raised-for-ai-native-talent-marketplace",
+  "https://business.linkedin.com/talent-solutions"
+ ]
 }

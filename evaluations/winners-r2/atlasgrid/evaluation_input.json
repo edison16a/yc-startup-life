@@ -1,330 +1,455 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "AtlasGrid",
+  "one_liner": "Accelerate Product Iteration",
+  "description": "AtlasGrid automatically builds a visual graph of a mobile app UI with analytics overlaid on the screens, and runs AI agents that analyse thousands of mobile apps for design insights and growth ideas. Six people, Fall 2025, San Francisco and remote. Customers are product and growth teams at mobile app companies. The forecast window is 13.4 months, from 2025-10-06 to 2026-11-17.",
+  "as_of": "2025-10-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.09,
+  "basis": "AtlasGrid is already in Fall 2025, so shown for completeness. Starting rate about 1 percent. A team of six and a concrete product help; the niche and incumbents hurt. About 3 percent.",
+  "why_it_fails": "YC would most plausibly say no because the buyer is unclear (designers, PMs or growth) and there are free or cheap alternatives such as Mobbin and Sensor Tower. A reviewer would ask which team pays and what it replaces, and the one liner Accelerate Product Iteration does not say."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.41,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : seed 50% lower / 61% known-only / 68% upper, cond 61% (n=88). Time to seed (B2B 2022-24) p25 4, median 9, p75 19 months (n=54); time_to_milestones.csv calibration_sample p25 3, median 7, p75 19.5 (n=363).",
+    "adjustment_reason": "Window forecast, 13.4 months. Anchor 0.61 to 0.68 ever, with 62 to 65 percent of seed raisers closing within 13 months (median 7 to 9, p75 19 to 20): 0.65 times 0.63 is about 0.41. A team of six and an AI agent story are not lifted, per the winners test. The odds do not rank AtlasGrid against other companies."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round between $1M and $3M, above the YC deal of about $500K. Product analytics and design tooling seeds are typically modest. Our 2022+ seed table has p25 $2.8M (round_benchmarks.csv), and the winners test put about 11 percent of confirmed 2026 raises under $3M."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed of $3M to $6M. The 2022+ B2B median raise is $3.3M (p75 $5.6M, n=39 in base_rates.py), and market seed deal size is about $3M. Product analytics and design tooling seeds are typically modest. "
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed. Confirmed 2026 raises above $1M had median $6.0M, quartiles $4.3M and $10M (winners test, press leaning)."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot AI round led by a top fund; rare, but 2025 and 2026 press shows AI-native seeds above $10M exist."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The product mixes two things buyers already get elsewhere, UI analytics (Amplitude, Mixpanel) and app intelligence (Mobbin, Sensor Tower), and the market of mobile app product teams willing to pay for a new layer is narrow. Past YC mobile tooling analogs such as Watchsend and Tenjin show the segment can sell or die small, and investors in 2025 want a clear paid wedge. If no customer pays for the UI graph beyond a trial, the seed stays out of reach."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_a cond 33% (n=54), lower 17%, known-only 20%, upper 35%. Time: months_to_series_a p25 22, median 30 (n=18); calibration_sample p25 19.3, median 28.",
+    "adjustment_reason": "Window forecast, 13.4 months. Ever anchor 0.33; only about 12 percent of Series A companies appear by 13 months, so about 0.04."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Thin or flat Series A of $5M to $8M for a company with revenue but no clear breakout; this is the 'reached A, barely' case. Below the 2022+ A median of $14.9M (B2B 2022-24, n=18)."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core band around the 2022+ B2B median raise of about $15M (p25 $11M, p50 $15M); post money from public seed-to-A step ups, valuations are sparse in our data."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      90000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong band: AI-native companies with fast revenue growth drew A rounds near the p75 of $23M (B2B 2022-24)."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      180000000,
+      400000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band for a breakout; rare in our cohorts and press-driven."
+    }
+   ],
+   "why_it_fails": "A Series A by late 2026 needs a paying base among mobile product teams. Analytics sales cycles are long and the data integration (SDK install) is a barrier that slows adoption; Runway (mobile release tooling) and Tenjin show modest scale. Reaching Series A would require a paying base of mobile product teams, and the sales cycle for analytics that needs an SDK is long. Mobile tooling analogs such as Tenjin and Runway grew slowly, and a visual graph product risks being seen as a feature of existing analytics tools."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.17,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "base_rates.py --industry B2B --years 2022-2024 --calibration-only : series_b cond 17% (n=18); overall calibration conditional 44% (n=126). This step is an ever-reached figure beyond the forecast window.",
+    "adjustment_reason": "Ever-reached beyond the window; anchor 0.17 (B2B 2022-24 n=18)."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge-like Series B near $15M to $25M, a flat or slightly down step from the A valuation; this happens when growth slows after the A and investors reprice, as in many 2022 to 2024 B2B rounds."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core: B2B 2022+ Series B raise $35M to $60M (n=3), market median about $40M."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong growth round of $45M to $80M for a company growing well over 2x a year; the 2022+ Series B table has p75 $55M (round_benchmarks.csv, n=192 all companies)."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Upside breakout case of $80M to $150M led by a growth fund; rare and mostly seen for AI leaders with very fast revenue, so it carries only a tenth of the mass."
+    }
+   ],
+   "why_it_fails": "Series B requires displacing or merging into product analytics suites, which are dominated by Amplitude, Mixpanel and Sensor Tower, and requires enterprise sales. Reaching Series B would require displacing or integrating with Amplitude, Mixpanel and Sensor Tower at enterprise scale, which needs a larger sales team and proprietary data. Many mobile tooling analogs were acquired before this stage."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "base_rates.py calibration sample: series_c cond 36% (n=55); B2B 2022-24 has n=3 so the broad figure is used. Ever-reached figure beyond the window.",
+    "adjustment_reason": "Ever-reached beyond the window; below the 36% calibration conditional because mobile analytics is mature."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      50000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series C of $30M to $50M at a flat valuation, typical when growth normalises after a B and the company raises mainly to extend runway or fund acquisitions."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core C (2022+ median about $45M to $74M)."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong Series C of $100M to $200M, around the 2022+ p75 of $103M for all companies (round_benchmarks.csv), for a clear category leader with durable revenue."
+    },
+    {
+     "raise_usd": [
+      200000000,
+      500000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      5000000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Breakout round above $200M for a market leader; the 2022+ Series C p75 is about $103M, so this is a tail band with 5 percent of the mass."
+    }
+   ],
+   "why_it_fails": "Series C needs category leadership in product intelligence; the incumbents have more data and distribution, and most mobile tooling wedges are acquired. A Series C product intelligence company needs a dataset covering most of the app stores and a recurring insight product that large teams rely on. Incumbents hold more data and distribution, and mobile analytics is mature, so the usual ending is acquisition."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.65
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.21
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.1
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most such tools are folded into analytics or app intelligence platforms for under $100M (as Tenjin sold) or stall. A large outcome needs the agents to produce insights teams pay materially for, beyond screenshots. Mobile app tooling in our data tends to end as an acquisition by a larger analytics or ad platform, as Tenjin did, or as a quiet shutdown, as Watchsend did. A large outcome needs the AI agents to produce insights worth thousands of dollars per month per team."
+ },
+ "analogs": [
+  {
+   "slug": "tenjin",
+   "relevance": "Mobile marketing analytics (2014).",
+   "outcome_summary": "Acquired; mobile analytics wedges tend to be absorbed."
+  },
+  {
+   "slug": "watchsend",
+   "relevance": "Videos of iOS apps (2013).",
+   "outcome_summary": "Shut down; niche mobile visualisation did not scale."
+  },
+  {
+   "slug": "runway",
+   "relevance": "Mobile app release tooling (2021).",
+   "outcome_summary": "Active mobile developer tool; modest scale."
+  },
+  {
+   "slug": "kamcord",
+   "relevance": "Mobile gameplay recording (2012).",
+   "outcome_summary": "Acquired; mobile tooling exit pattern."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Incumbent app intelligence and analytics add the feature",
+   "p": 0.45,
+   "evidence": "Mobbin has 1,150+ apps and 600K+ screens and an MCP integration; Sensor Tower has App Teardown; Amplitude owns analytics.",
+   "analogs": [
+    "tenjin",
+    "runway"
+   ],
+   "mitigation": "Own the screen graph plus analytics overlay as one workflow."
+  },
+  {
+   "risk": "Unclear buyer and weak willingness to pay",
+   "p": 0.4,
+   "evidence": "Design research tools sell to individual designers at low prices; growth teams buy different tools.",
+   "analogs": [
+    "watchsend",
+    "kamcord"
+   ],
+   "mitigation": "Target growth teams with a measurable conversion metric."
+  },
+  {
+   "risk": "SDK integration friction slows adoption",
+   "p": 0.3,
+   "evidence": "Showing analytics on screens requires instrumenting the app, which mobile teams resist.",
+   "analogs": [
+    "runway",
+    "tenjin"
+   ],
+   "mitigation": "Provide no-code ingestion using existing analytics exports."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Mobbin",
+   "what": "Library of mobile UI screens and flows for design research.",
+   "traction": "1,150+ apps and 608,200+ screens per comparison pages.",
+   "source_url": "https://lazylanding-labs.onrender.com/best/mobbin-alternatives"
+  },
+  {
+   "name": "Sensor Tower",
+   "what": "Market and competitor intelligence for apps, including teardown.",
+   "traction": "Category leader after acquiring data.ai.",
+   "source_url": "https://stackshare.io/applaunchflow/vs/sensor-tower"
+  },
+  {
+   "name": "Amplitude",
+   "what": "Product analytics platform used by mobile teams.",
+   "traction": "Public company with a large customer base.",
+   "source_url": "https://amplitude.com"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Crawling apps and building screen graphs with vision models is feasible, but doing it for thousands of apps reliably and joining it to customer analytics needs SDKs and large compute; one small team can build a demo but scale is costly."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Amplitude",
+   "Mobbin",
+   "Sensor Tower",
+   "Figma"
+  ],
+  "timeline_months": 9,
+  "rationale": "Analytics and design incumbents already own the customer relationships and can add screen graphs; Mobbin already exposes screens to AI coding tools."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Teams pay for mobile UI libraries and app intelligence, which shows spend but in separate tools.",
+    "source_url": "https://lazylanding-labs.onrender.com/best/mobbin-alternatives"
+   },
+   {
+    "claim": "App competitor analysis is a recognised workflow with several paid tools.",
+    "source_url": "https://appfollow.io/blog/app-competitor-analysis-tools"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Find the paying buyer.",
+   "actions": [
+    "Interview 30 mobile product teams",
+    "Sign 3 paid pilots"
+   ],
+   "proof": "3 paid pilots at $500 a month or more."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeat use of the insight agents.",
+   "actions": [
+    "Ship weekly insight reports",
+    "Raise $3M to $6M once weekly active teams are above 20"
+   ],
+   "proof": "20 teams active weekly and $15K MRR."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Two proven spending categories combined",
+   "evidence": "Teams already pay for UI libraries and app intelligence.",
+   "source_url": "https://lazylanding-labs.onrender.com/best/mobbin-alternatives"
+  },
+  {
+   "point": "Six person team and AI agent tailwind",
+   "evidence": "Input lists 6 people and an agent based product.",
+   "source_url": "https://atlasgrid.ai"
+  }
+ ],
+ "brand": {
+  "name": "AtlasGrid",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"AtlasGrid\" --era 2022+ : compound_words, 9 chars, 3 syllables.",
+  "strengths": [
+   "Compound name hints at maps and screens"
+  ],
+  "weaknesses": [
+   "Atlas is widely used by other companies; grid is generic"
+  ],
+  "rationale": "AtlasGrid describes a map of screens, which fits the product, but Atlas is a crowded brand word; similar compound-word YC names rarely changed outcomes."
+ },
+ "narrative": {
+  "headline": "A mobile UI graph with AI agents between two entrenched categories; seed inside 13 months is plausible but below even.",
+  "general_summary": "AtlasGrid sells screen graphs with analytics and agent insights to mobile product teams. The 13.4 month window gives about two fifths seed odds from the cohort anchor, and a Series A in that window is unlikely. The main risks are incumbents and an unclear buyer. The odds do not rank this company against others. The six person team sells to a buyer that is not yet clear, designers, product managers or growth teams, and sits between design libraries and analytics suites. The cohort anchors do not separate winners from losers in the earlier winners test, so treat the number as a base rate, not a ranking of AtlasGrid against other companies."
+ },
+ "assumptions": [
+  "Only the input file used.",
+  "Window 13.4 months from 2025-10-06 to 2026-11-17.",
+  "Pages dated after 2025-10-06 ignored.",
+  "B and C steps are ever-reached odds."
+ ],
+ "sources": [
+  "https://lazylanding-labs.onrender.com/best/mobbin-alternatives",
+  "https://stackshare.io/applaunchflow/vs/sensor-tower",
+  "https://appfollow.io/blog/app-competitor-analysis-tools",
+  "https://amplitude.com"
+ ]
 }

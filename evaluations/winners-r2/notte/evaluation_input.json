@@ -1,330 +1,455 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Notte",
+  "one_liner": "Browser infra for AI agents: sessions, auth, proxies, payments",
+  "description": "Cloud browser infrastructure for AI agents sold to developers and companies building agents: browser sessions with live view and replays, residential proxies, stealth and CAPTCHA solving, authenticated profiles with account creation and 2FA, in browser payments and serverless functions, through one API. Pays: usage based billing plus monthly plans, as the category leader Browserbase does.",
+  "as_of": "2025-07-07"
+ },
+ "yc_acceptance": {
+  "p": 0.97,
+  "p_low": 0.95,
+  "p_high": 0.99,
+  "basis": "The input file places Notte in the Summer 2025 batch with the batch start as the as_of date, so acceptance is treated as already happened. The prior for a random applicant is about 1 percent (references/yc_acceptance.md), but conditional on being listed in the batch the residual doubt is only data error or a deferral. Seed odds below are conditional on being in YC.",
+  "why_it_fails": "The only way the YC step fails here is a clerical error in the batch listing or a deferral to a later batch. Notte was reported in the batch directory as of the as_of date, so the reason to say no has already been resolved in its favor."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.42,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025 (150 researched: seed 49% / 59% / 65%, series_a cond 26% n=74, series_b cond 16% n=19); seed cond known-only 59% (n=126); months_to_seed median 7 (p25 3, p75 15) from knowledge/tables/time_to_milestones.csv calibration sample",
+    "adjustment_reason": "The anchor is the ever rate of 59 percent for B2B 2022 to 2025 (Developer Tools 2022 to 2025 is 55 percent, n=29). The window is 16 months from the Summer 2025 batch start, by which about 75 to 80 percent of eventual seed raisers have raised (median 7 months, p75 about 15), so about 0.43 in a neutral case. Agent infrastructure is hot but this wedge already has funded leaders, so I hold at 0.42, inside the 1.25 times cap. This number does not rank Notte against other companies."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of $1M to $3M, typically angels and a micro fund. This is the second most common outcome for a 2 to 5 person team with early pilots and no scaled revenue, and it is more likely here than in the winners test sample because press favours big rounds. The plain YC deal of about $500K does not count as seed in this forecast."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M led by a seed fund. This is the center of the 2022 and later benchmark (median about $4.1M in our table) and of the 2026 confirmed raises (lower quartile $4.3M)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M. Reachable if a design partner or demo produces competitive tension, as in the 2026 winners where the median confirmed raise was $6.0M, a sample that leans high."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      110000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Upside seed above $12M, reserved for a hot category with a standout team. Rare for a team this small and early."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Notte most likely fails to raise a real seed because cloud browsers for agents is the most crowded infra wedge of the batch: Browserbase, Steel, Anchor, Hyperbrowser and Kernel offer similar sessions, proxies and stealth, and investors see low switching cost and a race to usage price cuts. Hyperbrowser and Cloudcruise from earlier batches show that a YC badge alone did not produce rounds. Without a growth chart in the first 6 months Notte ends up with the YC deal and a small angel round."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025 (150 researched: seed 49% / 59% / 65%, series_a cond 26% n=74, series_b cond 16% n=19); series_a cond 26% (n=74) (ever); months_to_series_a median 29 from batch start (B2B 2022 to 2025, n=19)",
+    "adjustment_reason": "Within 16 months of the batch start a Series A needs a seed early and fast usage revenue. The ever conditional rate is 26 percent for B2B and 38 percent for Developer Tools (n=16), but median time from batch start to A is 29 months, so inside this window about 0.10 given a seed."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000.0,
+      9000000.0
+     ],
+     "post_money_usd": [
+      25000000.0,
+      45000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or small Series A, close to a large seed, for a company with some revenue but unproven repeatability. Current 2022 and later YC Series A lower quartile is $10.0M, so this is the thin end."
+    },
+    {
+     "raise_usd": [
+      9000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      100000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series A of $9M to $18M, matching the 2022 and later YC median of $14.15M (n=52) and public market medians near $17M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      100000000.0,
+      250000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside Series A with a clear ARR ramp; AI native companies have printed larger A rounds in 2025 and 2026 but these remain the minority."
+    }
+   ],
+   "why_it_fails": "A Series A requires usage revenue in the low millions annualized, but browser sessions are metered at cents per hour and per browser creation (Steel, Anchor), so revenue grows slowly unless a large agent customer standardizes on Notte. Investors will compare it with Browserbase's lead and ask why proxy and CAPTCHA features are defensible. The likely stall is a seed round plus a few thousand developers on free tiers."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2025: series_b cond 16% (n=19) ever, lower 2% known-only",
+    "adjustment_reason": "The window is 16 months, and Series B needs a median of 46 months from batch start (all eras, n=510 in time_to_milestones.csv; B2B 2022 to 2025 median 26 months on n=3, right censored). The probability is a floor for a fast outlier, far below the 16 percent ever rate, because only a company that raised both a seed and an A inside the window can get here."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series B or extension, near the 2022 and later lower quartile of $25M."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B, around the YC 2022 and later median of $37M (n=22)."
+    },
+    {
+     "raise_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      900000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B on breakout growth, in line with the few 2022 and later B valuations near $775M."
+    }
+   ],
+   "why_it_fails": "A Series B inside this window is nearly impossible. It would require an A in the first months and a breakout as the default browser layer for agents, while Browserbase style leaders and hyperscalers set prices. The floor covers only a surprise."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": 0.12,
+    "source": "Series C cond is 0% of n=3 in the B2B 2022 to 2025 cohort; the older all-era calibration sample gives about 30 to 35 percent of series_b reaching C, discounted here for the window",
+    "adjustment_reason": "The window ends 16 months after the as_of date and a Series C needs a median of 61 months from batch start (all eras, n=221 in time_to_milestones.csv). The probability is a small floor rather than an anchor ratio, because 3 companies in the recent cohort cannot support a rate."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      300000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Series C or growth round near the 2022 and later YC median of $45M (n=9), with a flat or modest step up."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      1500000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical growth round of $80M to $150M for a category leader with strong net retention, as seen in the larger 2022 and later rounds in the YC data."
+    },
+    {
+     "raise_usd": [
+      150000000.0,
+      300000000.0
+     ],
+     "post_money_usd": [
+      1500000000.0,
+      4000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round for a category winner; the sample of 2022 and later C rounds is tiny (n=9) so this band is judgment."
+    }
+   ],
+   "why_it_fails": "A Series C inside the window is a tail event requiring two prior rounds in under 16 months. No recent YC infrastructure company has reached C that fast, so the number is a floor."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most paths end with the browser layer commoditizing into a feature of agent frameworks, or an acqui-hire by an AI lab or proxy vendor. Stealth and CAPTCHA are a cat and mouse race with site defenses, per session pricing falls, and the winner outcome needs Notte to own authentication, identity and payments for agents rather than raw browsers."
+ },
+ "analogs": [
+  {
+   "slug": "hyperbrowser",
+   "relevance": "Same wedge: web infra and cloud browsers for AI agents, started in Summer 2021 and repositioned.",
+   "outcome_summary": "Alive but no post YC round recorded, showing that browser infra alone did not raise institutional money."
+  },
+  {
+   "slug": "browser-use",
+   "relevance": "Open source browser agent library from Winter 2025, a neighbor product that sells to the same developers.",
+   "outcome_summary": "Reached a seed as its highest round with developer traction, showing that agent tooling can raise when usage is visible."
+  },
+  {
+   "slug": "cloudcruise",
+   "relevance": "Developer platform for browser agents from Winter 2024.",
+   "outcome_summary": "Alive with no round recorded after the batch; a signal that reliability platforms for browser agents struggled to raise."
+  },
+  {
+   "slug": "smooth",
+   "relevance": "Fall 2024 browser agent company selling speed and reliability.",
+   "outcome_summary": "Alive with no post YC round recorded, so crowded browser agent products did not convert YC into funding quickly."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Commoditization of cloud browsers into low priced usage with many equal vendors",
+   "p": 0.4,
+   "evidence": "Steel, Anchor and Browserbase all bill by the hour or by session with similar features, and one comparison calls pricing complex and competitive.",
+   "analogs": [
+    "hyperbrowser",
+    "cloudcruise"
+   ],
+   "mitigation": "Own higher value layers: authentication, 2FA and payments for agents, not raw browser hours."
+  },
+  {
+   "risk": "A leader such as Browserbase outspends and wins the default slot for agent builders",
+   "p": 0.35,
+   "evidence": "Browserbase is a well known vendor with Stripe case studies and large concurrency plans in the search results.",
+   "analogs": [
+    "browser-use",
+    "smooth"
+   ],
+   "mitigation": "Specialize in a vertical of regulated, authenticated workflows where leaders are generic."
+  },
+  {
+   "risk": "Stealth and CAPTCHA arms race: sites block agents and the product loses reliability",
+   "p": 0.25,
+   "evidence": "Residential proxies and CAPTCHA solving face legal and technical pressure from sites and from Cloudflare style defenses.",
+   "analogs": [
+    "cloudcruise"
+   ],
+   "mitigation": "Partner with sites through agent identity standards and licensed access."
+  },
+  {
+   "risk": "Five person team cannot keep up with feature scope across payments, auth, proxies and functions",
+   "p": 0.25,
+   "evidence": "The description lists six product areas for a five person team, similar to the broad scope that slowed neighboring browser startups.",
+   "analogs": [
+    "hyperbrowser"
+   ],
+   "mitigation": "Cut scope to the two features customers pay for."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Browserbase",
+   "what": "Cloud browsers for AI agents with session replays, proxies and concurrency plans.",
+   "traction": "Leading vendor with Stripe usage billing case study and enterprise plans.",
+   "source_url": "https://browserbase.com/pricing"
+  },
+  {
+   "name": "Steel and Anchor Browser",
+   "what": "Per second and per creation metered cloud browsers for agents.",
+   "traction": "Published usage pricing and open docs.",
+   "source_url": "https://docs.anchorbrowser.io/pricing.md"
+  },
+  {
+   "name": "Hyperbrowser and Kernel",
+   "what": "Web infra for agents from YC startups.",
+   "traction": "Appears in 2026 style comparison roundups with Browserbase and Steel.",
+   "source_url": "https://ecorpit.com/cloud-browsers-ai-agents-browserbase-steel-kernel-2026/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Running reliable browser fleets, avoiding detection, solving CAPTCHAs and handling 2FA and payments is real engineering work, but open source stacks like Playwright and Chromium let a five person team ship a working version in three months. The hard part is scale, reliability and the arms race with anti bot systems."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Browserbase",
+   "Cloudflare",
+   "Anthropic and OpenAI browser tools",
+   "Vercel"
+  ],
+  "timeline_months": 9,
+  "rationale": "Foundation model labs and cloud platforms ship hosted browser tools and agent runtimes, and Browserbase style leaders already offer most listed features. A rival could add authenticated profiles and payments in about 9 months."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Several funded vendors publish usage based pricing for cloud browsers for AI agents, showing paid demand from developers.",
+    "source_url": "https://browserbase.com/pricing"
+   },
+   {
+    "claim": "Browserbase uses Stripe usage based billing for web browsing for AI agents and apps, indicating real revenue.",
+    "source_url": "https://stripe.com/en-cn/customers/browserbase"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show agent developers prefer Notte for one use case.",
+   "actions": [
+    "Pick a wedge such as authenticated sessions with 2FA",
+    "Publish a reliability benchmark against Browserbase"
+   ],
+   "proof": "20 active developers and a repeat usage chart"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show paid usage growth.",
+   "actions": [
+    "Launch self serve billing",
+    "Land 3 agent companies as paying customers"
+   ],
+   "proof": "$30K monthly recurring usage revenue with growth above 15 percent a month"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show repeatable revenue and a moat beyond raw browsers.",
+   "actions": [
+    "Hire a sales engineer",
+    "Add SOC 2 and enterprise single sign on"
+   ],
+   "proof": "$1.5M in annualized revenue and under 10 percent monthly churn"
+  },
+  {
+   "phase": "series_b",
+   "goal": "Become a default layer for agent identity and payments.",
+   "actions": [
+    "Launch payments and identity rails",
+    "Add regional proxy coverage"
+   ],
+   "proof": "$10M in annualized revenue growing 3x"
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Platform scale.",
+   "actions": [
+    "Sign cloud marketplace deals",
+    "Expand into agent identity for enterprises"
+   ],
+   "proof": "$40M annualized revenue"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Hot category with proven paid demand",
+   "evidence": "Leaders bill usage and ship concurrency plans, so developers do pay for cloud browsers.",
+   "source_url": "https://browserbase.com/pricing"
+  },
+  {
+   "point": "Broad single API: sessions, auth, proxies, payments",
+   "evidence": "The product combines parts that agent builders otherwise stitch together, a plausible wedge if identity and payments are strong."
+  }
+ ],
+ "brand": {
+  "name": "Notte",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Notte\" --era 2022+ : 5 chars, 1 word, 1 syllable, kind invented_or_proper, no suffix",
+  "strengths": [
+   "Short, memorable, easy to type",
+   "Distinct from the usual infra word names"
+  ],
+  "weaknesses": [
+   "Italian for night, no link to browsers or agents",
+   "Close to Notion and Note which hurts search"
+  ],
+  "rationale": "Notte is short like Strac or Retool, but has no meaning tied to browsers or agents and is easily confused with Notion. A neutral name rarely moves outcomes so it does not change the ladder."
+ },
+ "narrative": {
+  "headline": "Notte is in the most crowded corner of agent infrastructure, so the seed is roughly a coin flip at best and the odds do not rank it.",
+  "general_summary": "Notte sells cloud browsers to agent builders in a wedge with funded leaders such as Browserbase and several YC peers. Developer Tools companies from 2022 to 2025 reached seed 55 percent of the time and A 21 percent, and none of the near YC browser infra analogs show a big round after the batch. Over a 16 month window, the seed is about 42 percent and most likely $3M to $6M if reached. An A is unlikely. Winning would require owning authentication and payments for agents rather than selling browser hours."
+ },
+ "assumptions": [
+  "Window is 16 months from 2025-07-07 to 2026-11-17; seed means above about $1M from outside investors, excluding the YC deal.",
+  "Team of 5 comes from the input file only.",
+  "Pricing search results were dated 2026 in places; only the existence of usage billing was used, not later figures.",
+  "Market search results named Notte in one comparison page (ai.notte.cc); I ignored it. LEAK-WEB: notte"
+ ],
+ "sources": [
+  "https://browserbase.com/pricing",
+  "https://stripe.com/en-cn/customers/browserbase",
+  "https://docs.anchorbrowser.io/pricing.md",
+  "https://ecorpit.com/cloud-browsers-ai-agents-browserbase-steel-kernel-2026/"
+ ]
 }

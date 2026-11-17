@@ -14,13 +14,13 @@ Labels use these cut-offs: Very likely ≥ 65%, Likely ≥ 45%, Reasonable ≥ 2
 
 | Stage | Raise | Post-money valuation | P if in YC | Label | P from today | Label |
 |---|---|---|---|---|---|---|
-| Seed | $1M–$3M | $8M–$18M | 14% | Unlikely | 0.4% | Very unlikely |
-| Seed | $3M–$6M | $15M–$35M | 18% | Unlikely | 0.6% | Very unlikely |
-| Seed | $6M–$12M | $30M–$70M | 14% | Unlikely | 0.4% | Very unlikely |
-| Seed | $12M–$25M | $60M–$150M | 4.0% | Very unlikely | 0.1% | Very unlikely |
-| Series A | $4M–$10M | $20M–$45M | 1.1% | Very unlikely | <0.1% | Very unlikely |
-| Series A | $10M–$20M | $45M–$100M | 1.6% | Very unlikely | <0.1% | Very unlikely |
-| Series A | $20M–$40M | $100M–$250M | 0.9% | Very unlikely | <0.1% | Very unlikely |
+| Seed | $1M–$3M | $8M–$18M | 13% | Unlikely | 0.4% | Very unlikely |
+| Seed | $3M–$6M | $15M–$35M | 18% | Unlikely | 0.5% | Very unlikely |
+| Seed | $6M–$12M | $30M–$70M | 13% | Unlikely | 0.4% | Very unlikely |
+| Seed | $12M–$25M | $60M–$150M | 3.8% | Very unlikely | 0.1% | Very unlikely |
+| Series A | $4M–$10M | $20M–$45M | 1.0% | Very unlikely | <0.1% | Very unlikely |
+| Series A | $10M–$20M | $45M–$100M | 1.5% | Very unlikely | <0.1% | Very unlikely |
+| Series A | $20M–$40M | $100M–$250M | 0.8% | Very unlikely | <0.1% | Very unlikely |
 | Series B | $15M–$30M | $60M–$150M | 0.4% | Very unlikely | <0.1% | Very unlikely |
 | Series B | $30M–$60M | $150M–$400M | 0.6% | Very unlikely | <0.1% | Very unlikely |
 | Series B | $60M–$120M | $400M–$1B | 0.3% | Very unlikely | <0.1% | Very unlikely |
@@ -40,24 +40,24 @@ Semiotic sells design agents for landing pages to fast growing startups, with th
 
 **Why it fails here.** YC could say the idea is a thin layer on top of general coding models: Lovable, v0 and Framer already generate pages, and design quality is a taste claim that is hard to show in an application without traction. With no stated revenue and a three person team, partners may see no sign the output beats incumbents, and a single wedge like landing pages looks easy to copy.
 
-### Seed: P(reach this round | in YC) = 50% after the previous step; 50% cumulative if in YC; 1.5% from today
+### Seed: P(reach this round | in YC) = 48% after the previous step; 48% cumulative if in YC; 1.4% from today
 
 | Raise | Post-money | P of this band (given round reached) | P if in YC | Label | P from today | Label | Why this band |
 |---|---|---|---|---|---|---|---|
-| $1M–$3M | $8M–$18M | 28% | 14% | Unlikely | 0.4% | Very unlikely | Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here. |
-| $3M–$6M | $15M–$35M | 37% | 18% | Unlikely | 0.6% | Very unlikely | Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks. |
-| $6M–$12M | $30M–$70M | 27% | 14% | Unlikely | 0.4% | Very unlikely | Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test. |
-| $12M–$25M | $60M–$150M | 8.0% | 4.0% | Very unlikely | 0.1% | Very unlikely | Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy. |
+| $1M–$3M | $8M–$18M | 28% | 13% | Unlikely | 0.4% | Very unlikely | Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here. |
+| $3M–$6M | $15M–$35M | 37% | 18% | Unlikely | 0.5% | Very unlikely | Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks. |
+| $6M–$12M | $30M–$70M | 27% | 13% | Unlikely | 0.4% | Very unlikely | Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test. |
+| $12M–$25M | $60M–$150M | 8.0% | 3.8% | Very unlikely | 0.1% | Very unlikely | Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy. |
 
 **Why it fails here.** Semiotic most likely fails to raise above $1M in 13 months because investors in the space already hold Lovable, Framer or Vercel v0 and ask for proof that taste based output converts better. Analogs such as replo and makeasite stayed on small notes while bigger builders added AI features. If revenue stays at a few agency style projects, funds see a services business and offer only YC deal sized cheques.
 
-### Series A: P(reach this round | in YC) = 7.0% after the previous step; 3.5% cumulative if in YC; 0.1% from today
+### Series A: P(reach this round | in YC) = 7.0% after the previous step; 3.4% cumulative if in YC; 0.1% from today
 
 | Raise | Post-money | P of this band (given round reached) | P if in YC | Label | P from today | Label | Why this band |
 |---|---|---|---|---|---|---|---|
-| $4M–$10M | $20M–$45M | 30% | 1.1% | Very unlikely | <0.1% | Very unlikely | Thin Series A or extension on modest revenue, below the 2022 and later median of $13.5M. |
-| $10M–$20M | $45M–$100M | 45% | 1.6% | Very unlikely | <0.1% | Very unlikely | Typical Series A near the 2022 and later median of $13.5M to $14M with growth proof. |
-| $20M–$40M | $100M–$250M | 25% | 0.9% | Very unlikely | <0.1% | Very unlikely | Upside Series A from a breakout AI product with fast revenue. |
+| $4M–$10M | $20M–$45M | 30% | 1.0% | Very unlikely | <0.1% | Very unlikely | Thin Series A or extension on modest revenue, below the 2022 and later median of $13.5M. |
+| $10M–$20M | $45M–$100M | 45% | 1.5% | Very unlikely | <0.1% | Very unlikely | Typical Series A near the 2022 and later median of $13.5M to $14M with growth proof. |
+| $20M–$40M | $100M–$250M | 25% | 0.8% | Very unlikely | <0.1% | Very unlikely | Upside Series A from a breakout AI product with fast revenue. |
 
 **Why it fails here.** Series A inside 13 months would require recurring revenue and a visible quality moat against free tools. Replo took about 18 months from batch to a $4.2M seed and no Series A followed. Most landing page tools monetize in small tickets, so growth rarely reaches the roughly $1M to $2M ARR investors expect before a $10M to $20M round.
 
@@ -171,7 +171,7 @@ You know it worked when: $40M ARR and multi product attach
 
 ### Demand evidence
 
-- AI website builders market estimated at about $2.7B in 2025 growing about 20 percent yearly in a vendor cited forecast; design quality is a known complaint. (https://www.925studios.co/blog/ai-website-builder-vs-design-agency-2026)
+- A 2025 Y Combinator design review of AI built startup sites focused on the generic look of such sites, a known quality complaint. (https://www.startuphub.ai/ai-news/ai-video/2025/design-in-the-ai-era-beyond-the-purple-gradient)
 - Website builder startups had raised about $961M in total by early 2025. (https://seedtable.com/best-website-builder-startups)
 
 ## Evidence from past YC companies
@@ -188,7 +188,7 @@ You know it worked when: $40M ARR and multi product attach
 
 | Stage | Base-rate anchor | Our P(reach | previous) | Source | Adjustment |
 |---|---|---|---|---|
-| Seed | 39% | 50% | python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Window of 13.4 months: about 65 percent of eventual seeds arrive by then, times about 0.60 ever reaching a round above $1M gives an anchor near 0.39. | The estimate is 1.28 times the window adjusted anchor, inside the 1.25 times rule plus rounding. Reasons for the small lift: AI design is a live funded theme and Seedtable shows website builders have raised over $900M in total, yet the odds do not rank this company against others in the batch. Not lifted for team size. |
+| Seed | 39% | 48% | python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Window of 13.4 months: about 65 percent of eventual seeds arrive by then, times about 0.60 ever reaching a round above $1M gives an anchor near 0.39. | The estimate is 1.23 times the window adjusted anchor, inside the 1.25 times cap. Reasons for the small lift: AI design is a live funded theme and Seedtable shows website builders have raised over $900M in total, yet the odds do not rank this company against others in the batch. Not lifted for team size. |
 | Series A | 45% | 7.0% | python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series A given seed is 0.45 ever; in the same 13.4 month window only the fastest reach it (median 28 months from batch). | Window adjusted: about 0.45 ever times about 0.15 within window gives 0.07. More than 2 times below the ever anchor because Series A needs a median of 28 months. |
 | Series B | 44% | 38% | python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series B conditional 0.44. Beyond the window, an ever figure. | Slightly below the 0.44 anchor: a design agent category has weak pricing power. Ever number, not window bound. |
 | Series C+ | 36% | 30% | python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; lower to upper seed 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2018-2024. Months to seed in knowledge/tables/time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series C 0.36 conditional, ever number. | Below the 0.36 anchor because this wedge looks narrow. |
@@ -204,5 +204,4 @@ You know it worked when: $40M ARR and multi product attach
 
 - https://seedtable.com/best-website-builder-startups
 - https://blog.icons8.com/articles/ai-website-builder-test/amp
-- https://www.925studios.co/blog/ai-website-builder-vs-design-agency-2026
 - https://www.startuphub.ai/ai-news/ai-video/2025/design-in-the-ai-era-beyond-the-purple-gradient

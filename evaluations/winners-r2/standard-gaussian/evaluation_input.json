@@ -1,330 +1,437 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Standard Gaussian",
+  "one_liner": "World models for finance",
+  "description": "Three person San Francisco team in Spring 2026 building world models for finance. The input gives no description, so whether the product is a learned market simulator, a forecasting model, a research tool for funds or a trading business is unknown, as are the founders backgrounds and any customers.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.066,
+  "basis": "Starting prior about 1 percent (0.6 to 2 percent range). Up for a technical team, an AI finance theme that matches recent YC interest, and likely quant pedigree implied by the name. Down because the input has no description and no traction, and similar quant lab companies in comps show little progress. Net about 3 percent, conditional on the batch already given.",
+  "why_it_fails": "YC would most plausibly say that a world model for finance is a research ambition with no customer or evidence of edge, and that a three person team without a verified result looks like many quant AI pitches. Without a clear buyer, partners may prefer a more specific product."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.57,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025 --calibration-only: seed 57% known (lower 50 / upper 62, n=23), series_a cond 23% (n=13), series_b 0% (n=3). Time table Fintech: seed p25 3, median 7, p75 20 months from batch start; series_a median 26.5. Era 2022+: seed median 6, p75 14.2; series_a p25 19.4.",
+    "adjustment_reason": "Window is only 7.4 months from 2026-04-06 to 2026-11-17 and the number is for a round above about 1M from outside investors inside that window, not ever. Anchor 0.57 ever for Fintech; with a median of 6 to 7 months from batch start to seed, about half of eventual seeds close inside 7.4 months, giving 0.29, and 0.30 is 0.53x of the anchor because of the short window and not a judgment on the team. The hot AI finance theme is not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round under 3M, for a three person research team raising quickly."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.33,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.28,
+     "rationale": "Strong seed for a research heavy AI finance team, since press covered AI seeds run above the median."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      250000000.0
+     ],
+     "p_band": 0.17,
+     "rationale": "Large lab style seed; foundation model teams with quant pedigree sometimes raise 20M, rare at three people."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step fails if the pitch of world models for finance stays a research claim with no backtest or paying fund inside seven months. Quant research startups such as Zoa Research, Event Horizon Labs and Sharpe have shown no public round years after YC, and funds guard data and results. Investors may also wait for a result before pricing a three person lab."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.23,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025 --calibration-only: seed 57% known (lower 50 / upper 62, n=23), series_a cond 23% (n=13), series_b 0% (n=3). Time table Fintech: seed p25 3, median 7, p75 20 months from batch start; series_a median 26.5. Era 2022+: seed median 6, p75 14.2; series_a p25 19.4.",
+    "adjustment_reason": "Window 7.4 months. Series A for Fintech has median 26.5 months from batch start and p25 about 17, so almost no company closes an A within 7.4 months. 0.23 times about 0.12 gives 0.03."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000.0,
+      8000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later p25 of 10M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M and a market deal size near 17M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      90000000.0,
+      220000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round after fast revenue growth; the p75 is about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A within seven months of the batch would need an extraordinary trading or customer result, and investors in quantitative AI want a live track record of a year or more before leading an A. No quant AI analog among attimet, Zoa Research or Sharpe shows a round of that size this soon."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": 0.14,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025 --calibration-only: seed 57% known (lower 50 / upper 62, n=23), series_a cond 23% (n=13), series_b 0% (n=3). Time table Fintech: seed p25 3, median 7, p75 20 months from batch start; series_a median 26.5. Era 2022+: seed median 6, p75 14.2; series_a p25 19.4.",
+    "adjustment_reason": "Fintech cohort 0 of 3 known, B2B 0.16; median months to B is about 43, so inside 7.4 months this is near impossible, set at 0.01."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      140000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M."
+    },
+    {
+     "raise_usd": [
+      25000000.0,
+      50000000.0
+     ],
+     "post_money_usd": [
+      140000000.0,
+      320000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B near the 2022 and later YC median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000.0,
+      100000000.0
+     ],
+     "post_money_usd": [
+      320000000.0,
+      800000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside Series B on breakout growth; the p75 is 57M."
+    }
+   ],
+   "why_it_fails": "A Series B within seven months of the batch is almost never observed, since median time to B is more than three years from batch start. It would need a model with a verified edge and committed capital, and no analog in this space has shown that."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.005,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2025 --calibration-only: seed 57% known (lower 50 / upper 62, n=23), series_a cond 23% (n=13), series_b 0% (n=3). Time table Fintech: seed p25 3, median 7, p75 20 months from batch start; series_a median 26.5. Era 2022+: seed median 6, p75 14.2; series_a p25 19.4.",
+    "adjustment_reason": "No base rate; no company in the Fintech cohort reached C. Placeholder 0.005 for a 7.4 month window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      45000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Smaller later round near the 2022 and later p25 of 35M (n=9 only)."
+    },
+    {
+     "raise_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      900000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C or later, 45M to 77M per the YC table and market monitor."
+    },
+    {
+     "raise_usd": [
+      90000000.0,
+      250000000.0
+     ],
+     "post_money_usd": [
+      900000000.0,
+      3000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout late round at unicorn scale; very rare in this cohort."
+    }
+   ],
+   "why_it_fails": "A Series C in seven months would require a foundation model scale outcome, as for the largest AI labs only. For a three person finance research team with no stated customers, no analog shows anything close, and the probability is effectively near zero until a verified result exists and a fund commits capital."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.24
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.1
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company proves nothing beyond a backtest and stalls, the usual path of quant research startups, or the team joins a fund. The upside would come if the model shows real predictive edge and a fund or the team trades it, a rare event with large rewards for a very small share of such labs."
+ },
+ "analogs": [
+  {
+   "slug": "attimet",
+   "relevance": "Learned market model from quant founders.",
+   "outcome_summary": "Alive with no public round."
+  },
+  {
+   "slug": "zoa-research",
+   "relevance": "Quantitative forecasting models.",
+   "outcome_summary": "Alive, no verified funding."
+  },
+  {
+   "slug": "event-horizon-labs",
+   "relevance": "AI research lab automating investing.",
+   "outcome_summary": "Alive, no public round."
+  },
+  {
+   "slug": "sharpe",
+   "relevance": "Agents for quant research.",
+   "outcome_summary": "Alive, no verified funding."
+  },
+  {
+   "slug": "lotas",
+   "relevance": "AI assistant for quantitative trading.",
+   "outcome_summary": "Alive, sparse."
+  },
+  {
+   "slug": "bayesline",
+   "relevance": "Analytics for asset managers.",
+   "outcome_summary": "Alive."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "No verified edge or customer",
+   "p": 0.45,
+   "evidence": "The input has no description or traction, and other quant AI companies in YC show self reported results without published methods.",
+   "analogs": [
+    "zoa-research",
+    "event-horizon-labs"
+   ],
+   "mitigation": "Publish a live paper trading record."
+  },
+  {
+   "risk": "Funds build or buy elsewhere",
+   "p": 0.3,
+   "evidence": "Large quant firms and AI labs have data and talent, and finance foundation model startups such as Inference Research raised large seeds.",
+   "analogs": [
+    "sharpe",
+    "attimet"
+   ],
+   "mitigation": "Sell a narrow data or simulation product."
+  },
+  {
+   "risk": "Data and compute costs for a three person team",
+   "p": 0.3,
+   "evidence": "World models need market data licences and large compute, costly for a small seed.",
+   "analogs": [
+    "attimet"
+   ],
+   "mitigation": "Use public data first and one asset class."
+  },
+  {
+   "risk": "Window too short",
+   "p": 0.3,
+   "evidence": "Median months to seed is about 7 and the window is 7.4 months.",
+   "analogs": [
+    "lotas"
+   ],
+   "mitigation": "Raise on the YC deal and a result rather than waiting."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Inference Research",
+   "what": "AI native research platform for markets",
+   "traction": "Reported 20M seed",
+   "source_url": "https://www.pulse.bot/ai/deals/inference-research-raises-20m-seed-round-led-by-avenir-group-b87df0f7-f236-48d5-8c38-9e49b3a66d28/"
+  },
+  {
+   "name": "Quant funds and AI labs",
+   "what": "In house models and research",
+   "traction": "Large teams and data",
+   "source_url": "https://www.hedgeweek.com/ex-citadel-quant-teams-ai-driven-moment-secures-78m/"
+  },
+  {
+   "name": "Bloomberg and traditional market data and quant tools",
+   "what": "Status quo for research",
+   "traction": "Dominant incumbents",
+   "source_url": "https://www.tryfundable.ai/blog/top-foundation-model-labs"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "Learned world models of markets face noisy, non stationary data and little ground truth, and compute and data costs are high. A small team can run experiments in months but proving an edge is the hard open problem. If solved it is the moat; the input does not show progress."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Jane Street",
+   "Two Sigma",
+   "OpenAI",
+   "Bloomberg"
+  ],
+  "timeline_months": 18,
+  "rationale": "Large quant firms and AI labs could build similar models, but they gain nothing by selling them, so copying is likelier internal than as a competing product."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Funds and startups are funding market foundation model companies, including a reported 20M seed for one.",
+    "source_url": "https://www.pulse.bot/ai/deals/inference-research-raises-20m-seed-round-led-by-avenir-group-b87df0f7-f236-48d5-8c38-9e49b3a66d28/"
+   },
+   {
+    "claim": "Ex quant teams are raising large rounds for AI driven finance products.",
+    "source_url": "https://www.hedgeweek.com/ex-citadel-quant-teams-ai-driven-moment-secures-78m/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a measurable predictive edge.",
+   "actions": [
+    "Publish a backtest with holdout data",
+    "Start live paper trading"
+   ],
+   "proof": "Out of sample results across three months."
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert the edge into a buyer or fund.",
+   "actions": [
+    "Pilot with one fund or run capital",
+    "Define the product as data, simulation or signals"
+   ],
+   "proof": "One paying fund or a funded track record."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Hot AI finance theme with funded peers",
+   "evidence": "A reported 20M seed for a market model company and a large ex quant round show investor interest.",
+   "source_url": "https://www.hedgeweek.com/ex-citadel-quant-teams-ai-driven-moment-secures-78m/"
+  },
+  {
+   "point": "Technical focus and a high ceiling",
+   "evidence": "A working market model could be valued as an AI lab; the idea is large if it works.",
+   "source_url": "http://standardgaussian.com/"
+  }
+ ],
+ "brand": {
+  "name": "Standard Gaussian",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Standard Gaussian\" --era 2022+: length bucket 12+, 4 or more syllables, alive 94.7 percent in bucket, no signal.",
+  "strengths": [
+   "Statistics term signals quant credibility",
+   "Distinct and searchable"
+  ],
+  "weaknesses": [
+   "Long for a brand",
+   "Reads as academic to non quants"
+  ],
+  "rationale": "A statistical term works like the credibility names of quant firms such as Two Sigma, and it will read well to funds. It is long and academic for broader buyers, but brand is secondary here."
+ },
+ "narrative": {
+  "headline": "A three person finance world model lab with no stated product: seed odds are held low only by the short 7 month window, later rounds are near zero.",
+  "general_summary": "Standard Gaussian is a three person Spring 2026 team building world models for finance, with no description or traction in the input. The window is just 7.4 months from 2026-04-06 to 2026-11-17, so only about half of eventual seeds fall inside it, giving 0.30 against a Fintech anchor of 0.57 for ever. Series A given seed is 0.03 because Fintech Series A medians are over two years from batch start. Quant AI peers in comps show few public rounds. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-04-06 using only the input.",
+  "Seed means above about 1M from outside investors inside the 7.4 month window.",
+  "Founder pedigree is not in the input and none is assumed."
+ ],
+ "sources": [
+  "https://www.pulse.bot/ai/deals/inference-research-raises-20m-seed-round-led-by-avenir-group-b87df0f7-f236-48d5-8c38-9e49b3a66d28/",
+  "https://www.hedgeweek.com/ex-citadel-quant-teams-ai-driven-moment-secures-78m/",
+  "https://www.tryfundable.ai/blog/top-foundation-model-labs"
+ ]
 }

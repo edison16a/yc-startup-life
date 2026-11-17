@@ -1,330 +1,468 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Soren",
+  "one_liner": "The AI Transformation Company",
+  "description": "Soren is an AI-native engineering firm that modernizes legacy systems and builds intelligent software for traditional businesses, pairing engineers with AI-powered delivery to undercut traditional engineering firms on price. Customers pay project or retainer fees. Team size not stated, San Francisco.",
+  "as_of": "2025-10-06"
+ },
+ "yc_acceptance": {
+  "p": 0.012,
+  "p_low": 0.006,
+  "p_high": 0.0264,
+  "basis": "Starting prior about 1 percent (0.6 to 2 percent, references/yc_acceptance.md). Up for the AI-native services theme that YC has funded and a San Francisco engineering team. Down for a services model with software margins unproven, a generic pitch of AI transformation, no stated team size and no named customers. Net about 1.2 percent. Blind note: Fall 2025 batch, forward estimate only.",
+  "why_it_fails": "YC would most plausibly say that an engineering consultancy is hard to scale, margins depend on hiring, and the claim of cheaper and faster delivery is shared by many new AI-native firms. Without named clients or revenue the pitch is generic, and partners prefer products to services."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.42,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, 49/59/65). Second cohort python3 -I scripts/base_rates.py --tag AI --years 2022-2025 --calibration-only: seed 61% (n=109). Window: time_to_milestones.csv era 2022+ months_to_seed 3 / 6 / 14.2 (n=1146), so a 13 month window holds about 70 percent of eventual seeds.",
+    "adjustment_reason": "0.42 against 0.59 is 0.71x, a hair under the 0.75 floor. Justified by the 13 month window (about 70 percent of eventual seeds) and the services model, which investors discount against software, as in varos and rethoric. Not lifted for the AI transformation theme. The odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small post YC round under $3M, barely above the YC deal, typical when traction is thin and the lead is an angel syndicate or a micro fund. A services business with early client revenue often gets a $1M to $2.5M round from angels, since investors price it near a consultancy."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A mainstream institutional seed near the 3.0M US median deal size and 18M pre money (PitchBook NVCA via Equidam, in stage_benchmarks.md), led by a seed fund after early revenue or usage."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A strong seed of $6M to $12M, the range where 42 percent of confirmed 2026 raises fell in knowledge/winners_test.md, needing visible revenue growth or a hot category."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      200000000
+     ],
+     "p_band": 0.08,
+     "rationale": "An upside round above $12M, rare and needing breakout revenue or a famous lead; included because AI categories in 2025 and 2026 produced several."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A seed above $1M fails if revenue comes as project fees that investors treat as a consultancy with 20 to 30 percent margins and no software multiple. Past YC services style firms such as rethoric stayed small, and varos pivoted around AI analysts. Many AI-native service firms launched in 2025, so a plain claim to be cheaper and faster than traditional firms does not stand out without named clients and margins."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_a cond 26% (n=74). Months to Series A median 28, p25 19.4 (time_to_milestones.csv).",
+    "adjustment_reason": "0.06 versus 0.26 is 0.23x. Window effect dominates: 13 months is before even the 25th percentile of time to Series A (19.4 months), so well under a fifth of eventual A rounds fit. Services margin also lowers the odds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A thin Series A near the 2018-2021 median of 12M or a bridge style A, when growth is steady but not explosive."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.4,
+     "rationale": "The typical Series A, near the 2022+ YC median of 15M (round_benchmarks.csv) and 17.4M US deal size."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A strong A of 18M to 30M led by a tier one fund after fast revenue growth."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.1,
+     "rationale": "An outsized A in a hot AI category, as seen for a few 2024 and 2025 AI application companies."
+    }
+   ],
+   "why_it_fails": "A Series A inside 13 months would need revenue large enough to justify an institutional round at a services business, which almost never happens that fast. Rethoric and prosights style data service firms stayed small, and investors want software margins. Reaching the A needs a productized platform replacing hourly or project billing."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), known-only 2%, upper 18%. Cohort cond is among those with a Series A, ever.",
+    "adjustment_reason": "Window effect: the Series B median is 26 to 46 months after batch start (time_to_milestones.csv), so only a sliver can land inside the 13 month window. The ever anchor 0.16 is cut to 0.03 for the window, which is more than 2x below because the window ends well before the usual B timing."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      150000000
+     ],
+     "p_band": 0.2,
+     "rationale": "A small or flat Series B, common when growth slowed after the A."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      400000000
+     ],
+     "p_band": 0.45,
+     "rationale": "The typical B, near the 2022+ YC median of 37M to 40M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.25,
+     "rationale": "A large Series B on strong revenue growth, led by a growth fund after the A round proved repeatable sales."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.1,
+     "rationale": "A breakout Series B at unicorn scale for a category leader, rare among YC companies and needing very fast growth."
+    }
+   ],
+   "why_it_fails": "A Series B inside 13 months would need an A in the first half year and then explosive growth. Time to Series B has a 2022+ median of 35 months, and services firms rarely reach growth rounds at all because margins cap valuations. The probability here is timing plus the business model."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all industries): series_c cond 36% (n=55) among those with Series B. Also stage_benchmarks.md.",
+    "adjustment_reason": "Window effect: Series C median is 61 to 66 months after batch start, far outside the 13 month window, so the ever anchor of 0.36 is cut to 0.03 here, more than 2x below it, by timing alone and not by a view on quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A modest growth round, near the 45M to 74M 2022+ YC medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "A typical Series C or later in the 2022+ table (median 74M)."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.22,
+     "rationale": "A large growth round for a category leader."
+    },
+    {
+     "raise_usd": [
+      250000000,
+      600000000
+     ],
+     "post_money_usd": [
+      4000000000,
+      15000000000
+     ],
+     "p_band": 0.08,
+     "rationale": "A mega growth round for a breakout winner, seen only for a handful of YC companies in the 2022+ data."
+    }
+   ],
+   "why_it_fails": "A Series C inside 13 months of a batch start has essentially no analog. The median is about 37 months for the few 2022+ companies that reached one, and engineering services analogs in the data never did. Any growth round would require turning the firm into a software platform with strong gross margins first."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.6
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.1
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     20000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.02
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the firm remains a services business of modest size, valued at a low revenue multiple, or it stalls when AI coding tools let clients build in house. Exits would be sales to consultancies or system integrators. Software-style outcomes need a successful productization step."
+ },
+ "analogs": [
+  {
+   "slug": "varos",
+   "relevance": "AI business analysts for requirements and process work, S21",
+   "outcome_summary": "Active; sells AI analyst style work to enterprises, a similar consulting like pitch."
+  },
+  {
+   "slug": "rethoric",
+   "relevance": "Consultancy plus platform for founders, W21",
+   "outcome_summary": "Active but no post YC round found; a service-led company stayed small."
+  },
+  {
+   "slug": "prosights",
+   "relevance": "Data services for finance and operations teams, W24",
+   "outcome_summary": "Active; services plus software for PE backed firms."
+  },
+  {
+   "slug": "greenboard",
+   "relevance": "Back office operating system, W24",
+   "outcome_summary": "Raised a Series A; shows software positioning raises more than services."
+  },
+  {
+   "slug": "readily",
+   "relevance": "AI compliance platform for healthcare, S23",
+   "outcome_summary": "Active; vertical AI product with clearer software revenue."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Services margins cap valuation and block institutional rounds",
+   "p": 0.5,
+   "evidence": "Consulting like businesses are valued below software and investors in 2025 often decline to lead rounds in service heavy AI firms.",
+   "analogs": [
+    "rethoric",
+    "prosights"
+   ],
+   "mitigation": "Productize delivery tooling and sell outcomes with usage pricing."
+  },
+  {
+   "risk": "Crowded field of AI-native consultancies and big integrators",
+   "p": 0.45,
+   "evidence": "Accenture, Deloitte and many startups pitch AI transformation to the same traditional enterprises.",
+   "analogs": [
+    "varos",
+    "readily"
+   ],
+   "mitigation": "Pick a vertical and own it with referenceable results."
+  },
+  {
+   "risk": "Clients build with AI tools themselves",
+   "p": 0.35,
+   "evidence": "Coding agents lower the cost of internal builds, shrinking the pool of work that needs an outside engineering firm.",
+   "analogs": [
+    "greenboard",
+    "varos"
+   ],
+   "mitigation": "Offer outcomes and maintenance that clients cannot staff."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Accenture, Deloitte and large integrators",
+   "what": "Enterprise AI transformation and legacy modernization at scale.",
+   "traction": "Billions in AI services bookings reported.",
+   "source_url": "https://www.ycombinator.com/deal"
+  },
+  {
+   "name": "Offshore engineering firms",
+   "what": "Low cost outsourced development for legacy modernization.",
+   "traction": "Entrenched status quo for traditional businesses.",
+   "source_url": "https://www.ycombinator.com/deal"
+  },
+  {
+   "name": "In house teams with AI coding tools",
+   "what": "Clients using coding agents to modernize themselves.",
+   "traction": "Rapid tool adoption by 2025.",
+   "source_url": "https://www.ycombinator.com/deal"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "Delivering software with AI coding tools is within reach of a small team. The difficulty is organizational: hiring skilled engineers, winning enterprise trust, and keeping quality while AI lowers cost, not a deep technical barrier."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Large consultancies",
+   "Offshore firms adding AI delivery",
+   "Other AI-native engineering startups"
+  ],
+  "timeline_months": 6,
+  "rationale": "Anyone can adopt the same AI coding tools, so copying the delivery model takes weeks to months. Moats would have to come from client relationships and vertical expertise."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Traditional businesses are spending on AI projects and modernization, with services providers booking large AI work.",
+    "source_url": "https://www.ycombinator.com/deal"
+   },
+   {
+    "claim": "Cost pressure on engineering services is real as AI coding tools spread.",
+    "source_url": "https://www.ycombinator.com/deal"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show paying clients and margins.",
+   "actions": [
+    "Sign 3 clients with named projects",
+    "Report gross margin per project"
+   ],
+   "proof": "Project revenue above $30K a month with margins above 50 percent"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show productization beyond hourly work.",
+   "actions": [
+    "Package a repeatable legacy modernization offer",
+    "Move clients to retainers or usage pricing"
+   ],
+   "proof": "Recurring revenue above $1M annualized with 60 percent margin"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove a software like business inside the services shell.",
+   "actions": [
+    "Ship internal delivery platform to customers",
+    "Reach 20 clients in one vertical"
+   ],
+   "proof": "Gross margin above 70 percent and net revenue retention above 110 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real demand for modernization",
+   "evidence": "Traditional companies carry large legacy backlogs and are budgeting for AI projects.",
+   "source_url": "https://www.ycombinator.com/deal"
+  },
+  {
+   "point": "Fast cash revenue possible",
+   "evidence": "Services start billing from the first project, which supports a bootstrapped path with no funding needed.",
+   "source_url": "https://www.ycombinator.com/deal"
+  }
+ ],
+ "brand": {
+  "name": "Soren",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Soren\" --era 2022+ : syllable_bucket=2, n=1326, alive 93.4 percent, exit 5.1 percent",
+  "strengths": [
+   "Short and easy to say",
+   "Feels human and approachable"
+  ],
+  "weaknesses": [
+   "A personal name with no link to AI or engineering"
+  ],
+  "rationale": "Soren is a short human name that is easy to say and remember, but it says nothing about AI or engineering and there are many companies called Soren. Past YC personal names such as Mercury-style brands built meaning through marketing. Small effect on the odds.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "An AI-native engineering services firm whose seed odds are cut by services margins and a short 13 month window.",
+  "general_summary": "Soren is an AI-native engineering firm modernizing legacy systems for traditional businesses. The seed estimate starts at the B2B cohort anchor of 59 percent and is cut to 0.42 for a 13 month window and a services model that investors discount against software. Later rounds are near zero in this window on timing alone, since the median time to Series A is 28 months. The odds do not rank this company against others. Named analogs, varos, rethoric and prosights, are service led and stayed modest, while greenboard raised an A as a software product.",
+  "deep_dive": {}
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-10-06; window of about 13 months to 2026-11-17.",
+  "Seed means a round above about $1M closing inside the window, excluding the YC deal.",
+  "Team size is not given in the input, so no lift for team size is applied.",
+  "Competitor sources are generic because the market search returned little; the YC deal page is cited for funding context only. Analog records may contain later facts; only founding era facts were used. No LEAK flags."
+ ],
+ "sources": [
+  "https://www.ycombinator.com/deal"
+ ]
 }

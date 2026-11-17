@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Light Anchor",
+    "one_liner": "AI-native growth agency for consumer brands",
+    "description": "Light Anchor is an AI native growth agency that runs consumer brands with AI agents on a shared platform. It operates 7 brands today and aims for thousands of consumer businesses run with little human involvement. Two founders based in Seoul, Spring 2026 batch, tags ecommerce and AI. Revenue comes from the brands it owns or operates. Forecast window runs 2026-04-06 to 2026-11-17, about 7.4 months.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.012,
+    "p_high": 0.07,
+    "basis": "Start from the roughly 1 percent prior (0.6 to 2 percent band). Running 7 live brands is real operating traction and two technical looking founders add up; against that, a consumer ecommerce portfolio is a services style business and Seoul based teams are less common in the data. Net about 3 times the prior. The company is in the Spring 2026 batch, so the figure is for completeness.",
+    "why_it_fails": "YC would most plausibly say no because running 7 brands may look like an agency or a holding company, not software, and consumer brand economics depend on ad spend and inventory more than on the AI platform. Partners could ask whether agents are the cause of any brand success and whether the model scales beyond the founders own attention."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.35,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry Consumer (seed 2022+ median $3.4M, n=16). Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Window of 7.4 months: about 50 percent of eventual seeds arrive by then, times about 0.60 reaching a round above $1M gives an anchor near 0.30.",
+        "adjustment_reason": "The estimate is 1.17 times the window anchor, inside the 1.25 times cap, for live operating brands that give evidence beyond a pitch. The odds do not rank this company against others and team size gets no lift."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.33,
+          "rationale": "Small post YC round of about $1M to $3M, often from angels and a pre seed fund; the YC deal of about $500K alone does not count here."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.37,
+          "rationale": "Core institutional seed, matching the 2022 and later median raise of about $3.5M to $4.1M in round_benchmarks."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.22,
+          "rationale": "Large institutional seed, the range where 42 percent of confirmed 2026 raises above $1M landed in the winners test."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.08,
+          "rationale": "Oversized seed driven by a hot AI narrative or a top tier lead; rare and press heavy."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Light Anchor most likely fails to raise above $1M in 7 months because investors will treat a portfolio of consumer brands as an agency or holding company with capital needs and weak software multiples. The vibe company and hypotenuse-ai show AI native agency or tooling stories raising only small rounds, and a Korea based team adds distance from US funds."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry Consumer (seed 2022+ median $3.4M, n=16). Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series A given seed 0.45 ever; almost no one reaches it inside 7.4 months.",
+        "adjustment_reason": "Window adjusted far below the ever anchor because Series A takes a median of 28 months after batch start."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin Series A or extension on modest revenue, below the 2022 and later median of $13.5M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series A near the 2022 and later median of $13.5M to $14M with growth proof."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Upside Series A from a breakout AI product with fast revenue."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A within the window would need proven brand economics at scale across many brands. BIK took a year to move from seed to a $10.8M Series A, and The Vibe Company stayed at a seed. A brand operator must show repeatable unit economics before that."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.35,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry Consumer (seed 2022+ median $3.4M, n=16). Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series B conditional 0.44, ever figure.",
+        "adjustment_reason": "Below the anchor because brand portfolios need working capital and the model is untested."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller Series B or a down round after slower growth."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            400000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $37M median for 2022 and later rounds."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B for a category leader with fast revenue growth and a top tier lead, as seen in the 75th percentile near $57M for 2022 and later rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B would need either a software revenue line or a brand portfolio with real profit. Consumer ecommerce companies tend to be capital heavy, and past YC cases like BIK needed layoffs after a Series A when growth slowed, showing the risk of scaling too soon."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (seed 0.77 conditional known-only, series_a 0.45, series_b 0.44, series_c 0.36; seed range 0.42 to 0.87); python3 -I scripts/base_rates.py --calibration-only --industry Consumer (seed 2022+ median $3.4M, n=16). Months to seed in time_to_milestones.csv: p25 3, p50 7, p75 19.5. Series C 0.36 conditional, ever figure.",
+        "adjustment_reason": "Below the anchor because holding company style businesses rarely scale like software."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000.0,
+            500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest Series C near the $42M to $45M median for 2022 and later."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000.0,
+            1500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a scaled company, in line with the 2022 and later Series C median of about $45M and the larger Series D plus rounds."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            4000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside growth round or a late stage mega round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A growth round would need thousands of agent run brands with strong margins, which has not been shown by any YC company. Investors may value it as consumer products and not as AI, which limits the round size and the odds."
     }
   ],
   "outcomes": {
@@ -164,167 +224,235 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.72
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.17
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.09
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          10000000000.0
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end in shutdown or a stall because individual consumer brands fail often, ad costs rise, and the agents may not beat a competent human operator. A sale of the brand portfolio to an aggregator or a small acquisition of the platform is the usual good result, while a $1B outcome would need thousands of profitable brands."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "the-vibe-company",
+      "relevance": "AI native agency run on its own agents, W24.",
+      "outcome_summary": "Raised a seed after repositioning, active, no later round found."
+    },
+    {
+      "slug": "bik",
+      "relevance": "Agentic CRM for ecommerce brands, S20.",
+      "outcome_summary": "$2M seed, $10.8M Series A, then layoffs and a rebrand."
+    },
+    {
+      "slug": "hypotenuse-ai",
+      "relevance": "AI native ecommerce content and product platform, S20.",
+      "outcome_summary": "Small funding found, active, pivoted positioning."
+    },
+    {
+      "slug": "converge",
+      "relevance": "AI growth platform for DTC brands, S23.",
+      "outcome_summary": "$5.6M seed in Feb 2025 about 18 months after batch."
+    },
+    {
+      "slug": "nextstore",
+      "relevance": "Storefronts for Shopify brands, S20.",
+      "outcome_summary": "Inactive, shutdown."
+    },
+    {
+      "slug": "algoviral",
+      "relevance": "AI growth engine for startups, S21.",
+      "outcome_summary": "Active small team, no funding found."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Investors value the business as an agency or consumer holding company, not software",
+      "p": 0.5,
+      "evidence": "Revenue comes from operating brands, which carry inventory, ad spend and thin margins, so software multiples do not apply and checks are small.",
       "analogs": [
-        "TODO-company-slug"
+        "the-vibe-company",
+        "nextstore"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Report platform gross margin and licence the agent system to outside brands."
+    },
+    {
+      "risk": "Brand level failure: ad costs, product quality and platform policy hit all 7 brands together",
+      "p": 0.4,
+      "evidence": "Shared agents and shared channels such as Meta ads and Amazon make correlated failures likely, and consumer brands often fade within a year.",
+      "analogs": [
+        "nextstore",
+        "algoviral"
+      ],
+      "mitigation": "Diversify channels and track cohort retention per brand."
+    },
+    {
+      "risk": "Agents do not beat humans and incumbents like Shopify bundle AI",
+      "p": 0.35,
+      "evidence": "Shopify and ad platforms are adding AI automation that any brand can use, which erodes the edge of an agent run operation.",
+      "analogs": [
+        "bik",
+        "hypotenuse-ai"
+      ],
+      "mitigation": "Show brand P and L per agent hour against matched human run brands."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Shopify with Sidekick and AI tools",
+      "what": "Platform adding AI for merchants",
+      "traction": "Millions of merchants",
+      "source_url": "https://www.shopify.com"
+    },
+    {
+      "name": "Thrasio style aggregators",
+      "what": "Operators that buy and run consumer brands",
+      "traction": "Raised billions in 2021 then restructured",
+      "source_url": "https://www.thrasio.com"
+    },
+    {
+      "name": "Pattern",
+      "what": "Ecommerce growth agency with technology",
+      "traction": "Scaled services and software company",
+      "source_url": "https://pattern.com"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Agents that run content, ads, listings and customer service are buildable with current models by a small team; the hard parts are reliability across 7 live brands, supply chain handling and avoiding platform bans, which are operational more than technical."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Shopify",
+      "Amazon",
+      "Meta Advantage plus",
+      "Pattern"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Platforms could bundle similar automation within a year, but running brands end to end is a different business from tools, so direct copying is slower. Platform dependence on ad and marketplace policy is high."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Aggregators such as Thrasio showed investors will fund consumer brand roll ups, though many restructured after 2021.",
+        "source_url": "https://www.thrasio.com"
+      },
+      {
+        "claim": "Agentic commerce is expected to reach about 1.5 percent of US retail ecommerce spend in 2026 per eMarketer, showing early demand for AI in ecommerce.",
+        "source_url": "https://www.emarketer.com/content/how-agentic-ai-will-reshape-shopping-2026"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show that agents drive profit across the brands",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish brand level revenue and margin",
+        "Compare to human run controls"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Positive contribution margin on at least 5 of 7 brands"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convince a seed lead of a software like model",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Separate platform costs from brand costs",
+        "Offer the platform to outside brands"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$500K monthly gross revenue and a lead investor"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable launch engine",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch 3 brands per month with the same agents",
+        "Hire a head of growth"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "30 profitable brands and $15M annual revenue"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale the portfolio and platform",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Open the platform to outside operators",
+        "Add supply chain automation"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "200 brands and $100M revenue"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Industry scale",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "International expansion",
+        "Strategic partnerships"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "1000 brands"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Seven brands already operate on the platform",
+      "evidence": "The description states 7 live brands run by agents, which is operating evidence beyond a pitch.",
+      "source_url": "https://lightanchor.ai"
+    },
+    {
+      "point": "Small team with low overhead",
+      "evidence": "Two founders operate many brands with agents, so the burn is low relative to a human agency.",
+      "source_url": "https://lightanchor.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Light Anchor",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Light Anchor\" --era 2022+ : compound_words, 11 letters, alive 95 percent in cohort",
     "strengths": [
-      "TODO"
+      "Calm imagery",
+      "Two simple words"
     ],
     "weaknesses": [
-      "TODO"
+      "Nothing signals growth or consumer brands"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Two plain words with a steady nautical image, comparable to compound YC names, and the cohort shows 95 percent alive for compound words; it neither helps nor hurts a B2B growth business.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "An AI run consumer brand operator with 7 live brands has real operating evidence, but a 7 month window and an agency like model limit the seed odds.",
+    "general_summary": "Light Anchor runs consumer brands with AI agents and already operates seven. That is more concrete than most pitches, and AI native agencies have raised seeds in this period. Against that, investors will ask whether it is software or a brand holding company, brand failure is common, the window is only 7.4 months and the team is in Seoul. The seed figure sits slightly above the window adjusted cohort anchor, and the odds do not rank this company against others in the batch."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file and market searches were used; no revenue or investor data is known.",
+    "Seed means an outside round above about $1M closing between 2026-04-06 and 2026-11-17.",
+    "Series A given seed is for the same window; Series B and C are ever figures.",
+    "Coverage: 662 researched companies; funding data partial."
   ],
   "sources": [
-    "https://"
+    "https://www.emarketer.com/content/how-agentic-ai-will-reshape-shopping-2026",
+    "https://www.thrasio.com",
+    "https://pattern.com",
+    "https://www.shopify.com"
   ]
 }

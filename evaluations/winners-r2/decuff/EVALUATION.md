@@ -172,7 +172,7 @@ You know it worked when: $30M ARR
 ### Demand evidence
 
 - Uncensored and abliterated model variants number in the thousands on Hugging Face, showing hobbyist demand, but paid enterprise demand is unproven. (https://www.preprints.org/manuscript/202509.1334)
-- Red team and safety testing firms are a plausible paying buyer for less restricted models. (https://www.the-decoder.com/stripping-safety-guardrails-from-open-weight-ai-models-is-now-a-turnkey-commercial-service/)
+- A 2025 preprint tracks communities building uncensored models on Hugging Face with little oversight, which suggests supply is abundant and free. (https://www.preprints.org/manuscript/202509.1334)
 
 ## Evidence from past YC companies
 
@@ -203,4 +203,3 @@ You know it worked when: $30M ARR
 - https://www.preprints.org/manuscript/202509.1334
 - https://openrouter.ai
 - https://www.together.ai
-- https://www.the-decoder.com/stripping-safety-guardrails-from-open-weight-ai-models-is-now-a-turnkey-commercial-service/
