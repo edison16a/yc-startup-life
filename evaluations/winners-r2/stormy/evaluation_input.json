@@ -1,330 +1,440 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Stormy",
+  "one_liner": "Runs the office so your crew can run the work",
+  "description": "AI back office for field and equipment service shops such as forklift and heavy equipment service, HVAC, electrical, plumbing, roofing and logistics yards. It answers calls day and night, follows up on quotes, books jobs, schedules crews, tracks parts, sends and collects invoices, runs marketing and gives each team member an AI agent, all from one job record. Five person team in San Francisco, Summer 2025.",
+  "as_of": "2025-07-07"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.066,
+  "basis": "Starting prior about 1 percent (0.6 to 2 percent range). Up for a clear paying buyer in trades, AI timing and a product that already spans the job record. Down because the founders' domain background is not stated and the space has several funded trades AI companies. Net about 3 percent, conditional on the batch already given.",
+  "why_it_fails": "YC would most plausibly say that AI for trades is a crowded theme with many agents from the same batches, and that a bundle across call answering, scheduling and invoicing lacks a single sharp wedge. Partners may also doubt whether a five person team can integrate with the dominant field service software."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.52,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59% known (lower 49 / upper 65, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 6 months, p75 14.2; series_a p25 19.4, median 28; series_b median 35.6 from batch start. Home services AI is in comps: broccoli-ai and avoca reached later rounds, drillbit and sameday seed or none.",
+    "adjustment_reason": "Window is 16.3 months from 2025-07-07 to 2026-11-17 and the number is for a round above about 1M from outside investors inside that window, not ever. Anchor 0.59 (B2B 2022 to 2025). About 85 percent of eventual seeds close within 16 months (p75 14.2), giving 0.50; 0.52 is 0.88x of the anchor. The hot AI agent theme and a five person team are not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      18000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, the most common outcome for a small team that closes a first outside round quickly."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later YC median of 4.1M, with market pre money near 18M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.24,
+     "rationale": "Strong seed led by a known fund, matching the upper quartile of 6.5M and above in press covered rounds."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "p_band": 0.11,
+     "rationale": "Large hot category round; rare for a team this early."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step fails if the broad bundle of call answering, quoting, scheduling, invoicing and marketing reads as a feature list with no deep win in any one job. Trades AI is crowded: Elyos, Sameday, Drillbit and Decisional all sell similar agents, and funded ServiceTitan, Jobber and Housecall Pro add their own AI. A five person team with a wide scope may show thin retention to investors."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.07,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59% known (lower 49 / upper 65, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 6 months, p75 14.2; series_a p25 19.4, median 28; series_b median 35.6 from batch start. Home services AI is in comps: broccoli-ai and avoca reached later rounds, drillbit and sameday seed or none.",
+    "adjustment_reason": "Window 16.3 months. Series A for 2022 and later has p25 at 19.4 months from batch start, so a small share of eventual A raisers close inside the window. 0.26 times about 0.27 gives 0.07."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000.0,
+      8000000.0
+     ],
+     "post_money_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later p25 of 10M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      18000000.0
+     ],
+     "post_money_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M and a market deal size near 17M."
+    },
+    {
+     "raise_usd": [
+      18000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      90000000.0,
+      220000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round after fast revenue growth; the p75 is about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A inside 16 months needs fast recurring revenue and proof that shops keep paying after the first season, in a market where integration with ServiceTitan and Jobber decides the sale. Handoff and Bluelight took years in similar trades software, so most peers stop at seed while they find the wedge."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.025,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59% known (lower 49 / upper 65, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 6 months, p75 14.2; series_a p25 19.4, median 28; series_b median 35.6 from batch start. Home services AI is in comps: broccoli-ai and avoca reached later rounds, drillbit and sameday seed or none.",
+    "adjustment_reason": "Anchor 0.16 for B2B in 2022 and later with median months to B near 36, so inside 16 months this is a tail event, set at 0.025."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      140000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M."
+    },
+    {
+     "raise_usd": [
+      25000000.0,
+      50000000.0
+     ],
+     "post_money_usd": [
+      140000000.0,
+      320000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B near the 2022 and later YC median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000.0,
+      100000000.0
+     ],
+     "post_money_usd": [
+      320000000.0,
+      800000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside Series B on breakout growth; the p75 is 57M."
+    }
+   ],
+   "why_it_fails": "A Series B inside 16 months would need a breakout position such as the voice AI leaders in home services reached only after more than a year of heavy growth. Stormy would first have to win its niche of equipment service shops, and no trades analog reached B this quickly."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 59% known (lower 49 / upper 65, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c 0% (n=3). Time table era 2022+: seed median 6 months, p75 14.2; series_a p25 19.4, median 28; series_b median 35.6 from batch start. Home services AI is in comps: broccoli-ai and avoca reached later rounds, drillbit and sameday seed or none.",
+    "adjustment_reason": "No base rate (0 of 3 reached C in the B2B 2022 and later cohort). Placeholder 0.01 for the 16 month window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      45000000.0
+     ],
+     "post_money_usd": [
+      150000000.0,
+      350000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Smaller later round near the 2022 and later p25 of 35M (n=9 only)."
+    },
+    {
+     "raise_usd": [
+      45000000.0,
+      90000000.0
+     ],
+     "post_money_usd": [
+      350000000.0,
+      900000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C or later, 45M to 77M per the YC table and market monitor."
+    },
+    {
+     "raise_usd": [
+      90000000.0,
+      250000000.0
+     ],
+     "post_money_usd": [
+      900000000.0,
+      3000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout late round at unicorn scale; very rare in this cohort."
+    }
+   ],
+   "why_it_fails": "A Series C inside 16 months of YC is almost unseen even among the fastest AI voice companies, which needed rounds of tens of millions at Series B first. This team would need an unusual run of revenue growth across several trades, and no analog shows it."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.58
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.09
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     5000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely the company stays a small SaaS with churn in a seasonal customer base, or is absorbed by a field service platform that adds the same AI, the fate of several earlier trades startups. Breakout needs one trade where it becomes the system of record, where funded leaders already compete."
+ },
+ "analogs": [
+  {
+   "slug": "broccoli-ai",
+   "relevance": "AI operating system for home services.",
+   "outcome_summary": "Reached series B on voice AI."
+  },
+  {
+   "slug": "drillbit",
+   "relevance": "AI agent for residential contractors.",
+   "outcome_summary": "Seed only."
+  },
+  {
+   "slug": "elyos-ai",
+   "relevance": "AI customer service for trades.",
+   "outcome_summary": "Series A."
+  },
+  {
+   "slug": "handoff",
+   "relevance": "AI estimator for remodelers.",
+   "outcome_summary": "Alive, years to modest scale."
+  },
+  {
+   "slug": "kanda",
+   "relevance": "Financing for general contractors.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "gobuild-fka-brick",
+   "relevance": "Payments for small construction.",
+   "outcome_summary": "Shut down."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Field service platforms add the same AI",
+   "p": 0.4,
+   "evidence": "ServiceTitan, Jobber and Housecall Pro all ship or integrate AI receptionists, and guides say a native tool sees live technician availability.",
+   "analogs": [
+    "drillbit",
+    "handoff"
+   ],
+   "mitigation": "Serve equipment service shops the platforms do not target."
+  },
+  {
+   "risk": "Unfocused bundle",
+   "p": 0.35,
+   "evidence": "The pitch spans calls, quotes, scheduling, invoicing and marketing, and funded peers choose one job such as the voice agent.",
+   "analogs": [
+    "elyos-ai",
+    "drillbit"
+   ],
+   "mitigation": "Lead with one job that pays back in weeks."
+  },
+  {
+   "risk": "Small seasonal customers churn",
+   "p": 0.3,
+   "evidence": "Trades shops are small, price sensitive and seasonal; Kanda and GoBuild failed in this buyer group.",
+   "analogs": [
+    "kanda",
+    "gobuild-fka-brick"
+   ],
+   "mitigation": "Sell annual contracts to larger shops."
+  },
+  {
+   "risk": "Five person team stretched",
+   "p": 0.25,
+   "evidence": "Each product area needs integrations that larger rivals fund with many engineers.",
+   "analogs": [
+    "handoff"
+   ],
+   "mitigation": "Hire early after first revenue."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Trades native voice agents such as Avoca, Sameday and Rosie",
+   "what": "AI receptionists and booking agents for trades",
+   "traction": "Several funded entrants",
+   "source_url": "https://sameday.ai/post/ai-answering-services-features-comparison-for-hvac-and-plumbing-businesses"
+  },
+  {
+   "name": "ServiceTitan, Jobber and Housecall Pro",
+   "what": "Field service platforms adding AI",
+   "traction": "Dominant installed base",
+   "source_url": "https://delight.ai/blog/industry/ai-receptionist-home-services"
+  },
+  {
+   "name": "Answering services and an office manager",
+   "what": "Status quo of staff and call centers",
+   "traction": "Default for most shops",
+   "source_url": "https://www.myaifrontdesk.com/blogs/how-an-ai-answering-service-can-transform-your-hvac-business-in-2025"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Voice agents and scheduling are buildable by a small team using current models. The hard part is integrations with field service and accounting software and reliable booking, which also forms the moat if solved. A bundle spanning marketing and invoicing raises the build load."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "ServiceTitan",
+   "Jobber",
+   "Housecall Pro",
+   "Avoca",
+   "OpenAI voice partners"
+  ],
+  "timeline_months": 9,
+  "rationale": "Platforms already own the job record and distribution and can add agents quickly; funded voice startups are also expanding into the same functions."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Vendor sources report 30 to 50 percent of inbound calls to trades shops go unanswered, a measurable loss.",
+    "source_url": "https://sameday.ai/post/ai-answering-services-features-comparison-for-hvac-and-plumbing-businesses"
+   },
+   {
+    "claim": "Guides list a dozen paid AI receptionists for HVAC and plumbing, showing buyers pay.",
+    "source_url": "https://justcall.io/blog/best-ai-receptionist-for-hvac.html"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show shops paying and staying.",
+   "actions": [
+    "Sign ten equipment service shops",
+    "Measure calls answered and jobs booked"
+   ],
+   "proof": "Ten paying shops with a booked job lift."
+  },
+  {
+   "phase": "seed",
+   "goal": "Prove retention and one clear wedge.",
+   "actions": [
+    "Integrate with the main field service system",
+    "Charge by booked job"
+   ],
+   "proof": "Monthly recurring revenue growing with under 3 percent monthly churn."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear paying buyer and measurable loss",
+   "evidence": "Missed calls cost trades shops jobs, and buyers already pay for answering tools.",
+   "source_url": "https://sameday.ai/post/ai-answering-services-features-comparison-for-hvac-and-plumbing-businesses"
+  },
+  {
+   "point": "Full job record gives a path to system of record",
+   "evidence": "The pitch runs every task off one job record, which can lock in customers.",
+   "source_url": "https://stormy.ai"
+  }
+ ],
+ "brand": {
+  "name": "Stormy",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Stormy\" --era 2022+: length bucket 5-6, 2 syllables, alive 93.7 percent in bucket, no signal.",
+  "strengths": [
+   "Memorable weather word",
+   "Short and friendly"
+  ],
+  "weaknesses": [
+   "Stormy sounds like trouble",
+   "No link to office work"
+  ],
+  "rationale": "A short evocative name is easy to recall like Jobber, and a crew facing storms and emergencies may relate, but the word also hints at chaos. Name is secondary to execution in this crowded category."
+ },
+ "narrative": {
+  "headline": "A broad AI back office for trades in the most crowded AI category: seed is about even over 16 months, later rounds are unlikely in the window.",
+  "general_summary": "Stormy sells an AI back office to field and equipment service shops, from call answering and quoting through scheduling, parts and invoicing. The window is 16.3 months from 2025-07-07 to 2026-11-17, long enough for most seeds, so seed sits at 0.52 against the B2B anchor of 0.59. Series A given seed is 0.07 in the window. Several funded trades AI companies and field service platforms compete directly. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-07-07 using only the input.",
+  "Seed means above about 1M from outside investors inside the 16.3 month window.",
+  "Founder backgrounds are not in the input and no domain advantage is assumed."
+ ],
+ "sources": [
+  "https://sameday.ai/post/ai-answering-services-features-comparison-for-hvac-and-plumbing-businesses",
+  "https://delight.ai/blog/industry/ai-receptionist-home-services",
+  "https://justcall.io/blog/best-ai-receptionist-for-hvac.html",
+  "https://www.myaifrontdesk.com/blogs/how-an-ai-answering-service-can-transform-your-hvac-business-in-2025"
+ ]
 }

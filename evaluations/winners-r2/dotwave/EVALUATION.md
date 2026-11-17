@@ -49,7 +49,7 @@ Labels use these cut-offs: Very likely ≥ 65%, Likely ≥ 45%, Reasonable ≥ 2
 | $6M–$12M | $35M–$80M | 22% | 9.9% | Unlikely | 0.3% | Very unlikely | Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed. |
 | $12M–$25M | $70M–$150M | 10% | 4.5% | Very unlikely | 0.1% | Very unlikely | Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption. |
 
-**Why it fails here.** Seed means a round above $1M from outside investors within 22 months. It most likely fails if the dedicated capacity model reads as a GPU reseller with thin margins next to Together, Fireworks, Baseten and the clouds, and the speech API looks like one more voice model next to Deepgram and AssemblyAI. Pipeshift and Shadeform raised only small seeds, so investors may see few comparable breakouts.
+**Why it fails here.** Seed means a round above $1M from outside investors within 22 months. It most likely fails if the dedicated capacity model reads as a GPU reseller with thin margins next to Together, Fireworks, Baseten and the clouds, and the speech API looks like one more voice model next to Deepgram and AssemblyAI. Pipeshift and so investors may see few comparable breakouts.
 
 ### Series A: P(reach this round | in YC) = 14% after the previous step; 6.3% cumulative if in YC; 0.2% from today
 
@@ -90,7 +90,7 @@ Labels use these cut-offs: Very likely ≥ 65%, Likely ≥ 45%, Reasonable ≥ 2
 | Acquired or IPO $100M-$1B | $100M–$1B | 17% | Unlikely | 0.5% | Very unlikely |
 | Acquired or IPO over $1B | $1B–$10B | 6.0% | Unlikely | 0.2% | Very unlikely |
 
-**Why it fails here.** The usual end is a GPU capacity business squeezed on margin: hyperscalers and funded inference clouds undercut reserved capacity, and model providers ship their own real-time APIs. Pipeshift raised a small seed and PlayAI sold into the voice model market, so a partial acquisition or acqui-hire is a more likely good result than a standalone win.
+**Why it fails here.** The usual end is a GPU capacity business squeezed on margin: hyperscalers and funded inference clouds undercut reserved capacity, and model providers ship their own real-time APIs. Pipeshift reached only a seed and PlayAI sold into the voice model market, so a partial acquisition or acqui-hire is a more likely good result than a standalone win.
 
 ## Why this company may not work: the killers
 
@@ -154,10 +154,10 @@ You know it worked when: $40K or more monthly recurring revenue from reserved ca
 |---|---|---|---|---|
 | Deepgram (deepgram) | Winter 2016 | Active | Speech recognition infrastructure and the incumbent in streaming ASR. | Winter 2016, reached Series C after years of enterprise and developer revenue; shows the scale and time needed. |
 | AssemblyAI (assemblyai) | Summer 2017 | Active | Speech to text API company. | Summer 2017, reached Series C, a long path with heavy model investment. |
-| Pipeshift (pipeshift) | Summer 2024 | Active | Inference for real-time agents, Summer 2024, a very close wedge. | Raised a small seed by the as_of date, showing what peers raise. |
-| Shadeform (shadeform) | Summer 2023 | Active | GPU cloud marketplace, a capacity reseller. | Summer 2023, a seed, shows capacity marketplaces raise small rounds. |
-| Vapi (vapi) | Winter 2021 | Active | Voice AI for developers, a likely customer. | Winter 2021, grew fast on developer demand and had a Series A and B; shows the voice pull for infrastructure. |
-| PlayAI (playai) | Winter 2023 | Acquired | Voice AI models, Winter 2023. | Raised a seed; a model company that depended on selling into the voice market. |
+| Pipeshift (pipeshift) | Summer 2024 | Active | Inference for real-time agents, Summer 2024, a very close wedge. | Records show a seed as its highest round, with timing not used; a rough guide to what peers raise. |
+| Shadeform (shadeform) | Summer 2023 | Active | GPU cloud marketplace, a capacity reseller. | Summer 2023; records show a seed as its highest round, so capacity marketplaces raise modest rounds. |
+| Vapi (vapi) | Winter 2021 | Active | Voice AI for developers, a likely customer. | Winter 2021, grew fast on developer demand for voice agents; shows the pull for infrastructure beneath them. |
+| PlayAI (playai) | Winter 2023 | Acquired | Voice AI models, Winter 2023. | Records show a seed as its highest round; a voice model company that had to sell into the voice market. |
 
 ### Base-rate anchors
 

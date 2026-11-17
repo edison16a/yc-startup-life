@@ -1,330 +1,440 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Sourcebot",
+  "one_liner": "Helping humans and AI agents understand massive codebases",
+  "description": "Open source code understanding platform for large codebases from a three person San Francisco team in the Fall 2025 batch. It gives developers and AI agents fast regex search across millions of lines of code and question answering across thousands of repositories with a customer chosen reasoning model. It deploys on premises in minutes and the founders say thousands of engineers at large companies use it; the founders have built together for over two years.",
+  "as_of": "2025-10-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.066,
+  "basis": "Already in the Fall 2025 batch, so this is the prior for a random applicant. YC cites about 1 percent acceptance with a third party range of 0.6 to 2 percent. I set 3 percent because the company shows real usage by named large organizations, two years of full time work and technical founders, which are the factors that move odds, but code tooling is crowded.",
+  "why_it_fails": "YC would most plausibly decline because code search and AI coding context was crowded with Sourcegraph, GitHub, Cursor and Augment, open source usage does not prove paid demand, and a three person team may not show a path to revenue or a reason enterprises pay for it when agents can search code themselves."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.42,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% known-only (lower 49%, upper 65%, n=126); python3 -I scripts/base_rates.py --tag \"Developer Tools\" --years 2022-2025: seed 42% / 49% / 56% (n=254). Timing from knowledge/tables/time_to_milestones.csv era 2022+: months_to_seed p25 3, p50 6, p75 14.2 (n=1146). Open Source tag 2022-2025 calibration only: seed 80% known-only but n=10, too thin to use.",
+    "adjustment_reason": "Window is about 13 months (2025-10-06 to 2026-11-17). About 70 to 75 percent of eventual seeds close inside that time, so the window anchor is about 0.42 from the 59 percent B2B figure. I keep 0.42: real open source usage inside large companies is a genuine signal, but the winners test showed traction claims did not separate funded from unfunded companies, and open source revenue is slow. The odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      10000000.0,
+      22000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Small post YC round: a $1M to $3M check from angels, a pre-seed fund or a YC partner fund, the usual outcome when the product is early and a team is small."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      18000000.0,
+      40000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed from a dev or AI focused fund, the cohort median region for 2022 and later seed rounds ($3.1M median, quartiles $2.0M and $4.2M in the Developer Tools cohort)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      80000000.0
+     ],
+     "p_band": 0.18,
+     "rationale": "Larger institutional seed on strong early usage or a hot category; among confirmed 2026 raises above $1M the median was $6.0M, so this band is realistic but press skewed."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.07,
+     "rationale": "Upside seed or seed plus led by a top tier fund on fast growth; rare and usually tied to revenue or breakout open source or product adoption."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Seed means a round above $1M within 13 months. It most likely fails if open source usage stays free and paid conversion is low, so investors see a popular tool without revenue, a pattern seen with open source developer tools that raised small rounds or none. Void and Driver show open source code tools get a seed at best, and Sourcegraph and the AI coding vendors compete for the same budget."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.07,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_a cond 26% known-only (lower 13%, upper 29%, n=74); Developer Tools 2022-2025: series_a cond 23% (n=124). Timing, era 2022+: months_to_series_a p25 19.4, p50 28, p75 38.4 (n=216).",
+    "adjustment_reason": "The anchor is the chance of ever reaching Series A, with a median of 28 months after batch start. A seed in the 13 month window must come first, and open source monetization normally takes longer, so I cut the anchor to about a quarter."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      35000000.0,
+      60000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin or flat Series A under $10M, common when growth is real but revenue is early and the lead wants a smaller bet."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical 2022 and later Series A: the Developer Tools cohort median raise is $17.5M and the B2B cohort median $15.0M."
+    },
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      250000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside Series A led by a large fund when the product is a visible category leader with fast revenue, as seen for the best AI infrastructure and developer rounds of 2024 and 2025."
+    }
+   ],
+   "why_it_fails": "A Series A inside the window needs paid enterprise contracts at scale on top of an open source base. On premises enterprise deals need security reviews and annual sales cycles, so a three person team seldom has enough revenue within a year. Sourcegraph took years to build its enterprise business, and Driver and Sage AI stayed at seed or below."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_b cond 16% (n=19), range 2% to 18% across lower, known and upper.",
+    "adjustment_reason": "The anchor is the chance of ever reaching Series B. In a window that ends about 13 to 22 months after the batch starts, the time to milestone table gives a median of about 35 months for Series B in the 2022 and later era, so only a small share of eventual Series B companies get there inside the window; I cut the anchor roughly in half and say the number is a window number."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000.0,
+      35000000.0
+     ],
+     "post_money_usd": [
+      120000000.0,
+      220000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest Series B on steady growth, below the Developer Tools median of $50M because few companies in the cohort have reached this round."
+    },
+    {
+     "raise_usd": [
+      35000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      220000000.0,
+      500000000.0
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022 and later Series B: $45M to $50M medians with valuations near $550M to $600M in the few cohort cases with data."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      500000000.0,
+      1200000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Breakout round for a category leader growing several times a year."
+    }
+   ],
+   "why_it_fails": "A Series B inside the window would need a Series A and a sales team across large enterprises. Open source infrastructure companies reach later rounds only after sustained revenue growth, which takes longer than the window; no code search or code context peer in the YC data did it inside two years."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.05,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: series_c 0% known-only, 16% upper (n=3), so there is no usable rate for the cohort.",
+    "adjustment_reason": "The cohort has almost no Series C companies, so I use a small number tied to the window length: reaching Series C within about two years of a YC batch has happened only for a handful of breakout companies in the 2022 and later era, and the time to milestone table shows a median of about 37 months."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000.0,
+      80000000.0
+     ],
+     "post_money_usd": [
+      300000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Ordinary growth round for a company that has found a repeatable sales motion."
+    },
+    {
+     "raise_usd": [
+      80000000.0,
+      200000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      2000000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Large growth round from crossover or late stage funds in a hot AI category."
+    },
+    {
+     "raise_usd": [
+      200000000.0,
+      500000000.0
+     ],
+     "post_money_usd": [
+      2000000000.0,
+      6000000000.0
+     ],
+     "p_band": 0.15,
+     "rationale": "Category defining round, seen only for the top few AI companies."
+    }
+   ],
+   "why_it_fails": "A Series C inside two years of a batch would need breakout status in AI coding context, where Cursor, Sourcegraph, GitHub and model labs compete. For a three person open source team with a self hosted product that must first prove paid conversion, a Series C within two years of the batch is extremely unlikely, and none of the code tooling companies in the YC records reached one that fast."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The usual end is a popular open source tool that never converts: agents get built in search, Sourcegraph and GitHub cover enterprise search, and the founders take an acquisition or a job. Mutable.ai ended in an acquisition after a seed and moonrepo shut down despite an open source base, which is the pattern for this niche."
+ },
+ "analogs": [
+  {
+   "slug": "driver",
+   "relevance": "Context for codebases, Winter 2024, a close wedge.",
+   "outcome_summary": "Records show a seed as highest round, timing not used; open source and context tools raise modest rounds."
+  },
+  {
+   "slug": "sage-ai",
+   "relevance": "Self maintaining code knowledge base, Winter 2023.",
+   "outcome_summary": "Active with no post YC round found at the as_of date."
+  },
+  {
+   "slug": "mutable-ai",
+   "relevance": "AI for understanding and writing code, Winter 2022.",
+   "outcome_summary": "Seed, then acquired; a small exit for AI code tooling."
+  },
+  {
+   "slug": "moonrepo",
+   "relevance": "Open source build tool for large codebases.",
+   "outcome_summary": "Winter 2023, inactive with no round above the YC deal; a cautionary open source case."
+  },
+  {
+   "slug": "void",
+   "relevance": "Open source Cursor alternative, Summer 2024.",
+   "outcome_summary": "Active with no round found at the as_of date; open source usage without revenue."
+  },
+  {
+   "slug": "pagedraw",
+   "relevance": "Earlier developer tooling that depended on code understanding.",
+   "outcome_summary": "Winter 2018, raised a seed and shut down."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Open source usage does not convert to paid revenue",
+   "p": 0.45,
+   "evidence": "The platform is open source and self hosted, so enterprise users can run it free; moonrepo and Void had open source usage without a clear revenue stream.",
+   "analogs": [
+    "moonrepo",
+    "void"
+   ],
+   "mitigation": "Sell the enterprise edition with SSO, audit and support, and measure paid conversion early."
+  },
+  {
+   "risk": "Sourcegraph, GitHub and AI coding tools cover the need",
+   "p": 0.35,
+   "evidence": "Sourcegraph has sold enterprise code search for years, and GitHub and Cursor index code for their agents, so a three person team competes with bundled context.",
+   "analogs": [
+    "mutable-ai",
+    "sage-ai"
+   ],
+   "mitigation": "Win on on premises deployment, scale to millions of lines and neutral support for any agent."
+  },
+  {
+   "risk": "Coding agents search code natively",
+   "p": 0.3,
+   "evidence": "Agents such as Claude Code use agentic search over repositories directly, which weakens the need for a separate index for context.",
+   "analogs": [
+    "driver",
+    "void"
+   ],
+   "mitigation": "Offer an MCP server and shared team index that agents call, and sell cross repository search that single agents lack."
+  },
+  {
+   "risk": "Enterprise sales cycles outlast the runway",
+   "p": 0.25,
+   "evidence": "Large companies such as those named need security review for on premises software, which can take quarters; three founders must do sales and engineering.",
+   "analogs": [
+    "pagedraw",
+    "mutable-ai"
+   ],
+   "mitigation": "Start with team sized deals under procurement thresholds and add a sales hire after the seed."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Sourcegraph",
+   "what": "Enterprise code search and code intelligence, with Cody AI.",
+   "traction": "Long running enterprise vendor with listed enterprise plans.",
+   "source_url": "https://sourcegraph.com/docs/pricing/enterprise"
+  },
+  {
+   "name": "GitHub code search and Copilot",
+   "what": "Bundled search and AI inside GitHub.",
+   "traction": "Default for most teams on GitHub.",
+   "source_url": "https://github.blog/changelog/2024-10-29-github-copilot-code-review-in-github-com-public-preview/"
+  },
+  {
+   "name": "Augment Code and Cursor",
+   "what": "AI coding tools with their own codebase context engines.",
+   "traction": "Vendors claim reduced hallucinations on large repositories; unverified.",
+   "source_url": "https://www.augmentcode.com/tools/the-context-gap-why-some-ai-coding-tools-break"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Indexing millions of lines with fast regex search and retrieval for agents is hard engineering but well understood, and a small team has already built a working product. The risk is scaling to the largest repositories and keeping answers accurate across many repos."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Sourcegraph",
+   "GitHub",
+   "Cursor",
+   "Augment Code",
+   "Anthropic and OpenAI coding agents"
+  ],
+  "timeline_months": 6,
+  "rationale": "Several vendors already ship repository context and indexing, and agents can search code directly. An open source product reduces switching cost only if an enterprise deployment adds clear value."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Vendors report that AI coding tools miss context in large codebases, which supports demand for better code context.",
+    "source_url": "https://www.augmentcode.com/tools/the-context-gap-why-some-ai-coding-tools-break"
+   },
+   {
+    "claim": "Sourcegraph sells enterprise code search with prices starting in the thousands of dollars per year, showing paid demand.",
+    "source_url": "https://sourcegraph.com/docs/pricing/enterprise"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Turn open source usage into paid pilots.",
+   "actions": [
+    "Contact the largest open source users and offer an enterprise plan.",
+    "Track weekly active users per organization."
+   ],
+   "proof": "Three organizations paying for an enterprise license."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeatable enterprise revenue on top of the open source base.",
+   "actions": [
+    "Ship SSO, audit logs and an MCP server for agents.",
+    "Close five annual contracts above $20K."
+   ],
+   "proof": "$25K or more monthly recurring revenue and a measurable conversion rate from free to paid."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real usage at large organizations",
+   "evidence": "The founders state thousands of engineers at companies such as NVIDIA and Red Hat use the product, which is a rare early signal if true; it is self reported."
+  },
+  {
+   "point": "Founders have worked together for years",
+   "evidence": "The team met at McGill a decade ago and has built full time for over two years, which lowers co-founder risk."
+  }
+ ],
+ "brand": {
+  "name": "Sourcebot",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Sourcebot\" --era 2022+ : 9 characters, 3 syllables, invented or proper name; no outlier in the cohort tables.",
+  "strengths": [
+   "Descriptive of source code",
+   "Easy to spell and say"
+  ],
+  "weaknesses": [
+   "Sounds like a generic bot",
+   "Close in sound to Sourcegraph, so hard to own"
+  ],
+  "rationale": "A descriptive compound tells developers what it does, in the way GitLab and Sourcegraph do, and suits open source discovery, but it sounds generic and bot is a crowded suffix in 2025. The name is neutral for success."
+ },
+ "narrative": {
+  "headline": "A real open source product with a plausible seed path, but the odds in 13 months stay at the cohort level.",
+  "general_summary": "Sourcebot is an open source tool for searching and understanding large codebases, aimed at both developers and AI agents, with a three person team and claimed use at large companies. The need for better agent context is real, but Sourcegraph, GitHub, Cursor and Augment all address it, and open source products often struggle to turn usage into revenue. For the 13 month window I put the seed probability at 0.42, equal to the window adjusted anchor, because the winners test found that traction claims did not separate funded from unfunded companies. If a seed closes, $3M to $6M is the most likely band, with a large share at $1M to $3M. A Series A inside the window is 0.07. The main killer is free usage that never converts into paying enterprises."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-10-06 for about 13 months to 2026-11-17; seed means above about $1M from outside investors.",
+  "Only the input file was used for the company; the description's usage claims are the founders' and unverified.",
+  "Market search results naming other companies or dated after the as_of date were ignored.",
+  "Company already in YC; the YC odds are the prior for a random applicant.",
+  "The Open Source tag cohort is too small (n=10) to use as the main anchor."
+ ],
+ "sources": [
+  "https://sourcegraph.com/docs/pricing/enterprise",
+  "https://www.augmentcode.com/tools/the-context-gap-why-some-ai-coding-tools-break",
+  "https://github.blog/changelog/2024-10-29-github-copilot-code-review-in-github-com-public-preview/"
+ ]
 }

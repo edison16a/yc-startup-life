@@ -1,0 +1,436 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Fuse AI",
+  "one_liner": "Agentic Sales Platform",
+  "description": "AI native outbound sales platform that bundles lead data, enrichment, multichannel sequencing, buying signals and AI execution in one system for revenue teams. Twelve person team in San Francisco, Winter 2025 batch. Buyers are sales and revenue teams paying per seat or per credit, competing with the stacks of Clay, Apollo and AI SDR vendors.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.06,
+  "basis": "Starting prior is about 1 percent for a random applicant (0.6 to 2 percent, references/yc_acceptance.md). Up for a team of twelve, which is unusually large and suggests shipped product, and a B2B AI sales pitch that fits YC's agent theme. Down because AI outbound is one of the most crowded YC wedges, with Topo, Champ, Ciro, Persana and Bluebirds in earlier batches, and an all in one pitch is hard to tell from Apollo or Clay. Net about 3 percent; the company is already in the batch so this is for completeness.",
+  "why_it_fails": "YC would most likely say that AI outbound and all in one GTM platforms are crowded, that Apollo and Clay already bundle data, enrichment and sequencing, and that the pitch does not name a customer segment that Fuse serves better. Past AI SDR companies from the same wedge produced small rounds or sold early, so partners would ask what is different."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Narrow cohort python3 -I scripts/base_rates.py --tag Sales --years 2018-2025 --calibration-only: seed cond 75% (n=8, anecdote), series_a cond 17% (n=6), series_b 0% (n=1). Time table era 2022+: seed median 8 months from batch start (p75 about 20), series_a median 28 months, series_b median about 36 months.",
+    "adjustment_reason": "Window is 22.4 months, from 2025-01-06 to 2026-11-17, and counts a round above about 1M from outside investors closing inside it. Anchor 0.59 for B2B and 0.75 for the tiny Sales tag cohort. A 22 month window covers the 2022 and later p75 time to seed (14 to 20 months), so about 85 percent of eventual seeds fit: 0.59 times 0.85 is 0.50, which is 0.85x of the B2B anchor. A team of twelve and a hot sector are not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under 3M, common for AI sales tools that sell self serve."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022 and later median of 3.5M to 4.1M, the typical result for a live product."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong seed for an AI native company with a live product and a team of 12 or more, matching the winners test band shape."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Large seed after fast revenue growth; Clay level attention is rare for a new entrant."
+    }
+   ],
+   "why_it_fails": "The seed step fails if Fuse cannot show recurring revenue that survives churn, because AI outbound customers cancel quickly when reply rates fall and spam filters tighten. Ciro, Persana AI and Bluebirds reached seed rounds in this exact wedge but then sold or stalled, Champ and Topo show no round beyond the YC deal in their records, and Slik shut down. Investors will want proof that the platform is not a thin layer over Clay and an email tool."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Narrow cohort python3 -I scripts/base_rates.py --tag Sales --years 2018-2025 --calibration-only: seed cond 75% (n=8, anecdote), series_a cond 17% (n=6), series_b 0% (n=1). Time table era 2022+: seed median 8 months from batch start (p75 about 20), series_a median 28 months, series_b median about 36 months.",
+    "adjustment_reason": "Window 22.4 months. Series A for 2022 and later companies has p25 at 19 months and median 28, so about a third of eventual A raisers close by month 22. Anchor 0.26 times about 0.4 is 0.10, which is 0.4x of the anchor and comes from the window and the weak Sales tag history (A cond 17 percent, n=6)."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A below the 2022 and later YC median of 14.15M (stage_benchmarks.md), led by the seed investor."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M with quartiles 10M and 20M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series A led by a top fund after fast recurring revenue, above the 2022 and later p75 of about 20M."
+    }
+   ],
+   "why_it_fails": "A Series A inside 22 months needs fast recurring revenue in a category where reply rates fall as every competitor sends more email and where Apollo, Clay and Salesforce give bundled alternatives. Ciro, Persana AI and Bluebirds each stopped at seed and were acquired, and Avina stayed at seed, so the wedge has produced few Series A rounds."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Narrow cohort python3 -I scripts/base_rates.py --tag Sales --years 2018-2025 --calibration-only: seed cond 75% (n=8, anecdote), series_a cond 17% (n=6), series_b 0% (n=1). Time table era 2022+: seed median 8 months from batch start (p75 about 20), series_a median 28 months, series_b median about 36 months.",
+    "adjustment_reason": "Window 22.4 months. Series B median is about 36 months or later for 2022 and later YC companies, and the B2B cohort conditional rate is 16 percent. Inside the window it is a tail event, so 0.03."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      140000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin Series B below the 2022 and later p25 of 25M after growth slows."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      140000000,
+      350000000
+     ],
+     "p_band": 0.42,
+     "rationale": "Typical Series B near the 2022 and later median of 37M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      350000000,
+      900000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Upside Series B for a breakout, above the 2022 and later p75 of 57M."
+    }
+   ],
+   "why_it_fails": "A Series B inside 22 months would require a Clay like breakout in which revenue grows many times in a year. The Sales tag cohort has no Series B in n=1 and the AI outbound analogs show a ceiling at seed, so only a break from the pattern gets there."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": 0.0,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3). Narrow cohort python3 -I scripts/base_rates.py --tag Sales --years 2018-2025 --calibration-only: seed cond 75% (n=8, anecdote), series_a cond 17% (n=6), series_b 0% (n=1). Time table era 2022+: seed median 8 months from batch start (p75 about 20), series_a median 28 months, series_b median about 36 months.",
+    "adjustment_reason": "Window 22.4 months. The 2022 and later B2B cohort has 0 Series C in n=3 and the median C comes at 5 years, so 0.01 is a floor for an extreme breakout."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Smaller Series C or growth round near the 2022 and later p25 to median of 35M to 45M."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1500000000
+     ],
+     "p_band": 0.42,
+     "rationale": "Typical later round, 2022 and later Series D plus median 97.5M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      5000000000
+     ],
+     "p_band": 0.18,
+     "rationale": "Category leader round above 120M, matching the top quartile of 2022 and later Series D plus rounds."
+    }
+   ],
+   "why_it_fails": "A Series C inside 22 months of starting would make Fuse a category leader in AI sales within two years, ahead of Clay and Apollo that already hold the customers. None of the AI outbound YC analogs in the data came near it, and the Series C base rate rests on only three B2B companies, so the number is a floor rather than an estimate."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.38
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.1
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.02
+   }
+  ],
+  "why_it_fails": "Most outcomes in this wedge are an early acquisition by a larger sales tool or a stall after seed, as Ciro, Persana AI and Bluebirds show. A venture sized outcome needs a differentiated data or signal asset that Clay and Apollo cannot copy, and the twelve person team would need to find it before its cash runs out, which is why the failure share is set at half."
+ },
+ "analogs": [
+  {
+   "slug": "ciro",
+   "relevance": "GTM AI that books meetings, Summer 2022 outbound agent",
+   "outcome_summary": "Raised a seed then was acquired; the wedge supports small exits."
+  },
+  {
+   "slug": "persana-ai",
+   "relevance": "Sales agents with 100 plus data sources",
+   "outcome_summary": "Raised a seed, then acquired; no Series A."
+  },
+  {
+   "slug": "bluebirds",
+   "relevance": "Outbound automation from buying signals",
+   "outcome_summary": "Seed then acquired; signals alone did not reach a Series A."
+  },
+  {
+   "slug": "topo",
+   "relevance": "All in one AI platform for outbound sales, Winter 2024",
+   "outcome_summary": "No round beyond the YC deal found in the record; closest competitor in positioning."
+  },
+  {
+   "slug": "slik",
+   "relevance": "Slik automates your sales, 2017 predecessor",
+   "outcome_summary": "Shut down; early sales automation failed to retain customers."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Customers churn when AI outbound reply rates fall and email deliverability rules tighten",
+   "p": 0.4,
+   "evidence": "Mass AI generated outreach raises spam filtering and lowers reply rates, and AI SDR vendors report high churn after the first months.",
+   "analogs": [
+    "slik",
+    "champ"
+   ],
+   "mitigation": "Focus on signal driven, low volume, high intent outreach and report booked meetings, not emails sent."
+  },
+  {
+   "risk": "Clay, Apollo and ZoomInfo bundle the same data and automation and out distribute a new entrant",
+   "p": 0.4,
+   "evidence": "Clay raised a Series B of 46M in June 2024 and Apollo sells a 230M contact database with sequencing in the same product, so an all in one pitch meets entrenched leaders.",
+   "analogs": [
+    "persana-ai",
+    "bluebirds"
+   ],
+   "mitigation": "Choose a vertical or a proprietary signal source that the horizontal tools do not cover."
+  },
+  {
+   "risk": "Team of twelve burns cash before revenue proves the all in one scope",
+   "p": 0.25,
+   "evidence": "Building data, enrichment, multichannel sending and execution needs many integrations and a large team, which raises monthly burn.",
+   "analogs": [
+    "ciro",
+    "avina"
+   ],
+   "mitigation": "Narrow to one workflow first and sell it, then expand."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Clay",
+   "what": "Data enrichment and GTM workflow platform",
+   "traction": "46M Series B in June 2024 at 500M valuation",
+   "source_url": "https://siliconangle.com/2024/06/27/clay-raises-46m-500m-valuation-enhance-ai-driven-sales-marketing-platform"
+  },
+  {
+   "name": "Apollo.io",
+   "what": "All in one prospecting database with sequences",
+   "traction": "100M Series D in 2023",
+   "source_url": "https://sacra.com/research/clay-vs-apollo/"
+  },
+  {
+   "name": "Artisan and other AI SDR vendors",
+   "what": "AI sales agents that run outbound",
+   "traction": "Dozens of small funded AI SDR companies",
+   "source_url": "https://www.extruct.ai/research/aisdr/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "Enrichment, sequencing and LLM message writing are well known building blocks and a twelve person team can ship them in three months. The hard parts are data quality, deliverability and integrations rather than research, so complexity is not a moat."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Clay",
+   "Apollo.io",
+   "ZoomInfo",
+   "Salesforce",
+   "HubSpot"
+  ],
+  "timeline_months": 6,
+  "rationale": "Incumbents already own the data and the sequencing, and adding agent features is a short build. A new entrant has no distribution edge unless it wins a segment, so the risk of being copied or squeezed is high."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Clay raised a 46M Series B in June 2024, showing large paid demand for outbound data and workflow tools",
+    "source_url": "https://siliconangle.com/2024/06/27/clay-raises-46m-500m-valuation-enhance-ai-driven-sales-marketing-platform"
+   },
+   {
+    "claim": "Apollo sells a 230M contact database with multichannel sequences at prices starting near 49 dollars per month, evidence of paid demand and price pressure",
+    "source_url": "https://sacra.com/research/clay-vs-apollo/"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show reply and booked meeting rates for real customers",
+   "actions": [
+    "Run pilots with five revenue teams",
+    "Track meetings booked per week"
+   ],
+   "proof": "Five paying teams with a documented meeting rate"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show retention and revenue that survive past three months",
+   "actions": [
+    "Pick one segment and price by outcome",
+    "Fix deliverability with domain warm up",
+    "Publish retention by cohort"
+   ],
+   "proof": "Monthly revenue above 50K with gross retention above 80 percent"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Differentiate from Clay and Apollo with a data or signal edge",
+   "actions": [
+    "Build a proprietary signal source",
+    "Add enterprise integrations"
+   ],
+   "proof": "Annual recurring revenue near 2M and net revenue retention above 100 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large and proven paying market for outbound tools",
+   "evidence": "Clay raised 46M in 2024 and Apollo sells a mature product, so teams spend on this category.",
+   "source_url": "https://siliconangle.com/2024/06/27/clay-raises-46m-500m-valuation-enhance-ai-driven-sales-marketing-platform"
+  },
+  {
+   "point": "Twelve person team in the batch suggests a built product and capacity to sell",
+   "evidence": "Input lists a team size of 12 and a full feature description.",
+   "source_url": "https://fuseai.com/"
+  }
+ ],
+ "brand": {
+  "name": "Fuse AI",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Fuse AI\" --era 2022+: kind name_plus_descriptor, length 5 to 6; cohort alive 93.7 percent, exit 4.1 percent, no outlier.",
+  "strengths": [
+   "Short and easy to say",
+   "Fuse suggests joining a stack into one"
+  ],
+  "weaknesses": [
+   "AI suffix is generic and date stamped",
+   "Hard to search and close to other Fuse brands"
+  ],
+  "rationale": "Name plus AI descriptor names are common among 2024 AI companies (557 in the cohort) and give no edge. The word Fuse fits the bundle story but is common and will not help growth. Neutral."
+ },
+ "narrative": {
+  "headline": "A crowded AI outbound pitch with a large team; a seed inside 22 months is likely but a Series A is not.",
+  "general_summary": "Fuse AI bundles data, enrichment and AI sequencing for sales teams, a wedge with strong paid demand but heavy competition from Clay, Apollo and many AI SDR startups. For 2022 and later B2B YC companies about 59 percent reach a seed and most do so inside 22 months, so the seed estimate is 50 percent for the window. Direct YC analogs (Ciro, Persana AI, Bluebirds) raised a seed then sold, which pulls the Series A chance well below the anchor. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "The input has no traction data; seed odds assume a normal Winter 2025 B2B company with a live product and 12 people.",
+  "Window 22.4 months; seed means a round above about 1M from outside investors closing inside it.",
+  "Sales tag cohort has n=8 and is an anecdote; the B2B cohort is the main anchor."
+ ],
+ "sources": [
+  "https://siliconangle.com/2024/06/27/clay-raises-46m-500m-valuation-enhance-ai-driven-sales-marketing-platform",
+  "https://sacra.com/research/clay-vs-apollo/",
+  "https://www.extruct.ai/research/aisdr/",
+  "https://fuseai.com/"
+ ]
+}
