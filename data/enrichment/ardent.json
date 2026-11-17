@@ -1,0 +1,52 @@
+{
+  "slug": "ardent",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Teams building with coding agents and AI data agents that run against production Postgres databases (Supabase, AWS RDS, PlanetScale users)",
+  "problem": "Agents need realistic copies of production data to test safely, but cloning large Postgres databases is slow and replicas are limited in number.",
+  "business_model": "Usage and team subscription for database branching infrastructure (plans not listed publicly)",
+  "product_category": "Developer infrastructure: Postgres database sandboxes and branching for agents",
+  "founded_year": 2025,
+  "founders": [
+    {"name": "Vikram Chennai", "role": "CEO", "prior_employers": [], "education": ["Cornell, CS"], "technical": true, "previous_startups": ["Ardent AI Data Engineer (earlier product of the same company, churned after reaching roughly $100K to $200K ARR by differing accounts)"], "age_at_founding": null, "age_source": null, "background_notes": "YC page says former ML engineer, employer not named. A Launch HN summary names a co-founder Evan, not confirmed on the YC page, so not listed."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "pre_seed", "date": "2025-09", "amount_usd": 2150000, "post_money_usd": null, "valuation_basis": null, "investors": ["Crane Venture Partners", "Active Capital"], "source_url": "https://www.globenewswire.com/de/news-release/2025/09/25/3156336/0/en/Ardent-AI-Raises-2-15M-to-Build-the-First-AI-Data-Engineer.html"}
+  ],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/ardent"},
+  "competition_at_founding": {
+    "as_of": "2026-05",
+    "competitors": [
+      {"name": "Neon", "what": "Serverless Postgres with copy-on-write branching, rebuilt for agents", "traction_then": "Underpins Databricks Lakebase branching", "funding_then": "acquired by Databricks (per search summary, not verified here)", "source_date": "2026", "source_url": "https://neon.com/blog/branching-as-the-new-standard-for-relational-databases"},
+      {"name": "PlanetScale", "what": "Managed database with branching, listed as main competitor", "traction_then": "Established", "funding_then": "not found", "source_date": "2026", "source_url": "https://www.ai-market-watch.com/company/ardent-ai"},
+      {"name": "Database Lab Engine", "what": "Thin clones of Postgres for testing", "traction_then": "Open source, established", "funding_then": "not found", "source_date": "2026", "source_url": "https://www.ai-market-watch.com/company/ardent-ai"}
+    ]
+  },
+  "technical_complexity": {"rating": 4, "rationale": "Copy-on-write cloning of arbitrary Postgres databases in about 6 seconds with compute and storage isolation, working with third-party providers without migration, is hard systems work."},
+  "defensibility": {"rating": 2, "moat_types": [], "rationale": "Neon, Databricks, pgEdge and others ship branching natively, and a bolt-on cloner for third-party databases depends on provider internals."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["Neon", "Databricks Lakebase", "Supabase", "PlanetScale"], "outcome": "Database vendors were adding branching for agents through 2026 (Databricks, pgEdge Starfleet in September 2026). No acquisition of Ardent is reported."},
+  "market_need_then": "Coding agents were being given database access in 2026, and a Columbia DAPLab post in May 2026 argued branchable databases were not ready for agent workloads. Ardent's HN launch was May 13, 2026.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "real_word",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say", "friendly_tone"],
+    "name_problems": ["generic", "confusable"],
+    "domain_note": "Uses tryardent.com, a try-prefix domain, indicating the exact ardent.com was unavailable (inference, not sourced).",
+    "identity": {"logo": "not described by a source", "mascot_or_character": null, "visual_style": "Developer tool landing page with customer logos and testimonials", "voice_and_tone": "Confident: Ship fast and don't break things"},
+    "brand_signature": "Clone any Postgres DB in 6 seconds",
+    "rebrands": [],
+    "community_and_virality": "Launch HN thread in May 2026. No merch or fan community found. Search results show the name is shared with Ardent Health (NYSE ARDT) and others.",
+    "brand_strength": {"rating": 2, "rationale": "Clear speed message and a Launch HN post, but a generic name shared with a public hospital operator and an earlier product under the same name."},
+    "brand_effect_on_outcome": "neutral",
+    "sources": ["https://tryardent.com", "https://alt-hn.vercel.app/item/48124436"]
+  },
+  "pivots": [
+    {"date": "2026-01", "from": "AI Data Engineer that generated data pipelines and migrations", "to": "Postgres database sandboxes and branching for agents", "why": "The founder says the first product churned after reaching almost $200K ARR. Pivot date is approximate and not stated in a source."}
+  ],
+  "success_factors": ["successful_pivot"],
+  "failure_factors": [],
+  "outcome_analysis": "Ardent is a Spring 2026 company with no exit. It pivoted from an AI Data Engineer that churned to Postgres sandboxes for agents, helped by earlier pre-seed capital of $2.15M raised in September 2025. Success is unproven: database vendors are shipping branching natively, but the zero-migration claim is a differentiator, and a listing reports more than 10,000 sandboxes per month by July 2026 (aggregator figure).",
+  "sources": ["https://www.ycombinator.com/companies/ardent", "https://tryardent.com", "https://www.globenewswire.com/de/news-release/2025/09/25/3156336/0/en/Ardent-AI-Raises-2-15M-to-Build-the-First-AI-Data-Engineer.html", "https://pulse2.com/ardent-ai-2-15-million-pre-seed-funding-secured-for-advancing-ai-data-engineer-platform/amp/", "https://alt-hn.vercel.app/item/48124436", "https://www.ai-market-watch.com/company/ardent-ai", "https://neon.com/blog/branching-as-the-new-standard-for-relational-databases"],
+  "notes": "The GlobeNewswire page returned 403; the round is confirmed by its search-result title and a Pulse 2.0 headline, with investors from a search summary. The round predates the pivot and belongs to the earlier Ardent AI product. ARR figures conflict ($100K+ aggregator vs almost $200K on the YC page). Batch labels vary (S26, P26, X26) across sources. Neon acquisition by Databricks is from general knowledge of the search context and not verified in an opened source."
+}
