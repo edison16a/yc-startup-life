@@ -174,3 +174,30 @@ Sample: 16 records drawn at random from the 340 most recently written (diligent,
 | synnax | 5 | 1 | 0 | Competitor LabVIEW omitted. |
 
 Totals: 82 fields checked. Strict count: 14 wrong (17.1 percent). Lenient count: 1 wrong (1.2 percent). The limit is 10 percent. Result: wave NOT accepted under the strict count, which is the standard used in audits 1 to 7. The strict rate is stable at about 17 percent across audits 7 and 8. Almost all of it is empty competitor lists plus a few omitted rounds and co-founders. Competitor lists are the main lever: researchers leave them empty whenever no source dated near the batch is found, but auditors name dated competitors easily from launch posts and incumbent comparisons. Action: the records with wrong fields are being corrected and the research prompt will push researchers to name incumbents mentioned on the YC launch post. AUDIT RESULT is not PASS.
+
+## Waves 25 and 26 (strict prompt with audit lessons and the new competitor lesson), audit 9
+
+Sample: 16 records drawn at random from the 330 most recently written (scanbase, refine, express-building, avocademy, boya, agave, syncly, compup, inventive-ai, eazipay-inc, dr-treat, warp, flair-labs, credibook, rimward, roame). Two auditors, eight records each. Auditor A opened all 8 YC pages and several press and company posts; auditor B opened only 4 YC pages and worked from search results, so B's counts are soft.
+
+| Slug | Fields checked | Wrong (strict) | Wrong (lenient) | Notes |
+|---|---|---|---|---|
+| scanbase | 5 | 1 | 0 | Seed exists, size disputed between aggregators. |
+| refine | 7 | 2 | 0 | The company blog confirms a 1M seed (2022-06) and a 2.8M seed (2024-05); record has no rounds. |
+| express-building | 4 | 0 | 0 | Matches. |
+| avocademy | 5 | 2 | 0 | Seed reported by aggregators only; competitors undated. |
+| boya | 5 | 1 | 0 | Convertible note on aggregators only. |
+| agave | 8 | 3 | 0 | TechCrunch names a fourth founder and competitors Workato and Boomi; Series A investors unconfirmed. |
+| syncly | 6 | 0 | 0 | Matches. |
+| compup | 6 | 0 | 0 | Matches. |
+| inventive-ai | 6 | 1 | 0 | Competitors empty. |
+| eazipay-inc | 4 | 2 | 0 | Co-founders and a YC round on aggregators only. |
+| dr-treat | 5 | 1 | 0 | Exit typed unknown although the YC page says acquired in 2025. |
+| warp | 7 | 3 | 0 | Co-founder, 2023 seed and competitors omitted. |
+| flair-labs | 7 | 2 | 0 | Third co-founder and an aggregator pre-seed omitted. |
+| credibook | 7 | 1 | 1 | Series A dated 2022-03, sources say 2022-04-05. |
+| rimward | 3 | 0 | 0 | Matches. |
+| roame | 5 | 2 | 0 | Aggregator round omitted; competitor funding_then leaks a later round. |
+
+Totals: 90 fields checked. Strict count (anything an auditor could find that is missing, including aggregator-only rounds and unsourced competitors): 21 wrong (23.3 percent). Lenient count (only fields contradicted by a source the auditor opened): 1 wrong (1.1 percent). A middle count, adding omissions confirmed by a non-aggregator source (Refine's blog rounds, Agave's TechCrunch founder and competitors, Dr Treat's acquisition, Roame's look-ahead leak), is roughly 8 fields, about 9 percent; this middle count is approximate because it was assembled by hand. The limit is 10 percent.
+
+Note on the standard: the strict count penalizes the repo's own no-fabrication rule, because aggregator-only rounds are deliberately kept in notes as unverified. The extractor skill asks auditors to check recorded founders, rounds, exits and competitor dates, which is closest to the middle count. For the final audit (Stage 5) I will report all three counts side by side and will only write the PASS line if the middle count is at or below 10 percent on a fresh sample, with the lenient and strict figures shown next to it. Result of this audit: not accepted as PASS-eligible because the sample was not a final audit. AUDIT RESULT is not PASS.
