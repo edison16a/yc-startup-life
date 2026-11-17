@@ -1,0 +1,438 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Blueshoe",
+  "one_liner": "The AI-Native Consumer + Plaintiff Law Firm",
+  "description": "Blueshoe is a full-stack AI-native law firm for consumers and plaintiffs. People get legal guidance from a web app or through AI assistants, and when representation is needed Blueshoe attorneys take cases through to resolution with AI tools and operational support. Revenue would come from contingency fees on plaintiff cases and fees for consumer matters. Two founders, San Francisco, Spring 2025 batch.",
+  "as_of": "2025-04-07"
+ },
+ "yc_acceptance": {
+  "p": 0.5,
+  "p_low": 0.25,
+  "p_high": 0.8,
+  "basis": "The company is already in the Spring 2025 batch, so this is a note only. A random applicant starts near 1 percent (references/yc_acceptance.md). A law firm model run by two founders is unusual, and ownership rules for law firms limit outside investors, which would pull a cold application down, while the plaintiff AI theme and a clear paying customer type pull it up.",
+  "why_it_fails": "YC would most plausibly say no because a firm that owns case outcomes is a services business with contingency risk and licensing limits, not software. Reviewers would ask whether two founders include a licensed trial lawyer, how cases are sourced, and why this is not simply a lawyer using ChatGPT."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.48,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (seed 59 percent known only, 49 to 65 percent range, n=126, right censored); tag AI cohort 63 percent, n=81. The Legal tag cohort has only 2 researched companies in 2018-2021, so it is not used.",
+    "adjustment_reason": "Window is 19.3 months, from 2025-04-07 to 2026-11-17. The anchor is an ever number; the time to milestones table (era 2022+) has a seed median of 6 months and a 75th percentile of 14 months, so most eventual seed raisers have raised by 19 months, and I take about 0.85 of the anchor. Legal AI funding is hot, but a law firm has ownership limits and a small team, so I do not lift above the anchor. The odds do not rank this company against others."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "The seed stalls if investors treat a two person firm as a services business: contingency fee revenue is lumpy and arrives years after a case is signed, and state rules on who may own a law firm limit equity investors. Plaintiff AI tooling vendors such as Eve and Supio raised large rounds as software, so money flows to tools rather than to firms. Spire Law, the closest firm analog, never raised past the YC deal."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (series A cond 26 percent, n=74); tag AI cond 25 percent, n=51. Time to series A median 29 months from batch start, 25th percentile 22 months (B2B 2022+, n=19), so only the fast tail lands inside a 19 month window.",
+    "adjustment_reason": "The ever anchor is 0.25. Inside a 19 month window only the fast tail of seed raisers reach a Series A, so I use about a quarter of the anchor, 0.06. This is more than 2x below the anchor because of the window, not because of company quality."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin A with a flat or small step up on modest recurring revenue. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      22000000
+     ],
+     "post_money_usd": [
+      60000000,
+      130000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022+ A: the YC table median is $15M and public deal size medians are $17M to $20M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      22000000,
+      40000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A after a breakout year, with a platform story. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "A Series A inside 19 months would need a signed case inventory with proven settlement economics, which needs a full case cycle of 18 to 36 months. Investors would also want a software layer that scales without more lawyers. Darrow reached a Series A as a data and case sourcing tool sold to firms, not as a firm itself, which shows which shape of this business gets funded."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.39,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18; 2022-2025 B2B tag AI cond 8 percent, n=13, censored). This step is an ever number, not a window number, and lies beyond the forecast window.",
+    "adjustment_reason": "Below the 0.39 anchor at 0.64 of it: a firm model has services margins and limited investor appetite for law firm ownership, and Darrow's software shape is the route that worked."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      120000000,
+      220000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin B with a flat step up. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      60000000
+     ],
+     "post_money_usd": [
+      220000000,
+      500000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical B: YC 2022+ median is $40M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B led by a top growth fund. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "A Series B needs a scalable platform with margins close to software, but a firm's profit depends on attorney hours and case outcomes. If revenue per lawyer plateaus, investors price it like a professional services company. Darrow is the benchmark that reached a B, by selling to law firms rather than being one."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.43,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall cond 36 to 43 percent). Ever number, beyond the window.",
+    "adjustment_reason": "At 0.70 of the 0.43 anchor because few law firm style companies get to growth rounds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin C. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C, 2022+ YC median $74M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside C for a category leader. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "Series C and later requires a national platform in a regulated profession, and ownership rules for law firms vary by state and constrain structure. Reaching it would need a licensed entity arrangement that growth investors accept, and a repeatable intake engine in several states. Few analogs in the data come close to that."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
+    ],
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.05
+   }
+  ],
+  "why_it_fails": "Most paths end in a small practice or a stall. A two person firm can be profitable and still stay too small for venture returns, as Spire Law did. A shutdown follows if early cases settle slowly while the team pays for intake and malpractice cover, or if general AI assistants give consumers free legal answers before they need a firm."
+ },
+ "analogs": [
+  {
+   "slug": "spire-law",
+   "relevance": "Tech enabled litigation firm that joined YC, the closest firm model.",
+   "outcome_summary": "Became a small self sustaining Florida firm with no post YC round on record, the base case for a firm model."
+  },
+  {
+   "slug": "darrow",
+   "relevance": "Plaintiff side legal tech that grew by selling case sourcing to firms.",
+   "outcome_summary": "Reached a Series B on a software and data shape, showing what investors fund in this space."
+  },
+  {
+   "slug": "abel",
+   "relevance": "AI litigation tooling from a small team.",
+   "outcome_summary": "Listed inactive within about a year of launch with no post YC round, a failure case in crowded litigation AI."
+  },
+  {
+   "slug": "cobbery",
+   "relevance": "Small team selling a litigation agent to lawyers.",
+   "outcome_summary": "Active with four people and no round on record after Summer 2022."
+  },
+  {
+   "slug": "flo",
+   "relevance": "Slow capital efficient legal vertical company.",
+   "outcome_summary": "Raised small rounds and reached a Series A years later, showing slow paths in legal."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "The firm model scares equity investors and runs into ownership rules",
+   "p": 0.35,
+   "evidence": "Spire Law, the closest firm analog, stayed a small practice with no post YC round; money in plaintiff AI went to software vendors such as Eve and Supio.",
+   "analogs": [
+    "spire-law",
+    "darrow"
+   ],
+   "mitigation": "Build the software and data layer as a separate licensable asset and use a compliant structure with a managing attorney."
+  },
+  {
+   "risk": "Contingency cash arrives too slowly to fund the team",
+   "p": 0.3,
+   "evidence": "Personal injury cases take 12 to 36 months to settle, and intake costs are paid up front.",
+   "analogs": [
+    "spire-law",
+    "cobbery"
+   ],
+   "mitigation": "Mix fast fee consumer matters with plaintiff cases and use litigation finance."
+  },
+  {
+   "risk": "Free general AI assistants capture the consumer legal question",
+   "p": 0.25,
+   "evidence": "Consumers already ask general assistants legal questions, and the product's front door is a chat interface.",
+   "analogs": [
+    "abel"
+   ],
+   "mitigation": "Win on representation and trial, which assistants cannot do."
+  },
+  {
+   "risk": "Well funded plaintiff AI vendors move into firm ownership or alliances",
+   "p": 0.2,
+   "evidence": "Eve raised $47M in January 2025 and Supio raised a Series A, both aiming at plaintiff firms.",
+   "analogs": [
+    "darrow"
+   ],
+   "mitigation": "Pick a case type where the firm owns proprietary outcome data."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Eve",
+   "what": "AI platform for plaintiff law firms.",
+   "traction": "Raised $47M led by a16z in January 2025.",
+   "source_url": "https://www.lawnext.com/2025/01/eve-intelligent-partner-for-pi-firms-raises-47m-in-round-led-by-major-vc-firm-andreessen-horowitz.html"
+  },
+  {
+   "name": "Supio",
+   "what": "Gen AI for personal injury and mass tort case work.",
+   "traction": "Raised a $25M Series A.",
+   "source_url": "https://legaltechnology.com/personal-injury-and-mass-tort-gen-ai-startup-supio-raises-25m-series-a/"
+  },
+  {
+   "name": "Finch",
+   "what": "Pre litigation platform for personal injury firms.",
+   "traction": "Launched April 2025 after a Sequoia led round.",
+   "source_url": "https://www.builtinnyc.com/articles/finch-launches-platform-for-personal-injury-firms-20250416"
+  },
+  {
+   "name": "Status quo: traditional plaintiff firms and lead generators",
+   "what": "Ad driven personal injury firms that buy cases and staff paralegals.",
+   "traction": "Incumbent market with large advertising spend.",
+   "source_url": "https://www.lawnext.com/2025/01/eve-intelligent-partner-for-pi-firms-raises-47m-in-round-led-by-major-vc-firm-andreessen-horowitz.html"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "The software part is a case intake and drafting app that two engineers can build in three months with current models. The hard part is not technical: it is law firm licensing, case sourcing, malpractice cover and winning cases, none of which a small team can speed up with code."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Eve",
+   "Supio",
+   "EvenUp",
+   "large personal injury firms"
+  ],
+  "timeline_months": 12,
+  "rationale": "Funded tool vendors can add consumer facing features quickly, and big firms can adopt tools themselves. A law firm model is harder to copy because of licensing, so the risk is moderate."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Plaintiff side legal AI drew large rounds in 2024 and 2025 (Eve $47M, Supio Series A), showing firms pay for tools that raise case throughput.",
+    "source_url": "https://www.lawnext.com/2025/01/eve-intelligent-partner-for-pi-firms-raises-47m-in-round-led-by-major-vc-firm-andreessen-horowitz.html"
+   },
+   {
+    "claim": "Personal injury firms already pay for case workflow software, the status quo that AI replaces.",
+    "source_url": "https://legaltechnology.com/personal-injury-and-mass-tort-gen-ai-startup-supio-raises-25m-series-a/"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "A visible case pipeline with settled results.",
+   "actions": [
+    "Sign a steady flow of consumer and plaintiff matters through a compliant entity.",
+    "Publish cycle time and settlement metrics against typical firms."
+   ],
+   "proof": "Dozens of signed cases and the first settlements, with cost per case below the traditional average."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show software like economics.",
+   "actions": [
+    "Raise revenue per lawyer through automation of intake and drafting.",
+    "Open a second case type or state."
+   ],
+   "proof": "Revenue per attorney well above peers with stable margins."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Plaintiff AI is a funded, fast moving category",
+   "evidence": "Eve, Supio and Finch all raised from top funds in 2024 and 2025.",
+   "source_url": "https://www.lawnext.com/2025/01/eve-intelligent-partner-for-pi-firms-raises-47m-in-round-led-by-major-vc-firm-andreessen-horowitz.html"
+  },
+  {
+   "point": "The firm owns the customer relationship and outcome data",
+   "evidence": "A firm gets case outcome data that tool vendors only see in part, which can power better intake and pricing."
+  }
+ ],
+ "brand": {
+  "name": "Blueshoe",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score Blueshoe --era 2022+ : kind invented_or_proper, alive 92.7 percent, n=1826",
+  "strengths": [
+   "Memorable and friendly, which suits a consumer front door",
+   "Easy to say and spell"
+  ],
+  "weaknesses": [
+   "Says nothing about law, and a law firm needs to signal trust and seriousness"
+  ],
+  "rationale": "The name is a plain invented compound word with no survival difference in the cohort data. Legal brands such as Darrow also use non descriptive names, so it will not decide the outcome, though a consumer law brand has to earn trust through results."
+ },
+ "narrative": {
+  "headline": "An interesting firm shaped bet in a hot plaintiff AI market, with a coin flip on a seed over 19 months and long odds beyond.",
+  "general_summary": "Blueshoe is a law firm run with AI tools, serving consumers and plaintiffs. Plaintiff AI tooling has raised large rounds, which helps sentiment, but the money has gone to software vendors, and the closest firm analog, Spire Law, never raised past the YC deal. The seed estimate for the 19 month window sits near the B2B cohort anchor and does not rank this company against others. A Series A inside the window is unlikely because case cycles are long. The path that worked in the data was Darrow's, a software and data business sold to firms. A pivot toward licensable software is the main upside route."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-04-07, using only the description file and market searches.",
+  "Window from 2025-04-07 to 2026-11-17 is 19.3 months. Seed means a financing above about $1M from outside investors that closes inside the window; series_a given seed is for the same window.",
+  "Funding anchors use the 2022-2025 B2B cohort, which is right censored; the ever rate is discounted for the window using the time to milestones table.",
+  "Two founders; whether either is a licensed attorney is unknown and assumed."
+ ],
+ "sources": [
+  "https://www.lawnext.com/2025/01/eve-intelligent-partner-for-pi-firms-raises-47m-in-round-led-by-major-vc-firm-andreessen-horowitz.html",
+  "https://legaltechnology.com/personal-injury-and-mass-tort-gen-ai-startup-supio-raises-25m-series-a/",
+  "https://www.builtinnyc.com/articles/finch-launches-platform-for-personal-injury-firms-20250416",
+  "https://carta.com/data/state-of-private-markets-q3-2026-full-report/"
+ ]
+}

@@ -1,0 +1,476 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Unsiloed AI",
+    "one_liner": "API for parsing multimodal unstructured data",
+    "description": "Unsiloed AI sells an API that parses multimodal documents with text, tables, images and charts into structured, chunked and LLM ready data for RAG pipelines and document automation. Customers are AI teams at startups and enterprises paying per page or by usage. Team of 2 in San Francisco, Fall 2025 batch. The company states it beats several parsing vendors on public benchmarks and parses hundreds of thousands of documents, which is unverified.",
+    "as_of": "2025-10-06"
+  },
+  "yc_acceptance": {
+    "p": 0.02,
+    "p_low": 0.008,
+    "p_high": 0.05,
+    "basis": "Already in the Fall 2025 batch, so reported for completeness. Start at the roughly 1 percent prior, lift for a technical team with a working API and stated usage, and for AI infrastructure fitting YC priorities, then discount because document parsing was crowded by 2025 and benchmark claims are self reported.",
+    "why_it_fails": "YC would most plausibly say no because document parsing for RAG already had funded YC companies (Reducto W24, Extend W23, Pulse S24) that were ahead on customers and funding, and a two person team with self reported benchmarks does not show why it wins against them."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.36,
+      "anchors": {
+        "base_rate": 0.52,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --tag AI: seed 45% / 52% / 58%, cond 52% (n=533). Narrow cohort: --industry B2B --tag Infrastructure seed 47% / 51% / 55% (n=43). Timing: time_to_milestones.csv era:2022+ months_to_seed p25 3, p50 6, p75 14.2.",
+        "adjustment_reason": "The anchor of 0.52 is the ever reached figure. The window is 13 months from 2025-10-06 to 2026-11-17; era 2022+ seed timing has a median of 6 months and p75 of 14, so about 65 to 70 percent of eventual raisers are inside it, giving about 0.35. I add a little for the hot AI infrastructure category but stay under 1.25 times the windowed figure, so 0.36. The odds do not rank this company against others."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000,
+            3000000
+          ],
+          "post_money_usd": [
+            8000000,
+            18000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Small post YC round of $1M to $3M, typical when a two to four person team raises from angels and micro funds soon after demo day. Pulse (S24) raised a $3.9M seed and Reducto an $8.4M seed, which sets the document parsing range."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            6000000
+          ],
+          "post_money_usd": [
+            15000000,
+            30000000
+          ],
+          "p_band": 0.36,
+          "rationale": "Institutional seed of $3M to $6M, near the 2022 and later median of $3.5M in round_benchmarks.csv, which includes the YC deal so it reads low. Pulse (S24) raised a $3.9M seed and Reducto an $8.4M seed, which sets the document parsing range."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Larger institutional seed of $6M to $12M, where press covered 2026 raises had their median of $6.0M; needs live revenue or a standout founder story."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Upside seed above $12M, seen in 2025 voice, document and agent categories when a lab style team is bid up by several funds."
+        }
+      ],
+      "why_it_fails": "The most likely miss is that investors see a crowded category where Reducto, Extend and Pulse already own the seed attention and a two person team has not shown customer retention beyond claimed usage. Foundation model vendors also keep improving their own document parsing. Analogs Indexical (W23) and Fileforge (W24) built document APIs and ended inactive after small rounds, showing the segment punishes undifferentiated tools."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.1,
+      "anchors": {
+        "base_rate": 0.25,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --tag AI: series_a cond 25% (n=276), ever 13% known-only, range 11% to 24%. Era 2022+ months_to_series_a p50 28.",
+        "adjustment_reason": "The anchor is the ever reached figure. The forecast window is 13 months from the as of date, and months_to_series_a in time_to_milestones.csv has a median near 28 to 35 months, so only a small share of eventual Series A raisers get there inside the window. Hence the probability is well below the anchor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            6000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin or small Series A, common for vertical software with early but modest revenue."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            18000000
+          ],
+          "post_money_usd": [
+            50000000,
+            100000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Central band around the 2022 and later Series A median of $15M with p25 $11M."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Strong growth round led by a top tier fund."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside where the category is hot and revenue compounds fast."
+        }
+      ],
+      "why_it_fails": "A Series A needs a clear revenue base and defensibility against Reducto and Extend, who raised large Series A rounds. Inside roughly a year after seed Unsiloed would need to show strong net revenue retention from enterprise customers and an edge that general vision language models do not erase. Pulse took about eight months from batch to seed and has not shown an A, which shows how hard the step is."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.03,
+      "anchors": {
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --tag AI: series_b cond 20% (n=70), ever 3% known-only.",
+        "adjustment_reason": "Series B inside a window of 13 months is rare: months_to_series_b has a median of 36 to 47 months from the batch start in time_to_milestones.csv, so almost no company reaches it this fast. Only a breakout would."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000,
+            20000000
+          ],
+          "post_money_usd": [
+            80000000,
+            150000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Thin Series B or extension round, used when growth slowed after the Series A and investors price the company on revenue multiples alone."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            35000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Central band; 2022 and later Series B median is $40M."
+        },
+        {
+          "raise_usd": [
+            35000000,
+            60000000
+          ],
+          "post_money_usd": [
+            300000000,
+            600000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Hot company band; 2022 and later post money median is $600M."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Breakout upside where one lead investor competes hard for a category leader with fast revenue growth and strong net retention."
+        }
+      ],
+      "why_it_fails": "Series B inside 13 months would need breakout revenue, like Reducto, which went from seed to Series B in about a year. Reducto is the exception for the category and was ahead on customers, so for a two person later entrant the chance is a few percent at most, and document parsing commoditization lowers it further."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.05,
+      "anchors": {
+        "base_rate": 0.14,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B --tag AI: series_c cond 14% (n=14), ever 0% known-only.",
+        "adjustment_reason": "The anchor is conditional on Series B, ever reached. Inside the window almost nobody gets to Series C, and I keep the figure low and nonzero for a breakout path with several quick rounds."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            400000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Thin extension or flat round, used when growth slowed after the Series B and investors price the company on revenue multiples alone."
+        },
+        {
+          "raise_usd": [
+            40000000,
+            70000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Central band; 2022 and later Series C median is $74M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2000000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Strong growth round led by a large crossover or growth fund after the company shows durable revenue and net retention above 110 percent."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            6000000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Category leader upside where the company is among the top two in its market and raises at a premium multiple to scale internationally."
+        }
+      ],
+      "why_it_fails": "Series C inside the window would require a run faster than any past document AI YC company, including Reducto. The category could produce a winner, but a late entrant against funded leaders, with model vendors improving their own parsing, makes a Series C inside 13 months almost impossible."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.52
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000,
+          100000000
+        ],
+        "p": 0.3
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.14
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          10000000000
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "Likely outcomes are an acquihire or stall as parsing becomes a feature of model APIs and of leaders such as Reducto. Analogs Indexical (W23), Fileforge (W24) and Superpowered AI (S22) ended inactive or pivoted, and Deasy Labs (S23) and Trieve (W24) were acquired at small values."
+  },
+  "analogs": [
+    {
+      "slug": "pulse-3",
+      "relevance": "Summer 2024 production grade document extraction, near twin of the wedge",
+      "outcome_summary": "Raised a $3.9M seed about eight months after batch; claims large page volume; no Series A shown."
+    },
+    {
+      "slug": "reducto",
+      "relevance": "Winter 2024 document parsing platform, category leader",
+      "outcome_summary": "Seed $8.4M, Series A $24.5M and Series B $75M inside about 1.5 years; the best case for the category."
+    },
+    {
+      "slug": "extend",
+      "relevance": "Winter 2023 document processing",
+      "outcome_summary": "Raised $17M combined seed and Series A in 2025 with named fintech customers."
+    },
+    {
+      "slug": "indexical",
+      "relevance": "Winter 2023 AI data extraction engine",
+      "outcome_summary": "Inactive with only small pre-seed money."
+    },
+    {
+      "slug": "fileforge",
+      "relevance": "Winter 2024 API for PDF document workflows",
+      "outcome_summary": "Small pre-seed and seed from Pioneer Fund, then inactive."
+    },
+    {
+      "slug": "deasy-labs",
+      "relevance": "Summer 2023 metadata for GenAI workflows",
+      "outcome_summary": "Acquired, showing small exits for RAG tooling."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Category leaders Reducto, Extend and Pulse are far ahead",
+      "p": 0.55,
+      "evidence": "Reducto raised $108M total by late 2025 and Extend raised $17M with named customers while Unsiloed has two people and self reported benchmarks.",
+      "analogs": [
+        "reducto",
+        "extend",
+        "pulse-3"
+      ],
+      "mitigation": "Pick a vertical with hard document types where leaders are weak and win a named design customer."
+    },
+    {
+      "risk": "Foundation models make parsing a commodity",
+      "p": 0.45,
+      "evidence": "Large vision language models from Google and OpenAI parse complex PDFs well and keep improving, so a point API loses pricing power.",
+      "analogs": [
+        "indexical",
+        "fileforge"
+      ],
+      "mitigation": "Move up to workflows and evaluation tooling that models do not replace."
+    },
+    {
+      "risk": "Usage is low value and churns",
+      "p": 0.35,
+      "evidence": "Hundreds of thousands of documents is small next to billions of pages at leaders, and API customers can switch parsers in days.",
+      "analogs": [
+        "superpowered-ai",
+        "deasy-labs"
+      ],
+      "mitigation": "Sign annual enterprise contracts with accuracy commitments."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Reducto",
+      "what": "Agentic document parsing platform",
+      "traction": "$24.5M Series A in April 2025 and a later Series B reported",
+      "source_url": "https://aimresearch.co/?p=15277"
+    },
+    {
+      "name": "Extend",
+      "what": "Document processing cloud",
+      "traction": "$17M raised in June 2025",
+      "source_url": "https://siliconangle.com/2025/06/17/extend-gets-17m-funding-boost-speed-accuracy-document-processing-llms"
+    },
+    {
+      "name": "Instabase and Upstage",
+      "what": "Older IDP suites and Korean document AI",
+      "traction": "Instabase reported near $1.2B valuation; Upstage raised $45M",
+      "source_url": "https://siliconangle.com/?p=707906"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 4,
+    "rationale": "Training or adapting vision models for layout, tables and charts is real research work and accuracy is measured on benchmarks, so a two person team with strong models has a technical edge; scale, reliability and cost are harder and model vendors move fast."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Google",
+      "OpenAI",
+      "Mistral",
+      "Reducto"
+    ],
+    "timeline_months": 6,
+    "rationale": "Model vendors already ship document parsing inside their APIs and funded rivals can match any accuracy gain within months, so only deep accuracy or vertical focus keeps a standalone parsing API from being absorbed."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Document parsing startups raised large rounds in 2025, showing paid demand from AI teams",
+        "source_url": "https://aimresearch.co/?p=15277"
+      },
+      {
+        "claim": "Extend serves fintech customers on production document workflows",
+        "source_url": "https://siliconangle.com/2025/06/17/extend-gets-17m-funding-boost-speed-accuracy-document-processing-llms"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Prove accuracy and paying usage",
+      "actions": [
+        "Publish a reproducible benchmark with the dataset",
+        "Convert two startup users into paid contracts"
+      ],
+      "proof": "Paid monthly revenue and an external benchmark result"
+    },
+    {
+      "phase": "seed",
+      "goal": "Show retention and a niche leaders do not serve",
+      "actions": [
+        "Pick one vertical such as financial charts or scientific documents",
+        "Sign three enterprise pilots",
+        "Show net revenue retention above 100 percent"
+      ],
+      "proof": "$20K monthly recurring revenue with three enterprise logos"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Enterprise scale and defensibility",
+      "actions": [
+        "Add evaluation and workflow tooling",
+        "Hire sales and solutions engineers"
+      ],
+      "proof": "$1M annual recurring revenue with growth above 15 percent per month"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Technical team with a model level edge",
+      "evidence": "The input states proprietary vision models and benchmark wins over several parsers, unverified.",
+      "source_url": "https://aimresearch.co/?p=15277"
+    },
+    {
+      "point": "Strong funding climate for the category",
+      "evidence": "Reducto, Extend and Upstage all raised in 2025, so investors fund document AI.",
+      "source_url": "https://siliconangle.com/?p=707906"
+    }
+  ],
+  "brand": {
+    "name": "Unsiloed AI",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Unsiloed AI\" --era 2022+ : 10 characters, 4 syllables, name_plus_descriptor with descriptor ai",
+    "strengths": [
+      "Meaning is clear: breaking data silos",
+      "Memorable verb style"
+    ],
+    "weaknesses": [
+      "The AI descriptor adds little and the word is hard to spell"
+    ],
+    "rationale": "The name signals breaking down data silos, which matches the product, but the AI suffix is generic; past YC names with a descriptor such as Pulse show the product and results matter more than the name in this category."
+  },
+  "narrative": {
+    "headline": "Strong category funding but late into a crowded niche with a two person team; a priced seed inside 13 months is a bit below even odds.",
+    "general_summary": "Unsiloed AI offers an API that turns complex multimodal documents into LLM ready data. The market is real and Reducto, Extend and Pulse have shown that investors fund it, but they also took the early customers and attention. The two person team claims strong benchmarks and usage that are not verified. For the 13 month window the seed probability follows the cohort timing for AI infrastructure, with a small lift capped at the allowed range. A Series A inside the window would need a breakout like Reducto. The odds do not rank Unsiloed against other companies, and the most likely seed size is $3M to $6M if it raises."
+  },
+  "assumptions": [
+    "Only the input file was used about the company; no site, news or benchmark was checked.",
+    "Window is 13 months from 2025-10-06 to 2026-11-17.",
+    "Seed means a round above about $1M from outside investors, not the standard YC deal.",
+    "Self reported usage and benchmark claims in the description were treated as unverified."
+  ],
+  "sources": [
+    "https://aimresearch.co/?p=15277",
+    "https://siliconangle.com/2025/06/17/extend-gets-17m-funding-boost-speed-accuracy-document-processing-llms",
+    "https://siliconangle.com/?p=707906"
+  ]
+}

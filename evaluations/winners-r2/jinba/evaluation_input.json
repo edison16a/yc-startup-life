@@ -1,0 +1,438 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Jinba",
+  "one_liner": "Automate enterprise workflows through chat",
+  "description": "Chat based builder for enterprise workflows: describe a process in plain language and the whole company can use it. Includes permissions, audit logging and on premises deployment. The input claims 40,000 enterprise users at major financial institutions and a team of 11.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.088,
+  "basis": "Starting prior is about 1 percent for a random applicant (0.6 to 2 percent range, references/yc_acceptance.md). Up for claimed real usage at large financial institutions (real revenue or growing usage factor) and an 11 person team that is large for the stage. Down because workflow automation and agent builders is a crowded topic. Net about 4 percent, and the batch is already given so the forecast is conditional on acceptance.",
+  "why_it_fails": "YC would most likely say that chat based workflow building is one of the most crowded categories, with Zapier, n8n, Microsoft Copilot Studio, UiPath and many YC companies shipping it. The claimed 40,000 users may be seats at a few pilot accounts, and enterprise sales cycles in finance are long, so partners could doubt a startup can displace incumbents."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Narrower tag cohort --tag 'Developer Tools' --years 2022-2025: seed 55% (n=29), series_a 38% (n=16). Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months from batch start.",
+    "adjustment_reason": "Window is 10.4 months from 2026-01-05 to 2026-11-17 and the number is for a round above about 1M from outside investors that closes inside it. Anchor 0.59 B2B ever; the 2022 and later p75 time to seed is 14 months, so about 85 percent of eventual seeds fall inside 10 months only if fast. 0.50 is 0.85x the anchor. A team of 11 with named enterprise users is a plus but is not lifted above the anchor, per the winners test. These odds do not rank this company against others."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under 3M, likely if a few bank pilots stay unpaid."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      35000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed with live enterprise product and a team of 8 or more, using the AI native shape of 35 percent in the 3M to 6M range."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Strong seed led by a known fund if the financial institution usage is real and paid, 30 percent per the AI native shape."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      160000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Large seed in a hot agent category if there is revenue."
+    }
+   ],
+   "why_it_fails": "The seed step fails if the 40,000 users prove to be free or internal pilot seats, if finance buyers take a year to pay, or if investors see workflow builders from Microsoft, Zapier and n8n as sufficient. Activepieces and 100x show the crowded open source and agent builder niche with no priced round found, while loopfour and Keystroke raised seeds of 2.4M to 3.5M, the lower end."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Narrower tag cohort --tag 'Developer Tools' --years 2022-2025: seed 55% (n=29), series_a 38% (n=16). Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months from batch start.",
+    "adjustment_reason": "Window 10.4 months. Series A for 2022 and later YC companies has p25 at 19.4 months from batch start, so almost none close in 10 months. 0.26 anchor times about 0.15 gives 0.04, a gap of more than 2x that comes from the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A near the 2022 and later p25 of 10M or below, led by a seed investor or a thin market, taking longer than the window shows."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M (stage_benchmarks.md) and market deal size near 17M with pre money near 60M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round led by a top fund after clear revenue growth; the 2022 and later p75 is about 20M and hot AI categories exceed it."
+    }
+   ],
+   "why_it_fails": "A Series A inside 10 months of the batch would need a very fast revenue ramp at banks. Financial institutions take 6 to 18 months to procure, and the category is crowded. Simetrik took years to its Series A, and Keystroke pivoted before its seed produced growth."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Narrower tag cohort --tag 'Developer Tools' --years 2022-2025: seed 55% (n=29), series_a 38% (n=16). Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months from batch start.",
+    "adjustment_reason": "Anchor 0.16. Median time to series B is 36 months in the 2022+ era, so reaching B within 10 months is a tail event, set at 0.03."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      140000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin or flat Series B below the 2022 and later p25 of 25M after growth slows."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      140000000,
+      320000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B near the 2022 and later YC median of 37M and market 39.5M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      320000000,
+      800000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside Series B on strong revenue growth; the p75 is 57M and category leaders go well above it."
+    }
+   ],
+   "why_it_fails": "Series B inside the window would need an exceptional scale up. No analog in workflow automation reached B in its first year; Taktile took five years to a Series B. A Series B needs tens of millions of recurring revenue growth and a clear lead over Microsoft and Zapier, which a startup less than a year old cannot show."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Narrower tag cohort --tag 'Developer Tools' --years 2022-2025: seed 55% (n=29), series_a 38% (n=16). Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months from batch start.",
+    "adjustment_reason": "No base rate (0 of 3 in the B2B 2022 and later cohort reached C). Placeholder 0.02 given the 10 month window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      350000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Smaller later round near the 2022 and later p25 of 35M, mostly sample of n=9."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      350000000,
+      900000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C or later near the 45M to 77M range from the YC table and the market monitor."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      250000000
+     ],
+     "post_money_usd": [
+      900000000,
+      3000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout late round at unicorn scale; very rare in this cohort."
+    }
+   ],
+   "why_it_fails": "A Series C in the same year as the batch has no precedent in the cohort. It would need unicorn scale revenue; analogs such as Taktile took six years to a Series C. The company would also have to beat Microsoft and ServiceNow in banks, so investors would not price such a round this early."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.05
+   }
+  ],
+  "why_it_fails": "Most likely outcome is a stall or acqui-hire as horizontal agent builders commoditize: a startup selling workflow building competes with Microsoft, ServiceNow and well funded agent startups. The upside requires becoming the governed agent platform in financial institutions, where on premises deployment is a real moat. Activepieces and 100x show crowded cases with no known priced round."
+ },
+ "analogs": [
+  {
+   "slug": "simetrik",
+   "relevance": "No code enterprise financial automation.",
+   "outcome_summary": "Series B in 2024 after a pivot and long sales ramp."
+  },
+  {
+   "slug": "activepieces",
+   "relevance": "Open source AI first workflow automation.",
+   "outcome_summary": "Active, funding only in aggregators; crowded category."
+  },
+  {
+   "slug": "keystroke",
+   "relevance": "Internal agents and workflows platform.",
+   "outcome_summary": "Seed of 2.4M reported after a pivot, shows lower end."
+  },
+  {
+   "slug": "loopfour",
+   "relevance": "Workflow automation for enterprises.",
+   "outcome_summary": "Seed of 3.5M, no later round verified."
+  },
+  {
+   "slug": "taktile",
+   "relevance": "Decision automation for regulated financial institutions.",
+   "outcome_summary": "Series C after enterprise bank sales over five years."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Crowded horizontal category",
+   "p": 0.4,
+   "evidence": "Zapier, n8n, Microsoft Copilot Studio and many agent startups all let users build workflows in plain language.",
+   "analogs": [
+    "activepieces",
+    "100x"
+   ],
+   "mitigation": "Specialize in regulated finance with on premises and audit features."
+  },
+  {
+   "risk": "User count inflated or unpaid",
+   "p": 0.3,
+   "evidence": "The 40,000 enterprise users is a claim in the input, with no revenue stated; at large banks usage is often free pilots.",
+   "analogs": [
+    "keystroke"
+   ],
+   "mitigation": "Convert to contracts and report annual contract value."
+  },
+  {
+   "risk": "Long enterprise sales cycles",
+   "p": 0.3,
+   "evidence": "Financial institutions have security reviews and procurement over many months, delaying revenue past the window.",
+   "analogs": [
+    "simetrik",
+    "taktile"
+   ],
+   "mitigation": "Land through a champion team with a bounded use case."
+  },
+  {
+   "risk": "Model providers absorb the product",
+   "p": 0.25,
+   "evidence": "Model labs and cloud vendors ship agent builders with enterprise controls.",
+   "analogs": [
+    "100x"
+   ],
+   "mitigation": "Own deployment and permission layers."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Zapier and n8n",
+   "what": "Workflow automation with AI features",
+   "traction": "Large installed bases",
+   "source_url": "https://www.feathery.io/blog/vibe-coding-doesnt-scale-in-financial-services-ai-defined-workflows-do"
+  },
+  {
+   "name": "Appian and Salesforce",
+   "what": "Agent platforms sold into banks",
+   "traction": "Incumbents with bank distribution",
+   "source_url": "https://www.privatebankerinternational.com/features/from-silos-to-synergy-agentic-ai-is-transforming-financial-services/"
+  },
+  {
+   "name": "ibl.ai Agentic Vibe",
+   "what": "On premises vibe coding for financial apps",
+   "traction": "Vendor product",
+   "source_url": "https://ibl.ai/product/agentic-vibe/financial-services.md"
+  },
+  {
+   "name": "Spreadsheets and manual process",
+   "what": "Status quo",
+   "traction": "Default tool at banks",
+   "source_url": "https://web-assets.bcg.com/pdf-src/prod-live/vibe-coding-is-coming-to-finance-cfos-need-guardrails.pdf"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Generating workflows from language is easy with current models. Hard parts are permissions, audit logging, on premises deployment and reliability in regulated settings, which a team of 11 can build but which take longer than a prototype. The moat is enterprise controls, not generation."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Microsoft",
+   "Salesforce",
+   "ServiceNow",
+   "UiPath",
+   "Zapier"
+  ],
+  "timeline_months": 9,
+  "rationale": "Large platforms have enterprise sales and can add chat based building quickly. The market search shows incumbents and consultancies already positioning governed agent builders for banks."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Financial firms prefer on premises or governed AI and cite security and compliance as top barriers to adoption.",
+    "source_url": "https://exadel.com/news/agentic-ai-for-financial-services"
+   },
+   {
+    "claim": "BCG argues vibe coding is coming to finance and needs guardrails, a sign of demand and caution.",
+    "source_url": "https://web-assets.bcg.com/pdf-src/prod-live/vibe-coding-is-coming-to-finance-cfos-need-guardrails.pdf"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Turn claimed usage into contracts.",
+   "actions": [
+    "Document paid contracts and seat counts at the financial institutions",
+    "Show retention of builders after the first month"
+   ],
+   "proof": "Annual contract value and active builders per account."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeatable enterprise land and expand.",
+   "actions": [
+    "Win three more regulated accounts in a repeatable pilot",
+    "Publish security attestations"
+   ],
+   "proof": "Recurring revenue and a second account expansion."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large team and claimed enterprise usage",
+   "evidence": "The input states 11 people and 40,000 enterprise users at major financial institutions.",
+   "source_url": "https://jinba.io"
+  },
+  {
+   "point": "Enterprise controls built in",
+   "evidence": "Permissions, audit logging and on premises deployment address the stated barriers for regulated buyers.",
+   "source_url": "https://exadel.com/news/agentic-ai-for-financial-services"
+  }
+ ],
+ "brand": {
+  "name": "Jinba",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Jinba\" --era 2022+: invented or proper name, 5 characters, 2 syllables.",
+  "strengths": [
+   "Short and easy to say",
+   "Distinct"
+  ],
+  "weaknesses": [
+   "Carries no meaning for the product"
+  ],
+  "rationale": "A short invented name is typical of successful YC brands such as Brex or Rippling and rarely hurts. It does nothing for enterprise credibility, which comes from references."
+ },
+ "narrative": {
+  "headline": "Real enterprise claims and a larger team, in the most crowded workflow category: seed is about a coin flip in 10 months.",
+  "general_summary": "Jinba is a chat based workflow builder for enterprises with controls aimed at financial institutions. The window is 10.4 months from 2026-01-05 to 2026-11-17, and the seed number is for a round above about 1M closing inside it. The B2B anchor is 59 percent ever and the forecast is 0.50 because only part of seeds close within 10 months and the category is crowded. Series A inside the window is very unlikely because the median is 28 months. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-01-05 using only the input text; the user and seat claims are unverified.",
+  "Seed means above about 1M from outside investors inside the 10.4 month window.",
+  "Cohort funding data is partial."
+ ],
+ "sources": [
+  "https://exadel.com/news/agentic-ai-for-financial-services",
+  "https://web-assets.bcg.com/pdf-src/prod-live/vibe-coding-is-coming-to-finance-cfos-need-guardrails.pdf",
+  "https://ibl.ai/product/agentic-vibe/financial-services.md"
+ ]
+}

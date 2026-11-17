@@ -1,0 +1,458 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Amika",
+    "one_liner": "Turn any spare computer into agent devboxes or CI runners",
+    "description": "Amika slices computers a team already owns, such as a spare Mac Mini, a desktop or EC2 in its own VPC, into isolated devboxes for coding agents or CI runners, and joins them on one private network. Buyers are engineering teams that want always-on agent computers or cheaper CI on hardware they already pay for. Two founders in New York, Fall 2025 batch.",
+    "as_of": "2025-10-06"
+  },
+  "yc_acceptance": {
+    "p": 0.015,
+    "p_low": 0.006,
+    "p_high": 0.04,
+    "basis": "Start from the third party prior of about 1 percent (range 0.6 to 2 percent, references/yc_acceptance.md). Technical two founder team and a topical agents infrastructure idea lift it slightly; no traction stated and a crowded CI runner and sandbox space hold it back, so about 1.5 percent. This is the view as if applying; the company is already in the Fall 2025 batch.",
+    "why_it_fails": "YC would most plausibly say no because the pitch sounds like a cheaper CI runner, a category with several funded YC alumni such as depot and warpbuild, and the founders show no usage yet. Interviewers also ask why customers would not use GitHub hosted runners or a hosted agent sandbox, and a bring your own hardware angle can read as a feature."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.5,
+      "anchors": {
+        "base_rate": 0.64,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave seed lower/known/upper 51%/64%/71%, cond 64% (n=183), ever and not windowed. Time table: calibration median 7 months to seed, p75 19.5 months (knowledge/tables/time_to_milestones.csv), so a 13 month window captures most but not all.",
+        "adjustment_reason": "Set below the ever anchor of 0.64 for the 13 month window and a crowded dev infra category with a 2 person team and no stated traction; no lift for AI heat per the winners test rules. These odds do not rank Amika against other companies."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000.0,
+            3000000.0
+          ],
+          "post_money_usd": [
+            8000000.0,
+            20000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 13 months from 2025-10-06 to 2026-11-17; rounds under $1M and the YC deal itself do not count."
+        },
+        {
+          "raise_usd": [
+            3000000.0,
+            6000000.0
+          ],
+          "post_money_usd": [
+            15000000.0,
+            30000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "p_band": 0.28,
+          "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.12,
+          "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
+        }
+      ],
+      "why_it_fails": "In the 13 month window the most likely miss is that the product reads as a CI runner discount, the same pitch as warpbuild and buildjet, which stayed near YC deal money. Investors will ask why a customer would not use GitHub hosted runners or a funded sandbox vendor, and two founders without paid usage may not have an answer by demo day. A seed then needs paid fleets, not installs."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.08,
+      "anchors": {
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_a 15%/19%/36%, cond 30% (n=117). Time to series A median 28 months, p25 19 months, so within 13 months few companies reach it.",
+        "adjustment_reason": "Given seed within the window, a Series A inside 13 months is early: the calibration p25 is 19 months from batch start, so I use about a quarter of the ever anchor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            4000000.0,
+            8000000.0
+          ],
+          "post_money_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Thin Series A or extended seed below the 2022 and later p25 of $11M, typical when growth is slower than hoped."
+        },
+        {
+          "raise_usd": [
+            8000000.0,
+            16000000.0
+          ],
+          "post_money_usd": [
+            40000000.0,
+            90000000.0
+          ],
+          "p_band": 0.4,
+          "rationale": "Typical Series A near the 2022 and later median of about $14M to $15M."
+        },
+        {
+          "raise_usd": [
+            16000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            90000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Strong Series A of $16M to $30M when revenue growth is clear and a lead investor competes, above the 2022 and later p75 of about $20M."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            50000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.1,
+          "rationale": "Breakout Series A above $30M, possible only for a category leader with fast revenue growth; upside band."
+        }
+      ],
+      "why_it_fails": "A Series A needs recurring revenue in the high six figures and a repeatable buyer. Amika would need to show that teams pay for fleets, not just install, and that churn is low. Depot reached a seed after bootstrapping on usage revenue and a Series A only years later, so most companies like this miss the Series A bar for a long time."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.31,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_b 5%/6%/26%, cond 31% (n=35). Ever, not windowed.",
+        "adjustment_reason": "Slightly below the 0.31 anchor because the product competes with platform features and revenue is unproven."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            50000000.0,
+            120000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat round, below the 2022 and later p25 of $27M."
+        },
+        {
+          "raise_usd": [
+            25000000.0,
+            50000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            400000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $32M to $40M median."
+        },
+        {
+          "raise_usd": [
+            50000000.0,
+            100000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band at the p75 of $55M and above."
+        }
+      ],
+      "why_it_fails": "A Series B requires scale of tens of millions in revenue and a defensible platform. If GitHub, a sandbox vendor or a mesh network vendor ships bring your own hardware runners, growth flattens at a niche and investors pass, as happened to thin margin runner products."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_c 2%/3%/23%, cond 45% (n=11). Ever, not windowed.",
+        "adjustment_reason": "Below the 0.45 anchor since few infra startups of this kind reach growth rounds."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            25000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            700000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Smaller growth round or bridge financing below the 2022 and later series C p25 of about $50M."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            700000000.0,
+            1500000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical Series C near the $60M to $74M median."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            5000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a category leader, above the 2022 and later series C p75 of about $100M."
+        }
+      ],
+      "why_it_fails": "Growth rounds need category leadership. A bring your own compute tool would have to become the control plane for agent fleets, which rivals with larger distribution are better placed to own. If it stays a niche utility, investors will not lead a $60M round and the company stops at Series B or earlier."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.62
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000.0,
+          100000000.0
+        ],
+        "p": 0.2
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000.0,
+          1000000000.0
+        ],
+        "p": 0.14
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000.0,
+          5000000000.0
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "Most likely end is a stall as an open source or cloud sandbox product absorbs the use case. Dev infrastructure startups with two founders often sell to individual developers who will not pay, while large teams buy from funded vendors. Analogs such as warpbuild and buildjet show that thin margin runner products stay small unless the team finds a wedge beyond cheap compute."
+  },
+  "analogs": [
+    {
+      "slug": "warpbuild",
+      "relevance": "Sells faster cheaper CI runners to GitHub Actions users, the same CI offload use case.",
+      "outcome_summary": "Active at small scale with only aggregator reported funding of about $0.5M to $2M, no institutional round found by 2025."
+    },
+    {
+      "slug": "buildjet",
+      "relevance": "Faster cheaper GitHub Actions runners, two founders, Winter 2023.",
+      "outcome_summary": "Raised roughly $0.5M, the YC deal, and no institutional seed in its first two years; takeover risk from GitHub rated 5."
+    },
+    {
+      "slug": "depot",
+      "relevance": "Managed CI and build acceleration, the best funded neighbor in the runner category.",
+      "outcome_summary": "Raised a seed of about $4M in 2024 after bootstrapping on usage revenue, showing a seed is reachable with paying customers."
+    },
+    {
+      "slug": "replicate",
+      "relevance": "Developer infrastructure that rented compute for a workload, Winter 2020.",
+      "outcome_summary": "Reached large rounds after becoming the default for running models; shows infra can win with a clear developer product."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Cloud sandbox vendors and GitHub itself cover agent devboxes, so a bring your own hardware pitch is a feature, not a company",
+      "p": 0.4,
+      "evidence": "Competition then includes hosted CI runner vendors and GitHub hosted runners; buildjet was rated takeover risk 5 for this reason.",
+      "analogs": [
+        "buildjet",
+        "warpbuild"
+      ],
+      "mitigation": "Own the private network and fleet management layer so the hardware story is the product and not a discount."
+    },
+    {
+      "risk": "Buyers are hobbyists with spare Mac Minis who will not pay enough to support a venture sized company",
+      "p": 0.35,
+      "evidence": "The spare computer framing points to individual developers and small teams; warpbuild shows modest funding for runner products.",
+      "analogs": [
+        "warpbuild"
+      ],
+      "mitigation": "Target mid size teams with large CI bills and an EC2 in VPC story, and price per fleet."
+    },
+    {
+      "risk": "Security review: running agents and CI on customer hardware needs isolation guarantees a 2 person team must prove",
+      "p": 0.25,
+      "evidence": "Isolated devboxes and a private mesh network touch secrets and source code, which enterprises audit heavily.",
+      "analogs": [
+        "depot"
+      ],
+      "mitigation": "Ship open isolation design and get an early SOC 2 and an independent audit."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Blacksmith and Depot",
+      "what": "Managed faster GitHub Actions runners",
+      "traction": "Depot is a YC Winter 2023 company that raised a seed in 2024",
+      "source_url": "https://depot.dev"
+    },
+    {
+      "name": "GitHub hosted and self hosted runners with Actions Runner Controller",
+      "what": "The status quo for CI, free self hosting on Kubernetes",
+      "traction": "Default for most GitHub users",
+      "source_url": "https://docs.github.com/en/actions/hosting-your-own-runners"
+    },
+    {
+      "name": "E2B and Daytona sandboxes",
+      "what": "Hosted sandboxes for AI agents",
+      "traction": "Funded vendors selling agent compute by usage",
+      "source_url": "https://e2b.dev"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "A tunnel based private network, isolation of devboxes on mixed hardware (Mac, Linux, EC2) and a job scheduler are doable by two strong infra engineers in three months, but a secure multi tenant control plane and macOS virtualization limits are real work."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "GitHub",
+      "Tailscale",
+      "E2B",
+      "Cloudflare"
+    ],
+    "timeline_months": 6,
+    "rationale": "Several funded companies could add bring your own hardware agent runners within a few months. GitHub already supports self hosted runners, and mesh network and sandbox vendors have distribution Amika lacks."
+  },
+  "market_need_now": {
+    "rating": 3,
+    "evidence": [
+      {
+        "claim": "GitHub self hosted runners and managed runner vendors show teams pay to cut CI cost and time",
+        "source_url": "https://www.qovery.com/blog/github-actions-alternatives"
+      },
+      {
+        "claim": "Agent sandbox vendors show demand for isolated compute for coding agents",
+        "source_url": "https://e2b.dev"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "A working product with a few teams running agents or CI on their own hardware",
+      "actions": [
+        "Ship a demo that joins three machines to one network in minutes",
+        "Get 10 teams from developer communities to install it"
+      ],
+      "proof": "Ten teams with weekly active fleets"
+    },
+    {
+      "phase": "seed",
+      "goal": "Paid usage and a clear buyer beyond hobbyists",
+      "actions": [
+        "Charge per fleet from day one",
+        "Land two companies with CI bills over $2,000 a month"
+      ],
+      "proof": "$10,000 monthly recurring revenue and a design partner reference"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Repeatable sales into mid size engineering teams",
+      "actions": [
+        "Add audit logs and SSO",
+        "Hire a first sales engineer"
+      ],
+      "proof": "Net revenue retention above 110 percent"
+    },
+    {
+      "phase": "series_b",
+      "goal": "A platform position beyond CI",
+      "actions": [
+        "Expand to agent fleet management",
+        "Add enterprise on premise deployment"
+      ],
+      "proof": "Multiple Fortune 1000 deployments"
+    },
+    {
+      "phase": "series_c_plus",
+      "goal": "Category leadership in bring your own compute",
+      "actions": [
+        "Add partnerships with chip and cloud vendors",
+        "Open a second product line"
+      ],
+      "proof": "Revenue above $50M"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Real and growing need for agent computers and cheaper CI",
+      "evidence": "Managed runner vendors exist and funded sandbox vendors sell agent compute.",
+      "source_url": "https://www.qovery.com/blog/github-actions-alternatives"
+    },
+    {
+      "point": "Bring your own hardware is a cost angle large teams care about",
+      "evidence": "Teams with idle machines and EC2 in VPC can avoid per minute fees.",
+      "source_url": "https://docs.github.com/en/actions/hosting-your-own-runners"
+    }
+  ],
+  "brand": {
+    "name": "Amika",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Amika\" --era 2022+ : invented_or_proper, 5 chars, 3 syllables, no descriptor words.",
+    "strengths": [
+      "Short and easy to say",
+      "No descriptor words"
+    ],
+    "weaknesses": [
+      "Says nothing about computers or agents",
+      "Name is also a common first name"
+    ],
+    "rationale": "A short invented style name like many 2022 and later YC companies, easy to say and register but carrying no meaning for the product. Past YC brands such as Depot and Replicate show that the name matters little against product pull."
+  },
+  "narrative": {
+    "headline": "Crowded dev infrastructure wedge with a clear cost angle; plausible small round, but a feature risk.",
+    "general_summary": "Amika sells a way to turn spare computers into agent devboxes and CI runners on one private network. The need is real because coding agents want always on machines and CI bills are large. But the category already has funded runner vendors and agent sandbox vendors, and the team is two founders with no stated traction at the start of the batch. A seed above $1M is plausible inside 13 months given the AI infra heat, but it is not more likely than the cohort base rate, and the odds here do not rank Amika against other companies. Later rounds depend on proving a buyer who pays more than hobbyists."
+  },
+  "assumptions": [
+    "Information limited to the input file and market searches dated before 2025-10-06.",
+    "Window of 13 months from 2025-10-06 to 2026-11-17.",
+    "Seed means a round above about $1M from outside investors, excluding the standard YC deal.",
+    "Team described as 2 people with no traction data."
+  ],
+  "sources": [
+    "https://www.qovery.com/blog/github-actions-alternatives",
+    "https://depot.dev",
+    "https://e2b.dev",
+    "https://docs.github.com/en/actions/hosting-your-own-runners"
+  ]
+}

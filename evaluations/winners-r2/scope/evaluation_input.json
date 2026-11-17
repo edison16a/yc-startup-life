@@ -1,0 +1,441 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Scope",
+    "one_liner": "We help software companies get discovered and used by AI agents",
+    "description": "A measurement and improvement system for how coding agents such as Claude Code, Codex and Cursor discover, choose, set up and keep using developer products. It runs real workflows across agents, shows when the agent picks the product versus a competitor, where it breaks and what docs or surfaces to change. Starts with APIs, infra products, CLIs and MCP servers; buyers are dev-tool companies. Two person team, founder with interpretability research and GEO/AEO engineering background.",
+    "as_of": "2026-04-06"
+  },
+  "yc_acceptance": {
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.05,
+    "basis": "Start from about 1 percent (0.6 to 2 percent published). Adjust up for a technical founder with interpretability research and GEO work, and a topical problem that fits YC's interest in agent-era infrastructure; adjust down for a 2 person team, no stated revenue, and a market where the customer base (dev-tool companies) is small and the GEO lane already has several YC companies (AthenaHQ, The Prompting Company). Net about 2 percent; the company is already in the Spring 2026 batch.",
+    "why_it_fails": "YC would most plausibly say the buyer set is thin and the product is a measurement dashboard that may become a feature of existing GEO and observability tools. A two person team with no named paying customers, in a lane where AthenaHQ and The Prompting Company already sell agent and AI-search visibility, gives interviewers little reason to believe in a large market."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.38,
+      "anchors": {
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026 gave seed 36% lower / 44% known / 54% upper, cond 44% (n=1541); series_a cond 20% (n=679); series_b cond 19% (n=136); series_c cond 19% (n=26). Calibration-only B2B: seed 52/65/72, series_a cond 32%, series_b cond 46%.",
+        "adjustment_reason": "Window is 7.4 months (2026-04-06 to 2026-11-17); seed means an outside round above about $1M closing inside it. Anchor 0.44 ever (B2B 2022+, known-only) with median time to seed 6 months and p25 3, so roughly 70 to 80 percent of ever-seeds close inside 7 months, which gives about 0.33 to 0.35. I use 0.38 (under the 1.25x cap) because GEO analogs AthenaHQ and The Prompting Company raised seeds, but the team is 2 and no revenue is stated, so no lift beyond that. Odds do not rank the company against others."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000.0,
+            3000000.0
+          ],
+          "post_money_usd": [
+            8000000.0,
+            18000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
+        },
+        {
+          "raise_usd": [
+            3000000.0,
+            6000000.0
+          ],
+          "post_money_usd": [
+            15000000.0,
+            30000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            28000000.0,
+            60000000.0
+          ],
+          "p_band": 0.22,
+          "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            55000000.0,
+            120000000.0
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
+        }
+      ],
+      "why_it_fails": "A seed fails to close in 7 months if there is no revenue to show: the buyers are dev-tool companies, a small market, and an investor must believe agent-driven discovery becomes a budget line. GEO analogs such as Geostar (S21) show that a measurement-only product can stall without a round, and AthenaHQ and The Prompting Company compete for the same dollars. Two founders also cap how many pilots can be run."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.05,
+      "anchors": {
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_a cond 20% (n=679); time table months_to_series_a p50 28, p25 19 (era 2022+).",
+        "adjustment_reason": "Window is 7.4 months, but Series A p25 is 19 months from batch start (2022+ time table), so a Series A inside the window is very rare. I use 0.05 against a 0.20 ever anchor; the discount is only for the short window."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            6000000.0,
+            10000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin or flat-ish Series A on modest ARR; the 2018-2021 B2B series_a p25 was $10M, so this is below the typical cohort round and covers extension-like A rounds."
+        },
+        {
+          "raise_usd": [
+            10000000.0,
+            20000000.0
+          ],
+          "post_money_usd": [
+            50000000.0,
+            120000000.0
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case. B2B 2022+ series_a raise p25 $13M, median $17M, p75 $22M (n=130); post-money reported for only n=3 so valuation is thin data."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band with fast ARR growth in a hot AI category; 2022+ all-industry series_a post-money p75 was $345M on n=18 reported rounds."
+        }
+      ],
+      "why_it_fails": "Series A needs repeatable ARR of about $1M to $2M from dev-tool companies, a narrow buyer set. In 7 months the product must prove agents actually shift usage and that firms pay recurring fees rather than one-off audits. No analog reached a Series A this fast."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.17,
+      "anchors": {
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_b cond 19% (n=136); calibration-only B2B cond 46% (n=61); lower/known/upper ranges 1/2/19 percent ever.",
+        "adjustment_reason": "Anchor cond 19 percent (B2B 2022+); 0.17 because a niche measurement tool has few Series B analogs."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000.0,
+            35000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin Series B below the cohort p25 of $39M, flat or modest step up."
+        },
+        {
+          "raise_usd": [
+            35000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            700000000.0
+          ],
+          "p_band": 0.5,
+          "rationale": "Central: B2B 2022+ series_b median $42.5M raise and $600M post (n=9 valuations)."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            700000000.0,
+            1500000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category leader; era is inflated by AI rounds so use with care."
+        }
+      ],
+      "why_it_fails": "Series B requires the product to expand from dev tools to all software companies as agents become a channel, and to defend against model-provider tools. If the market stays tiny or the model labs publish their own agent-experience tests, growth stalls near $5M ARR."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.15,
+      "anchors": {
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_c cond 19% (n=26); calibration-only B2B cond 50% (n=28).",
+        "adjustment_reason": "Anchor cond 19 percent; 0.15 since few GEO or analytics tools of this type have reached Series C in the data."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000.0,
+            80000000.0
+          ],
+          "post_money_usd": [
+            300000000.0,
+            900000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Modest growth round; series_c 2022+ p25 raise $50M."
+        },
+        {
+          "raise_usd": [
+            80000000.0,
+            150000000.0
+          ],
+          "post_money_usd": [
+            900000000.0,
+            2000000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Central: 2022+ series_c median raise $74M to $101M, post-money median about $1.2B (n=3 to 34)."
+        },
+        {
+          "raise_usd": [
+            150000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            2000000000.0,
+            6000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: breakout category winner, cf. Bland-style rounds; very few companies."
+        }
+      ],
+      "why_it_fails": "Series C needs category leadership in agent experience measurement, with tens of millions in ARR across many software buyers. Writesonic-like GEO products and large analytics or observability suites could absorb the category before then, leaving Scope as a small independent with a narrow dev-tool customer base and little pricing power."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.58
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000.0,
+          100000000.0
+        ],
+        "p": 0.28
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000.0,
+          1000000000.0
+        ],
+        "p": 0.11
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000.0,
+          20000000000.0
+        ],
+        "p": 0.03
+      }
+    ],
+    "why_it_fails": "Most thin measurement tools in a new category either pivot or get bought by a larger analytics or SEO vendor under $100M; a $1B outcome would need agents to become the main software distribution channel and Scope to be the system of record for it."
+  },
+  "analogs": [
+    {
+      "slug": "athenahq",
+      "relevance": "AI search and GEO visibility, W25; same measurement lane for brands.",
+      "outcome_summary": "Alive with a seed round, shows funding exists for GEO measurement."
+    },
+    {
+      "slug": "the-prompting-company",
+      "relevance": "Helps products get discovered and used by AI agents, S25; near-identical wedge.",
+      "outcome_summary": "Alive with seed; a direct competitor in the batch immediately before this one."
+    },
+    {
+      "slug": "geostar",
+      "relevance": "Inbound discovery through search, S21; earlier search-visibility company.",
+      "outcome_summary": "Alive, no recorded post-YC round, a cautionary case for visibility tools."
+    },
+    {
+      "slug": "writesonic",
+      "relevance": "Pivoted to AI search visibility tracking, S21.",
+      "outcome_summary": "Alive with seed; takeover risk then rated 5."
+    },
+    {
+      "slug": "openbenchmarks",
+      "relevance": "Independent benchmarks to help humans and agents pick tools, F24.",
+      "outcome_summary": "Alive, no round recorded; thin monetization."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Tiny early buyer set: only API, infra and CLI companies care now, and they spend little on tooling.",
+      "p": 0.35,
+      "evidence": "Description says the first focus is APIs, infra, CLIs and MCP servers; GEO budgets sit mostly in marketing teams.",
+      "analogs": [
+        "geostar",
+        "openbenchmarks"
+      ],
+      "mitigation": "Move to a per-agent-run usage price and expand to SaaS products with agent surfaces."
+    },
+    {
+      "risk": "Model providers or agent vendors publish their own tool-selection signals, removing the need for a third-party measurement.",
+      "p": 0.25,
+      "evidence": "Claude Code, Codex and Cursor control tool discovery and can add built-in reporting.",
+      "analogs": [
+        "writesonic",
+        "athenahq"
+      ],
+      "mitigation": "Be the cross-agent neutral view and own the fix workflow, not just the score."
+    },
+    {
+      "risk": "Crowded GEO lane with funded rivals adding agent features.",
+      "p": 0.3,
+      "evidence": "AthenaHQ and The Prompting Company already sell AI discovery, with seeds.",
+      "analogs": [
+        "athenahq",
+        "the-prompting-company"
+      ],
+      "mitigation": "Specialize on workflows that agents actually run (setup, auth, docs) and prove changes move usage."
+    },
+    {
+      "risk": "Results from agent runs are noisy and non-deterministic, so customers doubt the numbers.",
+      "p": 0.2,
+      "evidence": "Agent behavior changes with each model release, so a score measured last month may not hold.",
+      "analogs": [
+        "openbenchmarks"
+      ],
+      "mitigation": "Repeat runs, show confidence intervals and fix suggestions validated by re-running."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "AthenaHQ",
+      "what": "AI search and GEO visibility",
+      "traction": "Seed round raised",
+      "source_url": "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/"
+    },
+    {
+      "name": "Generic GEO and AEO tools",
+      "what": "Dozens of brand-visibility dashboards for AI answers",
+      "traction": "Vendor roundups list many",
+      "source_url": "https://www.searchinfluence.com/?p=26281"
+    },
+    {
+      "name": "In-house docs and DevRel teams",
+      "what": "Rewrite docs and add MCP servers by hand",
+      "traction": "Status quo for most dev-tool companies",
+      "source_url": "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Running real workflows across several coding agents reliably, with sandboxes, repeated trials and scoring, is doable by two engineers but the hard part is making noisy, model-version-dependent results trustworthy and cheap to run."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Anthropic, OpenAI and Cursor",
+      "GEO suites",
+      "Datadog-style observability vendors"
+    ],
+    "timeline_months": 9,
+    "rationale": "Agent vendors could expose usage analytics, and GEO suites could add agent testing; a rival would need about 6 to 12 months and has the distribution but little incentive to serve competitors neutrally."
+  },
+  "market_need_now": {
+    "rating": 3,
+    "evidence": [
+      {
+        "claim": "Commentary argues tool discovery is shifting to agents and MCP listings, but independent usage data is scarce.",
+        "source_url": "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/"
+      },
+      {
+        "claim": "GEO and MCP SEO are treated as a visibility pillar in marketing content.",
+        "source_url": "https://www.searchinfluence.com/?p=26281"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show agents change their tool choices after Scope's fixes.",
+      "actions": [
+        "Run the audit on 10 dev-tool companies and publish before and after results",
+        "Collect two named design partners"
+      ],
+      "proof": "Measured lift in agent selection rate for a customer"
+    },
+    {
+      "phase": "seed",
+      "goal": "Paid customers and a clear budget owner within 7 months.",
+      "actions": [
+        "Convert design partners to monthly plans",
+        "Publish a public agent-experience benchmark for popular APIs to get inbound",
+        "Pitch dev-tool-focused funds with usage data"
+      ],
+      "proof": "$20K to $50K MRR and a seed term sheet above $1M"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Founder has interpretability research and GEO engineering experience.",
+      "evidence": "Stated in the description.",
+      "source_url": "https://tryscope.com"
+    },
+    {
+      "point": "Timely topic: agents increasingly choose and install tools.",
+      "evidence": "Market commentary on MCP discovery.",
+      "source_url": "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/"
+    }
+  ],
+  "brand": {
+    "name": "Scope",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Scope\" --era 2022+: 5 chars, 1 syllable, real word.",
+    "strengths": [
+      "Short real word",
+      "Suggests measurement and visibility"
+    ],
+    "weaknesses": [
+      "Very common word, hard to search and a crowded domain space"
+    ],
+    "rationale": "A one-syllable real word is easy to say and fits a measurement tool, like Vapi and Retell as short brand names in dev tools; the cost is that it is hard to own in search, which matters for a company selling discoverability."
+  },
+  "narrative": {
+    "headline": "Timely idea from a technical founder, but a small buyer set and a funded GEO lane make a seed above $1M in 7 months uncertain.",
+    "general_summary": "Scope measures and improves how coding agents find and use developer products. The problem is topical, and YC has funded neighbors such as AthenaHQ and The Prompting Company, whose seeds show money exists for the lane. A 2 person team with no stated revenue has about 7.4 months, against a cohort median of about 6 months to seed among those that raise at all. I use 0.38 against an ever anchor of 0.44, and the odds do not rank the company against others. The biggest risks are a tiny early buyer set and agent vendors absorbing the function.",
+    "deep_dive": {
+      "market_need": "TODO: 60+ words",
+      "competition": "TODO: 60+ words",
+      "technical_complexity": "TODO: 60+ words",
+      "takeover": "TODO: 60+ words",
+      "economics_and_distribution": "TODO: 60+ words",
+      "team": "TODO: 60+ words",
+      "yc_specific": "TODO: 60+ words"
+    }
+  },
+  "assumptions": [
+    "Window is 7.4 months from 2026-04-06; seed means an outside round above about $1M.",
+    "Only the input file was used; nothing about the company was looked up.",
+    "Market search results were generic vendor content; no result named the company.",
+    "Records of companies after the as_of date were not used for outcomes."
+  ],
+  "sources": [
+    "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/",
+    "https://www.searchinfluence.com/?p=26281"
+  ]
+}

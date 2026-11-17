@@ -1,0 +1,449 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Panta",
+    "one_liner": "AI Native Commercial Insurance Brokerage",
+    "description": "A technology enabled commercial insurance brokerage that pairs AI powered internal workflows with licensed brokers to place complex coverage for businesses faster. Team of 3 in San Francisco, Winter 2026 batch.",
+    "as_of": "2026-01-05"
+  },
+  "yc_acceptance": {
+    "p": 0.5,
+    "p_low": 0.3,
+    "p_high": 0.7,
+    "basis": "The company is already in the batch that starts on the as of date, so this is a note only. A random applicant starts near 1 percent (yc_acceptance.md, 0.6 to 2 percent range). A 3 person technical brokerage team with licensed brokers is a typical AI native services pitch, and the space was crowded with YC brokerage entrants such as Newfront, Shepherd and several 2024 and 2025 brokerages, which cuts against it.",
+    "why_it_fails": "YC would most plausibly say no because AI native brokerage was already a visible 2025 theme, and the application gives no traction number or licensed broker names. A reviewer could read it as a services firm with an AI label, with a three person team and a revenue ceiling set by commission rates."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.38,
+      "anchors": {
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (seed 50 / 57 / 62 percent lower, known, upper, cond 57 percent n=23); --years 2018-2021 --industry Fintech (87 percent, n=23); knowledge/tables/time_to_milestones.csv Fintech months_to_seed p25 3, p50 7, p75 20",
+        "adjustment_reason": "Forecast window is 10.4 months from 2026-01-05 to 2026-11-17 and the target is a round above about $1M, not the YC deal. The ever reached anchor is about 0.6 to 0.7 blended across eras. Fintech months to seed p50 is 7 and p75 is 20, so about 60 percent of eventual seed raisers close inside 10 months, giving about 0.38. No lift for the hot AI brokerage theme, per the winners test rule. This odds figure does not rank Panta against other companies."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000,
+            3000000
+          ],
+          "post_money_usd": [
+            8000000,
+            15000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Common for a 3 person team that sells services revenue first."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            6000000
+          ],
+          "post_money_usd": [
+            15000000,
+            30000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Brokerage is a revenue business, so a seed funds licensing, brokers and carrier relationships."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside seed led by a top fund. AI native brokerages were drawing large seeds in late 2025, for example a $7.5M seed for an adjacent broker workflow company."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Large seed, only with a landmark traction story or a hot thesis. Needs a standout growth number such as fast premium placed, not available at a batch start."
+        }
+      ],
+      "why_it_fails": "Seed above $1M fails to close in the window if Panta is still a 3 person brokerage whose revenue is a thin stream of commissions, because investors compare it with funded AI native brokers and ask why a services business deserves a software multiple. Licensing, E&O insurance and carrier appointments take months. Analogs Covela and Blume Benefits stopped at the YC check, while Shepherd needed a vertical wedge in construction before its $6.15M seed."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.04,
+      "anchors": {
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Fintech --calibration-only (series A cond 30 percent n=20, 26 percent known); 2022-2025 Fintech cond 23 percent n=13; months_to_series_a p25 19.4 p50 28 for 2022+",
+        "adjustment_reason": "Series A given a seed in the same 10.4 month window is far below the ever anchor of about 0.27 because median time to Series A from batch start is 28 months and the p25 is about 19 months, so only a small tail of fast companies get there inside the window."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            25000000,
+            50000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin A with a small step up. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            20000000
+          ],
+          "post_money_usd": [
+            50000000,
+            100000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical A for a brokerage with several million of premium placed. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if growth in commissions is steep like a software company. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Series A needs a repeatable acquisition channel and gross margin proof, and brokerages earn 10 to 15 percent commission on premium, so the revenue ramp needed to justify a software priced A is large. Investors also worry about carrier concentration and about producer churn if brokers leave with books. Newfront needed years and a startup niche before raising $100M, and Shepherd reached its A about 2.5 years after its seed."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent n=18); Fintech 2018-2021 cond 33 percent n=6",
+        "adjustment_reason": "Within 0.77 of the B2B anchor because few brokerages reach a B and the sample is tiny. This is the ever reached figure, not for the 10 month window."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            180000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin B with a flat step. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            55000000
+          ],
+          "post_money_usd": [
+            180000000,
+            400000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical B in current benchmarks, pre money near 187M. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside with a platform narrative like Newfront in 2020. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "A Series B requires a scaled book of business and retention above 90 percent while margins hold, and brokerages grow by hiring producers, which caps the pace. Investors pass if the AI advantage shows up as headcount savings only and competitors match them. Newfront raised its $100M at a $500M valuation only after serving startups at scale and was later sold for less than its peak valuation."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.33,
+      "anchors": {
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent n=7); overall series C cond 43 percent n=510 per time_to_milestones context",
+        "adjustment_reason": "At 0.77 of the 0.43 anchor because the small sample and brokerage exit paths to strategic buyers cut many companies off before a C."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            400000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin C. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            110000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical C near the 77M public median. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            110000000,
+            250000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2500000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside platform with MGA or carrier arm. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        }
+      ],
+      "why_it_fails": "Brokerage tends to end with a sale to a strategic such as WTW, Marsh or Gallagher before a C, as Newfront did, so many successful companies never raise a Series C. Failure here also comes from commission rates under pressure from carriers and from loss of carrier appointments. The company would need a carrier or MGA business to justify a growth round."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.5
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          10000000,
+          100000000
+        ],
+        "p": 0.28
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.18
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.04
+      }
+    ],
+    "why_it_fails": "Most failure paths are quiet: the brokerage places a small book, cannot hire producers fast enough and carriers do not give appointments, so it either gets acquired cheaply by a larger broker or stops. A software style exit needs book growth that analogs like Covela and Blume Benefits never showed, and funded rivals compete for the same startup and mid market clients."
+  },
+  "analogs": [
+    {
+      "slug": "newfront-insurance",
+      "relevance": "Modern commercial brokerage from YC for venture backed companies.",
+      "outcome_summary": "Raised $100M at $500M in 2020 and $200M in 2022, then sold to WTW for less than the peak valuation; shows both the upside and the ceiling."
+    },
+    {
+      "slug": "shepherd",
+      "relevance": "Modernizing commercial insurance, started in construction.",
+      "outcome_summary": "$6.15M seed in 2021, $13.5M Series A in 2024; slow path with a vertical wedge."
+    },
+    {
+      "slug": "covela",
+      "relevance": "Digital broker for SMEs in Latin America.",
+      "outcome_summary": "Only the YC check on record and listed inactive."
+    },
+    {
+      "slug": "blume-benefits",
+      "relevance": "AI copilot for health insurance brokers.",
+      "outcome_summary": "Took a reported $500K note and is inactive; broker software was hard to sell."
+    },
+    {
+      "slug": "coverage-cat",
+      "relevance": "AI assisted broker for umbrella insurance.",
+      "outcome_summary": "Small seed in 2022, still active, no larger round found."
+    },
+    {
+      "slug": "surematics",
+      "relevance": "Software for commercial brokers to structure complex deals.",
+      "outcome_summary": "Only the YC check on record and later acquired."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Funded AI broker rivals take the same customers",
+      "p": 0.35,
+      "evidence": "Several AI native brokerages with seeds of several million dollars existed by late 2025, and YC had admitted multiple commercial AI brokers before Panta, such as RiskCube and Acolite.",
+      "analogs": [
+        "shepherd",
+        "coverage-cat"
+      ],
+      "mitigation": "Pick a narrow class of risk and win it, then expand."
+    },
+    {
+      "risk": "Commission revenue limits growth and the software multiple",
+      "p": 0.3,
+      "evidence": "Brokerages earn a percent of premium and scale by hiring producers, which the Newfront history shows took 800 people.",
+      "analogs": [
+        "newfront-insurance"
+      ],
+      "mitigation": "Publish revenue per broker and automate placement steps."
+    },
+    {
+      "risk": "Licensing and carrier appointments delay revenue",
+      "p": 0.2,
+      "evidence": "Appointments with carriers and E&O cover take months for a 3 person new firm, and Covela and Blume Benefits never scaled.",
+      "analogs": [
+        "covela",
+        "blume-benefits"
+      ],
+      "mitigation": "Partner with a licensed agency first and apply for appointments early."
+    },
+    {
+      "risk": "Team of 3 cannot service clients and build software",
+      "p": 0.25,
+      "evidence": "Complex commercial coverage needs expert human work per account, which limits throughput for a small team.",
+      "analogs": [
+        "coverage-cat"
+      ],
+      "mitigation": "Hire a senior producer early."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "1Fort",
+      "what": "Automates commercial insurance placement for brokers.",
+      "traction": "Seed round reported in late 2025.",
+      "source_url": "https://neuronfeed.com/startups/1fort"
+    },
+    {
+      "name": "Newfront",
+      "what": "Tech enabled brokerage for venture backed and middle market firms.",
+      "traction": "Raised $100M in 2020 and $200M in 2022 before sale to WTW.",
+      "source_url": "https://prnewswire.com/news-releases/newfront-insurance-announces-100mm-in-funding-and-a-500mm-valuation-to-modernize-risk-management-for-middle-market-businesses-301156047.html"
+    },
+    {
+      "name": "Shepherd",
+      "what": "Commercial insurance for construction contractors.",
+      "traction": "Seed in 2021 and Series A in 2024.",
+      "source_url": "https://techcrunch.com/2021/09/02/shepherd-raises-6-2m-seed-round-to-tackle-the-construction-insurance-market/"
+    },
+    {
+      "name": "Incumbent brokers (Marsh, Aon, WTW, local brokers)",
+      "what": "Human brokers with scale and carrier relationships.",
+      "traction": "Dominant share of commercial placement.",
+      "source_url": "https://www.marsh.com"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 2,
+    "rationale": "The software part is document intake, quote comparison and workflow automation using existing language models, which a small team can build in weeks. The harder parts are regulatory: licensing, carrier appointments and E&O cover, and accuracy on complex policy wording."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Marsh",
+      "Newfront",
+      "Harper style AI brokers",
+      "Applied Systems"
+    ],
+    "timeline_months": 18,
+    "rationale": "Large brokers and agency software vendors can add AI intake in a year or so and have the distribution, but they move slowly and a small broker can win niche clients first."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Commercial insurance is a very large paid market, brokers already earn commissions on it, and AI broker startups were raising seeds in late 2025.",
+        "source_url": "https://neuronfeed.com/startups/1fort"
+      },
+      {
+        "claim": "Businesses with complex coverage already pay brokers and many founders complain about slow placement, which is the pain the pitch targets.",
+        "source_url": "https://pulse2.com/delegance-raises-3-1-million-pre-seed-for-ai-native-commercial-insurance-brokerage/"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "seed",
+      "goal": "Show premium placed and commission growth that look like a software ramp.",
+      "actions": [
+        "Land 20 or more paying business clients in one niche with a measured time to quote.",
+        "Obtain carrier appointments and publish gross margin per client."
+      ],
+      "proof": "Commission revenue growing 20 percent or more month over month for three months."
+    },
+    {
+      "phase": "series_a",
+      "goal": "Repeatable acquisition and retention.",
+      "actions": [
+        "Hire a senior producer and a sales lead for the chosen niche.",
+        "Show renewal rates above 90 percent."
+      ],
+      "proof": "Annualized commission revenue of $2M or more with retention above 90 percent."
+    }
+  ],
+  "pros": [
+    {
+      "point": "Insurance is a huge paid market with an inefficient process",
+      "evidence": "Brokers earn commissions on commercial premium and the process is manual, which is where AI saves time.",
+      "source_url": "https://neuronfeed.com/startups/1fort"
+    },
+    {
+      "point": "Revenue can start early",
+      "evidence": "A brokerage with licensed brokers earns commissions from the first placed policy, so it does not depend on software sales cycles."
+    },
+    {
+      "point": "Investors were funding the category",
+      "evidence": "AI native brokerage seeds of several million dollars were announced in late 2025.",
+      "source_url": "https://neuronfeed.com/startups/1fort"
+    }
+  ],
+  "brand": {
+    "name": "Panta",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Panta\" --era 2022+ : kind invented_or_proper, 5 characters, 2 syllables",
+    "strengths": [
+      "Short and easy to say",
+      "Does not box the company into one product"
+    ],
+    "weaknesses": [
+      "Says nothing about insurance, so every sales conversation must explain it"
+    ],
+    "rationale": "Panta is a short invented word like Newfront or Shepherd in the same field, and the name feeds no effect on whether commercial clients buy. It is fine for a brokerage, where trust and referrals matter more than a name.",
+    "better_names": []
+  },
+  "narrative": {
+    "headline": "A plausible AI brokerage in a funded and crowded field where a seed above $1M inside 10 months is about a 4 in 10 shot and Series A inside the window is unlikely.",
+    "general_summary": "Panta is a three person commercial insurance brokerage that uses AI workflows and licensed brokers. The market is large and customers already pay commissions, and investors were funding AI native brokers in late 2025. The weakness is that brokerage revenue is a percent of premium and scales with producers, so it is a services business, and several funded rivals, including earlier YC brokerages, chase the same clients. Within the 10.4 month window from the batch start, a seed above $1M is plausible but not likely, near the cohort pace for Fintech, and a Series A is rare because median time to A is over two years. This probability does not rank Panta against other companies, as the 2026 winners test showed no skill in seed odds. Bands put most weight on $3M to $6M."
+  },
+  "assumptions": [
+    "Blind forecast as of 2026-01-05 using only the input file and market searches; records dated after that were ignored.",
+    "The forecast window is 10.4 months, to 2026-11-17, and seed means an outside round above about $1M closing in that window.",
+    "Funding anchors use Fintech and B2B calibration cohorts; 2022 to 2025 cohorts are right censored."
+  ],
+  "sources": [
+    "https://neuronfeed.com/startups/1fort",
+    "https://pulse2.com/delegance-raises-3-1-million-pre-seed-for-ai-native-commercial-insurance-brokerage/",
+    "https://techcrunch.com/2021/09/02/shepherd-raises-6-2m-seed-round-to-tackle-the-construction-insurance-market/",
+    "https://prnewswire.com/news-releases/newfront-insurance-announces-100mm-in-funding-and-a-500mm-valuation-to-modernize-risk-management-for-middle-market-businesses-301156047.html",
+    "https://www.marsh.com"
+  ]
+}

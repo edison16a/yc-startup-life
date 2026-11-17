@@ -1,0 +1,452 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Cranston AI",
+    "one_liner": "AI tax prep and accounting software for CPA firms",
+    "description": "AI agents that read source documents, prepare tax returns inside the firm's existing tax software and hand reviewers a return with workpapers, plus bookkeeping agents that keep client books current. Buyers are CPA firms who pay per seat or per return. Aim is to become the operating system of the firm.",
+    "as_of": "2025-10-06"
+  },
+  "yc_acceptance": {
+    "p": 0.03,
+    "p_low": 0.015,
+    "p_high": 0.075,
+    "basis": "Start from about 1 percent for a random applicant (published figure 0.6 to 2 percent, knowledge/yc_acceptance.md). Adjust up for a team of 8 with a working agent product and a vertical where AI for accounting has YC precedent (Soraban, Fondo, Finta, TaxGPT), and for a clear paid wedge; adjust down because AI accounting and tax is a crowded YC lane. Net about 3 percent. The company is already in the Fall 2025 batch, so this is shown for completeness.",
+    "why_it_fails": "YC would most plausibly say the pitch reads like several AI accounting companies already funded by YC and others: tax prep and bookkeeping for firms is a well-trodden idea, the description claims a broad firm operating system with no revenue or customer number, and incumbents such as Thomson Reuters and Intuit are shipping AI features. Without a founder with CPA firm experience or a signed pilot list the interview could end in no."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.55,
+      "anchors": {
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026 gave seed 36% lower / 44% known / 54% upper, cond 44% (n=1541); series_a cond 20% (n=679); series_b cond 19% (n=136); series_c cond 19% (n=26). Calibration-only B2B: seed 52/65/72, series_a cond 32%, series_b cond 46%.",
+        "adjustment_reason": "Window is 13.4 months (2025-10-06 to 2026-11-17); seed means an outside round above about $1M closing inside it. Cohort anchor is 44 percent ever for B2B 2022+ (known-only) with median time to seed 6 months and p75 14 months (time_to_milestones.csv, 2022+), so most of the ever mass falls inside 13 months. I lift to 0.55, the 1.25x cap, because AI accounting analogs Soraban, Finta, TaxGPT and Fondo all raised seed or pre-seed and the team has 8 people, but per the winners test this lift does not rank the company against others."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000.0,
+            3000000.0
+          ],
+          "post_money_usd": [
+            8000000.0,
+            18000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
+        },
+        {
+          "raise_usd": [
+            3000000.0,
+            6000000.0
+          ],
+          "post_money_usd": [
+            15000000.0,
+            30000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            28000000.0,
+            60000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            55000000.0,
+            120000000.0
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
+        }
+      ],
+      "why_it_fails": "Seed fails if the first tax season is far off: returns cannot be shown to work at scale until January to April 2026, so investors may wait for filing season results. AI tax tooling has several funded rivals, and firms may balk at accuracy risk. TaxGPT raised a seed after a pivot but Fondo and Finta stayed small, so a seed above $1M is not guaranteed even in a hot category. An 8 person team burns faster than the $500K YC deal allows, so it needs outside money or revenue quickly."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.12,
+      "anchors": {
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_a cond 20% (n=679); time table months_to_series_a p50 28, p25 19 (era 2022+).",
+        "adjustment_reason": "Given seed inside 13 months, Series A inside the same window is rare: months_to_series_a p25 is 19 and p50 28 for 2022+ (time_to_milestones.csv), so only a small share of the cond 20 percent anchor lands before 2026-11. I use 0.12, more than 1.5x below the ever anchor, because of the window and not because of company quality."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            6000000.0,
+            10000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Thin or flat-ish Series A on modest ARR; the 2018-2021 B2B series_a p25 was $10M, so this is below the typical cohort round and covers extension-like A rounds."
+        },
+        {
+          "raise_usd": [
+            10000000.0,
+            20000000.0
+          ],
+          "post_money_usd": [
+            50000000.0,
+            120000000.0
+          ],
+          "p_band": 0.5,
+          "rationale": "Central case. B2B 2022+ series_a raise p25 $13M, median $17M, p75 $22M (n=130); post-money reported for only n=3 so valuation is thin data."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band with fast ARR growth in a hot AI category; 2022+ all-industry series_a post-money p75 was $345M on n=18 reported rounds."
+        }
+      ],
+      "why_it_fails": "A Series A needs recurring revenue after at least one filing season and proof that reviewers accept the output without rework. Firms buy slowly and seasonally, so ARR may not reach the roughly $1M to $2M that investors want within 13 months. Soraban reached a Series A only years after batch, and Fondo and Finta stayed at seed, which shows the typical path in this niche is slow."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.18,
+      "anchors": {
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_b cond 19% (n=136); calibration-only B2B cond 46% (n=61); lower/known/upper ranges 1/2/19 percent ever.",
+        "adjustment_reason": "Anchor cond 19 percent (B2B 2022+); kept at 0.18 with no company-specific lift, since no analog in accounting AI has shown a Series B this early."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            20000000.0,
+            35000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin Series B below the cohort p25 of $39M, flat or modest step up."
+        },
+        {
+          "raise_usd": [
+            35000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            700000000.0
+          ],
+          "p_band": 0.5,
+          "rationale": "Central: B2B 2022+ series_b median $42.5M raise and $600M post (n=9 valuations)."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            700000000.0,
+            1500000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category leader; era is inflated by AI rounds so use with care."
+        }
+      ],
+      "why_it_fails": "Series B needs a platform with multi-product expansion and net revenue retention above 110 percent. Tax prep software is a seasonal, per-return business and incumbent suites (Thomson Reuters, Intuit Lacerte, Wolters Kluwer) can bundle AI at low cost, so growth may flatten. Doubles (Keeper) took years to reach its Series A, so a B is a long way off."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.17,
+      "anchors": {
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_c cond 19% (n=26); calibration-only B2B cond 50% (n=28).",
+        "adjustment_reason": "Anchor cond 19 percent; 0.17 slightly below, since vertical accounting has few Series C analogs among YC companies."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000.0,
+            80000000.0
+          ],
+          "post_money_usd": [
+            300000000.0,
+            900000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Modest growth round; series_c 2022+ p25 raise $50M."
+        },
+        {
+          "raise_usd": [
+            80000000.0,
+            150000000.0
+          ],
+          "post_money_usd": [
+            900000000.0,
+            2000000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Central: 2022+ series_c median raise $74M to $101M, post-money median about $1.2B (n=3 to 34)."
+        },
+        {
+          "raise_usd": [
+            150000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            2000000000.0,
+            6000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: breakout category winner, cf. Bland-style rounds; very few companies."
+        }
+      ],
+      "why_it_fails": "Series C requires a category-leading ARR (tens of millions) in a niche where the buyers are small firms with low willingness to pay and large private equity-backed consolidators who build in-house tools. Few YC accounting companies have got there; most end as a good acquisition or an ongoing small business."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.5
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000.0,
+          100000000.0
+        ],
+        "p": 0.32
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000.0,
+          1000000000.0
+        ],
+        "p": 0.15
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000.0,
+          20000000000.0
+        ],
+        "p": 0.03
+      }
+    ],
+    "why_it_fails": "Most vertical AI accounting companies from this period either stay small or are bought by a suite vendor under $100M. A $1B outcome needs the firm-operating-system vision to work against incumbents with the customer base, and the cohort shows 5 percent of researched B2B 2022+ companies were acquired and under 1 percent reached Series C."
+  },
+  "analogs": [
+    {
+      "slug": "soraban",
+      "relevance": "AI tax workflow platform for accounting firms, W21.",
+      "outcome_summary": "Alive about 50 people, Series A in 2025 per the record; slow path of years from batch."
+    },
+    {
+      "slug": "fondo",
+      "relevance": "Bookkeeping and tax for startups, W18.",
+      "outcome_summary": "Alive, seed-sized funding only; services-heavy and stayed small."
+    },
+    {
+      "slug": "finta",
+      "relevance": "Accounting and taxes simplified, W23.",
+      "outcome_summary": "Alive, two to few person team, seed stage with unclear funding."
+    },
+    {
+      "slug": "taxgpt",
+      "relevance": "AI tax assistant for professionals, S24, close on AI tax tooling for firms.",
+      "outcome_summary": "Seed of $4.6M in Feb 2025 (before this as_of) after a pivot; takeover risk from Thomson Reuters rated 5."
+    },
+    {
+      "slug": "doublehq",
+      "relevance": "Software for bookkeepers, S21, firm customers.",
+      "outcome_summary": "Reached a Series A only after years; shows slow expansion path."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Accuracy and liability: a wrong return damages a CPA's license, so firms keep heavy human review and the time saved is smaller than claimed.",
+      "p": 0.35,
+      "evidence": "Circular 230 style human oversight is required, and TaxGPT-like tools were positioned as assistants, not preparers.",
+      "analogs": [
+        "taxgpt",
+        "soraban"
+      ],
+      "mitigation": "Ship workpapers and review diffs; start with simple 1040 and 1120S returns and report error rates per return."
+    },
+    {
+      "risk": "Incumbent suites and well-funded AI rivals bundle similar prep automation, compressing price.",
+      "p": 0.35,
+      "evidence": "Thomson Reuters and Wolters Kluwer already ship AI features, and several YC AI tax and accounting companies share the lane.",
+      "analogs": [
+        "taxgpt",
+        "finta",
+        "soraban"
+      ],
+      "mitigation": "Become the workflow layer across prep, review and client requests so switching cost is high."
+    },
+    {
+      "risk": "Seasonality: revenue and proof come only at filing season, so a seed raise may need to wait until early 2026 and the runway tests it.",
+      "p": 0.25,
+      "evidence": "Tax work peaks January to April and 8 person burn exceeds the YC deal.",
+      "analogs": [
+        "fondo",
+        "doublehq"
+      ],
+      "mitigation": "Sell bookkeeping year round to smooth revenue and pre-sell pilots before season."
+    },
+    {
+      "risk": "Scope creep: promising prep, books and a firm operating system at once splits a small team.",
+      "p": 0.2,
+      "evidence": "The description lists prep, bookkeeping, review, client requests and practice management.",
+      "analogs": [
+        "finta",
+        "fondo"
+      ],
+      "mitigation": "One wedge, one return type, proven before expanding."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Thomson Reuters (UltraTax, CoCounsel)",
+      "what": "Incumbent tax suite adding AI",
+      "traction": "Very large installed base among firms",
+      "source_url": "https://tax.thomsonreuters.com/blog/a-tax-automation-playbook-for-accounting-firms/"
+    },
+    {
+      "name": "Taxfyle and similar tax-prep platforms",
+      "what": "Tax-prep marketplace and AI tools for small CPA firms",
+      "traction": "Active vendor content on AI for firms",
+      "source_url": "https://www.taxfyle.com/txf-blog/cpa-firm-tax-software-ai-efficiency"
+    },
+    {
+      "name": "Wolters Kluwer CCH",
+      "what": "Incumbent firm tax and audit software",
+      "traction": "Case studies on AI augmentation",
+      "source_url": "https://wolterskluwer.com/en/expert-insights/case-study-ensure-accuracy-by-augmenting-human-expertise-with-artificial-intelligence"
+    },
+    {
+      "name": "Status quo: offshore preparers and junior staff",
+      "what": "Firms outsource prep or hire seasonal staff",
+      "traction": "Large and cheap, the real switching target",
+      "source_url": "https://www.taxfyle.com/txf-blog/tax-preparation-software-for-small-cpa-firms-ai-integration"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 3,
+    "rationale": "Reading documents and driving desktop tax software with agents is feasible for a small team in 3 months for simple returns; hard parts are accuracy on edge cases, integrating with closed desktop tax tools without APIs, and security of client data."
+  },
+  "takeover_risk": {
+    "rating": 4,
+    "who": [
+      "Thomson Reuters",
+      "Intuit",
+      "Wolters Kluwer",
+      "funded AI accounting startups"
+    ],
+    "timeline_months": 12,
+    "rationale": "Incumbents have distribution and are already shipping AI assistants; an agent that operates inside their own tax software depends on their tools staying open, so platform dependency is a risk."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Tax talent shortage and shrinking CPA pipeline push firms to automate prep.",
+        "source_url": "https://tax.thomsonreuters.com/blog/top-8-ways-accounting-firms-are-failing-without-ai-powered-automation-and-how-to-fix-them/"
+      },
+      {
+        "claim": "Vendors report firms adopting AI prep to raise capacity.",
+        "source_url": "https://www.taxfyle.com/txf-blog/ai-tax-innovations-transforming-cpa-preparation"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show returns that reviewers accept with little rework.",
+      "actions": [
+        "Run 5 to 10 pilot firms on live returns",
+        "Publish a per-return error and review time metric"
+      ],
+      "proof": "Reviewer edit rate per return and hours saved"
+    },
+    {
+      "phase": "seed",
+      "goal": "Paying firms and a filing-season result by early 2026.",
+      "actions": [
+        "Convert pilots to annual contracts before season",
+        "Sell bookkeeping year round to cover runway",
+        "Pitch funds that backed AI for accounting with the season metrics"
+      ],
+      "proof": "$300K to $1M ARR and a signed seed term sheet above $1M"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Real paid pain: CPA firms lack staff in busy season.",
+      "evidence": "Thomson Reuters and other vendors describe capacity as the main driver of AI spending.",
+      "source_url": "https://tax.thomsonreuters.com/blog/a-tax-automation-playbook-for-accounting-firms/"
+    },
+    {
+      "point": "Team of 8 gives more build capacity than most batch peers.",
+      "evidence": "Input lists team size 8 in San Francisco.",
+      "source_url": "https://www.cranston.ai"
+    }
+  ],
+  "brand": {
+    "name": "Cranston AI",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Cranston\" --era 2022+: 8 chars, 2 syllables, invented or proper name.",
+    "strengths": [
+      "Short and pronounceable",
+      "Reads like a person or firm name, fitting accounting"
+    ],
+    "weaknesses": [
+      "Says nothing about tax",
+      "The AI suffix is generic in the 2025 cohort"
+    ],
+    "rationale": "A proper-name style brand sounds like a professional firm, which suits CPAs, similar to how Fondo and Soraban chose invented names; it is neutral because name rarely decides outcomes."
+  },
+  "narrative": {
+    "headline": "A real, funded niche with an 8 person team, but crowded, seasonal and unproven until the 2026 filing season.",
+    "general_summary": "Cranston sells AI tax prep and bookkeeping to CPA firms. The need is real because firms face a talent shortage, and YC has seen several companies in the same lane, with seeds in the $2M to $5M range. Over a 13.4 month window the cohort anchor for a B2B company reaching a seed above $1M is about 0.44 ever with most of that inside a year, and I use 0.55. The odds do not rank this company against others. The main risks are accuracy and liability, incumbent bundling and a seasonal revenue cycle.",
+    "deep_dive": {
+      "market_need": "TODO: 60+ words",
+      "competition": "TODO: 60+ words",
+      "technical_complexity": "TODO: 60+ words",
+      "takeover": "TODO: 60+ words",
+      "economics_and_distribution": "TODO: 60+ words",
+      "team": "TODO: 60+ words",
+      "yc_specific": "TODO: 60+ words"
+    }
+  },
+  "assumptions": [
+    "Window is 13.4 months from 2025-10-06; seed is an outside round above about $1M.",
+    "Only the input description was used; no company records, funding or news were opened.",
+    "Market web search returned items dated after as_of; they were used only for general context on the staffing shortage, and no company names were taken from them.",
+    "Analog records for companies newer than as_of were not used for outcomes."
+  ],
+  "sources": [
+    "https://tax.thomsonreuters.com/blog/a-tax-automation-playbook-for-accounting-firms/",
+    "https://www.taxfyle.com/txf-blog/cpa-firm-tax-software-ai-efficiency",
+    "https://wolterskluwer.com/en/expert-insights/case-study-ensure-accuracy-by-augmenting-human-expertise-with-artificial-intelligence"
+  ]
+}

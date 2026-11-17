@@ -1,0 +1,462 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "Maximal",
+    "one_liner": "Truckload Planning at Machine Precision",
+    "description": "Maximal builds an algorithmic load planning platform for full truckload carriers. Agents connect to a carrier ERP and communication channels, use that context to generate optimized load plans, and aim to raise revenue per mile while cutting planner time. Three founders from 3PL and trucking backgrounds with transportation science training; Summer 2025 batch, San Francisco.",
+    "as_of": "2025-07-07"
+  },
+  "yc_acceptance": {
+    "p": 0.02,
+    "p_low": 0.008,
+    "p_high": 0.05,
+    "basis": "Start from the third party prior of about 1 percent (references/yc_acceptance.md). Domain founders who grew up in trucking, transportation science training and prior optimization work at a large retailer give founder market fit, the strongest factor in the table, and a vertical AI idea matches current YC interest. No traction is stated and logistics software is crowded, so about 2 percent.",
+    "why_it_fails": "YC would most plausibly say no because load planning is a long enterprise sales cycle into small carriers with weak software budgets, and the interview would press on whether any carrier has used the plans. Funded neighbours such as optimal dynamics already sell planning to carriers, and the founders had no stated customers."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.6,
+      "anchors": {
+        "base_rate": 0.64,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave seed lower/known/upper 51%/64%/71%, cond 64% (n=183), ever and not windowed. Time table: calibration median 7 months to seed, p75 19.5 months; B2B median 9 months (n=143), so 16 months catches most.",
+        "adjustment_reason": "Slightly below the 0.64 ever anchor to reflect the 16 month window; no lift for founder fit beyond the 1.25 times cap, and the odds do not rank this company against others."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000.0,
+            3000000.0
+          ],
+          "post_money_usd": [
+            8000000.0,
+            20000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 16 months from 2025-07-07 to 2026-11-17; the YC deal alone does not count."
+        },
+        {
+          "raise_usd": [
+            3000000.0,
+            6000000.0
+          ],
+          "post_money_usd": [
+            15000000.0,
+            30000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "p_band": 0.28,
+          "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.12,
+          "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
+        }
+      ],
+      "why_it_fails": "Investors may pass on the seed because carrier adoption is slow and Maximal would need one or two live carriers with measured revenue per mile gains. Trebu and arnata both took years to reach a seed after changing direction, and optimal dynamics already holds the enterprise planning mindshare."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.13,
+      "anchors": {
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_a 15%/19%/36%, cond 30% (n=117). Median 28 months from batch to series A.",
+        "adjustment_reason": "Given a seed, a Series A inside 16 months of the batch is early; calibration p25 is 19 months, so I use under half of the ever anchor."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            4000000.0,
+            8000000.0
+          ],
+          "post_money_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Thin Series A or extended seed below the 2022 and later p25 of $11M, typical when growth is slower than hoped."
+        },
+        {
+          "raise_usd": [
+            8000000.0,
+            16000000.0
+          ],
+          "post_money_usd": [
+            40000000.0,
+            90000000.0
+          ],
+          "p_band": 0.4,
+          "rationale": "Typical Series A near the 2022 and later median of about $14M to $15M."
+        },
+        {
+          "raise_usd": [
+            16000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            90000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Strong Series A of $16M to $30M when revenue growth is clear and a lead investor competes, above the 2022 and later p75 of about $20M."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            50000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.1,
+          "rationale": "Breakout Series A above $30M, possible only for a category leader with fast revenue growth; upside band."
+        }
+      ],
+      "why_it_fails": "A Series A needs several paying carriers and clear gross retention. Vertical enterprise cycles run six to twelve months, and vooma raised an A only after about two years. Maximal will likely miss it because pilots do not convert to paid annual contracts fast enough inside the window, and investors then wait for more carriers before leading a round."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.28,
+      "anchors": {
+        "base_rate": 0.31,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_b 5%/6%/26%, cond 31% (n=35). Ever.",
+        "adjustment_reason": "Slightly below 0.31 for the long enterprise cycle."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            10000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            50000000.0,
+            120000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Down or flat round, below the 2022 and later p25 of $27M."
+        },
+        {
+          "raise_usd": [
+            25000000.0,
+            50000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            400000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $32M to $40M median."
+        },
+        {
+          "raise_usd": [
+            50000000.0,
+            100000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band at the p75 of $55M and above."
+        }
+      ],
+      "why_it_fails": "A Series B needs scale across many carriers. Nuvocargo reached one only after pivots and years of operations. Maximal may stall at tens of customers because each integration is custom, and freight tech investors have been burned by long cycles, so they ask for dozens of live carriers before leading a round of that size."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.32,
+      "anchors": {
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_c 2%/3%/23%, cond 45% (n=11). Ever.",
+        "adjustment_reason": "Below 0.45 since freight tech rarely reaches growth rounds."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            25000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            700000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Smaller growth round or bridge financing below the 2022 and later series C p25 of about $50M."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            700000000.0,
+            1500000000.0
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical Series C near the $60M to $74M median."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            5000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a category leader, above the 2022 and later series C p75 of about $100M."
+        }
+      ],
+      "why_it_fails": "Growth rounds require owning the planning layer for large fleets. If TMS vendors or optimal dynamics win the largest carriers, Maximal tops out at a niche of mid size fleets and investors will not lead a growth round, as seen with several freight tech peers."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.55
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          5000000.0,
+          100000000.0
+        ],
+        "p": 0.2
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000.0,
+          1000000000.0
+        ],
+        "p": 0.2
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000.0,
+          5000000000.0
+        ],
+        "p": 0.05
+      }
+    ],
+    "why_it_fails": "The usual end is a stall in a long sales cycle: carriers are fragmented, low margin and slow to change dispatch habits, and a 3 person team cannot support many integrations. Analogs such as viaopt shut down in digital freight, while nuvocargo and vooma show the winners had a sharper wedge and larger rounds."
+  },
+  "analogs": [
+    {
+      "slug": "nuvocargo",
+      "relevance": "Truckload freight for North America, enterprise sales engine, Winter 2018.",
+      "outcome_summary": "Raised a seed, Series A and a Series B in the early 2020s after a pivot; shows freight can reach growth rounds with a wedge."
+    },
+    {
+      "slug": "vooma",
+      "relevance": "AI automation for logistics, a self driving engineer paired with a logistics software founder, Winter 2023.",
+      "outcome_summary": "Raised a seed and Series A by late 2024, a fast path for founder market fit in logistics AI."
+    },
+    {
+      "slug": "trebu",
+      "relevance": "AI agent for freight tendering and shipment monitoring, Summer 2022.",
+      "outcome_summary": "Reached a seed but no later round found, a slower path."
+    },
+    {
+      "slug": "viaopt",
+      "relevance": "Pooling for corporate trucking fleets, Winter 2018.",
+      "outcome_summary": "Shut down with no institutional round, crowded digital freight market."
+    },
+    {
+      "slug": "arnata",
+      "relevance": "AI workers for logistics, Winter 2021.",
+      "outcome_summary": "Seed of about $6.5M in 2023 after a pivot, no later round found."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Slow carrier sales cycles and integration work stretch beyond the runway of 3 founders",
+      "p": 0.45,
+      "evidence": "Plugging into ERPs and communications at each carrier is custom work; trebu and arnata took years to a seed.",
+      "analogs": [
+        "trebu",
+        "arnata"
+      ],
+      "mitigation": "Pick two design partner carriers and charge pilot fees to fund integration."
+    },
+    {
+      "risk": "Funded rivals in load planning and dispatch sell the same promise",
+      "p": 0.4,
+      "evidence": "Optimal Dynamics raised a $40M Series C in May 2025 for load planning and dynamic dispatch, and AI freight startups such as vooma are active.",
+      "analogs": [
+        "vooma",
+        "nuvocargo"
+      ],
+      "mitigation": "Show a measurable revenue per mile gain on a live fleet before competitors do."
+    },
+    {
+      "risk": "The optimization claim cannot be proven without production data and trust from planners",
+      "p": 0.3,
+      "evidence": "Carriers often keep human planners and will not hand control to an agent without a long trial.",
+      "analogs": [
+        "viaopt"
+      ],
+      "mitigation": "Offer advisory plans first, then automate; measure planner hours saved."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Optimal Dynamics",
+      "what": "AI load planning and dispatch for carriers and brokers",
+      "traction": "$40M Series C announced May 2025",
+      "source_url": "https://www.newswire.com/news/optimal-dynamics-raises-40m-series-c-to-scale-the-decision-layer-of-22571094"
+    },
+    {
+      "name": "Transportation management systems such as McLeod and TMW",
+      "what": "Incumbent carrier ERP and dispatch software",
+      "traction": "Entrenched at most mid size carriers",
+      "source_url": "https://www.freightwaves.com/news/technology-optimal-dynamics-startup-trucking"
+    },
+    {
+      "name": "Human planners with spreadsheets",
+      "what": "The status quo for planning loads",
+      "traction": "Universal",
+      "source_url": "https://www.freightwaves.com/news/technology-optimal-dynamics-startup-trucking"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 4,
+    "rationale": "Vehicle routing and load matching with hours of service, time windows and driver preferences is a hard optimization problem, and plugging into messy ERPs adds integration risk. The founders have transportation science training, so the hard part is a moat if they can ship fast on real carrier data."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Optimal Dynamics",
+      "McLeod and other TMS vendors",
+      "Uber Freight"
+    ],
+    "timeline_months": 12,
+    "rationale": "TMS vendors and funded planners could add an agent layer, but carrier ERP vendors move slowly and a sharper optimizer is hard to copy in under a year."
+  },
+  "market_need_now": {
+    "rating": 4,
+    "evidence": [
+      {
+        "claim": "Carriers pay for load planning software; Optimal Dynamics raised a $40M Series C in May 2025",
+        "source_url": "https://www.newswire.com/news/optimal-dynamics-raises-40m-series-c-to-scale-the-decision-layer-of-22571094"
+      },
+      {
+        "claim": "Funding to AI freight and dispatch startups shows buyer interest",
+        "source_url": "https://www.freightwaves.com/news/technology-optimal-dynamics-startup-trucking"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "A carrier running Maximal plans on real loads",
+      "actions": [
+        "Backtest plans on a carrier history",
+        "Run a shadow mode pilot"
+      ],
+      "proof": "One carrier shows higher revenue per mile in shadow mode"
+    },
+    {
+      "phase": "seed",
+      "goal": "Paid pilots at several carriers",
+      "actions": [
+        "Convert pilots to annual contracts",
+        "Build ERP connectors for the two most common systems"
+      ],
+      "proof": "$20,000 monthly recurring revenue across 3 carriers"
+    },
+    {
+      "phase": "series_a",
+      "goal": "Repeatable sales to mid size fleets",
+      "actions": [
+        "Hire a logistics sales lead",
+        "Add broker and brokerage support"
+      ],
+      "proof": "10 carriers and above 120 percent net revenue retention"
+    },
+    {
+      "phase": "series_b",
+      "goal": "Scale across fleet segments",
+      "actions": [
+        "Expand to LTL and dedicated",
+        "Add autonomous dispatch"
+      ],
+      "proof": "$20M annual revenue"
+    },
+    {
+      "phase": "series_c_plus",
+      "goal": "Logistics operating layer",
+      "actions": [
+        "Partner with TMS vendors",
+        "Add freight marketplace features"
+      ],
+      "proof": "$80M annual revenue"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Founder market fit in trucking plus optimization science",
+      "evidence": "Founders grew up in 3PLs and trucking companies and studied transportation science.",
+      "source_url": "https://www.trymaximal.com"
+    },
+    {
+      "point": "A paying buyer category exists",
+      "evidence": "Load planning vendors raised large rounds, so carriers buy this software.",
+      "source_url": "https://www.newswire.com/news/optimal-dynamics-raises-40m-series-c-to-scale-the-decision-layer-of-22571094"
+    }
+  ],
+  "brand": {
+    "name": "Maximal",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Maximal\" --era 2022+ : invented_or_proper, 7 chars, 3 syllables, no descriptor words.",
+    "strengths": [
+      "Signals optimization",
+      "Easy to spell"
+    ],
+    "weaknesses": [
+      "Generic English word",
+      "No link to freight"
+    ],
+    "rationale": "Maximal hints at maximizing revenue per mile and is easy to say, but it is a generic adjective with no freight identity. Past YC brands in logistics such as nuvocargo and vooma show the name rarely decides outcomes."
+  },
+  "narrative": {
+    "headline": "Strong founder market fit in a paying vertical but a slow, enterprise-style sales cycle; seed likely, later rounds uncertain.",
+    "general_summary": "Maximal sells optimization based load planning to full truckload carriers. The buyer category pays for this software today, and the founders have domain roots and optimization credentials. Against that, carriers are slow adopters, funded planning vendors exist, and a three person team must integrate with many ERPs. A seed above $1M inside 16 months is somewhat likely given the vertical AI funding pace, kept near the cohort anchor, and the odds do not rank Maximal against other companies. Analogs show vertical logistics AI companies can reach seeds and A rounds, but they are slow."
+  },
+  "assumptions": [
+    "Information limited to the input file and market searches dated before 2025-07-07.",
+    "Window of 16 months from 2025-07-07 to 2026-11-17.",
+    "Seed means above about $1M from outside investors, excluding the YC deal.",
+    "Three founders; no customers stated."
+  ],
+  "sources": [
+    "https://www.newswire.com/news/optimal-dynamics-raises-40m-series-c-to-scale-the-decision-layer-of-22571094",
+    "https://www.freightwaves.com/news/technology-optimal-dynamics-startup-trucking",
+    "https://www.trymaximal.com"
+  ]
+}

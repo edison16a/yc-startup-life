@@ -60,6 +60,7 @@ The Funding tab also has a raise calculator. Type how much you want to raise and
 | Name features | `scripts/name_features.py`, `data/name_features.csv`, `knowledge/tables/name_outcomes.csv` |
 | Evaluation input and render | `scripts/evalcore.py`, `scripts/render_eval.py`, `scripts/check_eval.py` |
 | HTML report | `scripts/render_html.py`, `scripts/report_template.html` |
+| Landing page | `site/index.html` (one file, open it in a browser; images in `site/img/`) |
 | Settings | `config.json` |
 
 Rules the data follows:

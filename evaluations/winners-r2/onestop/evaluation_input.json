@@ -1,0 +1,414 @@
+{
+  "mode": "summary",
+  "startup": {
+    "name": "OneStop",
+    "one_liner": "The local social network: what's going on a few blocks from you.",
+    "description": "Invite-only iOS and Android app where people post what is happening within a few blocks, launching in New York from Hell's Kitchen. A two person consumer team. No stated revenue model; the usual routes are local advertising, promoted venue listings or event ticketing.",
+    "as_of": "2025-07-07"
+  },
+  "yc_acceptance": {
+    "p": 0.012,
+    "p_low": 0.005,
+    "p_high": 0.03,
+    "basis": "Prior of about 1 percent for a random applicant (yc_acceptance.md, range 0.6 to 2 percent). Down for consumer social with no stated repeat usage evidence (consumer 35 percent inactive in our sample) and a two person team with no revenue; slightly up for a clear geographic wedge and an invite-only launch that gives a testable density claim. Net about 1.2 percent. The company is already in the Summer 2025 batch, so this is shown for completeness.",
+    "why_it_fails": "YC would most plausibly pass because local social is a graveyard category where Nextdoor, Facebook Groups and Instagram already own the habit, and a two person team had not yet shown that people in one neighborhood return weekly. Partners also ask what grows without paid acquisition, and a blocks-wide network needs density that an invite list in one New York area cannot prove early."
+  },
+  "ladder": [
+    {
+      "stage": "seed",
+      "p_reach_given_prev": 0.3,
+      "anchors": {
+        "base_rate": 0.72,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --calibration-only: seed 58% lower / 72% known-only / 78% upper (n=79 conditional); months_to_seed median 11, p25 6, p75 27 (n=57). time_to_milestones.csv industry:Consumer months_to_seed median 5.5, p75 19. Ever-seed anchor 0.72 includes small post YC rounds.",
+        "adjustment_reason": "Window is 16.3 months from 2025-07-07 to 2026-11-17 and the target is an outside round above about $1M, not the YC deal or any seed. Consumer seed timing is slow (median 11 months, p75 27 in the cohort), so only about 60 percent of eventual seeds land inside 16 months, and consumer social with a two person team is below the cohort mean; 0.72 x 0.6 x 0.7 is about 0.30. No uplift for hype, in line with the winners test, and these odds do not rank this company against others."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            1000000,
+            3000000
+          ],
+          "post_money_usd": [
+            8000000,
+            15000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Small post YC round under $3M from angels and pre-seed funds, the common outcome for a two person consumer team with early density in one neighborhood. Consumer rounds at 2018 to 2021 had median $3.5M but many were small (cohort p25 $500K)."
+        },
+        {
+          "raise_usd": [
+            3000000,
+            6000000
+          ],
+          "post_money_usd": [
+            18000000,
+            32000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Institutional seed if the invite-only New York launch shows weekly retention. Consumer 2022+ seed median is $3.4M (n=16, p75 $6.6M)."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            32000000,
+            60000000
+          ],
+          "p_band": 0.25,
+          "rationale": "A growth-story seed led by a top consumer fund if usage spreads beyond Hell's Kitchen; the winners test median of confirmed raises above $1M was $6.0M but leans high."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            110000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside: breakout density across several neighborhoods and a hot narrative about a post-Nextdoor local network."
+        }
+      ],
+      "why_it_fails": "The most likely failure is that the app proves interest but not habit. Invite-only gates create buzz in one area but investors want repeat weekly use and a path to revenue. Past local and social YC companies such as MessageParty pivoted after too few users sat near one another, and Parenthoods raised $1.3M for local communities but was acquired after distribution stayed hard. A two person team also has little time to prove retention before demo day."
+    },
+    {
+      "stage": "series_a",
+      "p_reach_given_prev": 0.06,
+      "anchors": {
+        "base_rate": 0.4,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --calibration-only: series_a 23% lower / 29% known-only / 43% upper, conditional 40% (n=57); months_to_series_a median 25, p25 20 (n=23).",
+        "adjustment_reason": "The window leaves about 16 months total and a Series A in this cohort typically arrives 20 to 50 months after batch start, so only the fastest few percent of seed companies would close one inside the window. 0.40 ever times roughly 0.15 timing share is 0.06."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            5000000,
+            9000000
+          ],
+          "post_money_usd": [
+            25000000,
+            45000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin A for a consumer app with real but modest usage; 2018 to 2021 consumer A median $11M (n=10)."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            18000000
+          ],
+          "post_money_usd": [
+            50000000,
+            90000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical 2022+ Series A, median $15M, for strong retention in New York."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the network expands to several cities with organic growth."
+        }
+      ],
+      "why_it_fails": "A Series A needs a visible growth curve, and most neighborhood apps stall at city-level density or monetization. Nextdoor shows the ceiling for a monetized local network is ad driven and slow, and consumer YC companies that reached A usually had paying behavior. With no revenue model stated, investors will ask how this earns before they fund scaling."
+    },
+    {
+      "stage": "series_b",
+      "p_reach_given_prev": 0.25,
+      "anchors": {
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --calibration-only: series_b conditional 39% (n=23).",
+        "adjustment_reason": "Lowered from 0.39 because the stated window is short and the company would need to have raised an A almost immediately; below 2x of the anchor once timing is considered."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            15000000,
+            25000000
+          ],
+          "post_money_usd": [
+            70000000,
+            130000000
+          ],
+          "p_band": 0.4,
+          "rationale": "Modest Series B on steady growth and early monetization, below the 2022+ median."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            45000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.45,
+          "rationale": "Typical 2022+ Series B, median $40M, for a growing network with clear revenue per user."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            80000000
+          ],
+          "post_money_usd": [
+            350000000,
+            700000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside breakout where usage spreads to many cities and ad or ticketing revenue is proven."
+        }
+      ],
+      "why_it_fails": "By Series B the company needs a monetization engine. Local social products have rarely found one beyond ads, and the analogs show acquihire soft landings (Fridge, YesGraph) more often than Series B. Failing to prove revenue per active user is the likely reason investors stop here."
+    },
+    {
+      "stage": "series_c_plus",
+      "p_reach_given_prev": 0.4,
+      "anchors": {
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --calibration-only: series_c conditional 22% (n=9); B2B 50%.",
+        "adjustment_reason": "Raised above the consumer anchor because anything reaching a B has already beaten the odds, but with n=9 the anchor is noisy and still inside 2x."
+      },
+      "bands": [
+        {
+          "raise_usd": [
+            40000000,
+            70000000
+          ],
+          "post_money_usd": [
+            300000000,
+            600000000
+          ],
+          "p_band": 0.5,
+          "rationale": "Typical Series C, median $74M in the 2022+ table, on scaled engagement and revenue."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Strong growth case with national reach and a defensible revenue stream at the top of range."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Flat or down round when growth slows and revenue per user lags the plan."
+        }
+      ],
+      "why_it_fails": "Reaching this stage would already be rare for a hyperlocal consumer app. Late stage consumer networks need tens of millions of engaged users or large ad revenue. A hyperlocal product rarely reaches national scale, and platforms such as Instagram and Nextdoor can copy features faster than a startup can build a user base."
+    }
+  ],
+  "outcomes": {
+    "bands": [
+      {
+        "name": "Shuts down or stalls",
+        "is_failure": true,
+        "p": 0.62
+      },
+      {
+        "name": "Acquired or IPO under $100M",
+        "value_usd": [
+          2000000,
+          100000000
+        ],
+        "p": 0.28
+      },
+      {
+        "name": "Acquired or IPO $100M-$1B",
+        "value_usd": [
+          100000000,
+          1000000000
+        ],
+        "p": 0.08
+      },
+      {
+        "name": "Acquired or IPO over $1B",
+        "value_usd": [
+          1000000000,
+          5000000000
+        ],
+        "p": 0.02
+      }
+    ],
+    "why_it_fails": "Consumer social in our cohort ends inactive 30 percent of the time and acquired only 7 to 10 percent, mostly at small prices. Local networks need density city by city, face free incumbents with existing habits, and have no stated revenue, so most paths end in a stall or soft landing."
+  },
+  "analogs": [
+    {
+      "slug": "parenthoods",
+      "relevance": "Local community network for parents with the same density and distribution problem.",
+      "outcome_summary": "Raised a $1.32M seed in Nov 2014, competed with free Facebook groups, later acquired without a large exit."
+    },
+    {
+      "slug": "messageparty",
+      "relevance": "Local chat that depended on nearby users.",
+      "outcome_summary": "Raised about $1M seed, pivoted after too few users sat near one another, later inactive."
+    },
+    {
+      "slug": "fridge",
+      "relevance": "Social product that grew then lost to an incumbent feature.",
+      "outcome_summary": "Tens of thousands of users, Facebook Groups copied it, acquihired by Google in 2011."
+    },
+    {
+      "slug": "the-third-place",
+      "relevance": "Neighborhood focused product from a later cohort.",
+      "outcome_summary": "Reportedly raised about $3.2M after YC, still active but small."
+    },
+    {
+      "slug": "assorted-bits",
+      "relevance": "Social calendar for what friends do, early stage mobile social.",
+      "outcome_summary": "No funding found, inactive."
+    }
+  ],
+  "killers": [
+    {
+      "risk": "Retention and density never compound beyond one neighborhood",
+      "p": 0.5,
+      "evidence": "Invite-only launches in a few blocks are easy to seed but local usage is episodic, and MessageParty pivoted because too few users were near each other.",
+      "analogs": [
+        "messageparty",
+        "assorted-bits"
+      ],
+      "mitigation": "Build one dense area to weekly active use before expanding, and publish retention data."
+    },
+    {
+      "risk": "Incumbents copy the feature",
+      "p": 0.3,
+      "evidence": "Nextdoor, Instagram and Facebook Groups already carry local content; Facebook copied Fridge within a year.",
+      "analogs": [
+        "fridge"
+      ],
+      "mitigation": "Focus on real-time posts by people present, a behavior incumbents have not prioritized."
+    },
+    {
+      "risk": "No monetization route",
+      "p": 0.45,
+      "evidence": "No pricing or business model is stated and local ad revenue is small per user.",
+      "analogs": [
+        "parenthoods",
+        "the-third-place"
+      ],
+      "mitigation": "Test local business promotion or ticketing in the first neighborhood."
+    }
+  ],
+  "competition_now": [
+    {
+      "name": "Nextdoor",
+      "what": "Neighborhood network with posts, recommendations and local news",
+      "traction": "Large installed base across the US, public company",
+      "source_url": "https://startupog.com/nextdoor-alternatives"
+    },
+    {
+      "name": "Meetup",
+      "what": "Interest based event discovery",
+      "traction": "About 100,000 events per week according to a review roundup",
+      "source_url": "https://startupog.com/nextdoor-alternatives"
+    },
+    {
+      "name": "Patch",
+      "what": "Hyperlocal news and events, owned by Bending Spoons since 2024",
+      "traction": "Local news pages across many towns",
+      "source_url": "https://startupog.com/nextdoor-alternatives"
+    }
+  ],
+  "technical_complexity": {
+    "rating": 2,
+    "rationale": "A mobile app with location, feeds and moderation is buildable by two engineers in weeks; the hard part is moderation of hyperlocal posts and cold-start density, not technology."
+  },
+  "takeover_risk": {
+    "rating": 3,
+    "who": [
+      "Nextdoor",
+      "Instagram",
+      "Facebook Groups"
+    ],
+    "timeline_months": 9,
+    "rationale": "Incumbents can ship a nearby feed in months, but they have mostly avoided a pure real-time local feed; copy risk is moderate because the product is a behavior and not a technology."
+  },
+  "market_need_now": {
+    "rating": 2,
+    "evidence": [
+      {
+        "claim": "Alternative neighborhood and local apps exist but review pages show small, fragmented adoption beyond Nextdoor, suggesting weak urgency.",
+        "source_url": "https://startupog.com/nextdoor-alternatives"
+      }
+    ]
+  },
+  "roadmap": [
+    {
+      "phase": "before_yc",
+      "goal": "Show repeat weekly use in Hell's Kitchen.",
+      "actions": [
+        "Reach several hundred weekly active invited users in a few blocks",
+        "Track week 4 retention and posts per active user"
+      ],
+      "proof": "Week 4 retention above 30 percent of invited users"
+    },
+    {
+      "phase": "seed",
+      "goal": "Prove a second neighborhood and a revenue test.",
+      "actions": [
+        "Replicate density in two more New York areas",
+        "Test local venue promotion with paid pilots"
+      ],
+      "proof": "Organic growth in new areas and first paying venues"
+    }
+  ],
+  "pros": [
+    {
+      "point": "Clear geographic wedge with a density claim that can be tested quickly",
+      "evidence": "Invite-only launch in a single New York area lets the team measure retention in a bounded zone."
+    },
+    {
+      "point": "Low build cost",
+      "evidence": "A two person team can ship iOS and Android, keeping burn low for the YC deal runway."
+    }
+  ],
+  "brand": {
+    "name": "OneStop",
+    "rating": 3,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"OneStop\" --era 2022+: compound of two real words, 7 chars",
+    "strengths": [
+      "Short and easy to say",
+      "Suggests convenience"
+    ],
+    "weaknesses": [
+      "Generic and shared with many products",
+      "Does not signal local or social"
+    ],
+    "rationale": "Compound descriptive names are common among YC companies and rarely decide outcomes; OneStop is clear but generic and would not help a consumer product stand out the way a distinctive coined name does."
+  },
+  "narrative": {
+    "headline": "A plausible local consumer wedge with a thin team, no revenue model and a category that has mostly failed.",
+    "general_summary": "OneStop is an early invite-only consumer social app for hyperlocal posts in New York. The forecast window is 16.3 months from 2025-07-07 to 2026-11-17. We estimate 0.30 for an outside round above about $1M closing inside that window, below the consumer cohort ever-seed anchor of 0.72 because consumer seeds are slow and the target excludes the YC deal. These odds do not rank this company against others. Reaching a round years later is common for companies with paying customers, and a pivot then raise path is a real upside."
+  },
+  "assumptions": [
+    "Only the input file was used; no company site or funding data was consulted.",
+    "Window 16.3 months ends 2026-11-17.",
+    "Seed means an outside round above about $1M."
+  ],
+  "sources": [
+    "https://startupog.com/nextdoor-alternatives"
+  ]
+}

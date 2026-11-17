@@ -1,0 +1,432 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Altur",
+  "one_liner": "Voice AI Agents for Debt Collection",
+  "description": "Altur sells voice AI agents that make debt collection calls for lenders and collection agencies. The buyer is a lender or agency that pays per call, per recovered dollar or by subscription. Team of nine based in Mexico City, Summer 2025 batch. The description is only one line, so traction, customers and regions are unknown.",
+  "as_of": "2025-07-07"
+ },
+ "yc_acceptance": {
+  "p": 0.5,
+  "p_low": 0.25,
+  "p_high": 0.8,
+  "basis": "The company is already in the Summer 2025 batch, so this is a note only. A random applicant starts near 1 percent. Nine people at application time, a concrete paying buyer and a voice AI wave that YC favored would lift a cold application well above that, though an unregulated looking idea in a rule heavy industry would be questioned.",
+  "why_it_fails": "YC would most plausibly say no because voice collections is a compliance heavy category with many AI entrants already in YC, and a one line pitch gives little sign of why this team wins. Reviewers would ask about recovery rates against human agents, call consent rules and whether customers are lenders in Mexico or the United States."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.63,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --tag AI --calibration-only (seed 63 percent known only, range 54 to 68 percent, n=81, right censored); B2B 2022-2025 59 percent, n=126.",
+    "adjustment_reason": "Window is 16.3 months, from 2025-07-07 to 2026-11-17. The time to milestones table (era 2022+) gives a seed median of 6 months and a 75th percentile of 14 months, so I take about 0.8 of the ever anchor. A nine person team is large for the batch, but the test showed team size does not separate raisers, so no lift. The odds do not rank this company against others."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "The seed fails if lenders will pilot but not pay for volume because TCPA and Regulation F consent rules put liability on the lender, so risk teams slow every deal. Several YC voice collections companies from 2024 and 2025 are chasing the same buyers, and investors may want proof of recovery rates rather than call counts. Retape and Struct show small voice teams that never passed the YC check."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --tag AI --calibration-only (series A cond 25 percent, n=51). Months to series A for B2B 2022+: median 29, 25th percentile 22 (n=19), so a 16 month window catches only the fastest.",
+    "adjustment_reason": "Ever anchor 0.25. Inside a 16 month window almost none of the raisers reach Series A, so I use about a quarter of it, 0.06. This is more than 2x below the anchor because of the window only."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin A with a flat or small step up on modest recurring revenue. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      22000000
+     ],
+     "post_money_usd": [
+      60000000,
+      130000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022+ A: the YC table median is $15M and public deal size medians are $17M to $20M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      22000000,
+      40000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A after a breakout year, with a platform story. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "A Series A inside 16 months would need large lender contracts with recurring volume and proven recovery uplift. Most enterprise lenders take two or more quarters to approve vendors, and a competitor like Domu or CollectWise from Fall 2024 and earlier cohorts is further along on pilots. Vogent and Daily show voice infrastructure gets acquired or pivots before reaching scale."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.39,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18; 2022-2025 B2B tag AI cond 8 percent, n=13, censored). This step is an ever number, not a window number, and lies beyond the forecast window.",
+    "adjustment_reason": "At 0.64 of the 0.39 anchor because regulated voice collections is crowded and margins depend on usage pricing."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      120000000,
+      220000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin B with a flat step up. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      60000000
+     ],
+     "post_money_usd": [
+      220000000,
+      500000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical B: YC 2022+ median is $40M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B led by a top growth fund. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "Series B needs several large lender accounts with net revenue retention above 120 percent and a defensible edge beyond call quality. If foundation model voice APIs commoditize the stack, per call pricing drops and growth investors see a thin margin service. Daily reached a B by selling infrastructure, a different shape."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.43,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall cond 36 to 43 percent). Ever number, beyond the window.",
+    "adjustment_reason": "At 0.70 of the 0.43 anchor since few vertical voice companies reach C."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin C. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C, 2022+ YC median $74M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside C for a category leader. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "A Series C requires a multi product fintech or collections platform with large enterprise logos in the United States and beyond. Voice agents in collections face regulatory shifts, changing consent rules and incumbents such as large agencies with in house tools, and few analogs in the voice or debt data reach this scale; Daily is the nearest and it took years of waiting for demand."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
+    ],
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
+    ],
+    "p": 0.05
+   }
+  ],
+  "why_it_fails": "Most paths end in a stall or small acquisition. Voice agent companies in the data, such as Vogent and Zip Phone, ended up acquired by larger communications firms, and Struct went inactive. A full miss follows if recovery results do not beat cheaper offshore call centers or if consent rule enforcement makes lenders stop outbound AI calls."
+ },
+ "analogs": [
+  {
+   "slug": "vogent",
+   "relevance": "Voice AI agents platform that began with dialers.",
+   "outcome_summary": "Small team, rebranded to voice agents, and ended in an acquisition rather than a venture scale round."
+  },
+  {
+   "slug": "struct",
+   "relevance": "Multilingual voice agent startup with a three person team.",
+   "outcome_summary": "Became inactive with only the YC money on record."
+  },
+  {
+   "slug": "retape",
+   "relevance": "Debt settlement software from a three person team.",
+   "outcome_summary": "Still active with no round beyond YC found, a slow outcome in debt tech."
+  },
+  {
+   "slug": "tranqui-finanzas",
+   "relevance": "Debt management company in Latin America.",
+   "outcome_summary": "Active and revenue led with a tiny seed, showing the bootstrapped path in the region."
+  },
+  {
+   "slug": "daily",
+   "relevance": "Voice and video infrastructure from YC.",
+   "outcome_summary": "Stayed small for years and then raised a Series A and Series B after demand arrived."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Consent and call rules slow or stop lender pilots",
+   "p": 0.35,
+   "evidence": "The FCC's 2024 ruling treats AI voices as artificial under the TCPA and liability sits with the lender (open.cx and retellai compliance guides), so lender risk teams gate every deployment.",
+   "analogs": [
+    "struct",
+    "retape"
+   ],
+   "mitigation": "Ship consent management, call windows and human handoff as default features and publish audit logs."
+  },
+  {
+   "risk": "Crowded field of funded collections voice agents",
+   "p": 0.3,
+   "evidence": "Several 2024 and 2025 companies sell AI collections agents, and general voice platforms offer templates.",
+   "analogs": [
+    "vogent",
+    "struct"
+   ],
+   "mitigation": "Pick one lender segment where the team has local relationships, such as Latin American fintech."
+  },
+  {
+   "risk": "Voice model providers commoditize the call layer",
+   "p": 0.25,
+   "evidence": "Voice agent infrastructure is a feature of larger platforms, and Vogent ended as an acquisition.",
+   "analogs": [
+    "vogent",
+    "daily"
+   ],
+   "mitigation": "Differentiate on recovery rate data and workflow integration, not call quality."
+  },
+  {
+   "risk": "Per outcome pricing makes revenue lumpy",
+   "p": 0.2,
+   "evidence": "Collections pays on recoveries, which depends on portfolio quality that the startup does not control.",
+   "analogs": [
+    "tranqui-finanzas"
+   ],
+   "mitigation": "Use platform fees plus a lower contingency share."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Domu",
+   "what": "AI agents for collections sold to financial institutions.",
+   "traction": "Product pages and blog guides show active outbound marketing.",
+   "source_url": "https://domu.ai/blog/5-best-debt-recovery-voice-ai-solutions"
+  },
+  {
+   "name": "Bland and Retell general voice platforms",
+   "what": "Voice agent platforms that publish debt collection playbooks.",
+   "traction": "Funded platforms with developer adoption.",
+   "source_url": "https://www.bland.ai/blog/ai-voice-agents-debt-collection"
+  },
+  {
+   "name": "Status quo: human call centers and dialers",
+   "what": "Offshore and domestic agencies using predictive dialers.",
+   "traction": "Large installed spend across lenders and agencies.",
+   "source_url": "https://www.retellai.com/blog/fdcpa-compliance-automated-calls"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Current voice models make call handling achievable in three months, but low latency, accents in Spanish and English, regulatory call rules, payment integration and measured recovery rates need real engineering. Dependency on third party speech and language models is a risk."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Domu",
+   "Bland",
+   "Retell",
+   "large collections software vendors",
+   "contact center platforms"
+  ],
+  "timeline_months": 6,
+  "rationale": "Voice agent platforms already publish collections playbooks, so a rival needs only months to ship a vertical offer. Buyers also have platform vendors they trust."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Collections is high volume call work where lenders pay per call or per recovery, and vendors pitch AI to cut call cost.",
+    "source_url": "https://domu.ai/blog/5-best-debt-recovery-voice-ai-solutions"
+   },
+   {
+    "claim": "Compliance rules (FDCPA, TCPA, Regulation F) are a real barrier, which shows demand exists but is gated.",
+    "source_url": "https://www.retellai.com/blog/fdcpa-compliance-automated-calls"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show recovery uplift with two paying lenders.",
+   "actions": [
+    "Run head to head pilots against a human team with measured recovery rate.",
+    "Ship consent management and audit logs."
+   ],
+   "proof": "Two lenders on paid contracts with a recovery rate gain."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Repeatable enterprise sales.",
+   "actions": [
+    "Sign a larger lender or agency with volume commitments.",
+    "Expand to a second country."
+   ],
+   "proof": "Several hundred thousand dollars of monthly recurring revenue and logo retention."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear buyer with existing call spend",
+   "evidence": "Lenders and agencies already pay for human collections calls and dialers.",
+   "source_url": "https://www.retellai.com/blog/fdcpa-compliance-automated-calls"
+  },
+  {
+   "point": "Larger team than most batch companies",
+   "evidence": "Nine people at the start can ship and sell in parallel."
+  }
+ ],
+ "brand": {
+  "name": "Altur",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score Altur --era 2022+ : kind invented_or_proper, alive 92.7 percent, n=1826",
+  "strengths": [
+   "Short and easy to say in English and Spanish"
+  ],
+  "weaknesses": [
+   "No link to collections or voice, which is neutral for B2B"
+  ],
+  "rationale": "The name is a short invented word in a cohort with no survival difference by name type. B2B buyers buy on results and compliance, so the name will not move odds, much like other short coined YC names."
+ },
+ "narrative": {
+  "headline": "A real paying use case in a crowded and rule heavy voice niche, with about even odds of a seed over 16 months.",
+  "general_summary": "Altur builds voice agents that call debtors for lenders. Lenders pay for collection calls today, so need is high, but regulation puts liability on lenders and slows pilots, and several well funded voice collections companies are ahead. The seed estimate for the 16 month window is near the AI B2B anchor discounted for time, and does not rank this company against others. Series A inside the window is unlikely. Voice analogs in the data mostly ended in acquisition or stalled."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-07-07, using the one line description only.",
+  "Window is 16.3 months. Seed means a round above about $1M from outside investors closing inside the window; series_a given seed is for the same window.",
+  "Anchors use the 2022-2025 AI tagged B2B cohort, right censored, discounted for the window.",
+  "Traction, customers and regions are unknown."
+ ],
+ "sources": [
+  "https://domu.ai/blog/5-best-debt-recovery-voice-ai-solutions",
+  "https://www.bland.ai/blog/ai-voice-agents-debt-collection",
+  "https://www.retellai.com/blog/fdcpa-compliance-automated-calls"
+ ]
+}

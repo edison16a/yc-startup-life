@@ -1,0 +1,435 @@
+{
+ "mode": "summary",
+ "startup": {
+  "name": "Godela",
+  "one_liner": "AI Physics Engine to replace simulations and prototypes",
+  "description": "AI powered physics engine that gives engineers a faster, cheaper replacement for simulations and physical prototypes. Users ask in plain language and get a simulation quality result with no setup. Customers would be engineering teams in aerospace and hard tech, paying for software access. Team of 10 in San Francisco.",
+  "as_of": "2025-04-07"
+ },
+ "yc_acceptance": {
+  "p": 0.97,
+  "p_low": 0.9,
+  "p_high": 0.99,
+  "basis": "The input file places this company in the Spring 2025 batch, so acceptance is already known and this figure is reported for completeness only. The starting prior for a random applicant is about 1 percent (references/yc_acceptance.md, 0.6 to 2 percent third party range); the near certainty comes from the stated batch, not from a model of the company.",
+  "why_it_fails": "YC is already past, so the only residual risk is a data error in the input about batch membership. Had the company been an ordinary applicant, the most plausible rejection reason would be: Founders with no verified domain pedigree proposing to replace certified simulation solvers with AI, a technically heavy claim with crowded funded rivals and no stated customers."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.46,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: seed known-only 61% (lower 50%, upper 68%), cond 61% (n=88). Median months to seed 9 (p25 4, p75 19); time_to_milestones.csv era 2022+ p75 is 14 months. ",
+    "adjustment_reason": "Window is 19 months from the as_of date to 2026-11-17. The ever anchor of 61% counts the YC deal as a seed, but this forecast counts only a financing above about $1M from outside investors that closes inside the window, so the anchor is cut to cover only rounds above $1M and only the share that close within 19 months (about 75 to 80 percent of eventual seed raisers close by month 14 to 20). Credit for a 10 person team and a hard tech wedge is capped at 1.25 times and is not applied; the Hard Tech tag cohort (n=13) shows seed 60 percent but with median seed raises of only $500K, which is the YC deal. Odds are not lifted for team or hot sector, per the winners test, and do not rank this company against others."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      1000000,
+      2900000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round of $1M to $3M, usually angels or a small seed fund. Hard tech investors often write a first $1M to $3M check while waiting for customer data."
+    },
+    {
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, the modal outcome in 2022 and later data (median $3.5M to $4.1M in round_benchmarks.csv, which mixes in the YC deal). Physics AI is a funded category, so a $3M to $6M seed from a deep tech fund is the central case."
+    },
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed of $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test. A 10 person team with a working engine could attract a $6M to $12M round from a top fund."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band above $12M, reserved for a standout demo with a named lead. Only with a named aerospace customer and strong accuracy benchmarks."
+    }
+   ],
+   "why_it_fails": "Window of 19 months. The most likely miss is that investors want proof that engineers trust AI results in place of certified solvers such as Ansys, and a spring batch company has about four months of evidence by demo day. Pathmind (shutdown after a Series A) and Vorticity (Series A only three years after batch) show that simulation tooling raises slowly and on technical proof. A raise can also slip past the window."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: series_a cond 33% (n=54), known-only 20%; months to series A median 30 (p25 22, p75 39).",
+    "adjustment_reason": "The ever anchor is 33 percent, but only about a quarter of eventual Series A raisers have closed it by month 19 (p25 is 19 to 22 months from batch start), so the windowed value is much lower. Reaching a Series A in later years is common for companies with paying customers, but it falls outside this window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      45000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge style Series A below the 2022 and later median of $14M to $15M, the down or flat band."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      18000000
+     ],
+     "post_money_usd": [
+      40000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series A near the 2022 and later quartiles ($11M to $21M raise)."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      40000000
+     ],
+     "post_money_usd": [
+      100000000,
+      250000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside Series A led by a top tier fund once revenue is visible; current US medians are about $17M raise on $60M pre money."
+    }
+   ],
+   "why_it_fails": "A Series A inside 19 months needs paying engineering customers and validation against solver ground truth. Median time to Series A is about 28 months from batch start, and Rescale reached its B only after years of enterprise sales. Investors will ask whether surrogate accuracy holds outside the training set, and an unmet accuracy bar ends the round."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: series_b cond 17% (n=18); median months to series B 46 overall, 35.5 for 2022 and later (n=40).",
+    "adjustment_reason": "Median time to a Series B is about three years from batch start, so inside a 19 month window almost only extreme outliers get there; windowed probability is far below the 17 percent ever anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or small Series B, near the 2018 to 2021 median of $32M but with a lower valuation."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      180000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B, in line with the 2022 and later median of about $40M."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B for a category leader; 2022 and later posts reach $600M to $1B."
+    }
+   ],
+   "why_it_fails": "A Series B within the window would need an enterprise revenue base far beyond what a 2025 batch company shows after 19 months. Rescale raised its first priced rounds years after batch, and the typical B2B company needs about three years. The likely failure is simple timing: the round is not due yet."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.05,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55) overall; B2B 2022-2024 cohort has 0 of 3 at Series C. Median months to series C about 61.",
+    "adjustment_reason": "Series C normally lands about five years after the batch, so a window of 19 months makes it very unlikely; the ever anchor is cut to a token value."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C at the 2022 and later median of $74M."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      2000000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round for a scaled leader, near the 2022 and later p75 of $103M."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      6000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round for a breakout company; only a few percent of YC companies get here."
+    }
+   ],
+   "why_it_fails": "Series C inside 19 months is essentially outside the data: the median is about five years from batch start, and the 2022 and later cohort has only 8 Series C cases. Failing here means only that the company has not scaled past a mid sized niche or the window ended first."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
+    ],
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
+    ],
+    "p": 0.17
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
+    ],
+    "p": 0.06
+   }
+  ],
+  "why_it_fails": "Most paths end in a stall or small sale because surrogate physics models face a trust gap and platform vendors (Ansys SimAI, Altair) can bundle similar features. Pathmind shows a well funded simulation startup folding after a Series A, and Vorticity shows slow progress. Only a company that becomes the default design tool in one vertical reaches a large exit."
+ },
+ "analogs": [
+  {
+   "slug": "rescale",
+   "relevance": "Engineering simulation platform sold to aerospace and auto engineers.",
+   "outcome_summary": "Raised a Series B in 2018 and a Series C in 2021, so simulation can support large rounds, but it took years of enterprise sales."
+  },
+  {
+   "slug": "pathmind",
+   "relevance": "Simulation and reinforcement learning for industrial engineers.",
+   "outcome_summary": "Raised seed in 2016 and 11.5M in 2019, then went inactive as big tech frameworks took over; shows the funding then squeeze risk."
+  },
+  {
+   "slug": "vorticity",
+   "relevance": "Fast scientific computing for simulation workloads, deep technical team.",
+   "outcome_summary": "Series A in 2022 about three years after a 2019 batch, showing slow but real progress for hard simulation tech."
+  },
+  {
+   "slug": "carbic",
+   "relevance": "Ultrasonic plus ML fluid analysis for industrial customers.",
+   "outcome_summary": "Still active with about 8 people and no found raise beyond YC, an example of a niche industrial tool that stays small."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Engineers do not trust AI surrogates in place of certified solvers, so sales stall in pilots.",
+   "p": 0.35,
+   "evidence": "Ansys frames AI as augmenting rather than replacing physics, and its own blog stresses screening designs before high fidelity runs.",
+   "analogs": [
+    "pathmind",
+    "rescale"
+   ],
+   "mitigation": "Publish accuracy benchmarks against solver ground truth and sell as a pre-screening step first."
+  },
+  {
+   "risk": "Incumbents with solvers, data and customers (Ansys SimAI, Altair) ship similar AI features and bundle them.",
+   "p": 0.3,
+   "evidence": "Synopsys bought Ansys in 2024 partly for its SimAI products, giving rivals distribution the startup lacks.",
+   "analogs": [
+    "rescale",
+    "pathmind"
+   ],
+   "mitigation": "Pick one vertical such as aerospace thermal or fluids where a startup can be exact and fast."
+  },
+  {
+   "risk": "Funded physics AI rivals out-raise the company and hire the scarce talent.",
+   "p": 0.3,
+   "evidence": "The same wedge (AI physics, CFD surrogate) is crowded with startups by 2025, including a Winter 2025 YC physics model company.",
+   "analogs": [
+    "vorticity",
+    "carbic"
+   ],
+   "mitigation": "Move fast on a named customer and a public benchmark."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Ansys SimAI and AI modules",
+   "what": "Incumbent simulation vendor adds AI surrogate models inside its existing solver suite.",
+   "traction": "Part of the roughly $10B simulation and analysis market (CIMdata 2023 via Machine Design).",
+   "source_url": "https://www.ansys.com/blog/how-ai-is-quietly-transforming-simulation"
+  },
+  {
+   "name": "Altair and other CAE vendors",
+   "what": "Established CAE suites with AI and optimization add-ons.",
+   "traction": "Large installed base across aerospace and auto.",
+   "source_url": "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+  },
+  {
+   "name": "Status quo: HPC solver runs and physical prototypes",
+   "what": "Engineers queue solver jobs on cloud HPC or build prototypes.",
+   "traction": "Entrenched in the $10B market; switching cost is trust, not price.",
+   "source_url": "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 5,
+  "rationale": "Training physics models that stay accurate on unseen geometries and conditions is research hard; a team of 10 can build a narrow demo in months but cannot guarantee general accuracy, which is both the moat and the risk."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Ansys (Synopsys)",
+   "Altair",
+   "NVIDIA",
+   "funded physics AI startups"
+  ],
+  "timeline_months": 12,
+  "rationale": "Vendors already ship AI surrogates inside their suites and have the customers, so a copy in 12 months is plausible; the startup differs only if its accuracy and ease of use are clearly better."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Simulation and analysis is about a $10B market, with aerospace, auto, high tech and heavy equipment making up 76 percent.",
+    "source_url": "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+   },
+   {
+    "claim": "Incumbents themselves are investing in AI surrogates, which confirms that customers want faster simulation.",
+    "source_url": "https://www.ansys.com/blog/how-ai-is-quietly-transforming-simulation"
+   }
+  ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "A working demo that matches a solver on a real engineering case.",
+   "actions": [
+    "Pick one geometry class and publish error against solver output.",
+    "Get two engineers to run it on their own problems."
+   ],
+   "proof": "Side by side accuracy table with under 5 percent error."
+  },
+  {
+   "phase": "seed",
+   "goal": "Paying pilots that justify a $3M to $6M seed.",
+   "actions": [
+    "Convert design partners to paid pilots at $20K to $50K.",
+    "Show repeat use by the same engineers weekly."
+   ],
+   "proof": "Three paid customers and a named lead investor."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Revenue and validated accuracy that justify a Series A.",
+   "actions": [
+    "Land a certification relevant use case in aerospace.",
+    "Build an integration into CAD and solver workflows."
+   ],
+   "proof": "About $1M in ARR with repeat contracts."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large, well documented spend and visible incumbent interest in AI simulation.",
+   "evidence": "About $10B simulation market and vendor AI products show the demand is real.",
+   "source_url": "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+  },
+  {
+   "point": "Team of 10 at batch start is larger than the typical two person YC company.",
+   "evidence": "Stated in the input; more engineering capacity for a hard technical build.",
+   "source_url": "https://www.ansys.com/blog/how-ai-is-quietly-transforming-simulation"
+  }
+ ],
+ "brand": {
+  "name": "Godela",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Godela\" --era 2022+: invented_or_proper, no flags, cohort alive 92.7%, n=1826",
+  "strengths": [
+   "Short, easy to say, no text flags"
+  ],
+  "weaknesses": [
+   "Says nothing about physics and is easy to mistype"
+  ],
+  "rationale": "An invented name with no descriptor, similar to many YC brands that were built up later such as Rippling or Brex; it neither helps nor hurts a B2B engineering tool sold on proof."
+ },
+ "narrative": {
+  "headline": "A credible but crowded physics AI bet whose seed depends on trust in accuracy; 46 percent for a seed above $1M inside 19 months.",
+  "general_summary": "Godela sells an AI physics engine to engineers. The market is large and incumbents are adding AI, so need is real, but trust and a funded field make progress slow. Over a window of 19 months a seed above $1M is a bit under even odds, in line with the B2B cohort, and a Series A in the window is unlikely because the median time is about 28 months. The ladder does not rank this company above others. The most likely single failure is that engineers will not swap a certified solver for an AI estimate, so the company must win one narrow vertical with published accuracy before it widens.",
+  "deep_dive": {
+   "market_need": "Summary mode, see the general summary.",
+   "competition": "Summary mode, see the general summary.",
+   "technical_complexity": "Summary mode, see the general summary.",
+   "takeover": "Summary mode, see the general summary.",
+   "economics_and_distribution": "Summary mode, see the general summary.",
+   "team": "Summary mode, see the general summary.",
+   "yc_specific": "Summary mode, see the general summary."
+  }
+ },
+ "assumptions": [
+  "Team of 10 and the description are the only company facts used.",
+  "Blind forecast made as of 2025-04-07 for the window to 2026-11-17 (19 months). Seed means an outside round above about $1M closing in the window, not the standard YC deal of about $500K.",
+  "Coverage limit: 662 of 6,399 companies are researched, and the B2B 2022-2024 cohort has 107 companies, so cohort rates are wide.",
+  "Probabilities do not rank this company against others; the winners test found no separation between raisers and non-raisers."
+ ],
+ "sources": [
+  "https://www.ansys.com/blog/how-ai-is-quietly-transforming-simulation",
+  "https://www.machinedesign.com/cad-cam-software/article/55301259/altair-crunching-the-numerics-computer-aided-engineering"
+ ]
+}

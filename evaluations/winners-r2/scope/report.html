@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scope: YC evaluation</title>
+<style>
+:root{
+  --bg:#F5F0E6;--card:#FFFFFF;--ink:#14110F;--muted:#6B655C;--line:#E6DFD0;--soft:#FAF7F0;
+  --orange:#F26625;--orange-soft:#FDE9DD;--blue:#2F5BEA;--blue-soft:#E4EAFD;
+  --green:#1E9E5A;--green-soft:#DDF3E6;--red:#D64545;--red-soft:#FBE3E3;--amber:#D9A21B;
+  --radius:18px;--shadow:0 1px 2px rgba(20,17,15,.04),0 8px 24px rgba(20,17,15,.05);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+:root[data-theme="dark"]{
+  --bg:#0E0D0C;--card:#181614;--ink:#F3EEE4;--muted:#9A9285;--line:#2A2622;--soft:#1F1C19;
+  --orange-soft:#3A2417;--blue-soft:#1A2547;--green-soft:#15301F;--red-soft:#3A1C1C;--shadow:none;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E0D0C;--card:#181614;--ink:#F3EEE4;--muted:#9A9285;--line:#2A2622;--soft:#1F1C19;
+  --orange-soft:#3A2417;--blue-soft:#1A2547;--green-soft:#15301F;--red-soft:#3A1C1C;--shadow:none;}}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+svg{display:block}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+button{font:inherit}
+.app{display:grid;grid-template-columns:92px 1fr;height:100vh;height:100dvh}
+.nav{display:flex;flex-direction:column;align-items:center;gap:2px;padding:18px 6px;border-right:1px solid var(--line);overflow-y:auto}
+.brand{width:42px;height:42px;border-radius:12px;background:var(--orange);display:grid;place-items:center;margin-bottom:16px;color:#fff;font-weight:800;font-size:19px;flex:none}
+.tab{all:unset;cursor:pointer;width:84px;padding:10px 0 8px;display:flex;flex-direction:column;align-items:center;gap:5px;color:var(--muted);font-size:11px;font-weight:600;white-space:nowrap;transition:color .25s var(--ease)}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--orange)}
+.tab:focus-visible,.ibtn:focus-visible,.tx:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
+.tab svg,.ibtn svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.spacer{flex:1;min-height:12px}
+.ibtn{all:unset;cursor:pointer;display:grid;place-items:center;width:40px;height:40px;color:var(--muted);transition:color .2s var(--ease),transform .25s var(--ease)}
+.ibtn:hover{color:var(--orange)}
+.ibtn.big{width:64px;height:64px}.ibtn.big svg{width:38px;height:38px;stroke-width:1.5}
+.ibtn.go{color:var(--orange)}.ibtn.go:hover{color:var(--ink);transform:translateX(3px)}
+.ibtn[disabled]{opacity:.25;pointer-events:none}
+.main{overflow-y:auto;scroll-behavior:smooth}
+.page{max-width:1240px;margin:0 auto;padding:28px 32px 64px}
+.title{margin:0 0 22px;font-size:30px;line-height:1.15;letter-spacing:-.025em}
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;color:#fff;white-space:nowrap}
+.view{display:none}.view.on{display:block;animation:viewin .5s var(--ease)}
+@keyframes viewin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.grid{display:grid;gap:16px;grid-template-columns:minmax(0,1fr)}.grid>*,.chart-wrap>*,.walk>*{min-width:0}
+a{overflow-wrap:anywhere}.list li>*{min-width:0;overflow-wrap:anywhere}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
+.rc-row{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}.rc-f{display:flex;flex-direction:column;gap:6px;flex:1;min-width:160px}
+.rc-in{font:inherit;font-size:18px;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%;box-sizing:border-box}
+.rc-in:focus-visible{outline:2px solid var(--blue);outline-offset:2px}.rc-out{margin-top:6px}
+.card h2{margin:0 0 14px;font-size:19px;letter-spacing:-.015em}
+.big{font-size:40px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.muted{color:var(--muted)}.small{font-size:13px}
+.stat{display:flex;flex-direction:column;gap:8px;min-height:150px}
+.ring{width:92px;height:92px;flex:none}
+.ring circle{fill:none;stroke-width:9;stroke-linecap:round}
+.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--orange);transition:stroke-dashoffset 1.2s var(--ease)}
+.row{display:flex;align-items:center;gap:14px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.stepper{display:grid;gap:4px}
+.step{all:unset;cursor:pointer;display:grid;grid-template-columns:110px 1fr 140px;align-items:center;gap:14px;padding:10px 4px;transition:color .2s var(--ease)}
+.step:hover b{color:var(--orange)}
+.bar{height:12px;border-radius:999px;background:var(--soft);overflow:hidden}
+.bar>i{display:block;height:100%;width:0;border-radius:999px;background:var(--orange);transition:width 1.1s var(--ease)}
+.gauge{display:flex;gap:5px;margin:10px 0 0}
+.gauge i{flex:1;height:10px;border-radius:5px;background:var(--line);transition:background .4s var(--ease)}
+.dots{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.callout{border-radius:14px;padding:14px 16px;font-size:14px}
+.callout.red{background:var(--red-soft)}.callout.green{background:var(--green-soft)}.callout.blue{background:var(--blue-soft)}
+.callout b{display:block;font-size:12px;letter-spacing:.03em;text-transform:uppercase;margin-bottom:4px}
+.callout.red b{color:var(--red)}.callout.green b{color:var(--green)}
+.snap{scroll-snap-type:y proximity}.snap>.card{scroll-snap-align:start;scroll-margin-top:16px}
+.band{display:grid;grid-template-columns:150px 1fr 70px;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.band:first-of-type{border-top:0}
+.range{position:relative;height:10px;border-radius:999px;background:var(--soft)}
+.range i{position:absolute;top:0;bottom:0;border-radius:999px;background:var(--blue);transform-origin:left;animation:grow .9s var(--ease) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tx{all:unset;cursor:pointer;padding:4px 2px;margin-left:14px;font-size:14px;font-weight:700;color:var(--muted);transition:color .2s var(--ease);border-bottom:2px solid transparent}
+.tx:hover{color:var(--ink)}.tx[aria-pressed="true"]{color:var(--orange);border-bottom-color:var(--orange)}
+.chart-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
+.chart{width:100%;height:auto;touch-action:pan-y;cursor:crosshair;user-select:none}
+.chart text{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;fill:var(--muted)}
+.chart .grid-l{stroke:var(--line);stroke-width:1}
+.chart .ln{fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.cg{transition:opacity .35s var(--ease)}
+.readout{display:flex;flex-direction:column;gap:2px;max-height:470px;overflow:auto;padding-right:2px}
+.rrow{all:unset;cursor:pointer;display:grid;grid-template-columns:28px 1fr auto;gap:10px;align-items:center;padding:7px 8px;font-size:13px;box-sizing:border-box}
+.rrow .nm{font-weight:700;line-height:1.2;transition:color .2s}.rrow .st{font-size:11px;color:var(--muted)}
+.rrow:hover .nm{color:var(--orange)}.rrow.sel .nm{color:var(--blue)}.rrow.me .nm{color:var(--orange)}
+.rrow:focus-visible{outline:2px solid var(--blue);border-radius:8px}
+.range-in{width:100%;accent-color:var(--orange);margin:10px 0 0}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.ico{border-radius:22%;overflow:hidden;background:var(--soft);display:grid;place-items:center;font-weight:800;color:var(--muted);flex:none;position:relative;font-size:12px}
+.ico img{width:100%;height:100%;object-fit:cover;display:block}
+.ico .sd{position:absolute;right:-2px;bottom:-2px;width:9px;height:9px;border-radius:50%;border:2px solid var(--card)}
+.acard{display:flex;flex-direction:column;gap:8px}
+.cards{align-items:start}
+.more{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:4px;color:var(--blue);font-weight:700;font-size:13px;margin-top:2px;transition:color .2s var(--ease);align-self:flex-start}
+.more:hover{color:var(--orange)}.more:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:6px}
+.more svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease)}
+.more[aria-expanded="true"] svg{transform:rotate(180deg)}
+.xp{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.xp.open{grid-template-rows:1fr}
+.xp>.xpi{overflow:hidden;min-height:0}
+.detail{padding-top:6px}
+.dsec{margin-top:14px}
+.dsec h4{margin:0 0 6px;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.tl{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.tl li{display:grid;grid-template-columns:76px 1fr;gap:10px;font-size:13px}
+.tl li>span:first-child{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{padding:2px 9px;border-radius:999px;background:var(--soft);font-size:12px}
+.chips.good span{background:var(--green-soft)}.chips.bad span{background:var(--red-soft)}
+.detailpanel{border-top:1px solid var(--line);margin-top:16px;padding-top:12px;display:none}
+.dotb{all:unset;cursor:pointer;display:block;transition:transform .2s var(--ease)}
+.dotb:hover{transform:translateY(-2px)}.dotb:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:8px}
+.acard .head{display:flex;align-items:center;gap:10px}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.list li{display:grid;grid-template-columns:22px 1fr;gap:10px}
+.list svg{width:20px;height:20px;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.pro svg{stroke:var(--green)}.con svg{stroke:var(--red)}
+.prob{height:8px;border-radius:999px;background:var(--soft);margin:8px 0;overflow:hidden}
+.prob i{display:block;height:100%;width:0;background:var(--red);border-radius:999px;transition:width 1s var(--ease)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}.tbl th{font-size:12px;text-align:left;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}.tbl td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+details{border-top:1px solid var(--line);padding:12px 0}summary{cursor:pointer;font-weight:700}details[open] summary{margin-bottom:8px}
+.walk{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:stretch}
+.stage-chart{width:100%;height:auto}
+.stage-chart text{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,sans-serif;fill:var(--muted)}
+.shake{animation:shake .6s var(--ease)}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-7px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.cap{display:flex;flex-direction:column;gap:12px;min-height:520px}
+.cap .num{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.cap .res{font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.cap .ctl{margin-top:auto;display:flex;align-items:center;justify-content:space-between}
+.pips{display:flex;gap:8px}.pips i{width:8px;height:8px;border-radius:50%;background:var(--line);transition:background .4s var(--ease),transform .4s var(--ease)}
+.pips i.on{background:var(--orange);transform:scale(1.25)}.pips i.bad{background:var(--red)}
+.fadein{animation:viewin .6s var(--ease)}
+.link{all:unset;cursor:pointer;color:var(--blue);font-weight:700;font-size:14px;transition:color .2s}.link:hover{color:var(--orange)}
+.tree{position:relative;display:flex;gap:70px;overflow-x:auto;padding:6px 4px 18px;align-items:flex-start;min-height:340px}
+.tcol{display:flex;flex-direction:column;gap:14px;min-width:230px;max-width:250px;animation:fade .4s var(--ease);flex:none}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.tn{all:unset;cursor:pointer;display:block;box-sizing:border-box;width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;transition:border-color .25s var(--ease),transform .25s var(--ease)}
+.tn:hover{transform:translateY(-2px)}
+.tn:focus-visible{outline:2px solid var(--blue)}
+.tn.sel{border-color:var(--orange)}
+.tn b{display:block;font-size:15px;line-height:1.25}
+.tn .pr{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:13px;color:var(--muted)}
+.tlinks{position:absolute;left:0;top:0;pointer-events:none;overflow:visible}
+.tlinks path{fill:none;stroke:var(--line);stroke-width:2;stroke-linecap:round;transition:stroke .3s}
+.tlinks path.on{stroke:var(--orange)}
+.rm{display:grid;gap:0;position:relative}
+.rm-item{display:grid;grid-template-columns:34px 1fr;gap:16px}
+.rm-rail{display:flex;flex-direction:column;align-items:center}
+.rm-dot{width:16px;height:16px;border-radius:50%;background:var(--line);margin-top:26px;transition:background .4s var(--ease),transform .4s var(--ease)}
+.rm-item.focus .rm-dot{background:var(--orange);transform:scale(1.3)}
+.rm-line{flex:1;width:2px;background:var(--line)}.rm-item:last-child .rm-line{display:none}
+.rm-item .card{margin-bottom:16px}
+.rm-item.focus .card h2{color:var(--orange)}
+@media (max-width:980px){.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:minmax(0,1fr)}.chart-wrap,.walk{grid-template-columns:minmax(0,1fr)}.readout{max-height:none}.cap{min-height:0}}
+@media (max-width:760px){
+  .app{grid-template-columns:1fr;grid-template-rows:1fr auto}
+  .nav{order:2;flex-direction:row;justify-content:space-around;border-right:0;border-top:1px solid var(--line);padding:6px 2px;background:var(--bg);overflow-x:auto}
+  .brand,.spacer{display:none}.tab{width:auto;min-width:44px;flex:1;padding:8px 0 6px}.tab span{font-size:9px}
+  .page{padding:20px 16px 40px}.g4,.g2{grid-template-columns:minmax(0,1fr)}.title{font-size:24px}
+  .step{grid-template-columns:90px 1fr 100px}.band{grid-template-columns:1fr}.chart{min-width:640px}.chartbox{overflow-x:auto}.tbl{display:block;overflow-x:auto;max-width:100%}.tbl td,.tbl th{white-space:nowrap}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important;transition-duration:.001s!important}.reveal{opacity:1;transform:none}.chart .ln{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="nav" role="tablist" aria-label="Report sections" id="nav"></nav>
+  <main class="main" id="main"><div class="page" id="page"></div></main>
+</div>
+<script type="application/json" id="data">{"mode": "summary", "startup": {"name": "Scope", "one_liner": "We help software companies get discovered and used by AI agents", "description": "A measurement and improvement system for how coding agents such as Claude Code, Codex and Cursor discover, choose, set up and keep using developer products. It runs real workflows across agents, shows when the agent picks the product versus a competitor, where it breaks and what docs or surfaces to change. Starts with APIs, infra products, CLIs and MCP servers; buyers are dev-tool companies. Two person team, founder with interpretability research and GEO/AEO engineering background.", "as_of": "2026-04-06"}, "thresholds": [{"min": 0.65, "label": "Very likely"}, {"min": 0.45, "label": "Likely"}, {"min": 0.2, "label": "Reasonable"}, {"min": 0.05, "label": "Unlikely"}, {"min": 0.0, "label": "Very unlikely"}], "headline": "Timely idea from a technical founder, but a small buyer set and a funded GEO lane make a seed above $1M in 7 months uncertain.", "summary": "Scope measures and improves how coding agents find and use developer products. The problem is topical, and YC has funded neighbors such as AthenaHQ and The Prompting Company, whose seeds show money exists for the lane. A 2 person team with no stated revenue has about 7.4 months, against a cohort median of about 6 months to seed among those that raise at all. I use 0.38 against an ever anchor of 0.44, and the odds do not rank the company against others. The biggest risks are a tiny early buyer set and agent vendors absorbing the function.", "yc": {"p": 0.02, "p_low": 0.01, "p_high": 0.05, "basis": "Start from about 1 percent (0.6 to 2 percent published). Adjust up for a technical founder with interpretability research and GEO work, and a topical problem that fits YC's interest in agent-era infrastructure; adjust down for a 2 person team, no stated revenue, and a market where the customer base (dev-tool companies) is small and the GEO lane already has several YC companies (AthenaHQ, The Prompting Company). Net about 2 percent; the company is already in the Spring 2026 batch.", "why_it_fails": "YC would most plausibly say the buyer set is thin and the product is a measurement dashboard that may become a feature of existing GEO and observability tools. A two person team with no named paying customers, in a lane where AthenaHQ and The Prompting Company already sell agent and AI-search visibility, gives interviewers little reason to believe in a large market.", "label": "Very unlikely"}, "stages": [{"key": "seed", "title": "Seed", "months": 8, "p_reach_prev": 0.38, "p_given_yc": 0.38, "label_given_yc": "Reasonable", "p_today": 0.0076, "label_today": "Very unlikely", "why": "A seed fails to close in 7 months if there is no revenue to show: the buyers are dev-tool companies, a small market, and an investor must believe agent-driven discovery becomes a budget line. GEO analogs such as Geostar (S21) show that a measurement-only product can stall without a round, and AthenaHQ and The Prompting Company compete for the same dollars. Two founders also cap how many pilots can be run.", "anchor": {"base_rate": 0.44, "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026 gave seed 36% lower / 44% known / 54% upper, cond 44% (n=1541); series_a cond 20% (n=679); series_b cond 19% (n=136); series_c cond 19% (n=26). Calibration-only B2B: seed 52/65/72, series_a cond 32%, series_b cond 46%.", "adjustment_reason": "Window is 7.4 months (2026-04-06 to 2026-11-17); seed means an outside round above about $1M closing inside it. Anchor 0.44 ever (B2B 2022+, known-only) with median time to seed 6 months and p25 3, so roughly 70 to 80 percent of ever-seeds close inside 7 months, which gives about 0.33 to 0.35. I use 0.38 (under the 1.25x cap) because GEO analogs AthenaHQ and The Prompting Company raised seeds, but the team is 2 and no revenue is stated, so no lift beyond that. Odds do not rank the company against others."}, "bands": [{"raise": [1000000.0, 3000000.0], "post": [8000000.0, 18000000.0], "p_band": 0.35, "p_given_yc": 0.13299999999999998, "label": "Unlikely", "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."}, {"raise": [3000000.0, 6000000.0], "post": [15000000.0, 30000000.0], "p_band": 0.35, "p_given_yc": 0.13299999999999998, "label": "Unlikely", "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."}, {"raise": [6000000.0, 12000000.0], "post": [28000000.0, 60000000.0], "p_band": 0.22, "p_given_yc": 0.08360000000000001, "label": "Unlikely", "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."}, {"raise": [12000000.0, 25000000.0], "post": [55000000.0, 120000000.0], "p_band": 0.08, "p_given_yc": 0.0304, "label": "Very unlikely", "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."}]}, {"key": "series_a", "title": "Series A", "months": 26, "p_reach_prev": 0.05, "p_given_yc": 0.019000000000000003, "label_given_yc": "Very unlikely", "p_today": 0.0003800000000000001, "label_today": "Very unlikely", "why": "Series A needs repeatable ARR of about $1M to $2M from dev-tool companies, a narrow buyer set. In 7 months the product must prove agents actually shift usage and that firms pay recurring fees rather than one-off audits. No analog reached a Series A this fast.", "anchor": {"base_rate": 0.2, "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_a cond 20% (n=679); time table months_to_series_a p50 28, p25 19 (era 2022+).", "adjustment_reason": "Window is 7.4 months, but Series A p25 is 19 months from batch start (2022+ time table), so a Series A inside the window is very rare. I use 0.05 against a 0.20 ever anchor; the discount is only for the short window."}, "bands": [{"raise": [6000000.0, 10000000.0], "post": [30000000.0, 60000000.0], "p_band": 0.25, "p_given_yc": 0.004750000000000001, "label": "Very unlikely", "rationale": "Thin or flat-ish Series A on modest ARR; the 2018-2021 B2B series_a p25 was $10M, so this is below the typical cohort round and covers extension-like A rounds."}, {"raise": [10000000.0, 20000000.0], "post": [50000000.0, 120000000.0], "p_band": 0.5, "p_given_yc": 0.009500000000000001, "label": "Very unlikely", "rationale": "Central case. B2B 2022+ series_a raise p25 $13M, median $17M, p75 $22M (n=130); post-money reported for only n=3 so valuation is thin data."}, {"raise": [20000000.0, 40000000.0], "post": [120000000.0, 300000000.0], "p_band": 0.25, "p_given_yc": 0.004750000000000001, "label": "Very unlikely", "rationale": "Upside band with fast ARR growth in a hot AI category; 2022+ all-industry series_a post-money p75 was $345M on n=18 reported rounds."}]}, {"key": "series_b", "title": "Series B", "months": 44, "p_reach_prev": 0.17, "p_given_yc": 0.0032300000000000007, "label_given_yc": "Very unlikely", "p_today": 6.460000000000001e-05, "label_today": "Very unlikely", "why": "Series B requires the product to expand from dev tools to all software companies as agents become a channel, and to defend against model-provider tools. If the market stays tiny or the model labs publish their own agent-experience tests, growth stalls near $5M ARR.", "anchor": {"base_rate": 0.19, "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_b cond 19% (n=136); calibration-only B2B cond 46% (n=61); lower/known/upper ranges 1/2/19 percent ever.", "adjustment_reason": "Anchor cond 19 percent (B2B 2022+); 0.17 because a niche measurement tool has few Series B analogs."}, "bands": [{"raise": [20000000.0, 35000000.0], "post": [120000000.0, 250000000.0], "p_band": 0.3, "p_given_yc": 0.0009690000000000001, "label": "Very unlikely", "rationale": "Thin Series B below the cohort p25 of $39M, flat or modest step up."}, {"raise": [35000000.0, 60000000.0], "post": [250000000.0, 700000000.0], "p_band": 0.5, "p_given_yc": 0.0016150000000000003, "label": "Very unlikely", "rationale": "Central: B2B 2022+ series_b median $42.5M raise and $600M post (n=9 valuations)."}, {"raise": [60000000.0, 120000000.0], "post": [700000000.0, 1500000000.0], "p_band": 0.2, "p_given_yc": 0.0006460000000000002, "label": "Very unlikely", "rationale": "Upside band for a category leader; era is inflated by AI rounds so use with care."}]}, {"key": "series_c_plus", "title": "Series C+", "months": 66, "p_reach_prev": 0.15, "p_given_yc": 0.00048450000000000007, "label_given_yc": "Very unlikely", "p_today": 9.690000000000002e-06, "label_today": "Very unlikely", "why": "Series C needs category leadership in agent experience measurement, with tens of millions in ARR across many software buyers. Writesonic-like GEO products and large analytics or observability suites could absorb the category before then, leaving Scope as a small independent with a narrow dev-tool customer base and little pricing power.", "anchor": {"base_rate": 0.19, "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_c cond 19% (n=26); calibration-only B2B cond 50% (n=28).", "adjustment_reason": "Anchor cond 19 percent; 0.15 since few GEO or analytics tools of this type have reached Series C in the data."}, "bands": [{"raise": [40000000.0, 80000000.0], "post": [300000000.0, 900000000.0], "p_band": 0.35, "p_given_yc": 0.00016957500000000002, "label": "Very unlikely", "rationale": "Modest growth round; series_c 2022+ p25 raise $50M."}, {"raise": [80000000.0, 150000000.0], "post": [900000000.0, 2000000000.0], "p_band": 0.45, "p_given_yc": 0.00021802500000000003, "label": "Very unlikely", "rationale": "Central: 2022+ series_c median raise $74M to $101M, post-money median about $1.2B (n=3 to 34)."}, {"raise": [150000000.0, 400000000.0], "post": [2000000000.0, 6000000000.0], "p_band": 0.2, "p_given_yc": 9.690000000000002e-05, "label": "Very unlikely", "rationale": "Upside: breakout category winner, cf. Bland-style rounds; very few companies."}]}], "outcomes": [{"name": "Shuts down or stalls", "value": null, "failure": true, "p_given_yc": 0.58, "label_given_yc": "Likely", "p_today": 0.9916, "label_today": "Very likely"}, {"name": "Acquired or IPO under $100M", "value": [5000000.0, 100000000.0], "failure": false, "p_given_yc": 0.28, "label_given_yc": "Reasonable", "p_today": 0.005600000000000001, "label_today": "Very unlikely"}, {"name": "Acquired or IPO $100M-$1B", "value": [100000000.0, 1000000000.0], "failure": false, "p_given_yc": 0.11, "label_given_yc": "Unlikely", "p_today": 0.0022, "label_today": "Very unlikely"}, {"name": "Acquired or IPO over $1B", "value": [1000000000.0, 20000000000.0], "failure": false, "p_given_yc": 0.03, "label_given_yc": "Very unlikely", "p_today": 0.0006, "label_today": "Very unlikely"}], "outcomes_why": "Most thin measurement tools in a new category either pivot or get bought by a larger analytics or SEO vendor under $100M; a $1B outcome would need agents to become the main software distribution channel and Scope to be the system of record for it.", "most_likely": {"stop_index": 0, "stop_name": "No priced round", "stop_p": 0.62, "stop_dist": [{"name": "No priced round", "p": 0.62}, {"name": "Seed", "p": 0.361}, {"name": "Series A", "p": 0.015770000000000003}, {"name": "Series B", "p": 0.0027455000000000005}, {"name": "Series C+", "p": 0.00048450000000000007}], "stop_band": null, "credible_index": 1, "credible_name": "Seed", "credible_p": 0.38, "credible_band": {"raise": [1000000.0, 3000000.0], "post": [8000000.0, 18000000.0], "p_band": 0.35}}, "scores": {"need": 3, "technical": 3, "takeover": 3, "brand": 3}, "insights": {"need": {"rating": 3, "evidence": [{"claim": "Commentary argues tool discovery is shifting to agents and MCP listings, but independent usage data is scarce.", "source_url": "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/"}, {"claim": "GEO and MCP SEO are treated as a visibility pillar in marketing content.", "source_url": "https://www.searchinfluence.com/?p=26281"}]}, "competition": [{"name": "AthenaHQ", "what": "AI search and GEO visibility", "traction": "Seed round raised", "source_url": "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/"}, {"name": "Generic GEO and AEO tools", "what": "Dozens of brand-visibility dashboards for AI answers", "traction": "Vendor roundups list many", "source_url": "https://www.searchinfluence.com/?p=26281"}, {"name": "In-house docs and DevRel teams", "what": "Rewrite docs and add MCP servers by hand", "traction": "Status quo for most dev-tool companies", "source_url": "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/"}], "technical": {"rating": 3, "rationale": "Running real workflows across several coding agents reliably, with sandboxes, repeated trials and scoring, is doable by two engineers but the hard part is making noisy, model-version-dependent results trustworthy and cheap to run."}, "takeover": {"rating": 3, "who": ["Anthropic, OpenAI and Cursor", "GEO suites", "Datadog-style observability vendors"], "timeline_months": 9, "rationale": "Agent vendors could expose usage analytics, and GEO suites could add agent testing; a rival would need about 6 to 12 months and has the distribution but little incentive to serve competitors neutrally."}, "brand": {"name": "Scope", "rating": 3, "effect_on_success": "neutral", "name_check": "python3 -I scripts/name_features.py --score \"Scope\" --era 2022+: 5 chars, 1 syllable, real word.", "strengths": ["Short real word", "Suggests measurement and visibility"], "weaknesses": ["Very common word, hard to search and a crowded domain space"], "rationale": "A one-syllable real word is easy to say and fits a measurement tool, like Vapi and Retell as short brand names in dev tools; the cost is that it is hard to own in search, which matters for a company selling discoverability."}, "deep_dive": {"market_need": "TODO: 60+ words", "competition": "TODO: 60+ words", "technical_complexity": "TODO: 60+ words", "takeover": "TODO: 60+ words", "economics_and_distribution": "TODO: 60+ words", "team": "TODO: 60+ words", "yc_specific": "TODO: 60+ words"}}, "roadmap": [{"phase": "before_yc", "goal": "Show agents change their tool choices after Scope's fixes.", "actions": ["Run the audit on 10 dev-tool companies and publish before and after results", "Collect two named design partners"], "proof": "Measured lift in agent selection rate for a customer"}, {"phase": "seed", "goal": "Paid customers and a clear budget owner within 7 months.", "actions": ["Convert design partners to monthly plans", "Publish a public agent-experience benchmark for popular APIs to get inbound", "Pitch dev-tool-focused funds with usage data"], "proof": "$20K to $50K MRR and a seed term sheet above $1M"}], "pros": [{"point": "Founder has interpretability research and GEO engineering experience.", "evidence": "Stated in the description.", "source_url": "https://tryscope.com"}, {"point": "Timely topic: agents increasingly choose and install tools.", "evidence": "Market commentary on MCP discovery.", "source_url": "https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/"}], "cons": [{"risk": "Tiny early buyer set: only API, infra and CLI companies care now, and they spend little on tooling.", "p": 0.35, "evidence": "Description says the first focus is APIs, infra, CLIs and MCP servers; GEO budgets sit mostly in marketing teams.", "analogs": ["geostar", "openbenchmarks"], "mitigation": "Move to a per-agent-run usage price and expand to SaaS products with agent surfaces.", "analog_names": ["Geostar", "Openbenchmarks"]}, {"risk": "Crowded GEO lane with funded rivals adding agent features.", "p": 0.3, "evidence": "AthenaHQ and The Prompting Company already sell AI discovery, with seeds.", "analogs": ["athenahq", "the-prompting-company"], "mitigation": "Specialize on workflows that agents actually run (setup, auth, docs) and prove changes move usage.", "analog_names": ["AthenaHQ", "The Prompting Company"]}, {"risk": "Model providers or agent vendors publish their own tool-selection signals, removing the need for a third-party measurement.", "p": 0.25, "evidence": "Claude Code, Codex and Cursor control tool discovery and can add built-in reporting.", "analogs": ["writesonic", "athenahq"], "mitigation": "Be the cross-agent neutral view and own the fix workflow, not just the score.", "analog_names": ["Writesonic", "AthenaHQ"]}, {"risk": "Results from agent runs are noisy and non-deterministic, so customers doubt the numbers.", "p": 0.2, "evidence": "Agent behavior changes with each model release, so a score measured last month may not hold.", "analogs": ["openbenchmarks"], "mitigation": "Repeat runs, show confidence intervals and fix suggestions validated by re-running.", "analog_names": ["Openbenchmarks"]}], "analogs": [{"slug": "athenahq", "name": "AthenaHQ", "batch": "Winter 2025", "status": "Active", "relevance": "AI search and GEO visibility, W25; same measurement lane for brands.", "summary": "Alive with a seed round, shows funding exists for GEO measurement.", "url": "https://www.ycombinator.com/companies/athenahq", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/c559a82e8bccf756d0c26668df5ed8dc95c8bd00.png", "one_liner": "Be the Answer in AI Search - AI SEO across SEO, GEO & AEO", "website": "https://www.athenahq.ai", "detail": {"depth": 2, "confidence": "medium", "funding_coverage": "partial", "outcome": "AthenaHQ rode the 2025 shift to AI search, raising a seed of about 2.2M USD during its Winter 2025 batch and signing named enterprise logos. Founders came from Google Search and DeepMind, which fits the problem. The YC page now lists it as acquired by Bloomreach, but no independent source confirmed the deal, so the exit stays unknown here.", "target_customer": "Marketing and SEO teams at brands and enterprises that want visibility in AI-generated answers", "business_model": "B2B SaaS subscription, reported at about 295 to 499 USD per month entry pricing", "rounds": [{"date": "2025-06", "stage": "Seed", "amount": 2200000, "post": null, "basis": null, "investors": ["Y Combinator", "Bain Capital Ventures", "Amino Capital", "FundersClub", "Eli Schwartz"], "url": "https://www.kmworld.com/Articles/News/News/Athena-launches-from-stealth-promoting-%E2%80%98the-worlds-fastest-generative-engine-optimization-platform-170485.aspx"}], "exit": {"type": "unknown", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/athenahq"}, "founders": [{"name": "Andrew Yan", "role": "CEO", "background": "Google Search (product manager, information acquisition team), Google DeepMind (generative media team), U.S. Army lab; Columbia (degree not specified on YC page)"}, {"name": "Alan Yao", "role": "CTO", "background": ""}], "competitors_as_of": "2025-01", "competitors": [{"name": "Profound", "what": "Enterprise AI search visibility platform", "traction": "unknown", "url": "https://contently.com/2025/07/17/top-10-saas-solutions-for-generative-engine-optimization-geo-in-2025-expanded-guide/"}, {"name": "Peec AI", "what": "Low-cost AI visibility tracker for small businesses", "traction": "unknown", "url": "https://contently.com/2025/07/17/top-10-saas-solutions-for-generative-engine-optimization-geo-in-2025-expanded-guide/"}, {"name": "Otterly AI", "what": "AI search monitoring tool that added a GEO audit module in April 2025", "traction": "unknown", "url": "https://contently.com/2025/07/17/top-10-saas-solutions-for-generative-engine-optimization-geo-in-2025-expanded-guide/"}], "market_need": "In early 2025 marketers faced the shift from traditional search to AI-generated answers and had no tools to measure brand presence in them; a wave of funded GEO startups followed during 2025.", "technical": {"rating": 3, "text": "Requires querying many AI engines at scale, parsing citations and building analytics, which is standard engineering with some hard scaling and measurement problems; one source says the company was pre-product at raise."}, "defensibility": {"rating": 2, "text": "Many entrants launched in 2025 with similar tracking features and the data collection is replicable; some stickiness comes from historical visibility data and enterprise integrations."}, "takeover": {"rating": 3, "text": "Incumbent SEO suites pushed back in 2025 with their own AI visibility features per one trade report. The YC page lists the company as acquired by Bloomreach, citing a Forbes headline, but this could not be corroborated."}, "success": ["timing_tailwind", "founder_market_fit"], "failure": [], "pivots": [], "brand": {"rating": 2, "origin": null, "signature": "Ask Athena AI copilot naming", "effect": "unclear", "rebrands": []}, "notes": "Directory status is Active but the YC page lists Acquired with a linked Forbes headline about Bloomreach; a dedicated search found no corroboration, so exit is unknown. Seed amount varies: 2.2M (launch coverage, trackers), 2.1M (PitchBook), 2.7M across pre-seed and seed (one profile, unverified). Round stage and month taken from trackers; the kmworld launch article was not opened, only seen in search results. Competitor funding figures come from a single roundup and are unverified. Education for Andrew Yan lists Columbia only.", "sources": ["https://www.ycombinator.com/companies/athenahq", "https://www.athenahq.ai", "https://www.kmworld.com/Articles/News/News/Athena-launches-from-stealth-promoting-%E2%80%98the-worlds-fastest-generative-engine-optimization-platform-170485.aspx", "https://seedtable.com/companies/athenahq/funding-rounds/seed-2025-06", "https://contently.com/2025/07/17/top-10-saas-solutions-for-generative-engine-optimization-geo-in-2025-expanded-guide/"]}, "valuation": [], "raised": [[5.0, 2200000.0, "Seed"]], "end": {"kind": "active", "month": 14.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "the-prompting-company", "name": "The Prompting Company", "batch": "Summer 2025", "status": "Active", "relevance": "Helps products get discovered and used by AI agents, S25; near-identical wedge.", "summary": "Alive with seed; a direct competitor in the batch immediately before this one.", "url": "https://www.ycombinator.com/companies/the-prompting-company", "logo": "data:image/png;base64,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", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/465a7528e2de2669ab4bb994eb9cb8630eff6db1.png", "one_liner": "We help products get discovered & used by AI agents.", "website": "https://www.promptingcompany.com", "detail": {"depth": 2, "confidence": "medium", "funding_coverage": "partial", "outcome": "The company is a young repeat founder team that rode the 2025 shift toward AI search and raised a 6.5 million dollar seed about four months after starting, with named software customers. No shutdown, sale or layoffs were found, so the outcome is still open. Its main risk is a crowded category where better funded rivals and SEO suites compete on the same visibility metrics.", "target_customer": "Software, developer tool and infrastructure companies (plus some larger enterprises) that want AI assistants and coding agents to find, cite and correctly use their product", "business_model": "B2B SaaS and services: AI visibility audits, a monitoring and content hosting platform, and an agent experience testing product", "rounds": [{"date": "2025-10", "stage": "Seed", "amount": 6500000, "post": null, "basis": null, "investors": ["Peak XV Partners", "Base10", "Y Combinator", "Firedrop", "Logan Kilpatrick"], "url": "https://techcrunch.com/2025/10/30/the-prompting-company-snags-6-5m-to-help-products-get-mentioned-in-chatgpt-and-other-ai-apps/?rand=8808"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/the-prompting-company"}, "founders": [{"name": "Kevin Chandra", "role": "CEO", "background": "Typedream, Cotter"}, {"name": "Michelle Marcelline", "role": "COO", "background": "Typedream, Cotter"}, {"name": "Albert Purnama", "role": "CTO", "background": "Typedream, Cotter"}], "competitors_as_of": "2025-06", "competitors": [], "market_need": "In 2025 AI assistants became a discovery channel and the founders told TechCrunch most growth on websites was coming from AI bots rather than people. Brands wanted to know whether ChatGPT mentioned them, which created fast demand for visibility tooling.", "technical": {"rating": 2, "text": "Core work is prompt monitoring across AI engines, generating and hosting machine readable pages, and agent task testing. A small team with prior SDK and website builder experience could build the first version quickly, though keeping up with changing AI engine behavior is ongoing work."}, "defensibility": {"rating": 2, "text": "Methods are easy to copy and many tools entered the category within months. Early enterprise logos and hosted page footprint (TechCrunch cited about half a million pages for one Fortune 10 customer) give some switching costs."}, "takeover": {"rating": 4, "text": "SEO suites pushed back by adding AI search features, and dedicated GEO players raised large rounds during 2025 and 2026. No acquisition of the company has been reported."}, "success": ["timing_tailwind", "founder_market_fit", "strong_team_execution"], "failure": [], "pivots": [], "brand": {"rating": 2, "origin": null, "signature": "The term Agent Experience as a category phrase", "effect": "unclear", "rebrands": []}, "notes": "Competitor list left empty because every competitor source found was dated 2026 or undated, and none is dated near the Summer 2025 batch; named later players in outcome terms include Profound, Peec AI, AthenaHQ, Otterly and Scrunch AI. A Salestools report lists a 25M valuation and StartupHub lists 13M raised; both are single source and unverified. A profile mentions a June 2026 company announcement naming Standard Capital and Kearny Jackson, which could not be verified and may reflect a later round. The lead investor varies by outlet. The YC standard investment is not recorded as a round. Founder education was not found.", "sources": ["https://www.ycombinator.com/companies/the-prompting-company", "https://www.promptingcompany.com", "https://techcrunch.com/2025/10/30/the-prompting-company-snags-6-5m-to-help-products-get-mentioned-in-chatgpt-and-other-ai-apps/?rand=8808", "https://techeconomy.ng/the-prompting-company-raises-6-5m-ai-discovery/", "https://everything-pr.com/ahrefs-semrush-and-conductor-push-back-as-geo-pure-plays-raise-hundreds-of-millions/", "https://dealroom.co/charts/generative-engine-optimization-startups"]}, "valuation": [], "raised": [[4.0, 6500000.0, "Seed"]], "end": {"kind": "active", "month": 9.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "geostar", "name": "Geostar", "batch": "Summer 2021", "status": "Active", "relevance": "Inbound discovery through search, S21; earlier search-visibility company.", "summary": "Alive, no recorded post-YC round, a cautionary case for visibility tools.", "url": "https://www.ycombinator.com/companies/geostar", "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAArlBMVEUaGh0XFxoVFRgVFRkYGBsZGRwWFhlNTU5sbGxramtra2s6OjwYGBwrKy1mZmZZWVoeHiEbGx5OTlA4ODqnp6X9/Pj5+PT49/Nzc3NJSUrs6+f6+fX8+/fJyMUnJykcHB+qqqltbW39/Pfr6uf7+vaqqqiqqaj///t0dHVKSkvv7uv///rMy8itrKtvbm9ycnKlpKNRUVM3NzmdnJulpaOnpqWHhoYiIiR0dHROTk8xdmk6AAAA80lEQVR42u3ayVLCQBSGUQIEIc5KcIqiOM8TOLz/i7nuyyKVygrrnPVft77qdXc6AAAAAAAAqyjr9oJ+WOSDuBjkYVF/pKF8bThKFKP19OTG5laRTobbO0lXvrsXjoyK/XZd+bicpA4OB+lzHh2fpIvq9CzNmp5X4cjkotcya1abdRkWV0tZ17JkyZIlS5YsWbJkyZIlS5YsWbJkyZIlS5YsWbJkyZIlS5YsWbJk/d+sm9tZoqzuQtb9Q5lOHp9i1nM4Mitfuu2yXsdvwXuWLPofn/N0sPj6Dh+lfhbhxvw3a5Sx3LWsfpE3XQAAAAAAAKyIP36vajWkqCr9AAAAAElFTkSuQmCC", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/940ca27c03165f32b9fdf0b5c174467ff230ba42.png", "one_liner": "Geostar drives inbound for companies through search.", "website": "https://www.geostar.ai", "detail": {"depth": 2, "confidence": "low", "funding_coverage": "none_found", "outcome": "Geostar is listed under YC Summer 2021 but its YC page says it was founded in 2024 and describes an AI search product, so the listing likely reflects an earlier company in the batch that became Geostar. It emerged from stealth in October 2025 backed by Pear VC per VentureBeat, in a crowded GEO market. Little is verifiable about revenue or funding.", "target_customer": "Brands and ecommerce companies that want to be recommended and cited by AI assistants and AI search", "business_model": "Subscription or managed service for generative engine optimization (pricing reported by a directory at 1,000 to 3,000 per month)", "rounds": [], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/geostar"}, "founders": [{"name": "Mack McConnell", "role": "Founder", "background": ""}, {"name": "Cihan Tas", "role": "CTO", "background": ""}], "competitors_as_of": "2024-06", "competitors": [{"name": "Profound", "what": "Platform for tracking and improving brand visibility in AI answers", "traction": "not stated", "url": "https://venturebeat.com/ai/geostar-pioneers-geo-as-traditional-seo-faces-25-decline-from-ai-chatbots"}, {"name": "Brandlight", "what": "AI search brand visibility platform named in the same race", "traction": "not stated", "url": "https://venturebeat.com/ai/geostar-pioneers-geo-as-traditional-seo-faces-25-decline-from-ai-chatbots"}, {"name": "Goodie", "what": "AI search visibility vendor named in the same race", "traction": "not stated", "url": "https://venturebeat.com/ai/geostar-pioneers-geo-as-traditional-seo-faces-25-decline-from-ai-chatbots"}], "market_need": "VentureBeat in October 2025 cited a Gartner forecast of a 25 percent decline in traditional search from AI chatbots as the driver for generative engine optimization.", "technical": {"rating": 3, "text": "Monitoring many AI models and generating content to influence citations is applied LLM engineering with a moving target, not research-grade."}, "defensibility": {"rating": 2, "text": "Many GEO vendors appeared at once and the techniques are easy to copy; the claim of early positioning is the main edge."}, "takeover": {"rating": 3, "text": "Not established from sources opened; SEO suites were expected to add AI visibility features but no source confirmed it."}, "success": [], "failure": [], "pivots": [], "brand": {"rating": 2, "origin": null, "signature": null, "effect": "unclear", "rebrands": []}, "notes": "Data conflict: the YC page lists batch Summer 2021 but founded 2024, with Markix.com in the founder bio; the YC markix URL resolves to the same Geostar page. A directory (neuronfeed) says the founders previously built and sold a YC backed ecommerce startup called Monto, unverified and not recorded. A Chinese language report cites ARR near 1M in four months, unverified. Pear VC backing comes from a search summary of VentureBeat, amount and date not found, so no round is recorded. The company website fetch was blocked by a rate limited safety check, so the site was not read. Competitor sources are dated October 2025, over a year after the 2024 founding, noted accordingly. Competitor pre-2021 for the original batch company was not found.", "sources": ["https://www.ycombinator.com/companies/geostar", "https://www.ycombinator.com/companies/markix", "https://venturebeat.com/ai/geostar-pioneers-geo-as-traditional-seo-faces-25-decline-from-ai-chatbots"]}, "valuation": [], "raised": [], "end": {"kind": "active", "month": 57.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "writesonic", "name": "Writesonic", "batch": "Summer 2021", "status": "Active", "relevance": "Pivoted to AI search visibility tracking, S21.", "summary": "Alive with seed; takeover risk then rated 5.", "url": "https://www.ycombinator.com/companies/writesonic", "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAAC9FBMVEX/Zxn/Zhj/ZRf/ZBX/ZRb/Zhf+Zxn9dzH8jVP7nWv6n2/7lF79fz7+ax/+ah39fDn8kFj7m2j7mGX8ik7+dC7+Zhj+Zhf5t5T24NH17+n09PD18u315934ya77kVr+aR3+aBv8jlT4xaj25dn18Ov18+/18+717uf23c35tI79fTr+ZRf+aBr24tX09fP09fH19PD09PH09vP17ub5tpL+cCf+byX5soz17OT09fL7l2P7nWz17OX19O/4wKH+cSj+cCb4vZ316+L7mmj8hUf15tr4wqT+cir4v5/25Nj8g0X4w6b+cCj+aRz4xKf+cyz15tv9fj37mWb4xqr+dC34waP7mWX6qX/4x6v9dC34w6X6qX7/ZRX5rYT18ev31L/4yK39dS/18Or31sL6rYT7lF/5roX3yrD9djD+cyv5sYr7lWD8j1b5r4f9djH5s438kFf/YxT+ah73zLP9eDP/Zxj18ez+ayD6rIL3zbX9eDT+bCD+bCH5sIn6q4H+bSP9fz36pXj30Lr30bv4xan6qn/4vp75r4j6qX317+j6oXL5sYv25dr16d/5upj9eTX7l2L159z+ah/6qHz6nm79ezf318P7lF3+aBz6pnr16uL9fDr30rz228r8hEb7klv6rIP6pXf16uD7m2n3077228v7kVn6pHb31MD8h0n25Nf7nm323s78h0r8jlX9gD/31sP8iEv9gUH22MX17eb16+P239D8iU39gkL22cf7nm77lV/8ik/8hEX22sn7nmz7k1324NL16uH7nGr24dP8jFH8hkj23Mv16eD7mmf23c78iEz16N7249b239H7lmL8jVT7kFj8jFL24dT25Nn8i1D15dr7k1z249f23s/7lmH24tT/ZBT8j1f4vZz18u76oHD8h0v23Mz8g0T22sj8hkn+biT3z7j+biP9gUL22Mb17uj8g0P318T5tI/+byb5uZf30br5tpH7nGv218X+ZRb+civ4wqP5uJb9ejb5tZD+Zxq4Ym58AAAFh0lEQVR42u2Ze1QUVRjA987e3VABIduVvRJQMEDy2J0tg2uCRSaBgvjI0GDLFc1sKaAX9rCysjIs7P1SysyU1MoyU6y07J1lqZGVvbP3+13/NK+dO0MCC2d2Op3z/f7hHGa+ub97Z/a7937XZgMAAAAAAAAAAAAAAAAAAAAAAAAAAAAsBXF2EYz6EYmlSEc/IiN4tPOgmAEDB8XG9VUM4fjBCYkHDznE1Z8u9fJsd+zQJA8hw5IPTUl19CXSkXbY4ekZfGZW9hHDc0z2QrmJefleQnxE8B951Agu8kju6IJCv0BEKE0a6TTVC7mOGUWLinwSPCHFoyP24o49jhd4JdBHS45HZnrhMSdQ5dmK19hSHKHViBN9hEXSsvIIAyMarNSxfu3ZkpcwLjIvbnwxIfpIf3GFecOFY5MFn0/vRSonRODFjTZa+XxC1UTzhss+KZP4jF7C5Cm9Pp8rPamLlY9kTrWbp3UyVR/rVZvhibd6Wi9euHQ6Yber/aKnmKdVU5uv9DVwqkdrSDhtRo9euHScoN0cnBlQvPJra8zTqlO1grNmB9gAnD6nBy98RiWzGjb3zKCqVRcFrUAorT4gMK+zuvXCUybrrM5ODQWiqdXQ2FQbZF7nnKt5nYckmFU1szq/4ILGhuhq2R3xzcyLzrtQmR8Rrsm96OI0rE7Gjhl6q0viHPZoa4m5db5H8/JXXyqJOJyXXT59wRVXXlVeIU1LqGmhX7MKXB3nsEVfy4YqrrlW8eK9hYvSRC084boWwS9CF19/gzhgyNm6RJmseCFQf6M4oBZoiV43yV68t+RmaUmAb5knyAmtyCfQW8slL/dt8iTKC8HZTdJrtkLLhm6/I0vgee+dA2Sru+6m4WQufm5Ll0leXFsL5UWre+Llj88SLRtKuzdL8C6/T7YavoLqphie3j9G9lpZRoVgs7pktEZL9Hoga/kkl2Q1cRUlRfr5kmavlrxwqD0wP1VNGRZpiV4PtrqkxmNnGq0krzVr5fFatyg+nMis0hIXrG7J6qGHKdFWO7zm9Yj83bu19GqZlg1JVusfDa8teOGxDV7N6/GNkhdb8VmnJaX2JzZpVt4NmzuqqOaVtMWw+7JQC+Enn2JWJU87ua06r20GLwtfIl62lFk986wToZy2dOa1/Tn8H7xEhJ9/gRaFrV58SUoWiEsoY155MdjyTx7htS9rBt7FcgrrwcuqdIpfWcPaf3WkS20fcaEd7P871nGWplOEh7zGWk9+nSUohHfmsSvtCaqXNVM13rKNtV01y637zSEco/Mqe0PxsmRhg9/crrPa6jZslMWru9jV3SlylcaKZaBhPNLb3F227wjv0Y3lW53SdQsWzYavOvyWjF6GdyyNZtS1jDng7QbuAKUO4y+iapAbRV0rZ6U+M+08cN1RzB972V1L3nFHW6uxs4W1925Md9VQMdvq81rre/uiqZURStHPxnu6r9GKXtk6r459GVHQCpdGgu/v7nbt8i8vcc7UZqeq4qD5pRF7s7pU4D8QNKu9G3uuZxtWGCRTjaPzTaxvfRiuuoX/quv1HtF7hQMJGWieFv5oVJdqIP14de+1f4Q/+ZQa4nyk8DPzipRo/wK/odio7AV7j9OtqpXu+D//wsQKOG716Iugys45kv7gL7/SefHk6w4TC+A21DSUbbdI/qZvIj29EfdG3+azSP67eFOPMRzf/5Ahb+l54qUr1kd+piTub39U6iY8oZ6f9vfpuCgCr7iffwlItSK+vWBOn0668LT6XZlSkcmzamqTyVZit3/9rXPu75V/bB7s7MNBlNwj15+JfxUvrAuNN//gTvRy2PHfue5+nHMizs45Xdhu+lCFn4/6e8DV/0gAAAAAAAAAAAAAAAAAAAAAAAAAAID/Bf8ADS4zbuQ3hZkAAAAASUVORK5CYII=", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/fd007ffa21d124d29441b51ecf33a2c45d832ad5.png", "one_liner": "Track & Boost Your Brand’s Visibility in AI Search", "website": "https://writesonic.com/", "detail": {"depth": 2, "confidence": "medium", "funding_coverage": "partial", "outcome": "Writesonic rode GPT-3 to millions of users with a small seed of about 2.5M USD, and third party estimates put revenue near 8M USD in 2023 (a bootstrapped claim on Latka conflicts with the seed). It has pivoted to AI search visibility as basic writing commoditized, with a team of 35 and unverified revenue estimates above 30M USD. It remains independent and active.", "target_customer": "Marketing teams, agencies and small businesses that create content and now track brand visibility in AI search", "business_model": "Self-serve and enterprise SaaS subscriptions", "rounds": [{"date": "2021-09", "stage": "Seed", "amount": 2500000, "post": null, "basis": null, "investors": ["Y Combinator", "HOF Capital", "Soma Capital"], "url": "https://en.wikipedia.org/wiki/Writesonic"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/writesonic"}, "founders": [{"name": "Samanyou Garg", "role": "CEO", "background": "University of Manchester, computer science"}], "competitors_as_of": "2021-06", "competitors": [{"name": "Jasper (formerly Jarvis)", "what": "GPT-3 based AI copywriting tool", "traction": "fast growing in 2021", "url": "https://daveswift.com/writesonic/"}, {"name": "Copy.ai", "what": "GPT-3 based short form copy generator", "traction": "launched 2020", "url": "https://daveswift.com/writesonic/"}, {"name": "Copysmith", "what": "AI copywriting tool for ecommerce", "traction": "not confirmed", "url": "https://daveswift.com/writesonic/"}], "market_need": "GPT-3 opened in 2020 and 2021 made automated copy practical, and marketers adopted tools like Jasper quickly; Writesonic cites over 10M users creating AI content.", "technical": {"rating": 2, "text": "Built on the GPT-3 API with prompt templates and a web app, so little core model work for a small team; the hard parts were prompt quality and growth."}, "defensibility": {"rating": 1, "text": "Any team with API access could build the same tool in weeks, and many did; differentiation came from speed, templates and price."}, "takeover": {"rating": 5, "text": "ChatGPT in late 2022 absorbed basic writing; Writesonic launched ChatSonic and Botsonic and later pivoted its pitch to AI search visibility (GEO) in 2025."}, "success": ["product_led_growth", "successful_pivot", "capital_efficiency"], "failure": [], "pivots": [{"date": "2022-12", "to": "Conversational AI and chatbots (ChatSonic, Botsonic)", "why": "ChatGPT style products reshaped demand; reason is inferred from launch timing, not stated."}, {"date": "2025", "to": "AI search visibility and GEO platform", "why": "Company now positions around tracking and improving brand visibility in AI search, per its site and a teardown."}], "brand": {"rating": 3, "origin": null, "signature": "The Sonic suffix family: ChatSonic, Botsonic, Photosonic", "effect": "neutral", "rebrands": [{"date": "2020", "to": "Writesonic"}]}, "notes": "Seed amount differs by source: Wikipedia 2.5M USD, aggregators 2.6M and 3M USD; the Wikipedia figure is used and the cross-check is only aggregators plus Wikipedia, so treat as moderately verified. Latka calls the company bootstrapped, conflicting with seed reports. Revenue estimates (8M USD 2023, 33.9M to 36M USD 2025) are unverified aggregator numbers. Founding year conflicts: October 2020 versus 2021; YC batch Summer 2021 per YC. Earlier name Magicflow comes from Wikipedia mirrors. Competitor traction and funding then are not confirmed by dated sources; the competitor page used is a later review. Pivot dates are approximate. ChatSonic launch date is from background knowledge.", "sources": ["https://www.ycombinator.com/companies/writesonic", "https://writesonic.com/", "https://en.wikipedia.org/wiki/Writesonic", "https://seedtable.com/companies/writesonic/funding-rounds/seed-2021-09", "https://getlatka.com/companies/writesonic.com/funding", "https://daveswift.com/writesonic/"]}, "valuation": [], "raised": [[3.0, 2500000.0, "Seed"]], "end": {"kind": "active", "month": 57.7, "dated": true, "src": "record"}, "has_record": true}, {"slug": "openbenchmarks", "name": "Openbenchmarks", "batch": "Fall 2024", "status": "Active", "relevance": "Independent benchmarks to help humans and agents pick tools, F24.", "summary": "Alive, no round recorded; thin monetization.", "url": "https://www.ycombinator.com/companies/openbenchmarks", "logo": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAABVCAMAAACco+3KAAABwlBMVEX39vL29fH5+PTQz8ppaGNlZF9kZF+Pel/Ak2C/kmD6+fW5uLQYFxEREAoSEQsPDwtUMguhWgyfWQy6ubUcGxUVFA4WFQ8TEw5XNg+iXBChXBC6ubQaGRMTEgwUEw0SEg1VNA2hWw6gWg6hXA/BwLw2NTAwLykxMCovLypqTSqsbyurbiuqbSmUVxSQUw+qbSrv7urc29fb2tbj3tbs49bs49fu5NidlIctJBUmHQ4mHQ8tJBbt5Nj49/P39/P5+fWwsKwqKiQTEw0UFA8UFA4qKSS4t7IuLSfAv7szMizHxsI5ODLOzchAPzlYV1LU089HRkBVVE/g39rg39va2dVOTUdNTEbZ2NRNTEff3tpFRD/U087k495eXVg/PjjNzMjk49/o5+NnZmHGxcHs6+dwb2m/vrlvbml4d3IXFhAtLCa3trL39vPx8OyBgHsZGBIoJyKvrqopKCLz8u6LioUbGhQlJB6mpaH19PCUk44dHBYhIBqdnJecm5cdHBeVlI+lpKAkIx6Mi4YkIx2urakoJyGCgXy2tbF5eHPY19Jwb2ru7emEg34bGhVoZ2JoZ2Hy8e2NjIdfXlkgHxn08++xsKwDGfa2AAAAAW9yTlQBz6J3mgAAArRJREFUaN7tl9k3HEEUh7uKIJZBzGBCl10wkYwgQtIIYhvbTMgEsYtYgoh1howldpJY/99Ud/Vxug0jeVDtHPd7qjn3ob7Tt+p3awQBAAAAAAAAAAAAAID7DvpveFjhoOAHOkJCwx5qCAsN0deDgzAHrfCIyCiTluiY2EcaYmOideWoyIhwHlpxZku8loRE62MN1sQEXdlijrvPWknJItGSkpqWnp6eYaVk0EVaaoquLCYncdHKzMp+oiUnN89me5r/jJL/3GbLy83RlbOzMnloCfaCF3oKi4pflrwqLSsrfV3yprio8FK5wM7DCgnSZcorKt9WVdfUVFe9q6wo9ysLXILL3xPX1onsfIt1tdgYC39wfYNsZZEvqNhQzyM8/8Wq0aFYEaJ4ORrvghfCTc3MqqWFeTU3YcPbiHBrm0htLKLT9d7JVm2tRnsh3N7BXD64MXZ/ZOuOdmO9EO5Uv1BXN0YId3epX67TSC+EP/Ww89TbJ3sg3NfLzllPv3FeSBoYVG/fkHr78JB6KwcHJIO8kDT8Wc2qkYtMwCNqhn0ZNsYLSfbRMcVqfOIi2WniT4wrXmOjdiO80NfJqWnF6tuMZurRiTnzXfGanprkP4aQMDs3L1uRhUXdLKZeiwtE9pqfm+XthYQlj1fenCyvCPrN6Y+VZaXk9Szx9aKb/WBb+1b9tqbKq76rlW/bSlpbZ43auKJRtMEbrME/1zg+tqjV5hY71ttXHmskTG6z67C1yfMRuKOGwO41IUDDY1cNjx1uUtKew6RE5v61kUmjdj9e9jI59iReXgeHvwgdML8DDBg6mP7QwUTMhwe8rJB0dOwl5CTgOEa4/4QQ3/ERv6ynV81z6nQFfiQg7HKeergmKhLOzt03PV0Qdp+f8c5TfHNzkHRn/pwBAAAAAAAAAAAAwC3wFy2fmzZXPFOwAAAAAElFTkSuQmCC", "logo_url": "https://bookface-images.s3.amazonaws.com/small_logos/fba2fe192898aad8d25d7bcb8cef6e121485b633.png", "one_liner": "We help humans & agents pick tools via Independent Benchmarks", "website": "https://openbenchmarks.com", "detail": {"depth": 2, "confidence": "low", "funding_coverage": "partial", "outcome": "Openbenchmarks is an active four person San Francisco company from YC Fall 2024 run by founders who previously built OpenFunnel. It publishes free hourly benchmarks across search, document processing, enrichment, inference and voice, and sells private analytics. No verified funding, revenue or exit was found. Outcome is undetermined; the main questions are whether vendors will pay and whether the benchmarks are seen as independent.", "target_customer": "API and tool vendors that pay for private benchmarking and analytics, and teams and AI agents that use the free public benchmarks to choose vendors", "business_model": "Free public benchmarks as distribution (CC-BY-4.0 data, API) with paid private benchmarking and analytics for vendors", "rounds": [{"date": null, "stage": "Seed", "amount": 125000, "post": null, "basis": null, "investors": [], "url": "https://app.dealroom.co/companies/openbenchmarks"}], "exit": {"type": "none", "date": null, "acquirer": null, "amount": null, "reason": null, "url": "https://www.ycombinator.com/companies/openbenchmarks"}, "founders": [{"name": "Fenil Suchak", "role": "CEO", "background": "Oracle; BITS Pilani"}, {"name": "Aditya Lahiri", "role": "co-founder", "background": "Appfolio; BITS Pilani"}], "competitors_as_of": "2024-09", "competitors": [], "market_need": "AI agents and teams were choosing among fast-multiplying APIs in 2024 with little neutral comparison data. No company specific demand evidence was found.", "technical": {"rating": 2, "text": "Running and refreshing benchmarks across many vendor APIs is engineering and ops work; the hard part is methodology credibility and cost of running tests, not research."}, "defensibility": {"rating": 2, "text": "Historical benchmark data and perceived independence can compound, but the method is open (public methodology, CC-BY data) and well funded players like Artificial Analysis do similar work for models."}, "takeover": {"rating": 3, "text": "No dated source found. Artificial Analysis benchmarks model and provider endpoints; no acquisition of Openbenchmarks found."}, "success": [], "failure": [], "pivots": [{"date": null, "to": "Openbenchmarks: independent benchmarks and helping customers sell to AI agents", "why": "Not stated in any source. The YC page lists OpenFunnel as the founder's previous company, but OpenFunnel is also a separate YC F24 listing, so whether this is a pivot or a second venture is unclear."}], "brand": {"rating": 1, "origin": null, "signature": "Public hourly benchmark leaderboards with open licensing.", "effect": "unclear", "rebrands": []}, "notes": "Dealroom lists a $125k seed but with no date and one aggregator source, so no round is recorded. A $1.3M round in about January 2025 (YC, Transpose Capital, NYX Ventures, Decacorn Capital per Fundraise Insider) belongs to OpenFunnel, and it is unclear whether OpenFunnel and Openbenchmarks are the same legal entity; not recorded here. Co-founder Aditya Lahiri comes from the YC directory listing as quoted by a search summary, and his employer comes from the YC page's OpenFunnel section. Competitor search returned only undated or 2025 and 2026 pages, so the list is empty. Founded year 2024 per YC and Dealroom. Update: the 125K seed is recorded from Dealroom only (single database, no date, no press found in a second search). OpenFunnel rounds still not recorded.", "sources": ["https://www.ycombinator.com/companies/openbenchmarks", "https://openbenchmarks.com", "https://app.dealroom.co/companies/openbenchmarks"]}, "valuation": [], "raised": [], "end": {"kind": "active", "month": 18.7, "dated": true, "src": "record"}, "has_record": true}], "comp_summary": {"total": 5, "dead": 0, "exited": 0, "active": 5}, "assumptions": ["Window is 7.4 months from 2026-04-06; seed means an outside round above about $1M.", "Only the input file was used; nothing about the company was looked up.", "Market search results were generic vendor content; no result named the company.", "Records of companies after the as_of date were not used for outcomes."], "sources": ["https://skillsindex.dev/blog/geo-is-the-new-seo-ai-agents-changing-tool-discovery/", "https://www.searchinfluence.com/?p=26281"]}</script>
+<script>
+(function(){
+"use strict";
+var D=JSON.parse(document.getElementById("data").textContent);
+var NS="http://www.w3.org/2000/svg";
+var ICONS={
+  overview:"M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M14 14h6v6h-6z",
+  compare:"M4 4v16h16 M8 15l4-4 3 3 5-6",
+  walk:"M8 5v14l11-7z",
+  tree:"M12 3v5 M12 8l-6 6 M12 8l6 6 M6 14v7 M18 14v7",
+  path:"M4 20h4v-4h4v-4h4V8h4V4",
+  roadmap:"M5 21V4 M5 4h13l-3 4 3 4H5",
+  insights:"M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z M21 21l-5-5",
+  pros:"M12 4v16 M6 8h12 M6 8l-3 7a3.5 2.5 0 0 0 6 0z M18 8l-3 7a3.5 2.5 0 0 0 6 0z",
+  sun:"M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M4.9 19.1l1.4-1.4 M17.7 6.3l1.4-1.4",
+  moon:"M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z",
+  check:"M5 12l5 5L20 7",x:"M6 6l12 12 M18 6L6 18",chev:"M6 9l6 6 6-6",
+  arrow:"M5 12h14 M13 6l6 6-6 6",
+  restart:"M4 4v6h6 M20 20v-6h-6 M5.5 15A8 8 0 0 0 20 14 M18.5 9A8 8 0 0 0 4 10",
+  link:"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1 M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"
+};
+function icon(n){var s=document.createElementNS(NS,"svg");s.setAttribute("viewBox","0 0 24 24");s.setAttribute("aria-hidden","true");var p=document.createElementNS(NS,"path");p.setAttribute("d",ICONS[n]);s.appendChild(p);return s}
+function h(tag,attrs){var e=document.createElement(tag);attrs=attrs||{};for(var k in attrs){var v=attrs[k];if(k==="class")e.className=v;else if(k==="text")e.textContent=v;else if(k==="style")e.setAttribute("style",v);else if(k.slice(0,2)==="on")e.addEventListener(k.slice(2),v);else if(v!==null&&v!==undefined)e.setAttribute(k,v)}
+  for(var i=2;i<arguments.length;i++){var c=arguments[i];if(c===null||c===undefined||c===false)continue;if(Array.isArray(c)){c.forEach(function(x){if(x)e.appendChild(x)})}else e.appendChild(typeof c==="string"?document.createTextNode(c):c)}return e}
+function sv(tag,attrs){var e=document.createElementNS(NS,tag);for(var k in attrs||{})e.setAttribute(k,attrs[k]);for(var i=2;i<arguments.length;i++)if(arguments[i])e.appendChild(arguments[i]);return e}
+function safeUrl(u){return /^https?:\/\//i.test(u||"")?u:null}
+function trim(x){return (Math.round(x*100)/100).toString()}
+function usd(n){if(n===null||n===undefined)return "n/a";if(n<1)return "$0";function t(v){return v>=100?String(Math.round(v)):v>=10?String(Math.round(v*10)/10):trim(v)}if(n>=1e9)return "$"+t(n/1e9)+"B";if(n>=1e6)return "$"+t(n/1e6)+"M";return "$"+Math.round(n/1e3)+"K"}
+function rng(r){if(!r)return "n/a";return r[0]===r[1]?usd(r[0]):usd(r[0])+" to "+usd(r[1])}
+function pct(p){if(p>0&&p<0.001)return "<0.1%";return p>=0.1?Math.round(p*100)+"%":(Math.round(p*1000)/10)+"%"}
+var LC={"Very likely":"#1E9E5A","Likely":"#5FAE62","Reasonable":"#D9A21B","Unlikely":"#E2793A","Very unlikely":"#D64545"};
+function labelFor(p){var t=D.thresholds.slice().sort(function(a,b){return b.min-a.min});for(var i=0;i<t.length;i++)if(p>=t[i].min)return t[i].label;return t[t.length-1].label}
+function npill(l){return h("span",{class:"pill",style:"background:var(--muted)",text:l})}
+function lpill(l){return h("span",{class:"pill",style:"background:"+(LC[l]||"#6B655C"),text:l})}
+function ext(u,t){var s=safeUrl(u);return s?h("a",{href:s,target:"_blank",rel:"noopener noreferrer",text:t||s}):h("span",{text:t||""})}
+function logoSrc(a){return a.logo||(a.logo_url&&/^https:\/\//i.test(a.logo_url)?a.logo_url:null)}
+function ico(a,size,status){var box=h("div",{class:"ico",title:a.name,style:"width:"+size+"px;height:"+size+"px;font-size:"+Math.round(size*.42)+"px"});var init=h("span",{text:(a.name||"?").charAt(0).toUpperCase()});box.appendChild(init);
+  var src=logoSrc(a);if(src){var img=h("img",{src:src,alt:"",loading:"lazy"});img.addEventListener("load",function(){init.remove()});img.addEventListener("error",function(){img.remove()});box.appendChild(img)}
+  if(status){box.appendChild(h("i",{class:"sd",style:"background:"+status}))}return box}
+function statusColor(k){return k==="dead"?"#D64545":k==="active"?"#2F5BEA":"#1E9E5A"}
+function countUp(el,to,fmt,ms){var t0=null;ms=ms||1100;function f(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/ms);k=1-Math.pow(1-k,3);el.textContent=fmt(to*k);if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
+function smooth(pts){var n=pts.length;if(!n)return "";if(n===1)return "M"+pts[0].x.toFixed(1)+" "+pts[0].y.toFixed(1);
+  var P=pts.map(function(p){return {x:p.x,y:p.y}});for(var i=1;i<n;i++)if(P[i].x<=P[i-1].x)P[i].x=P[i-1].x+0.5;
+  if(n===2){var dx=(P[1].x-P[0].x)/2;return "M"+P[0].x.toFixed(1)+" "+P[0].y.toFixed(1)+" C"+(P[0].x+dx).toFixed(1)+" "+P[0].y.toFixed(1)+" "+(P[1].x-dx).toFixed(1)+" "+P[1].y.toFixed(1)+" "+P[1].x.toFixed(1)+" "+P[1].y.toFixed(1)}
+  var d=[],m=[],k;for(k=0;k<n-1;k++)d[k]=(P[k+1].y-P[k].y)/(P[k+1].x-P[k].x);m[0]=d[0];m[n-1]=d[n-2];for(k=1;k<n-1;k++)m[k]=d[k-1]*d[k]<=0?0:(d[k-1]+d[k])/2;
+  for(k=0;k<n-1;k++){if(d[k]===0){m[k]=0;m[k+1]=0}else{var a=m[k]/d[k],b=m[k+1]/d[k],s=a*a+b*b;if(s>9){var t=3/Math.sqrt(s);m[k]=t*a*d[k];m[k+1]=t*b*d[k]}}}
+  var out="M"+P[0].x.toFixed(1)+" "+P[0].y.toFixed(1);for(k=0;k<n-1;k++){var h3=(P[k+1].x-P[k].x)/3;out+=" C"+(P[k].x+h3).toFixed(1)+" "+(P[k].y+m[k]*h3).toFixed(1)+" "+(P[k+1].x-h3).toFixed(1)+" "+(P[k+1].y-m[k+1]*h3).toFixed(1)+" "+P[k+1].x.toFixed(1)+" "+P[k+1].y.toFixed(1)}return out}
+
+var TABS=[["overview","Overview","overview"],["compare","Compare","compare"],["walk","Walkthrough","walk"],["tree","Possibilities","tree"],["path","Funding","path"],["roadmap","Roadmap","roadmap"],["insights","Insights","insights"],["pros","Pros and cons","pros"]];
+var nav=document.getElementById("nav"),page=document.getElementById("page"),views={},tabs={},built={},cur=null,BUILD={};
+nav.appendChild(h("div",{class:"brand","aria-hidden":"true",text:"Y"}));
+TABS.forEach(function(t){var b=h("button",{class:"tab",role:"tab","aria-selected":"false","aria-controls":"v-"+t[0],onclick:function(){show(t[0])}},icon(t[2]),h("span",{text:t[1]}));tabs[t[0]]=b;nav.appendChild(b)});
+nav.addEventListener("keydown",function(e){if(!e.target.classList||!e.target.classList.contains("tab"))return;var ids=TABS.map(function(t){return t[0]}),i=ids.indexOf(cur);
+  if(e.key==="ArrowDown"||e.key==="ArrowRight")i=(i+1)%ids.length;else if(e.key==="ArrowUp"||e.key==="ArrowLeft")i=(i-1+ids.length)%ids.length;else if(e.key==="Home")i=0;else if(e.key==="End")i=ids.length-1;else return;
+  e.preventDefault();tabs[ids[i]].focus();show(ids[i])});
+nav.appendChild(h("div",{class:"spacer"}));
+var themeBtn=h("button",{class:"ibtn","aria-label":"Toggle light and dark theme",onclick:toggleTheme});nav.appendChild(themeBtn);
+function curTheme(){var t=document.documentElement.getAttribute("data-theme");if(t)return t;return matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light"}
+function paintTheme(){themeBtn.replaceChildren(icon(curTheme()==="dark"?"sun":"moon"))}
+function toggleTheme(){document.documentElement.setAttribute("data-theme",curTheme()==="dark"?"light":"dark");paintTheme();if(built.compare)drawChart();if(built.walk)drawWalk(null);if(built.tree&&cur==="tree")drawTree(true)}
+paintTheme();
+page.appendChild(h("h1",{class:"title",text:D.startup.name}));
+TABS.forEach(function(t){var v=h("section",{class:"view",id:"v-"+t[0],role:"tabpanel"});views[t[0]]=v;page.appendChild(v)});
+function show(id,after){if(cur!==id){cur=id;for(var k in views){views[k].classList.toggle("on",k===id);tabs[k].setAttribute("aria-selected",k===id?"true":"false")}
+  if(!built[id]){built[id]=true;BUILD[id](views[id])}document.getElementById("main").scrollTo({top:0,behavior:"auto"});try{history.replaceState(null,"","#"+id)}catch(e){}animateIn(views[id]);if(id==="tree")drawTree(true)}
+  if(after)setTimeout(after,80)}
+function animateIn(root){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");(e.target.__go||[]).forEach(function(f){f()});e.target.__go=[];io.unobserve(e.target)}})},{root:document.getElementById("main"),threshold:.1});
+  root.querySelectorAll(".reveal").forEach(function(el,i){el.style.transitionDelay=Math.min(i*60,360)+"ms";io.observe(el)})}
+function onIn(el,f){(el.__go=el.__go||[]).push(f)}
+function reveal(e){e.classList.add("reveal");return e}
+
+BUILD.overview=function(root){
+  var ml=D.most_likely,cs=D.comp_summary;
+  var C=2*Math.PI*40,fg=sv("circle",{class:"fg",cx:46,cy:46,r:40,"stroke-dasharray":C,"stroke-dashoffset":C,transform:"rotate(-90 46 46)"});
+  var ring=sv("svg",{class:"ring",viewBox:"0 0 92 92"},sv("circle",{class:"bg",cx:46,cy:46,r:40}),fg);
+  var pv=h("div",{class:"big",text:"0%"});
+  var s1=reveal(h("div",{class:"card stat"},h("h3",{text:"Chance of getting into YC"}),h("div",{class:"row"},ring,h("div",{},pv,lpill(D.yc.label)))));
+  onIn(s1,function(){countUp(pv,D.yc.p,function(v){return pct(v)});fg.style.strokeDashoffset=C*(1-Math.min(1,D.yc.p/0.35))});
+  var sb=ml.stop_band;
+  var s2=reveal(h("div",{class:"card stat"},h("h3",{text:"If accepted, most likely ends at"}),h("div",{class:"big",text:ml.stop_name}),h("div",{class:"small",text:pct(ml.stop_p)+" chance"+(sb?", typical value "+rng(sb.post):"")})));
+  var cb=ml.credible_band;
+  var s3=reveal(h("div",{class:"card stat"},h("h3",{text:"If accepted, furthest credible stage"}),h("div",{class:"big",text:ml.credible_name}),h("div",{class:"small",text:ml.credible_index?pct(ml.credible_p)+" chance"+(cb?", typical value "+rng(cb.post):""):"No stage reaches 20%"})));
+  var dots=h("div",{class:"dots"});D.analogs.forEach(function(a,i){var k=(a.end||{}).kind;dots.appendChild(h("button",{class:"dotb","aria-label":a.name+", open in Compare",title:a.name,onclick:function(){show("compare",function(){selectComp(i,true)})}},ico(a,26,statusColor(k))))});
+  var s4=reveal(h("div",{class:"card stat"},h("h3",{text:"Similar past YC companies"}),h("div",{class:"big",text:cs.dead+" of "+cs.total}),h("div",{class:"small",text:"shut down"}),dots));
+  root.appendChild(h("div",{class:"grid g4"},s1,s2,s3,s4));
+  root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h2",{text:D.headline}),h("p",{class:"muted",style:"margin:0",text:D.summary}))));
+  var st=h("div",{class:"stepper"}),fills=[];
+  var all=[{title:"YC",p:D.yc.p,label:D.yc.label,key:"yc"}].concat(D.stages.map(function(s){return {title:s.title,p:s.p_today,label:s.label_today,key:s.key}}));
+  all.forEach(function(s){var fill=h("i",{style:"background:"+(LC[s.label]||"#F26625")});fills.push([fill,s.p]);
+    st.appendChild(h("button",{class:"step",onclick:function(){show("path",function(){var el=document.getElementById("stage-"+s.key);if(el)el.scrollIntoView({behavior:"smooth",block:"start"})})}},h("b",{text:s.title}),h("div",{class:"bar"},fill),h("span",{},lpill(s.label),h("span",{class:"small muted",text:" "+pct(s.p)}))))});
+  var stcard=reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Chance of reaching each step, from today"}),st));
+  onIn(stcard,function(){fills.forEach(function(f){f[0].style.width=Math.max(1.5,Math.min(100,f[1]*100*2.2))+"%"})});
+  root.appendChild(stcard);
+  var S=[["Market need",D.scores.need,"good"],["Technical complexity",D.scores.technical,"info"],["Takeover risk",D.scores.takeover,"bad"],["Name and brand",D.scores.brand,"good"]];
+  var sg=h("div",{class:"grid g4",style:"margin-top:16px"});
+  S.forEach(function(s){var col=s[2]==="info"?"var(--blue)":(s[2]==="good"?(s[1]>=4?"var(--green)":s[1]>=3?"var(--amber)":"var(--red)"):(s[1]>=4?"var(--red)":s[1]>=3?"var(--amber)":"var(--green)"));
+    var g=h("div",{class:"gauge"});for(var i=0;i<5;i++)g.appendChild(h("i",{"data-on":i<s[1]?"1":"0"}));
+    var c=reveal(h("div",{class:"card"},h("h3",{text:s[0]}),h("div",{class:"big",text:s[1]+" / 5"}),g));
+    onIn(c,function(){c.querySelectorAll(".gauge i").forEach(function(e,i){setTimeout(function(){if(e.dataset.on==="1")e.style.background=col},i*90)})});sg.appendChild(c)});
+  root.appendChild(sg);
+};
+
+var metric=null,cursor=0,chart={},selected=null;
+BUILD.compare=function(root){
+  var withVal=D.analogs.filter(function(a){return a.valuation.length>0}).length;
+  metric=withVal>=3?"valuation":"raised";
+  var segs=h("div",{role:"group","aria-label":"Chart metric"});
+  [["valuation","Valuation"],["raised","Total raised"]].forEach(function(m){segs.appendChild(h("button",{class:"tx","aria-pressed":m[0]===metric?"true":"false","data-m":m[0],onclick:function(){metric=m[0];segs.querySelectorAll("button").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.m===metric?"true":"false")});drawChart(true)}},m[1]))});
+  var note=h("div",{class:"small muted",id:"metric-note",style:"margin:2px 0 8px"});
+  chart.svg=sv("svg",{class:"chart",viewBox:"0 0 1000 460",role:"img","aria-label":"Funding history of similar YC companies compared with this startup, by months after the YC batch"});
+  chart.read=h("div",{class:"readout",id:"readout","aria-live":"polite"});chart.detail=h("div",{class:"detailpanel"});
+  chart.range=h("input",{type:"range",class:"range-in",min:"0",max:"100",step:"1","aria-label":"Move along the timeline",oninput:function(e){setCursorM(+e.target.value/100*chart.xmax)}});
+  function lg(svgEl,t){return h("span",{},svgEl,t)}
+  var legend=h("div",{class:"legend"},
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M3 3l8 8M11 3l-8 8",stroke:"#D64545","stroke-width":2,"stroke-linecap":"round"})),"Shut down"),
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("path",{d:"M7 1l6 6-6 6-6-6z",fill:"#1E9E5A"})),"Acquired or public"),
+    lg(sv("svg",{width:14,height:14,viewBox:"0 0 14 14"},sv("circle",{cx:7,cy:7,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2})),"Still running"));
+  root.appendChild(reveal(h("div",{class:"card"},h("div",{class:"row",style:"justify-content:space-between;margin-bottom:6px;flex-wrap:wrap"},h("h2",{style:"margin:0",text:"Similar companies, and where this one stops"}),segs),note,
+    h("div",{class:"chart-wrap"},h("div",{},h("div",{class:"chartbox"},chart.svg),chart.range,legend),chart.read),chart.detail)));
+  var cards=h("div",{class:"grid g3 cards",style:"margin-top:16px"});
+  D.analogs.forEach(function(a,i){cards.appendChild(companyCard(a,i))});
+  root.appendChild(cards);
+  setTimeout(function(){drawChart(true)},30);
+};
+function proj(){var pts=[],cum=0;
+  D.stages.forEach(function(s,i){var b=s.bands.reduce(function(a,b){return b.p_band>a.p_band?b:a},s.bands[0]);
+    var v=Math.sqrt(Math.max(1,b.post[0])*Math.max(1,b.post[1]));cum+=(b.raise[0]+b.raise[1])/2;
+    pts.push({m:s.months,v:metric==="valuation"?v:cum,label:s.title,p:s.p_given_yc,idx:i+1})});
+  return pts}
+function drawChart(replay){
+  var svg=chart.svg;svg.replaceChildren();
+  var W=1000,H=460,L=64,R=30,T=34,B=44,pts=proj(),ml=D.most_likely;
+  svg.appendChild(sv("defs",{},sv("clipPath",{id:"rr",clipPathUnits:"objectBoundingBox"},sv("rect",{width:1,height:1,rx:.22,ry:.22}))));
+  var xs=[],ys=[];D.analogs.forEach(function(a){a[metric].forEach(function(p){xs.push(p[0]);ys.push(p[1])});if(a.end)xs.push(a.end.month)});
+  pts.forEach(function(p){xs.push(p.m);ys.push(p.v)});
+  var xmax=Math.max(60,Math.ceil(Math.max.apply(null,xs.concat([60]))/12)*12+6);
+  var lo=Math.max(1e4,Math.min.apply(null,ys.concat([1e6]))/3),hi=Math.max.apply(null,ys.concat([1e7]))*2.5;
+  var y0=Math.pow(10,Math.floor(Math.log10(lo))),y1=Math.pow(10,Math.ceil(Math.log10(hi)));
+  function X(m){return L+(m/xmax)*(W-L-R)}function Y(v){return T+(1-(Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0)))*(H-T-B)}
+  chart.X=X;chart.xmax=xmax;
+  for(var v=y0;v<=y1*1.01;v*=10){svg.appendChild(sv("line",{class:"grid-l",x1:L,x2:W-R,y1:Y(v),y2:Y(v)}));svg.appendChild(sv("text",{x:L-8,y:Y(v)+4,"text-anchor":"end"})).textContent=usd(v)}
+  for(var m=0;m<=xmax;m+=12){svg.appendChild(sv("line",{class:"grid-l",x1:X(m),x2:X(m),y1:T,y2:H-B,"stroke-dasharray":"2 4"}));svg.appendChild(sv("text",{x:X(m),y:H-B+18,"text-anchor":"middle"})).textContent=m===0?"YC":(m/12)+"y"}
+  D.stages.forEach(function(s){svg.appendChild(sv("text",{x:X(s.months),y:T-12,"text-anchor":"middle",style:"fill:var(--orange);font-weight:700"})).textContent=s.title});
+  function logoMark(a,x,y,size){var g=sv("g",{});var src=logoSrc(a);
+    g.appendChild(sv("rect",{x:x-size/2,y:y-size/2,width:size,height:size,rx:size*.22,fill:"var(--soft)"}));
+    if(src)g.appendChild(sv("image",{x:x-size/2,y:y-size/2,width:size,height:size,href:src,"clip-path":"url(#rr)",preserveAspectRatio:"xMidYMid slice"}));
+    else{var t=sv("text",{x:x,y:y+4,"text-anchor":"middle",style:"font-weight:800;fill:var(--muted)"});t.textContent=(a.name||"?").charAt(0).toUpperCase();g.appendChild(t)}
+    return g}
+  var missing=[];chart.groups=[];
+  D.analogs.forEach(function(a,i){var s=a[metric];if(!s.length){missing.push(a.name);return}
+    var g=sv("g",{class:"cg","data-i":i});var e=a.end,lastP=s[s.length-1];
+    var px=s.map(function(p){return {x:X(p[0]),y:Y(p[1])}});
+    if(e&&e.month>lastP[0]+0.5)px.push({x:X(e.month),y:Y(lastP[1])});
+    var ln=sv("path",{class:"ln",d:smooth(px),pathLength:1,stroke:"var(--ink)","stroke-width":2});ln.style.animationDelay=(replay?i*90:0)+"ms";g.appendChild(ln);chart.groups[i]={g:g,ln:ln};
+    s.forEach(function(p){g.appendChild(logoMark(a,X(p[0]),Y(p[1]),26))});
+    if(e){var cx=px[px.length-1].x,cy=px[px.length-1].y,k=e.kind;
+      if(e.month>lastP[0]+0.5)g.appendChild(logoMark(a,cx,cy,26));
+      var bx=cx+20,by=cy-14;
+      if(k==="dead")g.appendChild(sv("path",{d:"M"+(bx-4)+" "+(by-4)+"l8 8M"+(bx+4)+" "+(by-4)+"l-8 8",stroke:"#D64545","stroke-width":2.4,"stroke-linecap":"round"}));
+      else if(k==="acquired"||k==="ipo")g.appendChild(sv("path",{d:"M"+bx+" "+(by-6)+"l6 6-6 6-6-6z",fill:"#1E9E5A"}));
+      else g.appendChild(sv("circle",{cx:bx,cy:by,r:5,fill:"none",stroke:"#2F5BEA","stroke-width":2.2}))}
+    svg.appendChild(g)});
+  var me=sv("g",{class:"me"}),first=pts[0],stopIdx=ml.stop_index;
+  var base=Math.max(y0,first.v/4);
+  var all=[{x:X(0),y:Y(base)}].concat(pts.map(function(p){return {x:X(p.m),y:Y(p.v)}}));
+  var upto=stopIdx>0?stopIdx+1:1;
+  var solid=all.slice(0,upto),rest=all.slice(Math.max(0,upto-1));
+  if(stopIdx===0){var a0=all[0],a1=all[1];var mid={x:a0.x+(a1.x-a0.x)*0.5,y:a0.y+(a1.y-a0.y)*0.38};solid=[a0,mid];rest=all.slice(0)}
+  if(rest.length>1)me.appendChild(sv("path",{d:smooth(rest),fill:"none",stroke:"#F26625","stroke-width":4,"stroke-dasharray":"2 9","stroke-linecap":"round",opacity:.7}));
+  if(solid.length>1){var ml2=sv("path",{class:"ln",d:smooth(solid),pathLength:1,stroke:"#F26625","stroke-width":4.5});ml2.style.animationDelay="600ms";me.appendChild(ml2)}
+  function myMark(x,y,sz){var g=sv("g",{});g.appendChild(sv("rect",{x:x-sz/2,y:y-sz/2,width:sz,height:sz,rx:sz*.22,fill:"#F26625"}));var t=sv("text",{x:x,y:y+sz*.19,"text-anchor":"middle",style:"fill:#fff;font-weight:800;font-size:"+Math.round(sz*.55)+"px"});t.textContent=(D.startup.name||"?").charAt(0).toUpperCase();g.appendChild(t);return g}
+  for(var q=1;q<upto&&q<all.length;q++)me.appendChild(myMark(all[q].x,all[q].y,30));
+  var lastX=all[Math.min(upto,all.length)-1];
+  if(stopIdx>0||solid.length>1){var cx=stopIdx>0?lastX.x:solid[solid.length-1].x,cy=stopIdx>0?lastX.y:solid[solid.length-1].y;me.appendChild(sv("path",{d:"M"+(cx+18)+" "+(cy-8)+"l12 12M"+(cx+30)+" "+(cy-8)+"l-12 12",stroke:"#F26625","stroke-width":3,"stroke-linecap":"round"}));
+    var lx=stopIdx>0?Math.min(cx+24,W-R-4):L+8,anc=stopIdx>0?(cx>W-220?"end":"middle"):"start";var lab=sv("text",{x:lx,y:stopIdx>0?cy-20:cy+34,"text-anchor":anc,style:"fill:#F26625;font-weight:800;font-size:12px"});lab.textContent=stopIdx>0?"Most likely stops here ("+pct(ml.stop_p)+")":"Most likely ends before a priced round ("+pct(ml.stop_p)+")";me.appendChild(lab)}
+  svg.appendChild(me);
+  chart.cur=sv("g",{});chart.curLine=sv("line",{y1:T,y2:H-B,stroke:"var(--blue)","stroke-width":2,opacity:.8});chart.curLab=sv("text",{y:H-B+34,"text-anchor":"middle",style:"fill:var(--blue);font-weight:800"});
+  chart.cur.appendChild(chart.curLine);chart.cur.appendChild(chart.curLab);svg.appendChild(chart.cur);
+  var hit=sv("rect",{x:L,y:T,width:W-L-R,height:H-T-B,fill:"transparent"});svg.appendChild(hit);
+  function fromEvent(ev){var r=svg.getBoundingClientRect();var x=(ev.clientX-r.left)/r.width*W;return Math.max(0,Math.min(chart.xmax,(x-L)/(W-L-R)*chart.xmax))}
+  var drag=false;hit.addEventListener("pointerdown",function(e){drag=true;hit.setPointerCapture(e.pointerId);setCursorM(fromEvent(e))});
+  hit.addEventListener("pointermove",function(e){if(drag||e.pointerType==="mouse")setCursorM(fromEvent(e))});
+  hit.addEventListener("pointerup",function(){drag=false});
+  document.getElementById("metric-note").textContent=metric==="raised"?("Showing total raised. Valuation data is sparse for these companies."+(missing.length?" No data: "+missing.join(", ")+".":"")+" This startup's line uses the most likely band at each step and typical timing after YC."):("Showing reported post-money valuation."+(missing.length?" No data: "+missing.join(", ")+".":"")+" This startup's line uses the most likely band at each step and typical timing after YC.");
+  if(!replay||cursor===0)cursor=D.stages[0].months;
+  applySel();setCursorM(cursor)}
+function applySel(){D.analogs.forEach(function(a,i){var c=chart.groups&&chart.groups[i];if(!c)return;var on=selected===i;
+    c.g.style.opacity=selected===null?0.55:(on?1:0.14);c.ln.setAttribute("stroke",on?"#2F5BEA":"var(--ink)");c.ln.setAttribute("stroke-width",on?4:2);if(on)chart.svg.insertBefore(c.g,chart.svg.querySelector(".me"))})}
+function selectComp(i,force){selected=(force||selected!==i)?i:null;if(chart.groups){applySel();setCursorM(cursor)}showChartDetail()}
+function showChartDetail(){var box=chart.detail;if(!box)return;box.replaceChildren();
+  if(selected===null){box.style.display="none";return}
+  var a=D.analogs[selected];box.style.display="block";
+  box.appendChild(h("div",{class:"row",style:"justify-content:space-between"},h("div",{class:"row"},ico(a,36),h("div",{},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch+", "+statusText(a)}))),h("button",{class:"tx",onclick:function(){selectComp(selected)}},"Close")));
+  box.appendChild(companyDetail(a));box.classList.remove("fadein");void box.offsetWidth;box.classList.add("fadein")}
+function statusText(a){var e=a.end||{},k=e.kind;var t=k==="dead"?"Shut down":k==="acquired"?"Acquired":k==="ipo"?"Public":k==="active"?"Still running":a.status;
+  if(k&&k!=="active"){if(e.src==="directory")t+=" (per YC directory)";else if(!e.dated)t+=" (date unknown)"}return t}
+function sec(title,node){return h("div",{class:"dsec"},h("h4",{text:title}),node)}
+function chips(list,cls){return h("div",{class:"chips "+cls},list.map(function(x){return h("span",{text:String(x).replace(/_/g," ")})}))}
+function rate(n){return n===null||n===undefined?"not rated":n+" / 5"}
+function companyDetail(a){var d=a.detail,box=h("div",{class:"detail"});
+  if(!d){box.appendChild(h("p",{class:"small muted",style:"margin:6px 0",text:(a.one_liner?a.one_liner+". ":"")+"No researched record exists for this company yet, so the chart uses the YC directory status only."}));
+    if(a.website&&safeUrl(a.website))box.appendChild(ext(a.website,"Website"));return box}
+  box.appendChild(h("div",{class:"small muted",text:"Record confidence: "+(d.confidence||"unknown")+". Funding data: "+String(d.funding_coverage||"unknown").replace("_"," ")+(d.depth===1?". Shallow record: missing fields mean unknown, not zero.":".")}));
+  box.appendChild(sec("What happened",h("p",{class:"small",style:"margin:0",text:d.outcome||"Not recorded."})));
+  if(d.target_customer)box.appendChild(sec("What it does",h("p",{class:"small",style:"margin:0",text:d.target_customer.replace(/[.\s]+$/,"")+"."+(d.business_model?" Model: "+d.business_model.replace(/[.\s]+$/,"")+".":"")})));
+  var rl=h("ul",{class:"tl"});
+  d.rounds.forEach(function(r){var bits=[r.stage+(r.amount!=null?", "+usd(r.amount):", amount not reported")];if(r.post!=null)bits.push("post-money "+usd(r.post)+(r.basis?" ("+r.basis+")":""));if(r.investors&&r.investors.length)bits.push(r.investors.join(", "));
+    rl.appendChild(h("li",{},h("span",{text:r.date||"undated"}),h("span",{},bits.join(". ")+" ",r.url?ext(r.url,"source"):null)))});
+  box.appendChild(sec("Funding rounds on record",d.rounds.length?rl:h("p",{class:"small muted",style:"margin:0",text:d.funding_coverage==="none_found"?"None found. That means the data was not found, not that nothing was raised.":"None recorded."})));
+  var ex=d.exit||{},et=ex.type;
+  var exTxt=et==="acquisition"||et==="merger"?"Acquired"+(ex.acquirer?" by "+ex.acquirer:"")+(ex.date?" ("+ex.date+")":"")+(ex.amount?" for "+usd(ex.amount):""):et==="shutdown"?"Shut down"+(ex.date?" ("+ex.date+")":"")+(ex.reason?". Reason given: "+ex.reason:". Cause not public."):et==="ipo"||et==="spac"?"Went public"+(ex.date?" ("+ex.date+")":""):et==="none"?"No exit recorded (still operating as far as sources show).":"Outcome unknown in the record.";
+  box.appendChild(sec("Exit",h("p",{class:"small",style:"margin:0"},exTxt+" ",ex.url?ext(ex.url,"source"):null)));
+  if(d.founders.length){var fl=h("ul",{class:"tl"});d.founders.forEach(function(f){fl.appendChild(h("li",{},h("span",{text:f.role||"Founder"}),h("span",{},h("b",{text:f.name}),f.background?", "+f.background:"")))});box.appendChild(sec("Founders",fl))}
+  var cl=h("ul",{class:"tl"});d.competitors.forEach(function(c){cl.appendChild(h("li",{},h("span",{text:"Rival"}),h("span",{},h("b",{text:c.name}),c.what?", "+c.what:"",c.traction?" Traction then: "+c.traction:""," ",c.url?ext(c.url,"source"):null)))});
+  box.appendChild(sec("Competition at founding"+(d.competitors_as_of?" (as of "+d.competitors_as_of+")":""),d.competitors.length?cl:h("p",{class:"small muted",style:"margin:0",text:"No competitors with sources dated near the batch were found."})));
+  if(d.market_need)box.appendChild(sec("Demand at the time",h("p",{class:"small",style:"margin:0",text:d.market_need})));
+  var rt=h("ul",{class:"tl"});[["Technical",d.technical],["Moat",d.defensibility],["Takeover risk",d.takeover]].forEach(function(x){if(x[1]&&(x[1].rating!=null||x[1].text))rt.appendChild(h("li",{},h("span",{text:x[0]}),h("span",{},h("b",{text:rate(x[1].rating)}),x[1].text?". "+x[1].text:"")))});
+  if(rt.children.length)box.appendChild(sec("Ratings as of founding",rt));
+  if(d.success.length)box.appendChild(sec("What helped",chips(d.success,"good")));
+  if(d.failure.length)box.appendChild(sec("What hurt",chips(d.failure,"bad")));
+  if(d.pivots.length){var pl=h("ul",{class:"tl"});d.pivots.forEach(function(x){pl.appendChild(h("li",{},h("span",{text:x.date||"undated"}),h("span",{text:x.to+(x.why?". "+x.why:"")})))});box.appendChild(sec("Pivots",pl))}
+  if(d.brand){var b=d.brand,bt=["Brand "+rate(b.rating)];if(b.effect&&b.effect!=="unclear")bt.push("effect on outcome: "+b.effect);if(b.origin)bt.push("name origin: "+b.origin);if(b.signature)bt.push("signature: "+b.signature);if(b.rebrands&&b.rebrands.length)bt.push("renamed to "+b.rebrands.map(function(r){return r.to+(r.date?" ("+r.date+")":"")}).join(", "));
+    box.appendChild(sec("Name and brand",h("p",{class:"small",style:"margin:0",text:bt.join(". ")+"."})))}
+  if(d.notes)box.appendChild(sec("Caveats",h("p",{class:"small muted",style:"margin:0",text:d.notes})));
+  if(d.sources.length)box.appendChild(sec("Sources",h("div",{class:"small"},d.sources.map(function(u,i){return h("span",{},i?" ":"",ext(u,"["+(i+1)+"]"))}))));
+  return box}
+function companyCard(a,i){var k=(a.end||{}).kind;
+  var xp=h("div",{class:"xp",id:"xp-"+i}),inner=h("div",{class:"xpi"}),filled=false;xp.appendChild(inner);
+  var btn=h("button",{class:"more","aria-expanded":"false","aria-controls":"xp-"+i,onclick:function(){var open=xp.classList.toggle("open");btn.setAttribute("aria-expanded",open?"true":"false");btn.firstChild.nodeValue=open?"Hide details":"Details";if(open&&!filled){filled=true;inner.appendChild(companyDetail(a))}}},"Details",icon("chev"));
+  return reveal(h("div",{class:"card acard"},h("div",{class:"head"},ico(a,40),h("div",{style:"flex:1"},h("b",{text:a.name}),h("div",{class:"small muted",text:a.batch}))),
+    h("span",{class:"pill",style:"background:"+statusColor(k)+";align-self:flex-start",text:statusText(a)}),
+    h("div",{class:"small",text:a.relevance}),h("div",{class:"small muted",text:a.summary}),btn,xp))}
+function valueAt(a,m){var s=a[metric];if(!s.length)return null;var v=null;for(var i=0;i<s.length;i++){if(s[i][0]<=m+0.001)v=s[i]}return v}
+function setCursorM(m){cursor=m;var x=chart.X(m);chart.curLine.setAttribute("x1",x);chart.curLine.setAttribute("x2",x);chart.curLab.setAttribute("x",x);chart.curLab.textContent=m<1?"YC":(m/12).toFixed(1)+" years after YC";
+  chart.range.value=Math.round(m/chart.xmax*100);
+  var rd=chart.read;rd.replaceChildren();
+  var pts=proj(),ml=D.most_likely,me=null;pts.forEach(function(p){if(p.m<=m+0.001){me=p}});
+  var stopped=ml.stop_index>0&&me&&me.idx>ml.stop_index;
+  var meText=!me?"Before a priced round":stopped?"Most likely stopped at "+pts[ml.stop_index-1].label:me.label+": "+usd(me.v);
+  var myIco=h("div",{class:"ico",style:"width:28px;height:28px;background:var(--orange);color:#fff",text:(D.startup.name||"?").charAt(0).toUpperCase()});
+  rd.appendChild(h("div",{class:"rrow me",style:"cursor:default"},myIco,h("div",{},h("div",{class:"nm",text:D.startup.name}),h("div",{class:"st",text:meText})),h("span",{class:"small muted",text:me&&!stopped?pct(me.p):""})));
+  var deadN=0;
+  D.analogs.forEach(function(a,i){var v=valueAt(a,m),e=a.end,state="";
+    if(e&&m>e.month+0.001){state=e.kind==="dead"?"Gone":e.kind==="active"?"":"Exited";if(e.kind==="dead")deadN++}
+    var txt=v?v[2]+": "+usd(v[1]):(a[metric].length?"No round yet":"No data");
+    rd.appendChild(h("button",{class:"rrow"+(selected===i?" sel":""),"aria-pressed":selected===i?"true":"false",onclick:function(){selectComp(i)}},ico(a,28),h("div",{},h("div",{class:"nm",text:a.name}),h("div",{class:"st",text:txt})),
+      h("span",{class:"small",style:"font-weight:700;color:"+(state==="Gone"?"#D64545":state==="Exited"?"#1E9E5A":"var(--muted)"),text:state})))});
+  rd.appendChild(h("div",{class:"small muted",style:"padding:8px",text:deadN+" of "+D.analogs.length+" had shut down by this point."}))}
+
+var W={};
+BUILD.walk=function(root){
+  var steps=[{key:"yc",title:"Y Combinator",p:D.yc.p,why:D.yc.why_it_fails,roadmap:"before_yc"}].concat(D.stages.map(function(s){return {key:s.key,title:s.title,p:s.p_reach_prev,why:s.why,roadmap:s.key,stage:s}}));
+  W.steps=steps;W.W=1000;W.H=560;W.L=70;W.R=40;W.T=30;W.B=48;
+  W.svg=sv("svg",{class:"stage-chart",viewBox:"0 0 1000 560",role:"img","aria-label":"Simulated run of this startup through YC and each funding round"});
+  W.capTitle=h("h3",{text:"Startup life"});W.num=h("div",{class:"num",text:"$0"});W.line=h("div",{class:"small muted"});W.res=h("div",{class:"res"});W.extra=h("div",{class:"small"});
+  W.mode="next";W.next=h("button",{class:"ibtn big go","aria-label":"Next step",onclick:function(){if(W.mode==="reset")walkReset();else walkNext()}},icon("arrow"));
+  W.again=h("button",{class:"ibtn","aria-label":"Start over",onclick:walkReset},icon("restart"));
+  W.pips=h("div",{class:"pips"},steps.map(function(){return h("i")}));
+  var ctl=h("div",{class:"ctl"},h("div",{class:"row"},W.again,W.pips),W.next);
+  W.cap=h("div",{class:"card cap"},W.capTitle,W.num,W.line,W.res,W.extra,ctl);
+  W.chartCard=h("div",{class:"card"},W.svg);
+  root.appendChild(reveal(h("div",{class:"walk"},W.chartCard,W.cap)));
+  document.addEventListener("keydown",function(e){if(cur==="walk"&&(e.key==="ArrowRight"||e.key==="Enter")&&!W.busy&&document.activeElement.tagName!=="BUTTON"){e.preventDefault();W.next.click()}});
+  walkReset();
+};
+function wx(i){return W.L+(i/W.steps.length)*(W.W-W.L-W.R)}
+function wy(v,range){var lo=Math.log10(range[0]),hi=Math.log10(range[1]);return W.T+(1-(Math.log10(Math.max(v,range[0]))-lo)/(hi-lo))*(W.H-W.T-W.B)}
+function walkReset(){W.i=0;W.pts=[{x:0,v:0}];W.range=[1e5,3e6];W.dead=false;W.busy=false;W.done=false;W.maxV=0;
+  W.mode="next";W.capTitle.textContent="Startup life";W.num.textContent="Idea";W.line.textContent="Press the arrow. Each step uses the odds from this evaluation.";W.res.textContent="";W.res.style.color="";W.extra.replaceChildren();
+  W.pips.querySelectorAll("i").forEach(function(i){i.className=""});W.next.disabled=false;W.next.replaceChildren(icon("arrow"));W.next.setAttribute("aria-label","Next step");W.chartCard.classList.remove("shake");
+  drawWalk(null)}
+function walkRange(maxV){var hi=Math.max(3e6,maxV*3);return [1e5,Math.pow(10,Math.ceil(Math.log10(hi)*4)/4)]}
+function drawWalk(head,rng){var svg=W.svg;svg.replaceChildren();var range=rng||W.range,color=W.dead?"#D64545":"#F26625";
+  for(var v=1e5;v<=range[1]*1.01;v*=10){svg.appendChild(sv("line",{x1:W.L,x2:W.W-W.R,y1:wy(v,range),y2:wy(v,range),stroke:"var(--line)"}));svg.appendChild(sv("text",{x:W.L-8,y:wy(v,range)+4,"text-anchor":"end"})).textContent=usd(v)}
+  W.steps.forEach(function(s,i){var x=wx(i+1);svg.appendChild(sv("line",{x1:x,x2:x,y1:W.T,y2:W.H-W.B,stroke:"var(--line)","stroke-dasharray":"2 5"}));
+    var t=sv("text",{x:x,y:W.H-W.B+20,"text-anchor":"middle",style:i<W.i?"fill:var(--ink);font-weight:700":""});t.textContent=s.key==="yc"?"YC":s.title;svg.appendChild(t)});
+  var px=W.pts.map(function(p){return {x:wx(p.x),y:p.v===0?W.H-W.B:wy(p.v,range)}});
+  if(head)px.push(head);
+  if(px.length>1)svg.appendChild(sv("path",{d:smooth(px),fill:"none",stroke:color,"stroke-width":5,"stroke-linecap":"round","stroke-linejoin":"round"}));
+  var tip=px[px.length-1];
+  svg.appendChild(sv("circle",{cx:tip.x,cy:tip.y,r:16,fill:color,opacity:.15}));svg.appendChild(sv("circle",{cx:tip.x,cy:tip.y,r:7,fill:color}))}
+function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+function easeOut(t){return 1-Math.pow(1-t,4)}
+function easeIn(t){return t*t*t}
+function walkAnim(target,kind,done){W.busy=true;var from=W.pts[W.pts.length-1];var fromV=from.v||0;var oldRange=W.range.slice(),newRange=kind==="crash"?W.range.slice():walkRange(Math.max(target.v,W.maxV||0));
+  var dur=kind==="crash"?1500:1900,t0=null,fx=from.x,tx=target.x;
+  function frame(t){if(t0===null)t0=t;var k=Math.min(1,(t-t0)/dur);var ek=kind==="crash"?easeIn(k):easeOut(k);var rk=ease(k);
+    var r=[oldRange[0],Math.pow(10,Math.log10(oldRange[1])+(Math.log10(newRange[1])-Math.log10(oldRange[1]))*rk)];
+    var xk=ease(Math.min(1,k*1.15));var hx=fx+(tx-fx)*xk;
+    var lo=Math.log10(Math.max(fromV,1e5)),hv=kind==="crash"?Math.pow(10,lo+(Math.log10(1e5)-lo)*ek):Math.pow(10,lo+(Math.log10(Math.max(target.v,1e5))-lo)*ek);
+    var val=kind==="crash"?fromV*(1-ek):fromV+(target.v-fromV)*ek;
+    W.num.textContent=target.noUsd?"In YC":(kind==="crash"&&!fromV?"Applying":usd(Math.max(0,val)));
+    drawWalk({x:wx(hx),y:wy(hv,r)},r);
+    if(k<1)requestAnimationFrame(frame);else{W.pts.push(target);W.range=newRange;W.busy=false;drawWalk(null);done&&done()}}
+  requestAnimationFrame(frame)}
+function pickBand(bands){var r=Math.random(),c=0;for(var i=0;i<bands.length;i++){c+=bands[i].p_band;if(r<=c)return bands[i]}return bands[bands.length-1]}
+function walkNext(){if(W.busy||W.done)return;
+  var s=W.steps[W.i],lucky=Math.random()<s.p;
+  W.capTitle.textContent="Step "+(W.i+1)+" of "+W.steps.length+": "+s.title;
+  W.line.textContent=s.key==="yc"?"This company has a "+pct(s.p)+" chance of getting into YC.":"If it gets this far, it has a "+pct(s.p)+" chance of reaching "+s.title+".";
+  W.res.textContent="";W.res.style.color="";W.extra.replaceChildren();
+  var pip=W.pips.querySelectorAll("i")[W.i];
+  if(lucky){
+    var target,txt;
+    if(s.key==="yc"){target={x:1,v:1.5e5,noUsd:true};txt="You got into YC."}
+    else{var b=pickBand(s.stage.bands);var lo=Math.log10(Math.max(1,b.post[0])),hi=Math.log10(Math.max(1,b.post[1]));var val=Math.pow(10,lo+(hi-lo)*Math.random());target={x:W.i+1,v:val};txt="You raised at a "+usd(val)+" valuation."}
+    W.maxV=Math.max(W.maxV,target.v);W.next.disabled=true;
+    walkAnim(target,"up",function(){W.i++;pip.className="on";W.res.textContent=txt;W.res.style.color="var(--green)";W.next.disabled=false;if(W.i>=W.steps.length)walkFinish()})
+  }else{
+    W.dead=true;W.next.disabled=true;
+    walkAnim({x:W.i+1,v:1e5},"crash",function(){pip.className="bad";W.num.textContent=s.key==="yc"?"Not accepted":"Stalled";W.chartCard.classList.remove("shake");void W.chartCard.offsetWidth;W.chartCard.classList.add("shake");
+      W.res.textContent=s.key==="yc"?"Not this time. YC said no.":"It stalled before "+s.title+".";W.res.style.color="var(--red)";
+      W.extra.appendChild(h("div",{class:"callout red"},h("b",{text:"Why it fails here"}),s.why));
+      walkEnd("See the roadmap for this step",s.roadmap)})
+  }}
+function walkFinish(){var outs=D.outcomes.filter(function(o){return !o.failure});var tot=outs.reduce(function(a,o){return a+o.p_given_yc},0);var r=Math.random()*tot,c=0,o=outs[outs.length-1];
+  for(var i=0;i<outs.length;i++){c+=outs[i].p_given_yc;if(r<=c){o=outs[i];break}}
+  W.res.textContent="End state: "+o.name+".";W.res.style.color="var(--green)";
+  W.extra.appendChild(h("div",{class:"callout green"},h("b",{text:"You made it"}),"Among runs that get this far, this outcome comes up "+pct(o.p_given_yc/tot)+" of the time. Value: "+(o.value?rng(o.value):"n/a")+"."));
+  walkEnd("See the roadmap for the late stage","series_c_plus")}
+function walkEnd(label,phase){W.done=true;W.next.disabled=false;W.next.replaceChildren(icon("restart"));W.next.setAttribute("aria-label","Run again");W.mode="reset";
+  W.extra.appendChild(h("button",{class:"link",style:"margin-top:8px;text-align:left",onclick:function(){roadmapFocus=phase;show("roadmap",focusRoadmap)}},label))}
+
+var T={path:[]};
+function treeData(){var yc=D.yc.p,st=D.stages;var cum=[yc].concat(st.map(function(s){return s.p_today}));
+  function node(title,p,c,kind,detail){return {title:title,p:p,cum:c,kind:kind,detail:detail,kids:[]}}
+  var root=node("Today",1,1,"root",{text:"Applying to YC with this startup."});
+  var no=node("Rejected by YC",1-yc,1-yc,"stop",{why:D.yc.why_it_fails});
+  var yes=node("Accepted into YC",yc,yc,"go",{text:D.yc.basis});root.kids=[no,yes];
+  var prev=yes;
+  st.forEach(function(s,i){var stall=node("Stops before "+s.title,1-s.p_reach_prev,cum[i]-cum[i+1],"stop",{why:s.why});
+    var reach=node("Reaches "+s.title,s.p_reach_prev,cum[i+1],i===st.length-1?"end":"go",{bands:s.bands});
+    prev.kids=[stall,reach];prev=reach});
+  prev.detail.outcomes=D.outcomes;return root}
+BUILD.tree=function(root){
+  T.root=treeData();T.path=[T.root];
+  T.box=h("div",{class:"tree",id:"tree"});T.panel=h("div",{class:"card",style:"margin-top:16px;min-height:140px"});
+  root.appendChild(reveal(h("div",{class:"card"},h("h2",{text:"Every way it can go"}),T.box)));root.appendChild(T.panel);
+  window.addEventListener("resize",function(){if(cur==="tree")drawTree(true)})};
+function drawTree(quick){var box=T.box;if(!box)return;box.replaceChildren();var svgL=sv("svg",{class:"tlinks"});box.appendChild(svgL);
+  var rootCol=h("div",{class:"tcol"});rootCol.style.animation="none";
+  var rb=h("button",{class:"tn sel",onclick:function(){T.path=[T.root];drawTree();}},h("b",{text:"Today"}),h("div",{class:"small muted",style:"margin-top:6px",text:"Apply to YC"}));T.root.el=rb;rootCol.appendChild(rb);box.appendChild(rootCol);
+  T.path.forEach(function(n,depth){var next=T.path[depth+1];if(!n.kids.length)return;var col=h("div",{class:"tcol"});if(quick||depth<T.path.length-2)col.style.animation="none";
+    n.kids.forEach(function(k){var sel=next===k;var lab=labelFor(k.cum);
+      var el=h("button",{class:"tn"+(sel?" sel":""),onclick:function(){selectNode(depth+1,k)}},h("b",{text:k.title}),h("div",{class:"small muted",style:"margin-top:8px",text:pct(k.p)+" from here"}),h("div",{class:"pr",style:"margin-top:4px"},h("span",{text:pct(k.cum)+" from today"}),k.kind==="stop"?npill(lab):lpill(lab)));
+      k.el=el;col.appendChild(el)});box.appendChild(col)});
+  requestAnimationFrame(function(){var br=box.getBoundingClientRect();svgL.setAttribute("width",box.scrollWidth);svgL.setAttribute("height",box.scrollHeight);
+    T.path.forEach(function(n,depth){var next=T.path[depth+1];n.kids.forEach(function(k){if(!k.el||!n.el)return;var a=n.el.getBoundingClientRect(),b=k.el.getBoundingClientRect();
+      var x1=a.right-br.left+box.scrollLeft,y1=a.top+a.height/2-br.top+box.scrollTop,x2=b.left-br.left+box.scrollLeft,y2=b.top+b.height/2-br.top+box.scrollTop,mx=(x1+x2)/2;
+      svgL.appendChild(sv("path",{class:next===k?"on":"",d:"M"+x1+" "+y1+" C"+mx+" "+y1+" "+mx+" "+y2+" "+x2+" "+y2}))})})});
+  showDetail(T.path[T.path.length-1])}
+function selectNode(depth,k){T.path=T.path.slice(0,depth);T.path.push(k);drawTree();setTimeout(function(){T.box.scrollTo({left:T.box.scrollWidth,behavior:"smooth"})},60)}
+function showDetail(n){var p=T.panel;p.replaceChildren();p.classList.remove("fadein");void p.offsetWidth;p.classList.add("fadein");
+  var lab=labelFor(n.cum);
+  p.appendChild(h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:n.title}),h("div",{class:"row"},h("span",{class:"big",style:"font-size:30px",text:pct(n.cum)}),n.kind==="stop"?npill(lab):lpill(lab),h("span",{class:"small muted",text:"from today"}))));
+  var d=n.detail||{};
+  if(d.text)p.appendChild(h("p",{class:"muted",text:d.text}));
+  if(d.why)p.appendChild(h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it ends here"}),d.why));
+  if(d.bands){var y0=1e5,y1=1e10;var pos=function(v){return (Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0))*100};
+    d.bands.forEach(function(b){var lo=pos(b.post[0]),hi=Math.max(pos(b.post[1]),lo+1.2);p.appendChild(h("div",{class:"band"},h("div",{},h("b",{text:rng(b.post)}),h("div",{class:"small muted",text:"Raise "+rng(b.raise)})),h("div",{},h("div",{class:"range"},h("i",{style:"left:"+lo+"%;width:"+(hi-lo)+"%"})),h("div",{class:"small muted",style:"margin-top:6px",text:b.rationale})),h("div",{style:"text-align:right"},h("b",{text:pct(b.p_band)}))))})}
+  if(d.outcomes){p.appendChild(h("table",{class:"tbl",style:"margin-top:12px"},h("thead",{},h("tr",{},h("th",{text:"Final outcome"}),h("th",{text:"Value"}),h("th",{text:"If accepted"}),h("th",{text:"From today"}))),
+    h("tbody",{},d.outcomes.map(function(o){return h("tr",{},h("td",{text:o.name}),h("td",{text:o.failure?"n/a":rng(o.value)}),h("td",{},lpill(o.label_given_yc),h("span",{class:"small muted",text:" "+pct(o.p_given_yc)})),h("td",{},lpill(o.label_today),h("span",{class:"small muted",text:" "+pct(o.p_today)})))}))));
+    p.appendChild(h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it fails at the end"}),D.outcomes_why))}}
+
+function parseMoney(t){t=String(t||"").trim().toLowerCase().replace(/[$,\s]/g,"");var m=t.match(/^([0-9]*\.?[0-9]+)(k|m|b)?$/);if(!m)return null;var v=parseFloat(m[1]);if(m[2]==="k")v*=1e3;else if(m[2]==="m")v*=1e6;else if(m[2]==="b")v*=1e9;return v>0?v:null}
+function raiseCalc(){
+  var amt=h("input",{type:"text",inputmode:"decimal",class:"rc-in",value:"50k","aria-label":"Amount you want to raise",autocomplete:"off"});
+  var cap=h("input",{type:"text",inputmode:"decimal",class:"rc-in",value:"1m","aria-label":"Valuation cap",autocomplete:"off"});
+  var out=h("div",{class:"rc-out","aria-live":"polite"});
+  function upd(){var a=parseMoney(amt.value),c=parseMoney(cap.value);out.replaceChildren();
+    if(a===null||c===null){out.appendChild(h("div",{class:"small muted",text:"Enter amounts like 50k or 1m."}));return}
+    var sold=a/c;
+    out.appendChild(h("div",{class:"row",style:"align-items:baseline;gap:10px;flex-wrap:wrap"},h("span",{class:"big",text:(sold>=0.1?Math.round(sold*1000)/10:Math.round(sold*10000)/100)+"%"}),h("span",{class:"muted",text:"of the company sold for "+usd(a)+" on a "+usd(c)+" cap"})));
+    if(sold>=1){out.appendChild(h("div",{class:"callout red"},h("b",{text:"Check the numbers"}),"The raise is as large as the cap, which would sell the whole company."));return}
+    out.appendChild(h("div",{class:"small muted",style:"margin-top:8px",text:"You keep about "+(Math.round((1-sold)*1000)/10)+"% before any other dilution. This treats the cap as a post-money cap, so the percentage is the amount divided by the cap."}));
+    var st=D.stages&&D.stages[0];if(st&&st.bands&&st.bands.length){var lo=Math.min.apply(null,st.bands.map(function(b){return b.post[0]})),hi=Math.max.apply(null,st.bands.map(function(b){return b.post[1]}));
+      var where=c<lo?"below":c>hi?"above":"inside";
+      out.appendChild(h("div",{class:"small",style:"margin-top:8px",text:"This report's seed range is "+usd(lo)+" to "+usd(hi)+" post-money. Your cap is "+where+" that range."}))}}
+  amt.addEventListener("input",upd);cap.addEventListener("input",upd);upd();
+  return h("div",{class:"card",id:"raise-calc"},h("h2",{text:"Raise calculator"}),h("p",{class:"muted",style:"margin-top:0",text:"Say how much you want to raise and the valuation cap. It shows the share of the company you sell."}),
+    h("div",{class:"rc-row"},h("label",{class:"rc-f"},h("span",{class:"small muted",text:"Amount to raise"}),amt),h("label",{class:"rc-f"},h("span",{class:"small muted",text:"Valuation cap"}),cap)),out)}
+BUILD.path=function(root){
+  var wrap=h("div",{class:"grid snap"});
+  wrap.appendChild(reveal(raiseCalc()));
+  wrap.appendChild(reveal(h("div",{class:"card",id:"stage-yc"},h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:"Getting into YC"}),h("div",{class:"row"},h("span",{class:"big",text:pct(D.yc.p)}),lpill(D.yc.label))),
+    h("p",{class:"muted",text:D.yc.basis}),h("div",{class:"callout red"},h("b",{text:"Why it fails here"}),D.yc.why_it_fails))));
+  var y0=1e5,y1=1e10;function pos(v){return (Math.log10(Math.max(v,y0))-Math.log10(y0))/(Math.log10(y1)-Math.log10(y0))*100}
+  D.stages.forEach(function(s){
+    var bands=h("div",{});
+    s.bands.forEach(function(b){var lo=pos(b.post[0]),hi=Math.max(pos(b.post[1]),lo+1.2);
+      bands.appendChild(h("div",{class:"band"},h("div",{},h("b",{text:rng(b.post)}),h("div",{class:"small muted",text:"Raise "+rng(b.raise)})),
+        h("div",{},h("div",{class:"range"},h("i",{style:"left:"+lo+"%;width:"+(hi-lo)+"%"})),h("div",{class:"small muted",style:"margin-top:6px",text:b.rationale})),
+        h("div",{style:"text-align:right"},h("b",{text:pct(b.p_band)}))))});
+    wrap.appendChild(reveal(h("div",{class:"card",id:"stage-"+s.key},
+      h("div",{class:"row",style:"justify-content:space-between;flex-wrap:wrap"},h("h2",{style:"margin:0",text:s.title}),
+        h("div",{class:"row"},h("div",{style:"text-align:right"},h("div",{class:"big",text:pct(s.p_given_yc)}),h("div",{class:"small muted",text:pct(s.p_today)+" from today"})),lpill(s.label_given_yc))),
+      bands,
+      h("div",{class:"callout red",style:"margin-top:12px"},h("b",{text:"Why it fails here"}),s.why),
+      h("details",{},h("summary",{text:"How the odds were set"}),h("p",{class:"small muted",style:"margin:0",text:pct(s.p_reach_prev)+" chance of reaching this step from the previous one. "+(s.anchor.source||"")+(s.anchor.adjustment_reason?" "+s.anchor.adjustment_reason:"")})))))});
+  wrap.appendChild(reveal(h("div",{class:"card"},h("h2",{text:"Where it finally lands"}),
+    h("table",{class:"tbl"},h("thead",{},h("tr",{},h("th",{text:"Outcome"}),h("th",{text:"Value"}),h("th",{text:"If accepted"}),h("th",{text:"From today"}))),
+      h("tbody",{},D.outcomes.map(function(o){return h("tr",{},h("td",{text:o.name}),h("td",{text:o.failure?"n/a":rng(o.value)}),h("td",{},lpill(o.label_given_yc),h("span",{class:"small muted",text:" "+pct(o.p_given_yc)})),h("td",{},lpill(o.label_today),h("span",{class:"small muted",text:" "+pct(o.p_today)})))}))),
+    h("div",{class:"callout red",style:"margin-top:14px"},h("b",{text:"Why it fails here"}),D.outcomes_why))));
+  root.appendChild(wrap)};
+
+var roadmapFocus=null;
+var RM_TITLE={before_yc:"Get into YC",seed:"Reach Seed",series_a:"Reach Series A",series_b:"Reach Series B",series_c_plus:"Reach Series C and beyond"};
+BUILD.roadmap=function(root){var wrap=h("div",{class:"rm"});
+  var order=["before_yc","seed","series_a","series_b","series_c_plus"];
+  var items=D.roadmap.slice().sort(function(a,b){return order.indexOf(a.phase)-order.indexOf(b.phase)});
+  if(!items.length){root.appendChild(h("div",{class:"card"},h("p",{class:"muted",text:"No roadmap was written for this evaluation."})));return}
+  items.forEach(function(r){var el=h("div",{class:"rm-item","data-phase":r.phase},h("div",{class:"rm-rail"},h("div",{class:"rm-dot"}),h("div",{class:"rm-line"})),
+    reveal(h("div",{class:"card"},h("h2",{text:RM_TITLE[r.phase]||r.phase}),h("p",{style:"margin:0 0 12px;font-weight:600",text:r.goal}),
+      h("ul",{class:"list pro"},r.actions.map(function(a){return h("li",{},icon("check"),h("span",{text:a}))})),
+      h("div",{class:"callout green",style:"margin-top:14px"},h("b",{text:"You know it worked when"}),r.proof))));wrap.appendChild(el)});
+  root.appendChild(wrap)};
+function focusRoadmap(){var els=views.roadmap.querySelectorAll(".rm-item");els.forEach(function(e){e.classList.toggle("focus",e.dataset.phase===roadmapFocus)});
+  if(roadmapFocus){var t=views.roadmap.querySelector('.rm-item[data-phase="'+roadmapFocus+'"]');if(t)t.scrollIntoView({behavior:"smooth",block:"center"})}}
+
+function dots5(n){var g=h("div",{class:"gauge",style:"margin-bottom:12px"});for(var i=0;i<5;i++)g.appendChild(h("i",{style:i<n?"background:var(--orange)":""}));return g}
+BUILD.insights=function(root){
+  var I=D.insights,g=h("div",{class:"grid g2"});
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Market need"}),h("h2",{text:I.need.rating+" / 5"}),dots5(I.need.rating),
+    h("ul",{class:"list"},I.need.evidence.map(function(e){return h("li",{},icon("check"),h("div",{},h("div",{text:e.claim}),ext(e.source_url,"Source")))})))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Competition today"}),
+    h("table",{class:"tbl"},h("thead",{},h("tr",{},h("th",{text:"Who"}),h("th",{text:"What they do"}),h("th",{text:"Traction"}))),
+      h("tbody",{},I.competition.map(function(c){return h("tr",{},h("td",{},h("b",{text:c.name}),h("div",{},ext(c.source_url,"Source"))),h("td",{text:c.what}),h("td",{text:c.traction||"unknown"}))}))))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Technical complexity"}),h("h2",{text:I.technical.rating+" / 5"}),dots5(I.technical.rating),h("p",{class:"muted",style:"margin:0",text:I.technical.rationale}))));
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Takeover risk"}),h("h2",{text:I.takeover.rating+" / 5"}),dots5(I.takeover.rating),
+    h("p",{class:"muted",text:I.takeover.rationale}),h("div",{class:"small",text:I.takeover.who.join(", ")+", in about "+I.takeover.timeline_months+" months."}))));
+  var b=I.brand;
+  g.appendChild(reveal(h("div",{class:"card"},h("h3",{text:"Name and brand"}),h("h2",{text:b.name+", "+b.rating+" / 5"}),dots5(b.rating),h("p",{class:"muted",text:b.rationale}),
+    h("div",{class:"small",text:"Effect on success: "+b.effect_on_success+". "+b.name_check}),
+    h("div",{class:"grid g2",style:"margin-top:10px"},h("ul",{class:"list pro"},(b.strengths||[]).map(function(s){return h("li",{},icon("check"),h("span",{text:s}))})),h("ul",{class:"list con"},(b.weaknesses||[]).map(function(s){return h("li",{},icon("x"),h("span",{text:s}))}))),
+    (b.better_names&&b.better_names.length)?h("div",{class:"small muted",style:"margin-top:10px",text:"Alternatives: "+b.better_names.join(", ")}):null)));
+  root.appendChild(g);
+  var dd=I.deep_dive||{},keys=Object.keys(dd);
+  if(keys.length){var TT={market_need:"Is there real need today?",competition:"Competition now, and then",technical_complexity:"Technical complexity",takeover:"Who could take it over",economics_and_distribution:"Economics and distribution",team:"Team and founder fit",yc_specific:"Why YC may say no"};
+    var box=h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Deep dive"}));keys.forEach(function(k){box.appendChild(h("details",{},h("summary",{text:TT[k]||k}),h("p",{class:"muted",style:"margin:0",text:dd[k]})))});root.appendChild(reveal(box))}
+  root.appendChild(reveal(h("div",{class:"card",style:"margin-top:16px"},h("h3",{text:"Assumptions and limits"}),h("p",{class:"small muted",style:"margin:0 0 10px",text:"Evaluated as of "+D.startup.as_of+", "+(D.mode==="full"?"full":"summary")+" mode."}),h("ul",{class:"list"},D.assumptions.map(function(a){return h("li",{},icon("link"),h("span",{text:a}))})),
+    h("h3",{style:"margin-top:18px",text:"Sources"}),h("ul",{class:"list"},D.sources.map(function(u){return h("li",{},icon("link"),ext(u))})))));
+};
+
+BUILD.pros=function(root){
+  var g=h("div",{class:"grid g2"});
+  var pro=h("div",{class:"card"},h("h3",{text:"Pros"}));
+  var pl=h("ul",{class:"list pro"});(D.pros||[]).forEach(function(p){pl.appendChild(h("li",{},icon("check"),h("div",{},h("b",{text:p.point}),h("div",{class:"small muted",text:p.evidence}),p.source_url?ext(p.source_url,"Source"):null)))});
+  pro.appendChild(D.pros&&D.pros.length?pl:h("p",{class:"muted",text:"No pros were listed in this evaluation."}));
+  var con=h("div",{class:"card"},h("h3",{text:"Cons"}));
+  var cl=h("ul",{class:"list con"});D.cons.forEach(function(k){var fill=h("i",{});var li=h("li",{},icon("x"),h("div",{},h("b",{text:k.risk}),h("div",{class:"prob"},fill),h("div",{class:"small",text:pct(k.p)+" chance this happens"}),h("div",{class:"small muted",text:k.evidence}),
+      h("div",{class:"callout green",style:"margin-top:8px"},h("b",{text:"Mitigation"}),k.mitigation),h("div",{class:"small muted",style:"margin-top:6px",text:"Past YC cases: "+k.analog_names.join(", ")})));
+    cl.appendChild(li);onIn(con,function(){fill.style.width=Math.min(100,k.p*100)+"%"})});con.appendChild(cl);
+  g.appendChild(reveal(pro));g.appendChild(reveal(con));root.appendChild(g)};
+
+var start=(location.hash||"#overview").slice(1);show(BUILD[start]?start:"overview");
+})();
+</script>
+</body>
+</html>
