@@ -80,7 +80,7 @@ The HTML report has eight tabs: Overview, Compare, Walkthrough, Possibilities, F
 
 ## Status and limits
 
-Coverage is in `knowledge/coverage.md`. Every company in the directory was researched except one, marked unresearchable with a reason. Many records have thin funding data, because small and old companies leave little public trace. `scripts/check_complete.py` is the gate for whether the dataset counts as finished, and `knowledge/audit_log.md` records how accurate the audits found it.
+Coverage is in `knowledge/coverage.md`. Every company in the directory was researched except one, marked unresearchable with a reason. Many records have thin funding data, because small and old companies leave little public trace. The last audit of 36 fresh records found a clear error or a missing sourced fact in 9.4 percent of 245 fields checked (the bar was 10 percent); the sample is small, so treat that as a rough measure. `scripts/check_complete.py` is the gate for whether the dataset counts as finished, and `knowledge/audit_log.md` records how accurate the audits found it.
 
 - The evaluator's odds are calibrated judgments anchored on past companies, not statistical predictions. Past YC companies are survivors of a selection process.
 - The backtest covers six companies, so it shows direction and not measured error. It found the evaluator too pessimistic about niche sounding B2B companies.

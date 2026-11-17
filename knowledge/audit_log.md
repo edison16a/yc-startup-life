@@ -331,3 +331,28 @@ A stratified random sample of 36 depth 2 records from batches 2005 to 2026, spre
 | Total | 224 | 115 (51.3 percent) | 25 (11.2 percent) | 8 (3.6 percent) |
 
 The limit is 10 percent. The middle count is 11.2 percent, so the final audit does not pass. It agrees with audits 13 to 17, which ran from 10.4 to 16.5 percent. Nearly all middle defects are missing rounds: rounds that a press release, a filing or several databases report but the record leaves in notes (stripe, shinkei-systems, snapdocs, drip-capital, flightcar, pierre, vibe-kanban, deepsource), plus missing co-founders (drip-capital, flightcar), a wrong round stage or investor list (flightcar), and weak competitor sources. Only 8 fields were clearly wrong facts. Records written before prompt lesson 10 (the first 35 waves) are the main source, because they left database-only rounds in notes instead of rounds. The audited records are being corrected, but a clean re-audit needs the same completeness pass over the older records. AUDIT RESULT is not PASS.
+
+## Final audit 2 (Stage 5, after the funding completeness pass)
+
+Run after every older record with an empty rounds list and database mentions in its notes was re-searched (120 shards of up to 16 records, plus 31 earlier shards), and after the 36 records of the first final audit were corrected. Sample: 36 depth 2 records chosen with a fixed seed from records never named in any earlier audit, spread over three eras (2005 to 2012, 2013 to 2019, 2020 to 2026) and the statuses Active, Acquired, Inactive and Public. Five independent auditors opened the YC page, the company page and the cited articles, and counted one field per founder list, per round, per completeness check, per exit, per competitor list and per competitor.
+
+Definitions: strict is any discrepancy or unsupported claim; middle is a clear factual error or the omission of a fact that a named source reports; lenient is only an outright false statement.
+
+| Batch | Records | Fields | Strict | Middle | Lenient |
+|---|---|---|---|---|---|
+| A | next-caller, matagora, blitziq, notable-labs, trieve, forge, mango-health | 39 | 22 | 10 | 0 |
+| B | sendhub, workflowy, flagr, coinbase, peer5, yummy-future, flow | 49 | 20 | 2 | 0 |
+| C | embark-trucks, jumpwire, usul, charge-running, fanvibe, svbtle, reble | 48 | 16 | 5 | 1 |
+| D | airbnb, lumi, kitekraft, billforward, ginkgo-bioworks, viddy, groundcontrol | 52 | 19 | 3 | 0 |
+| E | rovr, sendoid, indinero, koduco, presto, bitaccess, rainbow, covela | 57 | 13 | 3 | 0 |
+| Total | 36 | 245 | 90 (36.7%) | 23 (9.4%) | 1 (0.4%) |
+
+Compared with the first final audit (strict 51.3%, middle 11.2%, lenient 3.6%) all three rates fell.
+
+What the middle defects were: missing rounds reported by a named database or outlet (11 of 23, mostly old high profile companies such as Coinbase, Airbnb, Ginkgo, Presto and Bitaccess where only some rounds were kept), missing co-founders (3), a missing seed investor named by the cited article (3), and empty competitor lists where the record itself names incumbents (2).
+
+Caveats stated plainly. The sample is 245 fields, so the rate carries wide uncertainty: a rough 95 percent interval runs from about 6 to 13 percent, and the pass rests on the point estimate. Batch A counted an empty competitor list as middle for two records where the other auditors counted it as strict only; counting those two as strict only gives 21 of 245, or 8.6%. Several older records still mix complete and partial round histories because later rounds of large companies were left out as unverified. The defects found here were not corrected; they are listed in the auditors' notes above and stay as known limits. Strict remains high because competitor lists are thin and many rounds rest on one database, which the records flag.
+
+Result: middle rate 9.4 percent is at or below the 10 percent bar, so the gate is met.
+
+AUDIT RESULT: PASS
