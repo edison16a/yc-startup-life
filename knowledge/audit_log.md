@@ -149,3 +149,28 @@ Sample: 16 records drawn at random from the 330 most recently written (domu-tech
 | offstream | 4 | 0 | 0 | Matches. |
 
 Totals: 74 fields checked. Strict count (omitted rounds, co-founders and competitors that secondary sources support): 13 wrong (17.6 percent). Lenient count (only fields contradicted by a source): 1 wrong (1.4 percent). The limit is 10 percent. Result: wave NOT accepted under the strict count, which is the standard used in audits 1 to 6. Down from 23 percent in audit 6. The dominant pattern is caution: researchers leave out rounds and co-founders that only aggregators or one outlet support, and leave competitor lists empty. A decision is needed for the final audit: recording well supported aggregator rounds with a clear unverified label would cut the strict error rate without fabricating data. The 12 records with wrong fields are being corrected. AUDIT RESULT is not PASS.
+
+## Waves 23 and 24 (strict prompt with audit lessons), audit 8
+
+Sample: 16 records drawn at random from the 340 most recently written (diligent, letterbook, thunder-compute, vista-power, upsolve-ai, ncompass-technologies, velorum-therapeutics, unusual, aglide, alaan, moonset-health, fluid-markets, persist-ai, outset, adventris-pharmaceuticals, synnax). Two auditors, eight records each. Both auditors mostly opened YC pages and a few company posts and relied on search result summaries for the rest, so the counts are indicative.
+
+| Slug | Fields checked | Wrong (strict) | Wrong (lenient) | Notes |
+|---|---|---|---|---|
+| diligent | 5 | 1 | 0 | Competitor ComplyAdvantage omitted. |
+| letterbook | 5 | 2 | 0 | 2M seed omitted; competitor Intercom Fin omitted. |
+| thunder-compute | 6 | 2 | 1 | Matrix-led 4.5M seed dismissed although the company blog states it; competitors omitted. |
+| vista-power | 6 | 2 | 0 | Aggregator pre-seed and competitors omitted. |
+| upsolve-ai | 4 | 1 | 0 | Competitors Cube and Explo omitted. |
+| ncompass-technologies | 4 | 0 | 0 | Matches. |
+| velorum-therapeutics | 4 | 0 | 0 | Matches; competitor date a few months after the batch. |
+| unusual | 5 | 3 | 0 | Founder prior employers omitted, one title wrong, competitor Profound omitted. |
+| aglide | 4 | 0 | 0 | Matches. |
+| alaan | 7 | 0 | 0 | Matches. |
+| moonset-health | 5 | 0 | 0 | Matches. |
+| fluid-markets | 4 | 0 | 0 | Matches. |
+| persist-ai | 6 | 1 | 0 | Seed investors incomplete. |
+| outset | 7 | 0 | 0 | Matches. |
+| adventris-pharmaceuticals | 5 | 1 | 0 | Scientific co-founder omitted. |
+| synnax | 5 | 1 | 0 | Competitor LabVIEW omitted. |
+
+Totals: 82 fields checked. Strict count: 14 wrong (17.1 percent). Lenient count: 1 wrong (1.2 percent). The limit is 10 percent. Result: wave NOT accepted under the strict count, which is the standard used in audits 1 to 7. The strict rate is stable at about 17 percent across audits 7 and 8. Almost all of it is empty competitor lists plus a few omitted rounds and co-founders. Competitor lists are the main lever: researchers leave them empty whenever no source dated near the batch is found, but auditors name dated competitors easily from launch posts and incumbent comparisons. Action: the records with wrong fields are being corrected and the research prompt will push researchers to name incumbents mentioned on the YC launch post. AUDIT RESULT is not PASS.
