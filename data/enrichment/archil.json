@@ -1,0 +1,51 @@
+{
+  "slug": "archil",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "AI, analytics, CI and serverless teams that run workloads over large S3 datasets",
+  "problem": "Workloads need fast POSIX file access to data in S3 without copying it; Archil exposes buckets as a fast, shared, unlimited disk and now sells sandboxes and durable disks for agents.",
+  "business_model": "Usage-based cloud storage and compute infrastructure",
+  "product_category": "Cloud file system and agent runtime, developer infrastructure",
+  "founded_year": 2024,
+  "founders": [
+    {"name": "Hunter Leath", "role": "CEO", "prior_employers": ["Amazon Web Services (founding engineer then senior product manager on Elastic File System)", "Netflix (cloud storage performance)"], "education": [], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "About nine years in cloud storage per the YC page and the Felicis post; education not found."}
+  ],
+  "funding_data_coverage": "partial",
+  "rounds": [
+    {"stage": "seed", "date": "2025-06-02", "amount_usd": 6700000, "post_money_usd": null, "valuation_basis": null, "investors": ["Felicis", "Y Combinator", "Wayfinder Ventures", "Peak XV", "General Catalyst", "Lombardstreet Ventures", "Twenty Two Ventures", "Theo Browne", "Erik Bernhardsson", "Ryan Worl", "Wayne Duso", "Amit Gupta"], "source_url": "https://www.felicis.com/blog/investing-in-archil"}
+  ],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://archil.com"},
+  "competition_at_founding": {
+    "as_of": "2024-11",
+    "competitors": [
+      {"name": "Mountpoint for Amazon S3", "what": "AWS file client for mounting S3 buckets with limited POSIX support", "traction_then": "Existing AWS tool; limitations include no file locks, random writes or renames per Archil's docs", "funding_then": "AWS product", "source_date": null, "source_url": "https://docs.archil.com/details/comparison"},
+      {"name": "s3fs-fuse", "what": "Older open source FUSE mount of S3 with broad POSIX subset, reported unstable under parallel load", "traction_then": "Long standing community tool", "funding_then": "Open source", "source_date": null, "source_url": "https://juicefs.com/docs/community/comparison/juicefs_vs_s3fs"}
+    ]
+  },
+  "technical_complexity": {"rating": 4, "rationale": "A POSIX compatible, shared, cached file system on object storage with consistency and write back is distributed systems work that few teams can do; the founder built EFS at AWS."},
+  "defensibility": {"rating": 3, "moat_types": ["technical_moat", "switching_costs"], "rationale": "Hard engineering and data gravity help, but AWS can ship its own: Amazon S3 Files was introduced in April 2026."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["Amazon Web Services", "Google Cloud", "Microsoft"], "outcome": "AWS introduced Amazon S3 Files in April 2026, a managed way to mount a bucket as a file system, directly overlapping the original wedge; Archil moved toward sandboxes and disks for agents."},
+  "market_need_then": "AI and analytics workloads store large datasets in S3 but need file semantics and speed; the pain was long standing (the company calls it a 20 year problem) and boosted by AI training and agents.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "invented",
+    "name_qualities": ["short", "distinctive"],
+    "name_problems": ["confusable"],
+    "domain_note": "Uses archil.com.",
+    "identity": {"logo": "Not described in sources", "mascot_or_character": null, "visual_style": "Developer infrastructure site with a data layer cable illustration", "voice_and_tone": "Technical, 'The serverless runtime for intelligence', 'Run here. Work from anywhere.'"},
+    "brand_signature": null,
+    "rebrands": [{"date": "2025-06", "from": "Regatta Storage", "to": "Archil", "why": "The founder said the new name better reflects help with data management beyond pure storage."}],
+    "community_and_virality": null,
+    "brand_strength": {"rating": 2, "rationale": "Developer brand with Hacker News launches and a podcast appearance but no distinctive brand assets found."},
+    "brand_effect_on_outcome": "neutral",
+    "sources": ["https://archil.com/post/archil-file-system-to-data-company", "https://archil.com"]
+  },
+  "pivots": [
+    {"date": "2025-06", "from": "Regatta Storage, an S3 backed POSIX file system", "to": "Archil, a data company then an agent runtime with sandboxes and durable disks", "why": "Company said it wanted to go beyond pure storage; the sandbox positioning appears later and is undated."}
+  ],
+  "success_factors": ["founder_market_fit", "timing_tailwind", "technical_moat"],
+  "failure_factors": [],
+  "outcome_analysis": "Archil, formerly Regatta Storage, raised a 6.7 million dollar seed led by Felicis in June 2025 and cites customers such as Clay, Gamma and Depot. A Series A of 11 million dollars is reported only on aggregators. The founder's EFS experience is a strong fit, though AWS shipped S3 Files in April 2026, pushing Archil toward agent infrastructure.",
+  "sources": ["https://www.ycombinator.com/companies/archil", "https://archil.com", "https://www.felicis.com/blog/investing-in-archil", "https://archil.com/post/archil-file-system-to-data-company", "https://docs.archil.com/details/comparison", "https://juicefs.com/docs/community/comparison/juicefs_vs_s3files", "https://fundup.ai/recently-funded-startups/company/69c4ee8853efcaa75077378dad918a555b7573d009b228c5ab31b618058b4c6d/archil"],
+  "notes": "FundUp lists an 11 million Series A dated 2026-04-20 and Standout lists 18.0 million total; neither confirmed by a press release or the company, so no Series A recorded. Competitor sources are undated documentation pages, so source_date is null; these tools existed at the Nov 2024 launch but the sources do not date their state. Name origin not found. The YC page lists a team of 11 but only one founder."
+}
