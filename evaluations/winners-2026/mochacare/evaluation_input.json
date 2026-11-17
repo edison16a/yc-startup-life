@@ -1,162 +1,257 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "MochaCare",
+    "one_liner": "Agentic Management Service for Care Organizations",
+    "description": "MochaCare is an agentic management service for care organizations such as home care agencies. It handles hiring, scheduling and client intake end to end so partners can focus on growth. A team of two in San Francisco, Winter 2026 batch.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.97,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is known to have been accepted, so this is a placeholder note and not a real estimate. The prior for a random applicant is about 1 percent (references/yc_acceptance.md), and this team would sit near the middle, helped by the AI agents theme within that range.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. If YC had said no, the likely reasons would be a service heavy model that looks like an agency, unclear healthcare domain credentials, and crowded home care software from AlayaCare and WellSky."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.5,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Healthcare --calibration-only gave seed 50% (n=22, CI 31-69%); python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B gave 59%.",
+        "adjustment_reason": "At the Healthcare anchor and below the B2B anchor, because home care is a slow sector and a services model scales slowly."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Small seed near the B2B 2022+ median of $3.2M, low side."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical seed on early agency revenue."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if revenue per agency is high."
+        },
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Thin round of angels and a small fund."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The probable stop is that investors see a service business with low software margins and only a handful of care agency customers. Sage Care (S24), a close analog, had no priced round recorded, and Anchor Health (W16) shut down in home health. Healthcare takes a median of 19 months to seed in the data, so a round above $500K within 12 months is less than certain."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only gave series_a 26% given seed (n=74); Healthcare 2022-2025 gave 9% (n=11).",
+        "adjustment_reason": "0.77 times the B2B anchor, honoring the 0.75 floor while allowing for the much lower Healthcare cohort figure."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Lower Series A."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            130000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Median 2022+ Series A of about $15M."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            35000000
+          ],
+          "post_money_usd": [
+            130000000,
+            250000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if agentic operations scale."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            40000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Thin A."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if margins stay low because humans still run much of hiring and scheduling, and if care agencies are small and churn. Axle Health (W21) reached Series A selling software to the same buyers, but only after years, and Tivara (S24) shut down after a seed selling AI staff to medical groups."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.35,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2022 --industry B2B --calibration-only gave series_b 35% given series_a (n=23); 2022-2025 gave 16%.",
+        "adjustment_reason": "Within range of the anchors."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest B."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical B near $37M to $45M."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside as it consolidates agencies."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Flat round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails when growth depends on hiring operations staff, so revenue scales linearly with headcount. Regulated care, wage pressure and high caregiver turnover of about 75% keep customers fragile, and software only rivals such as AlayaCare can undercut."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "stage_benchmarks.md gives series_c given B 36% (n=55).",
+        "adjustment_reason": "Below anchor for a vertical with few large buyers."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical Series C."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000,
+            1500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Growth."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            3000000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            35000000
+          ],
+          "post_money_usd": [
+            120000000,
+            300000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Structured round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if the company remains a regional managed service and is acquired by a home care software or private equity roll up for under $1B. Few care operations companies reach large independent rounds."
     }
   ],
   "outcomes": {
@@ -164,167 +259,227 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.33
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.17
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          3000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The most likely failure is that a two person team runs a human intensive service for a slow, price sensitive buyer and cannot reach software margins. Anchor Health shut down and Tivara failed after a seed, while ReverCare was acquired small."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "sagecare",
+      "relevance": "AI automation for home care agencies, 2024.",
+      "outcome_summary": "Active; no priced round recorded."
+    },
+    {
+      "slug": "axle-health",
+      "relevance": "Scheduling software for home care, 2021.",
+      "outcome_summary": "Reached Series A; alive."
+    },
+    {
+      "slug": "anchor-health",
+      "relevance": "Modernizing home health agencies, 2016.",
+      "outcome_summary": "Shut down."
+    },
+    {
+      "slug": "tivara",
+      "relevance": "AI workforce for medical groups, 2024.",
+      "outcome_summary": "Seed then shut down."
+    },
+    {
+      "slug": "revercare",
+      "relevance": "Elder care concierge, 2019.",
+      "outcome_summary": "Acquired."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "A service model keeps margins low and growth tied to headcount",
+      "p": 0.4,
+      "evidence": "The offer is an end to end managed service, which resembles staffing and operations outsourcing, not software.",
       "analogs": [
-        "TODO-company-slug"
+        "tivara",
+        "anchor-health"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Productize workflows and price per outcome."
+    },
+    {
+      "risk": "Small, slow, price sensitive buyers in home care",
+      "p": 0.3,
+      "evidence": "Home care agencies are numerous and small, with turnover near 75 percent per AlayaCare sources.",
+      "analogs": [
+        "axle-health",
+        "sagecare"
+      ],
+      "mitigation": "Start with a few mid size agencies and show cost savings."
+    },
+    {
+      "risk": "Incumbent software adds AI features",
+      "p": 0.25,
+      "evidence": "AlayaCare already markets AI for scheduling and burnout reduction.",
+      "analogs": [
+        "axle-health"
+      ],
+      "mitigation": "Own outcomes like filled shifts and time to hire."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "AlayaCare",
+      "what": "Home care management software with AI features.",
+      "traction": "Established vendor marketing scheduling, billing and caregiver management.",
+      "source_url": "https://alayacare.com/caregiver-management-software-solution/"
+    },
+    {
+      "name": "WellSky Personal Care",
+      "what": "Scheduling, EVV and billing for agencies.",
+      "traction": "Suited to large multi location agencies.",
+      "source_url": "https://alayacare.com/compare/wellsky-personal-care/"
+    },
+    {
+      "name": "ShiftCare and similar tools",
+      "what": "Scheduling software for care providers.",
+      "traction": "Active small vendors.",
+      "source_url": "https://shiftcare.com/us/blog/scheduling-software-for-healthcare-in-2026-what-home-care-agencies-really-need"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "Agents for scheduling, screening candidates and intake are buildable by two engineers using existing models. The hard parts are integrations, compliance and reliability in real operations."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "AlayaCare",
+      "WellSky",
+      "Other AI agent startups"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Incumbents with agency customers can add AI scheduling and intake in about a year, and other agent startups can copy the offer quickly."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Home care turnover is around 75 percent and agencies spend heavily on hiring and scheduling.",
+        "source_url": "https://alayacare.com/blog/the-state-of-home-based-care-what-the-data-actually-shows/"
+      },
+      {
+        "claim": "Vendors sell scheduling software to agencies, showing paid demand.",
+        "source_url": "https://shiftcare.com/us/blog/scheduling-software-for-healthcare-in-2026-what-home-care-agencies-really-need"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A few paying agencies.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run the service for three agencies.",
+        "Measure hires and filled shifts."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Paying pilots with measured savings."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Revenue proof.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Reach ten agencies.",
+        "Automate intake and screening."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "About $20K monthly revenue and a seed above $500K."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Software margins.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Productize workflows.",
+        "Add integrations with agency systems."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Gross margin above 60 percent and $1M of annual revenue."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale in the vertical.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand to other care types.",
+        "Build partnerships."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue growth above 2x a year."
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Platform.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Consider acquiring agencies or software.",
+        "Add payments."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Large multi location customers."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Painful, measurable problem",
+      "evidence": "Turnover around 75 percent makes hiring and scheduling costly for agencies.",
+      "source_url": "https://alayacare.com/blog/the-state-of-home-based-care-what-the-data-actually-shows/"
+    },
+    {
+      "point": "Agent technology is cheap to start",
+      "evidence": "Intake, screening and scheduling are buildable with current models by a small team.",
+      "source_url": "https://shiftcare.com/us/blog/scheduling-software-for-healthcare-in-2026-what-home-care-agencies-really-need"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "MochaCare",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"MochaCare\" --era 2022+ : compound_words, 2 words, 9 characters",
     "strengths": [
-      "TODO"
+      "Warm and friendly, signals care"
     ],
     "weaknesses": [
-      "TODO"
+      "Mocha suggests coffee, not operations; generic Care suffix"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A warm, approachable name that suits care organizations, but the coffee word is unrelated and the Care suffix is common in health names. The effect is neutral.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real pain point, but a service heavy model in a slow vertical makes later rounds hard.",
+    "general_summary": "MochaCare sells a managed agentic service for home care agencies, handling hiring, scheduling and intake. The pain is real because caregiver turnover is very high, but the buyers are small and slow, and healthcare cohorts take longer to reach seed and show a low Series A rate. A service model risks low margins, and incumbents such as AlayaCare are adding AI. A seed is roughly a coin flip within a year, with the Series A less likely than the B2B average. A pivot to pure software, or a roll up of agencies, is a plausible upside path, and paying customers can keep the company alive for years."
   },
   "assumptions": [
-    "TODO"
+    "Blind test using only the batch start description.",
+    "Healthcare cohort is small (n=22 and n=11 for A).",
+    "Seed means a round above $500K within about 12 months.",
+    "Coverage per knowledge/coverage.md: 662 of 6,399 companies researched."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://alayacare.com/blog/the-state-of-home-based-care-what-the-data-actually-shows/",
+    "https://alayacare.com/caregiver-management-software-solution/",
+    "https://shiftcare.com/us/blog/scheduling-software-for-healthcare-in-2026-what-home-care-agencies-really-need"
+  ],
+  "mode": "summary"
 }

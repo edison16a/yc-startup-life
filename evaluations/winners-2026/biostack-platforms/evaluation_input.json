@@ -1,330 +1,415 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "BioStack Platforms",
+  "one_liner": "Real world training envs for healthcare AI models",
+  "description": "BioStack builds proprietary clinical and preclinical data pipelines that turn imaging, health record and lab assay data into ML ready training environments for post training and reinforcement learning of healthcare and drug discovery models. AI labs and biotech model builders are the buyers. Team of 13 in San Francisco.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.015,
+  "p_high": 0.1,
+  "basis": "Accepted to YC in this test, so this note is for completeness. From roughly 1 percent for a random applicant, the lifts are a hot AI data category and a team of 13. The cuts are that data access from hospitals and labs is the hard part and is only claimed, and many YC peers pitch RL environments and data for labs.",
+  "why_it_fails": "YC would most plausibly pass because RL environment and training data startups were abundant in 2025 and 2026, and the pitch claims proprietary clinical data pipelines without naming a hospital or lab partner that actually grants access, which is the hardest part for a reviewer to believe at this stage of the company."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.58,
+   "anchors": {
+    "base_rate": 0.64,
+    "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2020-2025 --calibration-only gave seed cond 64% (n=36), range 61 / 64 / 66%. Healthcare median months to seed 8.",
+    "adjustment_reason": "Slightly under the anchor because healthcare data deals take longer, partly offset by strong investor interest in AI data for labs."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or small-check round, close to the standard YC deal plus a small angel or pre-seed extension, typical when traction is slow."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ seed medians in the researched cohort are about $3.2M raised, and 2026 public seed pre money medians are near $18M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside: a hot-category seed led by a top seed fund after quick early revenue or usage."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.05,
+     "rationale": "Outlier large seed, seen in the hottest AI categories only and rare overall."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed above $500K fails if hospital and CRO data partnerships take over a year to sign and the company has no revenue from AI labs to show. Investors may also lump it with the many data and RL environment peers, and healthcare data compliance (privacy, consent, licensing) delays any product, as healthcare cohorts take longer to seed."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.35,
+    "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2020-2025 --calibration-only gave series_a cond 35% (n=23).",
+    "adjustment_reason": "Slightly under the anchor because revenue depends on a handful of AI labs that may build data in house."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Modest A or a down-leaning round after a slow year of growth."
+    },
+    {
+     "raise_usd": [
+      11000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series A medians are about $15M raised, public series A pre money near $60M."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside A led by a large fund after strong, fast revenue growth."
+    }
+   ],
+   "why_it_fails": "Series A fails if only a few AI labs buy and each contract is lumpy, if labs shift to synthetic data or hire their own clinicians, or if the data rights prove narrower than promised. Large labeling firms such as Scale AI and Mercor are building healthcare environments themselves, and floatingpoint shows a data company can end in a quiet sale."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.38,
+    "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2020-2025 --calibration-only gave series_b cond 38% (n=8).",
+    "adjustment_reason": "Under the anchor given customer concentration, though n is tiny."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Smaller or flat B, often an extension for a company that is profitable but growing slower."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      55000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series B medians are about $37M to $45M raised."
+    },
+    {
+     "raise_usd": [
+      55000000,
+      100000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B on fast growth in a large category, led by a major growth fund."
+    }
+   ],
+   "why_it_fails": "Series B fails if revenue stays concentrated in a few buyers, if the data business becomes a services business with thin margins, or if regulation (health data rules, patient consent) blocks scale. Healthcare data companies in the cohort were slow to reach later rounds, and few investors fund a data supplier with only a handful of customers."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry Healthcare --years 2020-2025 --calibration-only gave series_c cond 33% (n=3).",
+    "adjustment_reason": "Tiny sample, so near the full sample conditional of 36% with a small discount."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Smaller late round or a growth extension, likely when growth has slowed but revenue is solid."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core case: 2022+ YC series C medians are about $45M raised, public series C deal size near $77M."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside late round for a category leader with fast growth and strong retention."
+    }
+   ],
+   "why_it_fails": "A later round fails if model labs internalise training data, if customers shift away from third party environments, or if privacy regulation hardens. The sector has few precedents of data suppliers raising large late rounds without being acquired first, so the exit is often a sale to a bigger firm."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The likeliest result is a stall or an acquisition by a labeling or healthcare data company, because the buyers are few, labs can build in house and the big labeling firms already target healthcare. A result above $1B would need BioStack to become a core data supplier to frontier labs in biology and medicine."
+ },
+ "analogs": [
+  {
+   "slug": "anatomic",
+   "relevance": "Real world healthcare data for medical AI, Winter 2020.",
+   "outcome_summary": "Listed active in 2026; a direct predecessor in healthcare data for AI."
+  },
+  {
+   "slug": "floatingpoint",
+   "relevance": "Datasets and evals for visual intelligence, Winter 2024.",
+   "outcome_summary": "Acquired with no post YC round, showing data suppliers are often acquired early."
+  },
+  {
+   "slug": "redbrick-ai",
+   "relevance": "Medical data annotation, Winter 2022.",
+   "outcome_summary": "Active, listed as medical data annotation, with funding not verified here."
+  },
+  {
+   "slug": "theora",
+   "relevance": "Medical school for AI agents, Summer 2025.",
+   "outcome_summary": "Active, no verified funding; a close peer in medical AI training data."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Data access from hospitals and labs is slow and may never become exclusive",
+   "p": 0.4,
+   "evidence": "Clinical data is locked in hospitals and CROs behind privacy rules, and partnerships take months to years to sign and then keep.",
+   "analogs": [
+    "anatomic"
+   ],
+   "mitigation": "Sign one or two anchor data partners early and sell on privacy compliant pipelines."
+  },
+  {
+   "risk": "Few buyers and in house building by AI labs",
+   "p": 0.35,
+   "evidence": "Frontier labs and large labeling firms such as Scale AI and Mercor build healthcare environments themselves, per the market search.",
+   "analogs": [
+    "floatingpoint"
+   ],
+   "mitigation": "Stay in the niche where licensed data is required and sell to biotech model builders as well."
+  },
+  {
+   "risk": "Crowded RL environment category with many YC peers",
+   "p": 0.3,
+   "evidence": "Spring 2025 to Summer 2026 YC batches contained many RL environment and data lab startups.",
+   "analogs": [
+    "theora"
+   ],
+   "mitigation": "Specialise in longitudinal multimodal biology data that general labs cannot collect."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Scale AI",
+   "what": "Data and RL environments including a healthcare agents team.",
+   "traction": "Large data vendor hiring for healthcare environments.",
+   "source_url": "https://scale.com/careers/4709281005"
+  },
+  {
+   "name": "Mercor",
+   "what": "Domain expert marketplace selling RL environments and expert data including clinicians.",
+   "traction": "Reported large revenue, figures unverified.",
+   "source_url": "https://research.contrary.com/report/mercor"
+  },
+  {
+   "name": "Surge AI and Handshake",
+   "what": "Human data vendors for model labs.",
+   "traction": "Said to split most industry revenue with Scale and Mercor, per a secondary analysis.",
+   "source_url": "https://blog.pebblous.ai/blog/labeling-to-rl-environments/en/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Building multimodal data pipelines across imaging, records and assays and packaging them as reliable training environments is hard, and the hardest dependency is legal and contractual access to data, not code."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Scale AI",
+   "Mercor",
+   "Frontier AI labs"
+  ],
+  "timeline_months": 18,
+  "rationale": "Labelers and labs have the buyers and can add healthcare, but proprietary data access takes time to replicate, so copying exclusive data takes longer than copying software."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Scale AI is hiring to build healthcare RL environments, which shows buyer demand for this type of product.",
+    "source_url": "https://scale.com/careers/4709281005"
+   },
+   {
+    "claim": "Mercor sells clinician expertise and environments to AI labs and is reported to have grown quickly.",
+    "source_url": "https://research.contrary.com/report/mercor"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Prove access to real clinical or preclinical data from named partners.",
+   "actions": [
+    "Sign a data agreement with at least one hospital or CRO.",
+    "Document privacy and consent handling."
+   ],
+   "proof": "One signed partner with usable data in a pipeline."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show paying AI lab or biotech customers for the environments.",
+   "actions": [
+    "Run paid pilots with two model builders.",
+    "Measure the model improvement from the environments."
+   ],
+   "proof": "Paid contracts and a seed above $500K."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Targets a clear bottleneck, high quality biological data.",
+   "evidence": "Labs need domain data and are paying for expert data and environments.",
+   "source_url": "https://research.contrary.com/report/mercor"
+  },
+  {
+   "point": "Hard to copy if data access is real.",
+   "evidence": "Contracts with hospitals and labs take time to replicate.",
+   "source_url": "https://www.getbiostack.com/"
+  }
+ ],
+ "brand": {
+  "name": "BioStack Platforms",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"BioStack Platforms\" --era 2022+ gave kind name_plus_descriptor, 17 chars, 3 words, descriptor word bio.",
+  "strengths": [
+   "Name signals biology and a data stack"
+  ],
+  "weaknesses": [
+   "Generic compound plus the word Platforms",
+   "Long and hard to own"
+  ],
+  "rationale": "A descriptor heavy name is a weak brand and is more often a legal name than a product name, but for a B2B data supplier it matters little; the buyer cares about data quality, and past YC B2B winners have succeeded with plain names."
+ },
+ "narrative": {
+  "headline": "A timely but crowded AI data company whose value depends entirely on real clinical data access, so seed is plausible and later steps are harder.",
+  "general_summary": "BioStack packages clinical and preclinical data into training environments for healthcare and drug discovery AI. The category is hot: labs buy expert data and environments, and Scale AI and Mercor are expanding into healthcare. A team of 13 and the hot theme make a seed above the YC deal reasonably likely. The difficulties are data access from hospitals and labs, a small number of lumpy buyers, and the chance that labs or labelers build it themselves. Healthcare cohorts are slower to seed and to Series A. The likeliest paths are a seed then a stall, an acquisition by a data or labeling company, or a pivot into a different data niche."
+ },
+ "assumptions": [
+  "Forecast made blind from the batch start 2026-04-06 using only the input file and market searches.",
+  "Seed means a round above about $500K within about 12 months.",
+  "Healthcare cohort n is small, so anchors are rough.",
+  "Market demand figures for Mercor and Scale are secondary or unverified."
+ ],
+ "sources": [
+  "https://scale.com/careers/4709281005",
+  "https://research.contrary.com/report/mercor",
+  "https://blog.pebblous.ai/blog/labeling-to-rl-environments/en/"
+ ]
 }

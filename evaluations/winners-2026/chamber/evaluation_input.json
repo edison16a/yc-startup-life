@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Chamber",
+    "one_liner": "The AIOps Agent for ML Teams",
+    "description": "Chamber sells AI agents that monitor machine learning infrastructure, detect failures, find root causes, fix issues and optimise AI workloads across clouds, acting like an autonomous infrastructure team for GPU heavy research and engineering groups. Customers are ML teams, paying a platform fee likely tied to GPU spend. Team of 4 in Seattle, Winter 2026 batch.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.04,
+    "p_low": 0.015,
+    "p_high": 0.08,
+    "basis": "Test assumes the company was accepted, so this is only a note. Prior about 1 percent (0.6 to 2 percent third party range). Up for a four person technical team, a painful and expensive problem (idle GPUs) and strong AI infrastructure timing, down for a crowded infra agent space and no stated customers.",
+    "why_it_fails": "YC would most plausibly pass because AI SRE and GPU optimisation pitches are common, the description lists capabilities without a named customer or number, and large clouds and observability vendors could offer the same agents, so the reviewers question defensibility."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.68,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.61,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed 50/61/68 (cond 61, n=88), A 17/20/35 (cond 33, n=54), B 3/3/21 (cond 17, n=18), C 0/0/18 (n=3); --industry B2B --years 2019-2023: seed cond 73 (n=113), A cond 32 (n=82), B cond 23 (n=26), C cond 33 (n=6).",
+        "adjustment_reason": "1.1 times the B2B 2022-24 anchor and 0.93 times the 2019-23 anchor. Four technical founders, GPU cost pain and hot AI infrastructure investing push it up, while the 12 month window and no stated customers hold it back."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            600000,
+            1500000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Thin round just above the standard deal if pilots are slow. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            5000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "Typical 2026 AI infrastructure seed, a little above the 2022+ median of about $4M because of GPU heavy demand."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if teams with large GPU fleets pay early and infrastructure funds compete, as for Thunder Compute style companies."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails if no team will give an autonomous agent write access to production training clusters, so pilots stay read only and revenue never shows. Investors also ask why a four person team beats observability vendors and the clouds. Serial, a root cause startup, raised only the YC deal and shut down."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed 50/61/68 (cond 61, n=88), A 17/20/35 (cond 33, n=54), B 3/3/21 (cond 17, n=18), C 0/0/18 (n=3); --industry B2B --years 2019-2023: seed cond 73 (n=113), A cond 32 (n=82), B cond 23 (n=26), C cond 33 (n=6).",
+        "adjustment_reason": "At the 33 percent B2B 2022-24 anchor. Infrastructure with usage tied pricing has done well in the cohort (Thunder Compute, Wild Moose), offset by competition."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small A if revenue stays pilot sized. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "Typical 2022+ Series A, around the $14M median. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            45000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the product becomes the standard for managing GPU workloads. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs proof that the agents cut GPU waste and failures by a clear dollar amount at several customers. Customers with large fleets are few, trust in autonomous changes is low, and observability vendors like Datadog extend into the same area. Wild Moose took three years from its batch to a seed that emerged, and Relvy and Cedana show small teams stuck without a round."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.23,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed 50/61/68 (cond 61, n=88), A 17/20/35 (cond 33, n=54), B 3/3/21 (cond 17, n=18), C 0/0/18 (n=3); --industry B2B --years 2019-2023: seed cond 73 (n=113), A cond 32 (n=82), B cond 23 (n=26), C cond 33 (n=6).",
+        "adjustment_reason": "0.96 times the 23 percent anchor (B2B 2019-23, n=26) and above the 17 percent 2022-24 anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            130000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat B near the 2022+ p25. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            320000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ B. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it scales with GPU spend. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs scaled revenue from many ML teams as GPU spend grows. The buyer set is limited, many large labs build tooling in house, and the cloud providers bundle management features. Few B2B infra companies in the cohort reach B, and the ones that do usually show revenue growth that tracks customer GPU spend."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2019-2023 --calibration-only: series_c cond 33 (n=6).",
+        "adjustment_reason": "0.85 times the anchor from only 6 companies, so it is a weak anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Modest later round. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical growth round. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it is a core AI infrastructure layer. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C requires a defensible platform position and margins that survive cloud competition. AI infrastructure is volatile with GPU supply changes and consolidation, and acquirers such as large observability or cloud firms often buy before a late round, which caps the number of independent companies that reach this stage in the cohort."
     }
   ],
   "outcomes": {
@@ -164,167 +212,219 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.48
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.16
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.06
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the company stalls when large clouds and observability vendors bundle agentic operations, or it is acquired for a small price. Serial shut down, Relvy and Cedana stay small and Thunder Compute shows that GPU infrastructure can raise. Reaching a billion dollar value needs the company to be the default operations layer for AI workloads."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "wild-moose",
+      "relevance": "AI root cause analysis for engineering incidents",
+      "outcome_summary": "Active; emerged from stealth with a $7M seed in 2025, about two and a half years after the batch."
+    },
+    {
+      "slug": "thunder-compute",
+      "relevance": "GPU infrastructure for AI developers",
+      "outcome_summary": "Raised a $13M Series A led by a top fund in 2026."
+    },
+    {
+      "slug": "serial",
+      "relevance": "Root cause analysis software for engineers",
+      "outcome_summary": "Inactive with only the YC investment found."
+    },
+    {
+      "slug": "cedana",
+      "relevance": "GPU workload tooling with deep technical team",
+      "outcome_summary": "Active, no round beyond YC found."
+    },
+    {
+      "slug": "relvy-ai",
+      "relevance": "AI debugging for incident response",
+      "outcome_summary": "Active three person team with a small reported round."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Customers will not give autonomous agents write access to production ML clusters",
+      "p": 0.4,
+      "evidence": "Production training jobs cost thousands per hour, and an agent fix that fails could waste large budgets, so teams keep humans in the loop.",
       "analogs": [
-        "TODO-company-slug"
+        "serial",
+        "relvy-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Start read only with recommendations and earn write access with audit logs and rollback."
+    },
+    {
+      "risk": "Cloud providers and observability vendors bundle the same agents",
+      "p": 0.4,
+      "evidence": "Datadog, major clouds and GPU platforms add AI operations features to their products and already hold the data.",
+      "analogs": [
+        "wild-moose",
+        "cedana"
+      ],
+      "mitigation": "Be multi cloud and specialise in GPU failure and efficiency where general tools are weak."
+    },
+    {
+      "risk": "The set of buyers with enough GPU spend is small",
+      "p": 0.3,
+      "evidence": "Only labs and larger ML teams run fleets where the savings justify a vendor, and many build tools in house.",
+      "analogs": [
+        "thunder-compute",
+        "cedana"
+      ],
+      "mitigation": "Price on savings share and target neoclouds and mid size ML teams."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Datadog",
+      "what": "Observability platform expanding into AI and LLM monitoring",
+      "traction": "Public company with a very large customer base",
+      "source_url": "https://www.datadoghq.com"
+    },
+    {
+      "name": "Weights & Biases",
+      "what": "ML experiment tracking and monitoring",
+      "traction": "Widely used by ML teams",
+      "source_url": "https://wandb.ai"
+    },
+    {
+      "name": "Run:ai and cloud scheduler tools",
+      "what": "GPU orchestration and scheduling",
+      "traction": "Used in large GPU fleets",
+      "source_url": "https://www.run.ai"
+    },
+    {
+      "name": "Status quo of in house platform engineers and scripts",
+      "what": "Manual monitoring and debugging",
+      "traction": "Default at most ML teams",
+      "source_url": "https://kubernetes.io"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "The agents must integrate with Kubernetes, schedulers, multiple clouds and training frameworks, and diagnose distributed failures reliably. A small team can build monitoring and root cause suggestions in months, but safe autonomous remediation across clouds is much harder."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Datadog",
+      "AWS, Google Cloud and Azure",
+      "Weights & Biases"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Observability vendors and clouds have the data and customers and are shipping AI operations agents. They could match basic monitoring in under a year, so the startup needs GPU specific depth."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "GPU costs are a top expense for AI teams and idle or failed jobs waste large budgets, which motivates tooling spend.",
+        "source_url": "https://wandb.ai"
+      },
+      {
+        "claim": "Observability vendors and funded startups already sell AI operations and root cause tools, showing paid demand.",
+        "source_url": "https://www.datadoghq.com"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show measured GPU savings on a real cluster",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Interview 20 ML platform leads",
+        "Run the agent read only on two clusters"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Two teams agreeing to a pilot"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Raise above $500K within 12 months of the batch",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Convert pilots to paid contracts",
+        "Publish failure rate and cost savings"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Paying customers and a lead investor"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove repeatable revenue",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add multi cloud support",
+        "Gain write access at several customers"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M recurring revenue and savings above the fee"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Expensive and growing pain point",
+      "evidence": "GPU spend and failed jobs create direct dollar savings that justify a fee.",
+      "source_url": "https://wandb.ai"
+    },
+    {
+      "point": "Technical team of four with infra timing",
+      "evidence": "A four person team can build and sell to ML teams while AI infrastructure investing is strong, and Thunder Compute reached an A.",
+      "source_url": "https://www.datadoghq.com"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Chamber",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Chamber\" --era 2022+: invented or proper noun, 7 characters, 1 word",
     "strengths": [
-      "TODO"
+      "Real word and easy to say",
+      "Fits a controlled environment for compute"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic and hard to search for",
+      "No tie to AI or operations"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Real word names did well in the oldest YC eras but show no gap in 2018+. The name is easy to say and sets a calm tone for infrastructure, but it will not differentiate, and sales depend on measured savings as with Thunder Compute.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real, costly GPU problem and a strong team size, but a crowded AIOps field where trust and bundling decide the outcome.",
+    "general_summary": "Chamber sells autonomous agents that keep AI infrastructure running and cut GPU waste. The pain is real and measurable, and AI infrastructure companies have raised quickly, so a seed above $500K within a year is more likely than the cohort average. The risks are customer trust in autonomous fixes, a limited buyer set and bundling by Datadog and the clouds. Analogs split between Thunder Compute, which raised an A, and Serial, Relvy and Cedana, which stayed small or closed. Estimates are near the B2B cohort anchors."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file was used for the company; market sections use general knowledge and homepage URLs.",
+    "Seed in this test means a round above about $500K within 12 months of the batch start.",
+    "The B2B cohort includes many unlike companies, so rates are approximate.",
+    "Competition recorded as of January 2026."
   ],
   "sources": [
-    "https://"
+    "https://www.roundfunded.com/en/blogs/yc-acceptance-rate-2026",
+    "https://www.datadoghq.com",
+    "https://wandb.ai",
+    "https://www.run.ai",
+    "https://kubernetes.io"
   ]
 }

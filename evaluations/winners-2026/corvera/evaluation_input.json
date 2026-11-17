@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Corvera",
+    "one_liner": "The AI sales agent for CPG brands",
+    "description": "Corvera turns the distributor feeds, retailer portals and ERP data of a consumer packaged goods brand into daily ranked store opportunities, drafted outreach and logged follow ups. The description cites one customer, a $20M yerba mate brand covering 21,000 stores through 46 distributors, and says the company has raised $6.2M. Target buyers are US CPG brands above $20M in retail revenue, sold to VPs of Sales and CEOs. Three founders.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.15,
+    "p_low": 0.08,
+    "p_high": 0.3,
+    "basis": "Test assumes acceptance, so this is a note. Baseline acceptance is low single digits. A repeat founder, an ex Google data lead, a named customer with usage numbers and a stated raise would lift this to about 15 percent, offset by the narrow CPG focus.",
+    "why_it_fails": "YC could say the market is a small group of mid size CPG brands and that data platforms like Crisp already connect UNFI data. A single named customer with 12 users is thin evidence, and AI sales agents for specific verticals are common."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.85,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.69,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2020-2024 --calibration-only: seed 57/69/74 percent (n=134)",
+        "adjustment_reason": "About 1.2 times the anchor. The input description itself states $6.2M raised, which suggests a seed already closed or in process, and repeat founders with a paying customer raise fast."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            24000000.0,
+            36000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Description cites $6.2M raised with named funds, matching a $4M to $6M seed at $24M to $36M post, above the $3.0M market median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            7000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000.0,
+            60000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Upside: a larger lead after usage numbers grow, like other vertical AI companies of 2025 and 2026."
+        },
+        {
+          "raise_usd": [
+            1500000.0,
+            3500000.0
+          ],
+          "post_money_usd": [
+            10000000.0,
+            20000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin band: smaller round if the stated raise is partly SAFEs and the YC deal."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails only if the traction story weakens in diligence: one customer, 12 users and $250K of surfaced opportunities (not booked revenue) could be seen as a pilot. Narrow vertical AI for a small group of mid size CPG brands may look like a feature of data platforms. Muffin Data and Milky Way AI show that CPG tools raised little and stayed small."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2020-2024 --calibration-only: series_a cond 33 percent (n=92)",
+        "adjustment_reason": "At 0.9 times the anchor: paying customers and a clear ROI argument help, but the ICP is small and Crisp and brokers compete for the same budget."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            16000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000.0,
+            90000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "B2B vertical AI Series A, near the $14M to $17M 2022+ median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            20000000.0,
+            30000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000.0,
+            200000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Upside: expands beyond sales into distributor and retailer workflows, as Glimpse and Confido scaled in CPG."
+        },
+        {
+          "raise_usd": [
+            5000000.0,
+            9000000.0
+          ],
+          "post_money_usd": [
+            25000000.0,
+            45000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin band: small A after slow sales cycles with mid size brands."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if sales cycles with CPG brands are long and the 5 to 12 percent broker spend is hard to displace. The ICP of US brands above $20M is only a few thousand firms, and each wants proof of lift before paying. Jupiter and Muffin Data stayed small, and Milky Way AI shut down."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.27,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2020-2024 --calibration-only: series_b cond 27 percent (n=30)",
+        "adjustment_reason": "At the anchor or slightly above: CPG vertical companies that reach A tend to have enterprise contracts and retention."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            40000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median Series B 2022+ about $37M in our sample."
         },
         {
           "raise_usd": [
-            0,
-            0
+            50000000.0,
+            80000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            350000000.0,
+            600000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Upside: becomes the commercial operating system for CPG sales, with broker displacement revenue."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            22000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            110000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin band: smaller B on flat growth."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if growth plateaus at the few hundred brands that can afford the product and distributors restrict data access. A data platform such as Crisp or a distributor's own tool could capture the same data flow. Net retention below 100 percent would end the case."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.27,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2020-2024 --calibration-only: series_c cond 25 percent (n=8)",
+        "adjustment_reason": "At the anchor given a tiny sample."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            45000000.0,
+            75000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            550000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Series C 2022+ median $45M in our sample, $77M market."
         },
         {
           "raise_usd": [
-            0,
-            0
+            90000000.0,
+            150000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            700000000.0,
+            1200000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Upside: expands into retailer and food service channels."
+        },
+        {
+          "raise_usd": [
+            25000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            220000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin or flat round after slower growth."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if the CPG software market is too small to support growth equity. Brokers and retailers are slow to change, and the company would have to expand into new channels or sell to a larger data and analytics vendor, which is a common ending for CPG tools."
     }
   ],
   "outcomes": {
@@ -164,167 +212,210 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.35
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.38
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.23
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          2500000000.0
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The company fails to reach a large exit if CPG sales software remains a niche that is served by data platforms and brokers, with small deals as the typical ending. Muffin Data was acquired by a larger CPG data company after a seed, and Milky Way AI shut down."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "muffin-data",
+      "relevance": "Analytics for CPG brands.",
+      "outcome_summary": "Winter 2023, $500K pre seed and acquired in October 2025 by Confido at undisclosed terms."
+    },
+    {
+      "slug": "confido",
+      "relevance": "AI finance automation for CPG brands.",
+      "outcome_summary": "Summer 2021, enterprise sales engine and a pivot, then seed and Series A in 2025."
+    },
+    {
+      "slug": "glimpse-2",
+      "relevance": "System of action for CPG retail operations.",
+      "outcome_summary": "Summer 2020, years of slow growth then a $10M seed in April 2025."
+    },
+    {
+      "slug": "milky-way-ai",
+      "relevance": "Mobile app connecting CPG brands to stores.",
+      "outcome_summary": "Summer 2021, only a $100K grant and shut down."
+    },
+    {
+      "slug": "jupiter",
+      "relevance": "Food and CPG marketing tool.",
+      "outcome_summary": "Summer 2019, $2.8M seed in 2020 and no later round found."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Small ICP and long sales cycles with mid size CPG brands",
+      "p": 0.35,
+      "evidence": "Only US brands above $20M retail sales using UNFI and KeHE qualify; the sample customer is $20M in revenue.",
       "analogs": [
-        "TODO-company-slug"
+        "jupiter",
+        "muffin-data"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Add price tiers for smaller brands and expand to retailer and food service channels."
+    },
+    {
+      "risk": "Data platforms such as Crisp or distributors bundle similar AI",
+      "p": 0.3,
+      "evidence": "Crisp has a UNFI connector and announced AI agents for CPG brands.",
+      "analogs": [
+        "confido",
+        "glimpse-2"
+      ],
+      "mitigation": "Own the action layer, outreach and measured follow up, rather than dashboards."
+    },
+    {
+      "risk": "Value claims are not booked revenue",
+      "p": 0.25,
+      "evidence": "$250K of opportunities surfaced is a pipeline figure from one customer, not realized sales lift.",
+      "analogs": [
+        "milky-way-ai"
+      ],
+      "mitigation": "Report closed won revenue and retention across at least five brands."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Crisp",
+      "what": "Data platform with UNFI connector and AI agents for CPG",
+      "traction": "Established, selected by UNFI in 2021",
+      "source_url": "https://www.gocrisp.com/?p=1037"
+    },
+    {
+      "name": "CPG brokers such as Advantage Solutions",
+      "what": "Human sales coverage for 3 to 7 percent commission",
+      "traction": "Large incumbents, Advantage near $3.5B revenue per description",
+      "source_url": "https://eightx.co/blog/cpg-broker-distributor-fees"
+    },
+    {
+      "name": "Spreadsheets and distributor portals",
+      "what": "Status quo for most brands",
+      "traction": "Default workflow",
+      "source_url": "https://www.boxncase.com/resources/cpg-distribution-explained"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Hard parts are resolving messy distributor, retailer and ERP data into one context layer and keeping outputs accurate. A three person team with data and AI expertise can build a useful version in three months, but each distributor feed adds integration work."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Crisp",
+      "UNFI",
+      "KeHE",
+      "ERP vendors"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "A data platform with distributor connections could add a sales agent in about a year, and distributors may restrict data access. Large incumbents lack incentive to cannibalize broker revenue, so the threat is mostly from data platforms."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Brokers take roughly 3 to 7 percent commission plus retainers and distributors take 20 to 28 percent margin, so CPG sales spend is large and visible",
+        "source_url": "https://eightx.co/blog/cpg-broker-distributor-fees"
+      },
+      {
+        "claim": "Data vendors like Crisp sell UNFI data connectors, showing brands pay for distributor data tools",
+        "source_url": "https://foodindustryexecutive.com/?p=14380"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove booked revenue, not only surfaced opportunities.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Track closed won sales per account touched",
+        "Sign two more brands above $20M"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Three paying brands and documented sales lift"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Raise on revenue growth.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Price per brand with annual contracts",
+        "Integrate with KeHE and DSD feeds"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$300K annual recurring revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable sales to mid size brands.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire an enterprise sales lead",
+        "Launch retailer portal integrations"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$2M annual recurring revenue and net retention above 110 percent"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Repeat founder and relevant team",
+      "evidence": "The CEO is a two time founder and ex CEO of a CPG brand, the data lead is ex Google.",
+      "source_url": "https://corvera.ai/"
+    },
+    {
+      "point": "Quantified usage at a named customer",
+      "evidence": "5,000 queries in 40 days across 12 users at a $20M brand with 21,000 stores.",
+      "source_url": "https://corvera.ai/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Corvera",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Corvera\" --era 2022+: 7 characters, 3 syllables, invented name",
     "strengths": [
-      "TODO"
+      "Short, invented and ownable"
     ],
     "weaknesses": [
-      "TODO"
+      "Says nothing about CPG or sales"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "An invented Latin sounding name is short and ownable, like Trellis or Confido, and neutral for B2B. It carries no CPG meaning, so the product description does the work."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A credible B2B team with early usage in a small, slow niche; seed very likely, Series A near the cohort average.",
+    "general_summary": "Corvera sells an AI sales agent to CPG brands that sell through independent stores and distributors. The pain is real: brands pay brokers and cover tens of thousands of stores with tiny teams. The team has repeat founder and data credentials and cites a named customer, and the description itself reports a $6.2M raise, so a seed above the YC check is very likely. Beyond seed the picture is average: B2B cohorts reach Series A about a third of the time, the ICP is small, and data platforms like Crisp can add similar agents. Neighbors in YC CPG (Muffin Data, Jupiter, Milky Way AI) mostly stayed small or ended, while Confido and Glimpse scaled slowly."
   },
   "assumptions": [
-    "TODO"
+    "Blind test: company assumed accepted to YC in Winter 2026; forecast date 2026-01-05.",
+    "Seed means a round above the $500K YC deal within about 12 months.",
+    "PROBLEM: the input description states a raised amount and investor list that look like a later demo day state, so the seed probability leans on it.",
+    "CPG peer outcomes from after 2026-01-05 were not used."
   ],
   "sources": [
-    "https://"
+    "https://www.gocrisp.com/?p=1037",
+    "https://eightx.co/blog/cpg-broker-distributor-fees",
+    "https://www.boxncase.com/resources/cpg-distribution-explained",
+    "https://foodindustryexecutive.com/?p=14380",
+    "https://corvera.ai/"
   ]
 }

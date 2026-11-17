@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "RoboDock",
+    "one_liner": "Robots that run autonomous depots for autonomous fleets",
+    "description": "RoboDock builds robots that do depot work such as charging and vehicle checks for electric and autonomous vehicle fleets. Customers are fleet operators who pay to cut labor cost and raise vehicle uptime. Four person team in San Francisco.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.04,
+    "p_low": 0.015,
+    "p_high": 0.09,
+    "basis": "Starting rate is about 1 percent (0.6 to 2 percent band, yc_acceptance.md). Test assumption: the company was accepted, so this note records the adjustments only. Up because robotaxi fleets are scaling and depot labor is a clear pain point. Down because the team is four people with no stated traction and hardware needs capital and pilots. Test note: accepted in fact, so this step is not scored.",
+    "why_it_fails": "YC would most plausibly say no because the pitch has no customer, pilot or demo behind it, and depot robotics for autonomous fleets depends on a few buyers such as robotaxi operators that may build in house. A hardware company also needs a long, expensive build before revenue."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.5,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Industrials: seed cond 67% (n=12, anecdote); upper bound seed about 64% for the broad cohort. ",
+        "adjustment_reason": "Industrials cohort has only 12 companies so I use the broad 57 percent cohort. Lowered slightly because a hardware team of four with no revenue needs proof from a pilot, and the round must exceed about $500K within 12 months."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            14000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small seed from robotics angels while building a first unit, near the lower seed raise quartile of $2.1M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            5000000
           ],
           "post_money_usd": [
-            0,
-            0
+            14000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "Typical 2022+ seed with a median raise near $3.3M and hardware premium for robotics."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if a robotaxi operator signs a pilot, as robotics investors fund this theme."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A round above $500K inside 12 months fails if there is no signed pilot with a fleet operator. Boost Robotics and Physical Turing, two comparable robotics YC companies, show seed money coming slowly or not at all, and investors dislike hardware with a few possible buyers."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Industrials: series_a cond 0% (n=8, anecdote) (broad 22%, n=115; B2B 26%, n=74). ",
+        "adjustment_reason": "At the broad cohort anchor of 22 percent. Held because Industrials in the data shows no Series A yet, though n is tiny."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A to pay for first deployments, near the 2018-2021 median of $10M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ A for robotics at about $15M raise."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it signs a large robotaxi depot contract."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs paying deployments with measurable uptime gains. The likely miss is a long pilot cycle with fleet operators and robots that cost more than the human labor they replace. AmpUp took five years from batch to a Series A even in EV charging, and Curo was absorbed by a strategic buyer without ever raising a large round."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 (broad cohort series_b cond 12%, n=25) and --years 2018-2021 --industry B2B (series_b cond 39%, n=18). Older cohort used because 2022+ is right censored.",
+        "adjustment_reason": "Below the older B2B anchor because hardware and customer concentration slow growth, but above the thin recent rate."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin B funding factory and fleet roll out, near $29M median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            450000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical 2022+ B for robotics near $37M median."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            120000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the standard for robotaxi depots."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs repeatable installs in many depots. The risk is that large operators build depots in house or buy from a stronger funded rival, and that robot unit costs stay too high. Peers in charging, such as AmpUp, grew slowly and relied on strategic investors."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2018-2021: series_c cond 30% (n=23), B2B 57% (n=7). Small n, wide range.",
+        "adjustment_reason": "At the broad cohort anchor with a note that hardware lowers odds slightly."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Thin growth round near the 2022+ median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            800000000,
+            1800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a robotics infrastructure company."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1800000000,
+            4000000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if autonomous fleets scale as hoped."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Late rounds fail when autonomous fleets scale slower than forecast or when the largest operators bring depot work in house. A company selling to a handful of customers faces concentration risk, and few YC hardware companies with this buyer profile have reached Series C."
     }
   ],
   "outcomes": {
@@ -164,167 +212,215 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.26
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          4000000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the team never gets a paid fleet deployment because pilots are slow and robot cost beats labor only at large scale, or it is acquired for its team by a larger robotics or charging company. A billion dollar result needs autonomous fleets to scale and outsource depot work, which is uncertain."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "curo",
+      "relevance": "Fleet charging company from the Fall 2024 batch",
+      "outcome_summary": "Acquired after raising over $6M by a strategic buyer."
+    },
+    {
+      "slug": "ampup",
+      "relevance": "EV charging software with fleet strategic investors",
+      "outcome_summary": "Alive, Series A of $15M in 2024, five years after batch."
+    },
+    {
+      "slug": "boost-robotics",
+      "relevance": "Robots for inspection and maintenance in data centers",
+      "outcome_summary": "Alive, small seed, no verified customers."
+    },
+    {
+      "slug": "physical-turing",
+      "relevance": "Robot deployer for patrol and inspection tasks",
+      "outcome_summary": "Alive, no funding or customers confirmed."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Few buyers and they may build depot automation in house",
+      "p": 0.4,
+      "evidence": "Robotaxi and large fleet operators control depots and have large engineering teams.",
       "analogs": [
-        "TODO-company-slug"
+        "curo"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Sign a design partner early and keep the system modular."
+    },
+    {
+      "risk": "Robots cost more than the labor they replace at pilot scale",
+      "p": 0.35,
+      "evidence": "Depot work such as plugging and checks is done by low cost workers today, and robotics unit costs are high early.",
+      "analogs": [
+        "boost-robotics",
+        "physical-turing"
+      ],
+      "mitigation": "Start with one task such as charging where uptime value is high."
+    },
+    {
+      "risk": "Autonomous fleet rollout is slower than needed",
+      "p": 0.3,
+      "evidence": "Demand depends on robotaxi growth which is regulated and uneven.",
+      "analogs": [
+        "ampup"
+      ],
+      "mitigation": "Serve electric delivery and transit fleets as well."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Rocsys",
+      "what": "Robotic EV charging for fleets and ports",
+      "traction": "Dutch company with venture funding",
+      "source_url": "https://rocsys.com"
+    },
+    {
+      "name": "Terawatt Infrastructure",
+      "what": "Charging depots for electric trucks and fleets",
+      "traction": "Large infrastructure financing",
+      "source_url": "https://www.ccjdigital.com/alternative-power/article/15828484/terawatt-secures-300m-for-ev-and-autonomous-charging"
+    },
+    {
+      "name": "Human depot staff and fleet software",
+      "what": "Status quo of manual plug in and checks",
+      "traction": "Standard practice today",
+      "source_url": "https://www.ccjdigital.com/alternative-power/article/15828484/terawatt-secures-300m-for-ev-and-autonomous-charging"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Robots that plug in vehicles, inspect them and clear faults in messy real depots need perception, manipulation and safety work. A team of four can build a demo in months but a reliable product takes years and capital."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Robotaxi operators",
+      "Rocsys",
+      "Charging network builders"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Operators with large teams could build their own robots, and funded charging companies could add inspection. A rival needs about a year and a half to reach parity on reliability."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Fleet operators and infrastructure builders are spending heavily on charging depots for electric and autonomous fleets",
+        "source_url": "https://www.ccjdigital.com/alternative-power/article/15828484/terawatt-secures-300m-for-ev-and-autonomous-charging"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Get a design partner and a working demo",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build one charging robot demo",
+        "Interview ten fleet depot managers"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "One signed pilot letter"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Run a paid pilot",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Deploy in one depot",
+        "Track uptime and labor hours saved"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Documented labor cost saving above 30 percent"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable installs",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Cut unit cost by half",
+        "Sign three operators"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Three paying depots"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Fleet wide rollout",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build an install and service team",
+        "Expand to autonomous operators"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Ten depots live"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Depot standard",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add services and software",
+        "Scale manufacturing"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Over $50M revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Real pain for fleet operators as electric and autonomous fleets grow",
+      "evidence": "Large depot investments are underway",
+      "source_url": "https://www.ccjdigital.com/alternative-power/article/15828484/terawatt-secures-300m-for-ev-and-autonomous-charging"
+    },
+    {
+      "point": "Hardware plus software is harder to copy than a software only idea",
+      "evidence": "Technical complexity rated 4 of 5"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "RoboDock",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"RoboDock\" --era 2022+ : 3 syllables, compound of robot and dock",
     "strengths": [
-      "TODO"
+      "Describes the product at once",
+      "Easy to spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic and similar to other robot names"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A descriptive compound explains the product at once, like many YC infrastructure names, but it is generic and offers little brand pull. It will not change the outcome.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real but narrow depot robotics bet with few buyers and a long path to revenue.",
+    "general_summary": "RoboDock wants to automate charging and checks at depots for electric and autonomous fleets. The need is real as robotaxi and electric fleets scale, but the team has four people, no stated traction and a hard hardware problem. Funding for robotics is available, yet a seed above $500K inside a year depends on a pilot with a named operator. Later steps are discounted because buyers are few, operators may build in house and unit economics against cheap depot labor are unproven. Data on industrials in recent cohorts is tiny, so uncertainty is wide."
   },
   "assumptions": [
-    "TODO"
+    "Only the batch listing was used, as of 2026-01-05.",
+    "Seed step means a round above about $500K within 12 months of the batch start.",
+    "Industrials cohort has 12 companies, so I used the broad cohort and note it is thin.",
+    "Market news dated after the as of date was ignored."
   ],
   "sources": [
-    "https://"
+    "https://rocsys.com",
+    "https://www.ccjdigital.com/alternative-power/article/15828484/terawatt-secures-300m-for-ev-and-autonomous-charging"
   ]
 }

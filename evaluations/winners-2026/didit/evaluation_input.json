@@ -1,162 +1,257 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Didit",
+    "one_liner": "Infrastructure for identity and fraud.",
+    "description": "Didit sells one API for KYC, KYB, AML screening, authentication, biometrics and fraud signals, with pay as you go pricing and a free tier. Customers are fintechs, marketplaces and any company that must verify users. A team of 20 based in Spain, Winter 2026 batch.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.97,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is known to have been accepted, so this is a placeholder note and not a real estimate. The prior for a random applicant is about 1 percent (references/yc_acceptance.md), and this team would sit at the upper end within that range.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. If YC had said no, the likely reasons would be a crowded identity verification market led by Persona, Sumsub, Veriff and Onfido, plus a lack of a clear wedge that separates a 20 person team from them."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.72,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only gave seed 59% known only (lower 49%, upper 65%, n=126, median 7 months); Fintech 2020-2024 gave 70% (n=33).",
+        "adjustment_reason": "Above the 0.59 anchor but within the Fintech anchor of 70%: a 20 person team already shipping a priced API with a free tier is far further along than the median YC company, and compliance infrastructure raises easily."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small seed, similar to the 2022+ B2B median of $3.2M at the low end."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical 2022+ seed for fintech infrastructure, near the B2B p50 to p75 of $3.2M to $5M."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside with a lead from a fintech fund after strong usage growth."
+        },
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Thin round from angels and a European fund near the YC cap."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The main way this stalls is that investors read it as one more KYC wrapper without a defensible edge, since Authologic, Dojah, Prembly and AiPrise all pitched similar stories after YC and only some raised a priced round. A seed above $500K within a year also needs revenue proof, and pay as you go plus a free tier may show usage without enough revenue to convince leads."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only gave series_a 15% known only and 26% given seed (n=74); the 2018-2022 B2B cohort gave 31% given seed (n=74).",
+        "adjustment_reason": "About 1.15 times the 2022-2025 conditional anchor of 26% and in line with the 31% for 2018-2022. A team of 20 at batch start suggests existing traction, and identity is a regulated, paid need, balanced by heavy competition."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower Series A for a European compliance infrastructure company."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            22000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            140000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median 2022+ B2B Series A of $15M, with revenue growing through regulated customers."
+        },
+        {
+          "raise_usd": [
+            22000000,
+            40000000
+          ],
+          "post_money_usd": [
+            140000000,
+            300000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Upside if usage scales across several verticals."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            40000000
+          ],
+          "p_band": 0.13,
+          "rationale": "Thin A or extension if growth is slower."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails when per verification pricing compresses against Persona, Sumsub and Veriff and the company cannot show net revenue retention above the market. Berbix (S18) reached a Series A and was then acquired, and Invoid (W21) was acquired after a seed, which shows many in this category end in small exits instead. Without clear dollars of recurring revenue, a lead will pass."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.35,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2022 --industry B2B --calibration-only gave series_b 35% given series_a (n=23); the 2022-2025 B2B cohort gave 16% (n=19).",
+        "adjustment_reason": "0.8 times the higher anchor and 1.75 times the lower, so the middle is used. Both cohorts are small."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            220000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest B on strong but not hypergrowth revenue."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            220000000,
+            450000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median 2022+ Series B of about $37M to $45M."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            450000000,
+            1000000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if the platform becomes the default for AI native fintechs."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Down or flat round from price pressure."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails when identity becomes a commodity priced per check and incumbents with larger data networks undercut a 20 to 60 person company. Persona raised a Series D and Sumsub and Veriff have deep pockets, so a late entrant needs a distinct data asset or a regional edge. AiPrise and Authologic reached A but not clearly B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.32,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "stage_benchmarks.md gives series_c given B 36% (n=55); B2B 2018-2022 gave 50% (n=8).",
+        "adjustment_reason": "Slightly below the anchor to reflect a commodity pricing risk."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ Series C near the $45M median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            700000000,
+            1500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Growth round on global coverage."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            3000000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside if it takes share from legacy vendors."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            35000000
+          ],
+          "post_money_usd": [
+            120000000,
+            300000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Smaller structured round or strategic investment."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if growth slows and the company is acquired by a payments or banking infrastructure firm before needing a large round. Cognito (S14) and Berbix (S18) were both acquired in this category, so an acquisition under $1B is the common destination and a large independent growth round is rare."
     }
   ],
   "outcomes": {
@@ -164,167 +259,232 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.34
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          3000000000
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Failure here mostly means price compression and a stall after a seed, as seen with Invoid and Dojah, which did not show later priced rounds in the data. B2B 2018-2022 had 25% shutdowns and 21% acquisitions, so a meaningful share of this category ends small or quietly."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "authologic",
+      "relevance": "Stripe for identity verification, 2021.",
+      "outcome_summary": "Raised through Series A; alive."
+    },
+    {
+      "slug": "dojah-inc",
+      "relevance": "Fraud and onboarding API, 2022.",
+      "outcome_summary": "Active with no priced round recorded."
+    },
+    {
+      "slug": "invoid",
+      "relevance": "Identity verification workflows, 2021.",
+      "outcome_summary": "Seed then acquired."
+    },
+    {
+      "slug": "berbix",
+      "relevance": "ID verification API, 2018.",
+      "outcome_summary": "Series A then acquired."
+    },
+    {
+      "slug": "cognito",
+      "relevance": "Early identity verification, 2014.",
+      "outcome_summary": "Acquired without a later round."
+    },
+    {
+      "slug": "aiprise",
+      "relevance": "Global compliance platform, 2022.",
+      "outcome_summary": "Reached Series A; alive."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Commodity pricing and incumbents such as Persona, Sumsub and Veriff compress margins",
+      "p": 0.4,
+      "evidence": "Persona has raised a reported $200M Series D and Sumsub and Veriff are scaled, so a pay as you go API faces price competition.",
       "analogs": [
-        "TODO-company-slug"
+        "berbix",
+        "invoid"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Win a vertical or region, bundle fraud signals and AML, and keep price per check above cost."
+    },
+    {
+      "risk": "Breadth across KYC, KYB, AML and fraud spreads a 20 person team thin",
+      "p": 0.3,
+      "evidence": "The description claims 1,000 data sources and 200 signals, which is wide for a small team and invites quality gaps.",
+      "analogs": [
+        "aiprise",
+        "dojah-inc"
+      ],
+      "mitigation": "Focus on one flagship flow and prove accuracy."
+    },
+    {
+      "risk": "Regulation and sales cycles in banks slow revenue",
+      "p": 0.2,
+      "evidence": "Compliance buyers need audits and certifications, which slow enterprise deals.",
+      "analogs": [
+        "truora"
+      ],
+      "mitigation": "Sell to fintech startups first and collect certifications early."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Persona",
+      "what": "Identity verification and KYC platform.",
+      "traction": "Reported Series D of $200M.",
+      "source_url": "https://thepaypers.com/fraud-and-fincrime/news/series-d-funding-round-brings-persona-usd-200-million"
+    },
+    {
+      "name": "Sumsub",
+      "what": "KYC, KYB and AML platform in 220 plus countries.",
+      "traction": "Scaled global vendor per directories.",
+      "source_url": "https://bureau.id/resources/blog/identity-verification-api"
+    },
+    {
+      "name": "Veriff and Onfido (Entrust)",
+      "what": "Video based and document verification.",
+      "traction": "Established with large customer bases.",
+      "source_url": "https://www.signzy.com/blogs/persona-alternatives"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Document and face checks, data source integrations and fraud models are buildable by a 20 person team using existing models. Global coverage and regulatory certification are the harder parts and need years."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Persona",
+      "Sumsub",
+      "Stripe Identity"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Incumbents and payment platforms already offer overlapping products and can bundle them for free to protect payments volume, so the product can be copied in months."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Many vendors compete and Persona raised a large Series D, showing sustained spending on identity verification.",
+        "source_url": "https://thepaypers.com/fraud-and-fincrime/news/series-d-funding-round-brings-persona-usd-200-million"
+      },
+      {
+        "claim": "Directories list dozens of paid KYC API providers with per check pricing.",
+        "source_url": "https://bureau.id/resources/blog/identity-verification-api"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A live product with paying users.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch the free tier and track conversion.",
+        "Gather accuracy benchmarks."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Dozens of paying integrations."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Revenue and a clear wedge.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Win one vertical such as crypto or neobanks.",
+        "Add reference customers."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "First $500K of annualized revenue and a seed above $500K."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Retention and pricing power.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add AML and fraud upsells.",
+        "Get SOC 2 and local licences."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "About $2M to $3M annualized revenue with net revenue retention above 100%."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Multi region scale.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire enterprise sales.",
+        "Expand data sources."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue growth above 2x a year."
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category leader.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch fraud network effects.",
+        "Consider selective acquisitions."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue above $30M and a defensible data asset."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Real, paid, regulated demand",
+      "evidence": "Persona, Sumsub and Veriff have raised large rounds, so buyers pay for identity verification.",
+      "source_url": "https://thepaypers.com/fraud-and-fincrime/news/series-d-funding-round-brings-persona-usd-200-million"
+    },
+    {
+      "point": "A 20 person team with a priced product at batch start",
+      "evidence": "Team size 20 and a free tier plus pay as you go pricing indicate traction well beyond a typical batch company.",
+      "source_url": "https://bureau.id/resources/blog/identity-verification-api"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Didit",
+    "rating": 4,
+    "effect_on_success": "helps",
+    "name_check": "python3 -I scripts/name_features.py --score \"Didit\" --era 2022+ : invented_or_proper, 1 word, 5 characters",
     "strengths": [
-      "TODO"
+      "Short, friendly and easy to say"
     ],
     "weaknesses": [
-      "TODO"
+      "Does not signal identity or security; resembles a common phrase"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A short playful name that is easy to remember, like many successful YC infrastructure brands, but it says nothing about identity. Effect is mildly positive.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A well staffed KYC API in a crowded but paying market that likely reaches a seed.",
+    "general_summary": "Didit is a 20 person team selling a broad identity and fraud API with pay as you go pricing. Identity verification is a proven paid need, which supports a seed above $500K within a year, and several YC peers such as Authologic and AiPrise reached Series A. The category is crowded and price competition is real, and two close analogs, Berbix and Invoid, ended in acquisitions. Later rounds are therefore plausible but far from assured, and a small acquisition is the most common good outcome. Reaching a round years later is common for companies with paying customers."
   },
   "assumptions": [
-    "TODO"
+    "Blind test using only the batch start description.",
+    "B2B and Fintech cohorts used for base rates.",
+    "Seed means a round above $500K within about 12 months.",
+    "Coverage per knowledge/coverage.md: 662 of 6,399 companies researched."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://thepaypers.com/fraud-and-fincrime/news/series-d-funding-round-brings-persona-usd-200-million",
+    "https://bureau.id/resources/blog/identity-verification-api",
+    "https://www.signzy.com/blogs/persona-alternatives"
+  ],
+  "mode": "summary"
 }

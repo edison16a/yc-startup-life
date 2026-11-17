@@ -1,162 +1,257 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Axonnic",
+    "one_liner": "Creating human skill at robot scale",
+    "description": "Axonnic builds wearable EMG sensors that capture human muscle activity, effort and force while people demonstrate physical tasks, to sell as training data for dexterous robot learning. Customers are robotics labs and humanoid companies. Two founders, San Francisco and remote, Fall 2026 batch.",
+    "as_of": "2026-10-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.97,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is known to have been accepted, so this is a placeholder note and not a real estimate. The prior for a random applicant is about 1 percent (references/yc_acceptance.md), and this team would sit near the middle to upper end given the hot physical AI theme within that range.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. If YC had said no, the likely reasons would be that EMG signals may add little over video and tactile data, the customer base of robotics labs is small and unproven, and similar companies are already in the batch pool."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.55,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.67,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only gave seed 67% (n=12, CI 39-86%, median 3 months to seed).",
+        "adjustment_reason": "0.82 times the anchor. Physical AI data is hot but the product is a novel sensor with no revenue, and the test requires a round above $500K within 12 months."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small seed near the Industrials 2022+ median of $2.6M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            60000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical physical AI seed with a robotics focused fund."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if a major robotics lab signs on."
+        },
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Thin angel round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The most likely stop is that robot learning labs find video and teleoperation data good enough, so two founders cannot show that EMG improves a model. Relari (W24) and Proception (W25) chase related dexterity angles and Sensei (S24) sells robot training data, and none of them had a priced round in the data at the time of lookup. Investors need a paid pilot with a robotics team to commit above $500K."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.31,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2022 --industry Industrials --calibration-only gave series_a 31% (44% given seed, n=9); 2022-2025 gave 0% (n=8).",
+        "adjustment_reason": "Slightly under the 31% anchor; the 2022-2025 zero reflects censoring and small n."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower Series A for hardware plus data."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Median 2022+ Series A of about $15M."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            180000000,
+            450000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if physical AI data becomes a bottleneck."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            40000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Thin A."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if customers are a few labs that buy small data batches, so revenue stays lumpy and small. Humanoid makers also collect their own teleoperation data and new sensing methods, and the buyer may not pay for EMG. Egocentric video firms and glove makers such as Manus already sell data collection hardware."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.35,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2022 --industry B2B --calibration-only gave series_b 35% given series_a (n=23); Industrials had 50% (n=4).",
+        "adjustment_reason": "Roughly at the anchors; survivors in a hot field attract capital."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest B."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical B near $40M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if the data layer becomes standard."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Flat round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if robot makers solve dexterity with other data and the market for human demonstration data shrinks or commoditizes. Scale labeling firms can add capture hardware, and prices per hour of data may fall."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "stage_benchmarks.md gives series_c given B 36% (n=55).",
+        "adjustment_reason": "Slightly below the anchor for the small number of buyers."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical Series C."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            800000000,
+            2000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Growth."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            5000000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside as a platform."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Strategic round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if the company stays a data vendor with lumpy contracts and a robotics foundation model maker acquires it for the talent. Few data layer companies have grown into independent large firms."
     }
   ],
   "outcomes": {
@@ -164,167 +259,227 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.2
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          4000000000
         ],
-        "p": 0.0
+        "p": 0.07
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "A two person hardware and data company with an unproven signal is most likely to run out of money before the physical AI data market settles, or to be acquired for talent by a robotics lab at a modest price."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "relari",
+      "relevance": "Dexterous robots learning from human biomechanics, 2024.",
+      "outcome_summary": "Active; no round found."
+    },
+    {
+      "slug": "proception-inc",
+      "relevance": "Humanoid dexterity, 2025.",
+      "outcome_summary": "Seed; alive."
+    },
+    {
+      "slug": "sensei",
+      "relevance": "Robot training data, 2024.",
+      "outcome_summary": "Active; no round found."
+    },
+    {
+      "slug": "corvus-robotics",
+      "relevance": "Slow hardware robotics startup.",
+      "outcome_summary": "Seed years after YC then A; alive."
+    },
+    {
+      "slug": "ohm-2",
+      "relevance": "Hardware data and test tools.",
+      "outcome_summary": "Seed; alive."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Buyers find video and teleoperation data sufficient, so EMG adds little",
+      "p": 0.4,
+      "evidence": "Research shows egocentric human video improves robot policies, and glove makers like Manus already supply data collection.",
       "analogs": [
-        "TODO-company-slug"
+        "relari",
+        "sensei"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Run a benchmark with a robotics lab showing a measurable lift from EMG."
+    },
+    {
+      "risk": "Small and lumpy customer base",
+      "p": 0.3,
+      "evidence": "Robotics labs and humanoid firms are few, and each can build its own capture rig.",
+      "analogs": [
+        "proception-inc"
+      ],
+      "mitigation": "Sell recurring data collection services and licences."
+    },
+    {
+      "risk": "Sensor hardware and signal quality are hard for a team of two",
+      "p": 0.25,
+      "evidence": "EMG signals are noisy and vary per person, and wearables need manufacturing and calibration.",
+      "analogs": [
+        "corvus-robotics",
+        "ohm-2"
+      ],
+      "mitigation": "Partner with a sensor maker and start with controlled tasks."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Manus and other glove makers",
+      "what": "Tracking gloves for dexterous data capture.",
+      "traction": "Used in robotics research data collection per vendor case studies.",
+      "source_url": "https://www.manus-meta.com/use-cases/manus-powers-robobrain-dex-high-fidelity-egocentric-data-collection-for-vision-language-action-models"
+    },
+    {
+      "name": "Knox Labs and egocentric data vendors",
+      "what": "Human demonstration and teleoperation data services.",
+      "traction": "Sell data collected in homes and facilities.",
+      "source_url": "https://www.knoxlabs.com/pages/physical-ai-data-services"
+    },
+    {
+      "name": "Open source teleoperation (TWIST2)",
+      "what": "Low cost teleoperation rigs.",
+      "traction": "Open research release.",
+      "source_url": "https://arxiv.org/html/2511.02832v1"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Collecting clean EMG, aligning it with video and showing it improves a policy needs sensor, signal processing and machine learning skills. Two founders can build a prototype but scaling data collection and proving model lift is hard."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Glove makers such as Manus",
+      "Data labeling firms",
+      "Humanoid makers"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Rivals can add EMG or tactile sensors to existing capture rigs and robot makers can build in house, but proving value takes time, so about eighteen months."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Research shows human egocentric data improves robot policies, supporting demand for human demonstration data.",
+        "source_url": "https://arxiv.org/html/2511.02832v1"
+      },
+      {
+        "claim": "Vendors already sell paid human demonstration data collection.",
+        "source_url": "https://www.knoxlabs.com/pages/physical-ai-data-services"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A working EMG wearable and a demo.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Capture a clean demonstration dataset.",
+        "Show a policy improvement."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A benchmark showing lift over video only."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A paid pilot.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign two robotics labs.",
+        "Refine the sensor."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A paid pilot and a seed above $500K."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Recurring data revenue.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build a collection network.",
+        "Offer subscriptions."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "About $1M of annual data contracts."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale across customers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add tactile and video fusion.",
+        "Expand to HCI products."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue growth above 2x a year."
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Standard data layer.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build a proprietary dataset moat.",
+        "License models."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Multiple foundation model customers."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Physical AI data is a bottleneck that investors fund",
+      "evidence": "Research and vendors show growing demand for human demonstration data.",
+      "source_url": "https://arxiv.org/html/2511.02832v1"
+    },
+    {
+      "point": "Industrials companies reach seed quickly",
+      "evidence": "Median 3 months to seed in the 2022-2025 Industrials cohort (n=8).",
+      "source_url": "https://www.knoxlabs.com/pages/physical-ai-data-services"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Axonnic",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Axonnic\" --era 2022+ : invented_or_proper, 1 word, 7 characters",
     "strengths": [
-      "TODO"
+      "Invented name hinting at axon and nerve signals"
     ],
     "weaknesses": [
-      "TODO"
+      "Hard to spell, not obviously robotics"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name hints at neural signals and is distinctive, but it is hard to spell and the story is not obvious. Invented names are common among hard tech YC companies, so the effect is neutral.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A novel but unproven data layer for robots that probably reaches a small seed.",
+    "general_summary": "Axonnic is a two person team building wearable EMG sensors to collect human skill data for robot learning. Physical AI is a hot theme and Industrials companies reach seed fast, so a seed above $500K is likely but not certain. The core risk is whether EMG adds value over video, tactile and teleoperation data, and the customer base of robotics labs is small. Similar YC companies such as Relari and Sensei had no priced rounds in the data, and later rounds depend on a clear lift in robot performance. A pivot toward robotics products or human computer interaction is a possible upside."
   },
   "assumptions": [
-    "TODO"
+    "Blind test using only the batch start description.",
+    "Industrials cohort is tiny (n=12); treated as an anecdote.",
+    "Seed means a round above $500K within about 12 months.",
+    "Coverage per knowledge/coverage.md: 662 of 6,399 companies researched."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://arxiv.org/html/2511.02832v1",
+    "https://www.knoxlabs.com/pages/physical-ai-data-services",
+    "https://www.manus-meta.com/use-cases/manus-powers-robobrain-dex-high-fidelity-egocentric-data-collection-for-vision-language-action-models"
+  ],
+  "mode": "summary"
 }

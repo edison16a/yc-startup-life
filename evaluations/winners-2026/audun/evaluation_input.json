@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Audun",
+    "one_liner": "AI-native debt collection company",
+    "description": "Audun automates debt collection with AI. Customers are lenders and creditors who pay a share of recovered money or a software fee. Five person team in Oslo, Norway.",
+    "as_of": "2026-07-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.05,
+    "p_low": 0.02,
+    "p_high": 0.1,
+    "basis": "Starting rate is about 1 percent (0.6 to 2 percent band, yc_acceptance.md). Test assumption: the company was accepted, so this note records the adjustments only. Up because AI voice and messaging for collections is a proven paid use case in 2026. Down because many YC companies already target the same wedge and the description gives no traction or founder background. Test note: accepted in fact, so this step is not scored.",
+    "why_it_fails": "YC would most plausibly say no because at least four past YC companies already sell AI collections agents, including CollectWise and Altur, and the one line description gives no unique angle, customer or traction. A Nordic base may also limit access to the large US lender market."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.58,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Fintech: seed cond 57% (n=23, anecdote); upper bound seed about 64% for the broad cohort. ",
+        "adjustment_reason": "At the broad and fintech cohort figures of about 57 percent. Fintech AI with a paying wedge is easy to fund, offset by crowding, and the round must exceed about $500K within 12 months."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small seed in a Nordic market, near the lower seed quartile."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            5000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "Typical 2022+ seed with a median raise near $3.3M to $3.5M."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if a large lender signs, as AI collections peers have shown."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A round above $500K inside 12 months would be missed if investors see a crowded category with funded rivals such as Salient and several YC peers. Tranqui and Solo show debt startups that raised only small rounds, and a team with no US customers has a weaker story."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.26,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Fintech: series_a cond 23% (n=13, anecdote) (broad 22%, n=115; B2B 26%, n=74). ",
+        "adjustment_reason": "At the B2B anchor of 26 percent. Collections have measurable ROI, which supports it, and crowding pushes down."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A near the 2018-2021 median of $10M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ A of $15M median raise."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            35000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside as a leading AI collections vendor, where the leading peer reported fast growth."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs enterprise lenders who trust an AI agent to contact their debtors. The likely miss is regulatory compliance work, long bank sales cycles and a market where better funded Salient and Skit.ai already hold the large accounts. Domu and CollectWise show YC peers with claimed customers but little verified funding."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 (broad cohort series_b cond 12%, n=25) and --years 2018-2021 --industry B2B (series_b cond 39%, n=18). Older cohort used because 2022+ is right censored.",
+        "adjustment_reason": "Below the older B2B anchor because crowding is severe, above the thin 2022+ rate."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin B near the $29M median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            180000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical 2022+ B near $37M median."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it leads in AI collections."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs scaled enterprise revenue and a defensible edge. The likely failure is price compression as voice AI gets cheap and every lender can build agents, plus compliance risk when a call goes wrong. Peers that reached later rounds had distinct data or channels."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2018-2021: series_c cond 30% (n=23), B2B 57% (n=7). Small n, wide range.",
+        "adjustment_reason": "At the broad cohort anchor, n is small."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Thin round near the 2022+ median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            800000000,
+            1800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for a fintech infrastructure company."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1800000000,
+            3500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside as collections becomes fully automated."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Late rounds fail when AI commoditizes collections and margins fall, or when a large receivables vendor acquires the category. Few debt focused YC companies in the data reached Series C, and the ones that grew relied on bank relationships rather than technology."
     }
   ],
   "outcomes": {
@@ -164,167 +212,222 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.47
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.32
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.17
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          3500000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the product stays one of many AI collections tools with price pressure, or is sold to a receivables or contact centre vendor for a modest price. A larger result needs a distinct angle, such as one region or one debt type where it wins outright."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "collectwise",
+      "relevance": "AI consumer debt collection",
+      "outcome_summary": "Alive, claims 100 plus teams, only aggregator funding data."
+    },
+    {
+      "slug": "altur",
+      "relevance": "Voice AI agents for collections",
+      "outcome_summary": "Alive with early traction at large Mexican financial customers."
+    },
+    {
+      "slug": "domu-technology-inc",
+      "relevance": "AI agents for collections sold to banks",
+      "outcome_summary": "Alive, large team, no verified round beyond YC."
+    },
+    {
+      "slug": "tranqui-finanzas",
+      "relevance": "Debt management in Latin America",
+      "outcome_summary": "Alive and revenue led with only a small seed."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Crowded category with funded rivals and several YC peers",
+      "p": 0.45,
+      "evidence": "Salient, Skit.ai and at least three YC companies already sell AI collections.",
       "analogs": [
-        "TODO-company-slug"
+        "collectwise",
+        "altur",
+        "domu-technology-inc"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick a region or debt type the rivals neglect."
+    },
+    {
+      "risk": "Compliance and regulation of automated debt contact",
+      "p": 0.3,
+      "evidence": "Debt collection is heavily regulated, and one bad call can create liability for a lender.",
+      "analogs": [
+        "tranqui-finanzas"
+      ],
+      "mitigation": "Build compliance review into the product and certify with regulators."
+    },
+    {
+      "risk": "Small Nordic home market and no US lenders",
+      "p": 0.25,
+      "evidence": "Norway is small and the largest debt buyers and lenders are in the US.",
+      "analogs": [
+        "altur"
+      ],
+      "mitigation": "Move sales to the US or EU early."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Salient",
+      "what": "AI agents for lenders including collections",
+      "traction": "Well funded, YC backed",
+      "source_url": "https://neuronfeed.com/startups/salient"
+    },
+    {
+      "name": "Skit.ai",
+      "what": "Voice AI for collections",
+      "traction": "Series B funded",
+      "source_url": "https://skit.ai"
+    },
+    {
+      "name": "Human call centres and agencies",
+      "what": "Status quo outsourcing",
+      "traction": "Dominant today",
+      "source_url": "https://domu.ai/blog/the-8-gen-ai-voice-agents-actually-built-for-collections"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Voice and messaging agents on public models are buildable in months. The hard parts are compliance logic, integration with lender systems and keeping calls safe and accurate."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Salient",
+      "Skit.ai",
+      "Contact centre vendors",
+      "Large receivables software firms"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "Rivals already ship similar agents and have lender accounts, so any new feature is copied within months."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Many vendors sell AI collections agents and report paying lender customers",
+        "source_url": "https://domu.ai/blog/the-8-gen-ai-voice-agents-actually-built-for-collections"
+      },
+      {
+        "claim": "Skit.ai positions voice AI for collections with disclosed funding",
+        "source_url": "https://skit.ai"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a live lender pilot",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run a pilot with one lender",
+        "Document recovery rate lift"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Recovery lift above 20 percent"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paid contracts",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign three lenders",
+        "Build compliance tools"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$20K monthly recurring revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Enterprise lenders",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Open a US presence",
+        "Hire sales and compliance leads"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1.5M annual recurring revenue"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category scale",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add debt types",
+        "Expand to the EU"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$10M annual recurring revenue"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Market leader",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add payments and analytics",
+        "Reach profitability"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Over $30M annual recurring revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Collections has measurable ROI that buyers pay for",
+      "evidence": "Multiple vendors report paying lender customers",
+      "source_url": "https://domu.ai/blog/the-8-gen-ai-voice-agents-actually-built-for-collections"
+    },
+    {
+      "point": "Fintech AI seeds are easy to raise",
+      "evidence": "Fintech cohort seed rate of about 57 percent in base_rates.py"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Audun",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Audun\" --era 2022+ : 2 syllables, invented or proper name",
     "strengths": [
-      "TODO"
+      "Short and distinct",
+      "Nordic sound fits the home base"
     ],
     "weaknesses": [
-      "TODO"
+      "Says nothing about debt or AI",
+      "Hard to pronounce outside Scandinavia"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A short proper style name is easy to say and write, though it carries no product meaning, like many YC brands that grew through the product, so it will not move the outcome.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A crowded AI collections bet where paying demand exists but differentiation is missing.",
+    "general_summary": "Audun is an Oslo based team building AI debt collection. Collections is one of the clearest paying uses of voice AI, and fintech AI seeds are fundable, so a seed above $500K within a year is a bit better than even. The weak points are crowding, since Salient, Skit.ai and several YC peers sell the same thing, plus compliance and a small home market. Later steps are set at the cohort anchors with little upside bias. The description has no traction or edge, so the uncertainty is wide, and data on this niche is thin."
   },
   "assumptions": [
-    "TODO"
+    "Only the batch listing was used, as of 2026-07-06.",
+    "Seed step means a round above about $500K within 12 months of the batch start.",
+    "Fintech cohort has 26 companies, so it is an anecdote."
   ],
   "sources": [
-    "https://"
+    "https://neuronfeed.com/startups/salient",
+    "https://skit.ai",
+    "https://domu.ai/blog/the-8-gen-ai-voice-agents-actually-built-for-collections"
   ]
 }

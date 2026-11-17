@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Hilstart",
+    "one_liner": "Autonomous Hardware Testing",
+    "description": "Physical agent harnesses that let AI debug, validate and ship functional hardware and software. The input lists a team size of 0 and very little detail, so team quality is unknown. San Francisco.",
+    "as_of": "2026-07-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.08,
+    "p_low": 0.03,
+    "p_high": 0.2,
+    "basis": "Company is assumed accepted. The prior is about 1 percent; AI plus hardware test tooling fits a current YC theme, but the input gives no team, traction or customer, so this note stays below the 15 percent top of the allowed range.",
+    "why_it_fails": "YC would most plausibly decline for lack of evidence: no stated team background, customers or demo, and a hardware test product competes with Nominal and large test vendors who already sell to defense and aerospace customers with real revenue. Interviewers would also doubt whether one person or an unknown team can build both agent software and the physical rigs."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.55,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.67,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only: seed cond 67% (n=12); broad cohort --years 2022-2025 --calibration-only: seed cond 57% (n=201), range 48%/57%/64%. Seed here means a round above the $500K YC deal within about 12 months.",
+        "adjustment_reason": "0.8x the Industrials anchor and 1x the broad 57 percent: the description is thin and no team or customer is stated, but AI plus hardware test tools were drawing seed money in 2026."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            700000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            14000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small seed from angels with a few pilot customers."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            5000000
           ],
           "post_money_usd": [
-            0,
-            0
+            14000000,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical AI developer tools seed, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            12000000
+          ],
+          "post_money_usd": [
+            35000000,
+            90000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if a hardware company signs a large pilot, similar to Nominal's early traction."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails if the team cannot show a working harness on real hardware with a paying customer. Hardware in the loop testing needs fixtures, instruments and trust from engineers, and a team of unknown size must compete with Nominal, which has Sequoia backing. BootLoop and Silogy show several YC peers targeting this space with no verified seed."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --calibration-only: series_a cond 22% (n=115), range 11%/12%/26%; --years 2018-2025 --industry Industrials: 25% (n=16).",
+        "adjustment_reason": "1.0x the broad anchor; with no traction information, it is held at the cohort rate rather than discounted below 0.75x."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A from developer tool funds, sized against current US venture medians and the 2022+ YC round table."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            160000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A for AI test infrastructure, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            160000000,
+            400000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if hardware makers adopt agent testing as standard."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The Series A fails if each customer needs a custom harness, so the product behaves like a services business, and if buyers keep legacy tools. Nominal already serves Anduril and the Air Force with a funded platform, and Ohm (W23) raised a 4M seed with similar pitch but no later round found."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_b cond 44% (n=126), range 8%/15%/53% unconditional; 2022-2025 cohort is right censored (12%, n=25).",
+        "adjustment_reason": "0.9x the anchor; developer tool and hardware companies that reach A often reach B."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat B, sized against current US venture medians and the 2022+ YC round table."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B for test infrastructure, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the standard test layer, sized against current US venture medians and the 2022+ YC round table."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B fails if the market is limited to a few hundred hardware companies with large in house test groups, and if platforms such as Siemens or NI add agentic features. Revenue per customer may not justify a large valuation, and Ohm, Silogy and BootLoop show peers sharing the same small group of buyers without breaking out."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_c cond 36% (n=55), range 3%/6%/48% unconditional.",
+        "adjustment_reason": "0.8x the anchor since few developer tools for hardware reach late stage."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            1000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat late round, sized against current US venture medians and the 2022+ YC round table."
         },
         {
           "raise_usd": [
-            0,
-            0
+            100000000,
+            250000000
           ],
           "post_money_usd": [
-            0,
-            0
+            1000000000,
+            3000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical growth round, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            250000000,
+            500000000
+          ],
+          "post_money_usd": [
+            3000000000,
+            7000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside as an industry standard, sized against current US venture medians and the 2022+ YC round table."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C fails if the hardware test market stays small and fragmented and large vendors bundle agent testing. Hardware developer tool companies in the data mostly stayed at seed or A, with only well funded ones such as Nominal reaching later rounds, so a company without a clear wedge is unlikely to get there."
     }
   ],
   "outcomes": {
@@ -164,167 +212,193 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.24
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          3000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The likely end is a stall or small acquisition: custom harness work limits margins, incumbents like Nominal and Siemens hold the customers, and the buyer market is small. A sale to a test or EDA vendor is the plausible exit, and Metalware and Silogy show that small teams in this niche stay at seed size for years."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "ohm-2",
+      "relevance": "Hardware development and test with AI agents.",
+      "outcome_summary": "4M seed in 2023, active, no later round found."
+    },
+    {
+      "slug": "metalware",
+      "relevance": "Firmware testing for defense customers.",
+      "outcome_summary": "About 3M seed, small team, no later round found."
+    },
+    {
+      "slug": "silogy",
+      "relevance": "AI test and debug for chip developers.",
+      "outcome_summary": "Active three person company, no funding verified."
+    },
+    {
+      "slug": "event-horizon-labs",
+      "relevance": "Thin early AI company with unclear traction.",
+      "outcome_summary": "Active, no verified funding."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Nominal and big test vendors dominate buyers",
+      "p": 0.4,
+      "evidence": "Nominal raised a 75M Series B led by Sequoia and serves Anduril and the Air Force with hardware in the loop automation.",
       "analogs": [
-        "TODO-company-slug"
+        "ohm-2",
+        "silogy"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Target small hardware teams that Nominal does not serve."
+    },
+    {
+      "risk": "Each customer needs a custom physical harness, so it is a services business",
+      "p": 0.3,
+      "evidence": "Physical harnesses and fixtures differ by device, which limits software margins and scaling.",
+      "analogs": [
+        "metalware",
+        "ohm-2"
+      ],
+      "mitigation": "Productise a standard harness for a common board family."
+    },
+    {
+      "risk": "Team is too thin to build hardware and software",
+      "p": 0.3,
+      "evidence": "The input lists a team size of zero and no background, so execution ability is unknown.",
+      "analogs": [
+        "silogy",
+        "event-horizon-labs"
+      ],
+      "mitigation": "Add a hardware engineer cofounder before the batch."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Nominal",
+      "what": "Hardware in the loop automation and telemetry.",
+      "traction": "75M Series B in June 2025.",
+      "source_url": "https://builtin.com/articles/nominal-raises-75m-series-b-20250616"
+    },
+    {
+      "name": "Hardware in the loop market incumbents",
+      "what": "NI, dSPACE and Siemens test systems.",
+      "traction": "Market sized near 1.8B by 2030.",
+      "source_url": "https://www.marketsandmarkets.com/market-reports/hardware-loop-market-11343527.html"
+    },
+    {
+      "name": "Manual bench testing",
+      "what": "Engineers test by hand.",
+      "traction": "Status quo.",
+      "source_url": "https://www.marketsandmarkets.com/market-reports/hardware-loop-market-11343527.html"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Agents that drive instruments and physical rigs need hardware integration, safety and reliable perception, which is harder than software testing; a small team can build one use case but not a general harness."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Nominal",
+      "Siemens",
+      "NI"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Funded test platforms already have customers and can add agent features within a year, so a startup must win a niche before they do."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Hardware in the loop testing is a growing market of roughly 1.8B by 2030.",
+        "source_url": "https://www.marketsandmarkets.com/market-reports/hardware-loop-market-11343527.html"
+      },
+      {
+        "claim": "Investors back hardware test modernization, for example a 75M round for Nominal.",
+        "source_url": "https://builtin.com/articles/nominal-raises-75m-series-b-20250616"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a working harness.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Demo agent debugging a real board",
+        "Sign one paid pilot"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Video of a closed loop test and a pilot order."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show repeatable deployments.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Package one harness for a board family",
+        "Sell to five hardware teams"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "300K in recurring revenue."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Timely theme",
+      "evidence": "AI agents that test hardware address a gap as AI written code grows.",
+      "source_url": "https://www.marketsandmarkets.com/market-reports/hardware-loop-market-11343527.html"
+    },
+    {
+      "point": "Funded category",
+      "evidence": "Nominal's 75M raise shows investor appetite for hardware test.",
+      "source_url": "https://builtin.com/articles/nominal-raises-75m-series-b-20250616"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Hilstart",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Hilstart\" --era 2022+: invented or proper, 8 chars, 2 syllables",
     "strengths": [
-      "TODO"
+      "Short and pronounceable"
     ],
     "weaknesses": [
-      "TODO"
+      "Reads like a typo of hill start and the HIL meaning is only clear to experts"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "The name hints at hardware in the loop for experts, but it is easy to misread and weak for a general audience; like many developer tool names it matters little against product proof."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A timely idea with almost no stated evidence, competing against funded Nominal.",
+    "general_summary": "Hilstart builds physical harnesses that let AI agents test hardware. The theme is timely and the hardware test category is funded, but the input shows a team size of zero and no customer or background, so the forecast stays near cohort rates. Seed is uncertain because investors will want a working harness and a pilot. Nominal and large test vendors are strong rivals and custom harness work can limit margins. Later rounds follow cohort anchors with no extra discount since no analog shows a fatal problem."
   },
   "assumptions": [
-    "TODO"
+    "Only the input description was used about the company.",
+    "The team size of 0 is treated as missing data, not zero founders.",
+    "Seed means a round above 500K within about 12 months of the batch start.",
+    "Funding of other 2026 batch companies was not used as evidence."
   ],
   "sources": [
-    "https://"
+    "https://builtin.com/articles/nominal-raises-75m-series-b-20250616",
+    "https://www.marketsandmarkets.com/market-reports/hardware-loop-market-11343527.html"
   ]
 }

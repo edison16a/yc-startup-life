@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "GBrain",
+    "one_liner": "A personal or team assistant that works while you sleep",
+    "description": "GBrain is a cloud hosted AI assistant, like ChatGPT or Claude, that runs in the background, remembers everything given to it and ships with preloaded skills. A user hands it a job at night and reads the result in the morning, alone or as a team. Pricing is likely a subscription. Team of 3 in San Francisco, Spring 2026 batch.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.01,
+    "p_high": 0.06,
+    "basis": "Test assumes the company was accepted, so this is only a note. Prior about 1 percent (0.6 to 2 percent third party range). Up for a technical team and strong product feel, down for a crowded general assistant category with direct frontier lab competition and no narrow wedge in the description.",
+    "why_it_fails": "YC would most plausibly pass because a general cloud assistant that does overnight tasks is exactly what the model labs ship themselves: there is no named customer group, no clear edge over a lab product and many similar agent applicants each batch, so reviewers ask why this team wins."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.55,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.61,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed 50/61/68 (cond 61, n=88), A 17/20/35 (cond 33, n=54), B 3/3/21 (cond 17, n=18), C 0/0/18 (n=3); --industry B2B --years 2019-2023: seed cond 73 (n=113), A cond 32 (n=82), B cond 23 (n=26), C cond 33 (n=6).",
+        "adjustment_reason": "0.9 times the B2B 2022-24 anchor. Hot AI agent interest and an experienced team raise it, while the general assistant space with direct lab competition and no stated revenue lowers it."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            600000,
+            1500000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            12000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin round of angels or a small fund just above the standard deal, common for consumer prosumer AI tools without clear revenue."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            5000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical hot AI seed, near the 2022+ seed median of about $4M but with a higher post money for a popular agent product."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            40000000,
+            80000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if usage grows fast and a top fund leads, as agent companies drew large seeds in the cohort."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails if investors see a general assistant as a feature that the model labs will give away. With no vertical wedge or revenue, a round above $500K needs strong usage numbers in the first months. Same space companies like Tasker AI and Khoj had little funding found, and Niles died, while the labs ship memory and background agents themselves."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.27,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed 50/61/68 (cond 61, n=88), A 17/20/35 (cond 33, n=54), B 3/3/21 (cond 17, n=18), C 0/0/18 (n=3); --industry B2B --years 2019-2023: seed cond 73 (n=113), A cond 32 (n=82), B cond 23 (n=26), C cond 33 (n=6).",
+        "adjustment_reason": "0.82 times the 33 percent B2B 2022-24 anchor and 0.84 times the 32 percent 2019-23 anchor. Crowded assistant space and platform dependence justify a modest cut."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small A after slow subscription growth. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            120000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ Series A, close to the $14M median. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            45000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if usage and team accounts compound. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs retention and revenue that survive the labs adding similar features. Subscription assistants face churn as users return to ChatGPT or Claude, and team accounts require security and integrations. Clara Labs reached an A in assistants but later sold, and Tasker AI and Khoj show most stay small."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.17,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.17,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed 50/61/68 (cond 61, n=88), A 17/20/35 (cond 33, n=54), B 3/3/21 (cond 17, n=18), C 0/0/18 (n=3); --industry B2B --years 2019-2023: seed cond 73 (n=113), A cond 32 (n=82), B cond 23 (n=26), C cond 33 (n=6).",
+        "adjustment_reason": "At the 17 percent B2B 2022-24 anchor (n=18) and below the 23 percent 2019-23 anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            22000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat B below the 2022+ p25 of $25M. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ B. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            60000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes a default work assistant. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs scaled recurring revenue in a space where the biggest competitors are model labs with distribution. Assistants must reach a large paying user base or enterprise seats; in the analogs only Clara Labs got beyond a seed and it was acquired after failing to raise next."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.33,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2019-2023 --calibration-only: series_c cond 33 (n=6).",
+        "adjustment_reason": "0.75 times the anchor from only 6 companies, the floor. Those that reach B in this space are rare but tend to be strong."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Modest later round. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical growth round. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if a platform position emerges. Sized from the 2022+ round benchmark tables for this stage, with the post money range an estimate because valuations are rarely disclosed."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C needs a durable product or a platform position in AI assistants. The category could be commoditised by model vendors and operating systems, and by that time acquisition by a larger software company is more likely than another private round, which is why so few companies in the cohort reach this stage."
     }
   ],
   "outcomes": {
@@ -164,167 +212,220 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the product is overtaken by assistant features from the model labs and stalls, or the team is acqui hired. Niles died, Clara Labs sold after raising an A, and Tasker AI and Khoj stayed small. A larger outcome requires finding a workflow where overnight agents with memory clearly beat a lab product."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "clara-labs",
+      "relevance": "AI assistant doing work for users in the background",
+      "outcome_summary": "Raised a $7M Series A in 2017 and was then sold."
+    },
+    {
+      "slug": "tasker-ai",
+      "relevance": "AI co worker for tasks and email",
+      "outcome_summary": "Active with about 7 people, no funding found."
+    },
+    {
+      "slug": "niles",
+      "relevance": "Knowledge assistant for work",
+      "outcome_summary": "Inactive after a launch and no funding found."
+    },
+    {
+      "slug": "khoj",
+      "relevance": "Open source personal AI assistant with memory and cloud",
+      "outcome_summary": "Active two person team, funding limited to YC and a small fund."
+    },
+    {
+      "slug": "beam",
+      "relevance": "Cloud agent infrastructure that repositioned",
+      "outcome_summary": "$3.5M seed in 2022 and still active with customers."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Model labs and big platforms ship the same background agent with memory",
+      "p": 0.55,
+      "evidence": "OpenAI, Anthropic and Google add memory, scheduled tasks and agent modes to their assistants, with large user bases.",
       "analogs": [
-        "TODO-company-slug"
+        "niles",
+        "tasker-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick a narrow audience such as a team workflow and integrate deeply with their tools."
+    },
+    {
+      "risk": "No clear wedge so growth and retention are weak",
+      "p": 0.4,
+      "evidence": "The description is general and a general assistant competes on brand and price against free tiers.",
+      "analogs": [
+        "khoj",
+        "clara-labs"
+      ],
+      "mitigation": "Find one job type users return for daily and price on outcomes."
+    },
+    {
+      "risk": "Trust and security for team data slow adoption and add cost",
+      "p": 0.25,
+      "evidence": "Teams that store documents and credentials in a third party agent need audits and access controls.",
+      "analogs": [
+        "beam",
+        "tasker-ai"
+      ],
+      "mitigation": "Offer private deployment and clear data controls early."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "ChatGPT with memory and tasks",
+      "what": "General assistant from OpenAI",
+      "traction": "Hundreds of millions of users",
+      "source_url": "https://chatgpt.com"
+    },
+    {
+      "name": "Claude",
+      "what": "General assistant from Anthropic",
+      "traction": "Large user and developer base",
+      "source_url": "https://claude.ai"
+    },
+    {
+      "name": "Lindy",
+      "what": "AI assistants and agents for work",
+      "traction": "Venture funded startup with a paying user base",
+      "source_url": "https://www.lindy.ai"
+    },
+    {
+      "name": "Status quo of doing the work manually or with scripts and Zapier",
+      "what": "Manual and automation tools",
+      "traction": "Default for most teams",
+      "source_url": "https://zapier.com"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Building a cloud agent with memory, a task queue and skills on top of frontier models is feasible for a small team in three months. The hard parts are reliable long running execution, safe handling of credentials and keeping quality as models change."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 5,
     "who": [
-      "TODO"
+      "OpenAI",
+      "Anthropic",
+      "Google",
+      "Microsoft"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "The labs already offer memory and scheduled agent features and have the distribution, so they can match any general assistant in months. The startup also depends on their models, so a pricing or policy change hits it directly."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Millions of people already pay for assistant subscriptions, so the category has demand.",
+        "source_url": "https://chatgpt.com"
+      },
+      {
+        "claim": "Workflow automation tools like Zapier and funded agent startups show teams pay to offload routine work.",
+        "source_url": "https://zapier.com"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Pick a narrow high value use case",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Interview 20 heavy assistant users about overnight jobs",
+        "Ship a prototype used daily by 20 people"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Ten users returning every week"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Raise above $500K within 12 months of the batch",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Reach paying subscribers or team accounts",
+        "Publish retention and usage numbers"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue run rate and a lead investor"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove retention against lab products",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add integrations and team features",
+        "Move to enterprise seats"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 100 percent and $1M recurring revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Large and proven demand for AI assistants",
+      "evidence": "Hundreds of millions of people use assistants and many pay for them.",
+      "source_url": "https://chatgpt.com"
+    },
+    {
+      "point": "Technically feasible for a small team",
+      "evidence": "The product can be built on frontier models, so the team can ship quickly and iterate on usage.",
+      "source_url": "https://claude.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "GBrain",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"GBrain\" --era 2022+: invented or proper noun, 6 characters, 1 word",
     "strengths": [
-      "TODO"
+      "Short and says memory",
+      "Easy to type"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic brain naming is common in AI",
+      "The G prefix is unexplained"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Short names did well in older YC eras but the 2022+ data shows no clear effect. The name hints at memory, yet many AI tools use brain names, so it will not differentiate from lab products like ChatGPT or Claude.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A well timed assistant idea in the most crowded category, where the model labs are the real competitors.",
+    "general_summary": "GBrain offers a cloud assistant with memory and skills that works overnight. Demand for assistants is proven, and a small team can build it fast, so a seed is plausible if usage is strong. The core problem is that frontier labs ship the same features with huge distribution, so the company needs a narrow wedge. Analogs such as Tasker AI, Khoj and Niles stayed small or died while Clara Labs raised an A and sold. Estimates are slightly below the B2B cohort anchors, and uncertainty is wide because the product is general."
   },
   "assumptions": [
-    "TODO"
+    "Only the input file was used for the company; market sections use general knowledge and homepage URLs.",
+    "Seed in this test means a round above about $500K within 12 months of the batch start.",
+    "The B2B cohort includes many unlike companies, so rates are approximate.",
+    "Competition recorded as of April 2026."
   ],
   "sources": [
-    "https://"
+    "https://www.roundfunded.com/en/blogs/yc-acceptance-rate-2026",
+    "https://chatgpt.com",
+    "https://claude.ai",
+    "https://www.lindy.ai",
+    "https://zapier.com"
   ]
 }

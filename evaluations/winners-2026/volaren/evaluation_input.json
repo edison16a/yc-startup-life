@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Volaren",
+    "one_liner": "The personal investing agent that comes to you",
+    "description": "Four person San Francisco consumer fintech. Users connect bank and brokerage accounts; an AI agent explains why the portfolio moved, answers money questions, suggests ideas and places trades. It supports copying famous investors, politicians, strategies and themed baskets, and user built agents that act within set limits, through an app, the web or text messages.",
+    "as_of": "2026-10-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.01,
+    "p_low": 0.006,
+    "p_high": 0.02,
+    "basis": "Test mode: assumed accepted to YC for Fall 2026. The prior is about 1 percent with a 0.6 to 2 percent band, and no adjustment is made because acceptance is not forecast in this test.",
+    "why_it_fails": "Not scored in this blind test because the company was accepted, so the number shown is only the unadjusted prior. YC would most plausibly have passed because Robinhood, Public and others already ship AI agents for investing, and trading copy features raise regulatory and loss liability issues for a four person team."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.55,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.57,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (lower/known/upper; cond): seed 50% / 57% / 62%, cond 57% (n=23). Seed here is a round over $500K within about 12 months.",
+        "adjustment_reason": "Within 0.97x of the anchor. AI agents for finance are a hot theme, but consumer fintech needs licenses or partners and the incumbents are shipping similar agents."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            840000,
+            2099999
           ],
           "post_money_usd": [
-            0,
-            0
+            8399999,
+            16799999
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small round or YC extension if trading volume is small and compliance advice slows investors."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2800000,
+            5600000
           ],
           "post_money_usd": [
-            0,
-            0
+            16799999,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical fintech seed of $3M to $5M at a $18M to $35M post; the 2022+ Fintech median is $3.5M."
+        },
+        {
+          "raise_usd": [
+            7000000,
+            14000000
+          ],
+          "post_money_usd": [
+            42000000,
+            84000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the text first agent shows strong retention and a fintech fund leads."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Investors in October 2026 already see Robinhood agentic trading and Public's agents, and ask why a four person team wins consumer distribution. The agent needs brokerage rails through a partner, and a copy trading feature is a regulatory question. Finary raised a $3.2M seed on community distribution but later shut down, and TAI, a three person investing app, only raised about $0.5M. Without a clear acquisition channel, seed slips."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.23,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (lower/known/upper; cond): series_a 12% / 13% / 23%, cond 23% (n=13); 2018-2021 Fintech cond 30% (n=20).",
+        "adjustment_reason": "At 0.87x of the anchor, inside the 0.75x rule. Trading apps raise A rounds only with clear unit economics, and consumer retention is hard."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            7500000,
+            13500000
           ],
           "post_money_usd": [
-            0,
-            0
+            37500000,
+            67500000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A with modest funded accounts. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            67500000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ Fintech A around $15M, near the market deal size of $17M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            375000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if assets under management and revenue grow quickly, with a pivot to B2B infrastructure as an alternative path."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs funded accounts, revenue per user above acquisition cost and a clear regulatory path. Retail trading apps have thin revenue per user unless they hold payment for order flow or subscriptions, and giants subsidize the same features free. Finary, Botin and TAI show that investing apps with no strong channel stall. A pivot to infrastructure like SnapTrade is the path that sometimes works."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (lower/known/upper; cond): series_b 0% / 0% / 12%, cond 0% (n=3); 2018-2021 Fintech cond 33% (n=6); all company cond 44% (n=126).",
+        "adjustment_reason": "Anchored between the older fintech 33 percent and the all company 44 percent and trimmed for thin data."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            21000000,
+            42000000
           ],
           "post_money_usd": [
-            0,
-            0
+            112000000,
+            210000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Down or flat B if markets turn. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            42000000,
+            84000000
           ],
           "post_money_usd": [
-            0,
-            0
+            210000000,
+            560000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ B around $37M to $45M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            84000000,
+            168000000
+          ],
+          "post_money_usd": [
+            560000000,
+            1400000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a breakout agent brokerage. Sized from the YC round medians and the 2026 public deal size benchmarks."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B depends on scaled assets and revenue in a market cycle sensitive to retail trading volume. If the agent produces losses for users, the product faces complaints and regulatory action. Robinhood terms say it does not compensate for agent losses, and a smaller company would face the same exposure with less cash."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Fintech --calibration-only: series_c 0% / 0% / 4%, cond 0% (n=2); all company cond 36% (n=55).",
+        "adjustment_reason": "Anchored on the all company conditional because fintech cells are tiny."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            52000000,
+            91000000
           ],
           "post_money_usd": [
-            0,
-            0
+            325000000,
+            650000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller C for a niche broker with steady revenue. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            91000000,
+            195000000
           ],
           "post_money_usd": [
-            0,
-            0
+            650000000,
+            1950000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ C around $45M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            195000000,
+            520000000
+          ],
+          "post_money_usd": [
+            1950000000,
+            6500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a category leader in agentic investing. Sized from the YC round medians and the 2026 public deal size benchmarks."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Reaching a C would need a license, large assets and a defensible product against Robinhood and Public. More likely endings are acquisition by a broker or wealth platform. Few retail investing apps among the analogs reached a C."
     }
   ],
   "outcomes": {
@@ -164,167 +212,226 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.27
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.12
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The likeliest end is a stall or a soft acquisition as incumbents ship agents and consumer investing apps have weak revenue per user. Regulation and loss liability add risk. A larger result needs becoming the default agent for a large user base, which the big brokers are also chasing."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "snaptrade",
+      "relevance": "Brokerage connection layer for trading apps, W22.",
+      "outcome_summary": "Active infrastructure company; the B2B pivot path for investing apps."
+    },
+    {
+      "slug": "finary",
+      "relevance": "Community investing app, W21.",
+      "outcome_summary": "$3.2M seed in 2021, reported shutdown in 2023."
+    },
+    {
+      "slug": "tai",
+      "relevance": "Single app for all investments, W22.",
+      "outcome_summary": "Three person team, about $0.5M raised, listed as acquired with no terms."
+    },
+    {
+      "slug": "event-horizon-labs",
+      "relevance": "AI automating investing, W24.",
+      "outcome_summary": "About $0.5M pre seed, no later round found."
+    },
+    {
+      "slug": "botin",
+      "relevance": "Investment super app, W22.",
+      "outcome_summary": "Inactive; consumer investing app with weak economics."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Incumbent brokers ship the same agent free",
+      "p": 0.4,
+      "evidence": "Robinhood launched agentic trading and Public launched agents in 2026, with large user bases.",
       "analogs": [
-        "TODO-company-slug"
+        "finary",
+        "tai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Focus on an underserved niche such as copy strategies and text first, or sell the engine to brokers."
+    },
+    {
+      "risk": "Regulation of advice and copy trading",
+      "p": 0.3,
+      "evidence": "Recommending trades and acting for users can require adviser registration, and copying politicians or investors raises disclosure issues.",
+      "analogs": [
+        "tai",
+        "botin"
+      ],
+      "mitigation": "Partner with a registered broker and keep user set limits."
+    },
+    {
+      "risk": "No cheap channel to acquire retail users",
+      "p": 0.3,
+      "evidence": "Consumer fintech acquisition cost is high and revenue per user is low.",
+      "analogs": [
+        "finary",
+        "botin"
+      ],
+      "mitigation": "Use text and creator led growth."
+    },
+    {
+      "risk": "Agent losses create liability and churn",
+      "p": 0.2,
+      "evidence": "A live money trial of AI trading portfolios lost about a third of capital, and one broker's terms exclude agent loss compensation.",
+      "analogs": [
+        "event-horizon-labs"
+      ],
+      "mitigation": "Cap risk and show clear explanations."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Robinhood (Cortex and agentic trading)",
+      "what": "AI assistant and agent trading for its users.",
+      "traction": "Tens of millions of users.",
+      "source_url": "https://www.coindesk.com/markets/2026/05/27/robinhood-is-letting-ai-trade-for-you-so-you-don-t-have-to-keep-checking-the-markets"
+    },
+    {
+      "name": "Public.com agents",
+      "what": "Rule based AI agents for stocks, options and crypto.",
+      "traction": "Launched March 31, 2026.",
+      "source_url": "https://www.nerdwallet.com/investing/learn/ai-trading-brokers"
+    },
+    {
+      "name": "Webull, eToro and others",
+      "what": "Brokers with AI and copy trading features.",
+      "traction": "Large retail user bases.",
+      "source_url": "https://www.finder.com/stock-trading/best-agentic-trading-platforms"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Brokerage integration, portfolio explanations from models and trade execution are buildable by four people through partners. Hard parts are reliability, compliance and keeping models from giving harmful advice."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 5,
     "who": [
-      "TODO"
+      "Robinhood",
+      "Public.com",
+      "Webull",
+      "eToro"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 3,
+    "rationale": "Several brokers already ship agents and have the accounts and licenses. A small company depends on their data access and could be cut off."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "A March 2026 survey found 62 percent of US investors had used AI tools for investment decisions.",
+        "source_url": "https://www.nerdwallet.com/investing/best/brokers-ai-trading"
+      },
+      {
+        "claim": "Robinhood and Public both launched agent trading in 2026, which shows demand and a crowded field.",
+        "source_url": "https://www.coindesk.com/markets/2026/05/27/robinhood-is-letting-ai-trade-for-you-so-you-don-t-have-to-keep-checking-the-markets"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show retention of funded users.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch a text first beta with 500 users.",
+        "Track weekly active funded accounts.",
+        "Get a counsel opinion on advice rules."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Thirty percent four week retention among funded users."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Unit economics and license path.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add a paid tier.",
+        "Partner with a registered broker.",
+        "Cut acquisition cost with creators."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$100M assets and revenue per user above CAC."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale or sell the engine.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Offer the agent to brokers via API.",
+        "Add products by region.",
+        "Build compliance staff."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Eight figure revenue."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Timely theme with clear user demand",
+      "evidence": "Most US investors report using AI tools for investing decisions in a March 2026 survey.",
+      "source_url": "https://www.nerdwallet.com/investing/best/brokers-ai-trading"
+    },
+    {
+      "point": "Text first access lowers friction",
+      "evidence": "Agents delivered by message fit people who do not want another app; the big brokers focus on in app features.",
+      "source_url": "https://www.finder.com/stock-trading/best-agentic-trading-platforms"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Volaren",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Volaren\" --era 2022+: 7 chars, invented, no flags",
     "strengths": [
-      "TODO"
+      "Short invented name that is easy to say",
+      "Latin feel suggests flight and speed"
     ],
     "weaknesses": [
-      "TODO"
+      "No link to investing",
+      "Similar sounding to other fintech brands"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A short invented word is common among recent YC consumer winners and is easy to say and spell in a text message. Trust matters in money apps, and a name alone does not build it, so I left the ladder unchanged.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A timely idea that Robinhood and Public already ship, so odds rest on a niche and a distribution channel.",
+    "general_summary": "Volaren is a four person team building a text first AI agent for personal investing, with copy trading and user built agents. Demand for AI help in investing is real, but Robinhood and Public both launched agent trading in 2026 with huge user bases. Consumer fintech cohorts show about 57 percent reaching a seed and 23 percent an A, and investing app analogs such as Finary and TAI stalled without a channel. I stay near those anchors, with a small discount to seed for the crowded field and regulatory risk, and keep later stages within 0.75x of the base rates."
   },
   "assumptions": [
-    "TODO"
+    "Assumed accepted to YC Fall 2026; as_of 2026-10-05.",
+    "Only the supplied description is used.",
+    "Seed means over $500K within about 12 months.",
+    "Fintech cohorts are small and right censored.",
+    "Market facts used are dated before October 5, 2026."
   ],
   "sources": [
-    "https://"
+    "https://www.coindesk.com/markets/2026/05/27/robinhood-is-letting-ai-trade-for-you-so-you-don-t-have-to-keep-checking-the-markets",
+    "https://www.nerdwallet.com/investing/learn/ai-trading-brokers",
+    "https://www.nerdwallet.com/investing/best/brokers-ai-trading",
+    "https://www.finder.com/stock-trading/best-agentic-trading-platforms"
   ]
 }

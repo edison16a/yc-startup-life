@@ -1,162 +1,257 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "OpenHack",
+    "one_liner": "Always-on AI security engineer",
+    "description": "OpenHack is an always on AI security engineer that scans code, runs AI pentests and checks supply chain security, then verifies and prioritizes vulnerabilities to cut false positives. Customers are engineering and security teams. A solo founder in San Francisco, Fall 2026 batch.",
+    "as_of": "2026-10-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.97,
+    "p_low": 0.9,
+    "p_high": 0.99,
+    "basis": "Blind test: the company is known to have been accepted, so this is a placeholder note and not a real estimate. The prior for a random applicant is about 1 percent (references/yc_acceptance.md), and this team would sit near the middle, with a solo founder as a small negative within that range.",
+    "why_it_fails": "Not applicable in this test because the company was accepted. If YC had said no, the likely reasons would be a solo founder, a very crowded AI security space where many Winter and Summer 2024 to 2026 companies pitch the same thing, and no clear edge over XBOW or well funded scanners."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.62,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only gave seed 59% (lower 49%, upper 65%, n=126); the Security tag cohort had 75% but only n=4.",
+        "adjustment_reason": "At the 0.59 anchor. AI security is a hot category in 2026 and investors fund it quickly, offset by a solo founder with no stated traction."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small seed, a bit below the B2B 2022+ median of $3.2M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical AI security seed on a strong demo and early pilots."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            15000000
+          ],
+          "post_money_usd": [
+            50000000,
+            120000000
+          ],
+          "p_band": 0.18,
+          "rationale": "Upside from a top seed fund in a hot category."
+        },
+        {
+          "raise_usd": [
+            500000,
+            1500000
+          ],
+          "post_money_usd": [
+            6000000,
+            12000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Thin angel round after weak early traction."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The probable stop is that a solo founder cannot show customers or benchmark wins fast enough while better known AI pentesting companies raise. XBOW publicly topped HackerOne and raised $75M in 2025, which makes investors ask what a new entrant has that it does not, and CodeAnt and Escape have already taken seed money. Without paid pilots, a round above $500K within a year is at risk."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only gave series_a 15% known only and 26% given seed (n=74).",
+        "adjustment_reason": "At the anchor, between the 2022-2025 and 2018-2022 B2B values. Crowding and takeover risk offset hot demand."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower end of the 2022+ Series A range."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            22000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Median 2022+ B2B Series A of about $15M."
+        },
+        {
+          "raise_usd": [
+            22000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if growth is rapid and the category leaders set high prices."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            20000000,
+            40000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Thin A or bridge."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails when revenue per customer is low, accuracy claims are hard to prove and large security vendors bundle similar features. Escape (W23) and CodeAnt (W24) reached seed or A but many peers, such as winfunc and ZeroPath, show no round in the data. A solo founder also struggles to hire and sell to enterprises at the pace investors expect."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.35,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2022 --industry B2B --calibration-only gave series_b 35% given series_a (n=23); 2022-2025 gave 16% (n=19).",
+        "adjustment_reason": "Middle of the two anchors; security has large winners that attract late stage capital."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest B."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median 2022+ B2B Series B of about $45M, with AI category premium."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside as XBOW style leaders show."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Flat round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if the product competes on price and false positive rate and a platform such as a large code security vendor adds the same features. The market has already seen XBOW raise more than $100M, so a second tier player must show clear differentiation to reach B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "stage_benchmarks.md gives series_c given B 36% (n=55).",
+        "adjustment_reason": "Below the anchor, since a crowded category leaves one or two winners."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical Series C."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            800000000,
+            2000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Growth round."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            5000000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside as a category winner."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Strategic or structured round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if the category consolidates around one or two leaders and this company is acquired by a larger security platform. DeepSource (W20) was acquired and Patchwork Security (W16) shut down, which shows both small endings."
     }
   ],
   "outcomes": {
@@ -164,167 +259,226 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.4
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          4000000000
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "A solo founder in a crowded and fast moving category is most likely to be outrun by better funded rivals or absorbed by an existing security platform. Patchwork Security shut down and DeepSource sold below $1B, matching the likely ends."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "escape",
+      "relevance": "Offensive AI security, 2023.",
+      "outcome_summary": "Reached Series A; alive."
+    },
+    {
+      "slug": "codeant-ai",
+      "relevance": "Autonomous security platform, 2024.",
+      "outcome_summary": "Seed; alive."
+    },
+    {
+      "slug": "deepsource",
+      "relevance": "DevSecOps platform, 2020.",
+      "outcome_summary": "Seed then acquired."
+    },
+    {
+      "slug": "patchwork-security",
+      "relevance": "Early security tooling, 2016.",
+      "outcome_summary": "Shut down with no later round."
+    },
+    {
+      "slug": "zeropath",
+      "relevance": "Automated vulnerability finding, 2024.",
+      "outcome_summary": "Active with no priced round recorded."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Crowded AI security market with well funded leaders such as XBOW",
+      "p": 0.45,
+      "evidence": "XBOW raised a $75M Series B in 2025 after a $20M seed and topped HackerOne, so a solo entrant faces strong leaders.",
       "analogs": [
-        "TODO-company-slug"
+        "escape",
+        "codeant-ai",
+        "zeropath"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick a narrow wedge such as a framework or supply chain risk and publish real findings."
+    },
+    {
+      "risk": "Solo founder cannot build and sell at the pace required",
+      "p": 0.3,
+      "evidence": "Team size is one while enterprise security sales need engineering and field presence.",
+      "analogs": [
+        "patchwork-security"
+      ],
+      "mitigation": "Add a cofounder early and use design partners."
+    },
+    {
+      "risk": "Platform vendors bundle AI scanning",
+      "p": 0.25,
+      "evidence": "Code hosting and security platforms can add AI scanning to existing contracts.",
+      "analogs": [
+        "deepsource"
+      ],
+      "mitigation": "Focus on verified, low false positive findings."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "XBOW",
+      "what": "Autonomous AI pentesting.",
+      "traction": "Raised a $75M Series B in June 2025 and topped HackerOne.",
+      "source_url": "https://www.helpnetsecurity.com/2025/06/25/xbow-ai-funding/"
+    },
+    {
+      "name": "Escape",
+      "what": "Offensive security for application teams.",
+      "traction": "YC W23 company with a Series A.",
+      "source_url": "https://www.securityweek.com/ex-github-engineers-raise-20m-to-enhance-pen-testing-with-ai-powered-xbow/"
+    },
+    {
+      "name": "Traditional pentest firms and scanners",
+      "what": "Human pentests and static scanners.",
+      "traction": "Established budgets and compliance driven demand.",
+      "source_url": "https://www.helpnetsecurity.com/2025/06/25/xbow-ai-funding/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Finding real vulnerabilities with low false positives needs strong models, agent orchestration and verification harnesses, which a strong solo engineer can start but a rival with more engineers can outrun."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "XBOW",
+      "Snyk",
+      "GitHub and other code platforms"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Large vendors and well funded startups can ship overlapping AI scanning within months, and the distribution of code platforms gives them an advantage."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Investors funded AI pentesting heavily; XBOW raised $75M in 2025 after a $20M seed.",
+        "source_url": "https://www.helpnetsecurity.com/2025/06/25/xbow-ai-funding/"
+      },
+      {
+        "claim": "Security buyers already pay for pentests and scanners.",
+        "source_url": "https://www.helpnetsecurity.com/2025/06/25/xbow-ai-funding/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A working scanner with real findings.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Find and disclose real bugs in open source.",
+        "Recruit a cofounder."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Verified vulnerabilities reported."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paid pilots.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign five design partners.",
+        "Show false positive rate benchmarks."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Paying pilots and a seed above $500K."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable sales.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build integrations with CI and ticketing.",
+        "Hire a security sales lead."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "About $1M to $2M of annual contracts."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Enterprise scale.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add compliance reports and SSO.",
+        "Expand into supply chain."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Revenue growth above 2x a year."
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category leadership.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch a platform with partners.",
+        "Win large accounts."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Large enterprise customers and net retention above 120%."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Strong investor appetite for AI security",
+      "evidence": "XBOW raised a $20M seed and a $75M Series B within two years.",
+      "source_url": "https://www.helpnetsecurity.com/2025/06/25/xbow-ai-funding/"
+    },
+    {
+      "point": "Clear pain from false positives and costly human pentests",
+      "evidence": "Buyers pay for pentests and scanners and complain about noise.",
+      "source_url": "https://www.helpnetsecurity.com/2025/06/25/xbow-ai-funding/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "OpenHack",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"OpenHack\" --era 2022+ : compound_words, 2 words, 8 characters",
     "strengths": [
-      "TODO"
+      "Clear security link and memorable"
     ],
     "weaknesses": [
-      "TODO"
+      "Open and hack can suggest open source or an offensive tool; generic"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name is descriptive and easy to remember, but generic in a crowded field and may suggest offensive hacking rather than a defender. The effect on success is small.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A hot category with strong leaders makes a solo founder's seed likely but later rounds uncertain.",
+    "general_summary": "OpenHack is a solo founder AI security engineer product in the hottest corner of 2026 security investing. Demand is real, since XBOW raised large rounds, and B2B seed rates are near 59% within the cohort, so a seed above $500K is more likely than not. The same heat means many peers, including Escape, CodeAnt, ZeroPath and winfunc, pitch similar tools, and only a few reached Series A in the data. Large vendors can bundle scanning, and a solo founder must show findings and pilots quickly. Later rounds are possible if a wedge emerges, and a pivot to a narrower product is a plausible upside path."
   },
   "assumptions": [
-    "TODO"
+    "Blind test using only the batch start description.",
+    "Security tag cohort is too small (n=4), so the B2B cohort is the anchor.",
+    "Seed means a round above $500K within about 12 months.",
+    "Coverage per knowledge/coverage.md: 662 of 6,399 companies researched."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://www.helpnetsecurity.com/2025/06/25/xbow-ai-funding/",
+    "https://www.securityweek.com/ex-github-engineers-raise-20m-to-enhance-pen-testing-with-ai-powered-xbow/"
+  ],
+  "mode": "summary"
 }

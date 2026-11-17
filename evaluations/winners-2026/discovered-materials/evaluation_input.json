@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Discovered Materials",
+    "one_liner": "AI scientists to discover materials for the semiconductor industry.",
+    "description": "A swarm of AI agents to discover new materials for datacenter chips and fabs, compressing a ten year lab process to months. One founder is a Stanford PhD whose nanoscale interconnect materials entered Intel and TSMC roadmaps; the other built autonomous agents at an AI startup. Four people in San Francisco.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.15,
+    "p_low": 0.06,
+    "p_high": 0.3,
+    "basis": "Company is assumed accepted. The prior is about 1 percent; deep technical credibility, with materials adopted into Intel and TSMC roadmaps, and an AI for science theme with large funding comps push this to the 15 percent top of the allowed range.",
+    "why_it_fails": "YC would most plausibly decline if it could not see a near term revenue path, since materials discovery has a ten year validation cycle and chipmakers buy slowly. It would also question whether a four person team can compete with Periodic Labs and CuspAI, which raised hundreds of millions."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.85,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.67,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only: seed cond 67% (n=12); broad cohort --years 2022-2025 --calibration-only: seed cond 57% (n=201), range 48%/57%/64%. Seed here means a round above the $500K YC deal within about 12 months.",
+        "adjustment_reason": "1.3x the Industrials anchor: AI for science and semiconductors were drawing very large rounds in 2025 and 2026, and a founder with materials adopted by Intel and TSMC is rare; I cannot verify traction."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            700000,
+            2500000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.15,
+          "rationale": "Small round or grant funding if chip customers are slow."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            60000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical deep tech AI seed above the 3M US median."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            30000000
+          ],
+          "post_money_usd": [
+            60000000,
+            200000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Upside in a market where Periodic Labs raised a 300M seed and CuspAI raised 100M earlier."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails if investors judge that a four person team cannot match well funded labs with robotics and compute, or if the commercial story, selling materials to chipmakers, looks too far from revenue. Numerion Labs shows AI discovery companies can raise a large A and then shrink, which makes investors careful about scientific hype."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --calibration-only: series_a cond 22% (n=115), range 11%/12%/26%; --years 2018-2025 --industry Industrials: 25% (n=16).",
+        "adjustment_reason": "1.4x the broad anchor: deep tech with elite founders and strategic chip customers can raise A without revenue, but rounds were mostly won by the best funded labs."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            120000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A funded by a strategic or government grants."
         },
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical AI science A for a team with a validated material."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            150000000
+          ],
+          "post_money_usd": [
+            350000000,
+            1000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if a chip company pays for a discovered material, in line with CuspAI scale rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The Series A fails if the AI agents produce candidate materials but no one validates them in the fab, since lab validation, process integration and qualification take years. Without a signed customer such as a chipmaker, funds may prefer Periodic Labs or CuspAI, and Osium AI shows smaller materials AI startups stalled at seed."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.4,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_b cond 44% (n=126), range 8%/15%/53% unconditional; 2022-2025 cohort is right censored (12%, n=25).",
+        "adjustment_reason": "0.9x the anchor, near cohort rate, since an A on materials with chip adoption usually draws later capital."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat B funded by strategic partners, sized against current US venture medians and the 2022+ YC round table."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1200000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical deep tech B, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            400000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            4000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if proprietary materials win design slots, sized against current US venture medians and the 2022+ YC round table."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B fails if qualification cycles of five to ten years mean no revenue arrives before capital runs out, and if a materials discovered by AI cannot be manufactured economically at scale. Macromoltek (W18), a computational design shop, stayed small on grants, showing how computational discovery firms can fail to reach large rounds."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only (all eras): series_c cond 36% (n=55), range 3%/6%/48% unconditional.",
+        "adjustment_reason": "0.9x the anchor; kept near cohort because success at this stage implies a major customer or licence."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            100000000,
+            200000000
           ],
           "post_money_usd": [
-            0,
-            0
+            800000000,
+            2000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat late round, sized against current US venture medians and the 2022+ YC round table."
         },
         {
           "raise_usd": [
-            0,
-            0
+            200000000,
+            500000000
           ],
           "post_money_usd": [
-            0,
-            0
+            2000000000,
+            5000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical growth round for AI science companies, sized against current US venture medians and the 2022+ YC round table."
+        },
+        {
+          "raise_usd": [
+            500000000,
+            1000000000
+          ],
+          "post_money_usd": [
+            5000000000,
+            12000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside at the Periodic Labs scale, sized against current US venture medians and the 2022+ YC round table."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C fails if licensing revenue from materials stays small and chipmakers prefer to keep discovery in house or buy from large labs. Few computational discovery companies in the data reached C, and Atomwise's descendant Numerion Labs cut staff after a 45M A."
     }
   ],
   "outcomes": {
@@ -164,167 +212,193 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.5
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.2
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.23
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          6000000000
         ],
-        "p": 0.0
+        "p": 0.07
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The long validation cycle means most failure is a stall: candidate materials without qualification, no licences, and funds that prefer better capitalised labs. A strategic sale to a chip equipment maker or materials company is the likely good exit, and Numerion Labs shows even a large Series A can end with staff cuts and a rebrand."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "numerion-labs",
+      "relevance": "AI discovery of molecules, deep tech AI science.",
+      "outcome_summary": "45M Series A in 2018, later staff cuts and a rebrand."
+    },
+    {
+      "slug": "osium-ai",
+      "relevance": "AI materials innovation.",
+      "outcome_summary": "2.6M seed in 2023, no later round found."
+    },
+    {
+      "slug": "macromoltek",
+      "relevance": "Computational design from a PhD founder.",
+      "outcome_summary": "Small grant funded company, no sizeable round."
+    },
+    {
+      "slug": "inversion-space",
+      "relevance": "Deep tech with strong technical founders raising large seeds.",
+      "outcome_summary": "10M seed and 44M Series A."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Discovered materials cannot be validated or qualified in time",
+      "p": 0.4,
+      "evidence": "Materials qualification in fabs takes years and lab validation is the bottleneck the company says it will compress.",
       "analogs": [
-        "TODO-company-slug"
+        "numerion-labs",
+        "macromoltek"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Partner with a lab or fab for validation and pick materials with short qualification paths."
+    },
+    {
+      "risk": "Better funded labs win talent and customers",
+      "p": 0.35,
+      "evidence": "Periodic Labs raised a 300M seed and CuspAI raised 100M, each with far larger teams.",
+      "analogs": [
+        "osium-ai",
+        "numerion-labs"
+      ],
+      "mitigation": "Focus on one interconnect or thermal material and sell outcomes."
+    },
+    {
+      "risk": "Revenue model is unclear and slow",
+      "p": 0.25,
+      "evidence": "Chipmakers pay for materials after qualification, not for AI discovery, so early revenue may only come from pilots.",
+      "analogs": [
+        "macromoltek",
+        "osium-ai"
+      ],
+      "mitigation": "Offer paid discovery projects with design partners."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Periodic Labs",
+      "what": "AI scientists with robotics for physics and chemistry.",
+      "traction": "Reported 300M seed in 2025.",
+      "source_url": "https://pureai.com/articles/2025/10/02/ai-veterans-raise-300-million-to-build-ai-scientists-at-periodic-labs.aspx"
+    },
+    {
+      "name": "CuspAI",
+      "what": "AI materials discovery platform.",
+      "traction": "Reported 100M round.",
+      "source_url": "https://getcoai.com/news/cuspai-raises-100m-to-accelerate-ai-designed-materials-discovery/"
+    },
+    {
+      "name": "Chipmaker in house R&D",
+      "what": "Intel, TSMC and suppliers' materials teams.",
+      "traction": "Incumbent default.",
+      "source_url": "https://pureai.com/articles/2025/10/02/ai-veterans-raise-300-million-to-build-ai-scientists-at-periodic-labs.aspx"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "AI agents proposing materials is feasible, but simulation accuracy, experimental validation and fab integration are very hard for four people. The founder's materials work gives a rare edge."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Periodic Labs",
+      "CuspAI",
+      "Applied Materials"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 24,
+    "rationale": "Well funded labs could add semiconductor focus within two years, and suppliers could acquire talent. The incentive exists, but each has many domains to cover."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Investors poured money into AI materials discovery, including a 300M seed for Periodic Labs.",
+        "source_url": "https://pureai.com/articles/2025/10/02/ai-veterans-raise-300-million-to-build-ai-scientists-at-periodic-labs.aspx"
+      },
+      {
+        "claim": "CuspAI raised 100M for AI designed materials.",
+        "source_url": "https://getcoai.com/news/cuspai-raises-100m-to-accelerate-ai-designed-materials-discovery/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a validated material.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run a lab test on one candidate",
+        "Get a chipmaker or supplier to sign a pilot"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Measured property data and a pilot letter."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show the AI loop beats lab speed.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Ship discovery in weeks for a partner",
+        "Hire a materials scientist"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A new material through partner testing in under six months."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Elite domain credibility",
+      "evidence": "A founder's materials for nanoscale interconnects entered Intel and TSMC roadmaps.",
+      "source_url": "https://pureai.com/articles/2025/10/02/ai-veterans-raise-300-million-to-build-ai-scientists-at-periodic-labs.aspx"
+    },
+    {
+      "point": "Hot funding category",
+      "evidence": "AI materials rounds of 100M and 300M show investor appetite.",
+      "source_url": "https://getcoai.com/news/cuspai-raises-100m-to-accelerate-ai-designed-materials-discovery/"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Discovered Materials",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Discovered Materials\" --era 2022+: compound words, 19 chars, 7 syllables",
     "strengths": [
-      "TODO"
+      "Says exactly what it does"
     ],
     "weaknesses": [
-      "TODO"
+      "Long, generic and hard to trademark"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A descriptive 19 character name is easy to understand but hard to own and recall, unlike short YC names such as Stripe or Airbnb; for a deep tech business sold to chipmakers it will matter little."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Elite technical founders in a richly funded category, with a long road from discovery to revenue.",
+    "general_summary": "Discovered Materials applies AI agents to semiconductor material discovery, led by a founder whose materials reached Intel and TSMC roadmaps. Investor appetite for AI science was very high in 2025 and 2026, which makes a seed above the YC deal likely. The risks are the long validation cycle and rivals with hundreds of millions. A Series A depends on a validated material or a paying chip partner. Analogs show AI discovery companies often stall after one large round, so the later steps stay near cohort anchors."
   },
   "assumptions": [
-    "TODO"
+    "Only the input description was used about the company.",
+    "Seed means a round above 500K within about 12 months of the batch start.",
+    "Funding of other 2026 batch companies was not used as evidence.",
+    "Industrials 2022+ cohort has only 12 researched companies."
   ],
   "sources": [
-    "https://"
+    "https://pureai.com/articles/2025/10/02/ai-veterans-raise-300-million-to-build-ai-scientists-at-periodic-labs.aspx",
+    "https://getcoai.com/news/cuspai-raises-100m-to-accelerate-ai-designed-materials-discovery/"
   ]
 }

@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Lucent",
+    "one_liner": "AI that automatically improves products from user behavior",
+    "description": "Lucent is an AI product manager that watches user sessions, finds bugs and UX issues and proposes improvements. Customers are product and engineering teams that pay for software tools. Two person team in San Francisco.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.04,
+    "p_low": 0.015,
+    "p_high": 0.08,
+    "basis": "Starting rate is about 1 percent (0.6 to 2 percent band, yc_acceptance.md). Test assumption: the company was accepted, so this note records the adjustments only. Up for an AI wedge that matches current YC interest in AI agents for software teams. Down because it is a crowded area with strong incumbents, the team is two people and no traction is stated. Test note: accepted in fact, so this step is not scored.",
+    "why_it_fails": "YC would most plausibly say no because session replay with AI summaries already exists inside LogRocket, FullStory and PostHog, so the wedge looks like a feature. With two founders and no named customers or revenue there is little evidence that teams will pay for another monitoring tool."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.58,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126); upper bound seed about 64% for the broad cohort. ",
+        "adjustment_reason": "Within the B2B cohort. Held near the anchor because AI developer tools raise seed rounds easily in 2026, offset by crowding, and the step needs a round above about $500K within 12 months."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small seed near the quartile for a two person AI tool team."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            5000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "Typical 2022+ seed near the $3.3M median, as Human Behavior raised a $5M seed within days in a similar space."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if it shows fast pilot growth in the AI coding wave."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A round above $500K inside 12 months would fail if the tool looks like a feature of PostHog or LogRocket. Lantern, a near identical YC company, went inactive after Mixpanel and Amplitude built the same feature, and a two person team needs paying customers quickly to avoid that story."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: series_a cond 26% (n=74) (broad 22%, n=115; B2B 26%, n=74). ",
+        "adjustment_reason": "Slightly under the B2B anchor of 26 percent because crowding is severe, but inside the 0.75 times floor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin A near the 2018-2021 median of $10M raise."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical 2022+ A near $15M median raise."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            35000000
+          ],
+          "post_money_usd": [
+            90000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the product becomes the default for AI driven product loops."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs recurring revenue with low churn. The likely miss is that customers treat the product as an experiment while incumbents add similar AI features, which is how Lantern ended. Meticulous took three years from batch to a Series A of $15M, so even a good path is slow."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 (broad cohort series_b cond 12%, n=25) and --years 2018-2021 --industry B2B (series_b cond 39%, n=18). Older cohort used because 2022+ is right censored.",
+        "adjustment_reason": "Below the 2018-2021 B2B anchor and above the thin recent rate, since survivors in developer tools can grow with product led sales."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin B near the $29M median."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            180000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical 2022+ B near $37M median."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            900000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes a category leader in AI product analytics."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs a clear lead in a market where PostHog, LogRocket and FullStory already sell to the same buyers. Luciq and Heap show that winners reach scale through product led growth and large datasets, and Heap was still acquired once rivals matched autocapture."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --years 2018-2021: series_c cond 30% (n=23), B2B 57% (n=7). Small n, wide range.",
+        "adjustment_reason": "At the broad cohort anchor, n is small."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Thin round near the 2022+ median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            800000000,
+            1800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round for developer analytics."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1800000000,
+            3500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside as in Heap's raise of about $205M total."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Late rounds fail when growth slows and a large analytics vendor acquires the category. Heap reached late rounds but ended as an acquisition after rivals matched its main feature, and most companies in this space never get this far."
     }
   ],
   "outcomes": {
@@ -164,167 +212,215 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.52
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          3500000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the product is absorbed as a feature by session replay and analytics vendors, or the team pivots after customers stop paying. A small acqui-hire is the usual good outcome for two person developer tool teams. Reaching a large exit needs a pivot into a broader AI product loop product."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "lantern",
+      "relevance": "AI anomaly detection on product analytics, nearly the same wedge",
+      "outcome_summary": "Went inactive after incumbents built the feature."
+    },
+    {
+      "slug": "heap",
+      "relevance": "Automatic capture analytics",
+      "outcome_summary": "Raised about $205M and was acquired after rivals matched autocapture."
+    },
+    {
+      "slug": "meticulous",
+      "relevance": "Automated testing of web apps",
+      "outcome_summary": "Seed $4M in 2024, Series A $15M in 2026, three years after batch."
+    },
+    {
+      "slug": "human-behavior",
+      "relevance": "AI that understands user behavior from sessions",
+      "outcome_summary": "Raised a $5M seed in two days in 2025."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Incumbents add the same AI feature",
+      "p": 0.45,
+      "evidence": "LogRocket and PostHog already market AI that finds UX issues in session replay.",
       "analogs": [
-        "TODO-company-slug"
+        "lantern",
+        "heap"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Act on findings by opening fixes, not only reports."
+    },
+    {
+      "risk": "Low trust and privacy concerns around watching sessions",
+      "p": 0.25,
+      "evidence": "Session replay raises privacy and compliance questions that slow enterprise sales.",
+      "analogs": [
+        "human-behavior"
+      ],
+      "mitigation": "Offer masking and clear data handling by default."
+    },
+    {
+      "risk": "A two person team cannot out sell larger vendors",
+      "p": 0.3,
+      "evidence": "The team size is two and the market has funded rivals with sales teams.",
+      "analogs": [
+        "lantern"
+      ],
+      "mitigation": "Focus on small AI built products with no analytics stack."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "LogRocket",
+      "what": "Session replay with AI issue detection",
+      "traction": "Established vendor",
+      "source_url": "https://assets.logrocket.io/"
+    },
+    {
+      "name": "PostHog",
+      "what": "Open source analytics with AI over session replay",
+      "traction": "Large developer base",
+      "source_url": "https://posthog.com/blog/best-session-replay-tools"
+    },
+    {
+      "name": "FullStory",
+      "what": "Session replay with AI summaries",
+      "traction": "Enterprise vendor",
+      "source_url": "https://posthog.com/blog/best-session-replay-tools"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Vision and language models make session understanding feasible for a small team in months. The hard parts are accuracy on noisy sessions, cost per session and turning findings into trusted fixes."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "PostHog",
+      "LogRocket",
+      "FullStory",
+      "Sentry"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "Incumbents already ship AI over replay and own the data and distribution, so a copy of any single feature takes months."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Session replay tools are a large category with many vendors adding AI features",
+        "source_url": "https://posthog.com/blog/best-session-replay-tools"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show real customers and a clear difference",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run the tool on five real products",
+        "Show fixes found that incumbents missed"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Five teams using it weekly"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paying customers",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Convert pilots to paid",
+        "Ship automated fix suggestions"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$15K monthly recurring revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Recurring revenue and low churn",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add integrations with code tools",
+        "Hire first sales lead"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M annual recurring revenue"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category lead",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand to enterprise",
+        "Build data advantages"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$10M annual recurring revenue"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Platform status",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add adjacent products",
+        "Expand internationally"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Over $30M annual recurring revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Timely AI wedge as more products are built with AI and need testing",
+      "evidence": "A similar company raised a $5M seed fast in 2025",
+      "source_url": "https://posthog.com/blog/best-session-replay-tools"
+    },
+    {
+      "point": "Small team can build a first version quickly",
+      "evidence": "Technical complexity rated 3 of 5"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Lucent",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Lucent\" --era 2022+ : 2 syllables, real word meaning clear",
     "strengths": [
-      "TODO"
+      "Short real word that suggests clarity",
+      "Easy to spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Existing companies use the name Lucent, so search and trademark are harder"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A short word that hints at clear insight fits a product that reveals user behavior, like other one word YC brands, but old companies already use it and that muddles search.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A timely AI wedge in a crowded space where incumbents can copy the feature.",
+    "general_summary": "Lucent is an AI product manager that studies user sessions to find bugs and UX issues. AI developer tools raise seed rounds readily, and a similar company raised a $5M seed within days in 2025, so a seed above $500K within a year is a bit better than even. The risk is that session replay vendors already ship the same AI, and Lantern, a near twin, went inactive for that reason. With two founders and no stated traction, later rounds depend on a pivot to acting on findings, not only reporting them. Data in this niche is thin."
   },
   "assumptions": [
-    "TODO"
+    "Only the batch listing was used, as of 2026-01-05.",
+    "Seed step means a round above about $500K within 12 months of the batch start.",
+    "A web result from the company's own blog was ignored (LEAK-WEB)."
   ],
   "sources": [
-    "https://"
+    "https://assets.logrocket.io/",
+    "https://posthog.com/blog/best-session-replay-tools"
   ]
 }

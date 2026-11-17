@@ -1,330 +1,418 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "yc_acceptance": {
+  "p": 0.06,
+  "p_low": 0.03,
+  "p_high": 0.12,
+  "basis": "Starting from the roughly 1 percent prior (range 0.6 to 2 percent). The company is already accepted, so this is a note: a twelve person team is large for the batch, the topic of AI security agents is a strong fit for current YC interest, and the product claims production integration. Crowded competition and no stated customers hold it down.",
+  "why_it_fails": "YC would most plausibly say no because AI agents for security triage and remediation are a crowded theme with many funded startups, and the pitch is broad, covering code, CI and cloud, without naming a customer or a proven result, so the interview would test whether Tolmo is anything other than a feature of larger platforms."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.7,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.70 against anchor 0.59, a 1.2 ratio: a twelve person team and the hottest security theme of the period justify a higher chance than the generic cohort."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Thin band: a small extension if enterprise pilots are slow to convert."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      2500000,
+      5000000
+     ],
+     "post_money_usd": [
+      18000000,
+      40000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core band: AI security seeds in the YC analogs, Corgea 2.6M, Metalware 3M, Escape 3.9M, and base rate median 3.4M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      5000000,
+      10000000
+     ],
+     "post_money_usd": [
+      40000000,
+      80000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Upside band: a twelve person team and a hot agentic security theme, with comparable startups raising 13M seeds such as Gomboc AI in 2025."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Tolmo sells an agentic security platform that must plug into code, CI and cloud data, which means long trust and security reviews at every customer. Investors will ask whether twelve people can beat well funded cloud security startups such as Maze, which raised a 25M Series A in 2025, and the incumbents. If the pilots do not convert into paid annual contracts, the seed stays small. Corgea and Tracecat show that even active YC security startups can take a long time to show a funded step."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.30 against anchor 0.26: 1.15 ratio; team size is an advantage but competition is crowded."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series A as security budgets favor larger vendors."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      22000000
+     ],
+     "post_money_usd": [
+      60000000,
+      130000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core Series A: Maze raised 25M in 2025 and Escape 18M in 2026; base median 13M."
+    },
+    {
+     "raise_usd": [
+      22000000,
+      40000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A as agentic security leaders were priced in 2025 and 2026."
+    }
+   ],
+   "why_it_fails": "Series A needs enterprise annual recurring revenue and proof that agents remediate without breaking production. Security buyers cap autonomous changes, a Tamnoon executive argued that fully automated remediation in production is too risky, so human in the loop limits the pitch. Incumbent cloud and code security platforms can bundle similar agents and sell through existing contracts. Corgea and ZeroPath both took more than a year after seed without a visible Series A, so the slow path is normal."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.22 against anchor 0.16: 1.4 ratio; larger team and strong theme."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest Series B on steady enterprise growth."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      220000000,
+      450000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core Series B for a security platform with several enterprise customers."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      130000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1100000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B as a platform winner in AI security."
+    }
+   ],
+   "why_it_fails": "Series B needs a clear lead across many enterprise customers and net revenue retention. Competition is crowded: pentest agents, code security and cloud security all add remediation. Inscribe, a YC fraud and risk company, raised a B and then cut staff when revenue slipped, showing that enterprise security B rounds depend on repeated sales success rather than a technology story."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.25 equal to the anchor from a tiny sample."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      50000000,
+      90000000
+     ],
+     "post_money_usd": [
+      350000000,
+      700000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical later round for a growing security platform company."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      160000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Platform scale across code, cloud and applications for large enterprises."
+    },
+    {
+     "raise_usd": [
+      160000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Category leader outcome in AI security operations."
+    }
+   ],
+   "why_it_fails": "A Series C needs a scaled platform and a defensible position against large vendors. Few YC security startups reach it; most are acquired for their team or product by larger platforms. Heavy competition from funded rivals and acquirers that build in house make an independent growth path unlikely."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.45
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.07
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Failure is most likely through being outcompeted rather than lack of need, since a platform of this scope must beat both startups and incumbents. Analogs such as Corgea, ZeroPath and Tracecat are alive but without large rounds, and the crowded pentest and remediation field has many funded rivals, so a large independent outcome is uncommon."
+ },
+ "analogs": [
+  {
+   "slug": "corgea",
+   "relevance": "Autonomous code security fixes for engineering teams.",
+   "outcome_summary": "2.6M seed in November 2024, still no Series A found."
+  },
+  {
+   "slug": "escape",
+   "relevance": "Offensive security and AI pentesting.",
+   "outcome_summary": "3.9M seed in 2023 and an 18M Series A in March 2026."
+  },
+  {
+   "slug": "tracecat",
+   "relevance": "Agentic security automation.",
+   "outcome_summary": "Active with customer logos, funding not verifiable."
+  },
+  {
+   "slug": "metalware",
+   "relevance": "Technical security tooling, small team.",
+   "outcome_summary": "3M seed in 2023, team stays near four, no later round."
+  },
+  {
+   "slug": "contraforce",
+   "relevance": "AI agents orchestrated for security services.",
+   "outcome_summary": "2M seed 2021 and a 3.25M seed in 2024, slow."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Crowded field: funded cloud and AI security startups and incumbents bundle similar agents",
+   "p": 0.4,
+   "evidence": "Maze raised a 25M Series A in 2025 and Gomboc a 13M seed for the same remediation backlog problem.",
+   "analogs": [
+    "corgea",
+    "zeropath"
+   ],
+   "mitigation": "Pick one wedge such as cloud misconfiguration triage and win it before expanding."
+  },
+  {
+   "risk": "Enterprises will not let agents change production, which caps autonomy and value",
+   "p": 0.3,
+   "evidence": "Industry voices say fully automated remediation in production is too risky without human review.",
+   "analogs": [
+    "tracecat",
+    "contraforce"
+   ],
+   "mitigation": "Ship approval flows and report verified impact first."
+  },
+  {
+   "risk": "Integration burden: a knowledge graph across many data sources is slow to deploy",
+   "p": 0.25,
+   "evidence": "The product needs data from cloud services, containers, databases and observability tools for each customer.",
+   "analogs": [
+    "metalware",
+    "contraforce"
+   ],
+   "mitigation": "Start with two integrations and a self serve onboarding."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Maze",
+   "what": "Agents that investigate cloud vulnerabilities and attack paths.",
+   "traction": "25M Series A in June 2025.",
+   "source_url": "https://pulse2.com/maze-31-million-raised-for-resolve-cloud-security-vulnerabilities"
+  },
+  {
+   "name": "Gomboc AI",
+   "what": "Policy driven automated cloud security remediation.",
+   "traction": "13M seed in 2025.",
+   "source_url": "https://pulse2.com/gomboc-ai-13-million-seed-raised-to-transform-cloud-security-remediations"
+  },
+  {
+   "name": "Tamnoon",
+   "what": "Managed cloud security remediation with humans in the loop.",
+   "traction": "12M Series A.",
+   "source_url": "https://www.securityweek.com/tamnoon-raises-12-million-for-cloud-security-remediation-service/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Building agents that triage, verify impact and fix issues on a live knowledge graph across code, CI and cloud is hard and needs reliability. A twelve person team can build integrations and a first agent in three months, but safe autonomous remediation is a long accuracy effort."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Wiz and Google",
+   "Palo Alto Networks",
+   "Snyk",
+   "CrowdStrike",
+   "funded startups"
+  ],
+  "timeline_months": 12,
+  "rationale": "Large cloud and security vendors have data, customers and engineering to add agentic triage and remediation within a year, and startups with more funding are already shipping similar products."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "A wave of 2025 seed and Series A rounds for AI cloud security remediation shows investors and buyers see a backlog problem.",
+    "source_url": "https://pulse2.com/gomboc-ai-13-million-seed-raised-to-transform-cloud-security-remediations"
+   },
+   {
+    "claim": "Cloud security vendors report rising demand for automated triage because of alert and ticket backlogs.",
+    "source_url": "https://www.securityweek.com/tamnoon-raises-12-million-for-cloud-security-remediation-service/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Convert design partners to paid annual contracts.",
+   "actions": [
+    "Choose one wedge and ship two deep integrations",
+    "Publish verified remediation results with three design partners"
+   ],
+   "proof": "Three paid contracts and 200K annual recurring revenue."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show repeatable enterprise sales and safe autonomy.",
+   "actions": [
+    "Add approval flows and audit logs for SOC 2 buyers",
+    "Hire a security sales lead and build a reference program"
+   ],
+   "proof": "1.5M annual recurring revenue across ten customers."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Strong theme and investor appetite in AI security.",
+   "evidence": "Remediation startups raised seeds and As of 13M to 25M in 2025.",
+   "source_url": "https://pulse2.com/maze-31-million-raised-for-resolve-cloud-security-vulnerabilities"
+  },
+  {
+   "point": "A larger team than most batch companies.",
+   "evidence": "Twelve people at the start of the batch per the input.",
+   "source_url": "https://www.tolmo.com"
+  },
+  {
+   "point": "Peers from YC found funding after the batch.",
+   "evidence": "Escape raised 3.9M seed in 2023 and an 18M Series A in 2026.",
+   "source_url": "https://www.ycombinator.com/companies/escape"
+  }
+ ],
+ "brand": {
+  "name": "Tolmo",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Tolmo\" --era 2022+ : kind invented_or_proper, 1 word, 2 syllables",
+  "strengths": [
+   "Short invented word that is easy to say and own"
+  ],
+  "weaknesses": [
+   "Says nothing about security"
+  ],
+  "rationale": "A short invented name is easy to remember and trademark, a common choice among enterprise security companies, so it is neutral. Brand matters little to security buyers compared with proof."
+ },
+ "narrative": {
+  "headline": "A larger team in a hot but crowded AI security category: likely to raise a seed, with the Series A decided by enterprise proof.",
+  "general_summary": "Tolmo is a twelve person Spring 2026 company selling agentic security that triages, verifies and fixes issues across code, CI and cloud using a live knowledge graph. Interest and funding in this theme are strong and a larger team is an advantage, so a seed is likely. The risks are a crowded field of funded startups and incumbents, enterprise caution about autonomous changes to production, and a heavy integration load. The most likely path is a seed in 2026 and a Series A that depends on paid enterprise contracts."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-04-06 using only the input file and market searches.",
+  "Search results about rounds dated after the batch start, including one in late April 2026, were ignored.",
+  "Seed means a round above 500K within about 12 months of the batch start."
+ ],
+ "sources": [
+  "https://pulse2.com/maze-31-million-raised-for-resolve-cloud-security-vulnerabilities",
+  "https://pulse2.com/gomboc-ai-13-million-seed-raised-to-transform-cloud-security-remediations",
+  "https://www.securityweek.com/tamnoon-raises-12-million-for-cloud-security-remediation-service/",
+  "https://www.ycombinator.com/companies/escape",
+  "https://www.tolmo.com"
+ ],
+ "mode": "summary",
+ "startup": {
+  "name": "Tolmo",
+  "one_liner": "Tolmo is the AI security platform that secures every layer of cloud…",
+  "description": "Tolmo is an agent-driven security platform that secures every layer — code, CI, cloud applications at the speed of AI changes.\n\nCodebases are growing faster than ever, at a rate humans can’t keep up with. Tolmo deploys fleets of AI security agents on a live production knowledge graph that connects data from cloud services, containers, databases, and third-party providers (Observability, Security, etc.).\n\nTolmo agents triage, verify impact, and remediate security issues autonomously, escalating to humans only when truly necessary.",
+  "as_of": "2026-04-06"
+ }
 }

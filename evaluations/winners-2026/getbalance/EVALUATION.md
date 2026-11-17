@@ -179,7 +179,7 @@ You know it worked when: ARR above 10M
 |---|---|---|---|---|
 | Seed | 66% | 78% | python3 -I scripts/base_rates.py --years 2018-2025 --tag Fintech --calibration-only: seed cond 73 percent (n=56); B2B 2022-2025 cond 59 percent (n=126) | Within 1.2x of the cohort. Lift for existing paying customers and a hot AI accounting investor appetite. |
 | Series A | 25% | 40% | python3 -I scripts/base_rates.py --years 2018-2025 --tag Fintech --calibration-only: series_a cond 24 percent (n=41); B2B 2022-2025 cond 26 percent (n=74) | Within 1.6x. Lift for revenue at start and a well funded category where peers raised large rounds. |
-| Series B | 30% | 30% | python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only: series_b cond 39 percent (n=18); recent B2B cohort cond 16 percent (n=19) |  |
+| Series B | 30% | 30% | python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only: series_b cond 39 percent (n=18); recent B2B cohort cond 16 percent (n=19) | Set below the cohort anchor because this company has a narrow buyer set, a long path to scale, and the cohort sample is small and right censored. |
 | Series C+ | 36% | 20% | python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only: series_c cond 57 percent (n=7), tiny sample; overall table cond 36 percent (n=55) | Discounted because only a few AI accounting companies could reach scale and the segment is SMB. |
 
 ## Assumptions and limits
