@@ -1,330 +1,439 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Robocurve",
+  "one_liner": "Evals for robots",
+  "description": "Robocurve builds open-source tools and independent benchmarks to measure how well robots can do real-world jobs. Instead of relying on unverified demo videos from frontier labs, we score their models on reproducible benchmarks that anyone can trust.\n\nToday there are no well-run, standardized robotics benchmarks. Labs evaluate in-house, and no independent group has stepped in to run continuous benchmarking as a service. The result is that no one actually knows how good anyone else is, or where the real frontier sits.\n\nGood benchmarks require operating and maintaining physical hardware and real-world setups. Simulation only goes so far, since models that look strong in sim can show large performance gaps once deployed in the real world. Building real-world benchmarks means coordinating job-domain experts, evals engineering, and hands-on robotics all at once.\n\nFrontier labs are targeting ge",
+  "as_of": "2026-07-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.07,
+  "basis": "Starting rate is about 1 percent with a 0.6 to 2 percent band. The company is already accepted, so this is a note only. Three founders with AI evals and robotics backgrounds, an open source framework already shipped and a pilot done lift the odds, but a thin commercial story holds them back.",
+  "why_it_fails": "YC would most plausibly say no because benchmarks are a public good with no clear buyer, and hardware heavy evaluation is slow and expensive. Reviewers would ask who pays, how a three person team keeps physical robots running, and why labs would trust an unproven independent party."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.62,
+   "anchors": {
+    "base_rate": 0.67,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --tag Robotics --calibration-only: seed cond 67 percent (n=9), only anecdotal",
+    "adjustment_reason": "Within 1.1x of an anecdotal cohort. Slight discount because the buyer is unclear."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small pre seed from AI and robotics angels, judged against the cohort round size tables and current market benchmarks."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical hard tech seed, judged against the cohort round size tables and current market benchmarks."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      10000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if a frontier lab sponsors benchmarks, judged against the cohort round size tables and current market benchmarks."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails if no lab or robot maker agrees to pay for evaluations and investors see a nonprofit style public good. Analogs such as openbenchmarks raised only 125K and confident ai raised a 2.2M seed only after large open source adoption, so adoption must come first."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: series_a cond 25 percent (n=16)",
+    "adjustment_reason": "At the anchor. Hard tech with physical hardware tends to raise slowly, balanced by high robotics investor interest."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin A funded on strategic interest, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      120000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Near the 2022+ YC median A, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if the benchmark becomes the standard, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series A fails if revenue stays a handful of pilot contracts and hardware costs grow with every new task. Evaluation companies have rarely become large businesses. k scale labs, an open source robotics company, was shut down after failing to raise its A from skeptical investors."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: series_b cond 50 percent (n=4), tiny sample; B2B recent cond 16 percent",
+    "adjustment_reason": "Discounted for a niche business model with a small buyer set."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Low B, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      60000000
+     ],
+     "post_money_usd": [
+      250000000,
+      600000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Market median B, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1200000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Standard setter outcome, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series B fails if labs build their own in house benchmarks and the independent service stays small. Revenue per customer is capped by how many labs and robot makers exist, and neutrality limits who can sponsor it."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.15,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --industry Industrials --calibration-only: series_c cond 0 percent (n=2), tiny sample; overall table cond 36 percent",
+    "adjustment_reason": "Discounted heavily for a niche market."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      35000000,
+      60000000
+     ],
+     "post_money_usd": [
+      250000000,
+      600000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Low C, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median C, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      3000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Leader outcome, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series C fails if general purpose robotics arrives later than 2028 and the market for evaluation stays small, or if frontier labs absorb evaluation. Few niche tooling companies in the data reached a C."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.27
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "A trusted measure business is likely to stay small or be acquired by a lab, a cloud or a robotics company. A shutdown or stall is the most common result because the buyer set is small and hardware costs are real."
+ },
+ "analogs": [
+  {
+   "slug": "openbenchmarks",
+   "relevance": "Independent benchmarks that are free and monetized through private analytics.",
+   "outcome_summary": "Active, 125K YC check only found."
+  },
+  {
+   "slug": "confident-ai",
+   "relevance": "Evals tool grown from an open source project.",
+   "outcome_summary": "2.2M seed in 2025 on open source adoption, active."
+  },
+  {
+   "slug": "k-scale-labs",
+   "relevance": "Open source robotics hardware company.",
+   "outcome_summary": "Shut down in 2025 after failing to raise a Series A."
+  },
+  {
+   "slug": "cerulion",
+   "relevance": "Open source robotics middleware.",
+   "outcome_summary": "Active, small pre seed, unverified claims."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "No customer willing to pay for independent benchmarks",
+   "p": 0.4,
+   "evidence": "Labs evaluate in house and benchmarks are normally free public goods.",
+   "analogs": [
+    "openbenchmarks"
+   ],
+   "mitigation": "Sell private evaluation retainers to labs and robot buyers."
+  },
+  {
+   "risk": "Hardware and operations costs overwhelm a three person team",
+   "p": 0.25,
+   "evidence": "Real world benchmarks require maintained robots and domain experts, as shown by the analog records and the current market.",
+   "analogs": [
+    "k-scale-labs"
+   ],
+   "mitigation": "Use partner labs and standardized low cost arms."
+  },
+  {
+   "risk": "Labs refuse neutrality or build their own standards",
+   "p": 0.2,
+   "evidence": "Frontier labs control access to models and have incentives to self report.",
+   "analogs": [
+    "confident-ai"
+   ],
+   "mitigation": "Open methodology and academic partners."
+  },
+  {
+   "risk": "Market timing too early for general robotics",
+   "p": 0.15,
+   "evidence": "The company itself says general purpose robots are targeted by 2028.",
+   "analogs": [
+    "cerulion"
+   ],
+   "mitigation": "Evaluate narrow job tasks that exist now."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Academic real world VLA benchmarks",
+   "what": "Papers proposing low cost reproducible benchmarks.",
+   "traction": "Several 2026 arXiv benchmarks, mostly free.",
+   "source_url": "https://arxiv.org/pdf/2605.20774"
+  },
+  {
+   "name": "Lab in house evaluation",
+   "what": "The status quo where labs score their own models.",
+   "traction": "Universal among frontier labs.",
+   "source_url": "https://arxiv.org/html/2602.10980"
+  },
+  {
+   "name": "Simulation benchmarks",
+   "what": "Sim based suites used instead of real hardware.",
+   "traction": "Widely used though reported to miss real world gaps.",
+   "source_url": "https://arxiv.org/html/2411.05821v2"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Reliable real world evaluation needs maintained robot hardware, scoring that is autonomous and reproducible, and domain tasks. A three person team can run pilots but scaling across robot types and keeping results trusted is hard and capital intensive."
+ },
+ "takeover_risk": {
+  "rating": 2,
+  "who": [
+   "Academic labs",
+   "Frontier labs",
+   "Large cloud AI evaluation vendors"
+  ],
+  "timeline_months": 18,
+  "rationale": "Academic groups publish free benchmarks and labs could fund their own, but running continuous independent evaluation as a service requires hardware and ops that few want. Copying is slower than for software."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Papers argue that standardized low cost real world benchmarks are missing and simulation falls short.",
+    "source_url": "https://arxiv.org/pdf/2605.20774"
+   },
+   {
+    "claim": "Authors say high scores on traditional benchmarks do not reliably indicate robust embodied intelligence.",
+    "source_url": "https://arxiv.org/html/2602.10980"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a trusted public leaderboard.",
+   "actions": [
+    "Publish three real robot results",
+    "Get an academic partner"
+   ],
+   "proof": "Citations and 100 stars on the framework"
+  },
+  {
+   "phase": "seed",
+   "goal": "Find the paying buyer.",
+   "actions": [
+    "Sell paid evaluations to two labs",
+    "Define pricing"
+   ],
+   "proof": "First 100K in contracts"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Build continuous benchmarking.",
+   "actions": [
+    "Add robot types",
+    "Hire evals engineers"
+   ],
+   "proof": "ARR above 1M with 10 customers"
+  },
+  {
+   "phase": "series_b",
+   "goal": "Be the reference measure.",
+   "actions": [
+    "Cover job domains",
+    "Seek standards body status"
+   ],
+   "proof": "Cited by major labs in model launches"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear gap with timely demand",
+   "evidence": "Academic work confirms real world evals are scarce and sim results transfer poorly.",
+   "source_url": "https://arxiv.org/pdf/2605.20774"
+  },
+  {
+   "point": "Open source framework and pilot already shipped",
+   "evidence": "The description reports a v1 of Inspect Robots and a pilot on a real robot.",
+   "source_url": "https://arxiv.org/html/2602.10980"
+  }
+ ],
+ "brand": {
+  "name": "Robocurve",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Robocurve\" --era 2022+ : kind invented_or_proper, 9 chars, 3 syllables",
+  "strengths": [
+   "Combines robot and performance curve",
+   "Descriptive and easy to spell"
+  ],
+  "weaknesses": [
+   "Sounds like a generic robotics name",
+   "Curve is vague"
+  ],
+  "rationale": "A compound that signals robots and measurement is clear but forgettable, much like other descriptive compounds in the YC data. Credibility as a neutral referee will rest on results, not the name."
+ },
+ "narrative": {
+  "headline": "A well timed independent robotics evals company with a plausible seed but a hard path to paying customers and later rounds.",
+  "general_summary": "Robocurve builds open source tools and independent benchmarks for robots. The need is real because academic papers confirm that real world evaluation is scarce. But buyers are few, hardware is costly, and benchmarks tend to be free. A seed above the YC deal is more likely than not given the robotics and eval interest, but later steps are hard and the anecdotal robotics cohort has no Series A yet.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Blind test: only the batch input file was used for the company.",
+  "A seed here means a round above the YC deal of about 500K within about 12 months of the batch start.",
+  "Robotics and Industrials cohorts have under 30 companies, so rates are anecdotes."
+ ],
+ "sources": [
+  "https://arxiv.org/pdf/2605.20774",
+  "https://arxiv.org/html/2602.10980",
+  "https://arxiv.org/html/2411.05821v2"
+ ]
 }

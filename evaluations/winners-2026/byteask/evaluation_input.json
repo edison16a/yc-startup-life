@@ -1,330 +1,448 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "ByteAsk",
+  "one_liner": "The AI coding agent for C and C++",
+  "description": "ByteAsk is an AI coding agent for C and C++ that builds, debugs and tests each change with the real compiler, debugger and test suite, runs from terminal and editors, and can be deployed fully on premises. Buyers are teams in trading, automotive, chips and operating systems. Two founders in San Francisco.",
+  "as_of": "2026-10-05"
+ },
+ "yc_acceptance": {
+  "p": 0.05,
+  "p_low": 0.02,
+  "p_high": 0.1,
+  "basis": "Starting prior is about 1 percent with a 0.6 to 2 percent band (references/yc_acceptance.md). Up: sharp niche with enterprise buyers who need on prem, technical founders, and a clear technical wedge in verification. Down: general coding agents are improving at C++ and enterprise sales is slow. Known to have been accepted, so completeness only.",
+  "why_it_fails": "YC would most plausibly decline because general coding agents from labs and IDE vendors keep improving and can run compilers and tests, so a reviewer would ask why a two person team stays ahead. Open source and on prem claims also raise the question of how it makes money without a long enterprise sales process."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.55,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --tag \"Developer Tools\": seed cond 55% (n=29), series_a cond 38% (n=16), series_b cond 0% (n=6). B2B 2022+: seed 59%, A 26%, B 16%.",
+    "adjustment_reason": "0.93 times the B2B anchor: a clear niche and on prem promise help, but the Fall 2026 AI coding field is saturated and the market for C++ is smaller."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000.0,
+      1500000.0
+     ],
+     "post_money_usd": [
+      6000000,
+      12000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small round. for this stage, scaled from the cohort round sizes and the current market medians."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000.0,
+      4000000
+     ],
+     "post_money_usd": [
+      12000000,
+      30000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical seed median 3.2M. for this stage, scaled from the cohort round sizes and the current market medians."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside with a pilot at a trading or chip firm."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails if investors see a feature of general agents rather than a company, and if the team cannot show a design partner paying for C++ work. Analogs such as Freebuff and Random Labs show coding agents without a niche stall, and Tensil shows hard infrastructure with narrow buyers can fail."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --tag \"Developer Tools\": seed cond 55% (n=29), series_a cond 38% (n=16), series_b cond 0% (n=6). B2B 2022+: seed 59%, A 26%, B 16%.",
+    "adjustment_reason": "Near the 0.26 anchor: niche customers with big budgets and on prem needs are valuable, but sales cycles are long."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      120000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Median 15M. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "Series A fails if enterprise pilots do not convert to contracts because of long security reviews and because general agents reach good enough quality on C++. Competition_won is the top shutdown factor in the cohort. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3, upper bound 16%); lower/known/upper seed 49/59/65, A 13/15/29.",
+    "adjustment_reason": "Slightly above the 0.16 anchor, within 2x."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      30000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Median 37M to 45M. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "Series B fails if the market of C and C++ teams that buy tools is too small or if the agent giants offer on prem versions. Developer tools in the cohort have no recorded Series B. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all cohorts): series_c cond 36% (n=55).",
+    "adjustment_reason": "Below the 36 percent anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      600000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1200000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Growth. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "A later round fails if the product stays a language specific tool while the large labs offer the same inside their platforms. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely result is a stall or acquisition by a toolchain or embedded vendor. The niche is real and paid but the market is limited and frontier labs keep closing the quality gap. Even when the company survives, an exit above the cohort median needs revenue growth and a buyer with strategic need, and most acquisitions in the researched set were small and below 100M dollars."
+ },
+ "analogs": [
+  {
+   "slug": "million",
+   "relevance": "Tools for agent verification, W24.",
+   "outcome_summary": "Series A."
+  },
+  {
+   "slug": "luminal",
+   "relevance": "Compiler for AI hardware, S25.",
+   "outcome_summary": "Seed."
+  },
+  {
+   "slug": "freebuff",
+   "relevance": "Free coding agent, F24.",
+   "outcome_summary": "Alive, no post YC round."
+  },
+  {
+   "slug": "tensil",
+   "relevance": "ML to custom hardware, S19.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "random-labs",
+   "relevance": "Autonomous coding agents, S24.",
+   "outcome_summary": "Alive, no funding beyond YC found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "General coding agents become good at C and C++",
+   "p": 0.45,
+   "evidence": "Frontier agents already call compilers and tests, and large vendors ship terminal and IDE agents.",
+   "analogs": [
+    "freebuff",
+    "random-labs"
+   ],
+   "mitigation": "Deep toolchain integrations and on prem."
+  },
+  {
+   "risk": "Long enterprise sales cycles for a two person team",
+   "p": 0.3,
+   "evidence": "Trading, automotive and chip buyers need security reviews and certifications. according to the market research and the analog records cited here",
+   "analogs": [
+    "million"
+   ],
+   "mitigation": "Start with developers then expand."
+  },
+  {
+   "risk": "Small paying market",
+   "p": 0.2,
+   "evidence": "Embedded buyers adopt AI cautiously and require compliance such as MISRA. according to the market research and the analog records cited here",
+   "analogs": [
+    "tensil"
+   ],
+   "mitigation": "Focus on high value firms."
+  },
+  {
+   "risk": "Open source forks cap pricing",
+   "p": 0.15,
+   "evidence": "Tags include open source and many free agents exist. according to the market research and the analog records cited here",
+   "analogs": [
+    "freebuff"
+   ],
+   "mitigation": "Charge for on prem support."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Claude Code, Codex, Cursor, Copilot",
+   "what": "General coding agents usable on C++.",
+   "traction": "Very large user bases.",
+   "source_url": "https://tembo.io/blog/top-coding-agent-tools"
+  },
+  {
+   "name": "Embedded specific assistants",
+   "what": "Automotive and embedded coding assistants with on prem tiers.",
+   "traction": "Early.",
+   "source_url": "https://www.avnet.com/americas/resources/article/ai-coding-assistants-in-the-embedded-domain"
+  },
+  {
+   "name": "Static analysis and manual debugging",
+   "what": "The status quo toolchain.",
+   "traction": "Default.",
+   "source_url": "https://www.ac6-formation.com/en/articles/llm-embedded-code-what-works"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Driving real toolchains, debuggers, sanitizers and test suites in sandboxes across build systems is hard to get robust, and large C++ codebases stress context handling. Two strong engineers can build a good agent but breadth of build environments is a long tail."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Anthropic",
+   "OpenAI",
+   "Cursor",
+   "GitHub"
+  ],
+  "timeline_months": 9,
+  "rationale": "General agents already use toolchains and can be pointed at C++, and vendors have enterprise on prem plans. The niche pays but is small for them, so they may not prioritise it."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Embedded and automotive coding needs MISRA compliance and toolchain context that generic assistants lack.",
+    "source_url": "https://www.avnet.com/americas/resources/article/ai-coding-assistants-in-the-embedded-domain"
+   },
+   {
+    "claim": "Automotive coding assistants are being built, showing demand for C and C++ specific tools.",
+    "source_url": "https://community.aws/content/2oR14bsKXyA1i7yU2sovM9qfFFI/the-future-of-automotive-software-introducing-the-automotive-coding-assistant"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show it solves real C++ tasks better than general agents.",
+   "actions": [
+    "Publish benchmark on real open source C++ repos.",
+    "Get three design partners."
+   ],
+   "proof": "Measured pass rate lead."
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert partners into paid pilots.",
+   "actions": [
+    "Offer on prem pilots.",
+    "Support major build systems."
+   ],
+   "proof": "Three paid pilots."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show repeatable enterprise sales.",
+   "actions": [
+    "Hire an enterprise seller.",
+    "Pass security reviews."
+   ],
+   "proof": "1.5M annual recurring."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Expand into regulated sectors.",
+   "actions": [
+    "Add safety standards.",
+    "Add chip toolchain support."
+   ],
+   "proof": "6M annual recurring."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Platform status.",
+   "actions": [
+    "Partner with toolchain vendors.",
+    "Expand languages."
+   ],
+   "proof": "Large accounts."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear niche with on prem as a differentiator",
+   "evidence": "Buyers in trading, cars and chips often need on prem.",
+   "source_url": "https://byteask.ai/"
+  },
+  {
+   "point": "Toolchain grounded verification",
+   "evidence": "Builds, debugs and tests with the real compiler and debugger.",
+   "source_url": "https://byteask.ai/"
+  }
+ ],
+ "brand": {
+  "name": "ByteAsk",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"ByteAsk\" --era 2022+ : compound words, 7 characters; alive 95.3 percent, exit 4.9 percent (n=513).",
+  "strengths": [
+   "Byte signals low level code",
+   "Compound is clear"
+  ],
+  "weaknesses": [
+   "Ask suggests a chatbot, not an agent that acts",
+   "Generic tech sound"
+  ],
+  "rationale": "The name signals low level programming and asking an assistant. Compound names like Dropbox work, but this one frames the product as a chat Q and A rather than an agent that builds and tests.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A sharp niche that a seed investor can understand, set against frontier labs that keep improving at the same job.",
+  "general_summary": "ByteAsk has a specific buyer (C and C++ teams that need on prem tools) and a specific technical claim (verification with the real toolchain), which is better than a generic coding agent pitch. The cost is a small market and giant competitors. I keep the seed just below the 59 percent B2B anchor because of the very crowded Fall 2026 AI coding field, and the later steps near anchors. The most likely stop is seed or an acquisition by a toolchain vendor. These numbers are anchored on the 2022 to 2025 cohorts, whose later rounds are not yet fully observed, so the true rates are probably somewhat higher than the known only figures and the uncertainty is wide."
+ },
+ "assumptions": [
+  "No customers or revenue stated.",
+  "Cohort funding for 2022+ is incomplete and right censored.",
+  "Seed means a round above 500K within 12 months."
+ ],
+ "sources": [
+  "https://tembo.io/blog/top-coding-agent-tools",
+  "https://www.avnet.com/americas/resources/article/ai-coding-assistants-in-the-embedded-domain",
+  "https://community.aws/content/2oR14bsKXyA1i7yU2sovM9qfFFI/the-future-of-automotive-software-introducing-the-automotive-coding-assistant",
+  "https://www.ac6-formation.com/en/articles/llm-embedded-code-what-works"
+ ]
 }

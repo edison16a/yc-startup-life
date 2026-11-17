@@ -1,330 +1,447 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "herdr",
+  "one_liner": "building the open agent runtime",
+  "description": "Developers don't run one coding agent anymore. They run fleets of them \u2014 for hours, sometimes days \u2014 across laptops, servers, and sandboxes. Keeping track of that work is the new bottleneck: which agent is blocked, which one finished, which terminal is it in, and why did everything die when the laptop closed.\n\nHerdr is the open-source home for that work. A background server owns the agents' terminal sessions on each machine, so the work survives disconnects, closed lids, and dropped SSH. Herdr detects each agent and turns the chaos into an attention queue \u2014 working, blocked, done, across every project \u2014 so you look only when an agent needs you. Every client is just a view: the bundled terminal UI, SSH from another machine, your phone. Close one, open another; the work never stops.\n\nSoftware can drive it too: a CLI, a socket API, and a plugin marketplace that passed 500 community plugins ",
+  "as_of": "2026-10-05"
+ },
+ "yc_acceptance": {
+  "p": 0.05,
+  "p_low": 0.02,
+  "p_high": 0.1,
+  "basis": "Starting rate is about 1 percent with a 0.6 to 2 percent band. The company is already accepted, so this is a note only. A solo founder lowers odds slightly, but 25k GitHub stars, 340k downloads and a large plugin ecosystem are far stronger traction than most applicants show, which lifts the odds several times.",
+  "why_it_fails": "YC would most plausibly say no because the founder is solo and the product is free open source with no revenue. Reviewers would worry that terminal tooling for coding agents is a feature that Anthropic, OpenAI or editors will ship, and that an Apache licensed runtime has no clear way to make money."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.8,
+   "anchors": {
+    "base_rate": 0.67,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --tag \"Developer Tools\" --calibration-only: seed cond 67 percent (n=42), known 67 percent",
+    "adjustment_reason": "Within 1.2x. Lift because 25k stars and 340k downloads give investors a visible signal, in a field where open source developer tools raise on adoption."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Angel and pre seed rounds for a solo founder."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000,
+      5000000
+     ],
+     "post_money_usd": [
+      15000000,
+      40000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical seed for open source developer tools with strong star growth."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      5000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      100000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside seed led by a top dev tools fund, similar to Confident AI style adoption rounds scaled up for star counts."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Seed fails if the solo founder cannot show a path to revenue and investors treat the project as a free utility. Terminal tools struggle to charge. cmux raised no round beyond YC despite strong adoption and coasts shows a free tool with a modest launch. Investors may also pass on a one person team for a runtime that must be trusted."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.39,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --tag \"Developer Tools\" --calibration-only: series_a cond 39 percent (n=28)",
+    "adjustment_reason": "Within 0.85x. Open source dev tools reach A less than half the time, and the monetization path for terminal tools is unclear."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      8000000,
+      12000000
+     ],
+     "post_money_usd": [
+      40000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat A funded on adoption alone, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      70000000,
+      150000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Median band for 2022+ YC A rounds of about 14M."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      350000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside if hosted or enterprise product takes off, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series A fails if usage never turns into a paid hosted product or enterprise plan. Free terminal tools have rarely monetized, and fig, a terminal tool with wide adoption, only reached a seed before an acquisition. Platform vendors may ship agent session management inside their own clients, removing the need."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.18,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --tag \"Developer Tools\" --calibration-only: series_b cond 18 percent (n=11)",
+    "adjustment_reason": "Within 1.4x, lifted for an exceptional open source following."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      25000000,
+      40000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Lower B, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Market series B deal near 40M, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Breakout open source infrastructure, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series B fails if the project remains a developer convenience and not a revenue engine. Open source companies need a paid tier with strong conversion, and rivals can fork under the Apache license. continue reached only a 3M seed before being acquired by Cursor."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2025 --tag \"Developer Tools\" --calibration-only: series_c cond 50 percent (n=2); tiny sample, overall table cond 36 percent",
+    "adjustment_reason": "Discounted for a tiny sample and a young company."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Low C, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      2000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Market series C near 77M, judged against the cohort round size tables and current market benchmarks."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      5000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Category leader, judged against the cohort round size tables and current market benchmarks."
+    }
+   ],
+   "why_it_fails": "Series C fails if agents move into hosted cloud tools where a local runtime is irrelevant, or large vendors give away session management. Few terminal and developer tools in the data reached later rounds, and those that did had enterprise revenue, which an Apache licensed runtime must build from scratch."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.33
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most paths end in a stall after launch hype fades or a sale of the team to an AI coding company, as continue and fig did. Large exits need a paid business on top of an open runtime, which is rare."
+ },
+ "analogs": [
+  {
+   "slug": "cmux",
+   "relevance": "Open source terminal for coding agents with notifications and socket API, the closest comp.",
+   "outcome_summary": "Active, strong developer traction, no funding beyond YC found."
+  },
+  {
+   "slug": "stably-ai-orca",
+   "relevance": "Open source terminal agent orchestrator.",
+   "outcome_summary": "Active, limited verified funding."
+  },
+  {
+   "slug": "fig",
+   "relevance": "Developer terminal tool with free product led growth.",
+   "outcome_summary": "2.2M seed in 2020, acquired by AWS in 2023 and sunset."
+  },
+  {
+   "slug": "continue",
+   "relevance": "Open source coding agent with tens of thousands of stars.",
+   "outcome_summary": "3M seed in 2025, acquired by Cursor in 2026."
+  },
+  {
+   "slug": "coasts",
+   "relevance": "Free open source tool for agent worktrees.",
+   "outcome_summary": "Listed inactive, modest launch."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Platform vendors build session management into their agent clients",
+   "p": 0.35,
+   "evidence": "Anthropic, OpenAI and editors already ship cloud and background agents and could add attention queues.",
+   "analogs": [
+    "continue",
+    "fig"
+   ],
+   "mitigation": "Stay agent neutral and own the cross machine runtime and plugin ecosystem."
+  },
+  {
+   "risk": "No monetization for a free Apache licensed runtime",
+   "p": 0.35,
+   "evidence": "cmux has strong adoption but no round beyond YC, and terminal tools rarely charge.",
+   "analogs": [
+    "cmux",
+    "coasts"
+   ],
+   "mitigation": "Hosted sync, team features and enterprise control plane."
+  },
+  {
+   "risk": "Solo founder cannot scale support and security trust",
+   "p": 0.2,
+   "evidence": "The team is one person with a background project in Turkey, and a runtime that owns sessions must be reliable.",
+   "analogs": [
+    "stably-ai-orca"
+   ],
+   "mitigation": "Hire early from the open source community."
+  },
+  {
+   "risk": "Hype fades as agents shift to cloud sandboxes",
+   "p": 0.2,
+   "evidence": "Many coding agents are moving to hosted environments, reducing local terminal usage.",
+   "analogs": [
+    "coasts"
+   ],
+   "mitigation": "Support remote and sandbox machines as first class."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "cmux",
+   "what": "Native macOS terminal for agents with notification rings and a socket API.",
+   "traction": "Open source and active.",
+   "source_url": "https://alternativeto.net/software/agent-manager/"
+  },
+  {
+   "name": "tmux",
+   "what": "The status quo for persistent terminal sessions.",
+   "traction": "Ubiquitous but agent blind.",
+   "source_url": "https://agentsroom.dev/alternatives/tmux"
+  },
+  {
+   "name": "AgentsRoom and similar companion apps",
+   "what": "Visual status and notifications for agents.",
+   "traction": "Vendor marketing, unverified.",
+   "source_url": "https://agentsroom.dev/alternatives/tmux"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A persistent background server that owns terminal sessions, detects agent states across many tools and syncs across machines is a manageable engineering task for one strong developer. The hard parts are reliable agent detection as tools change and security of remote access, which grow with scale."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Anthropic",
+   "OpenAI",
+   "Cursor",
+   "Terminal vendors"
+  ],
+  "timeline_months": 6,
+  "rationale": "Agent vendors could add attention queues and persistence to their own clients in months. The open license and plugin ecosystem make it a community standard if neutral, but a platform feature could remove demand."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Several tools already compete to replace tmux for agent fleets, showing developer demand for agent aware session management.",
+    "source_url": "https://alternativeto.net/software/agent-manager/"
+   },
+   {
+    "claim": "tmux has no concept of agent state, which is the stated gap.",
+    "source_url": "https://agentsroom.dev/alternatives/tmux"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Keep the open source lead.",
+   "actions": [
+    "Ship remote and mobile clients",
+    "Grow plugin contributors"
+   ],
+   "proof": "50k stars and weekly active users"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show a paid path.",
+   "actions": [
+    "Launch hosted sync and team tier",
+    "Sign 20 paying teams"
+   ],
+   "proof": "Paid MRR above 20K"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Turn adoption into revenue.",
+   "actions": [
+    "Build enterprise control plane",
+    "Add audit and policy"
+   ],
+   "proof": "ARR above 1.5M"
+  },
+  {
+   "phase": "series_b",
+   "goal": "Become the standard runtime.",
+   "actions": [
+    "Integrate with all major agents",
+    "Sell to platform teams"
+   ],
+   "proof": "ARR above 10M"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Strong open source adoption claims",
+   "evidence": "25k stars and 340k downloads reported four months after launch, with 500 community plugins.",
+   "source_url": "https://alternativeto.net/software/agent-manager/"
+  },
+  {
+   "point": "Fits a real workflow pain",
+   "evidence": "Fleets of coding agents need persistence and attention routing, which tmux does not provide.",
+   "source_url": "https://agentsroom.dev/alternatives/tmux"
+  }
+ ],
+ "brand": {
+  "name": "herdr",
+  "rating": 3,
+  "effect_on_success": "helps",
+  "name_check": "python3 -I scripts/name_features.py --score \"herdr\" --era 2022+ : kind invented_or_proper, 5 chars, 1 syllable",
+  "strengths": [
+   "Short and memorable",
+   "Herding metaphor fits fleets of agents"
+  ],
+  "weaknesses": [
+   "Missing vowel is awkward to pronounce",
+   "Lowercase style may be hard to search"
+  ],
+  "rationale": "A short coined word with a clear herding image matches the product of managing fleets, similar to how cmux and tmux use short names developers type. It is a modest growth driver for a developer audience."
+ },
+ "narrative": {
+  "headline": "An open source agent runtime with unusual traction and a probable seed, but monetization and platform risk limit later rounds.",
+  "general_summary": "Herdr is a free Apache licensed runtime that keeps coding agent terminals alive and routes attention across machines. Its reported traction is much higher than typical YC applicants and a seed above the YC deal looks likely. The main risks are solo founder, no revenue, and agent vendors shipping similar features. Open source developer tool cohorts reach Series A at about 39 percent of seed companies, and the comps cmux, continue and fig show adoption without large rounds.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Blind test: only the batch input file was used for the company.",
+  "A seed here means a round above the YC deal of about 500K within about 12 months of the batch start.",
+  "A market search result named this company directly; it was ignored (LEAK-WEB).",
+  "Traction figures come from the company description and are unverified."
+ ],
+ "sources": [
+  "https://alternativeto.net/software/agent-manager/",
+  "https://agentsroom.dev/alternatives/tmux"
+ ]
 }

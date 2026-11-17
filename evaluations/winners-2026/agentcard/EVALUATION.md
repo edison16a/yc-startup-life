@@ -79,7 +79,7 @@ Agentcard offers cards so assistant products can buy things online. Timing is go
 | $60M–$150M | $700M–$1.8B | 45% | 0.2% | Very unlikely | <0.1% | Very unlikely | Typical C or later; 2022+ YC median C is 45M, D plus 97.5M. Needs licensing and scale. |
 | $150M–$400M | $1.8B–$5B | 15% | <0.1% | Very unlikely | <0.1% | Very unlikely | Breakout later round at multi billion value. Needs category dominance. |
 
-**Why it fails here.** Series C or later needs licensing, risk systems and large volume. It fails if the market consolidates into the networks and large processors, as with most card startups, and only top companies such as Slash and Jeeves reached these rounds after finding large customer segments.
+**Why it fails here.** Series C or later needs licensing, risk systems and large volume. It fails if the market consolidates into the networks and large processors, as with most card startups, and only top companies such as Slash and Jeeves reached these rounds after finding large customer segments and licences.
 
 ### Final outcomes
 

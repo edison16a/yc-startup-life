@@ -1,330 +1,402 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Polymath",
+  "one_liner": "Simulation environments for training & evaluating autonomous agents",
+  "description": "Polymath is a six person San Francisco data lab that builds reinforcement learning environments for training and evaluating long horizon software agents, including environments aimed at recursive self improvement. Buyers are AI labs and agent developers who pay per environment or per dataset. Revenue is not stated in the description.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.01,
+  "p_high": 0.06,
+  "basis": "In this test the company is assumed accepted to YC for Winter 2026. Prior is about 1 percent. Six people in a category with strong lab demand sits above average, but many nearly identical RL environment companies applied, so the estimate is about 3 percent.",
+  "why_it_fails": "YC would most plausibly pass because RL environment startups are numerous, revenue is concentrated in a few lab buyers, and the pitch gives no named customer or contract. Partners would worry that a handful of data vendors already hold most of the budget."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.66,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed cond 61% (n=109), series_a cond 23% (n=66), series_b cond 7% (n=15)",
+    "adjustment_reason": "Slightly above the 61 percent AI anchor (1.1x): AI lab data and environments are a hot category in which several YC peers raised quickly, and six people is above the team norm."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A small round from AI angels, near the AI cohort p25 of 2M."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      7000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical seed near the AI cohort median of 3.2M with hot sector premium."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      7000000,
+      15000000
+     ],
+     "post_money_usd": [
+      50000000,
+      120000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong seed if a frontier lab becomes a paying customer."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed stalls if no frontier lab signs a paid contract, because revenue is concentrated in a few buyers and investors discount unproven vendors. Cartpole, Vibrant Labs and Aviro in the YC data all sell similar environments and none has a recorded round beyond a small seed, so investors may see too many copycats."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.23,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed cond 61% (n=109), series_a cond 23% (n=66), series_b cond 7% (n=15)",
+    "adjustment_reason": "At 1.2x the 23 percent AI conditional; strong lab demand is balanced by concentration of buyers and a crowded field."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      40000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "A below median A with one lab customer."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      200000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical A above the 2022+ AI median of 17M."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A if multiple labs sign recurring contracts."
+    }
+   ],
+   "why_it_fails": "Series A requires repeat contracts, but lab buyers insource environments or switch vendors, and the market's revenue is reported to be concentrated in four large data vendors. Datacurve reached a Series A, but most similar peers did not, so many will plateau as project shops."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.32,
+   "anchors": {
+    "base_rate": 0.07,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed cond 61% (n=109), series_a cond 23% (n=66), series_b cond 7% (n=15)",
+    "adjustment_reason": "Above the narrow 7 percent AI figure (censored) and below the broad 44 percent; reaching an A in this field implies proven lab revenue."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      25000000,
+      40000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat B at around the 2022+ p25."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical B above the 37M broad median."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      200000000
+     ],
+     "post_money_usd": [
+      700000000,
+      2000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B if it becomes a platform for agent training."
+    }
+   ],
+   "why_it_fails": "A Series B needs diversified revenue beyond a few labs and gross margins that survive expert labor costs. Scale AI, Surge and Mercor hold the data budgets, and environment work risks becoming a services business that investors value lowly."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.32,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag AI --calibration-only: seed cond 61% (n=109), series_a cond 23% (n=66), series_b cond 7% (n=15)",
+    "adjustment_reason": "Below the 36 percent broad conditional because buyer concentration limits the ceiling."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Series C near the 2022+ median of 45M and above."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      200000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      3000000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round for a leading environment vendor."
+    },
+    {
+     "raise_usd": [
+      200000000,
+      500000000
+     ],
+     "post_money_usd": [
+      3000000000,
+      8000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it becomes core training infrastructure."
+    }
+   ],
+   "why_it_fails": "At this stage a handful of lab buyers and the in house efforts of frontier labs cap growth, and larger data vendors can acquire or bundle environments, so the most likely end is an acquisition rather than a Series C."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.18
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.07
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The company fails to reach a meaningful exit if frontier labs insource environments, if demand shifts to a different training method, or if three or four large data vendors take most of the budget; similar RL environment companies have no recorded round beyond seed in the YC data."
+ },
+ "analogs": [
+  {
+   "slug": "cartpole",
+   "relevance": "Builds reinforcement learning environments, very close.",
+   "outcome_summary": "Active, no recorded round yet."
+  },
+  {
+   "slug": "datacurve",
+   "relevance": "Frontier coding data for training and evaluating models.",
+   "outcome_summary": "Active, reached a Series A."
+  },
+  {
+   "slug": "vibrant-labs",
+   "relevance": "Autonomously scaling RL environments.",
+   "outcome_summary": "Active, no recorded round."
+  },
+  {
+   "slug": "klavis-ai",
+   "relevance": "RL environments and training data for labs.",
+   "outcome_summary": "Active, reached a seed."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Buyer concentration: few labs hold the budget",
+   "p": 0.45,
+   "evidence": "Reports say most training data revenue sits with four large vendors and about a dozen buyers.",
+   "analogs": [
+    "datacurve",
+    "cartpole"
+   ],
+   "mitigation": "Sign multi-lab contracts and sell tooling as well as environments."
+  },
+  {
+   "risk": "Frontier labs build environments in house",
+   "p": 0.35,
+   "evidence": "Labs have the engineers and the incentive to own environments that define their models.",
+   "analogs": [
+    "vibrant-labs"
+   ],
+   "mitigation": "Specialize in long horizon work labs cannot staff."
+  },
+  {
+   "risk": "Crowded field of near identical startups competes on price",
+   "p": 0.4,
+   "evidence": "Many YC companies in 2025 and 2026 sell RL environments with the same pitch.",
+   "analogs": [
+    "klavis-ai",
+    "cartpole",
+    "vibrant-labs"
+   ],
+   "mitigation": "Focus on evaluation quality and verified difficulty."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Scale AI, Surge AI, Mercor",
+   "what": "Large data vendors adding RL environments",
+   "traction": "Most revenue in the category",
+   "source_url": "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/"
+  },
+  {
+   "name": "Prime Intellect Environments Hub",
+   "what": "Open hub of environments",
+   "traction": "Large hub reported, unverified revenue",
+   "source_url": "https://dev.to/lukeo/the-rl-environment-platform-landscape-in-2026-3j5g"
+  },
+  {
+   "name": "Mechanize",
+   "what": "High end environments for labs",
+   "traction": "Reported lab clients, unconfirmed",
+   "source_url": "https://fourweekmba.com/the-competitive-landscape-players-in-the-rl-environment-economy/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Environments require realistic software tasks and reliable graders, which a six person team can build, but long horizon difficulty and avoiding reward hacking are hard. Moat comes from quality, not a technical barrier."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Scale AI",
+   "Mercor",
+   "Surge AI",
+   "frontier labs"
+  ],
+  "timeline_months": 6,
+  "rationale": "Large data vendors already sell environments and can copy offerings in months. Labs can also build their own, so the product is easy to absorb."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Silicon Valley investors and labs are spending on environments to train agents.",
+    "source_url": "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/"
+   },
+   {
+    "claim": "The category has dozens of vendors, with revenue concentrated in a few.",
+    "source_url": "https://fourweekmba.com/the-competitive-landscape-players-in-the-rl-environment-economy/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "A paying lab customer",
+   "actions": [
+    "Pitch five labs with a working environment",
+    "Sign a paid pilot"
+   ],
+   "proof": "One paid pilot above 100K"
+  },
+  {
+   "phase": "seed",
+   "goal": "Recurring contracts",
+   "actions": [
+    "Deliver an environment suite",
+    "Hire two more researchers"
+   ],
+   "proof": "Two labs on recurring contracts"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Strong buyer demand and budgets",
+   "evidence": "Labs are actively buying environments to improve agents.",
+   "source_url": "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/"
+  },
+  {
+   "point": "Team of six is above the typical YC size",
+   "evidence": "Suggests more build capacity than the usual two founders.",
+   "source_url": "https://dev.to/lukeo/the-rl-environment-platform-landscape-in-2026-3j5g"
+  }
+ ],
+ "brand": {
+  "name": "Polymath",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Polymath\" --era 2022+ : 8 characters, 3 syllables, real word",
+  "strengths": "Real word, memorable, suggests breadth",
+  "weaknesses": "Generic, many companies share the name, hard to own search",
+  "rationale": "A real word that suggests breadth is easy to remember, but it is generic and shared, which weakens search. Lab buyers choose on results, so the name has little effect.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Hot category with real demand but concentrated buyers and many copycats, so a seed is likely and later rounds are uncertain.",
+  "general_summary": "Polymath sells reinforcement learning environments to AI labs, a category with real spending and a surge of YC entrants. Demand is real, but revenue is concentrated in a few large vendors and a dozen buyers, and frontier labs can build their own. A seed above the YC check is somewhat more likely than the cohort average because the sector is hot and the team is six people. Later rounds depend on recurring multi lab contracts, and the main upside path is a pivot from custom environments to a reusable platform or evaluation product. Reaching a round years later is common for companies with paying customers."
+ },
+ "assumptions": [
+  "Test is blind: only the YC input file was used for company facts.",
+  "Seed means a round above $500K within about 12 months.",
+  "Market figures from secondary blogs are unverified."
+ ],
+ "sources": [
+  "https://techcrunch.com/2025/09/21/silicon-valley-bets-big-on-environments-to-train-ai-agents/",
+  "https://fourweekmba.com/the-competitive-landscape-players-in-the-rl-environment-economy/",
+  "https://dev.to/lukeo/the-rl-environment-platform-landscape-in-2026-3j5g"
+ ]
 }

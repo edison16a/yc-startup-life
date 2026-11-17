@@ -1,330 +1,418 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Clara",
+  "one_liner": "AI primary care doctor",
+  "description": "Clara is an AI primary care and longevity practice from the team that founded and grew Circle Medical to 100M dollars in revenue. An AI with clinical knowledge sees the patient's medical data and acts: symptom help, refills, labs and goals, with human providers reviewing recommendations. Nine people in San Francisco.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.1,
+  "p_low": 0.05,
+  "p_high": 0.15,
+  "basis": "Note only: already accepted to YC Spring 2026. Prior of about 1 percent for a random applicant is not informative, so the work is in the ladder.",
+  "why_it_fails": "Not applicable because the company was accepted. A reviewer would most plausibly worry about regulation and liability for AI medical advice, and a crowded field of funded AI doctors. Because acceptance is already a fact in this test, the estimate is a placeholder and the forecast value sits in the funding ladder that follows."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.8,
+   "anchors": {
+    "base_rate": 0.65,
+    "source": "python3 -I scripts/base_rates.py --years 2020-2024 --industry Healthcare --calibration-only: seed cond 65% (n=31), series_a cond 40% (n=20), series_b cond 38% (n=8), series_c cond 33% (n=3); broad 2022-2024 all: seed 59%, A 28%",
+    "adjustment_reason": "1.23x of the Healthcare anchor. Founders who scaled Circle Medical to 100M revenue and a nine person team make a seed very likely in a hot AI health market."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Small round, unlikely given the founders. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      60000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core: AI health seeds with a repeat founder."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Upside given founder pedigree and Doctronic and Counsel raises of 11M and 20M."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Seed stalls only if regulators or malpractice insurers block autonomous AI care, or if investors see Doctronic and Counsel Health as too far ahead. Even so, the founders' track record makes a round likely; Prana, a similar W26 company, shows peers still waiting. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.42,
+   "anchors": {
+    "base_rate": 0.4,
+    "source": "python3 -I scripts/base_rates.py --years 2020-2024 --industry Healthcare --calibration-only: seed cond 65% (n=31), series_a cond 40% (n=20), series_b cond 38% (n=8), series_c cond 33% (n=3); broad 2022-2024 all: seed 59%, A 28%",
+    "adjustment_reason": "1.05x of the Healthcare anchor. Peer rounds (Doctronic 20M Series A in 2025, Counsel 25M) show Series A capital exists for this category."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      8000000,
+      15000000
+     ],
+     "post_money_usd": [
+      40000000,
+      90000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin round on small patient base. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core: matches Doctronic and Counsel Series A sizes."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      220000000,
+      500000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside if growth and clinical outcomes show clear gains."
+    }
+   ],
+   "why_it_fails": "Series A fails if patient growth stays slow because consumer care needs paid acquisition, or if clinical safety events or regulation limit scope. Unit economics with human review are tough, and Legion Health and Prana show that AI care companies take years to raise. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.38,
+    "source": "python3 -I scripts/base_rates.py --years 2020-2024 --industry Healthcare --calibration-only: seed cond 65% (n=31), series_a cond 40% (n=20), series_b cond 38% (n=8), series_c cond 33% (n=3); broad 2022-2024 all: seed 59%, A 28%",
+    "adjustment_reason": "At the Healthcare anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      120000000,
+      300000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest round. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside at national scale. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    }
+   ],
+   "why_it_fails": "Series B fails when the cost to acquire and serve patients stays high, when payers do not reimburse AI first care, or when a better funded rival wins consumers, as in Doctronic's lead in Utah's AI prescription pilot. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2020-2024 --industry Healthcare --calibration-only: seed cond 65% (n=31), series_a cond 40% (n=20), series_b cond 38% (n=8), series_c cond 33% (n=3); broad 2022-2024 all: seed 59%, A 28%",
+    "adjustment_reason": "At the all stage anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      400000000,
+      1000000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      250000000,
+      500000000
+     ],
+     "post_money_usd": [
+      2500000000,
+      6000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it becomes a national care provider."
+    }
+   ],
+   "why_it_fails": "Fails when growth requires payer contracts and licensed clinician staffing that scale poorly, leaving a mid size practice that cannot justify a late stage round, as with Pair Team's slower path. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.4
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.25
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.1
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "A failure would come from regulation or liability limits on AI care, or from consumer acquisition costs that outrun revenue. A small exit is plausible by sale to a larger health system or telehealth group. A meaningful exit needs a durable lead in a category where rivals can copy features and raise more money, and most companies in the reference cohort stay small, are acquired cheaply or stop operating before that point."
+ },
+ "analogs": [
+  {
+   "slug": "circle-medical",
+   "relevance": "Prior company of the founders, modern primary care.",
+   "outcome_summary": "Grew to 100M revenue per the description, raised only small rounds, majority invested by WELL Health."
+  },
+  {
+   "slug": "prana-health",
+   "relevance": "AI primary care doctor, Winter 2026.",
+   "outcome_summary": "Beta, no confirmed round, competes with Doctronic."
+  },
+  {
+   "slug": "legion-health",
+   "relevance": "AI enabled psychiatry practice.",
+   "outcome_summary": "6.3M seed after pivoting to its own practice."
+  },
+  {
+   "slug": "pair-team",
+   "relevance": "Care provider with founders from Circle Medical.",
+   "outcome_summary": "Reached Series A and grew to about 500 people."
+  },
+  {
+   "slug": "mederva",
+   "relevance": "Longevity care for the 99 percent.",
+   "outcome_summary": "Active but no funding beyond YC found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Regulation and liability for AI medical advice",
+   "p": 0.3,
+   "evidence": "Utah created a sandbox for AI renewals only in 2026 and elsewhere licensing rules limit autonomous AI care.",
+   "analogs": [
+    "legion-health",
+    "prana-health"
+   ],
+   "mitigation": "Keep human review and operate in states that allow pilots."
+  },
+  {
+   "risk": "Better funded AI doctor rivals",
+   "p": 0.35,
+   "evidence": "Doctronic raised 20M in 2025 and a 40M Series B in March 2026; Counsel Health raised 25M.",
+   "analogs": [
+    "prana-health"
+   ],
+   "mitigation": "Use founder experience to build trusted clinical operations and longevity care."
+  },
+  {
+   "risk": "Consumer acquisition cost and thin margins",
+   "p": 0.3,
+   "evidence": "Consumer primary care needs paid acquisition and licensed clinicians, which strain unit economics.",
+   "analogs": [
+    "circle-medical",
+    "pair-team"
+   ],
+   "mitigation": "Sell through employers and payers and automate clinician review."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Doctronic",
+   "what": "AI doctor with free consults and the Utah AI renewal pilot.",
+   "traction": "40M Series B in March 2026, 20M Series A in 2025.",
+   "source_url": "https://www.tamradar.com/funding-rounds/doctronic-series-b-40m"
+  },
+  {
+   "name": "Counsel Health",
+   "what": "Physician supervised AI care.",
+   "traction": "25M Series A led by a16z and GV.",
+   "source_url": "https://www.fiercehealthcare.com/ai-and-machine-learning/counsel-health-raises-25m-series-rolls-out-consumer-chatbot"
+  },
+  {
+   "name": "ChatGPT and Claude health features",
+   "what": "General chatbots used for health questions.",
+   "traction": "Massive user base.",
+   "source_url": "https://www.axios.com/local/salt-lake-city/2026/01/07/utah-ai-drug-prescriptions-doctronic"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "The AI layer is buildable on foundation models, but safety, integration with medical records, labs and prescribing, and clinical workflows are hard and regulated. A small team can launch quickly but not prove safety fast."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Doctronic",
+   "Counsel Health",
+   "OpenAI and Anthropic health products",
+   "Large telehealth firms"
+  ],
+  "timeline_months": 12,
+  "rationale": "Funded peers and model labs can add similar features within a year, but care delivery and licensing slow copies; the founders' clinical operations experience is the moat."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Utah began allowing AI to renew prescriptions in January 2026, showing regulatory and market movement.",
+    "source_url": "https://www.axios.com/local/salt-lake-city/2026/01/07/utah-ai-drug-prescriptions-doctronic"
+   },
+   {
+    "claim": "Doctronic and Counsel Health raised large rounds for AI first care.",
+    "source_url": "https://www.tamradar.com/funding-rounds/doctronic-series-b-40m"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show safe real patient use.",
+   "actions": [
+    "Serve first patients with clinician review",
+    "Publish safety and agreement rates"
+   ],
+   "proof": "Hundreds of active patients with low escalation errors."
+  },
+  {
+   "phase": "seed",
+   "goal": "Raise above 500K quickly.",
+   "actions": [
+    "Show repeat visits and retention",
+    "Add longevity membership pricing"
+   ],
+   "proof": "Paid members above 500."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Scale with clinical economics.",
+   "actions": [
+    "Sign employer or payer contracts",
+    "Expand to more states"
+   ],
+   "proof": "Positive contribution margin per patient."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Founders built Circle Medical to 100M dollars revenue.",
+   "evidence": "Stated in the description.",
+   "source_url": "http://askclara.com"
+  },
+  {
+   "point": "AI care has regulatory momentum and investor capital.",
+   "evidence": "Utah pilot and peer rounds.",
+   "source_url": "https://www.tamradar.com/funding-rounds/doctronic-series-b-40m"
+  }
+ ],
+ "brand": {
+  "name": "Clara",
+  "rating": 3,
+  "effect_on_success": "helps",
+  "name_check": "python3 -I scripts/name_features.py --score \"Clara\" --era 2022+: 5 characters, 2 syllables, real word",
+  "strengths": [
+   "Warm, human, easy to spell and say"
+  ],
+  "weaknesses": [
+   "Very common name that is hard to own in search"
+  ],
+  "rationale": "A human first name suits a care assistant, like consumer health brands that use personas, and trust matters in medicine; common names are hard to defend legally but help warmth."
+ },
+ "narrative": {
+  "headline": "The strongest founder story in a hot, regulated category; seed is very likely and Series A is a real possibility.",
+  "general_summary": "Clara is an AI primary care practice from the founders of Circle Medical, which gives it unusual credibility with investors and clinicians. Peers like Doctronic and Counsel Health have raised large rounds, so capital for the category is available. The risks are regulation, liability, a crowded field and the cost of acquiring patients. A seed is very likely and later rounds depend on safety data and unit economics. The forecast treats the day one description as the best case, anchors on the 2022 to 2024 cohort of researched YC companies, and widens the uncertainty because funding data for recent batches is incomplete and right censored."
+ },
+ "assumptions": [
+  "Pretend date is 2026-04-06 and only the input file describes the company.",
+  "Seed means a round above about 500K within about 12 months of batch start.",
+  "Circle Medical revenue claim is from the company description and not verified."
+ ],
+ "sources": [
+  "https://www.tamradar.com/funding-rounds/doctronic-series-b-40m",
+  "https://www.axios.com/local/salt-lake-city/2026/01/07/utah-ai-drug-prescriptions-doctronic",
+  "https://www.fiercehealthcare.com/ai-and-machine-learning/counsel-health-raises-25m-series-rolls-out-consumer-chatbot"
+ ]
 }

@@ -1,330 +1,456 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Mochatrade",
+  "one_liner": "Trade US markets from India, in Rupees",
+  "description": "Mochatrade is a consumer app for Indian retail users to take leveraged long and short positions on tokenized US stocks, funded by UPI in rupees and tradable around the clock. Revenue would come from trading fees, spreads and funding charges. A team of three based in New York built it.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.015,
+  "p_high": 0.08,
+  "basis": "Starting prior is about 1 percent with a 0.6 to 2 percent band (references/yc_acceptance.md). Up: a large and fast growing retail trading market in India and a clear product. Down: legality in India is doubtful for foreign leveraged derivatives, no stated founder tie to India or brokerage, and consumer trading with leverage invites regulators. Known to have been accepted, so completeness only.",
+  "why_it_fails": "YC would most plausibly decline because the model sits in a legal grey area: Indian rules limit overseas investment under the remittance scheme and restrict offshore derivatives, so a UPI funded leveraged token product may be blocked by payments partners or regulators. A reviewer would also worry about user harm from leverage and about reliance on a token issuer."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.57,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Fintech: seed cond 57% (n=23), series_a cond 23% (n=13), series_b cond 0% (n=3), upper bounds 62/23/12 percent. Only 26 companies, so an anecdote.",
+    "adjustment_reason": "Close to the 0.57 fintech anchor with a discount for regulatory risk but a boost for strong retail trading demand and crypto investor interest; 0.88 times the anchor."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000.0,
+      1500000.0
+     ],
+     "post_money_usd": [
+      5000000,
+      10000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small round from crypto and fintech angels. for this stage, scaled from the cohort round sizes and the current market medians."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000.0,
+      4000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022+ fintech seed with median 3.5M (cohort run)."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if user growth is visible in India."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails if the app cannot show regulatory viability: Indian rules on overseas investment and leveraged products, UPI partner de risking and app store or payment blocks. Analogs such as Botin (shut down) and Hapi (no round) show trading apps without a licence or growth do not raise. A three person team also lacks local regulatory staff."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.18,
+   "anchors": {
+    "base_rate": 0.23,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry Fintech: seed cond 57% (n=23), series_a cond 23% (n=13), series_b cond 0% (n=3), upper bounds 62/23/12 percent. Only 26 companies, so an anecdote.",
+    "adjustment_reason": "About 0.78 times the fintech anchor and below the B2B 0.26 anchor, because the legal status can cap growth. Named analogs Botin and Hapi show the same problem."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin round. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      45000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Series A median near 15M in fintech 2022+."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      100000000,
+      180000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if volumes are large. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "Series A fails if user growth is blocked by an enforcement action, a payments partner exit or a token issuer problem, or if trading volume is concentrated in a few heavy users who lose money to leverage. Investors need proof of compliant licensing, which a US based three person team has not shown."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3, upper bound 16%); lower/known/upper seed 49/59/65, A 13/15/29.",
+    "adjustment_reason": "Above the thin anchor by under 2x because brokerage winners in the cohort (Groww, Alpaca, Ajaib) did reach later rounds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      30000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest B. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Series B median near 37M to 45M. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      450000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if a regulated structure is in place."
+    }
+   ],
+   "why_it_fails": "Series B fails if the product cannot be made fully compliant in India, so user growth must come from another market, or if tokenized stock rules tighten in the US. Brokerage requires licences, capital and trust, and many analogs such as Gotrade reached only a Series A. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all cohorts): series_c cond 36% (n=55).",
+    "adjustment_reason": "Below the all cohort 36 percent because few consumer trading apps get there and regulatory risk is high."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      600000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest C. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1200000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Growth round. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside as a leading offshore brokerage. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "A late round fails if user acquisition costs rise, volumes follow market cycles and regulators close the channel. Groww reached public markets only with a local licensed business, a path a token app does not obviously have. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.6
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely result is a shutdown or stall when a regulator, bank or payments partner blocks Indian users, or the token issuer changes terms. The few good outcomes need a licensed structure, which changes the business from the pitch. Even when the company survives, an exit above the cohort median needs revenue growth and a buyer with strategic need, and most acquisitions in the researched set were small and below 100M dollars."
+ },
+ "analogs": [
+  {
+   "slug": "groww",
+   "relevance": "Indian retail investing, W18.",
+   "outcome_summary": "Public company; licensed local broker."
+  },
+  {
+   "slug": "gotrade",
+   "relevance": "US stocks for Southeast Asia, S19.",
+   "outcome_summary": "Series A, alive."
+  },
+  {
+   "slug": "botin",
+   "relevance": "Investing app for Latin America, W22.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "hapi",
+   "relevance": "Stocks and crypto app, W21.",
+   "outcome_summary": "Alive with no post YC round found."
+  },
+  {
+   "slug": "ajaib",
+   "relevance": "Consumer investing Indonesia, S18.",
+   "outcome_summary": "Series B."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Indian regulation blocks leveraged offshore tokens",
+   "p": 0.45,
+   "evidence": "The remittance scheme caps overseas investment per person and leveraged offshore derivatives are restricted, so the product may be unlawful for retail users.",
+   "analogs": [
+    "groww",
+    "botin"
+   ],
+   "mitigation": "Use a licensed partner structure or restrict to compliant products."
+  },
+  {
+   "risk": "Payments and issuer dependency",
+   "p": 0.3,
+   "evidence": "UPI funding and the token supply depend on third parties that can cut access.",
+   "analogs": [
+    "hapi",
+    "botin"
+   ],
+   "mitigation": "Multiple partners and a reserve."
+  },
+  {
+   "risk": "Heavy user losses and churn with leverage",
+   "p": 0.25,
+   "evidence": "Retail leverage trading has high churn and reputational risk. according to the market research and the analog records cited here",
+   "analogs": [
+    "hapi",
+    "benson"
+   ],
+   "mitigation": "Position limits and education."
+  },
+  {
+   "risk": "Incumbent Indian brokers launch US access",
+   "p": 0.25,
+   "evidence": "Zerodha began enabling US stock investing in beta and apps like INDmoney and Vested exist.",
+   "analogs": [
+    "groww",
+    "gotrade"
+   ],
+   "mitigation": "Focus on 24/7 and leverage that incumbents will not offer."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "INDmoney, Vested, Winvesta",
+   "what": "Apps for Indians to buy US stocks through the remittance scheme.",
+   "traction": "Established with real users.",
+   "source_url": "https://www.indmoney.com/articles/us-stocks/liberalised-remittance-scheme"
+  },
+  {
+   "name": "Zerodha US beta",
+   "what": "Largest Indian broker enabling US investing for select users.",
+   "traction": "Beta mode.",
+   "source_url": "https://terms.law/Invest-USA/countries/india"
+  },
+  {
+   "name": "Interactive Brokers and Schwab",
+   "what": "Global brokers used by Indians.",
+   "traction": "Large.",
+   "source_url": "https://terms.law/Invest-USA/countries/india"
+  },
+  {
+   "name": "Offshore crypto perpetual exchanges",
+   "what": "Leveraged tokenized stock products outside India.",
+   "traction": "Growing.",
+   "source_url": "https://www.businesstoday.in/nri/story/investing-in-us-stocks-from-india-how-the-rs10-lakh-tcs-threshold-works-562603-2026-10-21"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A trading app with UPI funding, token custody, leverage and liquidation engines is buildable by a small team using partners, but margin risk systems, 24/7 operations and security are hard to get right. Compliance and integrations, more than code, are the hard parts."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Zerodha",
+   "INDmoney",
+   "Groww",
+   "global crypto exchanges"
+  ],
+  "timeline_months": 12,
+  "rationale": "Large Indian brokers have the users and licences but not the appetite for leveraged offshore products, while crypto exchanges could add UPI funding. The main risk is regulation, not copying."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Indian investors face a 250,000 dollar yearly remittance cap and tax collection at source, yet many apps serve demand for US stocks.",
+    "source_url": "https://www.indmoney.com/articles/us-stocks/liberalised-remittance-scheme"
+   },
+   {
+    "claim": "Zerodha started US stock investing beta for select users, showing demand.",
+    "source_url": "https://terms.law/Invest-USA/countries/india"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a legal path and early users.",
+   "actions": [
+    "Get a written legal opinion on the Indian structure.",
+    "Launch a waitlist and reach 5,000 verified users."
+   ],
+   "proof": "Legal memo and a waitlist."
+  },
+  {
+   "phase": "seed",
+   "goal": "Show growth and clean compliance.",
+   "actions": [
+    "Grow to 20,000 funded accounts.",
+    "Sign two payment and token partners."
+   ],
+   "proof": "20,000 funded accounts and 10M in monthly volume."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show durable revenue.",
+   "actions": [
+    "Cut churn and cap leverage risk.",
+    "Add a licensed entity."
+   ],
+   "proof": "1M monthly revenue with stable retention."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Expand beyond one regulatory regime.",
+   "actions": [
+    "Add other emerging markets.",
+    "Add more asset types."
+   ],
+   "proof": "Several markets live."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Show scale.",
+   "actions": [
+    "Build a regulated brokerage.",
+    "Diversify revenue."
+   ],
+   "proof": "Profitable unit economics at scale."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Large retail demand for US stocks in India",
+   "evidence": "Many apps serve the market and brokers are launching products.",
+   "source_url": "https://terms.law/Invest-USA/countries/india"
+  },
+  {
+   "point": "Simple pitch with a clear user benefit",
+   "evidence": "Rupee funding by UPI removes friction.",
+   "source_url": "https://www.mochatrade.com"
+  }
+ ],
+ "brand": {
+  "name": "Mochatrade",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Mochatrade\" --era 2022+ : invented kind, 10 characters; alive 92.7 percent, exit 4.4 percent (n=1826).",
+  "strengths": [
+   "Friendly tone",
+   "Says trade"
+  ],
+  "weaknesses": [
+   "Mocha suggests coffee, not trading",
+   "Not tied to India"
+  ],
+  "rationale": "A friendly coined name that states the activity. Trading brands such as Robinhood show a name can carry a consumer finance app, but the regulatory risk matters far more than naming here.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Strong consumer demand but a legal grey area makes even a seed uncertain and later rounds depend on a licensed structure.",
+  "general_summary": "Mochatrade targets a large market, Indian retail investors who want US stocks, with a product that leverage and 24/7 trading make more attractive but also more exposed to regulation. Fintech cohort rates are 57 percent at seed and 23 percent at Series A on only 26 companies, so I stay near them and discount modestly for legal risk. The most likely stop is before a Series A, and the main way to a good outcome is converting into a licensed structure, which is a pivot from the pitch."
+ },
+ "assumptions": [
+  "No data on founders' ties to India or finance in the input.",
+  "Legal status is inferred from public remittance rules and may be wrong.",
+  "Seed means a round above 500K within 12 months of batch start."
+ ],
+ "sources": [
+  "https://www.indmoney.com/articles/us-stocks/liberalised-remittance-scheme",
+  "https://terms.law/Invest-USA/countries/india",
+  "https://www.businesstoday.in/nri/story/investing-in-us-stocks-from-india-how-the-rs10-lakh-tcs-threshold-works-562603-2026-10-21"
+ ]
 }

@@ -1,330 +1,458 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Laurence",
+  "one_liner": "The frontier operating system for marketers",
+  "description": "Laurence is a marketing operating system for e-commerce brands that optimizes Amazon Sponsored Ads and DSP, with Meta in beta, using statistical models of expected profit per click from margin, conversion and organic rank effects. Brands pay a software fee or percent of ad spend. Twelve people in New York.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.06,
+  "p_low": 0.03,
+  "p_high": 0.12,
+  "basis": "Starting prior is about 1 percent with a 0.6 to 2 percent band (references/yc_acceptance.md). Up: a team of 12 with a live product, paying use implied by a live Amazon integration and a quantitative angle. Down: Amazon ad tooling is a mature market and the 'hedge fund' story is not unique. Known to have been accepted, so completeness only.",
+  "why_it_fails": "YC would most plausibly decline because Amazon advertising automation is a crowded, mature category with funded vendors such as Pacvue, Perpetua and Teikametrics, and the description does not show revenue, retention or measured lift against them. A team of 12 also looks like it may need to prove it is not a services business."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.7,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3, upper bound 16%); lower/known/upper seed 49/59/65, A 13/15/29.",
+    "adjustment_reason": "1.2 times the B2B anchor: a team of 12 with a live product on Amazon and quantitative framing is better than a typical two founder seed company."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000.0,
+      1500000.0
+     ],
+     "post_money_usd": [
+      6000000,
+      12000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Small extension. for this stage, scaled from the cohort round sizes and the current market medians."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000.0,
+      4000000
+     ],
+     "post_money_usd": [
+      12000000,
+      30000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical seed, median 3.2M. for this stage, scaled from the cohort round sizes and the current market medians."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Upside given the large team and live product."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails if the product does not show measured profit lift over incumbents and revenue stays small. Analogs such as Mayan (Series A) show the category can fund, but Polished and Plai show ad tools without clear lift stall at seed or earlier. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3, upper bound 16%); lower/known/upper seed 49/59/65, A 13/15/29.",
+    "adjustment_reason": "Slightly above the 0.26 anchor, helped by an existing live product and a measurable value claim."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      120000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Median near 15M. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      120000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside on multi channel growth. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "Series A fails if it stays a single channel Amazon tool with churn from brands that switch agencies and tools, or if take rates fall as Amazon improves its own bidding. Several YC ad optimization firms (Optilly, Plai) stopped at seed. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3, upper bound 16%); lower/known/upper seed 49/59/65, A 13/15/29.",
+    "adjustment_reason": "Above the anchor within 2x: ad software with spend based revenue scales quickly if it works, and Mayan reached later rounds."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      30000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Median near 37M to 45M. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "Series B fails if channel expansion beyond Amazon is slow and growth saturates, or if agencies and large players like Pacvue win enterprise accounts. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all cohorts): series_c cond 36% (n=55).",
+    "adjustment_reason": "Slightly below the 36 percent anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      600000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1200000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Growth. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1200000000,
+      3000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside as an ad operating system. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "A later round fails if growth depends on one ad network and the network changes terms, or if consolidation among ad tech vendors squeezes margins. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.45
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.31
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.19
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely paths are an acquisition by a commerce or ad tech platform at modest value, or a stall as a mid size tool. Amazon and Meta control the data and can change the rules, which caps the upside. Even when the company survives, an exit above the cohort median needs revenue growth and a buyer with strategic need, and most acquisitions in the researched set were small and below 100M dollars."
+ },
+ "analogs": [
+  {
+   "slug": "mayan",
+   "relevance": "Growth automation for Amazon sellers, W21.",
+   "outcome_summary": "Series A, alive."
+  },
+  {
+   "slug": "plai",
+   "relevance": "Ads on many platforms, S21.",
+   "outcome_summary": "Seed."
+  },
+  {
+   "slug": "optilly-installmonetizer",
+   "relevance": "Facebook ad optimization, W12.",
+   "outcome_summary": "Shut down after a seed."
+  },
+  {
+   "slug": "vector",
+   "relevance": "Advertising platform, W23.",
+   "outcome_summary": "Series A."
+  },
+  {
+   "slug": "polished",
+   "relevance": "AI ads, W24.",
+   "outcome_summary": "Alive, no post YC round found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Entrenched ad tools with more data and distribution",
+   "p": 0.4,
+   "evidence": "Pacvue, Perpetua, Teikametrics and Helium 10 ads are established Amazon ad tools.",
+   "analogs": [
+    "mayan",
+    "plai"
+   ],
+   "mitigation": "Show lift versus them in public case studies."
+  },
+  {
+   "risk": "Platform dependence on Amazon and Meta APIs",
+   "p": 0.25,
+   "evidence": "Both control the ad data and can change access or pricing. according to the market research and the analog records cited here",
+   "analogs": [
+    "optilly-installmonetizer"
+   ],
+   "mitigation": "Diversify across channels."
+  },
+  {
+   "risk": "Services creep with a team of 12",
+   "p": 0.2,
+   "evidence": "Large teams at this stage risk operating like an agency with low margins.",
+   "analogs": [
+    "plai"
+   ],
+   "mitigation": "Keep software margins."
+  },
+  {
+   "risk": "Statistical edge is not measurable to buyers",
+   "p": 0.25,
+   "evidence": "Attribution noise makes lift hard to prove. according to the market research and the analog records cited here",
+   "analogs": [
+    "vapor",
+    "polished"
+   ],
+   "mitigation": "Run holdout tests."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Pacvue",
+   "what": "Retail media and commerce platform.",
+   "traction": "Founded 2018, offices worldwide, partner of Helium 10.",
+   "source_url": "https://www.get-ryze.ai/blog/amazon-ad-software"
+  },
+  {
+   "name": "Perpetua",
+   "what": "Growth optimization for Amazon, Walmart.",
+   "traction": "Mid market and enterprise.",
+   "source_url": "https://www.get-ryze.ai/blog/amazon-ad-software"
+  },
+  {
+   "name": "Teikametrics",
+   "what": "AI Amazon advertising.",
+   "traction": "Established.",
+   "source_url": "https://www.get-ryze.ai/blog/amazon-ad-software"
+  },
+  {
+   "name": "Helium 10 Ads",
+   "what": "Ads built on Pacvue technology.",
+   "traction": "Launched March 2025.",
+   "source_url": "https://prospershow.com/?p=36664"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Bid optimization using profit models, organic rank effects and lifetime value is data heavy and needs rigorous statistics, but the data comes from official APIs. A team of 12 can build a strong version, and the hard part is proving causal lift."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Pacvue",
+   "Perpetua",
+   "Amazon"
+  ],
+  "timeline_months": 12,
+  "rationale": "Established vendors can copy profit based bidding in a year, but doing it well needs quantitative talent that some lack. Amazon itself keeps improving automated bidding."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "A vendor guide estimates the Amazon ad software market near 4.2B in 2025 (weakly sourced).",
+    "source_url": "https://www.get-ryze.ai/blog/amazon-advertising-software"
+   },
+   {
+    "claim": "Many funded tools compete, which implies paid demand.",
+    "source_url": "https://influencermarketinghub.com/amazon-ppc-management-software-tools/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show measured profit lift for paying brands.",
+   "actions": [
+    "Publish holdout test results.",
+    "Name five paying customers."
+   ],
+   "proof": "Lift above 15 percent on managed spend."
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert early customers to recurring revenue.",
+   "actions": [
+    "Raise percent of spend price.",
+    "Launch Meta publicly."
+   ],
+   "proof": "1M annual recurring."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Prove repeatable multi channel growth.",
+   "actions": [
+    "Add Google and retail media.",
+    "Reduce churn."
+   ],
+   "proof": "3M to 5M annual recurring."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Move to larger brands.",
+   "actions": [
+    "Add enterprise features.",
+    "Partner with agencies."
+   ],
+   "proof": "10M annual recurring."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Platform status.",
+   "actions": [
+    "Add new channels such as ChatGPT ads.",
+    "Acquire smaller tools."
+   ],
+   "proof": "Net retention above 120 percent."
+  }
+ ],
+ "pros": [
+  {
+   "point": "A live product and a team of 12 at batch start",
+   "evidence": "Live for Amazon Sponsored Ads and DSP per the description.",
+   "source_url": "https://laurence.com"
+  },
+  {
+   "point": "A quantitative edge that can be measured",
+   "evidence": "Profit per click modelling gives a testable claim.",
+   "source_url": "https://laurence.com"
+  },
+  {
+   "point": "Spend based revenue scales with customers",
+   "evidence": "Ad software priced on spend grows with client budgets.",
+   "source_url": "https://www.get-ryze.ai/blog/amazon-advertising-software"
+  }
+ ],
+ "brand": {
+  "name": "Laurence",
+  "rating": 2,
+  "effect_on_success": "unclear",
+  "name_check": "python3 -I scripts/name_features.py --score \"Laurence\" --era 2022+ : invented or proper noun, 8 characters; alive 92.7 percent, exit 4.4 percent (n=1826).",
+  "strengths": [
+   "Human and memorable",
+   "Easy to say"
+  ],
+  "weaknesses": [
+   "Person name says nothing about advertising",
+   "Hard to search"
+  ],
+  "rationale": "A personal name style brand like a butler for marketers; names such as Clever show friendly names can work. It is neutral for outcomes as buyers care about results.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A larger, more mature team in a crowded but paying category: a seed is likely and a Series A slightly better than the cohort.",
+  "general_summary": "Laurence has a live product, 12 people and a quantitative claim in a market that spends heavily, so I put the seed above the 59 percent B2B anchor and the Series A just above the 26 percent anchor. The category is mature, with funded rivals and platform control by Amazon, which holds the upside back. The most likely stop is Series A or an acquisition by an ad tech or commerce platform. These numbers are anchored on the 2022 to 2025 cohorts, whose later rounds are not yet fully observed, so the true rates are probably somewhat higher than the known only figures and the uncertainty is wide."
+ },
+ "assumptions": [
+  "No revenue given.",
+  "Market size from a vendor guide is weak.",
+  "Seed means a round above 500K within 12 months."
+ ],
+ "sources": [
+  "https://www.get-ryze.ai/blog/amazon-ad-software",
+  "https://prospershow.com/?p=36664",
+  "https://influencermarketinghub.com/amazon-ppc-management-software-tools/"
+ ]
 }

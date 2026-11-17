@@ -1,162 +1,246 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Expanse",
+    "one_liner": "Twice the work from the GPUs you already own",
+    "description": "Software that predicts the compute each AI workload needs before it runs, so organisations get more work from their existing GPU clusters, on their own hardware. Four engineers from quantitative hedge fund GPU operations, based in London.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.03,
+    "basis": "Placeholder value only, because Expanse is already known to be accepted. Test note: accepted to YC, so the acceptance step is not forecast. The prior is about 1 percent. Four technical founders with direct operating experience of the problem would sit above the prior (founder market fit is the top success tag in the repo data).",
+    "why_it_fails": "YC would most plausibly pass because GPU scheduling is crowded by Run:ai, Slurm tooling and cloud vendors, and prediction accuracy claims are hard to verify. A London team without customers could also appear too early for a sales-led infrastructure product. The interview would test whether the founders can show proof of demand, speed of shipping and a reason the market is open now for Expanse."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.58,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (lower 49, known 59, upper 65), series_a cond 26% (13/15/29), series_b cond 16% (2/2/18), series_c cond 0% on n=3; the full calibration sample gives series_c cond 36% (n=55) in references/stage_benchmarks.md. Seed within 12 months is lower than ever reaching seed (median 7 months, p75 15).",
+        "adjustment_reason": "Seed near the B2B anchor of 0.59: founders have exact operating experience, offset by crowded category and a London base."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small round if buyers see this as a feature of cluster schedulers. Probability set by judgment from the analogs and current round sizes."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            4000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical European infrastructure seed, near the $3.2M median for B2B 2022+ in the repo data."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            30000000,
+            70000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Strong seed, given founders from top hedge funds and the GPU shortage narrative, similar to Luminal's $5.3M seed."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            15000000
+          ],
+          "post_money_usd": [
+            70000000,
+            140000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside with a named hedge fund or lab design partner. Probability set by judgment from the analogs and current round sizes."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed over the YC check is stopped if investors read the product as a scheduler feature that Run:ai, Slurm or cloud vendors will add. Trainy and Thunder Compute show GPU infrastructure companies can raise but also that Trainy has no round found. A London based four person team also faces fewer US seed leads."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.24,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (lower 49, known 59, upper 65), series_a cond 26% (13/15/29), series_b cond 16% (2/2/18), series_c cond 0% on n=3; the full calibration sample gives series_c cond 36% (n=55) in references/stage_benchmarks.md. Seed within 12 months is lower than ever reaching seed (median 7 months, p75 15).",
+        "adjustment_reason": "Series A near anchor 0.26 and above the infrastructure cohort 0.20 because enterprise on-prem buyers pay for utilization gains."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin or bridge Series A or a small A extension, below the 2022+ YC median raise of $14M, because growth or revenue is modest."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ YC Series A: median raise $14.15M, p25 to p75 $10M to $20M, against US pre money medians near $60M for a Series A."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Hot AI round with a lead from a top fund after fast revenue growth, in line with 2025 to 2026 AI Series A sizes."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            18000000
+          ],
+          "post_money_usd": [
+            40000000,
+            90000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Pivot then raise path: the company changes wedge after the batch and raises an A on the new product, as Eden and Vapi did."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A is missed if prediction accuracy does not turn into measured savings at customers, or if sales cycles into hedge funds and labs are slow. Trainy had self-reported customers but no round, while Thunder Compute raised an A only in 2026 with a distinct product."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.18,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (lower 49, known 59, upper 65), series_a cond 26% (13/15/29), series_b cond 16% (2/2/18), series_c cond 0% on n=3; the full calibration sample gives series_c cond 36% (n=55) in references/stage_benchmarks.md. Seed within 12 months is lower than ever reaching seed (median 7 months, p75 15).",
+        "adjustment_reason": "Series B slightly above the 0.16 anchor because savings are measurable in dollars."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Down or flat B, or a small B led by existing investors after slower growth than the A plan."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ YC Series B: median $37M, p25 to p75 $25M to $57M. Probability set by judgment from the analogs and current round sizes."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            900000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Breakout B with a large lead, as the few 2022+ YC Series B valuations of $550M to $775M suggest."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            30000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Strategic round from a customer, partner or incumbent rather than a pure financial lead."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if the market of organisations with large on-prem GPU fleets is too small, or if hyperscalers and Nvidia bundle similar tooling. Few GPU tooling analogs in the repo reached B. For Expanse the milestone to reach this round is paying customers and growth that investors can verify, and the analogs listed in this evaluation show that most companies in the cohort miss that bar."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (lower 49, known 59, upper 65), series_a cond 26% (13/15/29), series_b cond 16% (2/2/18), series_c cond 0% on n=3; the full calibration sample gives series_c cond 36% (n=55) in references/stage_benchmarks.md. Seed within 12 months is lower than ever reaching seed (median 7 months, p75 15).",
+        "adjustment_reason": "Series C+ at 0.30, within 0.75 times the 0.36 anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small C or growth extension, below the 2022+ YC median C of $45M. Probability set by judgment from the analogs and current round sizes."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical C: 2022+ YC median $45M (n=9), US market C deal size near $77M."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            200000000
+          ],
+          "post_money_usd": [
+            800000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Category leader round, as for Deepgram and Vapi style winners, with a valuation above $800M."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C needs a platform position across enterprise AI infrastructure. Analogs mostly stay seed or are acquired, and Nvidia's Run:ai purchase shows that a leader can absorb the category. For Expanse the milestone to reach this round is paying customers and growth that investors can verify, and the analogs listed in this evaluation show that most companies in the cohort miss that bar."
     }
   ],
   "outcomes": {
@@ -164,167 +248,229 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.52
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Likely stall or small acquisition. GPU tooling analogs (Trainy, Thunder Compute, Luminal) are early and most stay small, and the category's leader Run:ai was absorbed by a hardware vendor. A large outcome requires becoming the standard planning layer for enterprise AI compute, which cloud and hardware vendors have strong incentive to own."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "trainy",
+      "relevance": "GPU cluster management software, YC S23.",
+      "outcome_summary": "Small, self-reported customers, no round found."
+    },
+    {
+      "slug": "thunder-compute",
+      "relevance": "GPU virtualization company, YC S24.",
+      "outcome_summary": "$13M Series A led by Matrix in 2026."
+    },
+    {
+      "slug": "luminal",
+      "relevance": "GPU efficiency software, YC S25.",
+      "outcome_summary": "$5.3M seed in November 2025."
+    },
+    {
+      "slug": "cerebrium",
+      "relevance": "Serverless AI infrastructure, YC W22.",
+      "outcome_summary": "$8.5M seed in 2025 after years, shows slow B2B infra path."
+    },
+    {
+      "slug": "ryvn",
+      "relevance": "Deployment tooling for AI companies.",
+      "outcome_summary": "Active, no public round found."
+    },
+    {
+      "slug": "overshoot",
+      "relevance": "Inference optimization, YC W26.",
+      "outcome_summary": "Possible seed, early stage."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Seen as a feature of Slurm, Kubernetes and Run:ai style schedulers",
+      "p": 0.35,
+      "evidence": "Run:ai is a Kubernetes native scheduler that optimizes GPU utilization and existing cluster tooling already collects telemetry.",
       "analogs": [
-        "TODO-company-slug"
+        "trainy",
+        "cerebrium"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Integrate with existing schedulers rather than replacing them."
+    },
+    {
+      "risk": "Prediction accuracy does not hold across diverse workloads",
+      "p": 0.3,
+      "evidence": "A 2026 study found Slurm metadata alone is largely non-informative for runtime behavior and needs live telemetry.",
+      "analogs": [
+        "luminal",
+        "overshoot"
+      ],
+      "mitigation": "Use telemetry and publish measured utilization gains."
+    },
+    {
+      "risk": "Small buyer pool and long sales cycles",
+      "p": 0.3,
+      "evidence": "Organisations with large owned GPU fleets are few, and Trainy has not shown a round despite logos.",
+      "analogs": [
+        "trainy",
+        "ryvn"
+      ],
+      "mitigation": "Land hedge funds and labs where founders have relationships."
+    },
+    {
+      "risk": "Hardware vendors bundle the capability",
+      "p": 0.25,
+      "evidence": "Nvidia owns Run:ai and DCGM telemetry and has the distribution.",
+      "analogs": [
+        "thunder-compute",
+        "cerebrium"
+      ],
+      "mitigation": "Stay vendor neutral across Nvidia and AMD."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Run:ai (Nvidia)",
+      "what": "Kubernetes native GPU orchestration with fractional sharing",
+      "traction": "Part of Nvidia enterprise stack",
+      "source_url": "https://www.wwt.com/blog/workload-management-and-orchestration-series-nvidia-runai"
+    },
+    {
+      "name": "Slurm with DCGM telemetry",
+      "what": "Common HPC scheduler combined with Nvidia monitoring to find idle GPUs",
+      "traction": "Used in large clusters per Nvidia engineering write-up",
+      "source_url": "https://developer.nvidia.com/blog/making-gpu-clusters-more-efficient-with-nvidia-data-center-monitoring/"
+    },
+    {
+      "name": "Research on workload prediction",
+      "what": "Academic GPU demand prediction from Slurm logs",
+      "traction": "Reported up to 97% accuracy for peak GPU utilization from submission features",
+      "source_url": "https://arxiv.org/html/2604.02158v1"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Accurate prediction of GPU memory and runtime before execution needs profiling, modeling and integration with schedulers. The founders' experience helps, but robust coverage across frameworks is hard for four people."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Nvidia",
+      "Cloud providers",
+      "Run:ai",
+      "Cluster scheduler vendors"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Nvidia and schedulers have telemetry, customers and incentive to add prediction. A rival could ship basic features in about a year."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Enterprises measure idle GPUs and use telemetry to reduce idleness, showing a paid pain.",
+        "source_url": "https://developer.nvidia.com/blog/making-gpu-clusters-more-efficient-with-nvidia-data-center-monitoring/"
+      },
+      {
+        "claim": "Research shows GPU over-allocation wastes cluster capacity and prediction can raise utilization.",
+        "source_url": "https://eprints.lancs.ac.uk/144290/1/HotCloud20_GPU_Prediction.pdf"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show prediction accuracy on real workloads.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Benchmark prediction on public cluster traces",
+        "Run a free pilot on one fund or lab cluster"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Prediction error under 10% on a real workload set"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Turn pilots into paid contracts.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Convert two pilots to annual licenses",
+        "Integrate with Slurm and Kubernetes"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$250K or more of contracted annual revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable sales with measured savings.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish customer savings case studies",
+        "Hire first enterprise sales lead"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1.5M or more annual recurring revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Founders ran the clusters they are optimizing",
+      "evidence": "The team is described as engineers who managed GPU clusters at large quant funds.",
+      "source_url": "https://expanse.sh"
+    },
+    {
+      "point": "Measurable value on scarce, expensive hardware",
+      "evidence": "GPU idleness and over-allocation are quantified in industry and academic reports.",
+      "source_url": "https://developer.nvidia.com/blog/making-gpu-clusters-more-efficient-with-nvidia-data-center-monitoring/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Expanse",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Expanse\" --era 2022+ returned kind invented_or_proper, 7 chars, 2 syllables.",
     "strengths": [
-      "TODO"
+      "Short real word",
+      "Suggests scale and compute"
     ],
     "weaknesses": [
-      "TODO"
+      "Common name, shared with other products",
+      "Hard to own the search term"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A short real word that fits compute but is shared with other products, so search and trademark clarity is weaker. Infrastructure buyers care little about names, so it moves no probability.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Strong founder market fit in a crowded scheduler space, with a seed likely and a Series A a coin flip below even odds.",
+    "general_summary": "Expanse predicts the compute each AI workload needs so organisations can use existing GPU clusters more efficiently. The founders operated such clusters at large quantitative funds, which is a strong signal. GPU scarcity gives the pain real dollar value. The risks are that Nvidia, Run:ai and schedulers bundle the capability, buyers are few, and sales cycles are long. YC analogs in GPU tooling such as Trainy and Luminal raised small seeds or none, and Thunder Compute reached a Series A with a distinct product. A seed within a year is likely, a Series A requires paid enterprise deployments.",
+    "deep_dive": {}
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from batch start 2026-04-06 using only the description.",
+    "Seed step means a round above the $500K YC deal within about 12 months.",
+    "Funding data is partial, so base rates are lower bound to upper bound ranges."
   ],
   "sources": [
-    "https://"
+    "https://www.wwt.com/blog/workload-management-and-orchestration-series-nvidia-runai",
+    "https://developer.nvidia.com/blog/making-gpu-clusters-more-efficient-with-nvidia-data-center-monitoring/",
+    "https://arxiv.org/html/2604.02158v1",
+    "https://eprints.lancs.ac.uk/144290/1/HotCloud20_GPU_Prediction.pdf",
+    "https://expanse.sh"
   ]
 }

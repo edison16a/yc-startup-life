@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "CatchBack Cards",
+    "one_liner": "The most thrilling way to create and rip digital collectible packs",
+    "description": "Seven person San Francisco consumer app and site. Collectors build custom mystery packs of Pokemon and sports cards with chosen chase cards and odds, backed by cryptographic fairness tooling. Users rip digital packs, get physical cards shipped, receive buyback offers paid to Venmo or PayPal, and trade in a $1 marketplace.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.01,
+    "p_low": 0.006,
+    "p_high": 0.02,
+    "basis": "Test mode: assumed accepted to YC for Winter 2026. The prior is about 1 percent with a 0.6 to 2 percent band, and no adjustment is made because acceptance is not forecast in this test.",
+    "why_it_fails": "Not scored in this blind test because the company was accepted, so the number shown is only the unadjusted prior. YC would most plausibly have passed over regulatory risk, since randomized paid packs can be treated as gambling, plus a crowded field where Courtyard and Whatnot already have scale."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.62,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.56,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Consumer --calibration-only (lower/known/upper; cond): seed 43% / 56% / 67%, cond 56% (n=16); 2018-2021 Consumer cond 89% (n=36). Seed here is a round over $500K within about 12 months.",
+        "adjustment_reason": "Slightly above the anchor (1.1x). The collectibles boom, a seven person team that already has a live product and the Courtyard precedent lift odds; the legal risk and thin cohort hold them back."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            780000,
+            1950000
           ],
           "post_money_usd": [
-            0,
-            0
+            7800000,
+            15600000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small round or a YC extension if the team has revenue but legal advice slows investors."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2600000,
+            5200000
           ],
           "post_money_usd": [
-            0,
-            0
+            15600000,
+            32500000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical consumer seed of $3M to $5M at a $15M to $30M post; the 2022+ Consumer median is $3.3M."
+        },
+        {
+          "raise_usd": [
+            6500000,
+            13000000
+          ],
+          "post_money_usd": [
+            39000000,
+            78000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if pack volume is large and a crypto or consumer fund leads, as NEA did for Courtyard's $7M seed."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The most likely stop is legal. Randomized paid packs with cash buyback look like gambling to some state regulators, and Whatnot, Collector Crypt and Fanatics face lottery claims. Investors may pass or require a lawyer's opinion. A seven person team also burns faster, so a delayed raise hurts. Mage, a collectibles marketplace, shut down within a year of YC from low revenue and COVID, while Courtyard raised a $7M seed only after strong demand."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Consumer --calibration-only (lower/known/upper; cond): series_a 0% / 0% / 24%, cond 0% (n=9); 2018-2021 Consumer cond 50% (n=32); all company cond 22% (n=115).",
+        "adjustment_reason": "The 2022+ Consumer cohort has zero A rounds in n=9, but it is right censored; the older cohort shows 50 percent. I use 0.25, close to the all company 22 percent, trimmed for the legal factor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            14400000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            72000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A if volume stalls or legal costs rise. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            16000000,
+            32000000
           ],
           "post_money_usd": [
-            0,
-            0
+            72000000,
+            160000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median 2022+ Series A around $15M, but consumer apps with GMV growth raise more."
+        },
+        {
+          "raise_usd": [
+            32000000,
+            64000000
+          ],
+          "post_money_usd": [
+            160000000,
+            400000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside tied to Courtyard's $30M A in 2025, the leader's outcome. Sized from the YC round medians and the 2026 public deal size benchmarks."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs repeat usage and acceptable margins after buyback payouts. The category has strong early growth but weak unit economics, and Courtyard and Collector Crypt are far ahead on volume. Pack openers churn, and card supply, shipping and buyback liquidity need capital. Regulators can also change the rules."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Consumer --calibration-only: series_b 17% known, cond 38% (n=16); 2022+ Consumer has no B (n=0).",
+        "adjustment_reason": "Anchored on the older Consumer cohort cond 38%, trimmed to 0.25 for category cyclicality and legal risk."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            21000000,
+            42000000
           ],
           "post_money_usd": [
-            0,
-            0
+            112000000,
+            210000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Down or flat B if collectibles demand cools. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            42000000,
+            84000000
           ],
           "post_money_usd": [
-            0,
-            0
+            210000000,
+            560000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ B around $37M to $45M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            84000000,
+            168000000
+          ],
+          "post_money_usd": [
+            560000000,
+            1400000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if the platform becomes a top three pack destination. Sized from the YC round medians and the 2026 public deal size benchmarks."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B requires scale, and the leaders already have it. Pokemon prices are cyclical, and a downturn cuts pack volume and buyback margins. Whatnot raised a $545M Series G, which shows that the winner takes the market and a smaller player can be squeezed on supply, ads and seller fees. Investors will ask why CatchBack is not simply a feature inside a larger platform."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.0,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Consumer --calibration-only: series_c 3% known, cond 17% (n=6); all company cond 36% (n=55).",
+        "adjustment_reason": "Between the thin Consumer figure of 17 percent and the all company 36 percent."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            52000000,
+            91000000
           ],
           "post_money_usd": [
-            0,
-            0
+            325000000,
+            650000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller round for a profitable niche player. Sized from the YC round medians and the 2026 public deal size benchmarks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            91000000,
+            195000000
           ],
           "post_money_usd": [
-            0,
-            0
+            650000000,
+            1950000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ Series C around $45M. Sized from the YC round medians and the 2026 public deal size benchmarks."
+        },
+        {
+          "raise_usd": [
+            195000000,
+            520000000
+          ],
+          "post_money_usd": [
+            1950000000,
+            6500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a market leader in digital collectibles. Sized from the YC round medians and the 2026 public deal size benchmarks."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Few consumer companies get here. The business would need a regulatory moat and stable margins, and one adverse ruling on randomized sales could end it. Even a healthy company here would more likely be bought by a larger collectibles platform than raise a Series C, as the thin Consumer data shows."
     }
   ],
   "outcomes": {
@@ -164,167 +212,226 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.6
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.26
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.11
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Likely a shutdown or a small sale. Margin pressure from buyback payouts and a legal risk around randomized sales keep most such platforms small, and the market is led by Courtyard and Whatnot. Only a clear winner reaches an outcome above $1B, and the leaders Courtyard and Whatnot are already positioned for that. The buyer pool for a small card app is mostly those same platforms."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "courtyard-io",
+      "relevance": "Pack opening with instant buyback, W22.",
+      "outcome_summary": "$7M seed from NEA in 2022 and $30M A in 2025; the category leader."
+    },
+    {
+      "slug": "misprint",
+      "relevance": "Pokemon card trading app, W25.",
+      "outcome_summary": "Same demand wave, no outcome yet before the date."
+    },
+    {
+      "slug": "mage",
+      "relevance": "Collectibles marketplace, W19.",
+      "outcome_summary": "Shut down in March 2020 after revenue fell 60 percent."
+    },
+    {
+      "slug": "whatnot",
+      "relevance": "Live shopping where cards are a top category.",
+      "outcome_summary": "Became a major platform with a $20B valuation; the scale competitor."
+    },
+    {
+      "slug": "bump-2",
+      "relevance": "Collectible and sneaker investing tools, W18.",
+      "outcome_summary": "Inactive; web3 collectibles demand faded."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Gambling or lottery classification of randomized packs",
+      "p": 0.35,
+      "evidence": "Whatnot, Collector Crypt and Fanatics face claims that randomized breaks are lotteries, and none is resolved.",
       "analogs": [
-        "TODO-company-slug"
+        "courtyard-io",
+        "whatnot"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Get a legal opinion, geofence risky states and publish odds."
+    },
+    {
+      "risk": "Thin margins after buyback payouts and shipping",
+      "p": 0.3,
+      "evidence": "Buybacks are reported at a 10 to 15 percent discount to market, which leaves little room for losses and fees.",
+      "analogs": [
+        "courtyard-io"
+      ],
+      "mitigation": "Price buyback dynamically, hold inventory with partners."
+    },
+    {
+      "risk": "Scaled leaders crowd out a small team",
+      "p": 0.25,
+      "evidence": "Courtyard drove about $78M in tokenized card trades in August 2025 and Whatnot holds most live selling.",
+      "analogs": [
+        "whatnot",
+        "courtyard-io"
+      ],
+      "mitigation": "Differentiate on custom user created packs and creators."
+    },
+    {
+      "risk": "Collectibles demand cycle turns",
+      "p": 0.2,
+      "evidence": "Mage lost 60 percent of revenue in a shock, and NFT collectibles faded.",
+      "analogs": [
+        "mage",
+        "bump-2"
+      ],
+      "mitigation": "Keep a low burn and diversify into sports."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Courtyard",
+      "what": "Pack opening with instant buyback and a marketplace.",
+      "traction": "About $78M of tokenized trades in August 2025.",
+      "source_url": "https://cryptoslate.com/?p=496775"
+    },
+    {
+      "name": "Collector Crypt",
+      "what": "Gacha style randomized Pokemon packs with buyback.",
+      "traction": "About $44M in August 2025.",
+      "source_url": "https://www.theblock.co/post/369869/collector-crypt-drives-150-million-in-randomized-pokemon-card-trades-as-cards-token-soars"
+    },
+    {
+      "name": "Whatnot",
+      "what": "Live shopping with cards as top category.",
+      "traction": "$545M Series G at $20B in August 2025.",
+      "source_url": "https://bitfinance.substack.com/p/pokemon-cards-cracked-tokenization"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Provable fairness, payments, card inventory and fulfillment are all buildable by seven people, but vault logistics, grading and payout fraud are hard operations rather than software problems."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Whatnot",
+      "Courtyard",
+      "eBay"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Leaders could add custom packs fast, but custom user created packs are a distinct feature and each has other priorities. Payment and legal rails are a dependency."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Tokenized Pokemon card trading hit about $124M in one month of 2025 and Courtyard alone had about $78M.",
+        "source_url": "https://cryptoslate.com/?p=496775"
+      },
+      {
+        "claim": "Whatnot reports sports cards as its top US category in 2025.",
+        "source_url": "https://on360.ca/?p=920"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove repeat pack creators and clean legal posture.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Get a gaming law opinion.",
+        "Measure weekly returning packs per user.",
+        "Fix buyback margin per pack."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Positive contribution margin per pack and 30 percent monthly repeat."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale with healthy margins.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign creators and sports card shops.",
+        "Move inventory into partner vaults.",
+        "Add risk controls on fraud."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "GMV above $5M per month with margin above 8 percent."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Become a top three pack platform.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand states and countries.",
+        "Add sports leagues licenses.",
+        "Build compliance team."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Profitable at scale."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Seven person team with a live product in a boom market",
+      "evidence": "Pack opening reached large monthly volumes at Courtyard and Collector Crypt in 2025.",
+      "source_url": "https://cryptoslate.com/?p=496775"
+    },
+    {
+      "point": "Differentiated feature: user created packs with chosen odds",
+      "evidence": "Competitors run house packs; creator packs add a social angle.",
+      "source_url": "https://decrypt.co/370978/pokemon-cards-surging-crypto-platforms-gambling?amp=1"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "CatchBack Cards",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"CatchBack Cards\" --era 2022+: 14 chars, compound words, flags long and hard consonant cluster",
     "strengths": [
-      "TODO"
+      "Descriptive of cards",
+      "Suggests the buyback hook"
     ],
     "weaknesses": [
-      "TODO"
+      "Long and camel case",
+      "Two descriptor words are hard to own"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name explains the product and the buyback but is long and generic, like other descriptor names that are harder to trademark. Courtyard shows a short evocative name is easier. It is a mild weakness and I let it move nothing.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Hot category with a proven leader and a real legal cloud, so a seed is likely and later rounds are hard.",
+    "general_summary": "CatchBack Cards runs custom mystery packs for Pokemon and sports cards with buyback. The category is booming and Courtyard's $7M seed and $30M A prove investors will pay. But randomized pack sales face lottery claims, margins are thin, and the leaders are far ahead. Consumer cohorts show 56 percent reaching a seed, and later stages are thin. I keep seed above the anchor for the boom and keep the later stages near anchors, because later consumer data is thin and right censored. The biggest swing factor is the legal status of randomized packs, which no analysis here can settle."
   },
   "assumptions": [
-    "TODO"
+    "Assumed accepted to YC Winter 2026; as_of 2026-01-05.",
+    "Only the supplied description is used.",
+    "Seed means over $500K within about 12 months.",
+    "Consumer cohorts are small, so rates are anecdotal.",
+    "2025 market data is from before the as_of date; later items ignored."
   ],
   "sources": [
-    "https://"
+    "https://cryptoslate.com/?p=496775",
+    "https://www.theblock.co/post/369869/collector-crypt-drives-150-million-in-randomized-pokemon-card-trades-as-cards-token-soars",
+    "https://bitfinance.substack.com/p/pokemon-cards-cracked-tokenization",
+    "https://on360.ca/?p=920",
+    "https://decrypt.co/370978/pokemon-cards-surging-crypto-platforms-gambling?amp=1"
   ]
 }

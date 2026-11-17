@@ -1,162 +1,246 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Tsenta",
+    "one_liner": "AI career agent that finds matching jobs and applies on your behalf",
+    "description": "Consumer subscription AI agent that matches job seekers to roles and applies automatically. Claims about $3M annualized revenue in three months and 90,000 users, as stated by the company. Two person team in San Francisco.",
+    "as_of": "2026-07-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.03,
+    "basis": "Placeholder value only, because Tsenta is already known to be accepted. Test note: accepted to YC, so the acceptance step is not forecast. The applicant prior is about 1 percent, and a company reporting about $3M annualized revenue would sit far above it, if the claim holds.",
+    "why_it_fails": "YC would most plausibly pass if the revenue was seen as low-quality consumer subscription with high churn and refunds, and if auto-apply tools were viewed as spam against employers. Platform bans from LinkedIn and application systems make the model fragile. The interview would test whether the founders can show proof of demand, speed of shipping and a reason the market is open now for Tsenta."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.65,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.56,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2022-2025 --calibration-only gave seed cond 56% (43/56/67, n=16), series_a 0% known and 24% upper (n=9). B2B 2022-2025 gave A cond 26%; AI tag 2023-2025 gave seed 56%, A 21%. Full sample series_c cond 36% (n=55).",
+        "adjustment_reason": "Seed at 1.16 times the Consumer anchor, supported by claimed revenue, otherwise consumer anchors are thin."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small seed or revenue based round if investors discount subscription churn. Probability set by judgment from the analogs and current round sizes."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            4000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical seed; fast revenue growth is rare in the 2022+ consumer cohort. Probability set by judgment from the analogs and current round sizes."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            40000000,
+            90000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Strong seed on the back of claimed $3M annualized revenue and 90,000 users. Probability set by judgment from the analogs and current round sizes."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            15000000
+          ],
+          "post_money_usd": [
+            90000000,
+            200000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside seed from a top consumer or AI fund if retention data is strong."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed is stopped if investors see the revenue as unsustainable consumer subscription: job seekers churn as soon as they get a job, and refunds can be high. Sorce and Simplify show consumer job tools attract users but fund slowly, with Simplify raising only a $3M seed after years. Two founders also lack a hiring-side network."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.21,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2022-2025 --calibration-only gave seed cond 56% (43/56/67, n=16), series_a 0% known and 24% upper (n=9). B2B 2022-2025 gave A cond 26%; AI tag 2023-2025 gave seed 56%, A 21%. Full sample series_c cond 36% (n=55).",
+        "adjustment_reason": "Series A at about 0.95 times the 0.21 anchor but well above the 0% known consumer figure, because revenue is claimed and the upper bound is 24%."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin A or bridge after churn and platform issues reduce growth. Probability set by judgment from the analogs and current round sizes."
         },
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical Series A led by a growth fund on recurring revenue. Probability set by judgment from the analogs and current round sizes."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            35000000
+          ],
+          "post_money_usd": [
+            110000000,
+            250000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Hot consumer AI A after strong retention. Probability set by judgment from the analogs and current round sizes."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            15000000
+          ],
+          "post_money_usd": [
+            30000000,
+            80000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Pivot to employer side or recruiting software, then raise. Probability set by judgment from the analogs and current round sizes."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A is missed if churn is structural and platforms block automation. LinkedIn's user terms ban bots per vendor blogs, and LinkedIn itself added its own Apply Assistant for premium users. Consumer cohorts in the repo show no known Series A for 2022 to 2025, and Pathrise, Careerist, Hiration took years."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.18,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2022-2025 --calibration-only gave seed cond 56% (43/56/67, n=16), series_a 0% known and 24% upper (n=9). B2B 2022-2025 gave A cond 26%; AI tag 2023-2025 gave seed 56%, A 21%. Full sample series_c cond 36% (n=55).",
+        "adjustment_reason": "Series B at 0.18, above the B2B anchor 0.16 because paying revenue exists."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Down or flat B, or a small B led by existing investors after slower growth than the A plan."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ YC Series B: median $37M, p25 to p75 $25M to $57M. Probability set by judgment from the analogs and current round sizes."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            900000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Breakout B with a large lead, as the few 2022+ YC Series B valuations of $550M to $775M suggest."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            30000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Strategic round from a customer, partner or incumbent rather than a pure financial lead."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails because the business is a transactional job search tool with natural churn. Pathrise reached a B but was later acquired, and no consumer job tool in the data became large. Growth would need to extend to an employer marketplace. For Tsenta the milestone to reach this round is paying customers and growth that investors can verify, and the analogs listed in this evaluation show that most companies in the cohort miss that bar."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --industry Consumer --years 2022-2025 --calibration-only gave seed cond 56% (43/56/67, n=16), series_a 0% known and 24% upper (n=9). B2B 2022-2025 gave A cond 26%; AI tag 2023-2025 gave seed 56%, A 21%. Full sample series_c cond 36% (n=55).",
+        "adjustment_reason": "Series C+ at 0.28, within 0.75 times the 0.36 anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small C or growth extension, below the 2022+ YC median C of $45M. Probability set by judgment from the analogs and current round sizes."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical C: 2022+ YC median $45M (n=9), US market C deal size near $77M."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            200000000
+          ],
+          "post_money_usd": [
+            800000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Category leader round, as for Deepgram and Vapi style winners, with a valuation above $800M."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C needs a durable platform. Job and career consumer companies in the repo rarely get there, and Joberator, Commissary Club and Kalibrr show small outcomes. LinkedIn and Indeed hold distribution. For Tsenta the milestone to reach this round is paying customers and growth that investors can verify, and the analogs listed in this evaluation show that most companies in the cohort miss that bar."
     }
   ],
   "outcomes": {
@@ -164,167 +248,229 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.12
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely stalls once the job search wave and refund cycles reduce subscriptions, or ends as a small acquisition. Job application consumer companies in the analogs ended small (Pathrise acquired late, Hiration and Key Values small, Commissary Club shut). A $1B outcome would require an employer-side marketplace beyond auto-apply."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "simplify",
+      "relevance": "Job application autofill tool, YC W21.",
+      "outcome_summary": "Over 1M users, $3M seed only in 2024 with about 10 staff."
+    },
+    {
+      "slug": "sorce",
+      "relevance": "Tinder-style job matching, YC F25.",
+      "outcome_summary": "Reported 500,000 users, small disclosed funding."
+    },
+    {
+      "slug": "pathrise",
+      "relevance": "Career coaching for job seekers.",
+      "outcome_summary": "Series A 2021 and B 2022, acquired in 2025."
+    },
+    {
+      "slug": "careerist",
+      "relevance": "Job seeker platform with application automation.",
+      "outcome_summary": "Seed 2021, $8M A in 2023."
+    },
+    {
+      "slug": "commissary-club",
+      "relevance": "Job platform exposed to hiring cycles.",
+      "outcome_summary": "Raised about $1.5M and closed in 2022."
+    },
+    {
+      "slug": "hiration",
+      "relevance": "Consumer resume tool.",
+      "outcome_summary": "About $3M raised in 2021, no later round found."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "High churn and refunds because users leave when they find a job",
+      "p": 0.4,
+      "evidence": "A job search is temporary, so subscription lifetime is short and claimed annualized revenue can overstate durable revenue.",
       "analogs": [
-        "TODO-company-slug"
+        "pathrise",
+        "commissary-club"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Add retention products such as career coaching and offer tracking."
+    },
+    {
+      "risk": "Platforms ban or block automated applications",
+      "p": 0.35,
+      "evidence": "LinkedIn's terms ban bots according to vendor blogs and LinkedIn launched its own Premium Apply Assistant.",
+      "analogs": [
+        "simplify",
+        "sorce"
+      ],
+      "mitigation": "Apply through company career pages and ATS integrations, not LinkedIn sessions."
+    },
+    {
+      "risk": "Large platforms copy the feature",
+      "p": 0.3,
+      "evidence": "LinkedIn and Jobright already offer AI apply agents and Jobright raised $3.2M.",
+      "analogs": [
+        "simplify",
+        "careerist"
+      ],
+      "mitigation": "Build quality of matching and offer outcomes."
+    },
+    {
+      "risk": "Two person team cannot support 90,000 users",
+      "p": 0.2,
+      "evidence": "Support, compliance and anti-fraud load rise with consumer volume.",
+      "analogs": [
+        "hiration",
+        "key-values"
+      ],
+      "mitigation": "Hire support and automate onboarding."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Jobright",
+      "what": "AI job agent that applies on behalf of users",
+      "traction": "Reported $3.2M round",
+      "source_url": "https://www.theregister.com/2025/06/24/ai_may_take_jobs_but/"
+    },
+    {
+      "name": "LinkedIn Premium Apply Assistant",
+      "what": "AI assisted applications for paying members",
+      "traction": "Native platform feature",
+      "source_url": "https://www.hrdive.com/news/sociable-linkedin-automates-job-application-process-for-premium-users/823876/"
+    },
+    {
+      "name": "LazyApply, AIApply, LoopCV and other bots",
+      "what": "Auto-apply tools for Easy Apply forms",
+      "traction": "Widely used, banned by platform terms per a vendor blog",
+      "source_url": "https://scoutify.com/blog/linkedin-auto-apply/"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Browser agents that fill varied application forms reliably need constant maintenance and anti-bot handling. A small team can build a working agent with current models, but quality across thousands of company sites and avoiding bans are ongoing work."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "LinkedIn",
+      "Indeed",
+      "Jobright",
+      "Simplify"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "Platforms already ship similar features and own distribution. Auto-apply is easy to copy, so a rival could match it in a few months."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Job seekers flood LinkedIn with bulk applications, showing demand for automation.",
+        "source_url": "https://www.eweek.com/news/ai-job-applications-linkedin/"
+      },
+      {
+        "claim": "Recruiters are swamped by AI generated applications, so the tools are widely used.",
+        "source_url": "https://www.thestar.com.my/tech/tech-news/2025/06/24/ai-sludge-has-entered-the-job-search"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove retention and payment quality.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Report cohort retention and refund rate",
+        "Show interview rate per application"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Monthly retention above 50% for a cohort"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Turn growth into a durable engine.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add retention features beyond application",
+        "Diversify away from LinkedIn dependence"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$3M annualized revenue sustained for 6 months"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Expand beyond job seekers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch an employer side product",
+        "Show payback period under 3 months"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Two sided revenue and positive contribution margin"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Claimed fast revenue growth with a tiny team",
+      "evidence": "The description states about $3M annualized revenue in three months and 90,000 users, as company claims.",
+      "source_url": "https://tsenta.com"
+    },
+    {
+      "point": "Real, widespread pain and usage of automation",
+      "evidence": "Reports show job seekers submit large volumes of automated applications.",
+      "source_url": "https://www.eweek.com/news/ai-job-applications-linkedin/"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Tsenta",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Tsenta\" --era 2022+ returned kind invented_or_proper, 6 chars, 2 syllables.",
     "strengths": [
-      "TODO"
+      "Short and pronounceable"
     ],
     "weaknesses": [
-      "TODO"
+      "Hard to spell from hearing",
+      "No job or career cue"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "An invented name that is short but unclear for a consumer product that depends on word of mouth. Simplify and Sorce used more descriptive or clear names, so this is a minor drag.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Fast claimed revenue but a fragile consumer model, so a seed is likely and later rounds are hard.",
+    "general_summary": "Tsenta is an AI agent that applies to jobs for consumers and claims about $3M annualized revenue and 90,000 users. That traction makes a seed round more likely than for a typical consumer company. The weaknesses are natural churn as people find jobs, dependence on platforms that ban bots, and easy copying by LinkedIn and others. Consumer job tools in the YC data such as Simplify and Hiration stayed small, and Pathrise ended in an acquisition, so a Series A depends on retention and expansion to employers.",
+    "deep_dive": {}
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from batch start 2026-07-06 using only the description. Traction numbers are company claims.",
+    "Seed step means a round above the $500K YC deal within about 12 months.",
+    "Consumer cohort has very few researched companies."
   ],
   "sources": [
-    "https://"
+    "https://www.theregister.com/2025/06/24/ai_may_take_jobs_but/",
+    "https://www.hrdive.com/news/sociable-linkedin-automates-job-application-process-for-premium-users/823876/",
+    "https://scoutify.com/blog/linkedin-auto-apply/",
+    "https://www.eweek.com/news/ai-job-applications-linkedin/",
+    "https://www.thestar.com.my/tech/tech-news/2025/06/24/ai-sludge-has-entered-the-job-search",
+    "https://tsenta.com"
   ]
 }

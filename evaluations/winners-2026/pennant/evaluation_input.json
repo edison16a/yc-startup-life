@@ -1,330 +1,401 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Pennant",
+  "one_liner": "The World Model for Corporate Governance",
+  "description": "Pennant builds voting and governance intelligence for institutional investors, public companies and corporate advisors, so that they can vote and engage according to their own principles at scale. It is led by two former institutional proxy voters and technologists. Buyers are asset managers, issuers and advisors who currently pay proxy advisors and data vendors. Two founders in New York.",
+  "as_of": "2026-07-06"
+ },
+ "yc_acceptance": {
+  "p": 0.025,
+  "p_low": 0.01,
+  "p_high": 0.05,
+  "basis": "In this test the company is assumed accepted to YC for Summer 2026. Prior is about 1 percent. Strong domain expertise (20 plus years) raises the odds, but the market is narrow, there is no stated traction and only two people. About 2.5 percent.",
+  "why_it_fails": "YC would most plausibly pass because proxy voting is a small, regulated market dominated by two firms, sales to asset managers are slow, and partners may doubt whether the revenue pool supports a venture scale company."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.57,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (n=26, anecdotal): seed cond 57% (n=23), series_a cond 23% (n=13), series_b 0 of 3. Broader B2B 2022-2025: seed 59%, A 26%, B 16%. Older B2B 2018-2021: A 32%, B 39%, C 57%.",
+    "adjustment_reason": "0.88x the 57 percent Fintech anchor (n=26): strong domain founders help, but a niche market, two people and slow institutional sales make a round above 500K within a year less certain."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      700000.0,
+      2000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small seed from fintech and governance angels."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical seed near the B2B median of 3.2M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      35000000,
+      70000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Strong seed if an anchor asset manager signs."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A seed fails if investors judge proxy voting to be a small market with only a few dozen real buyers, and if the founders show no paid pilot. Fintool and VectorShift, both AI tools for institutional investors, show small seeds followed by acquisition or no later round, so investors may stay at the YC check."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.24,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (n=26, anecdotal): seed cond 57% (n=23), series_a cond 23% (n=13), series_b 0 of 3. Broader B2B 2022-2025: seed 59%, A 26%, B 16%. Older B2B 2018-2021: A 32%, B 39%, C 57%.",
+    "adjustment_reason": "0.92x the 26 percent B2B conditional; the older B2B cohort gives 32 percent, so only a slight discount."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      55000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin A near the 2022+ B2B p25."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      16000000
+     ],
+     "post_money_usd": [
+      55000000,
+      100000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical A near the 15M median."
+    },
+    {
+     "raise_usd": [
+      16000000,
+      28000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A if large asset managers adopt it broadly."
+    }
+   ],
+   "why_it_fails": "Series A requires several institutional customers and a path past two entrenched incumbents, ISS and Glass Lewis, who hold roughly 90 percent of the US market and are adding AI. Large asset managers such as JPMorgan are building in house AI voting, which removes buyers."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (n=26, anecdotal): seed cond 57% (n=23), series_a cond 23% (n=13), series_b 0 of 3. Broader B2B 2022-2025: seed 59%, A 26%, B 16%. Older B2B 2018-2021: A 32%, B 39%, C 57%.",
+    "adjustment_reason": "Above the 16 percent 2022+ B2B conditional (censored) but below the older 39 to 44 percent."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      100000000,
+      200000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat B near the 2022+ p25."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      60000000
+     ],
+     "post_money_usd": [
+      200000000,
+      400000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical B near the 45M median."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      400000000,
+      800000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B if it expands to issuer and advisor products."
+    }
+   ],
+   "why_it_fails": "A Series B needs a broader market than voting, such as issuer engagement and governance data, but regulation of proxy advisors is uncertain and buyers may stay with incumbents. The revenue pool is limited, so growth caps below venture scale."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (n=26, anecdotal): seed cond 57% (n=23), series_a cond 23% (n=13), series_b 0 of 3. Broader B2B 2022-2025: seed 59%, A 26%, B 16%. Older B2B 2018-2021: A 32%, B 39%, C 57%.",
+    "adjustment_reason": "Below the 36 percent broad figure because of the niche market."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Series C at a modest valuation."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      700000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round if it becomes a governance data standard."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it displaces incumbents."
+    }
+   ],
+   "why_it_fails": "Few governance data companies reach a Series C because the market is small and incumbents are acquisitive. The likely end is an acquisition by a data or advisory firm rather than a large growth round."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.15
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The company fails to reach a meaningful exit if proxy voting remains a small concentrated market, if large asset managers build their own AI voting, or if ISS and Glass Lewis add equivalent features with their data advantage and customer relationships."
+ },
+ "analogs": [
+  {
+   "slug": "fintool",
+   "relevance": "AI financial copilot for institutional investors.",
+   "outcome_summary": "Raised a seed, then acquired."
+  },
+  {
+   "slug": "vectorshift",
+   "relevance": "AI platform for private market investors.",
+   "outcome_summary": "Active, reached a seed."
+  },
+  {
+   "slug": "formula-insight",
+   "relevance": "Tools for institutional investors, narrow niche.",
+   "outcome_summary": "Active, no recorded round."
+  },
+  {
+   "slug": "value-voting",
+   "relevance": "Voting related platform with a narrow mission.",
+   "outcome_summary": "Shut down, no round recorded."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Small concentrated market with two dominant incumbents",
+   "p": 0.45,
+   "evidence": "ISS and Glass Lewis reportedly hold about 90 percent of US proxy advice.",
+   "analogs": [
+    "formula-insight",
+    "fintool"
+   ],
+   "mitigation": "Sell to customers leaving the incumbents and expand to issuers."
+  },
+  {
+   "risk": "Large asset managers build in house AI voting",
+   "p": 0.35,
+   "evidence": "JPMorgan reportedly moved to an internal AI voting platform.",
+   "analogs": [
+    "vectorshift",
+    "fintool"
+   ],
+   "mitigation": "Sell to mid size managers who cannot build."
+  },
+  {
+   "risk": "Regulatory shifts reduce the proxy advice market",
+   "p": 0.25,
+   "evidence": "The US executive order and antitrust scrutiny of proxy advisors make rules unstable.",
+   "analogs": [
+    "value-voting"
+   ],
+   "mitigation": "Serve issuers as well as investors."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "ISS",
+   "what": "Dominant proxy advisor adding AI voting recommendations",
+   "traction": "Large share of the US market",
+   "source_url": "https://whatstrending.fenwick.com/post/ai-coming-proxy-advisory-firms"
+  },
+  {
+   "name": "Glass Lewis",
+   "what": "Proxy advisor moving to multiple voting perspectives",
+   "traction": "Roughly the other half of the duopoly",
+   "source_url": "https://corpgov.law.harvard.edu/2025/10/29/glass-lewis-to-end-benchmark-proxy-voting-policy-what-companies-should-know/"
+  },
+  {
+   "name": "In house AI platforms at large managers",
+   "what": "Internal voting automation",
+   "traction": "JPMorgan reported to use one",
+   "source_url": "https://www.winstontaylor.com/insights/a-turning-point-for-proxy-advisors-jpmorgans-ai-pivot-amid-intensifying-regulatory-scrutiny"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Parsing filings, policies and votes with language models is feasible for a small team, but accuracy on nuanced global governance issues is hard and incumbents have years of data. Domain expertise is the moat."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "ISS",
+   "Glass Lewis",
+   "in house teams at big asset managers"
+  ],
+  "timeline_months": 18,
+  "rationale": "Incumbents are adding AI features and have customers, though their slow pace and regulatory pressure give a window."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Investors are moving from one size fits all voting advice to customized AI assisted recommendations.",
+    "source_url": "https://corpgov.law.harvard.edu/2025/10/29/glass-lewis-to-end-benchmark-proxy-voting-policy-what-companies-should-know/"
+   },
+   {
+    "claim": "Regulatory pressure on proxy advisors is creating openings for alternatives.",
+    "source_url": "https://www.skadden.com/insights/publications/2026/02/the-informed-board/will-curbs-on-proxy-advisors-make-shareholder-votes-less-predictable"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Paid pilot with a manager",
+   "actions": [
+    "Run voting recommendations on a past proxy season",
+    "Get a letter of intent"
+   ],
+   "proof": "One paid pilot"
+  },
+  {
+   "phase": "seed",
+   "goal": "Several institutional customers",
+   "actions": [
+    "Add issuer product",
+    "Hire an engineer"
+   ],
+   "proof": "Five customers, 500K ARR"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Founders have direct proxy voting experience",
+   "evidence": "Led by former institutional proxy voters with 20 plus years combined.",
+   "source_url": "https://whatstrending.fenwick.com/post/ai-coming-proxy-advisory-firms"
+  },
+  {
+   "point": "Market shift away from a single benchmark policy",
+   "evidence": "Glass Lewis plans to drop its benchmark policy in 2027.",
+   "source_url": "https://corpgov.law.harvard.edu/2025/10/29/glass-lewis-to-end-benchmark-proxy-voting-policy-what-companies-should-know/"
+  }
+ ],
+ "brand": {
+  "name": "Pennant",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Pennant\" --era 2022+ : 7 characters, 2 syllables, real word",
+  "strengths": "Real word, easy to say, suggests a flag or a position",
+  "weaknesses": "Does not say governance, shared with other brands",
+  "rationale": "The name is a real word that fits finance and signalling, easy to say and remember. It does not describe the product, but buyers choose institutional tools by trust, so the effect is small.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Credible domain founders in a narrow, concentrated market, so a seed is a coin flip and later rounds are hard.",
+  "general_summary": "Pennant pairs former proxy voters with AI to serve a market dominated by ISS and Glass Lewis, where customers are moving toward customized and AI assisted voting. The domain expertise is a real strength. The market is small, sales cycles are slow, and big asset managers are building their own tools. A seed above the YC check is about a coin flip and later steps sit slightly below the cohort anchors. The upside path is a pivot to a broader governance data product for issuers and advisors. Reaching a round years later is common for companies with paying customers."
+ },
+ "assumptions": [
+  "Test is blind: only the YC input file was used for company facts.",
+  "Seed means a round above $500K within about 12 months.",
+  "Fintech cohort has only 26 companies, so B2B figures were used too."
+ ],
+ "sources": [
+  "https://whatstrending.fenwick.com/post/ai-coming-proxy-advisory-firms",
+  "https://corpgov.law.harvard.edu/2025/10/29/glass-lewis-to-end-benchmark-proxy-voting-policy-what-companies-should-know/",
+  "https://www.winstontaylor.com/insights/a-turning-point-for-proxy-advisors-jpmorgans-ai-pivot-amid-intensifying-regulatory-scrutiny",
+  "https://www.skadden.com/insights/publications/2026/02/the-informed-board/will-curbs-on-proxy-advisors-make-shareholder-votes-less-predictable"
+ ]
 }

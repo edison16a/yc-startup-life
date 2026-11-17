@@ -1,162 +1,246 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Congruent",
+    "one_liner": "AI native radars for self-driving cars",
+    "description": "Radar hardware that exposes raw sensor data to end-to-end neural driving models, paired with a world-model based radar simulator. Buyers are autonomous driving developers and car makers. Two person team in San Francisco.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.03,
+    "basis": "Placeholder value only, because Congruent is already known to be accepted. Test note: accepted to YC, so the acceptance step is not forecast. The applicant prior is about 1 percent. Deep technical hardware ideas with a sharp thesis fit YC's recent interest in robotics, though a two person team with no product is a weaker signal.",
+    "why_it_fails": "YC would most plausibly pass because radar is hardware heavy, slow to sell to automakers, and the claim that raw radar data is the missing input is a thesis rather than traction. Two founders would have to prove they can build both a sensor and a simulator."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.5,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.74,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2020-2025 --calibration-only gave seed cond 74% (n=19), series_a cond 21% (n=14), series_b cond 67% (n=3). The B2B 2022-2025 cohort gave seed 59% and A 26%. Full sample series_c cond 36% (n=55).",
+        "adjustment_reason": "Seed at 0.68 times the Industrials anchor of 0.74: two founders and hardware risk but strong technical thesis and a simulator that can be sold as software."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small round or hardware grant mix, larger than the YC check but thin, if investors doubt the two person team can build hardware."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            5000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            35000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical deep tech hardware seed, in line with the 2022+ YC seed median of $4.1M."
+        },
+        {
+          "raise_usd": [
+            5000000,
+            10000000
+          ],
+          "post_money_usd": [
+            35000000,
+            80000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Strong seed from a robotics or AV focused fund after a bench demo with raw data."
+        },
+        {
+          "raise_usd": [
+            10000000,
+            20000000
+          ],
+          "post_money_usd": [
+            80000000,
+            160000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside if a car maker or tier one supplier commits a development contract. Probability set by judgment from the analogs and current round sizes."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed over the YC check is stopped if investors do not believe two people can ship working radar hardware, or if the thesis about raw data stays theoretical. Zendar raised an $11M A in 2019 only after years of work, and lvl5 and Auro show that AV suppliers often raise small seeds. A software-only simulator demo could rescue it."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.21,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2020-2025 --calibration-only gave seed cond 74% (n=19), series_a cond 21% (n=14), series_b cond 67% (n=3). The B2B 2022-2025 cohort gave seed 59% and A 26%. Full sample series_c cond 36% (n=55).",
+        "adjustment_reason": "Series A near the 0.21 anchor, because Zendar and Array Labs show hardware A rounds do occur."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin or bridge Series A or a small A extension, below the 2022+ YC median raise of $14M, because growth or revenue is modest."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical 2022+ YC Series A: median raise $14.15M, p25 to p75 $10M to $20M, against US pre money medians near $60M for a Series A."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Hot AI round with a lead from a top fund after fast revenue growth, in line with 2025 to 2026 AI Series A sizes."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            18000000
+          ],
+          "post_money_usd": [
+            40000000,
+            90000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Pivot then raise path: the company changes wedge after the batch and raises an A on the new product, as Eden and Vapi did."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A is missed if no automaker or AV company commits to integrate the radar. Hardware cycles are long and Zendar later moved away from radar to robot services. Arbe and other imaging radar firms are public or well funded, so customers can buy established parts."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.67,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2020-2025 --calibration-only gave seed cond 74% (n=19), series_a cond 21% (n=14), series_b cond 67% (n=3). The B2B 2022-2025 cohort gave seed 59% and A 26%. Full sample series_c cond 36% (n=55).",
+        "adjustment_reason": "Series B at 0.20, well under the tiny n=3 Industrials anchor of 0.67, which is not reliable; B2B anchor is 0.16."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Down or flat B, or a small B led by existing investors after slower growth than the A plan."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical 2022+ YC Series B: median $37M, p25 to p75 $25M to $57M. Probability set by judgment from the analogs and current round sizes."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            900000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Breakout B with a large lead, as the few 2022+ YC Series B valuations of $550M to $775M suggest."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            30000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Strategic round from a customer, partner or incumbent rather than a pure financial lead."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if volume production cannot be funded or if end-to-end driving stacks stay camera-centric and do not need radar. Automotive qualification takes years, and Zendar's B in 2022 came with an automotive strategic investor. For Congruent the milestone to reach this round is paying customers and growth that investors can verify, and the analogs listed in this evaluation show that most companies in the cohort miss that bar."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2020-2025 --calibration-only gave seed cond 74% (n=19), series_a cond 21% (n=14), series_b cond 67% (n=3). The B2B 2022-2025 cohort gave seed 59% and A 26%. Full sample series_c cond 36% (n=55).",
+        "adjustment_reason": "Series C+ at 0.28, within 0.75 times the 0.36 anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small C or growth extension, below the 2022+ YC median C of $45M. Probability set by judgment from the analogs and current round sizes."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical C: 2022+ YC median $45M (n=9), US market C deal size near $77M."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            200000000
+          ],
+          "post_money_usd": [
+            800000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Category leader round, as for Deepgram and Vapi style winners, with a valuation above $800M."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C needs production contracts with automakers. Few AV hardware startups in the repo reached C, and Embark and Cruise show that autonomy capital needs can turn into SPAC or acquisition outcomes. For Congruent the milestone to reach this round is paying customers and growth that investors can verify, and the analogs listed in this evaluation show that most companies in the cohort miss that bar."
     }
   ],
   "outcomes": {
@@ -164,167 +248,225 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.13
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely stall or pivot. Automotive radar has long qualification cycles and incumbents like Arbe, Mobileye and Aptiv. Analogs such as Zendar (pivoted away) and lvl5 (acqui-hire) show that even well funded teams struggle. A $1B outcome requires a major automaker adoption of raw radar."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "zendar",
+      "relevance": "High definition radar for self-driving cars, YC S17.",
+      "outcome_summary": "$11M Series A 2019, Series B 2022 with Hyundai Mobis, later appears to have pivoted away from radar."
+    },
+    {
+      "slug": "lvl5",
+      "relevance": "Self-driving supplier, YC W17.",
+      "outcome_summary": "Seed only, team hired by DoorDash in 2019."
+    },
+    {
+      "slug": "faction",
+      "relevance": "Autonomous vehicle hardware startup.",
+      "outcome_summary": "Seed and Series A, listed inactive."
+    },
+    {
+      "slug": "auro-robotics",
+      "relevance": "Autonomous shuttle startup.",
+      "outcome_summary": "$2M seed then all-stock acquisition by Ridecell in 2017."
+    },
+    {
+      "slug": "array-labs",
+      "relevance": "Deep tech sensing hardware startup.",
+      "outcome_summary": "$5M seed 2022, $20M Series A 2026, shows slow hardware timeline."
+    },
+    {
+      "slug": "embark-trucks",
+      "relevance": "Autonomy company that ran out of money.",
+      "outcome_summary": "SPAC listing then failure, shows capital intensity."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Hardware plus simulator is too much for two people before the seed runs out",
+      "p": 0.35,
+      "evidence": "Radar needs RF design, fabrication and a driving world model, and Zendar needed years and multiple rounds.",
       "analogs": [
-        "TODO-company-slug"
+        "zendar",
+        "faction"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Sell the simulator and a reference design first, outsource fabrication."
+    },
+    {
+      "risk": "Customers do not need raw radar because camera and lidar stacks win",
+      "p": 0.3,
+      "evidence": "Radar is a secondary sensor in most end-to-end stacks and big suppliers already ship imaging radar.",
+      "analogs": [
+        "lvl5",
+        "embark-trucks"
+      ],
+      "mitigation": "Get one AV developer to train with the data and publish results."
+    },
+    {
+      "risk": "Automotive sales cycles exceed funding runway",
+      "p": 0.3,
+      "evidence": "Automakers qualify parts over years, and Zendar took until 2022 for a strategic B.",
+      "analogs": [
+        "zendar",
+        "auro-robotics"
+      ],
+      "mitigation": "Target AV developers and robotics first, which buy faster."
+    },
+    {
+      "risk": "Incumbents expose raw data",
+      "p": 0.2,
+      "evidence": "Arbe already processes raw returns and integrates with NVIDIA DRIVE, so access to raw data could be offered by others.",
+      "analogs": [
+        "zendar"
+      ],
+      "mitigation": "Compete on simulator fidelity and open data format."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Arbe Robotics",
+      "what": "High resolution imaging radar chipset, processes raw returns on chip",
+      "traction": "Public company, integrated with NVIDIA DRIVE AGX per reports",
+      "source_url": "https://www.electronicdesign.com/markets/automotive/article/21132148/automotive-radar-chip-processes-30-gb-s-of-data"
+    },
+    {
+      "name": "Imaging radar startups and suppliers",
+      "what": "Several automotive radar startups with large raises",
+      "traction": "IDTechEx says automotive radar startups raised almost $1B",
+      "source_url": "https://www.oemoffhighway.com/electronics/sensors/proximity-detection-safety-systems/article/22934781/idtechex-automotive-radar-startups-have-raised-almost-1-billion"
+    },
+    {
+      "name": "Mobileye and Aptiv",
+      "what": "Tier one radar products",
+      "traction": "Incumbent suppliers with automaker contracts",
+      "source_url": "https://www.oemoffhighway.com/electronics/sensors/proximity-detection-safety-systems/article/22934781/idtechex-automotive-radar-startups-have-raised-almost-1-billion"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Radar hardware design, signal processing and a physics-faithful world-model simulator are each hard. Two people can prototype a reference design, but automotive qualification and production scale are beyond a small team."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Arbe",
+      "Mobileye",
+      "Aptiv",
+      "Nvidia"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 18,
+    "rationale": "Incumbents could expose raw data within a product cycle but would take 18 months or more to build a matching simulator. Their incentive is to protect point cloud products."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Radar startups raised nearly $1B, showing investor interest, though funding peaked in 2021 and 2022.",
+        "source_url": "https://www.oemoffhighway.com/electronics/sensors/proximity-detection-safety-systems/article/22934781/idtechex-automotive-radar-startups-have-raised-almost-1-billion"
+      },
+      {
+        "claim": "Raw radar data processing at 30 Gbps is available from Arbe, showing market interest in raw-level sensing.",
+        "source_url": "https://www.electronicdesign.com/markets/automotive/article/21132148/automotive-radar-chip-processes-30-gb-s-of-data"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Demonstrate that raw radar helps an end-to-end model.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Release a simulator demo and open dataset",
+        "Run a training experiment with an open driving model"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Measured gain from raw radar input"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Get a paying design partner.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign a paid pilot with an AV developer",
+        "Build a first prototype board"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "One paid pilot of $100K or more"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Production path with an OEM or tier one.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Secure a development contract",
+        "Complete a working sensor on road test"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Signed development agreement"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Clear technical thesis aligned with end-to-end driving",
+      "evidence": "The description argues that end-to-end systems need raw data and a simulator, which current radars do not offer.",
+      "source_url": "https://www.electronicdesign.com/markets/automotive/article/21132148/automotive-radar-chip-processes-30-gb-s-of-data"
+    },
+    {
+      "point": "Simulator can be sold as software early",
+      "evidence": "A world-model simulator gives a software revenue path before hardware is qualified.",
+      "source_url": "https://www.oemoffhighway.com/electronics/sensors/proximity-detection-safety-systems/article/22934781/idtechex-automotive-radar-startups-have-raised-almost-1-billion"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Congruent",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Congruent\" --era 2022+ returned kind invented_or_proper, 9 chars, 2 syllables.",
     "strengths": [
-      "TODO"
+      "Real word, easy to say",
+      "Hints at matching sensor and model"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic and common word",
+      "No radar cue"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A real English word that is easy to remember but generic. Deep tech names matter less than the technology, so it moves no probability.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A sharp technical thesis in a slow, capital hungry hardware market, with the seed likely and later rounds uncertain.",
+    "general_summary": "Congruent builds radar that exposes raw data and a simulator for end-to-end autonomous driving. The thesis is specific and timely, and a simulator can generate software revenue early. The risks are two founders trying to build hardware, long automotive sales cycles, and incumbents like Arbe that already process raw returns. Analogs such as Zendar and lvl5 show that AV suppliers often raise a seed and an A but then pivot or get acquired. A seed is plausible within a year, a Series A needs a committed development partner.",
+    "deep_dive": {}
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from batch start 2026-01-05 using only the description.",
+    "Seed step means a round above the $500K YC deal within about 12 months.",
+    "Industrials cohort has only 19 companies, so anchors are wide."
   ],
   "sources": [
-    "https://"
+    "https://www.electronicdesign.com/markets/automotive/article/21132148/automotive-radar-chip-processes-30-gb-s-of-data",
+    "https://www.oemoffhighway.com/electronics/sensors/proximity-detection-safety-systems/article/22934781/idtechex-automotive-radar-startups-have-raised-almost-1-billion"
   ]
 }

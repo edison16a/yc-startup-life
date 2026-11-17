@@ -1,162 +1,246 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "KugelAudio",
+    "one_liner": "Kugel is an on-prem Voice AI model supporting 30+ languages",
+    "description": "Enterprise text to speech model sold for on-premise deployment, with 30+ languages and low latency. Buyers are enterprises and voice agent builders that cannot send audio to a cloud API. Five person team in Berlin.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.03,
+    "basis": "Placeholder value only, because KugelAudio is already known to be accepted. Test note: this company was accepted to YC, so the acceptance step is not forecast. The prior is about 1 percent of applicants (0.6 to 2 percent third party range, references/yc_acceptance.md). A technical team in a hot AI category (voice) with a clear enterprise wedge would sit above that prior, a five person team with no stated traction would not move far.",
+    "why_it_fails": "YC would most plausibly pass because text to speech is crowded with ElevenLabs, Cartesia and Deepgram, and a model company needs proof of quality that a short application cannot show. Voice analogs such as Lyrebird and PlayAI were accepted anyway, so the main risk was an unclear wedge beyond on-prem."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.52,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (lower 49, known 59, upper 65), series_a cond 26% (13/15/29), series_b cond 16% (2/2/18), series_c cond 0% on n=3; the full calibration sample gives series_c cond 36% (n=55) in references/stage_benchmarks.md. Seed within 12 months is lower than ever reaching seed (median 7 months, p75 15).",
+        "adjustment_reason": "Seed set at 0.88 times the B2B anchor: hot AI category and Europe sovereignty tailwind offset by a strong incumbent set and a short window."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            2000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small round near the YC check, a pre seed that is larger than $500K but thin, if investors doubt that on-prem is enough of a wedge."
         },
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            4000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical European AI infrastructure seed. 2022+ YC seed median is $4.1M in the repo data and US market seed deal size is about $3M."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.3,
+          "rationale": "Strong seed in a hot voice AI market, in line with Freya's reported $3.5M seed and Miso Labs style attention."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            15000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside from a quality benchmark win or a named bank or telecom customer, as PlayAI's $21M seed shows is possible."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed within about 12 months is stopped if the model quality does not match ElevenLabs or Cartesia on independent listening tests, or if on-prem demand turns out to be served by incumbents. Investors also ask why a five person team can keep training multilingual models without large compute. Freya and Miso Labs raised or got attention only with strong demos, while Hopper and .Wave showed no round."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (lower 49, known 59, upper 65), series_a cond 26% (13/15/29), series_b cond 16% (2/2/18), series_c cond 0% on n=3; the full calibration sample gives series_c cond 36% (n=55) in references/stage_benchmarks.md. Seed within 12 months is lower than ever reaching seed (median 7 months, p75 15).",
+        "adjustment_reason": "Series A near the B2B anchor of 0.26 and above the AI cohort 0.21 because paying enterprise customers on-prem are sticky."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin or bridge Series A or a small A extension, below the 2022+ YC median raise of $14M, because growth or revenue is modest."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ YC Series A: median raise $14.15M, p25 to p75 $10M to $20M, against US pre money medians near $60M for a Series A."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Hot AI round with a lead from a top fund after fast revenue growth, in line with 2025 to 2026 AI Series A sizes."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            18000000
+          ],
+          "post_money_usd": [
+            40000000,
+            90000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Pivot then raise path: the company changes wedge after the batch and raises an A on the new product, as Eden and Vapi did."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A is missed if revenue stays at pilots. Enterprise on-prem voice deals have long sales cycles, and ElevenLabs added on-prem deployment in 2026 per vendor guides, shrinking the unique angle. Deepgram and AssemblyAI show that a Series A needs a clear paid base, and Hopper and .Wave had none by their first year."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.17,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (lower 49, known 59, upper 65), series_a cond 26% (13/15/29), series_b cond 16% (2/2/18), series_c cond 0% on n=3; the full calibration sample gives series_c cond 36% (n=55) in references/stage_benchmarks.md. Seed within 12 months is lower than ever reaching seed (median 7 months, p75 15).",
+        "adjustment_reason": "Series B at about the 0.16 anchor, slightly above because voice winners (Vapi, AssemblyAI) did reach B."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            150000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Down or flat B, or a small B led by existing investors after slower growth than the A plan."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ YC Series B: median $37M, p25 to p75 $25M to $57M. Probability set by judgment from the analogs and current round sizes."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            100000000
+          ],
+          "post_money_usd": [
+            350000000,
+            900000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Breakout B with a large lead, as the few 2022+ YC Series B valuations of $550M to $775M suggest."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            30000000
+          ],
+          "post_money_usd": [
+            80000000,
+            200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Strategic round from a customer, partner or incumbent rather than a pure financial lead."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if the product is commoditized by open weight speech models and by cloud vendors. Without a defensible lead in quality or a distribution channel, growth plateaus. Deepgram needed years and heavy research to hold a position, and EzDubs and PlayAI chose to be acquired instead of raising a B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only gave seed cond 59% (lower 49, known 59, upper 65), series_a cond 26% (13/15/29), series_b cond 16% (2/2/18), series_c cond 0% on n=3; the full calibration sample gives series_c cond 36% (n=55) in references/stage_benchmarks.md. Seed within 12 months is lower than ever reaching seed (median 7 months, p75 15).",
+        "adjustment_reason": "Series C+ at 0.30, within 0.75 times the full sample anchor of 0.36; the exit-by-acquisition pattern in voice lowers it."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small C or growth extension, below the 2022+ YC median C of $45M. Probability set by judgment from the analogs and current round sizes."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical C: 2022+ YC median $45M (n=9), US market C deal size near $77M."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            200000000
+          ],
+          "post_money_usd": [
+            800000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Category leader round, as for Deepgram and Vapi style winners, with a valuation above $800M."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C requires category leadership against ElevenLabs scale. Most voice companies in the data ended as acquisitions by large platforms (PlayAI to Meta, EzDubs to Cisco) rather than reaching a C. Only Deepgram and AssemblyAI reached series C, which makes a C a rare outcome."
     }
   ],
   "outcomes": {
@@ -164,167 +248,231 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.52
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.14
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the company stalls or is acqui-hired. The voice model market has well funded leaders, and the repo analogs PlayAI, EzDubs and Lyrebird all ended as small to mid acquisitions by big platforms. Reaching $1B needs the company to out-model ElevenLabs on quality or win a distribution position in regulated enterprises, which the on-prem wedge only partly supports."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "playai",
+      "relevance": "Voice model company that raised a seed and was bought.",
+      "outcome_summary": "Raised a $21M seed in 2024 and was acquired by Meta in 2025, an acquisition rather than a C."
+    },
+    {
+      "slug": "deepgram",
+      "relevance": "Speech API with an enterprise self-hosted option.",
+      "outcome_summary": "Series A 2020 to Series C by 2023 with a research moat, the best case for this category."
+    },
+    {
+      "slug": "lyrebird",
+      "relevance": "Voice synthesis team with a strong demo.",
+      "outcome_summary": "Raised only YC money and sold to Descript in 2019, a technology and team sale."
+    },
+    {
+      "slug": "ezdubs",
+      "relevance": "Low latency speech tech team.",
+      "outcome_summary": "$4.2M seed in 2024, sold to Cisco in 2025."
+    },
+    {
+      "slug": "freya",
+      "relevance": "Enterprise voice AI from the 2025 batch.",
+      "outcome_summary": "About $3.5M seed after YC, a typical seed band for this category."
+    },
+    {
+      "slug": "acrely",
+      "relevance": "Enterprise voice agent company without a wedge.",
+      "outcome_summary": "Shut down after pivoting within the batch, shows failure when there is no distinct wedge."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "ElevenLabs, Cartesia and Deepgram already sell on-prem or near on-prem low latency TTS",
+      "p": 0.4,
+      "evidence": "Vendor guides report ElevenLabs on-prem deployment from April 2026 and Cartesia models running in cloud, on-prem and on device, so the main differentiator is contested.",
       "analogs": [
-        "TODO-company-slug"
+        "deepgram",
+        "playai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Win on languages that the leaders cover poorly, and on quality in German and European languages with regulated customers."
+    },
+    {
+      "risk": "Model quality gap and compute cost for a five person team",
+      "p": 0.3,
+      "evidence": "Training competitive multilingual TTS needs data and GPUs, and open weight releases such as Miso Labs' 8B emotive TTS raise the free baseline.",
+      "analogs": [
+        "miso-labs",
+        "lyrebird"
+      ],
+      "mitigation": "Fine tune open models, publish independent benchmarks and focus on a few high value languages."
+    },
+    {
+      "risk": "Long enterprise sales cycles delay revenue beyond the seed runway",
+      "p": 0.3,
+      "evidence": "On-prem deals need security reviews and pilots, and Freya and other voice firms show seeds followed by slow expansions.",
+      "analogs": [
+        "freya",
+        "acrely"
+      ],
+      "mitigation": "Sell to voice agent platforms and contact center vendors who embed the model and buy quickly."
+    },
+    {
+      "risk": "Acquihire exit before a Series A",
+      "p": 0.25,
+      "evidence": "PlayAI, EzDubs and Lyrebird all sold after a seed or less, so founders may prefer a soft exit.",
+      "analogs": [
+        "playai",
+        "ezdubs",
+        "lyrebird"
+      ],
+      "mitigation": "Set revenue milestones that make an independent A more attractive than an offer."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "ElevenLabs",
+      "what": "Multilingual TTS with on-prem enterprise option reported in 2026",
+      "traction": "Category leader in expressive and multilingual voice",
+      "source_url": "https://inworld.ai/resources/elevenlabs-alternatives"
+    },
+    {
+      "name": "Deepgram",
+      "what": "Speech API with shared cloud, dedicated and self-hosted tiers",
+      "traction": "Series C company, YC W16",
+      "source_url": "https://deepgram.com/blog/text-to-speech-elevenlabs-alternatives"
+    },
+    {
+      "name": "Cartesia",
+      "what": "Low latency TTS with identical models in cloud, on-prem and on device",
+      "traction": "Cited as a leader for low latency TTS",
+      "source_url": "https://smallest.ai/blog/top-alternatives-to-elevenlabs-in-2026"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Training a competitive multilingual TTS model is hard because it needs data, GPUs and evaluation in 30 languages. A small team can ship by fine tuning open models, but matching leader quality and latency on-prem is a real research challenge."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "ElevenLabs",
+      "Deepgram",
+      "Cartesia",
+      "Hyperscaler speech services"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Well funded rivals already offer self-hosted deployment and could add more languages in a few months. They have distribution and incentive, though regulated European buyers may still prefer a local vendor."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Voice agent builders compare many TTS vendors on latency and self-hosting, showing active demand and paid use.",
+        "source_url": "https://hackernoon.com/comparing-top-elevenlabs-alternatives-for-production-ai-voice-agents"
+      },
+      {
+        "claim": "Enterprise guides list self-hosted TTS as a requirement for regulated buyers.",
+        "source_url": "https://inworld.ai/resources/best-self-hosted-tts"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show quality and latency evidence in 30 languages.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish an independent listening and latency benchmark against ElevenLabs and Cartesia",
+        "Sign two pilot customers that require on-prem"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Two written pilots and a public benchmark"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove on-prem demand with paid deployments.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Convert pilots to annual contracts with a regulated buyer",
+        "Add the five languages that competitors handle worst"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$300K or more of contracted annual revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show repeatable enterprise sales and a quality lead.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire a first enterprise seller and a solutions engineer",
+        "Release a next generation model with lower latency"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1.5M or more annual recurring revenue and a named bank or telecom reference"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Clear wedge for buyers who cannot use cloud TTS",
+      "evidence": "Data residency and on-prem needs are cited in vendor guides, and the EU buyer base favors local vendors.",
+      "source_url": "https://inworld.ai/resources/best-self-hosted-tts"
+    },
+    {
+      "point": "Voice AI is a proven funding category",
+      "evidence": "Vapi reached Series B and PlayAI raised a $21M seed in the repo records.",
+      "source_url": "https://deepgram.com/blog/best-text-to-speech-apis-2026"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "KugelAudio",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"KugelAudio\" --era 2022+ returned kind compound_words, 10 chars, 2 words, 4 syllables.",
     "strengths": [
-      "TODO"
+      "Descriptive of audio",
+      "German word Kugel is distinctive"
     ],
     "weaknesses": [
-      "TODO"
+      "Hard to spell for non-German speakers",
+      "Compound name is longer than most winners"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "A descriptive compound with a German root is memorable in Europe but harder in the US. Past YC cases show names rarely decide outcomes in infrastructure, so it moves no probability.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A credible on-prem voice wedge in a crowded, fast-moving market, most likely ending in a seed or an acquisition.",
+    "general_summary": "KugelAudio sells an on-premise text to speech model with 30+ languages and low latency to enterprises. Demand for voice AI is strong and funding is available, with comparable YC companies like Freya raising seeds of about $3.5M and PlayAI raising $21M. The risk is that ElevenLabs, Cartesia and Deepgram already offer self-hosted options, and a five person team must keep up on quality. The most likely path is a seed in the first year, a Series A only if paying enterprise customers appear, and an acquisition by a larger voice platform as the common ending.",
+    "deep_dive": {}
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from the batch start 2026-04-06 using only the description. No traction known.",
+    "The seed step means a round above the standard $500K YC deal within about 12 months.",
+    "Base rates are 2022 to 2025 cohorts, which are right censored for later stages."
   ],
   "sources": [
-    "https://"
+    "https://inworld.ai/resources/elevenlabs-alternatives",
+    "https://deepgram.com/blog/text-to-speech-elevenlabs-alternatives",
+    "https://smallest.ai/blog/top-alternatives-to-elevenlabs-in-2026",
+    "https://hackernoon.com/comparing-top-elevenlabs-alternatives-for-production-ai-voice-agents",
+    "https://inworld.ai/resources/best-self-hosted-tts",
+    "https://deepgram.com/blog/best-text-to-speech-apis-2026"
   ]
 }

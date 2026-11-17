@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Beyond Reach Labs",
+    "one_liner": "Space solar arrays that grow to the size of a football field in orbit",
+    "description": "Beyond Reach Labs builds deployable solar arrays for satellites that stow to the size of a dining table and extend to football field scale in orbit, claiming 10 times more usable power without more launch mass or volume. Founders are a mechanical engineering PhD who worked with NASA on deployable structures and a former SpaceX Dragon parachute lead. Team of 15 in New York.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.15,
+    "p_low": 0.08,
+    "p_high": 0.3,
+    "basis": "Test assumes acceptance, so this is a note. Baseline YC acceptance is low single digits. Strong founder market fit (NASA deployables research, SpaceX flight hardware), a patented design and a clear tailwind from orbital data center power demand lift this to about 15 percent, while hardware qualification risk and the long road to flight revenue hold it back.",
+    "why_it_fails": "YC could say a deployable structure is a long, capital heavy hardware program with no flight heritage, that Redwire (ROSA) and others already sell roll out arrays with flight history, and that the 10 times claim is unproven. Satellite buyers are conservative and slow to adopt unflown power systems, so the first revenue could be years away."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.72,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.68,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2013-2024 --calibration-only: seed 63/68/70 percent (n=28); 2020-2024 seed 73 percent (n=15); Industrials median 6 months to seed",
+        "adjustment_reason": "At about 1.05 times the anchor: Industrials seed fast, space is hot in 2026 and the founders are unusually credible, but a seed above $500K for hardware is not guaranteed."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            18000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical hard tech seed of $3M to $6M, close to Basalt ($3.5M) and Radical ($4.5M) for YC space peers."
         },
         {
           "raise_usd": [
-            0,
-            0
+            7000000.0,
+            14000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000.0,
+            80000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Upside: a space or deep tech fund leads on orbital data center demand and the founders' pedigree, as Wyvern raised $7M and Stoke raised $9.1M."
+        },
+        {
+          "raise_usd": [
+            800000.0,
+            2000000.0
+          ],
+          "post_money_usd": [
+            8000000.0,
+            16000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Thin band: small round or government grants (SBIR, NASA) alongside angels."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails if investors do not believe the geometry claim without a physical demonstration, or see the market as a handful of satellite manufacturers that buy slowly. Without a working ground deployment test, a $3M seed for a 15 person team is expensive. Bagaveev and OutSail show how hardware ideas stall when the physics are unproven, and Wyvern needed years to move from grants to a seed."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.47,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2013-2024 --calibration-only: series_a cond 47 percent (n=19); 2020-2024 cond 27 percent (n=11)",
+        "adjustment_reason": "I sit at 0.8 times the older anchor and between the two cohorts, because space hardware needs flight heritage and Momentus, Radical and Basalt show many stop at seed."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            12000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000.0,
+            110000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Space hardware Series A of $12M to $20M, near Quindar's $18M and the market median $17.4M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            45000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Upside: a first orbital demonstration plus data center or defense contracts lead to a large round, as Stoke raised $65M."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            10000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            50000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin band: small A or venture debt and grants after slow qualification."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A is missed if the first flight demonstration slips or fails, because investors in space hardware want flight heritage before leading a large round. Qualifying deployable structures takes 18 to 36 months, and the first customer contracts may be small. Momentus and OutSail show how technical shortfalls end companies, and Radical and Basalt remained at seed."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --industry Industrials --years 2013-2024 --calibration-only: series_b cond 67 percent (n=9); 2020-2024 cond 67 percent (n=3); blended with overall calibration cond 44 percent (n=126)",
+        "adjustment_reason": "I use 0.8 of the overall calibration anchor of 44 percent because the Industrials sample is small and capital intensity raises the bar."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000.0,
+            400000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Space hardware Series B, near market median $39.5M and above."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000.0,
+            1000000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Upside: becomes a standard power supplier for large constellations and orbital compute, like Stoke or Astranis."
+        },
+        {
+          "raise_usd": [
+            15000000.0,
+            28000000.0
+          ],
+          "post_money_usd": [
+            80000000.0,
+            150000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin band: bridge or smaller B after a delayed flight."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if the company cannot move from a demonstration unit to repeatable production and paid orders. Manufacturing deployable structures at rate is hard, and a customer base of a few satellite makers can concentrate risk. Sunfolding raised a B and a C and still shut down when costs outran the market."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36 percent (n=55); Industrials 2013-2024 cond 17 percent (n=6)",
+        "adjustment_reason": "I sit near the overall anchor with a wide range, because the few space hardware survivors raise large rounds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000.0,
+            1000000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Series C hard tech, above the $45M YC sample median because space is capital intensive."
         },
         {
           "raise_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            1500000000.0,
+            3000000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Upside: space infrastructure leader, as Stoke raised $260M at Series C."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            55000000.0
+          ],
+          "post_money_usd": [
+            150000000.0,
+            300000000.0
+          ],
+          "p_band": 0.35,
+          "rationale": "Thin or structured round, often with debt and customer prepayments."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if the orbital data center thesis shrinks or large satellite makers bring deployable arrays in house. Capital intensive hardware needs repeated large raises, and Sunfolding showed investors will not fund production if unit costs lag competitors. Only a handful of YC space companies reached this stage."
     }
   ],
   "outcomes": {
@@ -164,167 +212,215 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.22
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Hardware that must prove itself in orbit before sales can fail on schedule, cost or technical grounds, and the buyer base is small. If the structure works, a large prime or a launch company often buys the technology, but at moderate prices. Sunfolding, Momentus and Bagaveev show the downside of capital intensive hardware."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "sunfolding",
+      "relevance": "Deployable, folding solar hardware company.",
+      "outcome_summary": "Founded 2012, raised A, B and C ($32M and $21.4M) and shut down in 2023 as steel and polymer costs outran the market."
+    },
+    {
+      "slug": "momentus",
+      "relevance": "Space infrastructure hardware from a YC batch.",
+      "outcome_summary": "Summer 2018, seed $8.3M, A $25.5M, SPAC 2021 and troubled after technical and legal problems."
+    },
+    {
+      "slug": "stoke-space",
+      "relevance": "Strong founder team in capital heavy space hardware.",
+      "outcome_summary": "Winter 2021, $9.1M seed, $65M A, $100M B and larger rounds; the best case for YC space."
+    },
+    {
+      "slug": "radical",
+      "relevance": "Hard tech sky infrastructure with technical founders.",
+      "outcome_summary": "Winter 2023, $4.5M seed in 2024 and no later round found."
+    },
+    {
+      "slug": "basalt",
+      "relevance": "Space hardware seed company.",
+      "outcome_summary": "Winter 2024, $3.5M seed in 2024, still seed stage."
+    },
+    {
+      "slug": "outsail-technologies",
+      "relevance": "Novel deployable wing sail structure.",
+      "outcome_summary": "Winter 2023, raised $1.1M and was sunset after fundamental physics problems were found."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Deployment geometry fails to scale or stay rigid under flight loads",
+      "p": 0.35,
+      "evidence": "Novel deployable structures need orbit testing and the 10 times length claim is unproven in flight.",
       "analogs": [
-        "TODO-company-slug"
+        "outsail-technologies",
+        "momentus"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Run staged ground and suborbital deployment tests and publish loads data."
+    },
+    {
+      "risk": "Slow qualification and sales to conservative satellite buyers",
+      "p": 0.35,
+      "evidence": "Satellite makers want flight heritage and Redwire's ROSA already has it.",
+      "analogs": [
+        "basalt",
+        "radical"
+      ],
+      "mitigation": "Fly a small demonstration on a rideshare and win a NASA or defense funded contract."
+    },
+    {
+      "risk": "Capital intensity and unit cost outpace funding",
+      "p": 0.3,
+      "evidence": "Production hardware requires large raises, and Sunfolding raised about $50M before shutting down.",
+      "analogs": [
+        "sunfolding",
+        "stoke-space"
+      ],
+      "mitigation": "Use grants and customer prepayments, and design for low cost manufacturing."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Redwire",
+      "what": "ROSA roll out solar arrays and the new ELSA array for mass produced satellites",
+      "traction": "Flight heritage on the ISS, pitching arrays for orbital data centers",
+      "source_url": "https://satnews.com/2025/07/07/redwire-deploys-a-powerful-roll-out-solar-array-prepares-for-major-delivery-in-q4/"
+    },
+    {
+      "name": "Rocket Lab",
+      "what": "Silicon solar arrays aimed at gigawatt scale space data centers",
+      "traction": "Launched arrays on February 26, 2026 per press",
+      "source_url": "https://convergedigest.com/rocket-lab-introduces-silicon-solar-arrays-to-target-gigawatt-scale-space-based-data-centers/?amp=1"
+    },
+    {
+      "name": "Large aerospace primes",
+      "what": "Solar wing suppliers for satellites and space stations",
+      "traction": "Established supply chains",
+      "source_url": "https://www.aa.com.tr/en/energy/solar/orbital-data-centers-to-drive-demand-for-larger-solar-arrays/60118"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Deployable structures that grow tenfold and stay rigid under thermal and launch loads are very hard, and every design needs flight qualification. The founders' NASA and SpaceX backgrounds make this a real moat if it works, but a 15 person team cannot qualify and manufacture at rate within three months."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Redwire",
+      "Rocket Lab",
+      "Northrop Grumman",
+      "MDA"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 36,
+    "rationale": "Incumbents have deployable array lines and could copy the concept, but a patented geometry and several years of qualification slow them. Primes may prefer to acquire the technology than to build it."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Orbital data centers are driving demand for much larger solar arrays, per Redwire and Rocket Lab messaging",
+        "source_url": "https://www.aa.com.tr/en/energy/solar/orbital-data-centers-to-drive-demand-for-larger-solar-arrays/60118"
+      },
+      {
+        "claim": "Redwire and Rocket Lab are selling or launching large arrays now, so there is paid demand",
+        "source_url": "https://convergedigest.com/rocket-lab-introduces-silicon-solar-arrays-to-target-gigawatt-scale-space-based-data-centers/?amp=1"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a working deployment demonstration.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build a one tenth scale ground deployment unit",
+        "Sign a letter of intent from one satellite maker"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Video and loads data of a repeatable deployment and one signed LOI"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Raise on demonstration and a first contract.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Apply for NASA and Space Force SBIR awards",
+        "Book a rideshare slot for a flight test"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A funded contract or SBIR and a booked flight"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Flight heritage and first revenue.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Fly the demonstration and publish results",
+        "Sign a paid production order"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Successful orbital deployment and over $3M in contracts"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Founders have unusual domain credentials",
+      "evidence": "A CMU PhD working with NASA on kilometer scale deployable structures and seven years at SpaceX leading Dragon parachute engineering.",
+      "source_url": "https://www.ycombinator.com/companies"
+    },
+    {
+      "point": "Real power demand tailwind",
+      "evidence": "Orbital data centers and large satellites are pushing Redwire and Rocket Lab to sell larger arrays.",
+      "source_url": "https://www.aa.com.tr/en/energy/solar/orbital-data-centers-to-drive-demand-for-larger-solar-arrays/60118"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Beyond Reach Labs",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Beyond Reach Labs\" --era 2022+: 15 characters, 3 words, name plus descriptor",
     "strengths": [
-      "TODO"
+      "Evocative and fits ambitious space power"
     ],
     "weaknesses": [
-      "TODO"
+      "Long, and the Labs suffix is generic"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "An aspirational name that suits a space hardware company, similar in tone to Stoke Space and Astranis, though Labs is generic. Brand has little effect for B2B space customers who buy on flight data."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Credible founders and strong tailwind in a hard, capital heavy hardware niche; seed likely, Series A depends on flight proof.",
+    "general_summary": "Beyond Reach Labs aims to sell deployable solar arrays that extend far beyond stowed size, targeting a surge in satellite power demand tied to orbital data centers and large platforms. The founders have rare, relevant experience, and YC space peers have raised $3M to $9M seeds. The risks are the physics and the pace: deployable structures need flight proof, Redwire and Rocket Lab are already selling large arrays, and capital intensive companies like Sunfolding can fail even after a C. Industrials cohort data give about 68 percent for a seed, but only about 30 to 47 percent of seeded companies reach A. I forecast a likely seed, a slightly below even Series A, and a high failure share given technical risk."
   },
   "assumptions": [
-    "TODO"
+    "Blind test: the company is assumed accepted to YC in Winter 2026; forecast date 2026-01-05.",
+    "Seed means a round above the $500K YC deal within about 12 months.",
+    "The 15 person team size from the input suggests a stated headcount that may include contractors.",
+    "Industrials cohorts have under 30 researched companies, so rates are anecdotal."
   ],
   "sources": [
-    "https://"
+    "https://satnews.com/2025/07/07/redwire-deploys-a-powerful-roll-out-solar-array-prepares-for-major-delivery-in-q4/",
+    "https://convergedigest.com/rocket-lab-introduces-silicon-solar-arrays-to-target-gigawatt-scale-space-based-data-centers/?amp=1",
+    "https://www.aa.com.tr/en/energy/solar/orbital-data-centers-to-drive-demand-for-larger-solar-arrays/60118",
+    "https://www.latitudemedia.com/news/a-pandemic-an-earthquake-and-the-end-of-sunfolding/"
   ]
 }

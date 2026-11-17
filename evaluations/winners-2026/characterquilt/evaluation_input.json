@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "CharacterQuilt",
+    "one_liner": "Computer use agents to deploy enterprise marketing campaigns",
+    "description": "CharacterQuilt builds computer use agents that deploy enterprise marketing campaigns. Customers send a brief as they would to an agency, and the agents build segments, create on brand creative and deploy the campaign inside tools such as HubSpot, Marketo, Pardot, WordPress and LinkedIn. It replaces agency ops work that takes weeks. Four people in San Francisco with named early customers (1upHealth, ABC Fitness, Emplifi) per its description. Revenue is likely per campaign or subscription.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.06,
+    "p_low": 0.025,
+    "p_high": 0.12,
+    "basis": "Starting rate about 1 percent (YC investor line, third party range 0.6 to 2 percent). Test setup: already accepted, reference only. Up for named customers, a painful agency cost problem and a team of 4. Down for a crowded AI marketing field and reliance on computer use agents that frontier labs also build. Net about 6 percent as a plain applicant.",
+    "why_it_fails": "YC would most plausibly question durability: computer use agents that click through marketing tools are exactly what the model labs and the marketing platforms are building, and the customers named are small or mid sized. The reviewer would want evidence that customers pay and renew rather than run pilots, and that the brand memory is more than a prompt."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.75,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.51,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 51 percent, ours 75 percent. Named customers, a team of 4 and the agent wave support a round above 500K; within 1.5x of the anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            2000000,
+            4000000
           ],
           "post_money_usd": [
-            0,
-            0
+            14000000,
+            25000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Median 2022+ B2B seed is 3.2M with p25 2.0M and p75 5.0M; named customers support a normal seed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "AI agent companies with enterprise logos priced above the median in 2025 and 2026."
+        },
+        {
+          "raise_usd": [
+            800000,
+            2000000
+          ],
+          "post_money_usd": [
+            6000000,
+            14000000
+          ],
+          "p_band": 0.22,
+          "rationale": "Small seed or bridge while customers are still pilots."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            14000000
+          ],
+          "post_money_usd": [
+            50000000,
+            90000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside from fast enterprise growth. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails to clear 500K if investors read the product as a thin wrapper on computer use models that labs improve every quarter, or as an agency in disguise where humans still check each campaign. Four people and a few small logos are early. Autotab, an earlier computer use agent startup, did not raise beyond a small amount, and many AI agent teams in the YC cohort stay at pre-seed."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.26,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 22 percent, ours 26 percent. Enterprise marketing ops has real spend (agency fees in the millions), but the sales cycle is long and rivals are many, so close to the cohort."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            15000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Lower end of 2022+ B2B Series A, p25 13M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            90000000,
+            160000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.42,
+          "rationale": "Median 17M, p75 22M; known post money 80M to 140M (thin data)."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            10000000
+          ],
+          "post_money_usd": [
+            20000000,
+            50000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Small A or extension in a tougher market. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            40000000
+          ],
+          "post_money_usd": [
+            160000000,
+            300000000
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside with strong net retention. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs repeatable revenue from enterprise marketing teams that sign for months, not pilots. Treble.ai took until 2022 for an A after serving hundreds of companies, and Hightouch needed a year to move from seed to A with clear product pull. If CharacterQuilt only wins small accounts and keeps humans in the loop, growth stays linear and investors pass."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 19 percent, ours 20 percent. A company with enterprise accounts that reaches A usually continues, near the cohort."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            40000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower than cohort p25 of 39M for a niche marketing ops tool."
         },
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            650000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median 42.5M and known post money 500M to 750M."
+        },
+        {
+          "raise_usd": [
+            8000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            150000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Down or small B. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            650000000,
+            1200000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside as the standard marketing ops agent. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B requires moving from campaign deployment to a platform marketing leaders standardize on. HubSpot, Salesforce and Adobe can add agent features and distribute them at no marginal cost, and agency relationships are sticky. Hightouch reached B only by expanding scope; without that the company stalls at A, as Marketfox style point products did."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025: seed cond 51% (lower 44, known 51, upper 58, n=1209), series_a cond 22% (n=617), series_b cond 19% (n=136), series_c cond 19% (n=26). Calibration only run: seed 59, A 26, B 16.",
+        "adjustment_reason": "Anchor 19 percent, ours 20 percent. Later rounds depend on becoming the system of action for marketing ops, near the cohort."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Lower end of Series C, cohort median 101M. Sized from the cohort round tables and the current funding climate."
         },
         {
           "raise_usd": [
-            0,
-            0
+            100000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000,
+            1500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Cohort p25 to p75 for 2022+ Series C. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            60000000
+          ],
+          "post_money_usd": [
+            200000000,
+            500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Extension or down. Sized from the cohort round tables and the current funding climate."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1500000000,
+            3500000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Upside. Sized from the cohort round tables and the current funding climate."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C needs a large enterprise software business. Few marketing automation companies reached that size, and the market is dominated by incumbents. Only strong net retention and a larger platform scope would get CharacterQuilt there; otherwise acquisition by a marketing cloud is the likely end."
     }
   ],
   "outcomes": {
@@ -164,167 +260,224 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.52
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.28
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the company stays a small agency like service because campaign deployment varies per customer and agents need human supervision, or marketing platforms and frontier labs ship the same agents natively. Past marketing tooling in YC such as Marketfox did not survive among funded rivals, and acquisition by a marketing platform for under 100M is the common soft landing."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "hightouch",
+      "relevance": "Marketing data tooling that sells into marketing teams.",
+      "outcome_summary": "Seed 2020, Series A 2021, Series B 2021 and later rounds, a strong success after widening scope."
+    },
+    {
+      "slug": "treble-ai",
+      "relevance": "Scaled marketing campaigns for enterprises via WhatsApp.",
+      "outcome_summary": "Served hundreds of companies, then a 15M Series A in July 2022."
+    },
+    {
+      "slug": "marketfox",
+      "relevance": "Marketing automation entrant against funded incumbents.",
+      "outcome_summary": "Two person team, no funding found, inactive."
+    },
+    {
+      "slug": "autotab",
+      "relevance": "Computer use agents for enterprise work.",
+      "outcome_summary": "Raised 500K in 2023 and was listed as acquired, early for the models."
+    },
+    {
+      "slug": "surface-labs",
+      "relevance": "Agent teams that run business operations after a pivot.",
+      "outcome_summary": "Pivoted, named customers, no confirmed funding."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Model labs and marketing platforms ship computer use and campaign agents natively",
+      "p": 0.4,
+      "evidence": "Computer use is a generic capability frontier labs ship, and HubSpot and Salesforce control the APIs the agents depend on.",
       "analogs": [
-        "TODO-company-slug"
+        "autotab",
+        "hightouch"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Own the brand memory and cross tool workflow rather than the clicking."
+    },
+    {
+      "risk": "Agents are unreliable and need human checking, so margins look like an agency",
+      "p": 0.35,
+      "evidence": "Enterprise campaigns have approvals and brand rules, and mistakes in live campaigns are costly.",
+      "analogs": [
+        "marketfox",
+        "surface-labs"
+      ],
+      "mitigation": "Start with low risk deployment tasks and show error rates."
+    },
+    {
+      "risk": "Long enterprise sales cycles and pilots that never convert",
+      "p": 0.3,
+      "evidence": "Treble.ai needed years of customer growth before an A, and enterprise marketing buyers are slow and risk averse.",
+      "analogs": [
+        "treble-ai"
+      ],
+      "mitigation": "Sell to mid market teams with an owner who feels the ops pain."
+    },
+    {
+      "risk": "Agencies and tools resist or lock out agents, with API changes and terms of service",
+      "p": 0.2,
+      "evidence": "Agents depend on logins and interfaces of third party tools that can block automation.",
+      "analogs": [
+        "autotab"
+      ],
+      "mitigation": "Build official integrations and become a partner."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Marketing clouds (HubSpot, Salesforce Marketing Cloud, Adobe)",
+      "what": "Platforms adding AI assistants for campaign building.",
+      "traction": "Dominant installed base in enterprise marketing.",
+      "source_url": "https://www.hubspot.com"
+    },
+    {
+      "name": "Agencies and freelancers",
+      "what": "Humans who deploy campaigns in customers' tools.",
+      "traction": "The status quo; the description says companies pay millions and wait weeks.",
+      "source_url": "https://www.hubspot.com"
+    },
+    {
+      "name": "AI marketing agent startups (YC peers)",
+      "what": "Companies building AI for advertising and campaign operations.",
+      "traction": "Several early stage entrants, funding mostly seed.",
+      "source_url": "https://neuronfeed.com/category/ai-testing?page=2"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Computer use agents that operate Pardot, Marketo and LinkedIn reliably are hard: interfaces change, sessions need credentials and errors are costly. A small team can build a demo in three months but not production reliability. Brand learning from past campaigns adds a data and evaluation problem."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "HubSpot and Salesforce",
+      "Adobe",
+      "Frontier AI labs with computer use agents"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Marketing platforms have the data, distribution and incentive to add agentic campaign building within a year. Labs improve computer use every release. Past examples show that point tools in marketing tend to be absorbed or stay small."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Enterprise marketing teams pay agencies large fees to configure campaigns in their own tools, per the company's own description.",
+        "source_url": "https://www.hubspot.com"
+      },
+      {
+        "claim": "Marketing automation is a large, mature software category with many customers and long established spend.",
+        "source_url": "https://www.hubspot.com"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show agents deploying real campaigns for named customers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Deploy campaigns end to end for the existing customers and record time saved.",
+        "Document where a human still intervenes."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Campaigns shipped with under 20 percent human edits."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert pilots into paid contracts.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign annual contracts with at least five mid market teams.",
+        "Publish a case study on cost and time per campaign."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Recurring revenue and first renewals."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable enterprise sales.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire a sales lead and build official integrations with the major platforms.",
+        "Expand from deployment to creative and audience building."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "About 1M to 2M annual recurring revenue with logo retention."
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Become a marketing ops platform.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add more tools and workflow approvals.",
+        "Partner with agencies as a channel instead of a rival."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 120 percent."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Named customers and a concrete painful job",
+      "evidence": "The description names three customers and a clear before and after of weeks versus an hour."
+    },
+    {
+      "point": "Agencies spend millions on this work",
+      "evidence": "Replacing agency spend gives a large budget to attack, per the company description."
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "CharacterQuilt",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"CharacterQuilt\" --era 2022+: 14 characters, 4 syllables, kind compound_words.",
     "strengths": [
-      "TODO"
+      "Distinctive and memorable compound",
+      "Short form CQ is easy to use"
     ],
     "weaknesses": [
-      "TODO"
+      "Long and gives no hint of marketing",
+      "Hard to spell and say"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A distinctive compound name is ownable, like past YC names that were invented words, but at 14 characters it is long and unrelated to marketing, so buyers rely on the CQ short form. The effect on success is small and neutral."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "An early but concrete bet on agents for marketing ops; a seed is likely, but platform and lab risk weighs on later rounds.",
+    "general_summary": "CharacterQuilt automates the ops work of marketing campaigns, a painful job that agencies charge large fees for, and already names several customers. That makes a seed above 500K likely. The risk is structural: computer use agents are a generic capability that labs improve and that marketing platforms can bundle, and enterprise sales are slow. The closest YC analogs, Hightouch and Treble.ai, reached later rounds only after widening scope or reaching many customers, while narrower marketing tools stalled. We set the seed above the cohort anchor and the later steps near it."
   },
   "assumptions": [
-    "TODO"
+    "Seed means a round above about 500K within about 12 months of the batch start.",
+    "Customer names come from the company's own description and are unverified.",
+    "Base rates are B2B 2022 to 2025; recent batches are right censored.",
+    "Competition and platform claims rest on general market knowledge, not company specific data."
   ],
   "sources": [
-    "https://"
+    "https://www.hubspot.com",
+    "https://neuronfeed.com/category/ai-testing?page=2"
   ]
 }

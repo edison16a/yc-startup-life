@@ -1,330 +1,413 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Soria",
+  "one_liner": "AI Financial Research Terminal built for Healthcare (and beyond)",
+  "description": "Soria is an AI native financial terminal for sector specialist investors, starting with healthcare. Agents convert public and private sources into an always on financial model reviewed by domain experts and delivered to hedge funds, banks and asset managers via terminal UI, MCP, API, warehouse sync and a research feed. Three person team in New York.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.1,
+  "p_low": 0.05,
+  "p_high": 0.15,
+  "basis": "Note only: already accepted to YC Spring 2026. Prior of about 1 percent for a random applicant (yc_acceptance.md) is not informative, so the real work is in the ladder.",
+  "why_it_fails": "Not applicable because the company was accepted. A reviewer would most plausibly worry that the product pitch is broad, that AlphaSense, Bloomberg and many AI research startups already sell to funds, and that a three person team cannot build a proprietary data layer. Because acceptance is already a fact in this test, the estimate is a placeholder and the forecast value sits in the funding ladder that follows."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.58,
+   "anchors": {
+    "base_rate": 0.7,
+    "source": "python3 -I scripts/base_rates.py --years 2020-2024 --industry Fintech --calibration-only: seed cond 70% (n=33), series_a cond 26% (n=23), series_b cond 17% (n=6); broad B2B 2022-2024: seed 61%, A 33%, B 17%; series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "0.83x of the fintech anchor. Hot AI demand and sector expert reviewers help, but a team of three, a crowded space and a long enterprise sales cycle with funds lower odds."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      2000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small round while hunting first paying funds. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      2000000,
+      5000000
+     ],
+     "post_money_usd": [
+      16000000,
+      35000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Core: AI financial research with early fund pilots, in line with 3.3M B2B seed median."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      5000000,
+      10000000
+     ],
+     "post_money_usd": [
+      35000000,
+      70000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if two or three recognizable funds sign."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Seed stalls if funds only pilot and do not pay, because buyers are slow and demand evidence of accuracy. Analogs Trata and Dataglade show years without a confirmed round after their batches. Domain expert review adds cost that may scare seed investors. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.26,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --years 2020-2024 --industry Fintech --calibration-only: seed cond 70% (n=33), series_a cond 26% (n=23), series_b cond 17% (n=6); broad B2B 2022-2024: seed 61%, A 33%, B 17%; series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "At the anchor. Financial data buyers pay well, but analogs Constant and Dataglade show no Series A."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin round on a handful of fund contracts."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      120000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Core: terminal products with sticky budgets raise 10 to 20M."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      120000000,
+      300000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it becomes a standard sector terminal."
+    }
+   ],
+   "why_it_fails": "Series A fails if annual contract value stays under about 50K per fund and sales cycles are long, so recurring revenue does not reach the 1M bar. Expert review and data licensing costs may keep gross margin low, and AlphaSense and model labs can bundle similar features."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.16,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --years 2020-2024 --industry Fintech --calibration-only: seed cond 70% (n=33), series_a cond 26% (n=23), series_b cond 17% (n=6); broad B2B 2022-2024: seed 61%, A 33%, B 17%; series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "At the anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      170000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest round on slow growth. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      170000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Core growth round. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside as a multi sector platform. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    }
+   ],
+   "why_it_fails": "Series B fails when expansion sector by sector proves slow, since each sector needs its own data and experts, and when large incumbents or competitors cut price. Growth stays linear instead of compounding. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2020-2024 --industry Fintech --calibration-only: seed cond 70% (n=33), series_a cond 26% (n=23), series_b cond 17% (n=6); broad B2B 2022-2024: seed 61%, A 33%, B 17%; series_c all-year cond 36% (n=55)",
+    "adjustment_reason": "Below the anchor because few comparable companies got here."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000,
+      70000000
+     ],
+     "post_money_usd": [
+      250000000,
+      600000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round at moderate scale. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      150000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1500000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core. Sized from 2022+ round medians in base_rates.py and current market benchmarks in stage_benchmarks.md."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      350000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it becomes a rival to AlphaSense."
+    }
+   ],
+   "why_it_fails": "Fails if the product stays a point solution in one or two sectors, or if general AI agents let funds build their own research stack, ending growth before a late stage round. Investors at this step want proof that growth, retention and margins hold up against better funded rivals, and a weak showing on any of them ends the path here, as the analogs listed in this evaluation show."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.17
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely a stall or an acquisition by a data provider such as a larger research platform, because buyers consolidate vendors and a three person team faces large incumbents with distribution. A meaningful exit needs a durable lead in a category where rivals can copy features and raise more money, and most companies in the reference cohort stay small, are acquired cheaply or stop operating before that point."
+ },
+ "analogs": [
+  {
+   "slug": "trata",
+   "relevance": "AI research desk for hedge funds with a hedge fund founder, Winter 2025.",
+   "outcome_summary": "Seed only, six people, no later round found."
+  },
+  {
+   "slug": "dataglade",
+   "relevance": "AI research for investment professionals, Winter 2023.",
+   "outcome_summary": "Active but no funding found."
+  },
+  {
+   "slug": "constant",
+   "relevance": "AI analysts for the buy side, Winter 2023.",
+   "outcome_summary": "Active with two people and no funding found."
+  },
+  {
+   "slug": "finbar",
+   "relevance": "Financial intelligence from proprietary filings, Winter 2025.",
+   "outcome_summary": "Active with hedge fund customers, funding unclear."
+  },
+  {
+   "slug": "bayesline",
+   "relevance": "Analytics for asset managers by ex Bloomberg and BlackRock quants.",
+   "outcome_summary": "Seed, still early."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "AlphaSense, Bloomberg and AI research startups win the buyer",
+   "p": 0.4,
+   "evidence": "AlphaSense was valued at 2.5B in 2024 and well funded rivals sell AI research to the same funds.",
+   "analogs": [
+    "trata",
+    "dataglade"
+   ],
+   "mitigation": "Own a proprietary sector data layer and sell to a narrow healthcare niche first."
+  },
+  {
+   "risk": "Funds are slow buyers and pilots do not convert",
+   "p": 0.3,
+   "evidence": "Hedge funds demand verification, security reviews and long trials before paying for new tools.",
+   "analogs": [
+    "constant",
+    "finbar"
+   ],
+   "mitigation": "Pick two funds with founder network access and charge from day one."
+  },
+  {
+   "risk": "Data cost and expert review keep margins thin with a three person team",
+   "p": 0.25,
+   "evidence": "Licensed sources and expert reviewers cost money for each sector expansion.",
+   "analogs": [
+    "bayesline"
+   ],
+   "mitigation": "Automate review and expand only when contracts pay for a sector."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "AlphaSense",
+   "what": "AI market intelligence for financial firms.",
+   "traction": "Valued at 2.5B after a 2024 round.",
+   "source_url": "https://malaysia.news.yahoo.com/ai-startup-alphasense-valued-2-120438909.html"
+  },
+  {
+   "name": "Hebbia",
+   "what": "AI research platform for finance.",
+   "traction": "Reported over 100M raised.",
+   "source_url": "https://www.tamradar.com/funding-rounds/alphasense-350m-7-5b-valuation"
+  },
+  {
+   "name": "Bloomberg terminal and status quo analyst spreadsheets",
+   "what": "Incumbent terminal and manual models.",
+   "traction": "Dominant seat base among funds.",
+   "source_url": "https://www.bloomberg.com/professional/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Ingestion pipelines and agents over filings are buildable by a small team. Building accurate sector models, licensing private sources and passing fund security reviews is hard and expensive, and reliability matters because mistakes cost money."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "AlphaSense",
+   "Bloomberg",
+   "FactSet",
+   "Anthropic and OpenAI finance products"
+  ],
+  "timeline_months": 12,
+  "rationale": "Incumbents have data and distribution and model labs are adding finance agents; a bundled copy could arrive within a year, so the proprietary data layer must be the defense."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "AlphaSense reached a multi billion dollar valuation selling AI research to financial firms, showing spend.",
+    "source_url": "https://malaysia.news.yahoo.com/ai-startup-alphasense-valued-2-120438909.html"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Land paying funds.",
+   "actions": [
+    "Sign two healthcare funds on paid pilots",
+    "Publish accuracy against analyst models"
+   ],
+   "proof": "First 25K annual contracts."
+  },
+  {
+   "phase": "seed",
+   "goal": "Raise above 500K in 12 months.",
+   "actions": [
+    "Show weekly active analysts",
+    "Expand to a second healthcare subsector"
+   ],
+   "proof": "Recurring revenue of 15K a month or more."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Repeatable sector expansion.",
+   "actions": [
+    "Launch a second sector",
+    "Cut cost per model with automation"
+   ],
+   "proof": "About 1M annual recurring revenue."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Funds pay high prices for research tools.",
+   "evidence": "AlphaSense scale and valuation.",
+   "source_url": "https://malaysia.news.yahoo.com/ai-startup-alphasense-valued-2-120438909.html"
+  },
+  {
+   "point": "Multiple delivery channels (MCP, API, warehouse sync) fit how quant and AI teams buy data.",
+   "evidence": "Listed in the product description.",
+   "source_url": "https://www.soriaanalytics.com/"
+  }
+ ],
+ "brand": {
+  "name": "Soria",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Soria\" --era 2022+: 5 characters, 2 syllables, suffix coinage ending in ia",
+  "strengths": [
+   "Short and pronounceable"
+  ],
+  "weaknesses": [
+   "Not tied to finance or healthcare, and an ia ending is common"
+  ],
+  "rationale": "Short coined names are common for YC finance companies and rarely decide outcomes; sales quality and data trust matter far more, as in the research terminal category."
+ },
+ "narrative": {
+  "headline": "Real budgets but a crowded buyer market; a seed is plausible and later rounds depend on a proprietary data edge.",
+  "general_summary": "Soria sells an AI research terminal to sector funds, starting in healthcare. Funds pay well and AI research is a funded category, so a seed is more likely than not. The weak points are a three person team, strong incumbents and similar YC peers that stalled after seed. If the proprietary data layer proves real and two or three funds pay, the path to a Series A is credible. The forecast treats the day one description as the best case, anchors on the 2022 to 2024 cohort of researched YC companies, and widens the uncertainty because funding data for recent batches is incomplete and right censored."
+ },
+ "assumptions": [
+  "Pretend date is 2026-04-06 and only the input file describes the company.",
+  "Seed means a round above about 500K within about 12 months of batch start.",
+  "AlphaSense figures cited are from 2024, before the as of date; later news was ignored."
+ ],
+ "sources": [
+  "https://malaysia.news.yahoo.com/ai-startup-alphasense-valued-2-120438909.html",
+  "https://www.soriaanalytics.com/"
+ ]
 }

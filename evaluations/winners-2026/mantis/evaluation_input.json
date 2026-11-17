@@ -1,330 +1,406 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.06,
+  "basis": "Starting from the roughly 1 percent prior (range 0.6 to 2 percent). The company is already accepted, so this is a note: deep technical ambition and a differentiated physics plus LLM approach would move it up, while an abstract pitch with no stated customer, no traction and a three person team would hold it down. The website name suggests a biotech angle that the description does not state.",
+  "why_it_fails": "YC would most plausibly say no because the pitch is abstract, with no named customer, buyer or validated prediction, and digital twin of humans is a broad claim that sounds like research rather than a business with a first paying user, which the interview would struggle to pin down."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.45 against anchor 0.59, a 0.76 ratio: vague description, no named buyer and a three person team."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000,
+      1500000
+     ],
+     "post_money_usd": [
+      8000000,
+      15000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin band: angel or grant money on top of the YC deal because the buyer and data are hard to explain."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      2000000,
+      4000000
+     ],
+     "post_money_usd": [
+      15000000,
+      30000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core band: median 2022+ B2B seed near 3.4M in base_rates.py, with deep tech seeds somewhat larger."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band: a science led lead investor betting on human simulation data."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The one liner and description of Mantis are abstract: digital twins of humans from LLMs and physics simulation, with no named customer, buyer or domain stated, and a team of three. A seed investor cannot tell who pays or what is validated. Pathmind, a simulation company from YC, raised seed and A money but was squeezed by open tooling. Without a clear first buyer, the round stays small or arrives only as a research grant."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.22,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.22 against anchor 0.26: 0.85 ratio, slow validation cycles."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      5000000,
+      10000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin Series A on pilot revenue from a few research buyers."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      110000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Core Series A, near the 13M median for 2022+ B2B rounds."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      110000000,
+      250000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if a pharma or device customer base appears."
+    }
+   ],
+   "why_it_fails": "Series A needs a repeatable buyer and revenue from predictive models of human behavior, which is rare data to sell. Validation is the problem: predictions about rare human behavior are hard to prove, and customers in pharma, safety or defense buy slowly. Promi, a small digital twin persona company from YC, stayed at its first pre seed round in the data, and DeepSim has deep domain talent but no confirmed round, so slow conversion is the usual pattern."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.18,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.18 against anchor 0.16."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      70000000,
+      150000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Modest Series B on slow enterprise research revenue."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      160000000,
+      380000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Core Series B for a deep tech platform."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      400000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B if the models become a standard simulation layer."
+    }
+   ],
+   "why_it_fails": "Series B demands a repeatable product rather than custom modeling projects. Simulation startups tend to slide into services. Pathmind never moved past its first A, and well funded synthetic user companies in consumer research could squeeze the market from the other side. Without clear accuracy benchmarks the company cannot justify a larger round."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% known only (65% upper, n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Series C and later from --years 2019-2025 --tag AI: cond 25% (n=4, anecdote).",
+    "adjustment_reason": "0.20 against anchor 0.25 from a tiny sample."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      600000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical later round for a scaled simulation platform company."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1300000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Broad platform across several industries with recurring licence revenue."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1300000000,
+      3500000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Category leader outcome in human digital twins used by many buyers."
+    }
+   ],
+   "why_it_fails": "A Series C requires platform scale across several verticals, a stretch for a company whose first buyer is not yet named. Few simulation companies from earlier YC cohorts got there, since Pathmind stopped at its first Series A. The most likely end is acquisition by a large simulation or life sciences vendor before any later round is needed."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.62
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.2
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     3000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely outcome is a stall because the first buyer is unclear, the predictions are hard to validate and customers in research heavy industries buy slowly. Analogs show it: Pathmind was squeezed by free tools and ended unclear, Promi remained at its first round, and deep tech simulation teams like DeepSim have talent but no confirmed large rounds."
+ },
+ "analogs": [
+  {
+   "slug": "pathmind",
+   "relevance": "Simulation and reinforcement learning for industry, deep technical team.",
+   "outcome_summary": "Seed 3M in 2016 and 11.5M in 2019, later closed or acqui hired per aggregators."
+  },
+  {
+   "slug": "promi",
+   "relevance": "Digital twin customer personas from LLMs, Summer 2024.",
+   "outcome_summary": "Active two person team, only a 500K first round found."
+  },
+  {
+   "slug": "deepsim-inc",
+   "relevance": "AI physics simulation with PhD level domain depth.",
+   "outcome_summary": "Active at about seven people, funding unconfirmed."
+  },
+  {
+   "slug": "godela",
+   "relevance": "AI physics engine replacing simulation, Spring 2025.",
+   "outcome_summary": "Launched June 2025 with backers, amounts undisclosed."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "No clear first buyer or use case, so no paid pilots",
+   "p": 0.4,
+   "evidence": "The description names no customer and describes a general capability across rare human behavior data.",
+   "analogs": [
+    "promi",
+    "pathmind"
+   ],
+   "mitigation": "Pick one vertical with a budget and a measurable prediction target, and sell a pilot."
+  },
+  {
+   "risk": "Predictions cannot be validated, so buyers do not trust them",
+   "p": 0.3,
+   "evidence": "Synthetic user and human behavior models face skeptics, with only a small share of researchers fully trusting synthetic substitutes in market commentary.",
+   "analogs": [
+    "promi",
+    "godela"
+   ],
+   "mitigation": "Publish a head to head benchmark against real outcome data."
+  },
+  {
+   "risk": "Well funded rivals or open tools commoditize simulation",
+   "p": 0.25,
+   "evidence": "Synthetic user companies such as Vectorial and Artificial Societies raised seed rounds, and open frameworks squeezed Pathmind.",
+   "analogs": [
+    "pathmind",
+    "deepsim-inc"
+   ],
+   "mitigation": "Own proprietary rare behavior data that others cannot get."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Vectorial",
+   "what": "Synthetic users that product teams test before launch.",
+   "traction": "3M seed per press.",
+   "source_url": "https://thenextweb.com/news/vectorial-3m-seed-human-behavior-simulation"
+  },
+  {
+   "name": "Artificial Societies",
+   "what": "AI simulation of human societies and audiences.",
+   "traction": "4.5M euro pre seed and seed per press.",
+   "source_url": "https://www.startuphub.ai/news/artificial-societies-secures-e4-5m-for-ai-human-simulation"
+  },
+  {
+   "name": "Pathmind (YC Winter 2016)",
+   "what": "Reinforcement learning on industrial simulation.",
+   "traction": "Raised 14.5M in total, later closed.",
+   "source_url": "https://www.ycombinator.com/companies/pathmind"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Combining LLMs with high fidelity physics simulation to build predictive models of human behavior from scarce data is research level work. A small team can build a narrow prototype in three months, but validated accuracy needs rare data and domain partners."
+ },
+ "takeover_risk": {
+  "rating": 2,
+  "who": [
+   "Large simulation vendors",
+   "Life sciences software companies",
+   "Well funded synthetic user startups"
+  ],
+  "timeline_months": 30,
+  "rationale": "The scope is unclear and domain specific data is slow to copy, so a rival would need years to match a vertical. Incumbent simulation vendors move slowly, giving moderate protection."
+ },
+ "market_need_now": {
+  "rating": 2,
+  "evidence": [
+   {
+    "claim": "Investors are funding synthetic user and human behavior simulation companies, showing interest but also a crowded related field.",
+    "source_url": "https://thenextweb.com/news/vectorial-3m-seed-human-behavior-simulation"
+   },
+   {
+    "claim": "Market commentary says only a small share of researchers fully trust synthetic alternatives, a validation hurdle.",
+    "source_url": "https://www.startuphub.ai/news/artificial-societies-secures-e4-5m-for-ai-human-simulation"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Name a buyer and prove one validated prediction.",
+   "actions": [
+    "Choose one vertical and sign a paid pilot",
+    "Benchmark predictions against held out real data"
+   ],
+   "proof": "One paid pilot and a published accuracy result."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Repeatable revenue from the first vertical.",
+   "actions": [
+    "Turn the pilot into a product with a standard price",
+    "Add two more customers in the same vertical"
+   ],
+   "proof": "Several paying customers and 1M annual recurring revenue."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Rare behavior data and simulation is a real moat if the founders have access to it.",
+   "evidence": "Described approach needs proprietary data that rivals cannot easily copy.",
+   "source_url": "https://www.ycombinator.com/companies/pathmind"
+  },
+  {
+   "point": "Investor interest in human simulation is strong.",
+   "evidence": "Several synthetic user companies raised seed rounds.",
+   "source_url": "https://thenextweb.com/news/vectorial-3m-seed-human-behavior-simulation"
+  }
+ ],
+ "brand": {
+  "name": "Mantis",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Mantis\" --era 2022+ : kind invented_or_proper, 1 word, 2 syllables",
+  "strengths": [
+   "Short, memorable animal name",
+   "Suggests precise prediction"
+  ],
+  "weaknesses": [
+   "A common name that is hard to search"
+  ],
+  "rationale": "A one word animal name is easy to remember and fits a tech company, but it is generic and widely used, which makes search and trademark harder. Brand is a minor factor for this company."
+ },
+ "narrative": {
+  "headline": "An ambitious but vague simulation bet that needs a named buyer before it can raise.",
+  "general_summary": "Mantis is a three person Winter 2026 company that combines language models with physics simulation to turn rare human behavior data into predictive digital twins. The idea is technically deep and the broader category of human simulation attracts investors, but the description names no customer, domain or result. The main risks are an unclear first buyer, hard to validate predictions and slow research heavy sales. The most likely path is a modest seed, if a vertical emerges, followed by a hard Series A."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-01-05 using only the input file and market searches.",
+  "The website name hints at a biotech angle, but only the input description was used.",
+  "Market search results dated after the batch start, including a large 2026 round of a related company, were ignored.",
+  "Seed means a round above 500K within about 12 months of the batch start."
+ ],
+ "sources": [
+  "https://thenextweb.com/news/vectorial-3m-seed-human-behavior-simulation",
+  "https://www.startuphub.ai/news/artificial-societies-secures-e4-5m-for-ai-human-simulation",
+  "https://www.ycombinator.com/companies/pathmind"
+ ],
+ "mode": "summary",
+ "startup": {
+  "name": "Mantis",
+  "one_liner": "Digital Twins of humans",
+  "description": "Mantis is a digital twin company that combines LLMs with high-fidelity physics simulations in order to convert rare and difficult-to-access human behavior data into predictive models. ",
+  "as_of": "2026-01-05"
+ }
 }

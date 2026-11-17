@@ -1,330 +1,453 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Replicas",
+  "one_liner": "Run any coding agent harness in the cloud",
+  "description": "Replicas is a cloud coding agent that lets engineering teams delegate tickets to Claude Code or Codex from Slack, Linear and an app, each task running in a sandboxed virtual machine with CI feedback loops and preview URLs. Engineering teams would pay per seat or usage. Two founders in San Francisco.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.05,
+  "p_low": 0.02,
+  "p_high": 0.1,
+  "basis": "Starting prior is about 1 percent with a 0.6 to 2 percent band (references/yc_acceptance.md). Up: technical founders in the hottest tooling category, a working product and a concrete workflow. Down: a thin layer over models and harnesses owned by labs, and many similar teams applying. Known to have been accepted, so completeness only.",
+  "why_it_fails": "YC would most plausibly decline because cloud coding agents are the most crowded application of the 2025 and 2026 AI wave. Labs, GitHub and Cursor ship the same background agent features, and a reviewer sees little defensibility for a wrapper around Claude Code and Codex with two founders and no stated usage numbers."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.62,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --tag \"Developer Tools\": seed cond 55% (n=29), series_a cond 38% (n=16), series_b cond 0% (n=6). B2B 2022+: seed 59%, A 26%, B 16%.",
+    "adjustment_reason": "Within 1.1 times the B2B anchor. Developer tool seeds are easy to raise in 2026 for AI teams but the field has many entrants, so the boost is small."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      600000.0,
+      1500000.0
+     ],
+     "post_money_usd": [
+      6000000,
+      12000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small pre seed from angels. for this stage, scaled from the cohort round sizes and the current market medians."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1500000.0,
+      4000000
+     ],
+     "post_money_usd": [
+      12000000,
+      30000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022+ developer tools seed, median 3.2M raise."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      4000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside for fast usage growth in a hot category."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails if usage is thin and investors judge the product as a feature that Cursor, Codex cloud and GitHub Copilot's agent already provide. Analogs such as Woz and Conductor show quick growth is rewarded, but Codevisor and Vespin show crowded entrants with no round. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --tag \"Developer Tools\": seed cond 55% (n=29), series_a cond 38% (n=16), series_b cond 0% (n=6). B2B 2022+: seed 59%, A 26%, B 16%.",
+    "adjustment_reason": "Near the 0.26 B2B anchor and below the 0.38 developer tools anchor on n=16, because platform competitors make durable revenue hard."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      10000000
+     ],
+     "post_money_usd": [
+      30000000,
+      50000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin round. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      50000000,
+      120000000
+     ],
+     "p_band": 0.55,
+     "rationale": "Series A median near 15M to 16M. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside for rapid revenue growth. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "Series A fails if revenue stays small because teams use the model vendors' own agents, and per task gross margin is hurt by compute costs. The analogs show about half of seeded agent tooling companies with no Series A. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --years 2022-2025 --industry B2B: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19), series_c cond 0% (n=3, upper bound 16%); lower/known/upper seed 49/59/65, A 13/15/29.",
+    "adjustment_reason": "Slightly above the 0.16 anchor, within 2x."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      30000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Modest. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Median near 37M to 45M. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1200000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "Series B fails if the product has been commoditized by labs and IDEs, so enterprise expansion is blocked. Few developer tools reach a Series B, and in the developer tools cohort none of 6 had. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all cohorts): series_c cond 36% (n=55).",
+    "adjustment_reason": "Below the 36 percent anchor for platform dependence."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      300000000,
+      600000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Modest. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      600000000,
+      1500000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Growth. for this stage, scaled from the cohort round sizes and the current market medians."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      300000000
+     ],
+     "post_money_usd": [
+      1500000000,
+      4000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside as a leading agent platform. for this stage, scaled from the cohort round sizes and the current market medians."
+    }
+   ],
+   "why_it_fails": "A later round fails if the lab products capture the market and the company is left as an integration layer with falling prices. Large developer platforms that did win owned a distinct workflow, not a wrapper. Reaching it also needs the previous milestones on time, since investors at this stage compare the company with funded peers and late stage rounds in the analog set mostly went to firms with clear paying customers and fast revenue growth."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.13
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely a shutdown or small acqui hire, because model vendors and IDE makers give away the same function and a two person team may not out ship them. Strong paths include a quick pivot toward infrastructure or an acquisition by a developer platform. Even when the company survives, an exit above the cohort median needs revenue growth and a buyer with strategic need, and most acquisitions in the researched set were small and below 100M dollars."
+ },
+ "analogs": [
+  {
+   "slug": "conductor",
+   "relevance": "Parallel coding agents on a Mac, S24.",
+   "outcome_summary": "Pivoted into agents and raised a Series A in March 2026, before this batch start."
+  },
+  {
+   "slug": "codevisor",
+   "relevance": "Native app for agentic engineering, W25.",
+   "outcome_summary": "Alive, no post YC round found."
+  },
+  {
+   "slug": "stackmachine",
+   "relevance": "Instant sandboxed server environments, S13.",
+   "outcome_summary": "Shut down."
+  },
+  {
+   "slug": "omnara",
+   "relevance": "Open source managed agents alternative, S25.",
+   "outcome_summary": "Seed."
+  },
+  {
+   "slug": "ellipsis",
+   "relevance": "Managed agent platform, W24.",
+   "outcome_summary": "Seed."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Model labs and IDEs ship the same cloud agents",
+   "p": 0.5,
+   "evidence": "Cursor cloud agents, Codex cloud and GitHub Copilot coding agent already run tasks in cloud VMs from Slack and issues.",
+   "analogs": [
+    "omnara",
+    "ellipsis"
+   ],
+   "mitigation": "Be harness neutral and own the environment layer."
+  },
+  {
+   "risk": "Thin margin from compute and model costs",
+   "p": 0.3,
+   "evidence": "Each task runs a VM plus model tokens, and customers can bring their own subscriptions.",
+   "analogs": [
+    "stackmachine"
+   ],
+   "mitigation": "Charge for environments and orchestration, not tokens."
+  },
+  {
+   "risk": "Founders lose the race with many parallel entrants",
+   "p": 0.3,
+   "evidence": "Many YC companies chase agents orchestration with similar pitches. according to the market research and the analog records cited here",
+   "analogs": [
+    "codevisor",
+    "vespin"
+   ],
+   "mitigation": "Pick a niche such as large monorepos."
+  },
+  {
+   "risk": "Security concerns block enterprise adoption",
+   "p": 0.2,
+   "evidence": "Running a whole codebase and secrets in third party VMs needs reviews.",
+   "analogs": [
+    "ellipsis"
+   ],
+   "mitigation": "On prem and SOC 2."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "GitHub Copilot coding agent",
+   "what": "Assign issue, get PR via Actions.",
+   "traction": "Massive distribution.",
+   "source_url": "https://alexcloudstar.com/blog/best-background-coding-agents-2026/"
+  },
+  {
+   "name": "Cursor cloud agents",
+   "what": "Isolated VM agents started from Slack, Linear, GitHub.",
+   "traction": "Large user base.",
+   "source_url": "https://securityboulevard.com/2026/06/6-background-ai-agents-for-async-development/"
+  },
+  {
+   "name": "OpenAI Codex cloud",
+   "what": "Delegate tasks to cloud environments.",
+   "traction": "Vendor backed.",
+   "source_url": "https://tembo.io/blog/top-coding-agent-tools"
+  },
+  {
+   "name": "Devin",
+   "what": "Autonomous software engineer.",
+   "traction": "Early category creator.",
+   "source_url": "https://tembo.io/blog/top-coding-agent-tools"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Orchestrating sandboxed VMs, CI feedback loops and multiple harnesses is straightforward for two strong engineers, but reliable environment setup for arbitrary codebases is hard. The software is replicable and the moat must come from environments and workflow."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "Cursor",
+   "OpenAI",
+   "GitHub",
+   "Anthropic"
+  ],
+  "timeline_months": 3,
+  "rationale": "These companies already ship cloud agents and can add Slack and Linear triggers within weeks. They control the models and distribution, so a wrapper has little protection."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Multiple vendors ship background coding agents, showing paid demand.",
+    "source_url": "https://alexcloudstar.com/blog/best-background-coding-agents-2026/"
+   },
+   {
+    "claim": "Roundups list a dozen cloud agent tools in 2026.",
+    "source_url": "https://tembo.io/blog/top-coding-agent-tools"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show real engineering team usage.",
+   "actions": [
+    "Get 5 teams merging agent PRs weekly.",
+    "Publish merge rate data."
+   ],
+   "proof": "Weekly merged PRs from 5 teams."
+  },
+  {
+   "phase": "seed",
+   "goal": "Prove paid retention.",
+   "actions": [
+    "Charge per seat.",
+    "Add environments as the paid core."
+   ],
+   "proof": "30 paying teams."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Show a moat beyond harness wrappers.",
+   "actions": [
+    "Own environments and preview infrastructure.",
+    "Add enterprise security."
+   ],
+   "proof": "1.5M annual recurring."
+  },
+  {
+   "phase": "series_b",
+   "goal": "Expand into enterprises.",
+   "actions": [
+    "Win large repos.",
+    "Add admin and audit."
+   ],
+   "proof": "6M annual recurring."
+  },
+  {
+   "phase": "series_c_plus",
+   "goal": "Platform status.",
+   "actions": [
+    "Open ecosystem.",
+    "Multi cloud."
+   ],
+   "proof": "Large customers."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Technical founders in the hottest tooling category",
+   "evidence": "Two founders building a working product used from Slack and Linear.",
+   "source_url": "https://replicas.dev"
+  },
+  {
+   "point": "Harness neutral design",
+   "evidence": "Supports both Claude Code and Codex, avoiding lock in to one lab.",
+   "source_url": "https://replicas.dev"
+  }
+ ],
+ "brand": {
+  "name": "Replicas",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Replicas\" --era 2022+ : invented kind, 8 characters; alive 92.7 percent, exit 4.4 percent (n=1826).",
+  "strengths": [
+   "Evokes copies of agents",
+   "Short and clear"
+  ],
+  "weaknesses": [
+   "Common word in infrastructure, confusable with database replicas"
+  ],
+  "rationale": "The name suggests many parallel clones of an agent, which matches the product. Past YC brand cases such as Conductor show a metaphor helps, but replica is also a database term, so search clarity is mixed.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A well timed product in the most crowded corner of AI tooling: a seed is likely, but platform vendors make a lasting Series A hard.",
+  "general_summary": "Replicas rides a strong demand wave for coding agents, which makes a seed round likely under the cohort anchor of 55 to 59 percent. The same wave is the reason later steps are hard: Cursor, Codex and GitHub already ship cloud agents with Slack and issue triggers. I hold the Series A near the 26 percent anchor and expect most value to come from a pivot to environments or an acquisition by a developer platform. These numbers are anchored on the 2022 to 2025 cohorts, whose later rounds are not yet fully observed, so the true rates are probably somewhat higher than the known only figures and the uncertainty is wide."
+ },
+ "assumptions": [
+  "No usage or revenue numbers are given.",
+  "Conductor's Series A (March 2026) predates this batch and is used; later events are not.",
+  "Seed means a round above 500K within 12 months."
+ ],
+ "sources": [
+  "https://alexcloudstar.com/blog/best-background-coding-agents-2026/",
+  "https://securityboulevard.com/2026/06/6-background-ai-agents-for-async-development/",
+  "https://tembo.io/blog/top-coding-agent-tools"
+ ]
 }

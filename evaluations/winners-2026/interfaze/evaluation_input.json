@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Interfaze",
+    "one_liner": "AI model built for high accuracy deterministic tasks",
+    "description": "A model that combines specialized CNN and DNN models with transformers for tasks needing consistent output such as document extraction, object detection, classification and audio understanding. Sold as an API. Five person team with an architecture paper and public benchmarks. Batch Spring 2026.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.1,
+    "p_low": 0.05,
+    "p_high": 0.18,
+    "basis": "Test note: the company was accepted, so this is an if accepted view. A blind prior starts near 1 percent, and the factors in the YC acceptance table are applied loosely here. Not part of the scored test.",
+    "why_it_fails": "YC might decline because the claim to beat frontier models on benchmarks the company chose is easy to doubt, and document extraction is crowded with funded startups and cloud giants. Interviewers may see no clear buyer or revenue and a wedge that general models improve into."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.65,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent.",
+        "adjustment_reason": "Set above the 59 percent anchor because a five person team with a research paper and open benchmarks in AI infrastructure is the kind that raised quickly in 2025 and 2026. The seed step here means a round above the standard 500K YC deal within about 12 months, and the anchor is for any seed ever, so the 12 month window pulls it down while a hot category pushes it up."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            600000,
+            1200000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.15,
+          "rationale": "Small round just above the YC check, mostly angels, if traction is thin."
         },
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3500000
           ],
           "post_money_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ B2B seed with about 3.2M median in the cohort and market seed pre money near 18M."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            25000000,
+            50000000
+          ],
+          "p_band": 0.35,
+          "rationale": "Hot round led by a top fund on strong credentials and a fast demo."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A round above the YC check fails if developers try the API and stay on cheaper frontier models, or if benchmark wins are not reproduced on customers' own documents. Analogs like pulse-3 and extend raised only with paying customers, so an AI infrastructure story without revenue could stall."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent.",
+        "adjustment_reason": "Set above the 26 percent cohort conditional because the team shows technical depth and AI infrastructure A rounds were frequent, with document AI peers like extend raising."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest Series A at current medians near 17M raise and 60M pre, shaded down for slower sales."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            22000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Core case, 2022+ B2B cohort median Series A of about 15M."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Breakout traction earns a premium Series A in a hot category."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if usage stays low volume and pricing falls with token costs. Frontier labs add structured outputs and cheaper vision models every quarter, and the narrow accuracy edge may close before the company builds a moat in customer data or workflows. Peers in document AI such as pulse-3, extend and veryfi-inc show that revenue and customer references, not benchmark scores alone, decide who raises the next round."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent. Series B cond 16 percent for B2B 2022+.",
+        "adjustment_reason": "Above recent cohort because the older cohort is about 39 percent and infrastructure leaders raise large B rounds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat or modest Series B, a thin round after growth slows, near the low end of 2022+ medians."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ Series B of about 45M in the cohort, matching current market deal sizes near 40M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            120000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1200000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Category leader premium round when growth is clearly outpacing peers in a hot market."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if the product stays an API commodity competing on price with Google, Microsoft and Mistral. Investors want revenue near ten million and enterprise contracts, and customers can switch easily. Peers in document AI such as pulse-3, extend and veryfi-inc show that revenue and customer references, not benchmark scores alone, decide who raises the next round."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.05,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent. No usable C sample.",
+        "adjustment_reason": "Anchor unusable; broader all industry conditional about 36 percent, discounted for commodity risk. The step is set above a thin and censored cohort number because companies with paying customers often raise years later, and the broader conditional rate is higher."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Standard Series C near the 2022+ median of about 45M to 80M raise for researched companies."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000,
+            2000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Leader round with a larger raise as the company becomes a category name."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            5000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Hypergrowth premium round with a very large valuation, rare in the researched data."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if the model market commoditizes and the company never owns data or distribution. Only a few AI infrastructure companies reach C, and valuations depend on breakout growth. Peers in document AI such as pulse-3, extend and veryfi-inc show that revenue and customer references, not benchmark scores alone, decide who raises the next round."
     }
   ],
   "outcomes": {
@@ -164,167 +212,236 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.5
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.18
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.07
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The most likely failure is that general models and cloud document services catch up on accuracy and drive price down, so a small team cannot defend margin. An acquisition by a larger AI platform for the team and model is a common middle result. Peers in document AI such as pulse-3, extend and veryfi-inc show that revenue and customer references, not benchmark scores alone, decide who raises the next round."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "pulse-3",
+      "relevance": "Production grade document extraction API.",
+      "outcome_summary": "Active; competes with large and small vendors in the same wedge."
+    },
+    {
+      "slug": "extend",
+      "relevance": "Production ready document processing.",
+      "outcome_summary": "Active and raised venture rounds after its batch, a sign document AI can fund."
+    },
+    {
+      "slug": "veryfi-inc",
+      "relevance": "Document AI API founded in 2017.",
+      "outcome_summary": "Still active, slow and steady, showing the market supports multiple vendors."
+    },
+    {
+      "slug": "nyckel",
+      "relevance": "Classify anything API.",
+      "outcome_summary": "Active small company; shows classification APIs struggled to become large."
+    },
+    {
+      "slug": "theta",
+      "relevance": "Specialized AI for every job.",
+      "outcome_summary": "Active without a large public round, showing specialized model pitches face a hard sell."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Frontier models and cloud services close the accuracy gap",
+      "p": 0.45,
+      "evidence": "Mistral OCR, Google Document AI and Gemini vision all improve and cut price, and benchmark vendors disagree on rankings.",
       "analogs": [
-        "TODO-company-slug"
+        "nyckel",
+        "theta"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Focus on determinism and per customer fine tuning."
+    },
+    {
+      "risk": "Benchmarks chosen by the company do not convince buyers",
+      "p": 0.3,
+      "evidence": "Most OCR benchmarks are vendor authored and failure rate or determinism is rarely measured independently.",
+      "analogs": [
+        "pulse-3"
+      ],
+      "mitigation": "Offer bake offs on customer documents."
+    },
+    {
+      "risk": "Commodity API pricing falls",
+      "p": 0.3,
+      "evidence": "Reported per page prices range widely, from near zero to several dollars per thousand pages.",
+      "analogs": [
+        "veryfi-inc"
+      ],
+      "mitigation": "Move up to workflows and vertical solutions."
+    },
+    {
+      "risk": "Unclear go to market for a general model across many tasks",
+      "p": 0.25,
+      "evidence": "The description spans documents, objects and audio with no single buyer.",
+      "analogs": [
+        "theta"
+      ],
+      "mitigation": "Pick one wedge such as document extraction."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Reducto",
+      "what": "Document parsing API with published table benchmark.",
+      "traction": "Funded leader per its own materials.",
+      "source_url": "https://reducto.ai/blog/best-ocr-apis-complex-documents-2026"
+    },
+    {
+      "name": "Google Document AI, Azure, AWS Textract",
+      "what": "Cloud document extraction services.",
+      "traction": "Broadly deployed by enterprises.",
+      "source_url": "https://reducto.ai/compare/reducto-vs-google-document-ai"
+    },
+    {
+      "name": "Mistral OCR and frontier vision models",
+      "what": "LLM based OCR.",
+      "traction": "Widely used by developers.",
+      "source_url": "https://artificialanalysis.ai/agents/ocr"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Merging specialized vision and audio models with transformers into one API that is accurate and consistent needs real research and training data, which the paper suggests the team has. A five person team can build a competitive document model but scaling across many tasks is hard."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Google",
+      "Mistral",
+      "OpenAI",
+      "Reducto"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Labs and cloud vendors already ship OCR and structured extraction, and a well funded rival could match the accuracy in a few quarters. Incentive is high since document processing is a large enterprise workload."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Enterprises pay for document processing, with many vendors competing on accuracy and price per thousand pages.",
+        "source_url": "https://reducto.ai/blog/best-ocr-apis-complex-documents-2026"
+      },
+      {
+        "claim": "Accuracy and consistency are open problems across vendors and not independently benchmarked.",
+        "source_url": "https://artificialanalysis.ai/agents/ocr"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show independent evidence of the accuracy edge.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish reproducible benchmarks",
+        "Collect user quotes"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Third party reproduction of results"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert API trials to paying usage.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Offer free bake offs",
+        "Add self serve billing"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "20 paying developers and 20K MRR"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Build revenue and a moat beyond accuracy.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one vertical",
+        "Add customer fine tuning"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "1M ARR and low churn"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Move up to enterprise contracts.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add compliance",
+        "Hire sales"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "10M ARR"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Become infrastructure standard for deterministic AI.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand modalities",
+        "Partner with clouds"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "50M ARR"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Technical depth with a public architecture paper and open benchmarks",
+      "evidence": "The YC text links an arXiv paper and public leaderboards.",
+      "source_url": "https://interfaze.ai"
+    },
+    {
+      "point": "Real paid demand for accurate document extraction",
+      "evidence": "Many funded vendors and cloud services compete in this market.",
+      "source_url": "https://reducto.ai/blog/best-ocr-apis-complex-documents-2026"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Interfaze",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Interfaze\" --era 2022+ gave invented or proper noun, 9 characters, 3 syllables.",
     "strengths": [
-      "TODO"
+      "Short invented name with an interface connotation"
     ],
     "weaknesses": [
-      "TODO"
+      "Spelling with z may be mistaken and it is not self explanatory"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Invented names are the largest group in the name tables with no outcome penalty. It suggests an interface to models, which fits an API, and it is easy to say.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Technically credible team in a crowded but real market, likely to raise a seed and then face commoditization pressure.",
+    "general_summary": "Interfaze is an API model for deterministic tasks such as document extraction. A research paper and open benchmarks make it a good fit for fast AI infrastructure seeds in 2026. The risk is commoditization: cloud services and frontier models keep improving, benchmarks are vendor authored and customers can switch easily. The document AI analogs show the category funds a few winners and leaves others small. A seed is likelier than not, Series A is roughly one in three and the base case is a small acquisition or a narrower pivot."
   },
   "assumptions": [
-    "TODO"
+    "Blind test: only the YC listing text was used for the company itself.",
+    "Seed means more than 500K within about 12 months of batch start; cohort anchors are for any seed ever.",
+    "Recent batches are right censored in the base rates.",
+    "Web results dated after the batch start were ignored."
   ],
   "sources": [
-    "https://"
+    "https://reducto.ai/blog/best-ocr-apis-complex-documents-2026",
+    "https://reducto.ai/compare/reducto-vs-google-document-ai",
+    "https://artificialanalysis.ai/agents/ocr",
+    "https://interfaze.ai"
   ]
 }

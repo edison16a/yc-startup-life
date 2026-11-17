@@ -1,330 +1,402 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Multiplier",
+  "one_liner": "Agent harnesses for asset managers",
+  "description": "Multiplier is an AI platform for institutional investors, starting with independent equity funds managing 250M to 5B dollars. It unifies structured and unstructured data, AI work, human work and firm knowledge in one governed application. The description claims six live hedge fund customers who spend four or more hours a day in it. Customers pay software and deployment fees. Three founders in New York.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.015,
+  "p_high": 0.08,
+  "basis": "In this test the company is assumed accepted to YC for Spring 2026. Prior is about 1 percent. Live usage at six paying looking funds is real traction, and the buyer is clear, which is a strong upward factor, but a three person team in a crowded AI finance space limits it. About 4 percent.",
+  "why_it_fails": "YC would most plausibly pass because six small hedge fund customers is a thin market, sales cycles to funds are long, and well funded competitors such as Rogo and Hebbia already serve finance. Partners may doubt that three founders can handle forward deployed custom work."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.72,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Fintech 2022-2025 (n=26, anecdotal): seed 57%, series_a cond 23%. Older B2B 2018-2021: A 32%, B 39%, C 57%.",
+    "adjustment_reason": "1.2x the 59 percent B2B anchor: live customers with heavy daily usage is traction that the typical YC company does not have at batch start, and AI finance has seen strong seed demand."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small seed from fintech angels, near the 2022+ B2B p25."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      25000000,
+      50000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical seed above the 3.2M B2B median given traction."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
-    },
-    {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      50000000,
+      100000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong seed if customers expand and revenue is verified."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "A seed fails if investors see a services heavy deployment business with six customers rather than software, or if hedge fund buyers will not give references. Trata and Constant in the YC data, both AI desks for funds, show one reaching a seed and the other no recorded round, so even good traction is not enough."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Fintech 2022-2025 (n=26, anecdotal): seed 57%, series_a cond 23%. Older B2B 2018-2021: A 32%, B 39%, C 57%.",
+    "adjustment_reason": "1.15x the 26 percent B2B conditional; the older B2B cohort at 32 percent supports it. Paying funds are a good sign, but the buyer pool of small funds is limited."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      8000000,
+      14000000
+     ],
+     "post_money_usd": [
+      40000000,
+      80000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Below median A, near the 2022+ B2B p25."
+    },
+    {
+     "raise_usd": [
+      14000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      160000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical A, above the B2B 2022+ median of 15M."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      45000000
+     ],
+     "post_money_usd": [
+      160000000,
+      300000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A if it moves to larger funds and multi-year contracts."
+    }
+   ],
+   "why_it_fails": "Series A requires moving beyond six small funds to a repeatable sales motion, and hedge funds have long compliance reviews, high customization demands and few buyers per segment. Constant and Fintool show how AI buy side tools often end as small businesses or acquisitions, and Rogo and Hebbia have raised far more."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.32,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Fintech 2022-2025 (n=26, anecdotal): seed 57%, series_a cond 23%. Older B2B 2018-2021: A 32%, B 39%, C 57%.",
+    "adjustment_reason": "Above the 16 percent 2022+ B2B conditional (n=19, censored), below the 39 to 44 percent older rate."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      25000000,
+      40000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat B near the 2022+ B2B p25."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical B near the 45M median."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B if it expands to multi-strategy funds and asset managers."
+    }
+   ],
+   "why_it_fails": "A Series B needs larger accounts, and the funds Multiplier targets are small. Bloomberg, FactSet and AlphaSense own data budgets, and a competitor with large funding can pitch a bigger deal, so growth may stall near a few million dollars of revenue."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: seed cond 59% (n=126), series_a cond 26% (n=74), series_b cond 16% (n=19). Fintech 2022-2025 (n=26, anecdotal): seed 57%, series_a cond 23%. Older B2B 2018-2021: A 32%, B 39%, C 57%.",
+    "adjustment_reason": "Below the 36 percent broad figure because the target customer segment is narrow."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      400000000,
+      900000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Series C near the 45M median."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      900000000,
+      2000000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round if it becomes a standard buy side platform."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      300000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      5000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside if it expands across asset management."
+    }
+   ],
+   "why_it_fails": "Few buy side software companies reach a Series C because the customer count is limited and incumbents with data advantages bundle AI tools. Acquisition by a data vendor is the more common end for companies at this stage."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.42
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.21
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.07
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The company fails to reach a meaningful exit if hedge funds build or buy general agents instead, if the target segment of mid size funds is too small to support venture scale revenue, or if a funded competitor like Rogo or Hebbia moves down market."
+ },
+ "analogs": [
+  {
+   "slug": "trata",
+   "relevance": "AI research desk for hedge funds.",
+   "outcome_summary": "Active, reached a seed."
+  },
+  {
+   "slug": "constant",
+   "relevance": "AI analysts for the buy side.",
+   "outcome_summary": "Active, no recorded round."
+  },
+  {
+   "slug": "fintool",
+   "relevance": "Financial copilot for institutional investors.",
+   "outcome_summary": "Raised a seed, then acquired."
+  },
+  {
+   "slug": "pit-ai",
+   "relevance": "AI for investment management.",
+   "outcome_summary": "Raised a seed, shut down."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Services heavy deployments do not scale",
+   "p": 0.4,
+   "evidence": "Custom firm knowledge integration means each fund needs work, which hurts margins and growth.",
+   "analogs": [
+    "inferedge",
+    "constant"
+   ],
+   "mitigation": "Productize onboarding and price on usage."
+  },
+  {
+   "risk": "Well funded competitors serve the same buyers",
+   "p": 0.4,
+   "evidence": "Rogo and Hebbia have raised large rounds and sell to financial institutions.",
+   "analogs": [
+    "fintool",
+    "trata"
+   ],
+   "mitigation": "Win a niche of independent equity funds."
+  },
+  {
+   "risk": "Small customer base of independent funds",
+   "p": 0.3,
+   "evidence": "Funds of 250M to 5B are a limited number and long sales cycles slow growth.",
+   "analogs": [
+    "repool",
+    "pit-ai"
+   ],
+   "mitigation": "Expand upmarket after the first wedge."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Rogo",
+   "what": "AI platform for finance teams",
+   "traction": "Reported ARR above 50M and total funding in the hundreds of millions, secondary sources",
+   "source_url": "https://fintechspecs.com/blog/rogo-vs-hebbia-ai-research-platform-finance/"
+  },
+  {
+   "name": "Hebbia",
+   "what": "Document intelligence for finance",
+   "traction": "About 130M raised reported",
+   "source_url": "https://aiwiki.ai/wiki/rogo"
+  },
+  {
+   "name": "AlphaSense, Bloomberg, FactSet",
+   "what": "Incumbent data and research platforms",
+   "traction": "Dominant budgets",
+   "source_url": "https://allmind.ai/research/alphasense-competitors-2026"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A unified governed platform with agents over many data sources is substantial engineering and security work, but doable for a small team using model APIs. The hard part is data licensing and fund security reviews."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Rogo",
+   "Hebbia",
+   "AlphaSense",
+   "Bloomberg"
+  ],
+  "timeline_months": 12,
+  "rationale": "Funded competitors can add similar agent features within a year and have established finance distribution."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Finance AI research platforms have raised substantial funding and revenue, showing demand.",
+    "source_url": "https://fintechspecs.com/blog/rogo-vs-hebbia-ai-research-platform-finance/"
+   },
+   {
+    "claim": "Funds buy many overlapping tools, and incumbents are consolidating.",
+    "source_url": "https://allmind.ai/research/alphasense-competitors-2026"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Convert the six live funds to paid",
+   "actions": [
+    "Get written references",
+    "Show hours per day usage"
+   ],
+   "proof": "Six paid contracts"
+  },
+  {
+   "phase": "seed",
+   "goal": "Productized onboarding",
+   "actions": [
+    "Cut deployment time to one week",
+    "Add a second fund segment"
+   ],
+   "proof": "Ten funds, revenue above 500K ARR"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Live usage at six funds with heavy daily use",
+   "evidence": "The description claims four or more hours a day per user, a rare early signal.",
+   "source_url": "https://fintechspecs.com/blog/rogo-vs-hebbia-ai-research-platform-finance/"
+  },
+  {
+   "point": "Clear niche and buyer with budget",
+   "evidence": "Independent equity funds know AI is essential and have money for tools.",
+   "source_url": "https://allmind.ai/research/alphasense-competitors-2026"
+  }
+ ],
+ "brand": {
+  "name": "Multiplier",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Multiplier\" --era 2022+ : 10 characters, 3 syllables, real word",
+  "strengths": "Real word, conveys leverage",
+  "weaknesses": "Generic and common, hard to own online",
+  "rationale": "The name conveys leverage for analysts and is easy to say, but it is generic and widely used. For institutional buyers, trust and references matter more than the name.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Real early traction in a valuable niche, but a small buyer pool and well funded rivals limit later rounds.",
+  "general_summary": "Multiplier has an unusually strong early signal, six hedge funds live with long daily use, in a market where AI finance platforms have raised large sums. That makes a seed above the YC check more likely than the cohort average. The risks are a services heavy deployment, a narrow segment of mid size funds, and rivals such as Rogo and Hebbia with far more money. Later steps follow the cohort anchors with a modest uplift, and the upside path is a move upmarket to larger asset managers or a pivot to a horizontal governed agent platform. Reaching a round years later is common for B2B companies with paying customers."
+ },
+ "assumptions": [
+  "Test is blind: only the YC input file was used for company facts.",
+  "Seed means a round above $500K within about 12 months.",
+  "Customer claims in the description are unverified."
+ ],
+ "sources": [
+  "https://fintechspecs.com/blog/rogo-vs-hebbia-ai-research-platform-finance/",
+  "https://aiwiki.ai/wiki/rogo",
+  "https://allmind.ai/research/alphasense-competitors-2026"
+ ]
 }

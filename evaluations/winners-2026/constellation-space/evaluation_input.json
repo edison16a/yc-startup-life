@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Constellation Space",
+    "one_liner": "AI operating system for mega scale satellite networks",
+    "description": "Software layer for operating very large satellite constellations: automated network handoffs, thermal load balancing and optical link routing. Sold to constellation operators. Four founders from SpaceX, Blue Origin and NASA. Batch Winter 2026.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.1,
+    "p_low": 0.05,
+    "p_high": 0.18,
+    "basis": "Test note: the company was accepted, so this is an if accepted view. A blind prior starts near 1 percent, and the factors in the YC acceptance table are applied loosely here. Not part of the scored test.",
+    "why_it_fails": "YC might decline because the pitch is full of buzzwords with no named customer or demo, the buyer set is a few dozen operators, and the biggest constellation, Starlink, already runs its own routing in house. Interviewers may doubt that outsiders can sell core network software to operators."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.5,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent.",
+        "adjustment_reason": "Set a bit below the 59 percent anchor because the buyers are few and sales cycles are long, offset by active space seed funding for founders from SpaceX and Blue Origin (basil and cascade analogs raised seeds). The seed step here means a round above the standard 500K YC deal within about 12 months, and the anchor is for any seed ever, so the 12 month window pulls it down while a hot category pushes it up."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            600000,
+            1200000
           ],
           "post_money_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small round just above the YC check, mostly angels, if traction is thin."
         },
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3500000
           ],
           "post_money_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2022+ B2B seed with about 3.2M median in the cohort and market seed pre money near 18M."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            25000000,
+            50000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Hot round led by a top fund on strong credentials and a fast demo."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A round above the YC check fails if there is no signed pilot with an operator. Space software investors want a named customer, and operators protect their routing stack. Analogs like quindar sold to ground operations teams only after years of customer proofs, and a pre revenue pitch may be seen as a slide deck."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent.",
+        "adjustment_reason": "Set slightly under the 26 percent cohort conditional because the buyer base is tiny, though quindar reached a Series A."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series A at current medians near 17M raise and 60M pre, shaded down for slower sales."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            22000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Core case, 2022+ B2B cohort median Series A of about 15M."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            40000000
+          ],
+          "post_money_usd": [
+            150000000,
+            300000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Breakout traction earns a premium Series A in a hot category."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if the few operators that could buy stay on in house systems or on Starlink style vertical stacks. Sales cycles of 12 to 24 months mean revenue arrives late, and investors want multiple recurring contracts. quindar needed about three years to its 18M A, so a thin pipeline stalls this company."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent. Series B cond 16 percent for B2B 2022+.",
+        "adjustment_reason": "Above the recent cohort anchor because the older cohort ran near 39 percent and defense space money is plentiful."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Flat or modest Series B, a thin round after growth slows, near the low end of 2022+ medians."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Median 2022+ Series B of about 45M in the cohort, matching current market deal sizes near 40M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            120000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1200000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Category leader premium round when growth is clearly outpacing peers in a hot market."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B fails if growth in operator count and satellites per operator does not materialize or if the market consolidates around a few verticals. Revenue must reach several million from very few customers, and a single lost contract can break the story, as small hardware adjacent space firms have found."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.28,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.05,
+        "source": "Ran python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed 49 / 59 / 65 percent (lower, known, upper), series A 13 / 15 / 29 with cond 26 percent (n=74), series B cond 16 percent (n=19), series C cond 0 percent (n=3, too small). Broad cohort also checked with --industry B2B --years 2018-2021: seed cond 81, A cond 32, B cond 39, C cond 57 percent. No usable C sample.",
+        "adjustment_reason": "Anchor unusable; broader all industry conditional about 36 percent, discounted for the small market. The step is set above a thin and censored cohort number because companies with paying customers often raise years later, and the broader conditional rate is higher."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            80000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Standard Series C near the 2022+ median of about 45M to 80M raise for researched companies."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000,
+            2000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Leader round with a larger raise as the company becomes a category name."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            2000000000,
+            5000000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Hypergrowth premium round with a very large valuation, rare in the researched data."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C fails if the company stays a niche tool with a handful of customers. A defense or telecom acquirer may buy it earlier than a large round. The total addressable market for constellation software is small compared with ground network or cloud markets. The same pattern showed up for quindar, where customer proof for satellite operators took years, and for spaceryde, which ran out of runway before commercial revenue."
     }
   ],
   "outcomes": {
@@ -164,167 +212,237 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.5
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.17
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The most likely failure is a thin customer base: a handful of operators buy core software slowly or build it themselves, so revenue never justifies a large round. Space software tends to end in small acquisitions by larger primes, and the claims on the YC page are untested."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "quindar",
+      "relevance": "Software for satellite operations by ex OneWeb engineers.",
+      "outcome_summary": "Raised 2.5M in 2023 and 6M in 2024 and later a Series A, after about three years of slow customer building."
+    },
+    {
+      "slug": "basalt",
+      "relevance": "Constellations as a service by SpaceX alumni.",
+      "outcome_summary": "Seed from Initialized in 2024 and flying demo satellites, so founder pedigree attracts space seeds."
+    },
+    {
+      "slug": "momentus",
+      "relevance": "Space infrastructure company with hard technical promises.",
+      "outcome_summary": "Went public by SPAC and was later penalized for misleading claims, a warning on over claiming."
+    },
+    {
+      "slug": "spaceryde",
+      "relevance": "Space startup with long technical timeline.",
+      "outcome_summary": "Shut down after about 10M raised, never reaching commercial launch."
+    },
+    {
+      "slug": "hubble-network",
+      "relevance": "Satellite connectivity startup from YC.",
+      "outcome_summary": "Raised A and B after a hard technical result, so deep space tech can raise when proof exists."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Few buyers and in house stacks at the biggest operators",
+      "p": 0.45,
+      "evidence": "Starlink already uses neural network traffic prediction and its own optimizer, and other large operators build ground software themselves.",
       "analogs": [
-        "TODO-company-slug"
+        "quindar",
+        "momentus"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Target mid sized and new constellation operators, and sell as a pilot with measurable link efficiency."
+    },
+    {
+      "risk": "Unproven technical claims such as zero intervention handoffs and sub second optical routing",
+      "p": 0.35,
+      "evidence": "The YC text lists capabilities with no demo, customer or test data.",
+      "analogs": [
+        "momentus",
+        "spaceryde"
+      ],
+      "mitigation": "Publish simulation results and run a live pilot with a partner."
+    },
+    {
+      "risk": "Slow sales and government cycles starve the company",
+      "p": 0.3,
+      "evidence": "Trade sources say autonomy shifts in ground segments will be incremental.",
+      "analogs": [
+        "quindar"
+      ],
+      "mitigation": "Win small paid pilots and SBIR style funding."
+    },
+    {
+      "risk": "Competing software defined ground segment vendors",
+      "p": 0.25,
+      "evidence": "Leanspace, Cognitive Space and Slingshot sell related platforms. according to the market research gathered for this evaluation and the analog records.",
+      "analogs": [
+        "basalt"
+      ],
+      "mitigation": "Focus on optical routing, an area few address."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "ESA ORQOS",
+      "what": "Research platform for RF and optical scheduling and traffic engineering.",
+      "traction": "Funded project, not a commercial rival.",
+      "source_url": "https://resilience.esa.int/?p=27344"
+    },
+    {
+      "name": "Leanspace, Cognitive Space, Slingshot",
+      "what": "Software defined ground segment and operations platforms.",
+      "traction": "Established vendors per trade press.",
+      "source_url": "https://newspaceeconomy.ca/2026/03/30/ai-as-mission-control-how-autonomous-satellite-operations-are-changing-the-ground-segment/"
+    },
+    {
+      "name": "Starlink in house routing",
+      "what": "Neural network traffic prediction with optimizer for beams and crosslinks.",
+      "traction": "Largest constellation, not for sale.",
+      "source_url": "https://satnews.com/2026/07/14/europe-space-networks-look-to-scale-optical-connectivity/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Autonomous routing, thermal balancing and optical link scheduling at tens of thousands of nodes is hard, needs operator data and simulation, and cannot be validated without a real constellation. A four person team can build simulations and a pilot but not prove scale quickly."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Starlink",
+      "Kratos",
+      "Leanspace",
+      "Slingshot"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 24,
+    "rationale": "Incumbents with ground segment software could add routing in about two years, and big operators already do it internally. Smaller constellation operators lack that ability, which is the opening, but platform owners may also acquire."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Optical inter satellite links and autonomous operations are growing priorities, with AI in space operations projected to grow about 23 percent a year by one trade analysis.",
+        "source_url": "https://newspaceeconomy.ca/2026/03/30/ai-as-mission-control-how-autonomous-satellite-operations-are-changing-the-ground-segment/"
+      },
+      {
+        "claim": "European operators and others are scaling optical connectivity.",
+        "source_url": "https://satnews.com/2026/07/14/europe-space-networks-look-to-scale-optical-connectivity/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show a credible technical demo and named design partner.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish simulation benchmarks",
+        "Sign one letter of intent"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "One named operator in a pilot"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert a pilot into paid revenue.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Secure a funded pilot",
+        "Apply for SBIR or similar"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Signed paid pilot above 100K"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Land multiple recurring contracts.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand to three operators",
+        "Prove link efficiency gains"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "1M ARR from at least three customers"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale to mid sized operators and defense.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire sales and compliance",
+        "Certify for classified work"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "5M ARR"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Become the standard operations layer.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Expand to compute scheduling",
+        "Partner with primes"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "20M ARR or acquisition interest"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Founders with direct SpaceX, Blue Origin and NASA experience",
+      "evidence": "Stated in the YC description; similar pedigrees raised seeds for basalt and cascade space.",
+      "source_url": "https://constellation.space/"
+    },
+    {
+      "point": "Growing constellation counts and optical link adoption",
+      "evidence": "Trade press reports rising autonomy and optical investment.",
+      "source_url": "https://satnews.com/2026/07/14/europe-space-networks-look-to-scale-optical-connectivity/"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Constellation Space",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Constellation Space\" --era 2022+ gave compound words, 18 characters, 2 words, 5 syllables.",
     "strengths": [
-      "TODO"
+      "Clear descriptive link to the market"
     ],
     "weaknesses": [
-      "TODO"
+      "Long, generic and hard to own online, a descriptor name"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Descriptor names are common in recent batches and show no strong outcome edge in the name tables. It tells buyers what the company does but is generic, so brand adds little here.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "Strong pedigree on a hard technical problem with very few buyers, so a seed is possible but later rounds depend on a named operator customer.",
+    "general_summary": "Constellation Space sells network operations software for giant satellite constellations. The founders have relevant backgrounds and space software has raised money, as quindar and basalt show. But the buyer set is tiny, the largest operator builds its own system, and the YC text lists capabilities with no customers. A seed above the YC check is a coin flip within a year, and later rounds depend on converting pilots to recurring contracts. Space cases in the data include both a shutdown after a long hardware path and a firm that reached a Series A."
   },
   "assumptions": [
-    "TODO"
+    "Blind test: only the YC listing text was used for the company itself.",
+    "Seed means more than 500K within about 12 months of batch start; cohort anchors are for any seed ever.",
+    "Recent batches are right censored in the base rates.",
+    "Web results dated after the batch start were ignored."
   ],
   "sources": [
-    "https://"
+    "https://resilience.esa.int/?p=27344",
+    "https://newspaceeconomy.ca/2026/03/30/ai-as-mission-control-how-autonomous-satellite-operations-are-changing-the-ground-segment/",
+    "https://satnews.com/2026/07/14/europe-space-networks-look-to-scale-optical-connectivity/",
+    "https://constellation.space/"
   ]
 }
