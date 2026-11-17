@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Ardent",
+    "one_liner": "Database sandboxes for Agents",
+    "description": "Clones any Postgres database regardless of size in about six seconds so AI agents can test their work safely. Developer infrastructure sold to teams running coding and data agents. Three person team, Spring 2026 batch.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.01,
+    "p_high": 0.06,
+    "basis": "Company is assumed accepted, so this is a note only. Prior is about 1 percent per applicant with a 0.6 to 2 percent band. A concrete technical claim and a hot agent infrastructure theme help, while the idea is thin on stated traction and close to existing branching products.",
+    "why_it_fails": "YC would most plausibly say no because instant Postgres branching already exists from several funded vendors, and the pitch gives no customers, so it can look like a feature of a database host. The decision would also weigh whether the three person team can show real users within one batch, and whether the founders can explain a wedge that incumbents are unlikely to copy quickly."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.6,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.53,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 gave seed 47% lower, 53% known only, 59% upper, cond 53% (n=878). Infrastructure tag cond 52% (n=48).",
+        "adjustment_reason": "Slightly above anchor because agent infrastructure is a hot theme with active seed investors, but still within 1.2 times."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            700000,
+            1500000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            14000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small round above the YC deal. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         },
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            4000000
           ],
           "post_money_usd": [
-            0,
-            0
+            14000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Infrastructure seed 2022+ median is about $4.2M raise. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
+        },
+        {
+          "raise_usd": [
+            4000000,
+            8000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if developer pull appears from agent builders. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed fails if the team cannot show real agent builders using it daily. Investors will ask why a customer would not use Neon branches or the agent features of a Postgres host. Lantern and Midplane show Postgres and agent database teams that stayed small or stopped without a priced round."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "B2B cohort cond 26% (n=468), known only 14%, upper 25%. Infrastructure tag cond 20% (n=25).",
+        "adjustment_reason": "Within the anchor range. Slightly lower because takeover risk is high."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000,
+            9000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A from a niche tool. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         },
         {
           "raise_usd": [
-            0,
-            0
+            9000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000,
+            110000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "Infrastructure Series A 2022+ median is about $12.5M raise. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            110000000,
+            250000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the default test environment for coding agents. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A fails if usage stays free tier and revenue is under a few hundred thousand dollars. Neon was bought by Databricks and others like Xata and Simplyblock offer branching, so investors will doubt a stand alone product. ParadeDB reached an A with open source pull, which Ardent would need to match."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.21,
+        "source": "B2B cohort cond 21% (n=123).",
+        "adjustment_reason": "Anchored on cohort."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            28000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            140000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest B. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         },
         {
           "raise_usd": [
-            0,
-            0
+            28000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            140000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Series B 2022+ median about $37M. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            90000000
+          ],
+          "post_money_usd": [
+            350000000,
+            800000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if usage scales with agent adoption. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B fails if the product broadens into general sandboxes and loses its edge against better funded agent sandbox vendors. Investors want revenue growth and retention, and per usage pricing on database clones may stay small. Supabase shows the ceiling for Postgres companies but depends on a far larger developer platform."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "B2B cohort series_c cond 19% (n=26).",
+        "adjustment_reason": "Anchored on cohort; very thin data."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            500000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median Series C 2022+ is about $45M. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         },
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            500000000,
+            1000000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Growth round on strong agent infrastructure demand. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            200000000
+          ],
+          "post_money_usd": [
+            1000000000,
+            2500000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if it is a core data layer for agents. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A later round fails if cloud and database hosts bundle cloning for free and the stand alone vendor cannot move beyond testing. Late stage investors want a large platform with expansion, and a sandbox feature has a ceiling in spend. Acquisition by a database company is the more common end, as with Hydra and Citus Data."
     }
   ],
   "outcomes": {
@@ -164,167 +212,206 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.45
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.33
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.18
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          3000000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The company most likely stalls or sells small because the core feature, fast copy on write cloning, is available from funded rivals and from database hosts that can bundle it. Database infrastructure startups in the YC set often end in acquisition by a larger database company at modest value, as with Hydra, PeerDB and Citus Data."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "supabase",
+      "relevance": "Postgres developer platform for builders.",
+      "outcome_summary": "Raised a seed and many later rounds, reaching a very large valuation."
+    },
+    {
+      "slug": "lantern-2",
+      "relevance": "Postgres extension and cloud product for AI apps.",
+      "outcome_summary": "Pre seed, then listed inactive."
+    },
+    {
+      "slug": "hydra",
+      "relevance": "Postgres analytics start up.",
+      "outcome_summary": "Seed of about $3.1M, later joined a larger Postgres platform."
+    },
+    {
+      "slug": "paradedb",
+      "relevance": "Postgres search and analytics with open source pull.",
+      "outcome_summary": "Series A of $12M in 2025."
+    },
+    {
+      "slug": "midplane",
+      "relevance": "Safety layer between AI agents and Postgres.",
+      "outcome_summary": "Two person team, no funding beyond YC found."
+    },
+    {
+      "slug": "peerdb",
+      "relevance": "Narrow Postgres tool bought by a larger database vendor.",
+      "outcome_summary": "Seed then acquisition within months."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Branching is a feature of database hosts",
+      "p": 0.45,
+      "evidence": "Neon was bought by Databricks in 2025 and Xata and Simplyblock sell copy on write Postgres branches, so cloning can be bundled for free.",
       "analogs": [
-        "TODO-company-slug"
+        "lantern-2",
+        "hydra"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Work across existing databases without migration and win on speed for large databases."
+    },
+    {
+      "risk": "Small spend per customer",
+      "p": 0.3,
+      "evidence": "Agent testing sandboxes are an early use and teams may use cheap ad hoc clones or snapshots.",
+      "analogs": [
+        "midplane",
+        "freestyle"
+      ],
+      "mitigation": "Tie pricing to agent runs and sell to teams already running many agents."
+    },
+    {
+      "risk": "Larger sandbox vendors absorb the use case",
+      "p": 0.25,
+      "evidence": "Agent sandbox companies are adding database support to their environments and have the distribution.",
+      "analogs": [
+        "freestyle",
+        "beam"
+      ],
+      "mitigation": "Integrate into those sandboxes as a partner."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Xata",
+      "what": "Postgres with copy on write branches.",
+      "traction": "Vendor claims branch ready in seconds regardless of size.",
+      "source_url": "https://xata.io/blog/every-ai-agent-needs-a-database-it-can-break"
+    },
+    {
+      "name": "Neon (Databricks)",
+      "what": "Serverless Postgres with branching, acquired by Databricks in May 2025.",
+      "traction": "Large installed base.",
+      "source_url": "https://dzone.com/articles/lakebase-ai-agents"
+    },
+    {
+      "name": "Simplyblock Vela",
+      "what": "Git style Postgres branches on its block storage.",
+      "traction": "Hosted sandbox in beta.",
+      "source_url": "https://www.blocksandfiles.com/block/2026/02/10/simplyblock-provides-postgres-git-style-branching/4090455"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Fast cloning of large Postgres databases needs storage level copy on write and careful consistency, which is hard but doable for a small expert team. Safety, masking and running against customers' existing databases add work."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Databricks and Neon",
+      "Supabase",
+      "Cloud database hosts",
+      "Agent sandbox vendors"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Database hosts already have branching and could expose it to agents with little work. Cloning for external databases is harder, which gives some room, but acquisition is the likelier path than independence."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Vendors argue every agent needs a disposable database copy, and big companies paid for branching technology.",
+        "source_url": "https://xata.io/blog/every-ai-agent-needs-a-database-it-can-break"
+      },
+      {
+        "claim": "Databricks bought Neon for about $1B in 2025 largely for agent use of Postgres.",
+        "source_url": "https://dzone.com/articles/lakebase-ai-agents"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove the six second clone claim on large databases.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish a benchmark on 1TB databases",
+        "Get five agent builders to try it"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Public benchmark and five active users."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show paid usage from teams running agents.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Offer a usage based plan",
+        "Integrate with two agent sandbox vendors"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Recurring revenue from several teams and growing clone counts."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Clear technical claim that can be benchmarked.",
+      "evidence": "Cloning any size Postgres in six seconds is specific and testable."
+    },
+    {
+      "point": "Strong timing as agents need safe test environments.",
+      "evidence": "Market activity around Postgres branching and agent databases in 2025 and 2026.",
+      "source_url": "https://xata.io/blog/every-ai-agent-needs-a-database-it-can-break"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Ardent",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "Not run with the scoring script; judged by hand: two syllables, real word.",
     "strengths": [
-      "TODO"
+      "Easy to say and spell",
+      "Suggests energy"
     ],
     "weaknesses": [
-      "TODO"
+      "Says nothing about databases",
+      "Generic word"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A short real word is common among strong recent YC names, but there is no link to databases or agents. Developer buyers choose on speed and price, so the name has little effect."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A sharp technical wedge in a crowded, fast moving niche where acquisition is more likely than independence.",
+    "general_summary": "Ardent offers instant Postgres clones for agents. Timing is good because agents need safe test databases, but branching products from funded rivals already exist and database hosts can bundle the feature. B2B cohorts reach seed about 53 percent of the time and Series A about 26 percent given a seed. Expect a seed if developer pull shows and a small acquisition as the common end. Reaching later rounds is common for companies with paying customers even years after the batch, so the odds below describe whether a round happens, not when. The main drivers are whether early customers pay, whether the product beats bundled features from larger vendors, and whether the team can keep a small burn long enough to show repeat revenue."
   },
   "assumptions": [
-    "TODO"
+    "Only the supplied input file was used for company facts.",
+    "Accepted to YC as stated; acceptance note is for completeness.",
+    "Seed in this test means a round above about $500K within 12 months of the batch start.",
+    "Web results dated after the as_of date were ignored."
   ],
   "sources": [
-    "https://"
+    "https://xata.io/blog/every-ai-agent-needs-a-database-it-can-break",
+    "https://dzone.com/articles/lakebase-ai-agents",
+    "https://www.blocksandfiles.com/block/2026/02/10/simplyblock-provides-postgres-git-style-branching/4090455"
   ]
 }

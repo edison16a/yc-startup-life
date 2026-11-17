@@ -1,162 +1,221 @@
 {
-  "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Human Archive",
+    "one_liner": "Infrastructure for Training, Evaluating, and Deploying Physical AI",
+    "description": "A full stack infrastructure company for training, evaluating and deploying physical AI. The listing names a team of about 100, which is unverified and may count contributors. Buyers would be robotics and foundation model labs.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.5,
+    "p_low": 0.3,
+    "p_high": 0.7,
+    "basis": "Note only because the company is already accepted. A random applicant starts near 1 percent. Physical AI data is a current YC priority and a team of this size suggests real operations, which would lift a typical application well above the base, but the pitch is broad and unproven.",
+    "why_it_fails": "YC would most plausibly say no because full stack infrastructure for training, evaluation and deployment is too many products at once, with no named customer or revenue in the description. A reviewer could also see a services business that collects data by hand, in a space where better funded vendors already sell to the same few labs."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.78,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.67,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Industrials --calibration-only (seed 67 percent, n=12, anecdote size); --years 2018-2021 --industry Industrials: seed 73 percent, n=11",
+        "adjustment_reason": "Slightly above both Industrials anchors because physical AI data is the hottest robotics funding theme in January 2026, similar companies such as Cortex AI raised about a $6M seed, and a large team implies operations. Discounted for a vague pitch."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            18000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin band: a small extension on top of the YC check from angels, common for data services with slow lab sales."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            7000000
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical 2022+ seed for a hot AI company; the B2B 2022+ seed median in base rates is about $3.2M and physical AI data rounds run higher."
+        },
+        {
+          "raise_usd": [
+            7000000,
+            15000000
+          ],
+          "post_money_usd": [
+            45000000,
+            100000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside: a named robotics lab customer lets a top fund lead a large seed."
+        },
+        {
+          "raise_usd": [
+            15000000,
+            30000000
+          ],
+          "post_money_usd": [
+            100000000,
+            200000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Hot category premium round after a landmark data deal."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed stalls if the company cannot show paying robotics labs, because investors will see a collection operation with unclear margins and no model that depends on its data. Analogs like Saphira AI raised only a small seed, and many January 2026 rivals sell data to the same few labs, so a buyer concentration worry would cap round size."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.38,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.5,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Industrials --calibration-only (series A cond 50 percent, n=8); --years 2022-2025 --industry B2B (cond 26 percent, n=74)",
+        "adjustment_reason": "At 0.76 of the Industrials anchor and above the B2B recent anchor: strong demand but a concentrated customer base and a crowded vendor field."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            12000000
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A with a flat step up."
         },
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            70000000,
+            160000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical 2026 A; PitchBook medians cited in stage_benchmarks put the deal near $17M."
+        },
+        {
+          "raise_usd": [
+            25000000,
+            50000000
+          ],
+          "post_money_usd": [
+            160000000,
+            400000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside as the data standard for a leading humanoid lab, as Encord reached with a $15M A in 2021 and larger later rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A fails if revenue depends on two or three labs that can switch vendors or build collection in house, as Figure reportedly did when it found vendors could not meet its quality bar. Investors then ask for contracted recurring revenue that a project based data business seldom has. Encord and Linewise show the field splitting into tooling winners and small data suppliers."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.36,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18); Industrials 2018-2021 cond 50 percent, n=4",
+        "adjustment_reason": "About 0.92 of the B2B anchor, small samples both ways."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            35000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            250000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin B."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000,
+            600000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B; 2022+ YC median about $37M to $45M."
+        },
+        {
+          "raise_usd": [
+            70000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1500000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if robotics adoption scales and it is the default data layer."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs proof that data volume grows with robot deployments and that margins improve with scale. If labs shift to synthetic data and simulation, or self collect, volume falls. Encord reached a Series B three years after its A, so a path exists, but few analogs in the data got there and most of the field is still seed stage."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.36,
+        "source": "python3 -I scripts/base_rates.py (overall series C cond 36 percent, n=55 in stage_benchmarks); B2B 2018-2021 series C cond 57 percent, n=7",
+        "adjustment_reason": "Below the all cohort anchor at 0.92 of it."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000,
+            70000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Thin C near the 2022+ YC median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000,
+            150000000
           ],
           "post_money_usd": [
-            0,
-            0
+            700000000,
+            1800000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical C."
+        },
+        {
+          "raise_usd": [
+            150000000,
+            300000000
+          ],
+          "post_money_usd": [
+            1800000000,
+            4000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside for a category leader in embodied AI."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The company stops before a Series C if physical AI adoption arrives more slowly than the money assumed, or if foundation model labs absorb data collection. A data supplier without a software moat tends to be bought for its team or contracts rather than scale independently."
     }
   ],
   "outcomes": {
@@ -164,167 +223,221 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.42
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.08
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most failure paths start with customer concentration. If two or three labs build collection in house or move to simulation and synthetic data, a vendor with project revenue and no software moat stalls, then sells for its datasets or team. A full miss also follows from a broad pitch that spreads a small team across training, evaluation and deployment."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "encord",
+      "relevance": "Data layer for physical AI and annotation for AI teams.",
+      "outcome_summary": "Seed 2021, Series A the same year, Series B 2024, so the tooling path to growth is proven but took years."
+    },
+    {
+      "slug": "saphira-ai",
+      "relevance": "Enablement layer for physical AI from the Summer 2024 batch.",
+      "outcome_summary": "Only a small seed of about $500K found, an example of the thin path."
+    },
+    {
+      "slug": "cortex-ai",
+      "relevance": "Real world robot and human data for embodied AI.",
+      "outcome_summary": "Raised an announced seed of about $6M in late 2025, the upside seed benchmark before this batch."
+    },
+    {
+      "slug": "linewise",
+      "relevance": "Industrial data layer pivoted to physical AI data supply.",
+      "outcome_summary": "A $1.1M pre-seed in September 2025, evidence of mid sized early rounds in this niche."
+    },
+    {
+      "slug": "orangewood-labs",
+      "relevance": "Robotics company that sells robots and software to enterprises.",
+      "outcome_summary": "A $4.5M round in 2023 and still active, a slow hardware path."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Few buyers, and they can build data collection in house",
+      "p": 0.35,
+      "evidence": "Robotics labs are few and well funded, and Figure reportedly found vendors could not meet its bar, which implies both pickiness and a build option.",
       "analogs": [
-        "TODO-company-slug"
+        "linewise",
+        "saphira-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Sign multi year data contracts with at least three labs and embed evaluation tooling that is hard to replace."
+    },
+    {
+      "risk": "Pitch is too broad for a small early team",
+      "p": 0.3,
+      "evidence": "Training, evaluation and deployment are three products, each with funded specialists such as Encord and simulation vendors.",
+      "analogs": [
+        "encord",
+        "orangewood-labs"
+      ],
+      "mitigation": "Pick the data wedge, prove margin and quality there, and add evaluation only for existing customers."
+    },
+    {
+      "risk": "Synthetic data and simulation reduce demand for real collection",
+      "p": 0.2,
+      "evidence": "Simulation and world model work is advancing, and pretraining on human video is already cheap to scrape for some uses.",
+      "analogs": [
+        "cortex-ai",
+        "linewise"
+      ],
+      "mitigation": "Focus on contact rich and proprietary modalities that simulation cannot match."
+    },
+    {
+      "risk": "Services style margins and heavy working capital",
+      "p": 0.2,
+      "evidence": "Global collection with contributors is labor intensive, and quality control costs scale with volume.",
+      "analogs": [
+        "saphira-ai"
+      ],
+      "mitigation": "Automate quality checks and price per validated hour."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Encord",
+      "what": "Data platform for physical AI and annotation",
+      "traction": "Series A in 2021 and later rounds per its YC record",
+      "source_url": "https://www.labellerr.com/blog/top-egocentric-data-providers-robotics/"
+    },
+    {
+      "name": "Lightwheel and SignIQ",
+      "what": "Vendors claiming 300,000 or more hours of delivered egocentric data",
+      "traction": "Self reported, unverified",
+      "source_url": "https://www.labellerr.com/blog/top-egocentric-data-providers-robotics/"
+    },
+    {
+      "name": "Build AI",
+      "what": "Factory worker egocentric footage, about 100,000 hours claimed",
+      "traction": "Self reported",
+      "source_url": "https://www.cloudpano.com/blog/why-robotics-labs-are-buying-egocentric-video"
+    },
+    {
+      "name": "Scale AI, Appen, Surge AI",
+      "what": "General data annotation firms moving toward physical data",
+      "traction": "Large incumbents in data labeling",
+      "source_url": "https://claru.ai/blog/humanoid-robot-training-data"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Collecting calibrated multimodal data globally, validating quality, and building evaluation harnesses for robot policies each need real engineering. A small team can build a collection pipeline in three months but not a trusted evaluation standard or deployment stack, which makes the scope a risk."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Scale AI",
+      "Encord",
+      "NVIDIA",
+      "Robotics foundation model labs"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Labeling incumbents have customers and can add egocentric capture in under a year, and labs can build their own. The wedge is quality and speed, which a larger rival can copy with spend but may not prioritize."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Robotics labs buy egocentric and human video at large scale, and Dyna Robotics reported task scores rising from 20 to 53 percent as pretraining data grew.",
+        "source_url": "https://claru.ai/blog/humanoid-robot-training-data"
+      },
+      {
+        "claim": "Many vendors now sell egocentric data, which shows existing spend but also a crowded field.",
+        "source_url": "https://www.labellerr.com/blog/top-egocentric-data-providers-robotics/"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Two or more robotics labs under paid contracts.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick the data modality with the highest buyer pain and ship a pilot dataset free of defects.",
+        "Convert pilots to contracts with quality guarantees."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Contracted revenue from at least two named labs."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Recurring revenue and improving gross margin.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Automate quality control to lift gross margin.",
+        "Add an evaluation product only for existing data customers."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 120 percent and gross margin above 50 percent."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Demand is strong and growing",
+      "evidence": "Labs are buying data in large quantities and pretraining gains are visible.",
+      "source_url": "https://claru.ai/blog/humanoid-robot-training-data"
+    },
+    {
+      "point": "Funding appetite for physical AI",
+      "evidence": "Cortex AI and Encord raised sizeable rounds in this theme."
+    },
+    {
+      "point": "A large listed team suggests operating capacity",
+      "evidence": "The directory lists about 100 people, unverified."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Human Archive",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Human Archive\" --era 2022+ : kind compound_words, alive 95.3 percent in cohort n=513",
     "strengths": [
-      "TODO"
+      "Clear meaning for a human data archive",
+      "Memorable two words"
     ],
     "weaknesses": [
-      "TODO"
+      "Sounds like a library or records business, not infrastructure for robots"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name evokes an archive of human demonstrations, which fits the data wedge but not the broader training, evaluation and deployment pitch. Compound names show no survival difference in the cohort data, so it will not decide the outcome.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A hot data niche with strong demand and a broad pitch, likely to raise a seed and then face a concentrated buyer base.",
+    "general_summary": "Human Archive sells infrastructure for physical AI, which in January 2026 is one of the best funded themes in robotics. Labs pay for data and many vendors already compete for the same few buyers. A seed above the YC check within a year is likely given the theme, but Series A depends on recurring contracts and margin rather than projects. The pitch covers training, evaluation and deployment at once, which a small team cannot do well. About 42 percent of forecast paths end in a stall or shutdown."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-01-05 using only the batch listing.",
+    "Team size of 100 is unverified.",
+    "The step seed means a round above about $500K within roughly 12 months of the batch start.",
+    "Industrials cohorts are tiny (n=11 to 12), so B2B anchors were also used."
   ],
   "sources": [
-    "https://"
-  ]
+    "https://www.labellerr.com/blog/top-egocentric-data-providers-robotics/",
+    "https://claru.ai/blog/humanoid-robot-training-data",
+    "https://www.cloudpano.com/blog/why-robotics-labs-are-buying-egocentric-video"
+  ],
+  "mode": "summary"
 }

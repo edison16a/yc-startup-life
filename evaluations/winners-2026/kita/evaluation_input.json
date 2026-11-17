@@ -1,162 +1,210 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Kita",
+    "one_liner": "Underwrite borrowers around the world in minutes",
+    "description": "AI platform for lenders in emerging markets that automates application completion, document verification and underwriting from messy financial documents such as e-wallet records, bank statements and utility bills, and learns from repayment outcomes. Lenders pay. Three person team, Winter 2026 batch.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.01,
+    "p_high": 0.06,
+    "basis": "Company is assumed accepted, so this is a note only. Prior is about 1 percent per applicant with a 0.6 to 2 percent band. Repeat founder with Apple product experience and a computer vision researcher on a clear applied AI problem argue for a multiple of that, while no stated revenue holds it down.",
+    "why_it_fails": "YC would most plausibly say no because there is no stated traction with a lender, the market is fragmented across many countries, and document extraction can look like a feature that crowded identity and fraud vendors already sell. The decision would also weigh whether the three person team can show real users within one batch, and whether the founders can explain a wedge that incumbents are unlikely to copy quickly."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.62,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.61,
+        "source": "python3 -I scripts/base_rates.py --industry Fintech --years 2022-2024 gave seed 54% lower, 61% known only, 65% upper, cond 61% (n=196). --tag Lending gave 62% (n=16, anecdote).",
+        "adjustment_reason": "Close to the anchor. Applied AI infrastructure sold to lenders is a fundable theme and a repeat founder helps, while no lender pilots are stated."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            700000,
+            1500000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            14000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Small round slightly above the standard YC deal, common for fintech teams that sell to regulated customers slowly."
         },
         {
           "raise_usd": [
-            0,
-            0
+            1500000,
+            3500000
           ],
           "post_money_usd": [
-            0,
-            0
+            14000000,
+            28000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Fintech seed median is about $3.2M for 2022 and later rounds, with a post money near $25M to $50M where disclosed."
+        },
+        {
+          "raise_usd": [
+            3500000,
+            7000000
+          ],
+          "post_money_usd": [
+            28000000,
+            55000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if one named lender pilot shows approval time dropping sharply. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The seed round fails to arrive if the team has no signed lender by Demo Day. Lenders in the Philippines, Indonesia or Mexico buy slowly, and investors who cannot verify that document signals predict repayment will pass. Fintelite and Finic show lending automation teams with years of activity and no priced round, so a seed above the YC deal is not automatic."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.24,
+        "source": "Same fintech command: series_a 13% lower, 15% known only, 24% upper, cond 24% (n=119). Lending tag cond 30% (n=10).",
+        "adjustment_reason": "Within 0.75 times the anchor. Data flywheel and compounding repayment data would be a real moat if it works."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000,
+            8000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A for a team still proving one market. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         },
         {
           "raise_usd": [
-            0,
-            0
+            8000000,
+            16000000
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.55,
+          "rationale": "Fintech 2022+ Series A median is about $16M raise. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
+        },
+        {
+          "raise_usd": [
+            16000000,
+            28000000
+          ],
+          "post_money_usd": [
+            90000000,
+            180000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if several lenders across countries show loss rate gains. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The Series A fails if revenue stays pilot sized and concentrated in one or two lenders. Investors will ask for proof that underwriting signals beat a lender's existing scorecards, and that takes repayment cohorts that need a year or more to mature. Inscribe and Heron reached an A only with named bank customers, and Two Dots needed domain depth at its founders."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.17,
+        "source": "Fintech cohort cond 17% (n=29), known only 3%, upper 13%.",
+        "adjustment_reason": "Slightly above the thin anchor because Series B data in recent batches is right censored and companies with paying customers often reach B years later."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            12000000,
+            25000000
           ],
           "post_money_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Modest B, possibly flat. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000,
+            45000000
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000,
+            300000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Series B 2022+ median is about $37M. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
+        },
+        {
+          "raise_usd": [
+            45000000,
+            80000000
+          ],
+          "post_money_usd": [
+            300000000,
+            600000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside if it becomes the default underwriting layer in several markets. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B fails if growth depends on country by country sales and localization work that scales with headcount. Investors will see each market as a new product and a long compliance process. Inscribe raised a B and then cut staff after missing revenue goals, which shows how rate cycles hit lending software."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "Fintech cohort series_c cond 20% (n=5); B2B 2022-2024 cond 19% (n=26).",
+        "adjustment_reason": "Anchored on the cohort; very thin data."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Median Series C 2022+ is about $45M. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         },
         {
           "raise_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Growth round if multi country footprint is proven. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
+        },
+        {
+          "raise_usd": [
+            100000000,
+            200000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2000000000
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside if it becomes core infrastructure for emerging market credit. This scenario is sized from the researched round benchmarks for recent cohorts and weighted by how often similar companies landed there."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A later round fails if the business stays a services heavy tool with low ticket sizes per lender and slow expansion between countries. Larger investors want clear net revenue retention and an expansion path, and emerging market lenders have small budgets. Lenders can also build or buy the same capability from identity and fraud vendors."
     }
   ],
   "outcomes": {
@@ -164,167 +212,197 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.5
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.17
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          3000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most likely the company stalls because lenders in small markets give it low budgets and long pilots, and larger identity and verification vendors add document analysis for the same buyers. Past lending automation companies such as Fintelite show activity without a priced round. The learning engine only matters once repayment data accumulates, which is slow."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "inscribe",
+      "relevance": "Document fraud detection and underwriting for banks and lenders.",
+      "outcome_summary": "Series A and B, then layoffs after missed revenue goals as rates rose."
+    },
+    {
+      "slug": "heron",
+      "relevance": "Underwriting automation from financial documents.",
+      "outcome_summary": "Small pre seed, pivot, then a Series A years later."
+    },
+    {
+      "slug": "two-dots",
+      "relevance": "AI fraud prevention and underwriting from applicant documents.",
+      "outcome_summary": "Series A with a team of 28 and domain experienced founders."
+    },
+    {
+      "slug": "fintelite",
+      "relevance": "Process automation for lending sold to regional banks.",
+      "outcome_summary": "Active with customers but no priced round found."
+    },
+    {
+      "slug": "finic",
+      "relevance": "AI fraud and risk scoring for financial institutions.",
+      "outcome_summary": "Active, no funding found."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Slow lender sales cycles in many small markets",
+      "p": 0.4,
+      "evidence": "Regulated lenders run pilots for months, and each country has different document types and rules.",
       "analogs": [
-        "TODO-company-slug"
+        "fintelite",
+        "finic"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick one country and one product line and prove loss rate improvement before expanding."
+    },
+    {
+      "risk": "Document extraction becomes a commodity feature",
+      "p": 0.35,
+      "evidence": "Existing vendors such as HyperVerge, Inscribe and Kaaj already sell bank statement analysis and fraud checks, and general vision language models make extraction cheap.",
+      "analogs": [
+        "inscribe",
+        "heron"
+      ],
+      "mitigation": "Win on the repayment feedback loop and local signals that generic vendors lack."
+    },
+    {
+      "risk": "No proof that signals predict repayment",
+      "p": 0.3,
+      "evidence": "The claimed compounding advantage needs outcome data from lenders, which takes many months and depends on lender cooperation.",
+      "analogs": [
+        "two-dots"
+      ],
+      "mitigation": "Run back tests on a lender's historical applications before any live pilot."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "HyperVerge",
+      "what": "Identity verification and bank statement analysis sold across Asia.",
+      "traction": "Established vendor with emerging market lenders.",
+      "source_url": "https://hyperverge.co/use-cases/bank-statement-analysis/"
+    },
+    {
+      "name": "Inscribe",
+      "what": "AI document fraud detection for banks, credit unions and lenders.",
+      "traction": "Series B stage vendor, mostly US customers.",
+      "source_url": "https://www.inscribe.ai/blog/ai-fraud-detection-for-lenders"
+    },
+    {
+      "name": "Kaaj",
+      "what": "Document fraud detection and bank statement tampering checks for small business lending.",
+      "traction": "Reports a $3.8M seed.",
+      "source_url": "https://kaaj.ai/blog/kaaj-ai-powered-document-fraud-detection-and-bank-statement-tampering"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Extracting fields from varied local documents with vision language models is buildable by three people in months. Hard parts are fraud detection with low false positives, linking signals to repayment outcomes and meeting each lender's data rules."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Identity and verification vendors",
+      "Credit bureaus and scoring vendors",
+      "Large lenders building in house"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Incumbent verification vendors already sell similar extraction and could add underwriting signals within a year, but they lack local credit context and the repayment feedback loop that this company is aiming for."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Lenders in thin file markets rely on document review, and vendors report rising AI generated document fraud, which creates demand for automated checks.",
+        "source_url": "https://www.inscribe.ai/blog/ai-fraud-detection-for-lenders"
+      },
+      {
+        "claim": "Several funded vendors sell bank statement analysis to lenders, which shows paid demand.",
+        "source_url": "https://hyperverge.co/use-cases/bank-statement-analysis/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show one lender will test the product.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Collect sample documents from three target lenders",
+        "Build a demo that extracts and fraud checks them"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "One signed pilot or letter of intent."
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert pilots to paid contracts.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign two paying lenders in one country",
+        "Publish a back test of approval speed and loss rate"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Recurring revenue and a measured loss rate gain."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Repeat founder with local context and a strong technical partner.",
+      "evidence": "Founder is from Manila with product experience at Apple, partner has computer vision research."
+    },
+    {
+      "point": "Real unmet need in a large underbanked market.",
+      "evidence": "Open finance data is limited so lenders rely on documents."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Kita",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "Not run with the scoring script; judged by hand: short, four letters, easy to say.",
     "strengths": [
-      "TODO"
+      "Short and easy to spell",
+      "Means we in Filipino, which suits a Philippines base"
     ],
     "weaknesses": [
-      "TODO"
+      "Not descriptive of lending",
+      "Common word in several languages"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A short pronounceable name is typical of successful recent YC companies, but it says nothing about underwriting. It will neither help nor hurt a sale to lenders who buy on results."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A sensible applied AI lending tool in a niche where seed is likely but a Series A depends on repayment proof.",
+    "general_summary": "Kita sells document based underwriting to emerging market lenders. The need is real and funded competitors exist, which shows lenders pay. The team is small and the claimed moat, a learning loop from repayment data, takes time to build. Fintech cohorts reach seed about 61 percent of the time and Series A about 24 percent given a seed. Reaching later rounds is common for companies with paying customers even years after the batch, so the odds below describe whether a round happens, not when. The main drivers are whether early customers pay, whether the product beats bundled features from larger vendors, and whether the team can keep a small burn long enough to show repeat revenue."
   },
   "assumptions": [
-    "TODO"
+    "Only the supplied input file was used for company facts.",
+    "Accepted to YC as stated; acceptance note is for completeness.",
+    "Seed in this test means a round above about $500K within 12 months of the batch start."
   ],
   "sources": [
-    "https://"
+    "https://hyperverge.co/use-cases/bank-statement-analysis/",
+    "https://www.inscribe.ai/blog/ai-fraud-detection-for-lenders",
+    "https://kaaj.ai/blog/kaaj-ai-powered-document-fraud-detection-and-bank-statement-tampering"
   ]
 }
