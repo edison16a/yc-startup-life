@@ -1,330 +1,435 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Sila",
+  "one_liner": "Agentic Messenger",
+  "description": "Team messenger where people use AI agents to work together, positioned as the infrastructure a company runs on. Aims to bring superintelligence to businesses. Two person team; the input gives no customers, traction or locations.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.97,
+  "p_low": 0.9,
+  "p_high": 0.99,
+  "basis": "The input file places this company in the Winter 2026 batch, so acceptance is already known and this figure is reported for completeness only. The starting prior for a random applicant is about 1 percent (references/yc_acceptance.md, 0.6 to 2 percent third party range); the near certainty comes from the stated batch, not from a model of the company.",
+  "why_it_fails": "YC is already past, so the only residual risk is a data error in the input about batch membership. Had the company been an ordinary applicant, the most plausible rejection reason would be: A new chat product competing with Slack and Microsoft Teams with a vague pitch and no stated traction or distribution advantage."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.33,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: seed known-only 61% (lower 50%, upper 68%), cond 61% (n=88). Median months to seed 9 (p25 4, p75 19); time_to_milestones.csv era 2022+ p75 is 14 months. ",
+    "adjustment_reason": "Window is 10 months from the as_of date to 2026-11-17. The ever anchor of 61% counts the YC deal as a seed, but this forecast counts only a financing above about $1M from outside investors that closes inside the window, so the anchor is cut to cover only rounds above $1M and only the share that close within 10 months (about 75 to 80 percent of eventual seed raisers close by month 14 to 20). AI native messaging is a hot sector, but I add no credit for it. I cut for a two person team with no stated product or customers, and for the short window: only about half of eventual seed raisers have closed by month 10 (p25 months to seed 4, median 9). Odds are not lifted for team or hot sector, per the winners test, and do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      2900000
+     ],
+     "post_money_usd": [
+      8000000,
+      20000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Small post YC round of $1M to $3M, usually angels or a small seed fund. A two person AI team with a viral demo can get a $1M to $3M angel round quickly."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      15000000,
+      35000000
+     ],
+     "p_band": 0.36,
+     "rationale": "Institutional seed of $3M to $6M, the modal outcome in 2022 and later data (median $3.5M to $4.1M in round_benchmarks.csv, which mixes in the YC deal). The central case is a $3M to $6M seed from an AI focused fund."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      70000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Larger seed of $6M to $12M, where 42 percent of confirmed 2026 raises above $1M fell in the winners test. AI native team products have drawn large rounds in 2025, so a $6M to $12M seed is possible with strong usage."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.12,
+     "rationale": "Upside band above $12M, reserved for a standout demo with a named lead. Only with rapid organic growth inside startups."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Window of 10 months. The most likely miss is that investors see a Slack feature race they cannot judge: Slack and Teams are adding agents themselves, and no traction is stated. Openland raised a $2.25M seed for a messenger and later closed, Patchwork (W24 Slack replacement) stayed at the $500K YC cheque and went inactive, and Shift Messenger raised $1.5M and faded. A 10 month window is short."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: series_a cond 33% (n=54), known-only 20%; months to series A median 30 (p25 22, p75 39).",
+    "adjustment_reason": "The ever anchor is 33 percent, but only about a tenth of eventual Series A raisers have closed it by month 10 (p25 is 19 to 22 months from batch start), so the windowed value is much lower. Reaching a Series A in later years is common for companies with paying customers, but it falls outside this window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      45000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Thin or bridge style Series A below the 2022 and later median of $14M to $15M, the down or flat band."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      18000000
+     ],
+     "post_money_usd": [
+      40000000,
+      100000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series A near the 2022 and later quartiles ($11M to $21M raise)."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      40000000
+     ],
+     "post_money_usd": [
+      100000000,
+      250000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Upside Series A led by a top tier fund once revenue is visible; current US medians are about $17M raise on $60M pre money."
+    }
+   ],
+   "why_it_fails": "A Series A within 10 months needs paid seats at real companies and retention against Slack, but median time to Series A is about 28 months. Openland and Patchwork show messengers stall at adoption, and nothing in the input shows adoption yet. Investors would also need evidence that agent features, not only chat, drive seat expansion beyond a few friendly startups."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --calibration-only --industry B2B --years 2022-2024: series_b cond 17% (n=18); median months to series B 46 overall, 35.5 for 2022 and later (n=40).",
+    "adjustment_reason": "Median time to a Series B is about three years from batch start, so inside a 10 month window almost only extreme outliers get there; windowed probability is far below the 17 percent ever anchor."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      80000000,
+      180000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or small Series B, near the 2018 to 2021 median of $32M but with a lower valuation."
+    },
+    {
+     "raise_usd": [
+      30000000,
+      60000000
+     ],
+     "post_money_usd": [
+      180000000,
+      450000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B, in line with the 2022 and later median of about $40M."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      120000000
+     ],
+     "post_money_usd": [
+      450000000,
+      1000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B for a category leader; 2022 and later posts reach $600M to $1B."
+    }
+   ],
+   "why_it_fails": "A Series B inside 10 months would need enterprise revenue and a Series A first, and the median B2B path takes about three years from batch start (B2B median months to series B 47). Rescale, a simulation platform, took years of enterprise selling before its Series B. The likely failure is timing rather than a verdict on the idea."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55) overall; B2B 2022-2024 cohort has 0 of 3 at Series C. Median months to series C about 61.",
+    "adjustment_reason": "Series C normally lands about five years after the batch, so a window of 10 months makes it very unlikely; the ever anchor is cut to a token value."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C at the 2022 and later median of $74M."
+    },
+    {
+     "raise_usd": [
+      80000000,
+      150000000
+     ],
+     "post_money_usd": [
+      700000000,
+      2000000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Growth round for a scaled leader, near the 2022 and later p75 of $103M."
+    },
+    {
+     "raise_usd": [
+      150000000,
+      400000000
+     ],
+     "post_money_usd": [
+      2000000000,
+      6000000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round for a breakout company; only a few percent of YC companies get here."
+    }
+   ],
+   "why_it_fails": "Series C inside 10 months is almost outside the data: the median is about five years after batch start, and only 8 companies in the 2022 and later cohort have reached it. Failing here means the company has not scaled past a niche or the window closed first, not that the idea is bad."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.65
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.18
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     10000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most messenger startups fail to displace the incumbent, and Slack and Teams are building agent features directly. Openland, Shift Messenger and Patchwork all stalled or went inactive; Mattermost shows a different path of success only through an open source, security focused niche, so a large exit needs a sharp wedge."
+ },
+ "analogs": [
+  {
+   "slug": "openland",
+   "relevance": "Team and community messenger from Winter 2018.",
+   "outcome_summary": "Raised a 2.25M seed, pivoted, reached few communities and the founder closed it."
+  },
+  {
+   "slug": "patchwork",
+   "relevance": "AI powered Slack replacement from two big tech veterans, Winter 2024.",
+   "outcome_summary": "Reportedly only the 500K YC cheque and later listed inactive, so no seed above 1M found."
+  },
+  {
+   "slug": "shift-messenger",
+   "relevance": "Real time messenger for frontline teams.",
+   "outcome_summary": "Raised 1.5M seed in 2015 and later went inactive."
+  },
+  {
+   "slug": "mattermost",
+   "relevance": "Open source Slack alternative for technical teams.",
+   "outcome_summary": "Raised a $20M Series A and $50M Series B in 2019 by focusing on secure, self hosted collaboration."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Slack and Microsoft Teams ship agents natively, so teams do not change messenger.",
+   "p": 0.45,
+   "evidence": "Salesforce repositioned Slack as an agentic operating system and Microsoft integrates agents into Teams.",
+   "analogs": [
+    "openland",
+    "patchwork"
+   ],
+   "mitigation": "Pick a niche such as engineering or agent first teams where switching is cheap."
+  },
+  {
+   "risk": "Network effects: a messenger is useless until a whole team adopts it.",
+   "p": 0.35,
+   "evidence": "Messenger startups such as Openland reached only a few hundred communities.",
+   "analogs": [
+    "openland",
+    "shift-messenger"
+   ],
+   "mitigation": "Start with small startups and agent workflows that deliver value to one user."
+  },
+  {
+   "risk": "Vague positioning and no stated traction make seed investors pass.",
+   "p": 0.3,
+   "evidence": "The description gives a mission but no customers, revenue or usage.",
+   "analogs": [
+    "patchwork",
+    "kitemaker"
+   ],
+   "mitigation": "Show weekly active teams and agent actions per user."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Slack with Agentforce",
+   "what": "Incumbent chat platform repositioned as an agentic operating system.",
+   "traction": "Part of Salesforce, a $27.7B acquisition per press coverage.",
+   "source_url": "https://www.uctoday.com/collaboration/slack-agentic-os-dreamforce-2025/"
+  },
+  {
+   "name": "Microsoft Teams with Copilot agents",
+   "what": "Chat bundled into Microsoft 365 with agents.",
+   "traction": "Reported significant traction in a roughly $45B collaboration market.",
+   "source_url": "https://www.axios.com/2025/02/25/ai-agents-slack-chat-worplace"
+  },
+  {
+   "name": "Status quo: Slack plus separate AI tools",
+   "what": "Teams use existing chat and bolt on agents.",
+   "traction": "Default behaviour.",
+   "source_url": "https://www.axios.com/2025/02/25/ai-agents-slack-chat-worplace"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "A messenger with agent hooks is buildable by two people in months, but reliability, permissions and enterprise security are the hard parts, and the product must also run agents safely."
+ },
+ "takeover_risk": {
+  "rating": 5,
+  "who": [
+   "Salesforce (Slack)",
+   "Microsoft (Teams)",
+   "Google (Chat)",
+   "OpenAI and Anthropic products"
+  ],
+  "timeline_months": 6,
+  "rationale": "The incumbents already have distribution and are shipping agent features, so a rival can match the core idea in under 6 months."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Salesforce and Microsoft are racing to make chat the surface for AI agents, so the category has real spend.",
+    "source_url": "https://www.uctoday.com/collaboration/slack-agentic-os-dreamforce-2025/"
+   },
+   {
+    "claim": "Press describes workplace chat shifting to more AI agents and fewer humans.",
+    "source_url": "https://www.axios.com/2025/02/25/ai-agents-slack-chat-worplace"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "A product with a few teams using it daily.",
+   "actions": [
+    "Ship to 10 startup teams and watch retention.",
+    "Show tasks done by agents in chat."
+   ],
+   "proof": "Ten teams active weekly for a month."
+  },
+  {
+   "phase": "seed",
+   "goal": "Organic growth that justifies a $3M to $6M seed.",
+   "actions": [
+    "Convert teams to paid seats.",
+    "Publish usage per team."
+   ],
+   "proof": "100 active teams and paid conversions."
+  },
+  {
+   "phase": "series_a",
+   "goal": "Paid seats and retention against Slack.",
+   "actions": [
+    "Add admin and security controls.",
+    "Integrate agent marketplaces."
+   ],
+   "proof": "About $1M ARR with low churn."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Timing: incumbents are validating that agents inside chat is a real category.",
+   "evidence": "Slack and Teams both launched agent features, per press.",
+   "source_url": "https://www.uctoday.com/collaboration/slack-agentic-os-dreamforce-2025/"
+  },
+  {
+   "point": "Small team can ship fast and hot AI sector for seed investors.",
+   "evidence": "Two person team stated in the input; Slack agent push confirms demand.",
+   "source_url": "https://www.axios.com/2025/02/25/ai-agents-slack-chat-worplace"
+  }
+ ],
+ "brand": {
+  "name": "Sila",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Sila\" --era 2022+: invented_or_proper, no flags, cohort alive 92.7%, n=1826",
+  "strengths": [
+   "Four letters, easy to say and spell"
+  ],
+  "weaknesses": [
+   "Meaning unclear and similar to other brands"
+  ],
+  "rationale": "A short invented name like Slack itself is easy to type and remember, but it says nothing about agents and a messenger lives or dies on adoption rather than name."
+ },
+ "narrative": {
+  "headline": "A crowded messenger with a thin pitch; 33 percent for a seed above $1M in 10 months.",
+  "general_summary": "Sila is an AI agent messenger from two founders with no stated customers. Incumbents Slack and Teams are adding agents, and past YC messengers such as Openland, Patchwork and Shift Messenger stalled or stayed small. The hot AI sector helps seed odds but I do not lift above the anchor, and the 10 month window is short, so a seed above $1M is about a third. A Series A inside the window is very unlikely. The ladder does not rank this company above others. The main failure path is that teams never switch from Slack and investors see a feature, not a company.",
+  "deep_dive": {
+   "market_need": "Summary mode, see the general summary.",
+   "competition": "Summary mode, see the general summary.",
+   "technical_complexity": "Summary mode, see the general summary.",
+   "takeover": "Summary mode, see the general summary.",
+   "economics_and_distribution": "Summary mode, see the general summary.",
+   "team": "Summary mode, see the general summary.",
+   "yc_specific": "Summary mode, see the general summary."
+  }
+ },
+ "assumptions": [
+  "Only the description and a team of two are known; no traction is assumed.",
+  "Blind forecast made as of 2026-01-05 for the window to 2026-11-17 (10 months). Seed means an outside round above about $1M closing in the window, not the standard YC deal of about $500K.",
+  "Coverage limit: 662 of 6,399 companies are researched, and the B2B 2022-2024 cohort has 107 companies, so cohort rates are wide.",
+  "Probabilities do not rank this company against others; the winners test found no separation between raisers and non-raisers."
+ ],
+ "sources": [
+  "https://www.uctoday.com/collaboration/slack-agentic-os-dreamforce-2025/",
+  "https://www.axios.com/2025/02/25/ai-agents-slack-chat-worplace"
+ ]
 }

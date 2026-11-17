@@ -1,162 +1,258 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Permitify",
+    "one_liner": "AI co-pilot for building plan review and building code compliance",
+    "description": "AI assistant for city building department plan reviewers that checks plans against building code to speed permit review. Customers are city governments paying software subscriptions. Two person team in Salt Lake City. Forecast as of 2025-01-06, window to 2026-11-17 (about 22 months).",
+    "as_of": "2025-01-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.015,
+    "p_low": 0.005,
+    "p_high": 0.04,
+    "basis": "The company is in the Winter 2025 batch, so this is shown for completeness. Start from the roughly 1 percent prior for a random applicant (0.6 to 2 percent range). Adjust up for a clear pain point in an area where YC funded PermitFlow, and for a technical two person team; adjust down for slow government sales, a crowded permit AI field and no stated traction.",
+    "why_it_fails": "YC would most plausibly say no because selling to city governments is slow and the AI permit review space already has Archistar, CivCheck and PermitFlow style entrants. A two person team with no pilot city or named reviewer user gives the partners little reason to believe it will close a first municipal contract quickly."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.42,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.53,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave seed 47% / 53% / 59% (n=1002, cond 53%); --tag GovTech gave 67% / 89% / 92% but n=12, so anecdote only. Time rule: 2022+ months to seed p50 6, p75 14.2, about 85 percent of ever reachers by 22 months.",
+        "adjustment_reason": "Ever anchor 0.53 scaled by 0.85 for the 22 month window gives 0.45, reduced to 0.42 because two founders selling to city governments face long cycles and the GovTech rate rests on 12 companies. Within 0.75 of the anchor with no lift; the odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            18000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "A small post YC round of about $1M to $3M from angels and a micro fund, the most common outcome when a team has early pilots but no repeatable sales motion. It is the largest band because the 2022 and later seed table (p25 $2.0M, median $3.5M) mixes in YC deal sized checks."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.38,
+          "rationale": "A conventional institutional seed of $3M to $6M led by a seed fund, matching the 2022 and later table median of $3.5M and the p75 of $5.2M for the cohort."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A $6M to $12M seed, which happens when a lead fund prices on market heat. Among confirmed 2026 raises above $1M the median was $6.0M, but press covers large rounds more, so this band is kept at a minority."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            20000000
+          ],
+          "post_money_usd": [
+            60000000,
+            100000000
+          ],
+          "p_band": 0.05,
+          "rationale": "An upside seed above $12M, reached only if the company shows unusual early revenue or a top fund competes for it; rare in the YC data and kept small."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Window is 22 months (2025-01-06 to 2026-11-17); seed means an outside round above about $1M. The most likely miss is that municipal pilots stay unpaid or take more than a year to procure, so investors see no revenue. PermitFlow raised a $5.5M seed but sells to builders and expediters, not cities, while Tolemi and Elucd, government software sellers, stayed small. Archistar's Austin adoption in 2024 shows rivals already hold city references."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.08,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave series_a cond 26% (n=468); GovTech cond 38% (n=8, anecdote). Time rule: 2022+ months to series A p25 19.4, p50 28.",
+        "adjustment_reason": "Ever conditional 0.26 scaled by about 0.3 for the 22 month window, because most A rounds close after 28 months and government sales cycles lengthen it further. More than 2x below the anchor for that reason."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "A thin or bridge style Series A of $6M to $10M, common when growth is real but revenue is still small; below the 2022 and later p25 of $11M, so it stands for the soft band."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            18000000
           ],
           "post_money_usd": [
-            0,
-            0
+            45000000,
+            90000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "The central Series A of $10M to $18M, bracketing the 2022 and later median of $15M and p25 to p75 of $11M to $21M."
+        },
+        {
+          "raise_usd": [
+            18000000,
+            30000000
+          ],
+          "post_money_usd": [
+            90000000,
+            150000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A larger A of $18M to $30M that top funds lead when growth looks category defining; current market data shows A deal sizes near $17M to $20M."
+        },
+        {
+          "raise_usd": [
+            30000000,
+            60000000
+          ],
+          "post_money_usd": [
+            150000000,
+            350000000
+          ],
+          "p_band": 0.08,
+          "rationale": "An upside A above $30M, seen only for a few AI companies with very fast revenue; rare and kept at a small share."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A inside the window would need several paying cities and repeatable annual contracts, but municipal procurement often takes 12 to 18 months and budgets are small. Remix needed years and Sequoia support to scale city software, and Tolemi stayed a small vendor. Investors will see a two person team whose revenue is a handful of $20K to $50K contracts."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.22,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.21,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave series_b cond 21% (n=123); GovTech cond 67% (n=3, ignored). Long run, not window numbers.",
+        "adjustment_reason": "Equal to the B2B anchor; long run chance beyond the window with no lift for the GovTech theme."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "A smaller or flat Series B of $15M to $30M, typical when the A cohort slows; includes down or extension rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            50000000
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000,
+            350000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "The central Series B of $30M to $50M, matching the 2022 and later median of $40M with p25 to p75 of $27M to $55M."
+        },
+        {
+          "raise_usd": [
+            50000000,
+            80000000
+          ],
+          "post_money_usd": [
+            300000000,
+            600000000
+          ],
+          "p_band": 0.22,
+          "rationale": "A growth B of $50M to $80M for companies with clear scaled revenue."
+        },
+        {
+          "raise_usd": [
+            80000000,
+            150000000
+          ],
+          "post_money_usd": [
+            600000000,
+            1200000000
+          ],
+          "p_band": 0.08,
+          "rationale": "An upside B above $80M for category leaders, rare among YC companies."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs a national footprint of municipalities and expansion into adjacent products such as inspections and permits intake. The buyer set is thousands of local departments with small budgets and a few large vendors such as Accela and Tyler Technologies that can bundle. PermitFlow reached a B only by selling to private builders at scale, a path Permitify does not follow."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2024 --industry B2B gave series_c cond 19% (n=26); older eras 36 to 43 percent.",
+        "adjustment_reason": "Within 1.25 times the B2B anchor; no GovTech cohort large enough to use."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000,
+            700000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "A modest later round of $30M to $60M, including down rounds and structured deals."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            120000000
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000,
+            1400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "The central round of $60M to $120M, bracketing the 2022 and later series C median of $74M."
+        },
+        {
+          "raise_usd": [
+            120000000,
+            250000000
+          ],
+          "post_money_usd": [
+            1200000000,
+            3000000000
+          ],
+          "p_band": 0.2,
+          "rationale": "A large growth round of $120M to $250M for a clear leader."
+        },
+        {
+          "raise_usd": [
+            250000000,
+            500000000
+          ],
+          "post_money_usd": [
+            2500000000,
+            6000000000
+          ],
+          "p_band": 0.05,
+          "rationale": "A mega round above $250M, which only a handful of YC companies have reached."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Growth rounds past B in GovTech are rare: Remix reached a Series B and was then sold to Via for a reported $100M rather than raising a growth round. City software revenue grows slowly and public budgets cap contract sizes, so investors tend to see an acquisition target rather than a growth company."
     }
   ],
   "outcomes": {
@@ -164,167 +260,227 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.58
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          10000000000
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The likely failure is slow government sales: cities pilot AI review but procure from incumbent permit systems or larger AI vendors, and a two person team runs out of runway before a repeatable contract base forms. GovTech exits are mostly under $100M, as Elucd and Remix suggest, with one reported $100M exit, so reaching $1B requires a platform position that is unlikely here."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "permitflow",
+      "relevance": "AI for construction permits, same wedge (W22)",
+      "outcome_summary": "Raised a $5.5M seed in 2023 and a roughly $31M Series A in February 2024; sells to builders and expediters, which makes it a faster path than selling to cities."
+    },
+    {
+      "slug": "upcodes",
+      "relevance": "AI platform for building codes and specs (S17)",
+      "outcome_summary": "Free code library with a large user base but small rounds of $785K in 2018, $3.36M in 2021 and a $3.5M Series A; shows building code AI is a slow, capital light business."
+    },
+    {
+      "slug": "tolemi",
+      "relevance": "Software sold to city governments (W17)",
+      "outcome_summary": "Sells to cities such as High Point NC; stayed at about 20 people with unclear funding, an example of slow municipal growth."
+    },
+    {
+      "slug": "remix",
+      "relevance": "Platform for cities to plan transit (W15)",
+      "outcome_summary": "Won Sequoia as lead, raised about $27M total and was acquired by Via in 2021 for a reported $100M, the good outcome in government software."
+    },
+    {
+      "slug": "elucd",
+      "relevance": "Government resident polling software (S17)",
+      "outcome_summary": "Acquired by Zencity in 2021 at an undisclosed price after small rounds; shows exits are small."
+    },
+    {
+      "slug": "ridealong",
+      "relevance": "Software for police and health workers sold to public agencies (S17)",
+      "outcome_summary": "Seattle and Kitsap County pilots, but later reported as acquired with no round found; slow public sector growth."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Municipal procurement takes longer than the runway",
+      "p": 0.4,
+      "evidence": "Cities must run pilots, security reviews and budget cycles; the Austin pilot ran three months and Harris County approved a two year pilot in late 2024.",
       "analogs": [
-        "TODO-company-slug"
+        "tolemi",
+        "ridealong"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Sell to a few departments with fast discretionary budgets, and price below procurement thresholds to avoid competitive bids."
+    },
+    {
+      "risk": "Better funded permit AI vendors already hold city references",
+      "p": 0.35,
+      "evidence": "Archistar signed Austin in October 2024 after a three month pilot, and other vendors such as CivCheck are active in several cities.",
+      "analogs": [
+        "permitflow",
+        "upcodes"
+      ],
+      "mitigation": "Focus on commercial and complex plan sets where the others are weakest and publish accuracy data on code checks."
+    },
+    {
+      "risk": "Model errors on plan review create liability and trust problems",
+      "p": 0.25,
+      "evidence": "Reviewers remain legally responsible and analysts recommend a human decision maker; false negatives on code compliance are costly.",
+      "analogs": [
+        "upcodes",
+        "elucd"
+      ],
+      "mitigation": "Keep a human reviewer in the loop and log citations to code sections for every flag."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Archistar",
+      "what": "AI plan assessment sold to city governments",
+      "traction": "Adopted by Austin in October 2024 after a three month pilot, per press",
+      "source_url": "https://www.archistar.ai"
+    },
+    {
+      "name": "Clariti (CivCheck)",
+      "what": "AI pre screening of permit applications for building departments",
+      "traction": "Vendor claims 70 percent faster plan review; used in Honolulu (reported 2025)",
+      "source_url": "https://www.claritisoftware.com"
+    },
+    {
+      "name": "Accela",
+      "what": "Incumbent permitting and licensing system of record for governments",
+      "traction": "Large installed base of agencies",
+      "source_url": "https://www.accela.com"
+    },
+    {
+      "name": "UpCodes",
+      "what": "AI platform for building codes and specs",
+      "traction": "Large user base and small venture rounds",
+      "source_url": "https://up.codes"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Reading architectural drawings and mapping them to code sections is hard with computer vision and language models, and false negatives matter, but a two person technical team can build a useful assistant for narrow plan types in three months. Integration with city permit systems is the harder, slower part."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Archistar",
+      "Clariti",
+      "Accela",
+      "Tyler Technologies"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Established permit software vendors and funded AI rivals can add plan review features within a year and already own city relationships. Cities buy from few vendors, which raises takeover risk, but the narrow product and slow procurement protect a niche."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "City building departments are short of reviewers and several, including Austin and Harris County, piloted AI permit review in 2024 (press summary; the page itself is undated).",
+        "source_url": "https://www.constructionowners.com/news/cities-turn-to-ai-to-speed-up-permit-reviews"
+      },
+      {
+        "claim": "Analysts describe a long staffing crisis in planning departments, and AI pre screening is aimed at cutting correction cycles (undated, directional).",
+        "source_url": "https://propmodo.com/?p=179490"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Prove a reviewer saves real time on real plans",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run a free pilot with 2 building departments and time reviews with and without the tool",
+        "Document the code checks that catch real errors with cited sections"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Measured review time reduction of 30 percent or more in 2 departments"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert pilots into paid annual contracts",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign 3 to 5 cities at $20K to $60K a year under procurement thresholds",
+        "Build integrations to Accela or Tyler systems"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "3 paid city contracts and at least $100K annual recurring revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Repeatable municipal sales across states",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Hire a government sales lead and channel partners",
+        "Expand to inspections and permit intake"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "15 or more cities and $1M ARR with renewal above 90 percent"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Real labor shortage and public budget pressure",
+      "evidence": "Building departments are understaffed and pilots in Austin and Harris County in 2024 show willingness to try AI review.",
+      "source_url": "https://www.constructionowners.com/news/cities-turn-to-ai-to-speed-up-permit-reviews"
+    },
+    {
+      "point": "Adjacent success in YC",
+      "evidence": "PermitFlow (W22) raised a $5.5M seed and a roughly $31M Series A, showing investors fund AI for permits.",
+      "source_url": "https://propmodo.com/?p=179490"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Permitify",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Permitify\" --era 2022+ gave kind suffix_coinage (ends in ify), 9 characters, 4 syllables.",
     "strengths": [
-      "TODO"
+      "Says what it does: permits",
+      "Easy to remember and spell"
     ],
     "weaknesses": [
-      "TODO"
+      "The ify suffix is dated and generic",
+      "Similar to PermitFlow and other permit names"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Descriptive suffix coinages such as Shopify worked as brands in the past, but a descriptive name sold to city governments is mostly neutral; it clarifies the product to buyers and resembles PermitFlow, so there is little brand effect either way.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A real problem for cities, but a two person team selling to slow government buyers; a seed is slightly less likely than the base rate within 22 months.",
+    "general_summary": "Permitify builds AI plan review for city building departments with a two person team in Salt Lake City. Cities clearly want faster permits and several piloted AI review in 2024, but rivals such as Archistar and Clariti already hold references and incumbents such as Accela own the system of record. In a 22 month window the B2B anchor puts a seed above $1M near 42 percent after discounting for slow public sales and a Series A inside the window near 8 percent. Odds here do not rank this company against others."
   },
   "assumptions": [
-    "TODO"
+    "Forecast made blind from the input file only; the window runs 2025-01-06 to 2026-11-17, about 22 months.",
+    "Seed means an outside round above about $1M; the YC deal alone does not count.",
+    "Seed and Series A odds are for the window; Series B and C odds are long run conditional rates.",
+    "The GovTech tag cohort has 12 companies and is used only as anecdote.",
+    "Web search covered the market only; results dated after the as_of date (for example Honolulu 2025) were ignored."
   ],
   "sources": [
-    "https://"
+    "https://www.constructionowners.com/news/cities-turn-to-ai-to-speed-up-permit-reviews",
+    "https://propmodo.com/?p=179490",
+    "https://www.archistar.ai",
+    "https://www.claritisoftware.com",
+    "https://www.accela.com",
+    "https://up.codes"
   ]
 }

@@ -1,330 +1,446 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Lucis",
+  "one_liner": "Function Health for Europe ",
+  "description": "Lucis is a consumer preventive health service for Europe, described as Function Health for Europe. Members get regular blood testing combined with medical review and AI to turn results into actions for a longer healthy life. Members pay a subscription. Team of 17 in Paris, Spring 2025 batch. Traction, price and member counts are unknown.",
+  "as_of": "2025-04-07"
+ },
+ "yc_acceptance": {
+  "p": 0.5,
+  "p_low": 0.25,
+  "p_high": 0.8,
+  "basis": "The company is already in the Spring 2025 batch, so this is a note only. A random applicant starts near 1 percent. A seventeen person team, an existing product category with a proven US model and a clear paying consumer would lift a cold application well above that, while a European consumer health service with regulated lab partners is a harder fit.",
+  "why_it_fails": "YC would most plausibly say no because a copy of a US company for another region is judged on execution and speed, and consumer health subscription retention is hard. Reviewers would also ask how a 17 person team funds lab costs and clinicians, and why blood tests are not a commodity that retailers already sell."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.45,
+   "anchors": {
+    "base_rate": 0.56,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Consumer --calibration-only (seed 56 percent known only, range 43 to 67 percent, n=16, anecdote); Healthcare 2022-2025 seed 50 percent, n=22; B2B 2022-2025 59 percent, n=126.",
+    "adjustment_reason": "Window is 19.3 months, from 2025-04-07 to 2026-11-17. Using the time to milestones table (era 2022+, seed median 6 months, 75th percentile 14), I take about 0.85 of the 0.5 to 0.56 anchors, giving 0.45. The 17 person team and the proven US model do not lift it; European consumer health seeds are smaller and rarer. The odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels or a micro fund, the usual outcome when the team is small or the sector is slow. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      32000000
+     ],
+     "p_band": 0.38,
+     "rationale": "Institutional seed near the 2022+ seed median of $3.5M in the YC tables, which mixes in the YC deal so it reads low. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      32000000,
+      64000000
+     ],
+     "p_band": 0.22,
+     "rationale": "Large seed led by a top fund, as press covered 2026 rounds in the winners test (median $6.0M among confirmed raises above $1M, a sample that leans high). Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      64000000,
+      130000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Hot sector or pedigree round above $12M; rare, a small slice of the distribution. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed fails if member growth is paid by ads with weak retention, since blood testing is bought once or twice a year and lab and clinician costs sit on every member. European seed funds put smaller amounts into consumer health, and SiPhox Health and Mito Health show that the rounds that got done were tied to hardware or a lean at cost model. Instalab and Mederva grew without a disclosed round."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.07,
+   "anchors": {
+    "base_rate": 0.25,
+    "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Healthcare --calibration-only (series A cond 9 percent, n=11, anecdote); B2B 2022-2025 cond 26 percent, n=74; Consumer 2022-2025 series A 0 percent, n=9. Months to series A 2022+ median 28, 25th percentile 19.",
+    "adjustment_reason": "Anchor range 0.09 to 0.26 as an ever number. A 19 month window catches only the fastest Series As, so I use 0.07, between a quarter and three quarters of the anchors depending on the cohort. The window explains the discount."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      30000000,
+      60000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin A with a flat or small step up on modest recurring revenue. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      12000000,
+      22000000
+     ],
+     "post_money_usd": [
+      60000000,
+      130000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical 2022+ A: the YC table median is $15M and public deal size medians are $17M to $20M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      22000000,
+      40000000
+     ],
+     "post_money_usd": [
+      130000000,
+      300000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside A after a breakout year, with a platform story. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "A Series A inside 19 months needs thousands of retained members and unit economics that survive lab and clinician cost. Consumer testing companies in the data rarely get to an A quickly: SiPhox Health reached one after raising a seed and building hardware, and Mederva and Instalab have not shown one. Investors also compare to Function Health scale in the United States."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.25,
+   "anchors": {
+    "base_rate": 0.39,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent, n=18; 2022-2025 B2B tag AI cond 8 percent, n=13, censored). This step is an ever number, not a window number, and lies beyond the forecast window.",
+    "adjustment_reason": "At 0.64 of the 0.39 anchor because consumer health subscription companies rarely reach Series B and the Healthcare 2022-2025 cohort shows almost none."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      35000000
+     ],
+     "post_money_usd": [
+      120000000,
+      220000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin B with a flat step up. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      35000000,
+      60000000
+     ],
+     "post_money_usd": [
+      220000000,
+      500000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical B: YC 2022+ median is $40M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      60000000,
+      100000000
+     ],
+     "post_money_usd": [
+      500000000,
+      900000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside B led by a top growth fund. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "Series B needs a large paying member base across several European countries, with churn low enough to justify growth capital and regulated testing in each market. Country by country lab rules and price sensitivity slow expansion, and the analogs in the data that reached a B had a technology edge rather than a service edge."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.3,
+   "anchors": {
+    "base_rate": 0.43,
+    "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent, n=7; overall cond 36 to 43 percent). Ever number, beyond the window.",
+    "adjustment_reason": "At 0.70 of the 0.43 anchor because very few consumer health service companies reach C."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      40000000,
+      70000000
+     ],
+     "post_money_usd": [
+      250000000,
+      500000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Thin C. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      70000000,
+      120000000
+     ],
+     "post_money_usd": [
+      500000000,
+      1000000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical C, 2022+ YC median $74M. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    },
+    {
+     "raise_usd": [
+      120000000,
+      250000000
+     ],
+     "post_money_usd": [
+      1000000000,
+      2500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside C for a category leader. Sized from the YC round size tables in references/tables/round_benchmarks.csv (2022+ rows) and public US medians from PitchBook and Carta."
+    }
+   ],
+   "why_it_fails": "Series C requires a pan European health platform with insurer or employer channels and sustained profitability on testing. The data show few consumer preventive health companies reaching this stage, and Europe fragments the market by language, lab regulation and reimbursement, so the path to scale is long and uncertain."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     10000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.3
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.04
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most paths end in a stall or a small acquisition. Consumer testing companies in the data either stayed small, such as Instalab and Mederva, or were absorbed, as Eat Blueprint was by Blueprint. A full miss follows if member retention is low or if lab partners and retailers sell comparable panels cheaper."
+ },
+ "analogs": [
+  {
+   "slug": "mederva",
+   "relevance": "Longevity care service that moved to insurance covered care.",
+   "outcome_summary": "Active with 13 people and no round beyond YC found."
+  },
+  {
+   "slug": "siphox-health",
+   "relevance": "At home blood testing with a technology edge.",
+   "outcome_summary": "Raised a $10M seed and a $17M Series A in 2023, showing the funded path needed a hardware story."
+  },
+  {
+   "slug": "mito-health",
+   "relevance": "At cost preventive health with labs, scans and genetics.",
+   "outcome_summary": "Raised a $1.3M pre-seed and a $2.2M seed in 2025, a small lean raise."
+  },
+  {
+   "slug": "instalab",
+   "relevance": "Proactive blood testing with a large test catalog.",
+   "outcome_summary": "Active with claims of over 10,000 patients and no disclosed venture round."
+  },
+  {
+   "slug": "innamed",
+   "relevance": "At home blood testing hardware from 2017.",
+   "outcome_summary": "Raised only small crowdfunding rounds and wound down through an asset sale, a failure case."
+  },
+  {
+   "slug": "eat-blueprint",
+   "relevance": "Longevity nutrition service tied to a consumer brand.",
+   "outcome_summary": "Acquired by Blueprint with no price on record, a small outcome."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Weak retention because testing is episodic",
+   "p": 0.35,
+   "evidence": "Members need results only a few times a year, and Instalab and Mederva show growth without a venture round.",
+   "analogs": [
+    "instalab",
+    "mederva"
+   ],
+   "mitigation": "Add continuous touchpoints, such as coaching and prescriptions, and report 12 month retention."
+  },
+  {
+   "risk": "Cheaper commodity blood tests from retailers and labs",
+   "p": 0.3,
+   "evidence": "Thriva sells subscription blood tests and Healf sells at home tests from \u00a379.",
+   "analogs": [
+    "mito-health",
+    "innamed"
+   ],
+   "mitigation": "Win on interpretation and clinician follow up, not the draw."
+  },
+  {
+   "risk": "Regulatory and lab differences across European countries",
+   "p": 0.25,
+   "evidence": "Public insurance does not cover elective preventive blood testing, and lab rules differ by country.",
+   "analogs": [
+    "innamed",
+    "healthlane"
+   ],
+   "mitigation": "Launch in two markets with certified lab partners before expanding."
+  },
+  {
+   "risk": "Investor skepticism of a regional copy",
+   "p": 0.2,
+   "evidence": "A region copy is judged on speed, and funded US leaders may enter Europe.",
+   "analogs": [
+    "siphox-health",
+    "mito-health"
+   ],
+   "mitigation": "Build local clinical partnerships and data in languages the US firms lack."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Thriva",
+   "what": "UK subscription blood tests including an advanced longevity panel.",
+   "traction": "Established UK consumer brand.",
+   "source_url": "https://thriva.co/shop/blood-tests/advanced-longevity-blood-test"
+  },
+  {
+   "name": "Healf",
+   "what": "UK wellness retailer with at home test kits from \u00a379.",
+   "traction": "Existing consumer retailer with a test range.",
+   "source_url": "https://healf.com/en-uk/zone"
+  },
+  {
+   "name": "Molecular You",
+   "what": "Predictive health testing sold through clinics and online.",
+   "traction": "Operating business announcing nationwide access.",
+   "source_url": "https://www.molecularyou.com/molecular-you-launches-nationwide-access-to-predictive-health-testing/"
+  },
+  {
+   "name": "Status quo: general practitioners and public labs",
+   "what": "Occasional tests ordered by a doctor, often not covered for prevention.",
+   "traction": "Default behavior for most people.",
+   "source_url": "https://anivahealth.com/blog/longevity-blood-testing-europe"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 2,
+  "rationale": "The product relies on lab partners and clinicians, so the build is a member app, ordering and result interpretation on top of existing labs. A small team can ship that in three months. The hard parts are clinical quality, consent and data protection under European law, and lab logistics, not software."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Function Health",
+   "Thriva",
+   "Healf",
+   "European lab chains"
+  ],
+  "timeline_months": 12,
+  "rationale": "A US leader could enter Europe and local players can add longevity panels, but cross border lab logistics and language slow rivals. A funded rival needs about a year."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "European consumers can already buy subscription blood tests and longevity panels from several companies, so some paid demand exists.",
+    "source_url": "https://thriva.co/shop/blood-tests/advanced-longevity-blood-test"
+   },
+   {
+    "claim": "Preventive blood testing is fragmented and often not covered by public insurance, which pushes it to a paid consumer market.",
+    "source_url": "https://anivahealth.com/blog/longevity-blood-testing-europe"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Proof of retained paying members.",
+   "actions": [
+    "Reach several thousand paying members with 12 month retention data.",
+    "Publish outcomes such as biomarker improvement or follow up testing rates."
+   ],
+   "proof": "Monthly recurring revenue with churn under 3 percent a month."
+  },
+  {
+   "phase": "series_a",
+   "goal": "A multi country model with margin.",
+   "actions": [
+    "Launch in two more countries with local lab partners.",
+    "Add a recurring care product that raises revenue per member."
+   ],
+   "proof": "Positive contribution margin per member across countries."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Team of 17 at the start of the batch",
+   "evidence": "A larger team can ship lab operations, clinical review and the app in parallel."
+  },
+  {
+   "point": "A proven US model and an open European field",
+   "evidence": "Consumer longevity testing exists in the UK with subscription products and no clear pan European leader in the market search.",
+   "source_url": "https://anivahealth.com/blog/longevity-blood-testing-europe"
+  }
+ ],
+ "brand": {
+  "name": "Lucis",
+  "rating": 4,
+  "effect_on_success": "helps",
+  "name_check": "python3 -I scripts/name_features.py --score Lucis --era 2022+ : kind invented_or_proper, alive 92.7 percent, n=1826",
+  "strengths": [
+   "Latin for light, which suggests clarity and health",
+   "Short, easy to say in many European languages"
+  ],
+  "weaknesses": [
+   "Close to other Lucis and Lucid names, so searches may be noisy"
+  ],
+  "rationale": "The name is short and travels across European languages, which helps a multi country consumer brand, and Latin roots are common in health. As with other invented YC names there is no survival difference in the cohort, so it helps only a little."
+ },
+ "narrative": {
+  "headline": "A well staffed European copy of a proven US model, with a slightly better than even chance short of a seed inside 19 months.",
+  "general_summary": "Lucis sells blood testing and AI interpretation to European consumers. Consumers already buy subscription tests in Europe and the 17 person team can build quickly, but retention is the open question and cheaper panels exist. The seed estimate for the 19 month window sits just under the consumer and healthcare anchors after discounting for the window, and does not rank this company against others. The funded analog in the data, SiPhox Health, had a hardware edge, and the lean ones raised small rounds. A Series A inside the window is unlikely."
+ },
+ "assumptions": [
+  "Blind forecast as of 2025-04-07, using the description file and market searches only.",
+  "Window is 19.3 months. Seed means a round above about $1M from outside investors closing inside the window; series_a given seed is for the same window.",
+  "Consumer and Healthcare 2022-2025 cohorts are small (16 and 22 companies), so rates are anecdotes.",
+  "Several market search results named the company itself or were dated after the as of date; they were ignored (LEAK-WEB: lucis).",
+  "Price, member counts and retention are unknown."
+ ],
+ "sources": [
+  "https://thriva.co/shop/blood-tests/advanced-longevity-blood-test",
+  "https://healf.com/en-uk/zone",
+  "https://www.molecularyou.com/molecular-you-launches-nationwide-access-to-predictive-health-testing/",
+  "https://anivahealth.com/blog/longevity-blood-testing-europe"
+ ]
 }

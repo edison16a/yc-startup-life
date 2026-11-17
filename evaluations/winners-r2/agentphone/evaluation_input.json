@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "AgentPhone",
+    "one_liner": "Phone Numbers for AI Agents",
+    "description": "An API that gives each AI agent its own phone number for calls and messages so it can reach people and businesses. Customers are developers and companies building agents; pricing is likely usage-based on numbers, minutes and messages, resold over carrier networks. Team size not stated.",
+    "as_of": "2026-04-06"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.02,
+    "p_low": 0.01,
+    "p_high": 0.05,
+    "basis": "Start from about 1 percent. Adjust up for a clear developer-facing wedge in agent infrastructure and fast-growing demand for voice and messaging agents; adjust down because it is a thin layer on top of carriers such as Twilio and Telnyx, there is no stated team background or traction, and voice infrastructure is crowded (Vapi, Bland, Retell, Surge). Net about 2 percent; already in the Spring 2026 batch.",
+    "why_it_fails": "YC would most plausibly say this is a wrapper over existing telephony APIs: Twilio, Telnyx and the voice-agent platforms already provide numbers, and the one-liner does not say what is hard that they cannot add in a quarter. The team size and background are not stated, and carrier registration and spam rules could swallow a small team."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.45,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026 gave seed 36% lower / 44% known / 54% upper, cond 44% (n=1541); series_a cond 20% (n=679); series_b cond 19% (n=136); series_c cond 19% (n=26). Calibration-only B2B: seed 52/65/72, series_a cond 32%, series_b cond 46%.",
+        "adjustment_reason": "Window is 7.4 months (2026-04-06 to 2026-11-17); seed means an outside round above about $1M closing in it. Anchor 0.44 ever for B2B 2022+ with median 6 months to seed and p25 3, so about 70 to 80 percent of ever-seeds close in 7 months; I lift to 0.45, within the 1.25x cap, for the strength of the agent-infrastructure theme and the voice-AI analogs Vapi, Bland AI and Retell AI that raised early, offset by an unknown team. The odds do not rank the company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            28000000.0,
+            60000000.0
+          ],
+          "p_band": 0.22,
+          "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            55000000.0,
+            120000000.0
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed fails if usage does not show quickly: investors need agent developers actually paying for numbers, and carriers and CPaaS firms can undercut price. Surge (F24, Stripe for telephony) and Struct (W23, shut down) show voice infrastructure can stall without a round, and unit margins on resold minutes are thin, so a small founding team may not reach the traction investors want in 7 months."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.06,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_a cond 20% (n=679); time table months_to_series_a p50 28, p25 19 (era 2022+).",
+        "adjustment_reason": "Window is 7.4 months, and Series A p25 is 19 months after batch start in the 2022+ time table, so only a small share of the 0.20 ever anchor falls in the window. Used 0.06, the discount being for time and not for company quality. Vapi and Bland did reach later rounds quickly, which keeps it above 0.04."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin or flat-ish Series A on modest ARR; the 2018-2021 B2B series_a p25 was $10M, so this is below the typical cohort round and covers extension-like A rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000.0,
+            120000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Central case. B2B 2022+ series_a raise p25 $13M, median $17M, p75 $22M (n=130); post-money reported for only n=3 so valuation is thin data."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band with fast ARR growth in a hot AI category; 2022+ all-industry series_a post-money p75 was $345M on n=18 reported rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs usage-based revenue of about $1M to $2M ARR with healthy gross margins. A reseller of carrier capacity has thin margins and customers can switch to Twilio or Telnyx, so growth must come from agent-specific features like identity, compliance and memory, which need time to prove."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_b cond 19% (n=136); calibration-only B2B cond 46% (n=61); lower/known/upper ranges 1/2/19 percent ever.",
+        "adjustment_reason": "Anchor cond 19 percent; 0.20 because voice AI analogs Vapi (series B) and Bland AI (later rounds) show faster progress than the typical B2B cohort in this wave."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000.0,
+            35000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000.0,
+            250000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin Series B below the cohort p25 of $39M, flat or modest step up."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000.0,
+            700000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Central: B2B 2022+ series_b median $42.5M raise and $600M post (n=9 valuations)."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            700000000.0,
+            1500000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category leader; era is inflated by AI rounds so use with care."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B requires the company to become the default identity and messaging layer for agents, with large enterprise accounts. Twilio, Telnyx and agent platforms can bundle numbers, and carriers control pricing, so growth may stall at a niche developer audience, as Surge (F24) and Vogent (S21) show for telephony infrastructure that never became the default."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.15,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_c cond 19% (n=26); calibration-only B2B cond 50% (n=28).",
+        "adjustment_reason": "Anchor cond 19 percent; 0.15 because a telephony reseller faces margin pressure and few YC analogs reached a Series C (Bland is the exception)."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000.0,
+            80000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            900000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest growth round; series_c 2022+ p25 raise $50M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000.0,
+            2000000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central: 2022+ series_c median raise $74M to $101M, post-money median about $1.2B (n=3 to 34)."
+        },
+        {
+          "raise_usd": [
+            150000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            2000000000.0,
+            6000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: breakout category winner, cf. Bland-style rounds; very few companies."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C needs hundreds of millions in volume. Voice infrastructure has capital-heavy competitors and carrier relationships that are hard to replicate, and acquirers such as Twilio or the model labs may buy the category instead of letting an independent scale; Vocode and Vogent ended as acquisitions rather than as independent growth stories."
     }
   ],
   "outcomes": {
@@ -164,153 +224,210 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.52
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          20000000000.0
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The likeliest outcome is a small acquisition by a CPaaS or voice platform, as happened to Vocode and Vogent, or a stall as agent builders consolidate on the voice platforms. A $1B outcome requires agent identity to become a standard layer, and carriers or labs may build it."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "vapi",
+      "relevance": "Voice AI for developers, W21; developer API in the same wave.",
+      "outcome_summary": "Alive, reached series_b; shows demand for agent voice infrastructure."
+    },
+    {
+      "slug": "bland-ai",
+      "relevance": "Enterprise AI phone calls, S23.",
+      "outcome_summary": "Alive, reached series_c; the strongest outcome in the lane."
+    },
+    {
+      "slug": "vocode",
+      "relevance": "Open source voice AI, W23.",
+      "outcome_summary": "Acquired after a seed; shows a small exit."
+    },
+    {
+      "slug": "surge",
+      "relevance": "Stripe for telephony, F24; nearest infrastructure wedge.",
+      "outcome_summary": "Alive, no recorded round; telephony infra can stall."
+    },
+    {
+      "slug": "struct",
+      "relevance": "Multi-lingual voice agents, W23.",
+      "outcome_summary": "Shut down with no post-YC round."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Carrier and CPaaS incumbents (Twilio, Telnyx) add agent features and undercut price.",
+      "p": 0.4,
+      "evidence": "Telnyx and Twilio already expose numbers, SMS and voice APIs that agents can call.",
       "analogs": [
-        "TODO-company-slug"
+        "vapi",
+        "surge"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Offer agent-native identity, compliance and memory, not raw numbers."
+    },
+    {
+      "risk": "Regulation and spam: carrier registration, 10DLC rules and anti-robocall enforcement can block agent-initiated calls.",
+      "p": 0.3,
+      "evidence": "Production SMS and outbound calls need registration and consent, and agents risk number blacklisting.",
+      "analogs": [
+        "bland-ai",
+        "struct"
+      ],
+      "mitigation": "Build compliance into the product and screen customers."
+    },
+    {
+      "risk": "Thin gross margins from reselling carrier minutes.",
+      "p": 0.3,
+      "evidence": "Resold voice minutes and SMS carry carrier costs that leave small margins at low volume.",
+      "analogs": [
+        "vocode",
+        "vogent"
+      ],
+      "mitigation": "Add software value and sell platform fees on top of usage."
+    },
+    {
+      "risk": "Voice-agent platforms bundle numbers so customers never buy separately.",
+      "p": 0.3,
+      "evidence": "Vapi, Bland and Retell AI already attach numbers to their agent products.",
+      "analogs": [
+        "vapi",
+        "retell-ai",
+        "bland-ai"
+      ],
+      "mitigation": "Be the neutral layer that works across all agent platforms."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Telnyx",
+      "what": "Carrier-grade voice, SMS and numbers API with AI features",
+      "traction": "Established carrier API used by AI companies",
+      "source_url": "https://telnyx.com/customer-stories/photon"
+    },
+    {
+      "name": "Firsty",
+      "what": "Numbers in 18 countries with voice and SMS through one API for agents",
+      "traction": "Early",
+      "source_url": "https://www.firsty.app/use-cases/telephone-for-ai-agents"
+    },
+    {
+      "name": "Tryvox",
+      "what": "SIP trunks, virtual numbers and SMS for agents",
+      "traction": "Early stage fund-backed",
+      "source_url": "https://f4.fund/startups/tryvox"
+    },
+    {
+      "name": "Status quo: Twilio account plus glue code",
+      "what": "Developers buy numbers from a CPaaS and wire them themselves",
+      "traction": "Dominant",
+      "source_url": "https://jentic.com/apis/telnyx.com/telnyx-api"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Provisioning numbers and routing calls and messages through carrier partners is not hard in 3 months; the hard parts are carrier registration, compliance, call quality and reliability, and fraud prevention, which a small team can reach with partners but cannot own."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Twilio",
+      "Telnyx",
+      "Vapi, Bland, Retell",
+      "model labs"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 6,
+    "rationale": "A CPaaS can ship an agent-numbers product in a few months and already has the carrier relationships and customers; platform dependency on carriers also limits pricing power."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Several startups already offer phone numbers and SMS for AI agents, which shows developer demand.",
+        "source_url": "https://www.firsty.app/use-cases/telephone-for-ai-agents"
+      },
+      {
+        "claim": "Carrier APIs are marketing agent use cases, a sign of spend.",
+        "source_url": "https://telnyx.com/customer-stories/photon"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show developers pay for agent numbers.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Get 20 agent builders onto paid numbers",
+        "Show message and call volume growth"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Weekly active numbers and paid minutes"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Real usage revenue within 7 months.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add compliance and registration so customers can go to production",
+        "Land two agent platforms as channel partners",
+        "Pitch agent-infra seed funds with the volume curve"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$20K to $50K MRR and a seed term sheet above $1M"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Clear, simple developer wedge and timely agent theme.",
+      "evidence": "One-liner states a single product, numbers for agents.",
+      "source_url": "https://agentphone.ai/"
+    },
+    {
+      "point": "Voice-AI neighbors raised large rounds in the previous wave.",
+      "evidence": "Vapi and Bland AI reached series B and C in the researched records.",
+      "source_url": "https://blog.vapi.ai/vapi-secures-20m-to-start-the-voice-revolution-2"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "AgentPhone",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"AgentPhone\" --era 2022+: 10 chars, 2 words, compound words.",
     "strengths": [
-      "TODO"
+      "Descriptive and instantly clear",
+      "Easy to spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic compound name, hard to defend and to rank in search",
+      "Other agent phone products use close names"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A descriptive compound is clear like Surge-style category names but is easy to copy and weak as a brand; several competitors use nearby names, so it neither helps nor hurts the odds much."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
+    "headline": "A clear, timely agent infrastructure wedge, but a thin reseller layer over carriers with strong incumbents.",
+    "general_summary": "AgentPhone sells phone numbers to AI agents. Demand from agent builders is plausible and voice-AI neighbors Vapi and Bland AI raised sizeable rounds in the previous wave, but the layer sits on top of carriers and CPaaS vendors that can add the same feature, and Struct and Surge show that voice infrastructure can stall. Over a 7.4 month window the cohort anchor for a seed above $1M is about 0.44 ever and most of it falls in the first 6 months; I use 0.45. The odds do not rank this company against others.",
     "deep_dive": {
       "market_need": "TODO: 60+ words",
       "competition": "TODO: 60+ words",
@@ -322,9 +439,16 @@
     }
   },
   "assumptions": [
-    "TODO"
+    "Window is 7.4 months from 2026-04-06; seed means an outside round above about $1M.",
+    "Team size is not stated in the input, so no team-based adjustment was made.",
+    "LEAK-WEB: one market search returned pages naming agentphone, including a page on ycombinator.com; I did not read or use them and drew no facts from them, and the result is flagged so the run can be dropped from scoring.",
+    "Competitors in the list come from non-AgentPhone search results (Telnyx, Firsty, Tryvox)."
   ],
   "sources": [
-    "https://"
+    "https://www.firsty.app/use-cases/telephone-for-ai-agents",
+    "https://telnyx.com/customer-stories/photon",
+    "https://f4.fund/startups/tryvox",
+    "https://jentic.com/apis/telnyx.com/telnyx-api",
+    "https://blog.vapi.ai/vapi-secures-20m-to-start-the-voice-revolution-2"
   ]
 }

@@ -1,330 +1,416 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Fed10",
+  "one_liner": "AI Agents for Government Affairs",
+  "description": "Legislative consulting staffed by AI agents: monitors every bill in the US, flags business threats and delivers insights like a policy consultant. Three founders who are former lobbyists. Team of 3 in San Francisco.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.99,
+  "p_low": 0.97,
+  "p_high": 0.995,
+  "basis": "The company is already in the batch that starts at the as_of date, so the acceptance step is reported only for completeness: the prior for a random applicant is about 1 percent (0.6 to 2 percent), and conditional on being accepted the forecast below is what matters. Three founders with direct lobbying experience give founder market fit; the market is niche and a services style pitch can read as small.",
+  "why_it_fails": "YC would most plausibly say no because government affairs is a small market with entrenched tools such as Quorum and FiscalNote, the consulting framing suggests services margins, and AI summaries of bills are easy to copy. Three ex lobbyists give strong founder market fit, which is the main thing that would carry the interview, but the question of venture scale would be pointed."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed cond 61 percent (n=88), series_a cond 33 percent (n=54), series_b cond 17 percent (n=18); months_to_seed p25 4, median 9, p75 19. Ever 0.61 times about 0.62 arriving by month 10 gives 0.38.",
+    "adjustment_reason": "Equals the anchor times the window fraction; ex-lobbyist founders are strong founder market fit but the winners test says such lifts did not separate raisers, so I make no lift."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of about $1M to $3M, often angels and a micro fund. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M, the common case. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M after fast early traction. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Hot seed above $12M, up to about $25M, for an unusually strong story. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Window of 10.4 months (2026-01-05 to 2026-11-17). Government affairs software is a mature niche led by Quorum and FiscalNote, with Plural and others, and the buyer pool of corporate government relations teams is small. GovPredict was acquired after a seed and Parsagon and Axis, close analogs, never raised past it, so a round above $1M within 10 months depends on proving paid users beyond the founders' network."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed cond 61 percent (n=88), series_a cond 33 percent (n=54), series_b cond 17 percent (n=18); months_to_seed p25 4, median 9, p75 19. Ever 0.33 times about 0.1 arriving by month 10 gives 0.03.",
+    "adjustment_reason": "More than 2x below the ever rate because the window is only 10.4 months and median time to Series A from batch start is about 30 months."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      55000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series A of $6M to $10M at a modest valuation, below the 2022+ median. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      110000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A of $10M to $20M, near the 2022+ YC median of about $14M. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    },
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      110000000.0,
+      250000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong Series A of $20M to $40M for a fast growing product with revenue. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    }
+   ],
+   "why_it_fails": "A Series A within 10 months is very unlikely: the buyer pool of corporate government relations teams and trade associations is small, buyers are conservative and slow, and a three person team would need over $1M of ARR. Incumbents that already track bills now market AI agents, and no analog in legislative tracking in the data has reached Series A, so the cohort shows no precedent for it."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.15,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed cond 61 percent (n=88), series_a cond 33 percent (n=54), series_b cond 17 percent (n=18); months_to_seed p25 4, median 9, p75 19",
+    "adjustment_reason": "Kept at 0.15 near the anchor, but conditional on an A inside 10 months it is almost irrelevant for the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      90000000.0,
+      200000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat or down style Series B of $15M to $30M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      200000000.0,
+      500000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B of $30M to $60M, near the 2022+ median of about $40M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    },
+    {
+     "raise_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "post_money_usd": [
+      500000000.0,
+      1000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B of $60M to $120M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    }
+   ],
+   "why_it_fails": "Series B would require expanding from legislative monitoring into a full government affairs platform that competes head to head with Quorum, which holds stakeholder management, advocacy and bill tracking in one product. The narrow market makes that expansion rare, the analogs GovPredict, Parsagon and Axis never got near it, and nothing in this short window suggests the company gets there."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36 percent (n=55)",
+    "adjustment_reason": "Kept at 0.20; almost no mass inside this window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      250000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Smaller growth round of $30M to $70M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      1800000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C of $70M to $150M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    },
+    {
+     "raise_usd": [
+      150000000.0,
+      400000000.0
+     ],
+     "post_money_usd": [
+      1800000000.0,
+      5000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Large late round above $150M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    }
+   ],
+   "why_it_fails": "Series C needs a platform sized government relations business with large multi year contracts, and the category has produced few venture scale outcomes. GovPredict was acquired at small scale, FiscalNote is a public incumbent that has struggled, and almost no company reaches this stage in the 10 month window, so the probability is a floor value only."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.52
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.34
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.02
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely end is a stall or a small acquisition by Quorum, FiscalNote, Plural or a law firm, as happened to GovPredict. A venture sized outcome requires turning the consulting wedge into software that expands beyond lobbying into regulatory compliance and agency rules, and the founders must prove that corporate buyers pay for AI analysis rather than for the people who relay it."
+ },
+ "analogs": [
+  {
+   "slug": "govpredict",
+   "relevance": "Summer 2014 system of record for government affairs.",
+   "outcome_summary": "Seed funded then acquired, a modest exit for this market."
+  },
+  {
+   "slug": "parsagon",
+   "relevance": "Winter 2021 AI to track and analyze public policy.",
+   "outcome_summary": "Active with no post YC round found, shows no automatic seed."
+  },
+  {
+   "slug": "axis",
+   "relevance": "Winter 2022 knowledge base for corporate affairs teams.",
+   "outcome_summary": "Active, no later round found."
+  },
+  {
+   "slug": "sweetspot",
+   "relevance": "Summer 2023 AI for government contracting, adjacent government buyer.",
+   "outcome_summary": "Raised a seed and remains active."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Entrenched incumbents add AI agents and win the same small buyer pool",
+   "p": 0.4,
+   "evidence": "Quorum markets a Bill Tracker Agent and FiscalNote sells PolicyNote with AI risk analysis.",
+   "analogs": [
+    "govpredict",
+    "parsagon"
+   ],
+   "mitigation": "Lead with the consulting outcome and deliver analysis incumbents' dashboards do not."
+  },
+  {
+   "risk": "Market too small for venture scale; few customers pay for legislative monitoring",
+   "p": 0.35,
+   "evidence": "Analogs in the niche stayed small or exited low after a seed.",
+   "analogs": [
+    "axis",
+    "govpredict"
+   ],
+   "mitigation": "Expand to regulations, state agencies and compliance buyers."
+  },
+  {
+   "risk": "Accuracy errors on bills damage trust with lobbyists and counsel",
+   "p": 0.2,
+   "evidence": "Plural cites more than 200,000 state bills a year so coverage errors are likely at scale.",
+   "analogs": [
+    "parsagon",
+    "axis"
+   ],
+   "mitigation": "Human review and citations to the bill text."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Quorum",
+   "what": "AI powered public affairs platform with a Bill Tracker Agent",
+   "traction": "Established incumbent with copilot launches since 2024",
+   "source_url": "https://www.quorum.us/solutions/legislative-tracking/"
+  },
+  {
+   "name": "FiscalNote PolicyNote",
+   "what": "AI driven legislative and regulatory risk tool",
+   "traction": "Public company incumbent",
+   "source_url": "https://fiscalnote.com/policynote"
+  },
+  {
+   "name": "Plural",
+   "what": "Legislative tracking software for state bills",
+   "traction": "Cites over 200,000 state bills a year",
+   "source_url": "https://pluralpolicy.com/blog/legislative-tracking-software-what-it-is-how-it-works-and-how-to-choose-the-right-platform/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Ingesting every federal and state bill and producing relevant, accurate threat analysis is within reach for a small team with LLMs; the hard parts are coverage, accuracy and tailoring to each client's business. Not a deep technical moat."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Quorum",
+   "FiscalNote",
+   "Plural",
+   "Bloomberg Government"
+  ],
+  "timeline_months": 9,
+  "rationale": "Incumbents already own the customers and data feeds and have announced AI agents; the founders' lobbying know how is the differentiator they cannot copy quickly."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Quorum and FiscalNote sell paid legislative tracking with AI features, showing existing spend",
+    "source_url": "https://www.quorum.us/solutions/legislative-tracking/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show paying clients and retention",
+   "actions": [
+    "Sign 10 corporate and trade association clients on annual terms",
+    "Show a bill flagged before incumbents did"
+   ],
+   "proof": "$20K monthly recurring revenue with more than 90 percent retention"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Turn consulting into software margin",
+   "actions": [
+    "Automate analyst work end to end",
+    "Expand to state and agency rules"
+   ],
+   "proof": "Gross margin above 70 percent and $1M ARR"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Founder market fit",
+   "evidence": "Three ex lobbyists who passed legislation"
+  },
+  {
+   "point": "Clear paid status quo",
+   "evidence": "Consultants at about $500 an hour and incumbent software already sell",
+   "source_url": "https://www.quorum.us/solutions/legislative-tracking/"
+  }
+ ],
+ "brand": {
+  "name": "Fed10",
+  "rating": 2,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Fed10\" --era 2022+ : kind invented_or_proper, 2022+ cohort alive 92.7 percent (n=1826)",
+  "strengths": [
+   "Short"
+  ],
+  "weaknesses": [
+   "Sounds federal only though bills include states",
+   "Hard to say aloud and digit suffix is awkward"
+  ],
+  "rationale": "The name suggests federal scope and is a letters plus digits style, similar to other numeric YC names; cohort data show no survival effect and the name may confuse buyers who need state coverage.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "Strong founder fit in a small, incumbent held niche; 10 month seed odds are below the ever anchor.",
+  "general_summary": "Fed10 is a legislative consulting firm staffed by AI agents, run by three former lobbyists. In a 10.4 month window the B2B cohort anchor of 0.61 for ever reaching seed shrinks to about 0.38, because most seeds arrive later than that. Series A inside the window is about 0.04. Quorum and FiscalNote already sell AI bill tracking, and close analogs such as GovPredict, Parsagon and Axis stayed small or exited low. Founder market fit helps, but the odds here do not rank this company against others."
+ },
+ "assumptions": [
+  "Blind forecast made as of 2026-01-05 using only the YC batch description in the input file, with market-only web searches.",
+  "Forecast window is 10.4 months, from 2026-01-05 to 2026-11-17.",
+  "Seed means an outside financing round above about $1M that closes inside the window, not the standard YC deal of about $500K; the seed and Series A probabilities are window probabilities, not ever probabilities.",
+  "The odds do not rank this company against other companies in the batch: in the 2026 winners test, team size, claimed traction and a hot sector did not separate raisers from non raisers, so the seed number stays near the cohort anchor.",
+  "Cohort anchors come from older and 2022 to 2024 batches and are partly right censored; funding coverage in the data is incomplete (lower, known and upper ranges quoted)."
+ ],
+ "sources": [
+  "https://www.quorum.us/solutions/legislative-tracking/",
+  "https://fiscalnote.com/policynote",
+  "https://pluralpolicy.com/blog/legislative-tracking-software-what-it-is-how-it-works-and-how-to-choose-the-right-platform/"
+ ]
 }

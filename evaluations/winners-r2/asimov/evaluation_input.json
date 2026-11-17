@@ -1,330 +1,431 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Asimov",
+  "one_liner": "Real-world human movement data for humanoid robots",
+  "description": "Collects real world human movement data in homes and businesses to train humanoid robots, selling diverse data to robotics labs. The input claims thousands of hours a day delivered to leading labs. Team of three in San Francisco.",
+  "as_of": "2026-01-05"
+ },
+ "yc_acceptance": {
+  "p": 0.04,
+  "p_low": 0.02,
+  "p_high": 0.088,
+  "basis": "Starting prior is about 1 percent for a random applicant (0.6 to 2 percent range, references/yc_acceptance.md). Up for a claim of existing sales to leading labs (real usage factor) and for physical AI being a hot YC theme. Down because the team is three people, the buyer group is a few dozen labs and data collection is operationally heavy. Net about 4 percent, conditional on the batch already given.",
+  "why_it_fails": "YC would most likely say that the customer base is a handful of well funded labs that can collect data themselves, that research suggests human video can substitute for expensive robot data but pricing is unproven, and that data collection firms are multiplying. Partners may doubt a three person team can manage privacy, labeling and scale."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.5,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Narrow cohort --industry Industrials --years 2020-2025 calibration only: seed 74% (n=19), series_a 21% (n=14), series_b 67% of 3; only 19 companies so an anecdote. Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months from batch start; Industrials median months to seed 6 (stage_benchmarks.md).",
+    "adjustment_reason": "Window is 10.4 months from 2026-01-05 to 2026-11-17 and the number is for a round above about 1M from outside investors that closes inside it. Anchor 0.59 B2B and 0.74 Industrials (anecdote, n=19); 0.50 is 0.85x of the B2B anchor because only part of the seeds close within 10 months. Robotics data is a hot area but the winners test says not to lift above the anchor for a hot sector. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      18000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Small post YC round under 3M, likely if revenue is concentrated in one or two labs."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      18000000,
+      35000000
+     ],
+     "p_band": 0.33,
+     "rationale": "Typical institutional seed near the 2022 and later median of 4.1M."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      80000000
+     ],
+     "p_band": 0.28,
+     "rationale": "Strong seed from a robotics or AI fund if lab contracts are real and recurring."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      80000000,
+      170000000
+     ],
+     "p_band": 0.14,
+     "rationale": "Large seed in the physical AI category, where recent raises were large; rare for three people."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step fails if the claimed lab revenue is a few pilot orders, if labs build in house or buy from larger data vendors, or if investors see data collection as a services business with low margins. K-Scale Labs shut down in humanoids without a post YC round, and Sensei, Cortex AI and Almond show a crowd of robotics data and robot companies, most with no priced round found."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.04,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Narrow cohort --industry Industrials --years 2020-2025 calibration only: seed 74% (n=19), series_a 21% (n=14), series_b 67% of 3; only 19 companies so an anecdote. Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months from batch start; Industrials median months to seed 6 (stage_benchmarks.md).",
+    "adjustment_reason": "Window 10.4 months. Series A for 2022 and later YC companies has p25 at 19.4 months from batch start, so almost no A closes in 10 months. Anchor 0.26 times about 0.15 gives 0.04, more than 2x lower because of the window, not the company."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A near the 2022 and later p25 of 10M or below, led by a seed investor or a thin market, taking longer than the window shows."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M (stage_benchmarks.md) and market deal size near 17M with pre money near 60M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round led by a top fund after clear revenue growth; the 2022 and later p75 is about 20M and hot AI categories exceed it."
+    }
+   ],
+   "why_it_fails": "A Series A inside 10 months would need repeat contracts with several labs and gross margin above services levels. Robotics data buyers are few and lumpy, and no analog in the data reached A within a year; Sensei and Cortex AI had at most a seed."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Narrow cohort --industry Industrials --years 2020-2025 calibration only: seed 74% (n=19), series_a 21% (n=14), series_b 67% of 3; only 19 companies so an anecdote. Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months from batch start; Industrials median months to seed 6 (stage_benchmarks.md).",
+    "adjustment_reason": "Anchor 0.16 B2B. Median months to B is 36 for 2022 and later, so 10 months is a tail event, set 0.03."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      140000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin or flat Series B below the 2022 and later p25 of 25M after growth slows."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      140000000,
+      320000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B near the 2022 and later YC median of 37M and market 39.5M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      320000000,
+      800000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside Series B on strong revenue growth; the p75 is 57M and category leaders go well above it."
+    }
+   ],
+   "why_it_fails": "Series B inside the window would require the company to become the dominant data supplier to the major humanoid labs, which depends on a robotics market that has no proven revenue. No analog in the data reached B this fast, and data collection tends to be services margin until automation arrives."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Narrow cohort --industry Industrials --years 2020-2025 calibration only: seed 74% (n=19), series_a 21% (n=14), series_b 67% of 3; only 19 companies so an anecdote. Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months from batch start; Industrials median months to seed 6 (stage_benchmarks.md).",
+    "adjustment_reason": "No base rate (0 of 3 reached C in B2B 2022 and later). Placeholder 0.02 for a 10 month window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      350000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Smaller later round near the 2022 and later p25 of 35M, mostly sample of n=9."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      350000000,
+      900000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C or later near the 45M to 77M range from the YC table and the market monitor."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      250000000
+     ],
+     "post_money_usd": [
+      900000000,
+      3000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout late round at unicorn scale; very rare in this cohort."
+    }
+   ],
+   "why_it_fails": "A Series C in the first year after the batch has no precedent. It would require the humanoid market itself to arrive at scale and this company to hold a dominant share of its training data, while the labs and large data vendors compete for that position."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.12
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.05
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely a stall as buyers consolidate and in house collection or cheaper egocentric video from the internet substitute; or a sale to a larger data or robotics company for under 100M. The upside requires humanoid robots to reach deployment and this company to be the standard data supplier, a bet on the whole category. K-Scale shows that humanoid companies can die quickly."
+ },
+ "analogs": [
+  {
+   "slug": "sensei",
+   "relevance": "Robotic training data at scale.",
+   "outcome_summary": "Active with no priced round found."
+  },
+  {
+   "slug": "cortex-ai",
+   "relevance": "Real world robot and human data for embodied AI.",
+   "outcome_summary": "Reached a seed per our records."
+  },
+  {
+   "slug": "k-scale-labs",
+   "relevance": "Open source humanoid robots.",
+   "outcome_summary": "Shut down with no post YC round; shows category risk."
+  },
+  {
+   "slug": "almond-2",
+   "relevance": "Robot factory for humanoid style robots.",
+   "outcome_summary": "Active with no priced round found."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Few buyers and concentrated revenue",
+   "p": 0.4,
+   "evidence": "The buyers are a small set of leading robotics labs, so losing one or two removes most revenue.",
+   "analogs": [
+    "sensei",
+    "cortex-ai"
+   ],
+   "mitigation": "Sign multi year data contracts and add new buyer types."
+  },
+  {
+   "risk": "Labs collect in house or buy from larger vendors",
+   "p": 0.35,
+   "evidence": "Several data vendors market egocentric video and large labs have the budget to collect themselves, per the market search.",
+   "analogs": [
+    "cortex-ai"
+   ],
+   "mitigation": "Compete on diversity of environments and privacy compliant collection."
+  },
+  {
+   "risk": "Privacy, consent and operations in homes",
+   "p": 0.3,
+   "evidence": "Recording in households raises consent and regulatory issues and heavy operational cost for three people.",
+   "analogs": [
+    "sensei"
+   ],
+   "mitigation": "Build consent flows and bounded geographies."
+  },
+  {
+   "risk": "Humanoid market slower than hoped",
+   "p": 0.3,
+   "evidence": "Humanoid companies depend on future robot sales; K-Scale Labs shut down early.",
+   "analogs": [
+    "k-scale-labs",
+    "almond-2"
+   ],
+   "mitigation": "Serve non humanoid robotics and AI labs too."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Claru and Macgence",
+   "what": "Vendors of egocentric and physical AI datasets",
+   "traction": "Self described growing vendors",
+   "source_url": "https://claru.ai/blog/humanoid-robot-training-data"
+  },
+  {
+   "name": "Data collection firms listed by humanoid.guide",
+   "what": "Training centers and data collection ecosystem",
+   "traction": "Growing, especially in China and the US",
+   "source_url": "https://humanoid.guide/?p=9934"
+  },
+  {
+   "name": "In house collection by robotics labs",
+   "what": "Labs gather teleoperation and video data themselves",
+   "traction": "Research results use thousands of hours of human video",
+   "source_url": "https://arxiv.org/html/2507.12440v2"
+  },
+  {
+   "name": "Internet and public egocentric video",
+   "what": "Cheaper substitute",
+   "traction": "Used in research such as EgoVLA",
+   "source_url": "https://arxiv.org/pdf/2507.12440"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Capturing wearable video and motion data at scale is feasible with cameras and phones. The hard parts are consent, quality control, labeling at the density robot learning needs and logistics across many homes. A three person team can run a pilot, but scale needs operations and tooling."
+ },
+ "takeover_risk": {
+  "rating": 3,
+  "who": [
+   "Scale AI style data vendors",
+   "Large robotics labs",
+   "Humanoid makers"
+  ],
+  "timeline_months": 12,
+  "rationale": "Larger data vendors can add physical data collection within a year, and labs can collect themselves. Switching costs for datasets are low, but diversity of real homes is hard to copy quickly."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Research shows pretraining on human egocentric video improves humanoid success rates, which creates demand for diverse data.",
+    "source_url": "https://arxiv.org/html/2507.12440v2"
+   },
+   {
+    "claim": "A data ecosystem for humanoid training is forming, but market size figures come mostly from vendors.",
+    "source_url": "https://humanoid.guide/?p=9934"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show paid delivery to a lab.",
+   "actions": [
+    "Document delivered hours and the buyers",
+    "Prove data quality with a downstream robot success gain"
+   ],
+   "proof": "Signed purchase orders and a lab willing to name results."
+  },
+  {
+   "phase": "seed",
+   "goal": "Diversify buyers and automate collection.",
+   "actions": [
+    "Add three more paying labs",
+    "Cut cost per usable hour with tooling"
+   ],
+   "proof": "Recurring contracts and rising gross margin."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Claimed sales to leading labs",
+   "evidence": "The input states thousands of hours a day delivered, a stronger signal than an idea alone.",
+   "source_url": "https://tryasimov.ai/"
+  },
+  {
+   "point": "Research tailwind",
+   "evidence": "Studies show human egocentric video lifts robot performance, supporting the need for diverse data.",
+   "source_url": "https://arxiv.org/html/2507.12440v2"
+  }
+ ],
+ "brand": {
+  "name": "Asimov",
+  "rating": 4,
+  "effect_on_success": "helps",
+  "name_check": "python3 -I scripts/name_features.py --score \"Asimov\" --era 2022+: invented or proper name, 6 characters, 3 syllables, no descriptor.",
+  "strengths": [
+   "Evokes robotics through the Three Laws author",
+   "Memorable and pronounceable"
+  ],
+  "weaknesses": [
+   "Common name that may be shared by other companies"
+  ],
+  "rationale": "A proper name that signals robots helps recall with robotics buyers and investors, in the way that names such as Anduril or Palantir borrow from literature. Brand is secondary to buyer demand."
+ },
+ "narrative": {
+  "headline": "Hot sector and claimed lab sales, but a three person team selling to a few buyers: about even odds of a 1M plus round in 10 months.",
+  "general_summary": "Asimov sells real world human movement data to robotics labs. The need is plausible from research, but buyers are few and rivals multiply. The window is 10.4 months from 2026-01-05 to 2026-11-17 and the seed number is for a round above about 1M. The B2B anchor is 59 percent ever and the forecast is 0.50 since only part of seeds close inside 10 months and a hot sector is not lifted per the winners test. Series A inside the window is unlikely. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-01-05 using only the input; the delivery claim is unverified.",
+  "Seed means above about 1M from outside investors inside the 10.4 month window.",
+  "Same period robotics data comps were not used for outcomes."
+ ],
+ "sources": [
+  "https://arxiv.org/html/2507.12440v2",
+  "https://humanoid.guide/?p=9934",
+  "https://claru.ai/blog/humanoid-robot-training-data"
+ ]
 }

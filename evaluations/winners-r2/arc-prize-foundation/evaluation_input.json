@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "ARC Prize Foundation",
+    "one_liner": "AI benchmarks that measure general intelligence and inspire new ideas",
+    "description": "A nonprofit that builds the ARC-AGI benchmark series, runs global competitions and research grants, and publishes results used by frontier labs. Founded by Mike Knoop and Francois Chollet. Revenue is philanthropy, sponsorship and possibly lab-paid verification, not product sales. Team of 4, remote and San Francisco.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.015,
+    "p_high": 0.075,
+    "basis": "Start from about 1 percent. Adjust up strongly for founders with outsized credibility, a benchmark already cited by OpenAI, Anthropic, Google DeepMind and xAI, and YC's history of funding nonprofits (Bayes Impact, 80,000 Hours, Mind Emulation Foundation). Adjust down because YC invests in companies that can scale equity value and a nonprofit offers none. Net about 3 percent; it is already in the Winter 2026 batch, so this is shown for completeness.",
+    "why_it_fails": "YC would most plausibly say a nonprofit benchmark body cannot return venture capital. Fundraising is by donation and sponsorship, there is no equity growth path, and YC's standard deal assumes a company that can raise priced rounds. The strongest counter is founder credibility, but that does not fix the structure."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.07,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.44,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026 gave seed 36% lower / 44% known / 54% upper, cond 44% (n=1541); series_a cond 20% (n=679); series_b cond 19% (n=136); series_c cond 19% (n=26). Calibration-only B2B: seed 52/65/72, series_a cond 32%, series_b cond 46%.",
+        "adjustment_reason": "Window is 10.4 months (2026-01-05 to 2026-11-17); seed means an outside priced or SAFE equity round above about $1M from investors. The cohort anchor is 0.44 ever (B2B 2022+) but this is a nonprofit, so the relevant analogs are Mind Emulation Foundation and Vote.org (no post-YC round recorded) and the philanthropy route. I use 0.07, far below the anchor (about 6x), because nonprofits take grants and donations rather than seed equity; the residual covers a for-profit arm or a PBC conversion, or a large donation that a database counts as a seed. Odds do not rank the company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            18000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Small post YC round under $3M from angels and a seed fund, the thin band. Cohort B2B 2022+ seed raise p25 is $2.0M, so about a third of rounds land here; the YC deal alone (about $500K) does not count as seed in this window."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed. Cohort median is $3.3M to $4.0M (B2B 2022+, n=530) and the winners test confirmed raises had quartiles of $4.3M and $10M, so this band holds the middle."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            28000000.0,
+            60000000.0
+          ],
+          "p_band": 0.22,
+          "rationale": "Hot-category seed led by a known fund. In the winners test 42 percent of confirmed raises fell in $6M to $12M, though press coverage biases that sample upward, so it is weighted below that."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            55000000.0,
+            120000000.0
+          ],
+          "p_band": 0.08,
+          "rationale": "Upside band: a large AI-category seed or pivot-then-raise path with top-tier lead. Rare in the cohort (above the p75 of $5.0M to $6.0M by 2x)."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A seed fails because the structure does not take equity: a nonprofit foundation funds itself by grants and donations, as Mind Emulation Foundation and Vote.org did without a recorded priced round. Large donations above $1M are plausible for ARC Prize given lab interest, but those are not an investor seed. Only a new for-profit entity for evaluation services would produce a real seed."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.2,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_a cond 20% (n=679); time table months_to_series_a p50 28, p25 19 (era 2022+).",
+        "adjustment_reason": "Given a seed in 10.4 months, a Series A in the same window is very rare (p25 19 months). Used 0.05, discounted mostly for the window and the nonprofit structure."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000.0,
+            10000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000.0,
+            60000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin or flat-ish Series A on modest ARR; the 2018-2021 B2B series_a p25 was $10M, so this is below the typical cohort round and covers extension-like A rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            20000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000.0,
+            120000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Central case. B2B 2022+ series_a raise p25 $13M, median $17M, p75 $22M (n=130); post-money reported for only n=3 so valuation is thin data."
+        },
+        {
+          "raise_usd": [
+            20000000.0,
+            40000000.0
+          ],
+          "post_money_usd": [
+            120000000.0,
+            300000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band with fast ARR growth in a hot AI category; 2022+ all-industry series_a post-money p75 was $345M on n=18 reported rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A requires revenue and equity, but the foundation's model is philanthropy. Even if it spun out a for-profit evaluation business, hitting $1M to $2M ARR in under a year is unlikely when frontier labs mostly use benchmarks for free and fund competitions themselves."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.1,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_b cond 19% (n=136); calibration-only B2B cond 46% (n=61); lower/known/upper ranges 1/2/19 percent ever.",
+        "adjustment_reason": "Anchor 19 percent; 0.10 because the path through Series B for a benchmark body has no YC analog."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000.0,
+            35000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000.0,
+            250000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Thin Series B below the cohort p25 of $39M, flat or modest step up."
         },
         {
           "raise_usd": [
-            0,
-            0
+            35000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000.0,
+            700000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Central: B2B 2022+ series_b median $42.5M raise and $600M post (n=9 valuations)."
+        },
+        {
+          "raise_usd": [
+            60000000.0,
+            120000000.0
+          ],
+          "post_money_usd": [
+            700000000.0,
+            1500000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside band for a category leader; era is inflated by AI rounds so use with care."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B would need a scaled for-profit evaluation or data business. Benchmarks are public goods whose value depends on staying neutral, and charging labs would erode credibility. Closest company analogs, such as Openbenchmarks and Ocular AI, have not shown a Series B in the data."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.1,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.19,
+        "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2026: series_c cond 19% (n=26); calibration-only B2B cond 50% (n=28).",
+        "adjustment_reason": "Anchor 19 percent; 0.10, no analogs."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000.0,
+            80000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            900000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest growth round; series_c 2022+ p25 raise $50M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            900000000.0,
+            2000000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Central: 2022+ series_c median raise $74M to $101M, post-money median about $1.2B (n=3 to 34)."
+        },
+        {
+          "raise_usd": [
+            150000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            2000000000.0,
+            6000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside: breakout category winner, cf. Bland-style rounds; very few companies."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series C is not a plausible path for a neutral nonprofit benchmark body; if it did become a company, it would compete with LMArena-like evaluation firms and lab-owned evals on price and trust, and benchmarks saturate as models improve, which shortens each benchmark's useful life."
     }
   ],
   "outcomes": {
@@ -164,153 +224,193 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.33
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          20000000000.0
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The foundation is more likely to continue as a funded nonprofit than to exit; the value outcomes shown are for a hypothetical for-profit arm. Benchmark saturation, funding concentration in a few labs and neutrality conflicts limit equity value, so a failure here means stalling or shrinking rather than shutting down."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "mind-emulation-foundation",
+      "relevance": "Nonprofit research foundation, W18.",
+      "outcome_summary": "Alive, no post-YC funding round recorded; nonprofit route without priced rounds."
+    },
+    {
+      "slug": "vote-org",
+      "relevance": "Nonprofit civic tech, S16.",
+      "outcome_summary": "Alive, no post-YC round recorded."
+    },
+    {
+      "slug": "openbenchmarks",
+      "relevance": "Independent AI benchmarks, F24; for-profit attempt in the same lane.",
+      "outcome_summary": "Alive, no recorded round."
+    },
+    {
+      "slug": "bayes-impact",
+      "relevance": "Tech nonprofit, S14.",
+      "outcome_summary": "Alive as a nonprofit; funded by grants."
+    },
+    {
+      "slug": "80-000-hours",
+      "relevance": "Nonprofit guide, S15.",
+      "outcome_summary": "Alive as a nonprofit."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Nonprofit structure blocks equity rounds, so no seed in the sense measured.",
+      "p": 0.8,
+      "evidence": "Analogs Mind Emulation Foundation, Vote.org and Bayes Impact funded themselves without priced rounds.",
       "analogs": [
-        "TODO-company-slug"
+        "mind-emulation-foundation",
+        "vote-org",
+        "bayes-impact"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Raise philanthropic grants, or create a for-profit services arm if equity is wanted."
+    },
+    {
+      "risk": "Benchmark saturation: models solve each ARC-AGI version within a year or two, forcing continuous new benchmark work.",
+      "p": 0.4,
+      "evidence": "Frontier labs report fast progress on public benchmarks, shrinking their value.",
+      "analogs": [
+        "openbenchmarks"
+      ],
+      "mitigation": "Keep a private held-out set and release new versions on a regular cadence."
+    },
+    {
+      "risk": "Funding concentration: donors and sponsors are a few labs and individuals whose interests may conflict with neutrality.",
+      "p": 0.3,
+      "evidence": "The benchmark customers and likely donors are the same labs whose models are being measured.",
+      "analogs": [
+        "bayes-impact"
+      ],
+      "mitigation": "Diversify donors and publish funding."
+    },
+    {
+      "risk": "Competition from lab-owned and commercial evaluation firms with more capital.",
+      "p": 0.25,
+      "evidence": "AI evaluation startups raised seed rounds of $1M to $2.2M in 2025 (Benchflow, Confident AI).",
+      "analogs": [
+        "openbenchmarks"
+      ],
+      "mitigation": "Stay open source and community led, which paid evaluators cannot copy."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Commercial AI evaluation startups (Confident AI, Benchflow)",
+      "what": "Evaluation platforms and benchmark runtimes",
+      "traction": "Seed rounds of $1M to $2.2M in 2025",
+      "source_url": "https://synaptic.com/resources/tip-offs/ai-evaluation-startups-and-founders"
+    },
+    {
+      "name": "Lab-owned evaluations and public leaderboards",
+      "what": "Labs publish their own benchmarks and arenas",
+      "traction": "Wide adoption",
+      "source_url": "https://synaptic.com/resources/tip-offs/ai-evaluation-startups-and-founders"
+    },
+    {
+      "name": "Status quo: existing academic benchmarks",
+      "what": "Researchers reuse older public benchmarks",
+      "traction": "Free and established",
+      "source_url": "https://synaptic.com/resources/tip-offs/ai-evaluation-startups-and-founders"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "Designing tasks that test fluid intelligence and resist saturation and contamination is a research problem, and running verified evaluations at scale for labs needs engineering; the founder's prior ARC work makes it solvable by a small team."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 2,
     "who": [
-      "TODO"
+      "Frontier labs",
+      "commercial evaluation firms"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 24,
+    "rationale": "A lab could publish a rival benchmark but neutrality is the asset, and labs already use ARC-AGI; takeover is less relevant for a nonprofit with a public good."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Eval and benchmark startups are raising seed rounds, which shows paid demand for evaluation.",
+        "source_url": "https://synaptic.com/resources/tip-offs/ai-evaluation-startups-and-founders"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show the benchmark remains unsaturated and widely used.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish ARC-AGI version results across labs",
+        "Grow competition entrants"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Number of labs reporting on ARC-AGI"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Decide whether to fund by grants or an equity-backed arm.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Secure multi-year philanthropic commitments",
+        "If equity is wanted, form a separate for-profit evaluation entity"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A signed round above $1M from outside investors"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Benchmark already used by four frontier labs per the description.",
+      "evidence": "Stated in the input description.",
+      "source_url": "https://arcprize.org/"
+    },
+    {
+      "point": "Founders have outsized credibility.",
+      "evidence": "Co-founded by Mike Knoop and Francois Chollet per the input.",
+      "source_url": "https://arcprize.org/"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "ARC Prize Foundation",
+    "rating": 4,
+    "effect_on_success": "helps",
+    "name_check": "python3 -I scripts/name_features.py --score \"ARC Prize\" --era 2022+: 8 chars, 2 words, compound words.",
     "strengths": [
-      "TODO"
+      "Prize signals a competition",
+      "ARC-AGI is already known to researchers"
     ],
     "weaknesses": [
-      "TODO"
+      "Foundation signals nonprofit, not investable"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "The ARC name is an established research brand and the prize framing drives community participation, like the XPrize pattern; it helps with credibility but not with venture investors."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
+    "headline": "A highly credible benchmark body, but a nonprofit with no equity path makes a venture seed unlikely.",
+    "general_summary": "ARC Prize Foundation runs the ARC-AGI benchmark series and competitions, used by major labs. Its credibility is exceptional and YC has funded nonprofits, but a seed round in the measured sense means outside equity above $1M within 10.4 months. A nonprofit foundation raises donations and grants instead, as Mind Emulation Foundation and Vote.org did, so I give seed 0.07 against a 0.44 cohort anchor and say so plainly. The odds do not rank the company against others. A large donation could be miscounted as a seed.",
     "deep_dive": {
       "market_need": "TODO: 60+ words",
       "competition": "TODO: 60+ words",
@@ -322,9 +422,12 @@
     }
   },
   "assumptions": [
-    "TODO"
+    "Window is 10.4 months from 2026-01-05; seed means an outside equity round above about $1M.",
+    "The company is described as a Foundation, so I treat it as a nonprofit; if it has a for-profit arm the seed odds rise.",
+    "Only the input file was used; nothing about the company was looked up.",
+    "Market search returned nothing about nonprofit benchmark funding."
   ],
   "sources": [
-    "https://"
+    "https://synaptic.com/resources/tip-offs/ai-evaluation-startups-and-founders"
   ]
 }

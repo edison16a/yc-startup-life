@@ -1,162 +1,234 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "TraceRoot.AI",
+    "one_liner": "The open-source platform that continuously improves your ai agents",
+    "description": "Open source observability platform for AI agents that finds patterns in production issues and hands verified fixes to a coding agent. Engineering teams building agents pay for the hosted product; a team of 4 in San Francisco, YC Summer 2025.",
+    "as_of": "2025-07-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.03,
+    "p_low": 0.01,
+    "p_high": 0.06,
+    "basis": "Starting rate of about 1 percent for a random applicant from references/yc_acceptance.md. Up for a technical team in a topical category (AI agent infrastructure, open source) and a clear developer problem; down for a crowded space with funded open source rivals and a team of 4 with no stated revenue. The company is already listed in Summer 2025, so the ladder is the \"if accepted\" view.",
+    "why_it_fails": "YC would most plausibly say the space is crowded: several YC alumni already ship open source LLM tracing and evaluation, so the pitch needs unusual evidence of usage or a sharper wedge than another tracing dashboard."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.5,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.55,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --tag \"Developer Tools\" --calibration-only: seed 55% known only, 59% upper (n=29); B2B 2022-2025 seed 59% known only, 65% upper (n=126). Time to seed p75 about 15 months from batch start.",
+        "adjustment_reason": "Window is 16 months from 2025-07-07 to 2026-11-17 (the Summer 2025 batch start). About three quarters of eventual seeds land inside 16 months, so the ever anchor of 0.55 to 0.59 scales to about 0.43, then I move up by under 1.25 times because open source agent tooling drew many seeds in 2025. This number does not rank the company against others in the batch."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            20000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Small post YC round under $3M from angels, a seed fund or a strategic. Most common when the product has early users but no paid base."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            35000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed in the middle of the 2022 and later table, led by a seed fund after a few months of visible traction."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            70000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Larger institutional seed, usually needing paying customers or a standout team story and a competitive process."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.15,
+          "rationale": "Upside seed from a top tier fund in a hot category; rare and needs clear momentum."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "The most likely miss is that the category is already crowded with funded open source rivals (Langfuse, Traceloop, Helicone, Laminar, Confident AI) and a four person team with no stated paying customers cannot show growth beyond GitHub stars. Investors in 2025 funded LLM observability at seed, but the well known rounds of this kind went to teams with early enterprise users, so a stars only story ends in the YC deal plus angels under $1M."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.08,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only: series A 15% known only, 29% upper, cond 26% (n=74)",
+        "adjustment_reason": "Window effect: only 3 to 9 months can remain between a seed and 2026-11-17, and time to Series A from batch start has a median near 29 months in 2022 and later batches. The ever conditional of 0.26 scaled for that window is about 0.08."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            6000000.0,
+            9000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            30000000.0,
+            45000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin Series A or extended seed style round after slow revenue; sized like the lower quartile of 2022 and later rounds."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            18000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            55000000.0,
+            100000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Core Series A near the 2022 and later median of $14M with a pre money in the market range of $50M to $65M."
+        },
+        {
+          "raise_usd": [
+            18000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            100000000.0,
+            200000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Strong round after fast growth and a competitive process."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.05,
+          "rationale": "Hot category outlier round, similar to the largest AI Series A rounds."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Observability for agents is a tooling category where buyers can swap vendors cheaply and cloud and database vendors bundle the same features. Reaching Series A needs seven figure annual revenue from teams that have budgets, and the analogs (Baserun, Helicone) stalled or sold early without a Series A when LangSmith and Langfuse took mindshare."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.05,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.16,
+        "source": "same command: series B 2% known only, 18% upper, cond 16% (n=19)",
+        "adjustment_reason": "Series B inside the window requires two more rounds in under 16 months, which almost no company in the data did; the 0.16 conditional is cut by about two thirds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            15000000.0,
+            25000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            80000000.0,
+            150000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Flat or modest Series B because growth slowed."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            45000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            150000000.0,
+            300000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the 2022 and later median of $37M."
+        },
+        {
+          "raise_usd": [
+            45000000.0,
+            80000000.0
+          ],
+          "post_money_usd": [
+            300000000.0,
+            600000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside Series B on strong growth."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Reaching Series B in this window would need very fast revenue growth and a position as a category leader; the category is consolidating through acquisitions, which is a more common end than a large independent round."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.03,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.25,
+        "source": "same command: series C 0% known only, 16% upper, cond 0% (n=3), too thin; used the all era calibration conditional of 36 percent (n=55) from references/stage_benchmarks.md and widened",
+        "adjustment_reason": "Three further rounds in 16 months is extreme; p reflects the window, not the ever conditional."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            40000000.0,
+            70000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            300000000.0,
+            600000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Modest Series C near the 2022 and later median of $45M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            70000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            600000000.0,
+            1200000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical growth round."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            250000000.0
+          ],
+          "post_money_usd": [
+            1200000000.0,
+            3000000000.0
+          ],
+          "p_band": 0.2,
+          "rationale": "Late stage upside round."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series C or later inside the window would require a breakout like the largest AI infrastructure companies; for a four person team in an acquisition prone category this is very unlikely."
     }
   ],
   "outcomes": {
@@ -164,167 +236,217 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.3
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.12
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most paths end in stalling or a small acquisition. Open source observability tools are often bought by database or cloud vendors for their users and engineers, as Langfuse and Traceloop style outcomes suggest, and a four person team rarely gets to a billion dollar exit before a larger player copies the features."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "langfuse",
+      "relevance": "Open source LLM observability from Winter 2023.",
+      "outcome_summary": "Raised a $4M seed in November 2023, about 10 months after batch, with a popular open source repo."
+    },
+    {
+      "slug": "traceloop",
+      "relevance": "Open source tracing standard plus commercial platform.",
+      "outcome_summary": "Raised a $6.1M seed in May 2025, more than two years after its Winter 2023 batch, so seeds can come late."
+    },
+    {
+      "slug": "confident-ai",
+      "relevance": "Open source evals project turned company, Winter 2025.",
+      "outcome_summary": "Closed a $2.2M seed in March 2025 on GitHub adoption, a small round."
+    },
+    {
+      "slug": "baserun",
+      "relevance": "LLM observability and testing, Summer 2023, two person team.",
+      "outcome_summary": "No round found; the category filled with Langfuse, LangSmith and Helicone."
+    },
+    {
+      "slug": "helicone",
+      "relevance": "LLM observability for developers, Winter 2023.",
+      "outcome_summary": "Stayed small and was later listed acquired."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Category crowding and commoditization of tracing",
+      "p": 0.45,
+      "evidence": "Langfuse, Traceloop, Helicone, Baserun and Confident AI all launched open source tracing and evaluation from YC alone.",
       "analogs": [
-        "TODO-company-slug"
+        "baserun",
+        "langfuse"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Pick one wedge, the verified fix loop with coding agents, and show measured fix acceptance rates."
+    },
+    {
+      "risk": "Platform bundling by cloud, database and model vendors",
+      "p": 0.3,
+      "evidence": "Observability is a natural feature of database, cloud and model providers; Langfuse took a ClickHouse backed path and Datadog sells LLM monitoring.",
+      "analogs": [
+        "helicone",
+        "traceloop"
+      ],
+      "mitigation": "Stay vendor neutral and open source so teams trust the data layer."
+    },
+    {
+      "risk": "Open source does not convert to paying customers",
+      "p": 0.35,
+      "evidence": "Confident AI and similar projects had GitHub traction but only a small $2.2M seed.",
+      "analogs": [
+        "confident-ai"
+      ],
+      "mitigation": "Ship the hosted team features early and sell to the first 10 design partners."
+    },
+    {
+      "risk": "Four person team cannot cover enterprise needs such as security reviews and on premise support",
+      "p": 0.25,
+      "evidence": "Enterprise buyers of observability ask for SOC 2 and single sign on, which absorb engineering time.",
+      "analogs": [
+        "langfuse"
+      ],
+      "mitigation": "Delay enterprise until product led revenue pays for it."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Langfuse",
+      "what": "Open source LLM engineering platform with tracing and evals",
+      "traction": "$4M seed in 2023, wide open source use",
+      "source_url": "https://langfuse.com"
+    },
+    {
+      "name": "LangSmith",
+      "what": "LangChain hosted tracing and evaluation",
+      "traction": "Large installed base from LangChain users",
+      "source_url": "https://www.langchain.com/langsmith"
+    },
+    {
+      "name": "Braintrust",
+      "what": "Evals and observability platform, closed source",
+      "traction": "Named in market roundups as the commercial leader for evals",
+      "source_url": "https://www.braintrust.dev"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Collecting traces is easy; clustering production failures, producing a verified fix and testing it against a coding agent is hard, but a small team of strong engineers can build a first version in three months. Model and agent frameworks change quickly, so maintenance is the cost."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Datadog",
+      "LangChain",
+      "Databricks",
+      "ClickHouse",
+      "OpenAI"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Any observability vendor can add agent trace views in a few quarters, and framework owners already ship their own tracing, so the feature can be absorbed. The open source license gives the startup some trust but does not stop bundling."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 4,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Agent and LLM observability has many funded vendors and roundups listing a dozen platforms, which shows paid demand from teams shipping agents.",
+        "source_url": "https://latitude.so/blog/best-llm-observability-tools-agents-latitude-vs-langfuse-langsmith"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show real usage by teams running agents in production.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Publish the open source repo with a one command setup and collect issues from real users",
+        "Land 5 design partners who run agents in production and record their fix rates"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Weekly active self hosted deployments and 5 named design partners"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Convert open source usage into paid revenue before the 16 month window ends.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch a hosted tier with team features and usage pricing",
+        "Publish a benchmark showing fixes verified per week versus manual debugging"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$20K or more monthly recurring revenue from at least 10 paying teams"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Be the default loop between observability and coding agents.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Integrate with the main coding agents so fixes open as pull requests",
+        "Hire a first enterprise account executive and finish SOC 2"
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Seven figure annual recurring revenue with net revenue retention above 120 percent"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Open source distribution gives a low cost path to developer adoption",
+      "evidence": "Langfuse and Confident AI both converted open source use into seed rounds.",
+      "source_url": "https://langfuse.com"
+    },
+    {
+      "point": "Timing: agents entering production create a debugging need",
+      "evidence": "Market roundups list a dozen funded observability vendors for agents, so budgets exist.",
+      "source_url": "https://latitude.so/blog/best-llm-observability-tools-agents-latitude-vs-langfuse-langsmith"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "TraceRoot.AI",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"TraceRoot.AI\" --era 2022+: 9 characters, 2 words, compound words kind.",
     "strengths": [
-      "TODO"
+      "Describes the tracing and root cause job",
+      "Short and easy to spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Dot AI suffix is common and generic",
+      "Close to Traceloop in sound"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name says what the product does, like Langfuse or Traceloop, but the AI suffix and similarity to Traceloop limit memorability. Descriptive developer tool names rarely hurt and do not drive growth.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A fair seed candidate in a crowded open source category where the next step depends on paying teams, not stars.",
+    "general_summary": "TraceRoot.AI is an open source observability product for AI agents that aims to turn production failures into verified fixes. The category was already full in mid 2025, with Langfuse, Traceloop, Helicone and LangSmith all funded and Braintrust leading in evals. Comparable YC companies show that seed rounds of about $2M to $6M were available to teams with open source adoption, but several others stayed small. For a 16 month window the seed probability is close to the windowed cohort anchor, and later rounds are unlikely inside it. The odds do not rank this company above other batch companies."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast from the YC listing only: no revenue, user or investor data was available.",
+    "Window is 16.3 months, 2025-07-07 to 2026-11-17. Seed means an outside round above about $1M closing in that window.",
+    "Cohort anchors are for reaching a round ever and were scaled down by about one quarter for the window."
   ],
   "sources": [
-    "https://"
+    "https://latitude.so/blog/best-llm-observability-tools-agents-latitude-vs-langfuse-langsmith",
+    "https://langfuse.com",
+    "https://www.langchain.com/langsmith",
+    "https://www.braintrust.dev"
   ]
 }

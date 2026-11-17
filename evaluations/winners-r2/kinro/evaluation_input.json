@@ -1,330 +1,429 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Kinro",
+  "one_liner": "Autonomous insurance brokerage for small businesses",
+  "description": "Kinro is an insurance brokerage for small business owners that uses AI agents to find and place coverage with little human work. The buyer is a small business owner, the revenue is carrier commission or fees, and the pitch is the right coverage without a broker. Six people, based in San Francisco, Spring 2026 batch.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.06,
+  "basis": "Starting rate is about 1 percent for a random applicant (0.6 to 2 percent third party range, see yc_acceptance.md). Adjusted up about 3 times for a clear fintech wedge in a category where YC has already funded many AI brokerages, a team of six, and a one line pitch that is easy to grasp. Not higher because the one liner says nothing about traction and the category is crowded with earlier YC cohorts.",
+  "why_it_fails": "YC has already backed several AI native brokerages (Harper, Acolite, RiskCube, Casey, Fernstone), so partners can ask what is different here. The description is two generic sentences with no traction, licence status or distribution edge, and a commission business needs carrier appointments that a six person team may not yet have."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.4,
+   "anchors": {
+    "base_rate": 0.66,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all cohorts): seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry Fintech --years 2022-2025: seed 57% (n=23, anecdote only), series_a cond 23%; --tag Insurance: seed 83% (n=6, anecdote only); time_to_milestones era 2022+: months_to_seed p25 3, p50 6, p75 14.2",
+    "adjustment_reason": "Window is 7.4 months from 2026-04-06 to 2026-11-17, so the ever anchor of 66 percent is cut to 0.40 using the 2022 and later median of 6 months to seed, since about half of eventual seed rounds land later than the window. Kept below 1.25 times the anchor; AI brokerage sector heat is not used to lift the number."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      400000,
+      600000
+     ],
+     "post_money_usd": [
+      12000000,
+      20000000
+     ],
+     "p_band": 0.1,
+     "rationale": "YC deal only, about $500K, counted as no seed for this window. The winners test found 13 of 90 confirmed companies with nothing beyond it."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      10000000,
+      25000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under $3M from angels or pre-seed funds, common for a first year brokerage still proving commission per customer."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      8000000
+     ],
+     "post_money_usd": [
+      25000000,
+      60000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Institutional seed of $3M to $8M; 2025 to 2026 AI brokerages raised 3.1M to 7.5M pre-seed and seed rounds (Delegance, Comeryx, 1Fort)."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      8000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      150000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside band if early volume looks like the fast AI brokerages that closed large rounds in early 2026."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The most likely miss is that investors in a window this short already hold several AI broker bets (Harper at a reported $46.8M seed plus Series A, Anzen, 1Fort) and ask for proof of retained premium before writing a check. Covela and Coverage Cat show small broker startups stalling near the YC deal when commission volume stays small and carriers decline appointments."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.08,
+   "anchors": {
+    "base_rate": 0.35,
+    "source": "python3 -I scripts/base_rates.py --calibration-only (all cohorts): seed cond 66%, series_a cond 35%, series_b cond 44%, series_c cond 36%; --industry Fintech --years 2022-2025: seed 57% (n=23, anecdote only), series_a cond 23%; --tag Insurance: seed 83% (n=6, anecdote only); time_to_milestones era 2022+: months_to_seed p25 3, p50 6, p75 14.2",
+    "adjustment_reason": "The 7.4 month window is far too short for most Series A rounds: 2022 and later months_to_series_a is p25 19.4 months. Conditional probability of a Series A inside the window given a seed is about 0.08, more than 2 times below the 35 percent ever anchor because of the window, not because of the company."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      7000000
+     ],
+     "post_money_usd": [
+      25000000,
+      45000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Thin Series A led by a seed fund or a small multi-stage fund, near the 2022 and later median of about $7M with limited revenue proof."
+    },
+    {
+     "raise_usd": [
+      8000000,
+      14000000
+     ],
+     "post_money_usd": [
+      45000000,
+      80000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Standard Series A of $8M to $14M after clear revenue growth; the 2018 to 2021 median was $10M and 2022 and later is similar, with era inflation discounted."
+    },
+    {
+     "raise_usd": [
+      15000000,
+      30000000
+     ],
+     "post_money_usd": [
+      90000000,
+      200000000
+     ],
+     "p_band": 0.25,
+     "rationale": "Upside band for a breakout in 2025 to 2026 AI categories where rounds are larger than the historical median; a pivot-then-raise path also lands here."
+    }
+   ],
+   "why_it_fails": "A Series A inside 7 months would need premium in the tens of millions already, which no analog broker reached that fast apart from the unusual case of Harper. Most likely Kinro is still proving commission economics and renewals, and investors wait for a full policy cycle before leading a round."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.35,
+   "anchors": {
+    "base_rate": 0.44,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_b cond 44% (n=126), ever not windowed.",
+    "adjustment_reason": "Held near the anchor times 0.8; windows after the first 7 months do not apply because this step is stated as ever reached."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      10000000,
+      20000000
+     ],
+     "post_money_usd": [
+      60000000,
+      100000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Flat or modest Series B after slower growth than the Series A plan assumed."
+    },
+    {
+     "raise_usd": [
+      20000000,
+      40000000
+     ],
+     "post_money_usd": [
+      120000000,
+      250000000
+     ],
+     "p_band": 0.5,
+     "rationale": "Typical Series B of $20M to $40M on proven repeatable growth."
+    },
+    {
+     "raise_usd": [
+      40000000,
+      80000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a category leader whose growth outpaces peers and attracts a competitive multi-stage process."
+    }
+   ],
+   "why_it_fails": "Brokerage economics cap growth: commission is a fixed share of premium, so reaching Series B needs a very large book or a move into carrier or MGA economics, which needs capital and licensing. Newfront shows it can work but only after years of heavy funding."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.28,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36% (n=55).",
+    "adjustment_reason": "Slightly under the anchor because only a few brokerages in the data ever scaled past Series B."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      150000000,
+      300000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Smaller Series C or extension, close to a flat round."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      300000000,
+      700000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Standard growth round for a company with real scale."
+    },
+    {
+     "raise_usd": [
+      100000000,
+      250000000
+     ],
+     "post_money_usd": [
+      800000000,
+      2500000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside band for a market leader with strong growth and margins that can command a premium at late stage."
+    }
+   ],
+   "why_it_fails": "Few insurance distribution companies reach a growth round without becoming a carrier or MGA. Newfront was acquired rather than scaled, and a small business brokerage faces carrier concentration, state by state regulation and thin commission margins that slow late stage rounds."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     1000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.22
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.17
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.06
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely result is a stall: small business brokerage has thin margins, carriers can tighten appointments, and AI lowers the cost of every competitor, so differentiation erodes. Covela is inactive and Mulligan was acquired in a small outcome, while few brokerage startups reached a billion dollar exit."
+ },
+ "analogs": [
+  {
+   "slug": "harper",
+   "relevance": "Same wedge: AI native commercial insurance brokerage, Winter 2025 batch.",
+   "outcome_summary": "Reached 5,000 customers and a reported $46.8M seed and Series A in February 2026, which was known before the as_of date."
+  },
+  {
+   "slug": "covela",
+   "relevance": "SME digital insurance broker, Summer 2019.",
+   "outcome_summary": "Listed inactive with no round after YC; cause not public."
+  },
+  {
+   "slug": "coverage-cat",
+   "relevance": "Licensed AI assisted broker, Summer 2022.",
+   "outcome_summary": "Seed only after YC and active, funding on aggregators only."
+  },
+  {
+   "slug": "newfront-insurance",
+   "relevance": "Modern brokerage from Winter 2018.",
+   "outcome_summary": "Acquired after raising large rounds, shows brokerage needs heavy capital."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Crowding by better funded AI brokerages",
+   "p": 0.45,
+   "evidence": "Harper, Anzen, 1Fort, Comeryx and several other AI brokers raised rounds in 2025 and early 2026, and YC already funded five brokers.",
+   "analogs": [
+    "harper",
+    "acolite"
+   ],
+   "mitigation": "Pick a narrow vertical and show lower acquisition cost than the funded players."
+  },
+  {
+   "risk": "Carrier appointments and commission economics",
+   "p": 0.35,
+   "evidence": "Brokers depend on carriers to appoint them and pay commission of roughly 10 to 15 percent, so small books earn little per customer.",
+   "analogs": [
+    "covela",
+    "coverage-cat"
+   ],
+   "mitigation": "Prove retention and premium per customer before scaling."
+  },
+  {
+   "risk": "Licensing and E and O liability for an autonomous agent",
+   "p": 0.2,
+   "evidence": "Selling insurance requires state licences and errors in coverage advice create liability that a six person team may not carry.",
+   "analogs": [
+    "newfront-insurance"
+   ],
+   "mitigation": "Keep licensed humans in the loop and carry errors and omissions cover."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Harper",
+   "what": "AI native commercial insurance brokerage",
+   "traction": "Reported $46.8M seed and Series A in February 2026",
+   "source_url": "https://techcrunch.com/2026/02/25/ai-insurance-brokerage-harper-raises-45m-series-a-and-seed/"
+  },
+  {
+   "name": "1Fort",
+   "what": "Automated business insurance for small firms",
+   "traction": "$7.5M round, $10M total",
+   "source_url": "https://pulse2.com/1fort-7-5-million-raised-for-automating-business-insurance"
+  },
+  {
+   "name": "Coverwatch",
+   "what": "Flat fee broker soliciting 50 plus carriers per quote",
+   "traction": "$4.5M pre-seed",
+   "source_url": "https://pulse2.com/coverwatch-raises-4-5-million-pre-seed-round-led-by-cofound-and-restive-ventures/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Quoting across carriers, intake, document parsing and policy admin are buildable by a small team with LLMs. The hard parts are carrier integrations, appointments and licences, which are slow regulatory work rather than model work."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Existing brokers adding AI",
+   "Harper and other funded AI brokers",
+   "Carriers selling direct"
+  ],
+  "timeline_months": 12,
+  "rationale": "A funded rival can copy the product within months, and large brokers already adopt AI. The moat would have to be distribution or carrier terms, which a new team lacks at the start."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Capital keeps flowing to AI commercial insurance brokers, which shows paying demand for small business coverage",
+    "source_url": "https://techcrunch.com/2026/02/25/ai-insurance-brokerage-harper-raises-45m-series-a-and-seed/"
+   },
+   {
+    "claim": "Several seed and pre-seed rounds in the category in 2025 and 2026",
+    "source_url": "https://pulse2.com/delegance-raises-3-1-million-pre-seed-for-ai-native-commercial-insurance-brokerage/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show a live brokerage with real policies bound.",
+   "actions": [
+    "Get licensed in the first states",
+    "Bind policies for 20 small businesses and record premium"
+   ],
+   "proof": "Premium bound and commission earned in the first 60 days"
+  },
+  {
+   "phase": "seed",
+   "goal": "Show repeatable acquisition and renewals.",
+   "actions": [
+    "Pick one vertical and run one acquisition channel to cost per policy",
+    "Track renewal rate and premium per customer"
+   ],
+   "proof": "Premium run rate and renewal rate that a seed fund can underwrite"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear wedge and easy pitch",
+   "evidence": "Small business coverage is a large, painful, paid purchase.",
+   "source_url": "https://techcrunch.com/2026/02/25/ai-insurance-brokerage-harper-raises-45m-series-a-and-seed/"
+  },
+  {
+   "point": "Category has proven funding appetite",
+   "evidence": "Multiple AI brokerages raised seed and Series A in the prior 12 months.",
+   "source_url": "https://pulse2.com/1fort-7-5-million-raised-for-automating-business-insurance"
+  }
+ ],
+ "brand": {
+  "name": "Kinro",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Kinro\" --era 2022+: 5 characters, 2 syllables, invented name",
+  "strengths": [
+   "Short and easy to say",
+   "Invented word is ownable"
+  ],
+  "weaknesses": [
+   "Says nothing about insurance",
+   "Similar sounding to other fintech names"
+  ],
+  "rationale": "A short invented name is the common YC pattern, as with many fintech brands, and it neither helps nor hurts. It carries no category meaning so brand work must come from trust and service.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A plausible AI insurance brokerage in a crowded, well funded category; a seed above $1M inside 7 months is roughly a coin flip below even.",
+  "general_summary": "Kinro sells autonomous insurance brokerage to small businesses. The category is hot, with Harper and others raising large rounds, which supports demand but also crowds the field. The forecast window is only 7.4 months, so a seed above $1M is possible around demo day yet far from certain, and a Series A inside the window is very unlikely. The odds do not rank this company against others in the batch: the anchor is the cohort rate and the adjustments are small. The main risks are carrier economics, licences and copying by funded rivals.",
+  "deep_dive": {
+   "market_need": "TODO: 60+ words",
+   "competition": "TODO: 60+ words",
+   "technical_complexity": "TODO: 60+ words",
+   "takeover": "TODO: 60+ words",
+   "economics_and_distribution": "TODO: 60+ words",
+   "team": "TODO: 60+ words",
+   "yc_specific": "TODO: 60+ words"
+  }
+ },
+ "assumptions": [
+  "Only the name, one liner, short description, tags and team size were used.",
+  "Window is 2026-04-06 to 2026-11-17, 7.4 months; seed means a round above about $1M from outside investors.",
+  "Base rates for fintech and insurance cohorts are anecdotes because n is under 30.",
+  "Sector heat is not used to lift the seed odds, per the winners test calibration."
+ ],
+ "sources": [
+  "https://techcrunch.com/2026/02/25/ai-insurance-brokerage-harper-raises-45m-series-a-and-seed/",
+  "https://pulse2.com/1fort-7-5-million-raised-for-automating-business-insurance",
+  "https://pulse2.com/coverwatch-raises-4-5-million-pre-seed-round-led-by-cofound-and-restive-ventures/",
+  "https://pulse2.com/delegance-raises-3-1-million-pre-seed-for-ai-native-commercial-insurance-brokerage/"
+ ]
 }

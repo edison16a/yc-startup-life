@@ -1,330 +1,442 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Tago Health",
+  "one_liner": "AI agents for healthcare denials and accounts receivable",
+  "description": "AI agents for the billing back office of US healthcare providers: they investigate denied or underpaid claims, draft and submit appeals, and a voice agent calls payers until payment posts. Works inside practice management systems, clearinghouses and payer portals, with human approval and an audit log. Team of three in San Francisco.",
+  "as_of": "2026-04-06"
+ },
+ "yc_acceptance": {
+  "p": 0.03,
+  "p_low": 0.015,
+  "p_high": 0.066,
+  "basis": "Starting prior is about 1 percent for a random applicant (0.6 to 2 percent range, references/yc_acceptance.md). Up because healthcare revenue cycle AI is a current YC theme with clear dollar value per recovered claim. Down because many YC companies already pursue the exact wedge and the team is three people with no stated customers or revenue. Net about 3 percent, conditional on the batch already given.",
+  "why_it_fails": "YC would most likely say that denial management and A/R follow up is a crowded wedge, with multiple recent YC companies and funded rivals doing appeals and payer calls, and that without paying billing teams or a data advantage this is another agent wrapper. Payer integrations and HIPAA make sales slow."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.44,
+   "anchors": {
+    "base_rate": 0.59,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Tag cohort --tag 'Healthcare IT' calibration only: seed 67% (n=3), series_a 0% (n=2), only 3 companies so an anecdote. Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months; industry Healthcare is slow, median months to seed 19 (stage_benchmarks.md).",
+    "adjustment_reason": "Window is 7.4 months from 2026-04-06 to 2026-11-17 and the number is for a round above about 1M from outside investors closing inside it. Anchor 0.59 B2B ever. The 2022 and later median time to seed is 6 months from batch start, so about 70 percent of eventual seeds come by 7 months at best, but the anchor already mixes the YC deal; 0.44 is 0.75x the anchor, the floor of the calibration rule, and healthcare is slower than the B2B median. These odds do not rank this company against others."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000,
+      3000000
+     ],
+     "post_money_usd": [
+      8000000,
+      16000000
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round under 3M, likely when the company has billing teams piloting but little revenue."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000,
+      6000000
+     ],
+     "post_money_usd": [
+      16000000,
+      35000000
+     ],
+     "p_band": 0.34,
+     "rationale": "Typical institutional seed in healthcare AI near the 2022 and later median of 4.1M; Cofactor AI raised 4M in a denials focused seed."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000,
+      12000000
+     ],
+     "post_money_usd": [
+      35000000,
+      75000000
+     ],
+     "p_band": 0.26,
+     "rationale": "Strong seed for a hot agent category with a named design partner and recovered dollars."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      75000000,
+      150000000
+     ],
+     "p_band": 0.1,
+     "rationale": "Large seed in revenue cycle AI, rare for a three person team."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "The seed step fails if billing teams do not pay during the window, if payer portal access proves brittle, or if investors see many similar companies: CombineHealth (Winter 2023) and Substrate (Summer 2024) are active with no priced round found, Ember and Clicks Health reached only a seed, and Egress Health was acquired. Seven months is short for healthcare sales cycles and compliance review."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.03,
+   "anchors": {
+    "base_rate": 0.26,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Tag cohort --tag 'Healthcare IT' calibration only: seed 67% (n=3), series_a 0% (n=2), only 3 companies so an anecdote. Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months; industry Healthcare is slow, median months to seed 19 (stage_benchmarks.md).",
+    "adjustment_reason": "Window 7.4 months. Series A for 2022 and later YC companies has p25 at 19.4 months from batch start, so almost no A rounds close in 7 months. Anchor 0.26 times about 0.1 gives 0.03, more than 2x lower because of the window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      4000000,
+      8000000
+     ],
+     "post_money_usd": [
+      20000000,
+      40000000
+     ],
+     "p_band": 0.35,
+     "rationale": "Small or slow Series A near the 2022 and later p25 of 10M or below, led by a seed investor or a thin market, taking longer than the window shows."
+    },
+    {
+     "raise_usd": [
+      10000000,
+      18000000
+     ],
+     "post_money_usd": [
+      45000000,
+      90000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A near the 2022 and later YC median of 14.15M (stage_benchmarks.md) and market deal size near 17M with pre money near 60M."
+    },
+    {
+     "raise_usd": [
+      18000000,
+      35000000
+     ],
+     "post_money_usd": [
+      90000000,
+      220000000
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside round led by a top fund after clear revenue growth; the 2022 and later p75 is about 20M and hot AI categories exceed it."
+    }
+   ],
+   "why_it_fails": "A Series A inside 7 months of the start of YC would need a very fast ramp to millions of recurring revenue, which healthcare billing sales rarely allow. Arintra reached its later rounds years after Winter 2022, and CombineHealth has no priced round found after more than two years."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.02,
+   "anchors": {
+    "base_rate": 0.16,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Tag cohort --tag 'Healthcare IT' calibration only: seed 67% (n=3), series_a 0% (n=2), only 3 companies so an anecdote. Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months; industry Healthcare is slow, median months to seed 19 (stage_benchmarks.md).",
+    "adjustment_reason": "Anchor 0.16. Median months to Series B for 2022 and later is 36, so 7 months is a deep tail; set at 0.02."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      12000000,
+      25000000
+     ],
+     "post_money_usd": [
+      60000000,
+      140000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Thin or flat Series B below the 2022 and later p25 of 25M after growth slows."
+    },
+    {
+     "raise_usd": [
+      25000000,
+      50000000
+     ],
+     "post_money_usd": [
+      140000000,
+      320000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B near the 2022 and later YC median of 37M and market 39.5M."
+    },
+    {
+     "raise_usd": [
+      50000000,
+      100000000
+     ],
+     "post_money_usd": [
+      320000000,
+      800000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Upside Series B on strong revenue growth; the p75 is 57M and category leaders go well above it."
+    }
+   ],
+   "why_it_fails": "Series B in seven months would need a breakout revenue story that no revenue cycle analog in the data had, since Arintra, the furthest of them, needed years of customer growth to reach its later rounds. Healthcare buyers contract slowly and Series B investors want repeatable multi year contracts."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.01,
+   "anchors": {
+    "base_rate": null,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2025 --calibration-only: seed cond 59% (n=126, lower 49 / upper 65), series_a cond 26% (n=74), series_b cond 16% (n=19). Tag cohort --tag 'Healthcare IT' calibration only: seed 67% (n=3), series_a 0% (n=2), only 3 companies so an anecdote. Time table era 2022+: seed p25 3, median 6, p75 14 months; series_a p25 19.4, median 28 months; industry Healthcare is slow, median months to seed 19 (stage_benchmarks.md).",
+    "adjustment_reason": "No base rate (0 of 3 in B2B 2022 and later cohort). Placeholder 0.01 for a 7 month window."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      20000000,
+      45000000
+     ],
+     "post_money_usd": [
+      150000000,
+      350000000
+     ],
+     "p_band": 0.45,
+     "rationale": "Smaller later round near the 2022 and later p25 of 35M, mostly sample of n=9."
+    },
+    {
+     "raise_usd": [
+      45000000,
+      90000000
+     ],
+     "post_money_usd": [
+      350000000,
+      900000000
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C or later near the 45M to 77M range from the YC table and the market monitor."
+    },
+    {
+     "raise_usd": [
+      90000000,
+      250000000
+     ],
+     "post_money_usd": [
+      900000000,
+      3000000000
+     ],
+     "p_band": 0.15,
+     "rationale": "Breakout late round at unicorn scale; very rare in this cohort."
+    }
+   ],
+   "why_it_fails": "A Series C in the first year after the batch has no precedent in the data. A revenue cycle company would need hundreds of provider customers and the market dominance that incumbents such as large RCM vendors defend, so investors would not price such a round now."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.58
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000,
+     100000000
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000,
+     1000000000
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.11
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000,
+     5000000000
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "Most likely outcome is a stall as many similar agent startups compete and billing companies resist new vendors, or an acquisition of the team by an RCM vendor for under 100M, as with Egress Health. The upside requires recovering large dollars across payers with a data advantage; Arintra shows it is possible but over a long time."
+ },
+ "analogs": [
+  {
+   "slug": "combinehealth",
+   "relevance": "AI workforce for revenue cycle management.",
+   "outcome_summary": "Active two years later with no priced round found."
+  },
+  {
+   "slug": "substrate",
+   "relevance": "AI for medical billing teams.",
+   "outcome_summary": "Active with no priced round found."
+  },
+  {
+   "slug": "ember",
+   "relevance": "AI revenue cycle management.",
+   "outcome_summary": "Reached a seed."
+  },
+  {
+   "slug": "clicks-health",
+   "relevance": "AI agents for healthcare back office.",
+   "outcome_summary": "Seed reached."
+  },
+  {
+   "slug": "egress-health",
+   "relevance": "Automated revenue cycle management for dentists.",
+   "outcome_summary": "Acquired with no post YC round."
+  },
+  {
+   "slug": "arintra",
+   "relevance": "Enterprise AI for revenue assurance.",
+   "outcome_summary": "Reached Series B years after its batch."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Crowded wedge with many YC and funded rivals",
+   "p": 0.4,
+   "evidence": "Six or more YC companies target RCM or denials with AI, and funded vendors like Cofactor AI and RapidClaims ship appeals engines.",
+   "analogs": [
+    "combinehealth",
+    "substrate"
+   ],
+   "mitigation": "Specialize in a payer or specialty with proprietary denial data."
+  },
+  {
+   "risk": "Slow healthcare sales and security review",
+   "p": 0.35,
+   "evidence": "Billing teams require HIPAA reviews and long pilots; Healthcare median months to seed is 19.",
+   "analogs": [
+    "arintra"
+   ],
+   "mitigation": "Sell to outsourced RCM firms that decide fast."
+  },
+  {
+   "risk": "Payer portal and voice call fragility",
+   "p": 0.25,
+   "evidence": "Agents that log into portals and call payers break when payers change flows or block bots.",
+   "analogs": [
+    "ember"
+   ],
+   "mitigation": "Keep humans in the loop and monitor failures."
+  },
+  {
+   "risk": "Team of three and no stated revenue",
+   "p": 0.25,
+   "evidence": "The input shows a team of three and lists no customers, revenue or design partners yet.",
+   "analogs": [
+    "clicks-health"
+   ],
+   "mitigation": "Land a design partner on contingency pricing."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Cofactor AI",
+   "what": "Denials and appeals AI",
+   "traction": "Raised a 4M seed led by Drive Capital",
+   "source_url": "https://www.mobihealthnews.com/news/cofactor-ai-secures-4m-funding-combating-claims-denials"
+  },
+  {
+   "name": "RapidClaims",
+   "what": "Automated appeals engine with payer specific letters",
+   "traction": "Product launch in 2026",
+   "source_url": "https://briefglance.com/articles/rapidclaims-debuts-ai-platform-to-tackle-healthcares-denial-crisis"
+  },
+  {
+   "name": "AGS Health",
+   "what": "Agentic AI for denials and appeals inside an outsourcing firm",
+   "traction": "Large incumbent service company",
+   "source_url": "https://hitconsultant.net/2025/10/13/ags-health-unveils-agentic-ai-solutions-to-combat-rising-claim-denials-and-margin-pressure/"
+  },
+  {
+   "name": "In house billing staff and offshore RCM",
+   "what": "Status quo",
+   "traction": "Providers spent over 25 billion dollars on denial fights in 2023",
+   "source_url": "https://www.hfma.org/revenue-cycle/denials-management/battle-of-the-bots-intensifies-over-denials/"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Building agents that read denials and draft appeals is feasible with models. The hard parts are reliable integration with practice management systems and payer portals, voice calls to payers, HIPAA security and accuracy. A three person team can ship pilots, but robust coverage across payers takes longer."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Large RCM vendors",
+   "Epic",
+   "Waystar",
+   "R1 and AGS Health",
+   "funded AI RCM startups"
+  ],
+  "timeline_months": 9,
+  "rationale": "Incumbent RCM and EHR vendors have distribution and are shipping agentic denials products; the market search shows several. A rival needs under a year to add appeals drafting."
+ },
+ "market_need_now": {
+  "rating": 4,
+  "evidence": [
+   {
+    "claim": "Provider cost of fighting denials exceeded 25 billion dollars in 2023 and most denials are overturned on appeal, per trade sources.",
+    "source_url": "https://www.hfma.org/revenue-cycle/denials-management/battle-of-the-bots-intensifies-over-denials/"
+   },
+   {
+    "claim": "Funded startups such as Cofactor AI are raising on this problem.",
+    "source_url": "https://www.mobihealthnews.com/news/cofactor-ai-secures-4m-funding-combating-claims-denials"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "before_yc",
+   "goal": "Show recovered dollars for a real billing team.",
+   "actions": [
+    "Run contingency pilots with two billing teams",
+    "Log appeals won per claim"
+   ],
+   "proof": "Dollars recovered and win rate on appeals."
+  },
+  {
+   "phase": "seed",
+   "goal": "Convert pilots into recurring contracts.",
+   "actions": [
+    "Add payer call agent coverage for the top five payers",
+    "Get SOC 2 and a trust center to unblock procurement"
+   ],
+   "proof": "Five paying customers and recovery dollars per month."
+  }
+ ],
+ "pros": [
+  {
+   "point": "Clear dollar value per claim",
+   "evidence": "Denied claims and aged A/R are measurable and appeals are often overturned, giving a contingent pricing model.",
+   "source_url": "https://www.hfma.org/revenue-cycle/denials-management/battle-of-the-bots-intensifies-over-denials/"
+  },
+  {
+   "point": "Works inside existing systems",
+   "evidence": "The product avoids new logins or migrations, lowering adoption friction.",
+   "source_url": "https://tagohealth.com"
+  }
+ ],
+ "brand": {
+  "name": "Tago Health",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Tago Health\" --era 2022+: name plus descriptor, 10 characters, 3 syllables, descriptor word health.",
+  "strengths": [
+   "Short invented root",
+   "Health word clarifies the field"
+  ],
+  "weaknesses": [
+   "Descriptor makes it generic among health startups"
+  ],
+  "rationale": "A short name plus the word Health is clear but generic, like many health startups. Buyers in billing care about results and security, so the name matters little."
+ },
+ "narrative": {
+  "headline": "A well aimed but crowded wedge with a three person team: below even odds of a 1M plus round inside seven months and little chance of Series A.",
+  "general_summary": "Tago Health sells AI agents that work denials and A/R for US provider billing teams. The pain is large and measurable, but the field has many YC and funded rivals and healthcare sales are slow. The window is 7.4 months from 2026-04-06 to 2026-11-17, which cuts the seed odds to 0.44, the floor of the calibration rule against the 0.59 B2B anchor. Series A in the window is about 3 percent. The odds do not rank this company against others."
+ },
+ "assumptions": [
+  "Blind forecast as of 2026-04-06 using only the input; no customers or revenue stated.",
+  "Seed means above about 1M from outside investors inside the 7.4 month window.",
+  "Analog comps from the same period were not used for outcomes."
+ ],
+ "sources": [
+  "https://www.hfma.org/revenue-cycle/denials-management/battle-of-the-bots-intensifies-over-denials/",
+  "https://www.mobihealthnews.com/news/cofactor-ai-secures-4m-funding-combating-claims-denials",
+  "https://briefglance.com/articles/rapidclaims-debuts-ai-platform-to-tackle-healthcares-denial-crisis"
+ ]
 }

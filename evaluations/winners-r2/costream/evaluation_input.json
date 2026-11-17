@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Costream",
+    "one_liner": "Indexing human dialogue through digital products",
+    "description": "The input gives only a one line pitch about indexing human dialogue through digital products, no description or tags. Consumer industry, team of 8 in San Francisco, Summer 2025 batch. The product is unclear, so the forecast leans on cohort rates.",
+    "as_of": "2025-07-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.45,
+    "p_low": 0.25,
+    "p_high": 0.65,
+    "basis": "The company is already in the batch that starts on the as of date, so this is a note only. A random applicant starts near 1 percent (yc_acceptance.md, 0.6 to 2 percent range). The pitch is abstract with no description, though a team of 8 is a sign of commitment and size.",
+    "why_it_fails": "YC would most plausibly say no because the pitch is vague, indexing dialogue through digital products could mean many things, and a team of 8 means a large burn for a pre product company. Reviewers could also doubt that consumers pay for it."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.48,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.7,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Consumer --calibration-only (seed 56 percent known, n=16); --years 2018-2021 --industry Consumer (seed 89 percent n=36); time_to_milestones.csv Consumer months_to_seed p25 2, p50 5.5, p75 19",
+        "adjustment_reason": "Window is 16.3 months from 2025-07-07 to 2026-11-17 and the target is a round above about $1M. Consumer months to seed has p50 5.5 and p75 19, so about 75 percent of eventual raisers close inside 16 months. With an ever anchor near 0.65 that gives about 0.49. A team of 8 is larger than usual, but the winners test says to hold the anchor, so the figure is 0.48 and does not rank Costream against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Small round on top of the YC deal."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Typical seed for AI plus consumer with a team of 8."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.28,
+          "rationale": "Upside seed led by a top fund. Consumer AI and voice products drew large seeds in 2025, for example Wispr Flow raised $30M in June 2025 at a later stage."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Large seed, only with a landmark traction story or a hot thesis. A hot consumer AI story with fast user growth."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A seed above $1M fails if the product shows no repeat use, because consumer apps need retention proof before investors fund them and the one line pitch is abstract. A team of 8 burns the YC check fast and must raise or cut. Analogs Basement and Greo, small consumer social apps from YC, stayed at the YC check, and Wakie raised only about $1M."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.07,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.35,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Consumer --calibration-only (series A cond 50 percent n=32); 2022-2025 Consumer series A 0 percent n=9 censored; time_to_milestones.csv Consumer months_to_series_a p25 16, p50 27.7",
+        "adjustment_reason": "Series A in the 16.3 month window is a small tail because Consumer months to A has p25 of 16 and p50 of about 28, so only a few fast companies get there."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A with proven retention and revenue. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if usage grows as a platform. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs retention above consumer norms and a business model, and most consumer apps fail to monetize. The one line pitch could be a data product or a consumer product, and an unfocused model is a risk. Squad raised $5M seed and sold to Twitter without a Series A, and Sonar was acquired after small funding."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.38,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Consumer --calibration-only (series B cond 38 percent n=16)",
+        "adjustment_reason": "At 0.8 of the anchor; ever reached."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin B. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            180000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B near 37M. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside platform with large user base. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B needs scale in users and revenue, and consumer products depend on viral growth. Large platforms copy features, and acquisition before a B is common in the analogs."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.17,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Consumer --calibration-only (series C cond 17 percent n=6); overall cond 43 percent",
+        "adjustment_reason": "Anchor ranges from 17 percent in the Consumer cohort to 43 percent overall; 0.30 is between them and higher than the thin Consumer figure on the assumption that companies reaching B are strong."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin C. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            110000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical C. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            110000000,
+            250000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2500000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if it becomes a large consumer platform. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Most consumer companies are acquired or stall before a C, since user growth plateaus and platforms absorb features. Reaching C would need a durable business model."
     }
   ],
   "outcomes": {
@@ -164,167 +224,213 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Failure paths include no retention, unclear monetization and large platforms offering the same. Small exits to larger social or AI companies are the typical good outcome."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "wakie",
+      "relevance": "Social app for voice calls.",
+      "outcome_summary": "Raised about $1M in 2014, pivoted, small outcome."
+    },
+    {
+      "slug": "basement",
+      "relevance": "Social network for close friends.",
+      "outcome_summary": "$150K seed, listed inactive."
+    },
+    {
+      "slug": "greo",
+      "relevance": "Video app for conversations about current events.",
+      "outcome_summary": "$120K seed, shut."
+    },
+    {
+      "slug": "squad",
+      "relevance": "Group video app for shared experiences.",
+      "outcome_summary": "$5M seed in 2019 and acquired by Twitter in 2020."
+    },
+    {
+      "slug": "sonar",
+      "relevance": "Social space app.",
+      "outcome_summary": "Small funding and acquired by Aave Companies in 2022."
+    },
+    {
+      "slug": "honeydue",
+      "relevance": "Couples money app.",
+      "outcome_summary": "Acquired; consumer outcome through acquisition."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Product is unclear and retention fails",
+      "p": 0.4,
+      "evidence": "Consumer social and conversation apps such as Basement and Greo did not retain users.",
       "analogs": [
-        "TODO-company-slug"
+        "basement",
+        "greo"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Focus on one use and measure weekly retention."
+    },
+    {
+      "risk": "Burn from a team of 8 outruns the YC check",
+      "p": 0.25,
+      "evidence": "A team of 8 needs funds soon, and small analogs stopped at the YC check.",
+      "analogs": [
+        "greo",
+        "basement"
+      ],
+      "mitigation": "Raise or cut within 6 months."
+    },
+    {
+      "risk": "Large AI and social platforms ship similar features",
+      "p": 0.2,
+      "evidence": "Voice and conversation AI is a hot theme with funded players such as Wispr.",
+      "analogs": [
+        "squad",
+        "sonar"
+      ],
+      "mitigation": "Own a dataset or community that platforms lack."
+    },
+    {
+      "risk": "No clear monetization",
+      "p": 0.15,
+      "evidence": "Consumer apps often rely on ads or subscriptions that small apps rarely achieve.",
+      "analogs": [
+        "wakie",
+        "sonar"
+      ],
+      "mitigation": "Test subscriptions early."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Wispr Flow",
+      "what": "Voice dictation app.",
+      "traction": "Raised $30M Series A in June 2025.",
+      "source_url": "https://techcrunch.com/2025/06/24/wispr-flow-raises-30m-from-menlo-ventures-for-its-ai-powered-dictation-app/"
+    },
+    {
+      "name": "Voice.ai",
+      "what": "Consumer voice app.",
+      "traction": "First outside funding led by Mucker and M13.",
+      "source_url": "https://aimresearch.co/?p=12802"
+    },
+    {
+      "name": "PlayAI",
+      "what": "Voice AI models for conversations.",
+      "traction": "$21M seed.",
+      "source_url": "https://aimresearch.co/?p=12802"
     }
   ],
   "technical_complexity": {
     "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rationale": "Indexing and searching spoken dialogue needs speech recognition, storage and retrieval at scale, all available through current models, so the build is moderate. Privacy and consent for recorded dialogue make product design harder."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "OpenAI",
+      "Google",
+      "Meta",
+      "Apple"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Large platforms already handle voice and conversation and can add indexing, but a focused consumer product could win a niche."
   },
   "market_need_now": {
-    "rating": 3,
+    "rating": 2,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Voice and conversational AI drew large funding in 2025, including a $30M Series A for a dictation app, so investors see demand.",
+        "source_url": "https://techcrunch.com/2025/06/24/wispr-flow-raises-30m-from-menlo-ventures-for-its-ai-powered-dictation-app/"
+      },
+      {
+        "claim": "The pitch itself is unclear, so direct consumer need for dialogue indexing is not shown.",
+        "source_url": "https://aimresearch.co/?p=12802"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show retention for one clear consumer use.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Launch one product with a defined user and measure weekly retention.",
+        "Publish usage growth for 8 weeks."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Week 4 retention above 25 percent with growing weekly users."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A working business model.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Test a paid tier.",
+        "Add a second use case based on user data."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Monthly revenue of $100K or more with retention stable."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Larger team of 8",
+      "evidence": "The batch listing gives a team of 8, which is above the usual 2 to 3 and can ship faster."
+    },
+    {
+      "point": "Timely voice AI theme",
+      "evidence": "Voice AI companies raised large rounds in 2025.",
+      "source_url": "https://techcrunch.com/2025/06/24/wispr-flow-raises-30m-from-menlo-ventures-for-its-ai-powered-dictation-app/"
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Costream",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Costream\" --era 2022+ : kind invented_or_proper, 8 characters, 2 syllables",
     "strengths": [
-      "TODO"
+      "Short, suggests co streaming or shared dialogue"
     ],
     "weaknesses": [
-      "TODO"
+      "Close to streaming terms that could mislead about the product"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Costream is an invented compound that hints at shared streams of conversation, like Squad or Sonar in the same space. It is easy to say but could be confused with streaming services, and it will not decide the outcome.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "An abstract consumer dialogue pitch with a large team where a seed above $1M inside 16 months is near a coin flip.",
+    "general_summary": "Costream's input is one line about indexing human dialogue through digital products, with no description, so the forecast leans on cohort rates. The team of 8 is large for a Summer 2025 company and voice and conversation AI were attracting capital in 2025. Consumer cohorts have a high ever rate of seed but poor retention, and the closest analogs stayed at the YC check or sold early. Over the 16.3 month window a seed above $1M is close to even, set near the Consumer cohort pace, and a Series A inside the window is a small tail. These odds do not rank Costream against others, and the thin description widens the uncertainty. The likely good case is a seed of $3M to $6M if usage shows retention."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2025-07-07 from the input file, which has no description or tags, and market searches.",
+    "Window is 16.3 months to 2026-11-17 and seed means a round above about $1M.",
+    "Consumer calibration cohorts are small, and the 2022 to 2025 cohort is right censored."
   ],
   "sources": [
-    "https://"
+    "https://techcrunch.com/2025/06/24/wispr-flow-raises-30m-from-menlo-ventures-for-its-ai-powered-dictation-app/",
+    "https://aimresearch.co/?p=12802"
   ]
 }

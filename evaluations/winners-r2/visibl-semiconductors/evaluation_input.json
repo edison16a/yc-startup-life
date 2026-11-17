@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Visibl Semiconductors",
+    "one_liner": "Custom silicon for power electronics",
+    "description": "An AI native custom silicon design partner that cuts ASIC cost and timeline on mature nodes for power electronics makers, handling architecture, verification, fabrication and packaging so hardware teams need no chip team. Team of 3 in San Francisco, Winter 2026 batch.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.45,
+    "p_low": 0.25,
+    "p_high": 0.65,
+    "basis": "The company is already in the batch that starts on the as of date, so this is a note only. A random applicant starts near 1 percent (yc_acceptance.md, 0.6 to 2 percent range). Hard tech with a clear customer pain and AI timing fits YC interest, but a three person team promising a full chip path is ambitious and no customer is named.",
+    "why_it_fails": "YC would most plausibly say no because chip design takes years and capital, three people cannot show a design win, and a design partner model looks like consulting. Reviewers also ask why AI tools make mature node ASICs cheaper than established design houses."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.36,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (seed cond 59 percent n=126); --years 2018-2025 --tag \"Hard Tech\" (seed 75 percent n=8, anecdote); the Semiconductors tag has no researched companies in 2018-2021; time_to_milestones.csv Industrials months_to_seed p50 6, B2B p50 7",
+        "adjustment_reason": "Window of 10.4 months to 2026-11-17 and a round above about $1M. The ever anchor is about 0.65 and about 60 percent of raisers close inside 10 months. AI plus chips and power for data centers draws investor interest, but a 3 person team needs capital for tape outs, so the plan is held at the anchor and no lift is applied. The odds do not rank Visibl against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.28,
+          "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Common for design services revenue funding early engagements."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Typical seed for a hard tech company with an anchor customer."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.27,
+          "rationale": "Upside seed led by a top fund. Chip and power infrastructure investors fund larger seeds when a named customer commits to a tape out."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.1,
+          "rationale": "Large seed, only with a landmark traction story or a hot thesis. Needs a funded customer program and a marquee lead."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed fails if the company has design services pilots but no customer committed to a multi million dollar tape out, since chip investors want a path to product revenue. Three people cannot staff several chip projects, and foundry runs need capital. Analogs Tensil and Vathys never got beyond the YC check, and Reduced Energy Microsystems raised only a $2M seed before going inactive."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.04,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (series A cond 26 percent n=74); Hard Tech tag series A cond 17 percent n=6; months_to_series_a B2B p25 20 p50 30",
+        "adjustment_reason": "A Series A in the same 10.4 month window is rare because the B2B median time to A is 30 months and chip programs take longer still."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A funding one tape out. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A for a hard tech company with a signed anchor program. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if a data center power customer funds volume production. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs a first working silicon and signed volume customers, and a design cycle to tape out and test takes 9 to 18 months, longer than the window. Investors worry that a partner model repeats the services trap. Bronco AI, an AI chip verification company from 2023, stayed at pre seed funding on record for years."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent n=18)",
+        "adjustment_reason": "At 0.77 of the anchor because of long hardware cycles; ever reached."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin B. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            180000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B near 37M median. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if power silicon volume ramps in data centers. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series B requires production volume and gross margin, and fabless startups need heavy capital per product. Customers can move to larger design houses or in house teams, and the mature node foundry capacity is tight. Few analogs reached B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent n=7)",
+        "adjustment_reason": "At 0.77 of the 0.43 anchor because of capital needs."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin C. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            110000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical C. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            110000000,
+            250000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2500000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside as a supplier of power chips. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Stops before C if it stays a design services firm with margins capped by engineer hours, or if power chip incumbents like Texas Instruments and Infineon cut price on standard parts, and sale to an incumbent is the likelier exit."
     }
   ],
   "outcomes": {
@@ -164,167 +224,214 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.16
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.04
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Failure comes from services economics, slow tape outs and customers choosing off the shelf parts. A decent outcome is an acquisition by a power semiconductor company that wants design talent."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "bronco-ai",
+      "relevance": "AI for ASIC design verification.",
+      "outcome_summary": "Summer 2023, pre seed on record; claims deployments at chipmakers."
+    },
+    {
+      "slug": "silimate",
+      "relevance": "Agents for chip design and debug.",
+      "outcome_summary": "Seed $2M in 2023, small since."
+    },
+    {
+      "slug": "steinmetz",
+      "relevance": "Next generation power electronics.",
+      "outcome_summary": "Seed $500K in 2025, early hardware."
+    },
+    {
+      "slug": "reduced-energy-microsystems",
+      "relevance": "Low power silicon from USC research.",
+      "outcome_summary": "Raised $2M seed in 2017, now inactive."
+    },
+    {
+      "slug": "tensil",
+      "relevance": "Turned ML models into custom hardware.",
+      "outcome_summary": "Only the YC check; shut."
+    },
+    {
+      "slug": "vathys",
+      "relevance": "New deep learning processor.",
+      "outcome_summary": "Only the YC check; pivoted and inactive."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Tape out capital and time exceed the runway",
+      "p": 0.35,
+      "evidence": "Chip projects need millions and months; Vathys and Tensil stopped at the YC check.",
       "analogs": [
-        "TODO-company-slug"
+        "vathys",
+        "tensil"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Take customer funded NRE contracts and use multi project wafers."
+    },
+    {
+      "risk": "Services trap: revenue limited by engineer hours",
+      "p": 0.3,
+      "evidence": "A design partner model sells engineer time, and Silimate stayed small after a seed.",
+      "analogs": [
+        "silimate",
+        "bronco-ai"
+      ],
+      "mitigation": "Charge royalties or unit pricing on volume."
+    },
+    {
+      "risk": "Incumbent design houses and EDA vendors add AI",
+      "p": 0.2,
+      "evidence": "Large EDA and design services firms use AI tools and have customers.",
+      "analogs": [
+        "bronco-ai",
+        "silimate"
+      ],
+      "mitigation": "Specialize in power electronics blocks."
+    },
+    {
+      "risk": "Customers prefer off the shelf parts",
+      "p": 0.15,
+      "evidence": "Standard power chips from Texas Instruments, Infineon and Analog Devices are cheap and supply is improving.",
+      "analogs": [
+        "reduced-energy-microsystems"
+      ],
+      "mitigation": "Target volume products where board cost matters."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "AnySilicon and design services firms",
+      "what": "Custom PMIC and ASIC design services.",
+      "traction": "Established services market.",
+      "source_url": "https://anysilicon.com/custom-power-management-ic-pmic-design-services/"
+    },
+    {
+      "name": "Marvell and Broadcom custom ASIC groups",
+      "what": "Custom chips at leading nodes for hyperscalers.",
+      "traction": "Large revenue, but not mature node power.",
+      "source_url": "https://www.marvell.com/custom-asic/"
+    },
+    {
+      "name": "Texas Instruments, Infineon, Analog Devices",
+      "what": "Standard power ICs that customers use instead of custom chips.",
+      "traction": "Dominant suppliers.",
+      "source_url": "https://anysilicon.com/custom-power-management-ic-pmic-design-services/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Designing, verifying, fabricating and packaging silicon is among the hardest work for a small team, with expensive mistakes and long cycles. Mature nodes and BCD processes lower cost, and AI tools help design and verification, but a team of 3 still depends on foundry access, IP and test capacity."
   },
   "takeover_risk": {
     "rating": 3,
     "who": [
-      "TODO"
+      "Texas Instruments",
+      "Infineon",
+      "Cadence",
+      "Synopsys"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 24,
+    "rationale": "Incumbent EDA vendors and design houses could add AI flows, but custom power design for small volume customers is not their focus, and the cycle time is long."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Power management ICs are cited as a bottleneck for data centers, with lead times of 20 to 40 weeks and tight mature node capacity.",
+        "source_url": "https://info.fusionww.com/blog/what-is-a-pmic-and-why-is-it-holding-up-ai-data-centers"
+      },
+      {
+        "claim": "Design services firms sell custom PMIC design, which shows customers pay for it.",
+        "source_url": "https://anysilicon.com/custom-power-management-ic-pmic-design-services/"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "One customer funded custom silicon program.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Sign a paid design contract with a power electronics maker.",
+        "Demonstrate a lower bill of materials versus the board version."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "A signed NRE contract of $500K or more."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "First working silicon in a shipped product.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Complete a tape out and bring up samples.",
+        "Sign a volume supply agreement."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Silicon passing customer qualification and a volume order."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Real supply and cost pain in power electronics",
+      "evidence": "PMIC lead times of 20 to 40 weeks and tight mature node capacity are reported.",
+      "source_url": "https://info.fusionww.com/blog/what-is-a-pmic-and-why-is-it-holding-up-ai-data-centers"
+    },
+    {
+      "point": "Mature nodes keep tape out costs lower",
+      "evidence": "BCD processes at 180nm and similar nodes suit power chips.",
+      "source_url": "https://anysilicon.com/custom-power-management-ic-pmic-design-services/"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Visibl Semiconductors",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Visibl Semiconductors\" --era 2022+ : kind compound_words, 20 characters, 7 syllables",
     "strengths": [
-      "TODO"
+      "Descriptive of the industry"
     ],
     "weaknesses": [
-      "TODO"
+      "Long, with a dropped vowel that looks like a typo"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "The name is descriptive and the Semiconductors word helps hardware buyers place it, similar to plain industry names in hard tech. The spelling and length are weak for word of mouth, but chip buyers decide on technical proof.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A technically ambitious chip design partner where a seed above $1M inside 10 months is plausible but unproven, and later rounds depend on silicon.",
+    "general_summary": "Visibl offers AI assisted custom silicon design for power electronics makers on mature nodes. The pain is real, since power chip lead times were long and standard parts limit cost, and chip and power infrastructure were attractive to investors. The risks are heavy: a three person team, long tape out cycles, a services like model and incumbent suppliers. A seed above $1M within the 10.4 month window is plausible near the B2B cohort pace if a customer commits to a program, and a Series A inside the window is rare because silicon takes more than a year. These odds do not rank Visibl against others. A good path is a customer funded program that supports a seed of $3M to $6M."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-01-05 from the input file and market searches only.",
+    "Window is 10.4 months to 2026-11-17; seed means a round above about $1M.",
+    "The Semiconductors tag has no researched calibration companies, so B2B and Hard Tech cohorts are used and treated as anecdotes."
   ],
   "sources": [
-    "https://"
+    "https://info.fusionww.com/blog/what-is-a-pmic-and-why-is-it-holding-up-ai-data-centers",
+    "https://anysilicon.com/custom-power-management-ic-pmic-design-services/",
+    "https://www.marvell.com/custom-asic/"
   ]
 }

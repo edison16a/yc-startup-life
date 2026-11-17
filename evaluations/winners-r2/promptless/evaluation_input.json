@@ -1,330 +1,415 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Promptless",
+  "one_liner": "An AI teammate that automatically updates your customer-facing docs",
+  "description": "AI agent that updates customer facing documentation from feature releases, support tickets and internal Slack conversations, and works with any docs platform. Used by startups and larger companies. Team of 5 in San Francisco.",
+  "as_of": "2025-01-06"
+ },
+ "yc_acceptance": {
+  "p": 0.99,
+  "p_low": 0.97,
+  "p_high": 0.995,
+  "basis": "The company is already in the batch that starts at the as_of date, so the acceptance step is reported only for completeness: the prior for a random applicant is about 1 percent (0.6 to 2 percent), and conditional on being accepted the forecast below is what matters. Team of 5 with enterprise customers claimed suggests real usage; ideas in developer tools get interest but the wedge is narrow.",
+  "why_it_fails": "YC would most plausibly pass because documentation maintenance looks like a feature rather than a company: docs platforms such as Mintlify and GitBook already offer update agents, coding assistants can draft doc changes inside the repository, and the budget owner is unclear between support, developer relations and engineering. A team of five with claimed enterprise users is a good sign, but the market size question would likely dominate the interview."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.52,
+   "anchors": {
+    "base_rate": 0.61,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed cond 61 percent (n=88), series_a cond 33 percent (n=54), series_b cond 17 percent (n=18); months_to_seed p25 4, median 9, p75 19. Ever 0.61 times about 0.88 arriving inside 22 months gives 0.54.",
+    "adjustment_reason": "Anchor times window fraction is 0.54; I trim to 0.52 because documentation tooling is a small paid category where the analog FifthTry died after a seed, but this stays within 1.25 times the anchor and does not rank the company."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of about $1M to $3M, often angels and a micro fund. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M, the common case. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M after fast early traction. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Hot seed above $12M, up to about $25M, for an unusually strong story. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Window of 22.3 months (2025-01-06 to 2026-11-17). The likeliest miss is that docs automation looks like a feature: Mintlify, Swimm, GitBook and ReadMe already sell to the same docs owners and coding assistants can draft doc changes, so investors question the size of the budget. FifthTry (continuous documentation) raised a seed and still shut down, and Nimbic AI is a Spring 2025 neighbor, so a round above $1M needs proof of paid seats at larger firms."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.1,
+   "anchors": {
+    "base_rate": 0.33,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed cond 61 percent (n=88), series_a cond 33 percent (n=54), series_b cond 17 percent (n=18); months_to_seed p25 4, median 9, p75 19. Ever 0.33 times about 0.3 arriving by month 22 gives 0.10.",
+    "adjustment_reason": "More than 2x below the ever rate because only 22 months pass and median months to Series A is 30 from batch start; a five person company with enterprise logos could be early but most are not."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      55000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series A of $6M to $10M at a modest valuation, below the 2022+ median. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      110000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A of $10M to $20M, near the 2022+ YC median of about $14M. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    },
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      110000000.0,
+      250000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong Series A of $20M to $40M for a fast growing product with revenue. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    }
+   ],
+   "why_it_fails": "A Series A inside 22 months needs about $1M or more of ARR from companies that treat docs as a growth lever. Documentation budgets are small and sit under support or developer relations, sales cycles are slow, and coding assistants that update docs in the repo can substitute. Close analogs (Nimbic AI, FifthTry) stalled at seed, and Series A medians are near 30 months after batch start."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.15,
+   "anchors": {
+    "base_rate": 0.17,
+    "source": "python3 -I scripts/base_rates.py --industry B2B --years 2022-2024 --calibration-only: seed cond 61 percent (n=88), series_a cond 33 percent (n=54), series_b cond 17 percent (n=18); months_to_seed p25 4, median 9, p75 19",
+    "adjustment_reason": "Conditional on an A inside 22 months the company would be fast; I keep 0.15 near the 0.17 anchor and the window leaves little room for a B."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      90000000.0,
+      200000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat or down style Series B of $15M to $30M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      200000000.0,
+      500000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B of $30M to $60M, near the 2022+ median of about $40M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    },
+    {
+     "raise_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "post_money_usd": [
+      500000000.0,
+      1000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B of $60M to $120M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    }
+   ],
+   "why_it_fails": "Series B would need a broad product beyond docs updates, for example a support knowledge layer, as a narrow docs agent has a limited ceiling. Only about one in six B2B seed companies reaches B, and the team of five has little time inside the window."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.36,
+    "source": "python3 -I scripts/base_rates.py --calibration-only: series_c cond 36 percent (n=55)",
+    "adjustment_reason": "Kept at 0.20 because a Series C conditional on a fast B is rare inside this window and the 2022 to 2024 B2B sample has none yet."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      250000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Smaller growth round of $30M to $70M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      1800000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C of $70M to $150M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    },
+    {
+     "raise_usd": [
+      150000000.0,
+      400000000.0
+     ],
+     "post_money_usd": [
+      1800000000.0,
+      5000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Large late round above $150M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    }
+   ],
+   "why_it_fails": "Series C needs a platform sized category position, and documentation maintenance is a small slice of software spend that docs vendors and coding assistants can absorb by adding an agent. The 2022 to 2024 B2B cohort has no Series C yet, and almost no companies of this size reach it inside two years of batch start, so the probability here is only a small floor value."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.5
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.33
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely end is a stall or a small acquisition by a docs platform or support vendor: Inari and Unthread are acquired YC analogs at small scale and FifthTry, which sold continuous documentation, shut down after a seed. A larger outcome would require expanding from docs updates into the knowledge layer that support agents and coding assistants read, which is a different and more contested product."
+ },
+ "analogs": [
+  {
+   "slug": "fifthtry",
+   "relevance": "Winter 2021 continuous documentation to end documentation rot, nearly the same pitch.",
+   "outcome_summary": "Raised a seed and later inactive; shows documentation as a thin budget."
+  },
+  {
+   "slug": "nimbic-ai",
+   "relevance": "Spring 2025 automatically writes and updates internal docs with every code commit.",
+   "outcome_summary": "Active with a seed round, a contemporaneous rival in the same wedge."
+  },
+  {
+   "slug": "inari",
+   "relevance": "Summer 2023 junior AI product manager, adjacent knowledge work agent.",
+   "outcome_summary": "Acquired with no post YC round, an acqui-hire style exit."
+  },
+  {
+   "slug": "unthread",
+   "relevance": "Summer 2022 AI helpdesk for Slack, same triggering from support conversations.",
+   "outcome_summary": "Seed then acquired, showing support adjacent tools exit small."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Docs automation is absorbed as a feature by docs platforms and coding assistants",
+   "p": 0.45,
+   "evidence": "Mintlify, Swimm and GitBook already sell to docs owners and describe agents that open doc update pull requests.",
+   "analogs": [
+    "fifthtry",
+    "nimbic-ai"
+   ],
+   "mitigation": "Stay platform agnostic and pull in support and Slack context which code tools lack."
+  },
+  {
+   "risk": "Small budget and long sales cycles keep revenue too low for a round above $1M",
+   "p": 0.35,
+   "evidence": "Mid market documentation platforms are priced at about $200 to $1,000 per month per a vendor guide.",
+   "analogs": [
+    "fifthtry",
+    "inari"
+   ],
+   "mitigation": "Anchor on enterprise accounts where docs quality hits churn."
+  },
+  {
+   "risk": "Agent quality errors in customer facing docs erode trust",
+   "p": 0.25,
+   "evidence": "Vendor guides note that major changes still need human review, and wrong edits in customer facing docs can cause support load and lost trust.",
+   "analogs": [
+    "nimbic-ai",
+    "fifthtry"
+   ],
+   "mitigation": "Human approval flow and reliable source citations."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Mintlify",
+   "what": "Docs platform with agents that propose updates from code changes",
+   "traction": "Widely used among developer tool startups",
+   "source_url": "https://www.mintlify.com/library/best-code-documentation-tools"
+  },
+  {
+   "name": "Swimm and GitBook",
+   "what": "Track code to doc relationships and flag stale docs",
+   "traction": "Established vendors",
+   "source_url": "https://toolradar.com/guides/best-ai-documentation-generators"
+  },
+  {
+   "name": "Status quo",
+   "what": "Technical writers and engineers editing docs by hand",
+   "traction": "Default for nearly all companies",
+   "source_url": "https://www.docuwriter.ai/posts/ai-documentation-tools"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 3,
+  "rationale": "Reading code, tickets and Slack and producing accurate edits across arbitrary docs platforms is feasible with current models; the hard part is trustworthy context retrieval, avoiding wrong edits and many integrations. A team of five can ship an MVP in three months but breadth of integrations takes longer."
+ },
+ "takeover_risk": {
+  "rating": 4,
+  "who": [
+   "Mintlify",
+   "GitBook",
+   "Intercom",
+   "GitHub Copilot"
+  ],
+  "timeline_months": 9,
+  "rationale": "Docs platforms and coding assistants have distribution and the incentive to ship update agents quickly; a standalone vendor survives only through cross source context and enterprise workflow depth."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Several vendors sell tools that keep docs in sync with code, showing paid demand but a crowded field",
+    "source_url": "https://toolradar.com/guides/best-ai-documentation-generators"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Prove paid seats at larger companies and measurable support deflection",
+   "actions": [
+    "Convert pilots at five Fortune 500 or fast growing accounts to annual contracts",
+    "Show reduced support tickets from updated docs"
+   ],
+   "proof": "$30K plus monthly recurring revenue and a quantified deflection case study"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Expand beyond docs updates to the knowledge layer",
+   "actions": [
+    "Add support and agent facing knowledge base outputs",
+    "Integrate with the top five docs and help center platforms"
+   ],
+   "proof": "$1M ARR with logo retention above 90 percent"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Real triggers and context sources",
+   "evidence": "Product ties updates to releases, tickets and Slack, which docs only tools lack"
+  },
+  {
+   "point": "Reported use by Fortune 500 enterprises",
+   "evidence": "Company description claims enterprise users, unverified"
+  }
+ ],
+ "brand": {
+  "name": "Promptless",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Promptless\" --era 2022+ : kind invented_or_proper, 2022+ cohort alive 92.7 percent (n=1826)",
+  "strengths": [
+   "Names the product category through the prompt idea",
+   "Easy to remember"
+  ],
+  "weaknesses": [
+   "Prompt in the name will date as AI wording shifts"
+  ],
+  "rationale": "Prompt-based names tie a company to a passing term, much like other AI era coined names; the cohort data show no survival difference, so the name is neutral.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A narrow docs agent with a thin budget category; seed odds track the anchor over a long 22 month window.",
+  "general_summary": "Promptless is an AI agent that updates customer facing docs from releases, tickets and Slack. Over a 22.3 month window the B2B cohort anchor gives a seed probability near 0.54, and I report 0.52. Series A inside the same window is about 0.10. Documentation tooling has many entrants and a small budget, and the same wedge produced FifthTry, which died after a seed. The company has a team of five and claims enterprise users, which helps but does not rank it."
+ },
+ "assumptions": [
+  "Blind forecast made as of 2025-01-06 using only the YC batch description in the input file, with market-only web searches.",
+  "Forecast window is 22.3 months, from 2025-01-06 to 2026-11-17.",
+  "Seed means an outside financing round above about $1M that closes inside the window, not the standard YC deal of about $500K; the seed and Series A probabilities are window probabilities, not ever probabilities.",
+  "The odds do not rank this company against other companies in the batch: in the 2026 winners test, team size, claimed traction and a hot sector did not separate raisers from non raisers, so the seed number stays near the cohort anchor.",
+  "Cohort anchors come from older and 2022 to 2024 batches and are partly right censored; funding coverage in the data is incomplete (lower, known and upper ranges quoted)."
+ ],
+ "sources": [
+  "https://www.mintlify.com/library/best-code-documentation-tools",
+  "https://toolradar.com/guides/best-ai-documentation-generators",
+  "https://www.docuwriter.ai/posts/ai-documentation-tools"
+ ]
 }

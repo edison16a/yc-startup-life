@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Q2Q",
+    "one_liner": "We help private equity teams find acquisition targets faster",
+    "description": "An AI native outbound engine for private equity deal sourcing: the buyer gives criteria, and Q2Q finds companies, writes personalized emails for approval and books first calls with business owners. Team of 2 in San Francisco, Winter 2026 batch.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.45,
+    "p_low": 0.25,
+    "p_high": 0.65,
+    "basis": "The company is already in the batch that starts on the as of date, so this is a note only. A random applicant starts near 1 percent (yc_acceptance.md, 0.6 to 2 percent range). Two founders with a clear customer and a measurable output (booked meetings) fit YC, but the application states no traction and cold email tools were abundant.",
+    "why_it_fails": "YC would most plausibly say no because AI outbound is a crowded category of agency like tools, the buyer pool of PE firms is small, and two founders without a stated PE background must explain why PE firms would trust them with outreach to business owners."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.32,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry B2B --calibration-only (seed cond 59 percent n=126); --years 2018-2021 --industry B2B (81 percent n=69); time_to_milestones.csv B2B months_to_seed p25 3 p50 7 p75 20",
+        "adjustment_reason": "Window of 10.4 months to 2026-11-17 and a round above about $1M. Ever anchor about 0.65, about 60 percent of eventual raisers close in 10 months, and a 2 person team with a niche customer base of PE firms is a small discount, giving 0.32. The odds do not rank Q2Q against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Likely for a 2 person team selling to a narrow buyer list."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Typical seed if revenue from several PE firms shows up."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.2,
+          "rationale": "Upside seed led by a top fund. Needs fast revenue growth from outbound services."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.05,
+          "rationale": "Large seed, only with a landmark traction story or a hot thesis. Unlikely for a niche services heavy outbound product."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Seed fails if the product is seen as a managed outbound service with a small buyer pool of PE firms, since investors want a software margin and many firms already use data tools plus agencies. Two founders running outreach for clients is service work. Analogs Verbiflow and Champ in outbound stayed at the YC check, while Thornwick and Capix in PE also show small rounds."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.04,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.26,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series A cond 32 percent n=56); 2022-2025 B2B cond 26 percent n=74; months_to_series_a B2B p25 20 p50 30",
+        "adjustment_reason": "A Series A inside the same 10.4 month window is rare since the B2B median time to A is 30 months."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A with several million in recurring revenue. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if it becomes a standard tool for PE sourcing. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Series A needs recurring revenue from dozens of PE and search fund customers, and the total buyer pool for outbound deal sourcing is limited. Reply rates for cold email are low and fall as more teams use AI outbound, so churn is high. Metal reached a $5M seed in 2025 only after narrowing to PE and getting top name customers, and Capix stayed in beta for years."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent n=18)",
+        "adjustment_reason": "At 0.77 of the anchor given the niche market; ever reached."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin B. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            180000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B near 37M median. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if it expands to all private market deal workflows. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs a path beyond sourcing to a full deal workflow platform, since PE sourcing alone is a small market. Competitors with data and CRM (Grata, SourceScrub, PitchBook) can bundle outbound. Few analogs reached B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent n=7)",
+        "adjustment_reason": "At 0.77 of the 0.43 anchor given the thin market."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin C. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            110000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical C. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            110000000,
+            250000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2500000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside as a private markets platform. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Stalls before C because PE sourcing is a niche with a ceiling and data vendors absorb it. Acquisition by a data vendor or CRM company is the likelier end than a growth round."
     }
   ],
   "outcomes": {
@@ -164,167 +224,214 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.27
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.03
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Failure paths include low reply rates, PE firms bringing outreach in house or to agencies, and a small buyer pool. The likely good outcome is a tuck in acquisition by a deal data vendor."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "capix",
+      "relevance": "AI private equity intelligence and sourcing.",
+      "outcome_summary": "Summer 2022, no verified round and still in beta; small market effect."
+    },
+    {
+      "slug": "metal",
+      "relevance": "AI context platform for private capital.",
+      "outcome_summary": "Narrowed to PE, reported $5M seed in 2025; a sign the segment can fund."
+    },
+    {
+      "slug": "thornwick",
+      "relevance": "Buy side M&A advisory with software.",
+      "outcome_summary": "Seed amounts under $1M; services heavy."
+    },
+    {
+      "slug": "verbiflow",
+      "relevance": "Outbound sequencing infrastructure.",
+      "outcome_summary": "Pre seed $500K, no later round found."
+    },
+    {
+      "slug": "champ",
+      "relevance": "AI SDR.",
+      "outcome_summary": "One person, no funding found."
+    },
+    {
+      "slug": "benchmark",
+      "relevance": "Decision infrastructure for investment firms.",
+      "outcome_summary": "No round on record."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Small buyer pool and services like economics",
+      "p": 0.35,
+      "evidence": "PE firms are few and many use agencies and data vendors for outbound; analogs such as Thornwick stay small.",
       "analogs": [
-        "TODO-company-slug"
+        "thornwick",
+        "capix"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Sell to search funds and roll ups as well."
+    },
+    {
+      "risk": "Cold email deliverability and reply rates decline",
+      "p": 0.3,
+      "evidence": "AI outbound floods inboxes, and generic outbound analogs Champ and Verbiflow did not scale.",
+      "analogs": [
+        "champ",
+        "verbiflow"
+      ],
+      "mitigation": "Use phone and mail channels and better targeting data."
+    },
+    {
+      "risk": "Data vendors bundle outreach",
+      "p": 0.25,
+      "evidence": "Grata, SourceScrub and PitchBook already hold company data and can add outbound.",
+      "analogs": [
+        "metal",
+        "benchmark"
+      ],
+      "mitigation": "Own the booked meeting outcome and charge per meeting."
+    },
+    {
+      "risk": "Team of 2 with no stated PE credibility",
+      "p": 0.15,
+      "evidence": "PE buyers trust peers and pedigree.",
+      "analogs": [
+        "capix"
+      ],
+      "mitigation": "Add an advisor from PE."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "SourceCo",
+      "what": "AI outreach plus human callers for PE deal sourcing.",
+      "traction": "Established vendor selling to PE.",
+      "source_url": "https://sourcecodeals.com/private-equity"
+    },
+    {
+      "name": "Danish Lead Co",
+      "what": "Managed outbound systems for PE firms.",
+      "traction": "Agency serving PE firms.",
+      "source_url": "https://danishleadco.io/blog/pe-deal-origination-outbound-system"
+    },
+    {
+      "name": "Grata and SourceScrub",
+      "what": "Private company data and profiling for deal sourcing.",
+      "traction": "Established data platforms.",
+      "source_url": "https://grata.com/new-case-studies/how-one-private-equity-firm-transformed-proprietary-sourcing-with-grata"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "Outbound needs company discovery, personalization and email deliverability, all available with current language models and data vendors. The hard part is reply quality and trust, not engineering."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Grata",
+      "SourceScrub",
+      "PitchBook",
+      "CRM vendors"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Data vendors have the company lists and customers and could add outbound within a year."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "PE firms are moving toward proprietary deal sourcing and away from brokered auctions, and vendors sell managed outbound to them.",
+        "source_url": "https://sourcecodeals.com/private-equity"
+      },
+      {
+        "claim": "Several agencies and tools charge PE firms for outbound sourcing, showing existing spend.",
+        "source_url": "https://danishleadco.io/blog/pe-deal-origination-outbound-system"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Show booked meetings at a clear cost.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Run paid pilots with 5 or more PE firms and track cost per booked meeting.",
+        "Show a closed deal that began from a Q2Q meeting."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Recurring revenue from 5 or more firms with repeat renewals."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Expand beyond sourcing.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add deal tracking and owner follow up.",
+        "Sell to search funds and roll ups."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Net revenue retention above 110 percent."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Clear outcome metric",
+      "evidence": "Booked first calls with owners is easy for a buyer to value.",
+      "source_url": "https://sourcecodeals.com/private-equity"
+    },
+    {
+      "point": "Existing spend on outbound",
+      "evidence": "PE firms already pay agencies for deal origination.",
+      "source_url": "https://danishleadco.io/blog/pe-deal-origination-outbound-system"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
+    "name": "Q2Q",
+    "rating": 2,
     "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name_check": "python3 -I scripts/name_features.py --score \"Q2Q\" --era 2022+ : kind invented_or_proper, 3 characters, 1 syllable",
     "strengths": [
-      "TODO"
+      "Very short"
     ],
     "weaknesses": [
-      "TODO"
+      "Hard to say and to remember, no meaning for buyers"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Q2Q is a letter and number code with no meaning in deal sourcing, unlike descriptive YC names. It is short but is hard to say aloud on a call, so word of mouth between PE partners may suffer slightly.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A narrow PE outbound tool with a small buyer pool; a seed above $1M inside 10 months is less likely than the cohort average.",
+    "general_summary": "Q2Q is an AI outbound engine that books first calls between private equity buyers and business owners. PE firms are shifting to proprietary sourcing and already pay agencies and data vendors, so there is spend. The company is two people, the buyer pool is small, outbound email is saturated and data vendors can bundle outreach. A seed above $1M within the 10.4 month window is less likely than the B2B cohort average, given the services like economics and small team, and a Series A inside the window is rare. These odds do not rank Q2Q against others. The likely good outcome is steady revenue and a seed around $3M to $6M, or sale to a data vendor."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-01-05 from the input file and market searches only.",
+    "Window is 10.4 months to 2026-11-17; seed means a round above about $1M.",
+    "B2B calibration cohorts were used; the 2022 to 2025 cohort is right censored."
   ],
   "sources": [
-    "https://"
+    "https://sourcecodeals.com/private-equity",
+    "https://danishleadco.io/blog/pe-deal-origination-outbound-system",
+    "https://grata.com/new-case-studies/how-one-private-equity-firm-transformed-proprietary-sourcing-with-grata"
   ]
 }

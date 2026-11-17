@@ -1,330 +1,414 @@
 {
-  "mode": "summary",
-  "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
-  },
-  "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
-  },
-  "ladder": [
+ "mode": "summary",
+ "startup": {
+  "name": "Bramante",
+  "one_liner": "Life sciences reagents and software",
+  "description": "Reagents and software built for AI, automated labs and personalized medicines. Two person team in Boston.",
+  "as_of": "2025-04-07"
+ },
+ "yc_acceptance": {
+  "p": 0.99,
+  "p_low": 0.97,
+  "p_high": 0.995,
+  "basis": "The company is already in the batch that starts at the as_of date, so the acceptance step is reported only for completeness: the prior for a random applicant is about 1 percent (0.6 to 2 percent), and conditional on being accepted the forecast below is what matters. Two person team in Boston with a deep tech angle; the description is short and vague.",
+  "why_it_fails": "YC would most plausibly say no because reagent businesses are slow and capital heavy, the one sentence pitch names no product, customer or wedge, and tool sales into labs have long cycles. A two person team in Boston with a technical angle is plausible, but the interview would press on what is purpose built for AI and automated labs and who has already ordered it."
+ },
+ "ladder": [
+  {
+   "stage": "seed",
+   "p_reach_given_prev": 0.38,
+   "anchors": {
+    "base_rate": 0.53,
+    "source": "python3 -I scripts/base_rates.py --tag Biotech: seed lower 49 / known 53 / upper 57 percent, cond 53 percent (n=154); series_a cond 40 percent (n=82); series_b cond 30 percent (n=33); months_to_seed p25 4, median 12, p75 28. Ever 0.53 times about 0.75 arriving by month 19 gives 0.40.",
+    "adjustment_reason": "Anchor times window fraction is 0.40; I trim to 0.38 for a two person team with a one sentence description and hardware style product, with no named analog supporting a lift."
+   },
+   "bands": [
     {
-      "stage": "seed",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      1000000.0,
+      3000000.0
+     ],
+     "post_money_usd": [
+      8000000.0,
+      20000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Small post YC round of about $1M to $3M, often angels and a micro fund. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_a",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      3000000.0,
+      6000000.0
+     ],
+     "post_money_usd": [
+      15000000.0,
+      35000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Institutional seed of $3M to $6M, the common case. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_b",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      6000000.0,
+      12000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "p_band": 0.22,
+     "rationale": "Larger institutional seed of $6M to $12M after fast early traction. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     },
     {
-      "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
-      "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
-      },
-      "bands": [
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        },
-        {
-          "raise_usd": [
-            0,
-            0
-          ],
-          "post_money_usd": [
-            0,
-            0
-          ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
-        }
-      ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+     "raise_usd": [
+      12000000.0,
+      25000000.0
+     ],
+     "post_money_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "p_band": 0.08,
+     "rationale": "Hot seed above $12M, up to about $25M, for an unusually strong story. Window based: only a round above about $1M from outside investors that closes inside the window counts, the standard YC deal of about $500K does not. Bands follow the 2022+ seed table (p25 $2.8M, median $4.1M, p75 $6.5M) split into small post YC, institutional and hot seeds."
     }
-  ],
-  "outcomes": {
-    "bands": [
-      {
-        "name": "Shuts down or stalls",
-        "is_failure": true,
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO under $100M",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO $100M-$1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      },
-      {
-        "name": "Acquired or IPO over $1B",
-        "value_usd": [
-          0,
-          0
-        ],
-        "p": 0.0
-      }
+   ],
+   "why_it_fails": "Window of 19.3 months (2025-04-07 to 2026-11-17). Reagents are a physical product with slow sales cycles into labs, and a two person team must show repeat orders. Medium Biosciences (AI designed reagents) reached seed, but Transcriptic raised an A and still ended inactive, and biotech median months to seed is 12 with p75 of 28. Investors may prefer the software layer such as UniteLabs, which raised a pre-seed in April 2025, over reagents."
+  },
+  {
+   "stage": "series_a",
+   "p_reach_given_prev": 0.06,
+   "anchors": {
+    "base_rate": 0.4,
+    "source": "python3 -I scripts/base_rates.py --tag Biotech: seed lower 49 / known 53 / upper 57 percent, cond 53 percent (n=154); series_a cond 40 percent (n=82); series_b cond 30 percent (n=33); months_to_seed p25 4, median 12, p75 28. Ever 0.40 times about 0.15 arriving by month 19 gives 0.06.",
+    "adjustment_reason": "More than 2x below the ever rate because biotech median months to Series A is 36 from batch start, so few arrive inside 19 months."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      6000000.0,
+      10000000.0
+     ],
+     "post_money_usd": [
+      30000000.0,
+      55000000.0
+     ],
+     "p_band": 0.3,
+     "rationale": "Thin Series A of $6M to $10M at a modest valuation, below the 2022+ median. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    },
+    {
+     "raise_usd": [
+      10000000.0,
+      20000000.0
+     ],
+     "post_money_usd": [
+      55000000.0,
+      110000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series A of $10M to $20M, near the 2022+ YC median of about $14M. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    },
+    {
+     "raise_usd": [
+      20000000.0,
+      40000000.0
+     ],
+     "post_money_usd": [
+      110000000.0,
+      250000000.0
+     ],
+     "p_band": 0.25,
+     "rationale": "Strong Series A of $20M to $40M for a fast growing product with revenue. Series A bands use the 2022+ YC table (p25 $11M, median $15M, p75 $21M) and public medians of about $17M."
+    }
+   ],
+   "why_it_fails": "Series A inside 19 months would need real recurring reagent revenue or a pharma pilot. Biotech median months to Series A is 36 from batch start, reagent businesses have low early volume, and the one liner is vague about what is purpose built. Medium Biosciences stopped at seed in the data."
+  },
+  {
+   "stage": "series_b",
+   "p_reach_given_prev": 0.15,
+   "anchors": {
+    "base_rate": 0.3,
+    "source": "python3 -I scripts/base_rates.py --tag Biotech: seed lower 49 / known 53 / upper 57 percent, cond 53 percent (n=154); series_a cond 40 percent (n=82); series_b cond 30 percent (n=33); months_to_seed p25 4, median 12, p75 28",
+    "adjustment_reason": "Kept at 0.15, half the anchor, because reaching B inside this window after A would be unusual."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      15000000.0,
+      30000000.0
+     ],
+     "post_money_usd": [
+      90000000.0,
+      200000000.0
+     ],
+     "p_band": 0.35,
+     "rationale": "Flat or down style Series B of $15M to $30M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    },
+    {
+     "raise_usd": [
+      30000000.0,
+      60000000.0
+     ],
+     "post_money_usd": [
+      200000000.0,
+      500000000.0
+     ],
+     "p_band": 0.45,
+     "rationale": "Typical Series B of $30M to $60M, near the 2022+ median of about $40M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    },
+    {
+     "raise_usd": [
+      60000000.0,
+      120000000.0
+     ],
+     "post_money_usd": [
+      500000000.0,
+      1000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Upside Series B of $60M to $120M. Series B bands use the 2022+ YC table (p25 $27M, median $40M, p75 $55M); few YC companies reach it."
+    }
+   ],
+   "why_it_fails": "Series B needs scaled manufacturing, a quality system and recurring customers across many labs. The biotech cohort shows 30 percent conditional B among companies with an A, but almost none arrive inside this window, and tools companies in this space such as Transcriptic often stall at Series A or sell to a large vendor before a B is raised."
+  },
+  {
+   "stage": "series_c_plus",
+   "p_reach_given_prev": 0.2,
+   "anchors": {
+    "base_rate": 0.6,
+    "source": "python3 -I scripts/base_rates.py --tag Biotech: series_c cond 60 percent (n=10)",
+    "adjustment_reason": "Kept at 0.20, well below the small sample anchor, because the window leaves little time and the sample is only 10."
+   },
+   "bands": [
+    {
+     "raise_usd": [
+      30000000.0,
+      70000000.0
+     ],
+     "post_money_usd": [
+      250000000.0,
+      700000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Smaller growth round of $30M to $70M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    },
+    {
+     "raise_usd": [
+      70000000.0,
+      150000000.0
+     ],
+     "post_money_usd": [
+      700000000.0,
+      1800000000.0
+     ],
+     "p_band": 0.4,
+     "rationale": "Typical Series C of $70M to $150M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    },
+    {
+     "raise_usd": [
+      150000000.0,
+      400000000.0
+     ],
+     "post_money_usd": [
+      1800000000.0,
+      5000000000.0
+     ],
+     "p_band": 0.2,
+     "rationale": "Large late round above $150M. Series C and later bands use the 2022+ YC table (Series C median $74M, Series D plus $150M); small samples."
+    }
+   ],
+   "why_it_fails": "Series C requires a platform with large instrument or reagent revenue and strong gross margins. Only 10 biotech companies in the data have reached Series C and none did so within two years of starting, so this probability is a floor value; large vendors such as Thermo Fisher and Danaher usually buy small tool companies rather than letting them grow to C."
+  }
+ ],
+ "outcomes": {
+  "bands": [
+   {
+    "name": "Shuts down or stalls",
+    "is_failure": true,
+    "p": 0.55
+   },
+   {
+    "name": "Acquired or IPO under $100M",
+    "value_usd": [
+     5000000.0,
+     100000000.0
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
-  },
-  "analogs": [
-    {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
-    }
-  ],
-  "killers": [
-    {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
-      "analogs": [
-        "TODO-company-slug"
-      ],
-      "mitigation": "TODO"
-    }
-  ],
-  "competition_now": [
-    {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
-    }
-  ],
-  "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
-  },
-  "takeover_risk": {
-    "rating": 3,
-    "who": [
-      "TODO"
+    "p": 0.28
+   },
+   {
+    "name": "Acquired or IPO $100M-$1B",
+    "value_usd": [
+     100000000.0,
+     1000000000.0
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
-  },
-  "market_need_now": {
-    "rating": 3,
-    "evidence": [
-      {
-        "claim": "TODO",
-        "source_url": "https://"
-      }
-    ]
-  },
-  "roadmap": [
-    {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    }
-  ],
-  "pros": [
-    {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
-    }
-  ],
-  "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
-    "strengths": [
-      "TODO"
+    "p": 0.14
+   },
+   {
+    "name": "Acquired or IPO over $1B",
+    "value_usd": [
+     1000000000.0,
+     10000000000.0
     ],
-    "weaknesses": [
-      "TODO"
-    ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
-  },
-  "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
-  },
-  "assumptions": [
-    "TODO"
+    "p": 0.03
+   }
   ],
-  "sources": [
-    "https://"
+  "why_it_fails": "The most likely end is a stall or an acquisition by a reagent or instrument incumbent such as Danaher or Thermo Fisher under $100M, which is how large vendors typically take small tools companies. A bigger result needs a platform adopted widely by automated and AI driven labs, with software lock in that makes reagents a recurring revenue stream."
+ },
+ "analogs": [
+  {
+   "slug": "medium-biosciences",
+   "relevance": "Summer 2021 AI designed affinity reagents, closest wedge.",
+   "outcome_summary": "Active with a seed, no later round found."
+  },
+  {
+   "slug": "transcriptic",
+   "relevance": "Winter 2015 robotic cloud lab for life sciences.",
+   "outcome_summary": "Raised an A then ended inactive and acquired, a capital heavy lab tool path."
+  },
+  {
+   "slug": "seal-2",
+   "relevance": "Summer 2020 workspace for regulated products makers.",
+   "outcome_summary": "Active with a seed only."
+  },
+  {
+   "slug": "tetrascience",
+   "relevance": "Summer 2015 R&D data cloud for life sciences.",
+   "outcome_summary": "Reached Series B, shows the software path works but slowly."
+  }
+ ],
+ "killers": [
+  {
+   "risk": "Reagent sales cycles and manufacturing capital outlast the window",
+   "p": 0.4,
+   "evidence": "Biotech median months to seed is 12 and to Series A is 36.",
+   "analogs": [
+    "transcriptic",
+    "medium-biosciences"
+   ],
+   "mitigation": "Pick one assay type and sell repeat orders to a few automated labs."
+  },
+  {
+   "risk": "Incumbent vendors bundle reagents with automation",
+   "p": 0.3,
+   "evidence": "Danaher partnered with Automata to link instruments, reagents and software.",
+   "analogs": [
+    "tetrascience",
+    "seal-2"
+   ],
+   "mitigation": "Offer formats incumbents do not support for automated workflows."
+  },
+  {
+   "risk": "Two person team cannot do both reagents and software",
+   "p": 0.35,
+   "evidence": "The description spans reagents, software and personalized medicine with no named product.",
+   "analogs": [
+    "medium-biosciences",
+    "transcriptic"
+   ],
+   "mitigation": "Narrow to one product with a named customer."
+  }
+ ],
+ "competition_now": [
+  {
+   "name": "Automata",
+   "what": "AI ready lab automation platforms linked with Danaher",
+   "traction": "Raised a $45M Series C",
+   "source_url": "https://www.businesswire.com/news/home/20260129548625/en"
+  },
+  {
+   "name": "UniteLabs",
+   "what": "Operating system connecting lab instruments",
+   "traction": "EUR 2.77M pre-seed in April 2025",
+   "source_url": "https://tech.eu/2025/04/03/unitelabs-secures-eur277m-to-become-the-operating-system-for-the-modern-biotech-lab/"
+  },
+  {
+   "name": "Status quo reagent vendors",
+   "what": "Large vendors such as Thermo Fisher and Danaher sell standard reagents",
+   "traction": "Dominant incumbents",
+   "source_url": "https://www.businesswire.com/news/home/20260129548625/en"
+  }
+ ],
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Reagents for automated and AI driven labs need chemistry and biology validation, quality control and manufacturing, plus software integration. A two person team can make a prototype but scale and consistency are hard."
+ },
+ "takeover_risk": {
+  "rating": 2,
+  "who": [
+   "Thermo Fisher",
+   "Danaher",
+   "Revvity"
+  ],
+  "timeline_months": 24,
+  "rationale": "Incumbents have distribution, but a specialist in automation friendly reagents moves faster and large vendors usually acquire rather than build."
+ },
+ "market_need_now": {
+  "rating": 3,
+  "evidence": [
+   {
+    "claim": "Investors are funding the connectivity and software layer for AI driven labs",
+    "source_url": "https://tech.eu/2025/04/03/unitelabs-secures-eur277m-to-become-the-operating-system-for-the-modern-biotech-lab/"
+   }
   ]
+ },
+ "roadmap": [
+  {
+   "phase": "seed",
+   "goal": "Show repeat reagent orders from automated labs",
+   "actions": [
+    "Ship one validated reagent to five labs with automation",
+    "Publish validation data against standard reagents"
+   ],
+   "proof": "Repeat orders from at least three labs and $10K monthly revenue"
+  },
+  {
+   "phase": "series_a",
+   "goal": "Scale manufacturing and add software",
+   "actions": [
+    "Qualify a contract manufacturer",
+    "Bundle software that locks in the workflow"
+   ],
+   "proof": "$1M annual run rate and a pharma pilot"
+  }
+ ],
+ "pros": [
+  {
+   "point": "Timely theme of AI ready and automated labs",
+   "evidence": "Funded players such as UniteLabs and Automata",
+   "source_url": "https://tech.eu/2025/04/03/unitelabs-secures-eur277m-to-become-the-operating-system-for-the-modern-biotech-lab/"
+  },
+  {
+   "point": "Incumbent reagents are not designed for automation",
+   "evidence": "Founders claim purpose built formats"
+  }
+ ],
+ "brand": {
+  "name": "Bramante",
+  "rating": 3,
+  "effect_on_success": "neutral",
+  "name_check": "python3 -I scripts/name_features.py --score \"Bramante\" --era 2022+ : kind invented_or_proper, 2022+ cohort alive 92.7 percent (n=1826)",
+  "strengths": [
+   "Distinctive and memorable",
+   "Evokes the Renaissance architect, suggesting craft"
+  ],
+  "weaknesses": [
+   "Hard to connect to life sciences"
+  ],
+  "rationale": "A proper noun name in the invented or proper cohort; like other proper name YC companies it carries no meaning but is distinctive, and brand has no measurable effect on survival.",
+  "better_names": []
+ },
+ "narrative": {
+  "headline": "A vague two person biotech tools pitch; seed odds sit below the B2B software anchor over 19 months.",
+  "general_summary": "Bramante makes reagents and software for AI and automated labs, with a two person team in Boston. Biotech cohort seed odds are 0.53 for ever, and about 0.40 for a 19.3 month window, and I report 0.38 after trimming. Series A inside the window is about 0.06. Reagents have slow sales cycles and the short description names no product or customer, while software rivals in lab connectivity are getting funded. This forecast does not rank the company against others."
+ },
+ "assumptions": [
+  "Blind forecast made as of 2025-04-07 using only the YC batch description in the input file, with market-only web searches.",
+  "Forecast window is 19.3 months, from 2025-04-07 to 2026-11-17.",
+  "Seed means an outside financing round above about $1M that closes inside the window, not the standard YC deal of about $500K; the seed and Series A probabilities are window probabilities, not ever probabilities.",
+  "The odds do not rank this company against other companies in the batch: in the 2026 winners test, team size, claimed traction and a hot sector did not separate raisers from non raisers, so the seed number stays near the cohort anchor.",
+  "Cohort anchors come from older and 2022 to 2024 batches and are partly right censored; funding coverage in the data is incomplete (lower, known and upper ranges quoted)."
+ ],
+ "sources": [
+  "https://tech.eu/2025/04/03/unitelabs-secures-eur277m-to-become-the-operating-system-for-the-modern-biotech-lab/",
+  "https://www.businesswire.com/news/home/20260129548625/en"
+ ]
 }

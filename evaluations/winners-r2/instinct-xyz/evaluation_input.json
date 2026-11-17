@@ -1,162 +1,222 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Instinct",
+    "one_liner": "Trade with superhuman instinct",
+    "description": "A proactive team of AI agents that search thousands of markets, investigate opportunities and operate 24/7 for an individual trader, who acts as portfolio manager. Crypto and onchain markets are the starting point. Team of 5 in San Francisco, Winter 2026 batch.",
+    "as_of": "2026-01-05"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.5,
+    "p_low": 0.3,
+    "p_high": 0.7,
+    "basis": "The company is already in the batch that starts on the as of date, so this is a note only. A random applicant starts near 1 percent (yc_acceptance.md, 0.6 to 2 percent range). Five technical people on an AI agents and trading thesis fit current YC interest, but the pitch is mostly vision and the space includes several YC trading agent companies.",
+    "why_it_fails": "YC would most plausibly say no because the pitch is a broad vision with no live users or returns, and trading agents for individuals involve regulation and trust questions. Reviewers could also see agent harnesses for trading as a thin layer on top of general model providers."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.4,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.59,
+        "source": "python3 -I scripts/base_rates.py --years 2022-2025 --industry Fintech --calibration-only (seed 57 percent known, n=23); --years 2018-2021 --industry Fintech (87 percent, n=23); time_to_milestones.csv Fintech months_to_seed p25 3, p50 7, p75 20",
+        "adjustment_reason": "The window is 10.4 months from 2026-01-05 to 2026-11-17 and the target is a round above about $1M. Ever reached anchors are about 0.6 to 0.7, and about 60 percent of eventual raisers close within 10 months. A slight plus from a 5 person team and AI plus crypto interest is held to under 1.25 times the windowed figure, and the odds do not rank Instinct against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000,
+            3000000
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000,
+            15000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M from angels or a small fund on top of the YC deal. Angel round from crypto and fintech operators."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000,
+            6000000
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000,
+            30000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Typical institutional seed, near the 2022+ median of 4.1M. Typical seed for an AI trading product with early users."
+        },
+        {
+          "raise_usd": [
+            6000000,
+            12000000
+          ],
+          "post_money_usd": [
+            30000000,
+            60000000
+          ],
+          "p_band": 0.28,
+          "rationale": "Upside seed led by a top fund. AI plus crypto and prediction market themes drew large seeds in 2025 and 2026."
+        },
+        {
+          "raise_usd": [
+            12000000,
+            25000000
+          ],
+          "post_money_usd": [
+            60000000,
+            120000000
+          ],
+          "p_band": 0.12,
+          "rationale": "Large seed, only with a landmark traction story or a hot thesis. Needs visible assets under management or trading volume growth."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A seed above $1M fails to close if the product is a demo with no assets under management, because investors know that agent trading results are hard to verify and that consumer trading apps have heavy regulatory exposure. Crypto market cycles also swing investor appetite. Analogs HyperTrader raised only $1.4M and moved to free access, and Hype and AYC Fund stayed at the YC check or lower."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.04,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry Fintech --calibration-only (series A cond 30 percent n=20); 2022-2025 Fintech cond 23 percent n=13; months_to_series_a Fintech p25 17 and p50 26",
+        "adjustment_reason": "Series A inside the same 10.4 month window is far under the ever anchor because median time from batch to A is 26 to 28 months."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            5000000,
+            10000000
           ],
           "post_money_usd": [
-            0,
-            0
+            25000000,
+            50000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin A for a trading product with modest volume. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            10000000,
+            20000000
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000,
+            100000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical A with proven AUM or revenue. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            20000000,
+            40000000
+          ],
+          "post_money_usd": [
+            100000000,
+            250000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside if it becomes a default way to trade onchain. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs recurring revenue from fees or subscriptions, and consumer trading revenue swings with market volumes. Investors also ask for retention, regulatory clarity and proof that agents add return after costs. Alpaca, a successful YC brokerage API, took a year to reach its $10M A after a $6M seed, with a steady developer customer base that Instinct would lack."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series B cond 39 percent n=18); Fintech 2018-2021 cond 33 percent n=6",
+        "adjustment_reason": "At 0.77 of the anchor since trading products depend on market cycles; ever reached, not the 10 month window."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            20000000,
+            30000000
           ],
           "post_money_usd": [
-            0,
-            0
+            100000000,
+            180000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin B. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            55000000
           ],
           "post_money_usd": [
-            0,
-            0
+            180000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical B near 37M median. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            55000000,
+            100000000
+          ],
+          "post_money_usd": [
+            400000000,
+            800000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside platform raise like Alpaca's $50M B in 2021. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B needs a fee business with durable volume through a down market, and many retail trading products lose their users when prices fall. A regulatory action on advice or custody would stop growth, and large brokerages can add agent features to their own apps. SFOX raised a $22.7M A in 2018 then pivoted to institutions, which shows retail routing alone did not carry a B."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.33,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.43,
+        "source": "python3 -I scripts/base_rates.py --years 2018-2021 --industry B2B --calibration-only (series C cond 57 percent n=7); overall cond 43 percent",
+        "adjustment_reason": "At 0.77 of the 0.43 anchor because few retail fintech companies get to C without a regulated entity."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            30000000,
+            60000000
           ],
           "post_money_usd": [
-            0,
-            0
+            200000000,
+            400000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Thin C. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000,
+            110000000
           ],
           "post_money_usd": [
-            0,
-            0
+            400000000,
+            900000000
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.5,
+          "rationale": "Typical C near 77M public median. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
+        },
+        {
+          "raise_usd": [
+            110000000,
+            250000000
+          ],
+          "post_money_usd": [
+            900000000,
+            2500000000
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside platform scale. Sized from knowledge/tables/round_benchmarks.csv (2022+ seed median 4.1M, series A 14.15M, series B 37M, series C 45M) and the PitchBook NVCA figures quoted in stage_benchmarks.md."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Stops before C if volumes are cyclical and the company never holds regulated licenses that deepen its moat. Brokerages and exchanges can copy agent features. Alpaca reached its Series C only in 2025 after six years, with most trading firms staying smaller."
     }
   ],
   "outcomes": {
@@ -164,167 +224,215 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.55
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          10000000,
+          100000000
         ],
-        "p": 0.0
+        "p": 0.25
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000,
+          1000000000
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000,
+          5000000000
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "Most failures come from the product not proving that its agents beat a simple index or that people keep funds in it. Regulators treat advice and custody seriously, and cycles in crypto kill retail activity. Exits tend to be acqui-hires by exchanges or brokerages under $100M."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "conviction",
+      "relevance": "Agentic trading desk for individuals, from the Summer 2025 batch.",
+      "outcome_summary": "Active with a small team and no verified round on record."
+    },
+    {
+      "slug": "hypertrader",
+      "relevance": "Trading terminal for crypto traders from 2021.",
+      "outcome_summary": "$1.4M seed then moved to free access; no later round found."
+    },
+    {
+      "slug": "alpaca",
+      "relevance": "API first stock and crypto brokerage.",
+      "outcome_summary": "Seed $6M 2019, A $10M 2020, B $50M 2021, C $52M 2025; success needed a developer customer base."
+    },
+    {
+      "slug": "sfox",
+      "relevance": "Crypto trading platform from 2014.",
+      "outcome_summary": "$22.7M Series A in 2018 then pivot to institutions."
+    },
+    {
+      "slug": "hype",
+      "relevance": "Memecoin trading app from 2022.",
+      "outcome_summary": "Only the YC check found, still active, no revenue on record."
+    },
+    {
+      "slug": "ayc-fund",
+      "relevance": "AI native crypto hedge fund.",
+      "outcome_summary": "One person, no verified funding."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Agents do not beat the market after fees, so users leave",
+      "p": 0.35,
+      "evidence": "No analog shows persistent retail alpha, and trading apps like HyperTrader moved to free access.",
       "analogs": [
-        "TODO-company-slug"
+        "hypertrader",
+        "hype"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Publish verified live results and pick narrow strategies."
+    },
+    {
+      "risk": "Regulation of advice, custody or crypto derivatives",
+      "p": 0.25,
+      "evidence": "Retail products that manage money in the US need registration or must stay non custodial, and SFOX and Alpaca built licenses to survive.",
+      "analogs": [
+        "alpaca",
+        "sfox"
+      ],
+      "mitigation": "Stay non custodial and partner with a licensed broker."
+    },
+    {
+      "risk": "Foundation model vendors and brokerages ship agent trading",
+      "p": 0.25,
+      "evidence": "Brokerages and exchanges can add agents to apps with existing users and general model labs can offer agent frameworks.",
+      "analogs": [
+        "conviction",
+        "alpaca"
+      ],
+      "mitigation": "Win a niche of onchain markets and own the strategy library."
+    },
+    {
+      "risk": "Crypto cycle downturn cuts retail volumes",
+      "p": 0.2,
+      "evidence": "Small crypto trading companies in the data stayed at the YC check or seed after 2022.",
+      "analogs": [
+        "hype",
+        "hypertrader"
+      ],
+      "mitigation": "Support equities and prediction markets as well as crypto."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Alpaca",
+      "what": "Brokerage API used by trading app builders.",
+      "traction": "Raised $52M Series C in 2025.",
+      "source_url": "https://alpaca.markets"
+    },
+    {
+      "name": "Retail brokerages with AI features (Robinhood, Public)",
+      "what": "Large user bases that can add assistants.",
+      "traction": "Millions of funded accounts.",
+      "source_url": "https://robinhood.com"
+    },
+    {
+      "name": "Onchain agent frameworks",
+      "what": "Open agent apps that trade on Polymarket and similar venues.",
+      "traction": "Volumes in prediction markets rose from under $100M monthly in 2024 to over $13B by end of 2025 per one report.",
+      "source_url": "https://www.pulse.bot/crypto/news/ai-agents-are-quietly-rewriting-prediction-market-trading-3449ebe2-0d69-43f7-baa4-491d6d9f13fd"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 4,
+    "rationale": "The agents must research thousands of markets, avoid hallucinated trades and manage risk with real money, and a small team must integrate exchanges and onchain venues. Models are available off the shelf, but verified performance and reliability under live conditions are hard."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "Robinhood",
+      "Coinbase",
+      "Public",
+      "OpenAI and other model labs"
     ],
     "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "rationale": "Large trading venues have users and data and can add agents quickly, though each has regulatory caution."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Prediction market volume grew sharply into 2025 and traders are adopting agents, which suggests demand for automation.",
+        "source_url": "https://www.pulse.bot/crypto/news/ai-agents-are-quietly-rewriting-prediction-market-trading-3449ebe2-0d69-43f7-baa4-491d6d9f13fd"
+      },
+      {
+        "claim": "Retail trading platforms already earn large fee revenue, which shows spend on tools exists.",
+        "source_url": "https://robinhood.com"
       }
     ]
   },
   "roadmap": [
     {
-      "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Live users with real capital and verified performance.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Open a paid beta with 100 or more funded users.",
+        "Publish audited live trade logs for the agents."
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Assets under management or monthly fees that grow for three months in a row."
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Durable revenue through a market downturn.",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add equities or prediction market venues to reduce crypto dependence.",
+        "Secure a licensed partner for custody."
       ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
-    },
-    {
-      "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
-      "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
-      ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Recurring fee revenue that stays within 30 percent of peak in a down month."
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Timely theme",
+      "evidence": "Agent use and onchain markets were growing in 2025.",
+      "source_url": "https://www.pulse.bot/crypto/news/ai-agents-are-quietly-rewriting-prediction-market-trading-3449ebe2-0d69-43f7-baa4-491d6d9f13fd"
+    },
+    {
+      "point": "Technical team of 5 with a focused thesis",
+      "evidence": "Stated in the batch listing; unverified."
     }
   ],
   "brand": {
-    "name": "TODO",
+    "name": "Instinct",
     "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Instinct\" --era 2022+ : kind real_word, 8 characters, 2 syllables",
     "strengths": [
-      "TODO"
+      "Real word that fits a trading edge story",
+      "Easy to spell"
     ],
     "weaknesses": [
-      "TODO"
+      "Generic and hard to own in search"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
+    "rationale": "Instinct is a simple real word like Alpaca or Hype in the same field, and its meaning supports the pitch of better judgment. It is common enough to be hard to search, and it does not decide whether traders trust the product.",
     "better_names": []
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A timely but unproven trading agent vision where a seed above $1M inside 10 months is near the cohort pace and later rounds depend on verified performance.",
+    "general_summary": "Instinct builds AI agents that research markets and trade around the clock for individuals. The market for retail trading is large and agent use on prediction markets and onchain venues was rising in 2025, but the pitch is broad and no traction is stated. Retail trading products depend on market cycles and regulation, the nearest YC analogs raised small rounds or stayed at the YC check, and large brokerages can add agents. A seed above $1M inside the 10.4 month window is plausible near the Fintech cohort pace given a five person team. Later rounds depend on proof that the agents earn returns and that users stay. These probabilities do not rank Instinct against others."
   },
   "assumptions": [
-    "TODO"
+    "Blind forecast as of 2026-01-05 using the input file and market searches; results dated after that were ignored.",
+    "Window is 10.4 months to 2026-11-17 and seed means an outside round above about $1M.",
+    "Anchors use Fintech and B2B calibration cohorts, which are small and right censored for 2022 onward."
   ],
   "sources": [
-    "https://"
+    "https://www.pulse.bot/crypto/news/ai-agents-are-quietly-rewriting-prediction-market-trading-3449ebe2-0d69-43f7-baa4-491d6d9f13fd",
+    "https://alpaca.markets",
+    "https://robinhood.com"
   ]
 }

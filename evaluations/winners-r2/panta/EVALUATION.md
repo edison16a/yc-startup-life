@@ -159,7 +159,7 @@ You know it worked when: Annualized commission revenue of $2M or more with reten
 | Covela (covela) | Summer 2019 | Inactive | Digital broker for SMEs in Latin America. | Only the YC check on record and listed inactive. |
 | Blume Benefits (blume-benefits) | Winter 2024 | Inactive | AI copilot for health insurance brokers. | Took a reported $500K note and is inactive; broker software was hard to sell. |
 | Coverage Cat (coverage-cat) | Summer 2022 | Active | AI assisted broker for umbrella insurance. | Small seed in 2022, still active, no larger round found. |
-| Surematics (surematics) | Summer 2017 | Acquired | Software for commercial brokers to structure complex deals. | Only the YC check on record and later acquired. |
+| Surematics (surematics) | Summer 2017 | Acquired | Software for commercial brokers to structure complex deals. | Only the YC check on record. |
 
 ### Base-rate anchors
 

@@ -1,162 +1,234 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Paper Instruments",
+    "one_liner": "Open-source frontier models for knowledge work",
+    "description": "Paper Instruments post-trains LLMs to accelerate knowledge work, with an open source frontier model positioning. Three person team in San Francisco, Spring 2025 batch. The input gives no customers, benchmarks or model release.",
+    "as_of": "2025-04-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.015,
+    "p_low": 0.006,
+    "p_high": 0.04,
+    "basis": "Start from the third party prior of about 1 percent (references/yc_acceptance.md). A three person technical team in post training matches a current YC priority in open models, but no model, benchmark or traction is stated and the space is crowded with funded labs, so about 1.5 percent.",
+    "why_it_fails": "YC would most plausibly say no because training frontier models for knowledge work needs large compute and data, and a three person team without a released model or customers is hard to separate from many fine tuning startups. Reviewers also ask who pays for an open model and how it beats closed labs."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.58,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.64,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave seed lower/known/upper 51%/64%/71%, cond 64% (n=183), ever and not windowed. Time table: calibration median 7 months to seed, p75 19.5 months, so a 19 month window captures about three quarters.",
+        "adjustment_reason": "Slightly below the 0.64 ever anchor for the 19 month window and capital heavy approach; no lift for AI heat per winners test rules. The odds do not rank this company against others."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            20000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 19 months from 2025-04-07 to 2026-11-17; rounds under $1M and the YC deal itself do not count."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "p_band": 0.28,
+          "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.12,
+          "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Investors may pass if no model or benchmark exists by demo day, since open post training is easy to claim and hard to prove. Openpipe and airtrain ai show specialized tuning struggles to hold customers once frontier models improve, so a seed needs a visible result and a team with research credentials."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.14,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.3,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_a 15%/19%/36%, cond 30% (n=117). Median 28 months from batch.",
+        "adjustment_reason": "Given a seed, a Series A inside 19 months of the batch is around the p25 of 19 months, so I use under half the ever anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            8000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000.0,
+            40000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Thin Series A or extended seed below the 2022 and later p25 of $11M, typical when growth is slower than hoped."
         },
         {
           "raise_usd": [
-            0,
-            0
+            8000000.0,
+            16000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000.0,
+            90000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical Series A near the 2022 and later median of about $14M to $15M."
+        },
+        {
+          "raise_usd": [
+            16000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            90000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Strong Series A of $16M to $30M when revenue growth is clear and a lead investor competes, above the 2022 and later p75 of about $20M."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            50000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.1,
+          "rationale": "Breakout Series A above $30M, possible only for a category leader with fast revenue growth; upside band."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs revenue or a model with clear adoption. Open weights produce usage, not revenue, and unsloth ai needed years to monetize. If the post trained model is overtaken by a new open release, investors will pass until the team ships a successor."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.31,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_b 5%/6%/26%, cond 31% (n=35). Ever.",
+        "adjustment_reason": "Below the 0.31 anchor since open model companies often fail to find revenue."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            25000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000.0,
+            120000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Down or flat round, below the 2022 and later p25 of $27M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            50000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000.0,
+            400000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $32M to $40M median."
+        },
+        {
+          "raise_usd": [
+            50000000.0,
+            100000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band at the p75 of $55M and above."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B requires a durable model franchise and meaningful revenue. Most small model labs cannot keep up with frontier release cycles and are acquired for talent before this stage, as openpipe was. Without a leading benchmark or a recurring contract base, the company cannot defend a valuation above the seed step."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.3,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.45,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --tag AI gave series_c 2%/3%/23%, cond 45% (n=11). Ever.",
+        "adjustment_reason": "Below 0.45 since compute needs stay high and few labs reach growth rounds."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000.0,
+            700000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller growth round or bridge financing below the 2022 and later series C p25 of about $50M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            700000000.0,
+            1500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series C near the $60M to $74M median."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            5000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a category leader, above the 2022 and later series C p75 of about $100M."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Growth rounds need frontier scale compute and revenue. A model lab that is not a leader cannot raise at this stage, and the likely end is an acquisition by a larger lab or platform for its team and weights, which is a different outcome than a Series C."
     }
   ],
   "outcomes": {
@@ -164,167 +236,228 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.6
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.2
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.15
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.05
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The usual end is a stall or acqui-hire: fine tuning and post training startups often get absorbed by labs or platforms, or stall when frontier models improve faster than specialized ones. OpenPipe was acquired and airtrain ai went inactive, showing both outcomes. A lab that never leads a benchmark or builds recurring revenue rarely reaches a large exit."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "openpipe",
+      "relevance": "Fine tuning service that turned prompts into cheap models, Summer 2023.",
+      "outcome_summary": "Acquired, a small exit after demand shifted to frontier APIs."
+    },
+    {
+      "slug": "automorphic",
+      "relevance": "Infuse knowledge into language models, Summer 2023.",
+      "outcome_summary": "Active but no large round found."
+    },
+    {
+      "slug": "airtrain-ai",
+      "relevance": "No code data curation for LLM fine tuning, Summer 2022.",
+      "outcome_summary": "Inactive, the product was overtaken by platform features."
+    },
+    {
+      "slug": "unsloth-ai",
+      "relevance": "Open source fine tuning and reinforcement learning, Summer 2024.",
+      "outcome_summary": "Grew quickly on open source adoption among developers."
+    },
+    {
+      "slug": "trainloop",
+      "relevance": "Reasoning fine tuning, Winter 2025.",
+      "outcome_summary": "Early stage; no large round found before 2025."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "Frontier labs and cheap open weight models make specialized post training a commodity",
+      "p": 0.5,
+      "evidence": "OpenPipe was acquired and airtrain ai went inactive as general models improved.",
       "analogs": [
-        "TODO-company-slug"
+        "openpipe",
+        "airtrain-ai"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Own a vertical benchmark where specialized post training clearly beats general models."
+    },
+    {
+      "risk": "Compute and data costs exceed what a seed can fund",
+      "p": 0.35,
+      "evidence": "Frontier class training needs far more compute than a 3 person team raises early.",
+      "analogs": [
+        "automorphic"
+      ],
+      "mitigation": "Pick post training of existing open weights rather than pretraining."
+    },
+    {
+      "risk": "No revenue model for open source models",
+      "p": 0.3,
+      "evidence": "Open release gives away the product; unsloth ai shows monetization is separate from adoption.",
+      "analogs": [
+        "unsloth-ai"
+      ],
+      "mitigation": "Sell hosted models and enterprise customization."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "Unsloth",
+      "what": "Open source fine tuning and RL tools",
+      "traction": "Popular among developers",
+      "source_url": "https://neuronfeed.com/category/ai-fine-tuning"
+    },
+    {
+      "name": "Arcee AI and Deep Cogito",
+      "what": "Companies post training open models for enterprise",
+      "traction": "Deep Cogito reportedly raised $43M",
+      "source_url": "https://dealroom.co/news/147130-deep-cogito-raises-43m-to-help-companies-own-their-ai-models/"
+    },
+    {
+      "name": "OpenAI and Anthropic APIs",
+      "what": "Closed frontier models, the status quo",
+      "traction": "Dominant spend",
+      "source_url": "https://neuronfeed.com/category/ai-fine-tuning"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 5,
+    "rationale": "Frontier post training needs reinforcement learning environments, data, compute and evaluation skill; a 3 person team can post train open weights for a narrow task in three months but not match frontier labs. The moat is real only if the team has research talent."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 4,
     "who": [
-      "TODO"
+      "OpenAI",
+      "Anthropic",
+      "Meta and open weight labs",
+      "Arcee"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 9,
+    "rationale": "Frontier labs release stronger general models every few months and any large lab can add domain post training. The open source release also lets rivals copy the output."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Enterprises fund companies that help them own and customize open models",
+        "source_url": "https://dealroom.co/news/147130-deep-cogito-raises-43m-to-help-companies-own-their-ai-models/"
+      },
+      {
+        "claim": "Open source fine tuning tools such as Unsloth show developer demand",
+        "source_url": "https://neuronfeed.com/category/ai-fine-tuning"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A released model or benchmark that beats open baselines on a knowledge work task",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Release a post trained model with an open evaluation",
+        "Publish weights and a technical report"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Top of a public benchmark in one task"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paying users and a funding story for compute",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Offer hosted inference",
+        "Win design partners who need private models"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$10,000 monthly revenue and 3 design partners"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Revenue growth beyond early adopters",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add enterprise customization",
+        "Ship evaluation and tooling"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M annual revenue"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "A durable model franchise",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Train a second generation model",
+        "Build distribution through partners"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$10M annual revenue"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Frontier scale lab or large platform",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Raise for compute",
+        "Expand model family"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$50M annual revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Open weight post training has paying enterprise interest",
+      "evidence": "Deep Cogito and Arcee style companies raised large rounds.",
+      "source_url": "https://dealroom.co/news/147130-deep-cogito-raises-43m-to-help-companies-own-their-ai-models/"
+    },
+    {
+      "point": "A small team can build narrow specialized models cheaply",
+      "evidence": "Unsloth shows fine tuning is accessible to small teams.",
+      "source_url": "https://neuronfeed.com/category/ai-fine-tuning"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Paper Instruments",
+    "rating": 2,
+    "effect_on_success": "neutral",
+    "name_check": "python3 -I scripts/name_features.py --score \"Paper Instruments\" --era 2022+ : compound_words, 16 chars, 2 words, 5 syllables.",
     "strengths": [
-      "TODO"
+      "Memorable image",
+      "Two real words"
     ],
     "weaknesses": [
-      "TODO"
+      "Long",
+      "Suggests hardware or stationery, not AI",
+      "Hard to find with a generic phrase"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A compound of two common words that evokes tools for writing, which fits knowledge work loosely, but it is long and suggests hardware. Past YC brands in AI such as Unsloth and OpenPipe are more direct, though names rarely decide outcomes."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A strong AI heat story with a very capital heavy moat problem; seed is likely but the odds do not rank it.",
+    "general_summary": "Paper Instruments post trains open models for knowledge work. Investor appetite for open model labs and post training is high and a three person technical team can often raise a seed on that alone, so a round above $1M in 19 months is plausible, near the cohort anchor. But the idea needs compute and talent, general models keep improving, and fine tuning peers such as openpipe and airtrain ai were acquired or went inactive. The odds do not rank this company against others. Later rounds depend on a released model that wins a benchmark and a way to charge for open weights."
   },
   "assumptions": [
-    "TODO"
+    "Information limited to the input file and searches dated before 2025-04-07.",
+    "Window of 19 months from 2025-04-07 to 2026-11-17.",
+    "Seed means above about $1M from outside investors, excluding the YC deal.",
+    "No model release or revenue assumed."
   ],
   "sources": [
-    "https://"
+    "https://dealroom.co/news/147130-deep-cogito-raises-43m-to-help-companies-own-their-ai-models/",
+    "https://neuronfeed.com/category/ai-fine-tuning",
+    "https://www.paperinstruments.com/"
   ]
 }

@@ -1,162 +1,234 @@
 {
   "mode": "summary",
   "startup": {
-    "name": "TODO",
-    "one_liner": "TODO",
-    "description": "TODO: what it is, who pays, how it works",
-    "as_of": "2026-11-17"
+    "name": "Waffle",
+    "one_liner": "AI Video Editor",
+    "description": "AI video editor with hundreds of templates for reels, shorts and TikToks. Users make short form content for marketing or personal use. Two person team in London, Spring 2025 batch.",
+    "as_of": "2025-04-07"
   },
   "yc_acceptance": {
-    "p": 0.0,
-    "p_low": 0.0,
-    "p_high": 0.0,
-    "basis": "TODO (25+ words): published acceptance rate, how this startup compares on the factors in knowledge/yc_acceptance.md",
-    "why_it_fails": "TODO: one paragraph on why YC may reject this"
+    "p": 0.01,
+    "p_low": 0.004,
+    "p_high": 0.03,
+    "basis": "Start from the third party prior of about 1 percent (references/yc_acceptance.md). Two founders with an AI consumer app and no stated traction or retention, in a space dominated by large platform tools, give no lift. Consumer products without repeat usage are marked down in the factor table, so about 1 percent.",
+    "why_it_fails": "YC would most plausibly say no because template based short form video editing competes with free CapCut, Instagram Edits and well funded AI editors, and a two person team shows no retention or distribution edge. Consumer apps with no repeat usage rank low in the factor table."
   },
   "ladder": [
     {
       "stage": "seed",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.35,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.72,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --industry Consumer gave seed lower/known/upper 58%/72%/78%, cond 72% (n=79), ever. Months to seed median 11, p75 27 (n=57); AI tag anchor 64%.",
+        "adjustment_reason": "About half the 0.72 consumer ever anchor, at the 2 times limit and justified by two named analogs with the same problem (ozone shut down, unfaze ai inactive), takeover risk 5 and a 19 month window."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            1000000.0,
+            3000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            8000000.0,
+            20000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.25,
+          "rationale": "Small post YC round under $3M from angels and a small fund, the most common path for a 2 or 3 person team without revenue. Window is 19 months from 2025-04-07 to 2026-11-17; the YC deal alone does not count."
         },
         {
           "raise_usd": [
-            0,
-            0
+            3000000.0,
+            6000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            15000000.0,
+            30000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.35,
+          "rationale": "Institutional seed of $3M to $6M, the middle of the 2022 and later table (median about $3.5M to $4M)."
+        },
+        {
+          "raise_usd": [
+            6000000.0,
+            12000000.0
+          ],
+          "post_money_usd": [
+            30000000.0,
+            60000000.0
+          ],
+          "p_band": 0.28,
+          "rationale": "Larger institutional seed of $6M to $12M, which the 2026 winners test showed is more common than forecasts assumed."
+        },
+        {
+          "raise_usd": [
+            12000000.0,
+            25000000.0
+          ],
+          "post_money_usd": [
+            60000000.0,
+            150000000.0
+          ],
+          "p_band": 0.12,
+          "rationale": "Hot round above $12M, possible only if the product shows fast usage; upside band."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Investors will likely pass because free CapCut and Meta Edits cover the use case and the team has no retention data. Ozone shut down and unfaze ai went inactive, and consumer seed rounds need growth that a template editor without a distribution edge rarely shows. A seed would need clear paid conversion."
     },
     {
       "stage": "series_a",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.07,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.4,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --industry Consumer gave series_a 23%/29%/43%, cond 40% (n=57).",
+        "adjustment_reason": "Given a seed, a Series A inside 19 months is early (calibration p25 20 months for consumer), and retention risk is high, so well under half the ever anchor, about 0.18 times, justified by consumer analogs mojo and ozone that did not raise large rounds quickly."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            4000000.0,
+            8000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            20000000.0,
+            40000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.2,
+          "rationale": "Thin Series A or extended seed below the 2022 and later p25 of $11M, typical when growth is slower than hoped."
         },
         {
           "raise_usd": [
-            0,
-            0
+            8000000.0,
+            16000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            40000000.0,
+            90000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.4,
+          "rationale": "Typical Series A near the 2022 and later median of about $14M to $15M."
+        },
+        {
+          "raise_usd": [
+            16000000.0,
+            30000000.0
+          ],
+          "post_money_usd": [
+            90000000.0,
+            250000000.0
+          ],
+          "p_band": 0.3,
+          "rationale": "Strong Series A of $16M to $30M when revenue growth is clear and a lead investor competes, above the 2022 and later p75 of about $20M."
+        },
+        {
+          "raise_usd": [
+            30000000.0,
+            50000000.0
+          ],
+          "post_money_usd": [
+            250000000.0,
+            500000000.0
+          ],
+          "p_band": 0.1,
+          "rationale": "Breakout Series A above $30M, possible only for a category leader with fast revenue growth; upside band."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series A needs recurring revenue and healthy retention from a consumer product. Short form editing apps have high churn and heavy paid acquisition costs, and mojo and ozone did not reach large rounds. Waffle will likely miss because paid conversion stays small against free tools."
     },
     {
       "stage": "series_b",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.2,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.39,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --industry Consumer gave series_b 9%/11%/29%, cond 39% (n=23). Ever.",
+        "adjustment_reason": "About half the 0.39 anchor for competition from free platform tools; named analog mojo ended in acquisition."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            10000000.0,
+            25000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            50000000.0,
+            120000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Down or flat round, below the 2022 and later p25 of $27M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            50000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            120000000.0,
+            400000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series B near the $32M to $40M median."
+        },
+        {
+          "raise_usd": [
+            50000000.0,
+            100000000.0
+          ],
+          "post_money_usd": [
+            400000000.0,
+            1000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band at the p75 of $55M and above."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "A Series B requires tens of millions in revenue. Consumer editing apps have been dominated by CapCut and platform owners, and past YC video tools were acquired for small amounts, so Waffle would likely be acquired before this stage if it works at all, and a failing path would end in a shutdown after the seed money runs out."
     },
     {
       "stage": "series_c_plus",
-      "p_reach_given_prev": 0.0,
+      "p_reach_given_prev": 0.25,
       "anchors": {
-        "base_rate": null,
-        "source": "TODO: base_rates.py command and the number it returned",
-        "adjustment_reason": "TODO: why our probability differs from the base rate (required if >2x apart)"
+        "base_rate": 0.22,
+        "source": "python3 -I scripts/base_rates.py --calibration-only --industry Consumer gave series_c 2%/3%/21%, cond 22% (n=9). Ever.",
+        "adjustment_reason": "Close to the 0.22 anchor."
       },
       "bands": [
         {
           "raise_usd": [
-            0,
-            0
+            25000000.0,
+            60000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            250000000.0,
+            700000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.3,
+          "rationale": "Smaller growth round or bridge financing below the 2022 and later series C p25 of about $50M."
         },
         {
           "raise_usd": [
-            0,
-            0
+            60000000.0,
+            120000000.0
           ],
           "post_money_usd": [
-            0,
-            0
+            700000000.0,
+            1500000000.0
           ],
-          "p_band": 0.0,
-          "rationale": "TODO: why this band, at this probability, given the analogs and market"
+          "p_band": 0.45,
+          "rationale": "Typical Series C near the $60M to $74M median."
+        },
+        {
+          "raise_usd": [
+            120000000.0,
+            400000000.0
+          ],
+          "post_money_usd": [
+            1500000000.0,
+            5000000000.0
+          ],
+          "p_band": 0.25,
+          "rationale": "Upside band for a category leader, above the 2022 and later series C p75 of about $100M."
         }
       ],
-      "why_it_fails": "TODO: one paragraph (45+ words): the most likely way this startup fails to get to this round, specific to this company, citing analogs"
+      "why_it_fails": "Growth rounds need category leadership in consumer video. With CapCut and Meta owning distribution, a template editor would need a huge paying base; consumer analogs rarely reach this stage and most end in small acquisitions instead, and the likely outcome for Waffle is a stall at the seed stage."
     }
   ],
   "outcomes": {
@@ -164,167 +236,229 @@
       {
         "name": "Shuts down or stalls",
         "is_failure": true,
-        "p": 0.0
+        "p": 0.7
       },
       {
         "name": "Acquired or IPO under $100M",
         "value_usd": [
-          0,
-          0
+          5000000.0,
+          100000000.0
         ],
-        "p": 0.0
+        "p": 0.18
       },
       {
         "name": "Acquired or IPO $100M-$1B",
         "value_usd": [
-          0,
-          0
+          100000000.0,
+          1000000000.0
         ],
-        "p": 0.0
+        "p": 0.1
       },
       {
         "name": "Acquired or IPO over $1B",
         "value_usd": [
-          0,
-          0
+          1000000000.0,
+          5000000000.0
         ],
-        "p": 0.0
+        "p": 0.02
       }
     ],
-    "why_it_fails": "TODO: one paragraph on why it fails to reach a meaningful exit"
+    "why_it_fails": "The usual end is a stall: consumer editing apps struggle with retention and platform owners give away editing for free. Ozone and unfaze ai are YC analogs that shut down or went inactive, and mojo ended in an acquisition after a long road. A template editor with no proprietary distribution is unlikely to exceed a small acquisition."
   },
   "analogs": [
     {
-      "slug": "TODO-company-slug",
-      "relevance": "TODO",
-      "outcome_summary": "TODO"
+      "slug": "mojo",
+      "relevance": "Mobile app for pro quality social media videos, Winter 2018.",
+      "outcome_summary": "Acquired, a small exit after a stretch of heavy competition."
+    },
+    {
+      "slug": "ozone",
+      "relevance": "Figma for video, Winter 2022.",
+      "outcome_summary": "Shut down after failing to find a business model."
+    },
+    {
+      "slug": "affogato-ai",
+      "relevance": "Agent for instant TikToks, reels and ads, Summer 2021.",
+      "outcome_summary": "Active but no large round found."
+    },
+    {
+      "slug": "unfaze-ai",
+      "relevance": "AI product images and short promo videos, Summer 2020.",
+      "outcome_summary": "Inactive."
+    },
+    {
+      "slug": "trendpop",
+      "relevance": "Discover trends as they happen, Winter 2021.",
+      "outcome_summary": "Acquired, small exit."
     }
   ],
   "killers": [
     {
-      "risk": "TODO",
-      "p": 0.0,
-      "evidence": "TODO (10+ words)",
+      "risk": "CapCut, Instagram Edits and Meta tools offer AI templates for free to hundreds of millions of users",
+      "p": 0.55,
+      "evidence": "CapCut reportedly has hundreds of millions of users and Meta launched Edits in 2025.",
       "analogs": [
-        "TODO-company-slug"
+        "ozone",
+        "mojo"
       ],
-      "mitigation": "TODO"
+      "mitigation": "Focus on a paying niche such as marketing teams and small businesses with brand templates."
+    },
+    {
+      "risk": "Weak retention and acquisition cost for consumer apps",
+      "p": 0.4,
+      "evidence": "Consumer cohorts show 35 percent inactive in the base rate set and unfaze ai went inactive.",
+      "analogs": [
+        "unfaze-ai",
+        "affogato-ai"
+      ],
+      "mitigation": "Charge a subscription from day one and measure week 4 retention."
+    },
+    {
+      "risk": "Template products are easy to copy",
+      "p": 0.35,
+      "evidence": "Templates carry no technical moat and rivals such as opus clip and captions compete directly.",
+      "analogs": [
+        "ozone"
+      ],
+      "mitigation": "Build proprietary template generation from trend data."
     }
   ],
   "competition_now": [
     {
-      "name": "TODO",
-      "what": "TODO",
-      "traction": "TODO",
-      "source_url": "https://"
+      "name": "CapCut",
+      "what": "Free editor from ByteDance with AI features",
+      "traction": "Estimated hundreds of millions of monthly users",
+      "source_url": "https://www.netinfluencer.com/capcut-sees-surge-in-everyday-creator-use-in-2025-as-ai-tools-drive-editing-adoption/"
+    },
+    {
+      "name": "Instagram Edits",
+      "what": "Meta standalone editing app launched 2025",
+      "traction": "Global launch April 2025",
+      "source_url": "https://foxdata.com/en/blogs/2025-video-editing-apps-showdown-instagrams-edits-takes-aim-at-tiktoks-capcut/"
+    },
+    {
+      "name": "Opus Clip and Descript",
+      "what": "AI clipping and editing products",
+      "traction": "Early share in specific pain points",
+      "source_url": "https://vidpros.com/video-editing-software-statistics/"
     }
   ],
   "technical_complexity": {
-    "rating": 3,
-    "rationale": "TODO (20+ words): what is hard, what a small team can and cannot build"
+    "rating": 2,
+    "rationale": "A template based editor on top of existing video and generative models is buildable by two engineers in three months. Rendering speed and template quality are the work, and nothing needs a research breakthrough."
   },
   "takeover_risk": {
-    "rating": 3,
+    "rating": 5,
     "who": [
-      "TODO"
+      "CapCut and ByteDance",
+      "Meta",
+      "Canva",
+      "Adobe"
     ],
-    "timeline_months": 12,
-    "rationale": "TODO (20+ words)"
+    "timeline_months": 3,
+    "rationale": "Platform owners already ship AI templates and have distribution. The idea depends on social platforms that can restrict or copy features within a quarter."
   },
   "market_need_now": {
     "rating": 3,
     "evidence": [
       {
-        "claim": "TODO",
-        "source_url": "https://"
+        "claim": "Short form video creation tools have large usage; CapCut is estimated at hundreds of millions of users",
+        "source_url": "https://www.netinfluencer.com/capcut-sees-surge-in-everyday-creator-use-in-2025-as-ai-tools-drive-editing-adoption/"
+      },
+      {
+        "claim": "Consumers use free tools, so paid willingness is unproven",
+        "source_url": "https://vidpros.com/video-editing-software-statistics/"
       }
     ]
   },
   "roadmap": [
     {
       "phase": "before_yc",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Evidence of retention in a niche",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Pick one creator or small business segment",
+        "Measure week 4 retention"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "Week 4 retention above 25 percent"
     },
     {
       "phase": "seed",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Paid subscribers",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add a paywall",
+        "Test pricing with marketing users"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$20,000 monthly recurring revenue"
     },
     {
       "phase": "series_a",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Efficient growth",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Build referral loops",
+        "Add team plans"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$1M annual revenue with positive payback"
     },
     {
       "phase": "series_b",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Scale across segments",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Add enterprise brand kits",
+        "Expand templates"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$10M annual revenue"
     },
     {
       "phase": "series_c_plus",
-      "goal": "TODO: what must be true to reach this step",
+      "goal": "Category player",
       "actions": [
-        "TODO: concrete action",
-        "TODO: concrete action"
+        "Acquire adjacent tools",
+        "Add distribution deals"
       ],
-      "proof": "TODO: the number or event that shows it worked"
+      "proof": "$40M annual revenue"
     }
   ],
   "pros": [
     {
-      "point": "TODO",
-      "evidence": "TODO: what supports it",
-      "source_url": "https://"
+      "point": "Huge usage of short form video makes a large pool of potential users",
+      "evidence": "CapCut estimates and short form growth show wide demand.",
+      "source_url": "https://www.netinfluencer.com/capcut-sees-surge-in-everyday-creator-use-in-2025-as-ai-tools-drive-editing-adoption/"
+    },
+    {
+      "point": "Low build cost for a two person team",
+      "evidence": "Template editors layer on existing models and rendering libraries.",
+      "source_url": "https://www.waffle.ai"
     }
   ],
   "brand": {
-    "name": "TODO",
-    "rating": 3,
-    "effect_on_success": "unclear",
-    "name_check": "TODO: command run, e.g. python3 -I scripts/name_features.py --score \"<name>\" --era 2022+, and its headline result",
+    "name": "Waffle",
+    "rating": 4,
+    "effect_on_success": "helps",
+    "name_check": "python3 -I scripts/name_features.py --score \"Waffle\" --era 2022+ : invented_or_proper, 6 chars, 2 syllables, no descriptor words.",
     "strengths": [
-      "TODO"
+      "Playful consumer name",
+      "Easy to say and remember"
     ],
     "weaknesses": [
-      "TODO"
+      "Not tied to video",
+      "Crowded with food brands"
     ],
-    "rationale": "TODO (30+ words in full mode, 12+ in summary): how strong the name and brand are and why, citing the yc-name-creator evaluation and past YC brand cases",
-    "better_names": []
+    "rationale": "A playful short name that suits a consumer app and is easy to remember, much like past consumer YC names such as Instacart or Dropbox. It helps modestly with word of mouth but does not offset free incumbent tools."
   },
   "narrative": {
-    "headline": "TODO: one sentence verdict",
-    "general_summary": "TODO: 80+ words, the general picture first",
-    "deep_dive": {
-      "market_need": "TODO: 60+ words",
-      "competition": "TODO: 60+ words",
-      "technical_complexity": "TODO: 60+ words",
-      "takeover": "TODO: 60+ words",
-      "economics_and_distribution": "TODO: 60+ words",
-      "team": "TODO: 60+ words",
-      "yc_specific": "TODO: 60+ words"
-    }
+    "headline": "A consumer app in a space dominated by free platform tools; seed is possible but below the cohort anchor.",
+    "general_summary": "Waffle is a template based AI video editor for short form content. Video creation demand is large, but CapCut and Meta give AI editing away free, funded AI editors and clippers compete, and consumer apps are marked down in the YC factor table for retention risk. A two person London team with no stated traction would need a paying niche to raise a seed above $1M inside 19 months. The probability is set below the consumer cohort anchor because of takeover risk and named analogs that failed. The odds do not rank Waffle against other companies, and later rounds are unlikely."
   },
   "assumptions": [
-    "TODO"
+    "Information limited to the input file and searches dated before 2025-04-07.",
+    "Window of 19 months from 2025-04-07 to 2026-11-17.",
+    "Seed means above about $1M from outside investors, excluding the YC deal.",
+    "No retention or revenue data assumed."
   ],
   "sources": [
-    "https://"
+    "https://www.netinfluencer.com/capcut-sees-surge-in-everyday-creator-use-in-2025-as-ai-tools-drive-editing-adoption/",
+    "https://foxdata.com/en/blogs/2025-video-editing-apps-showdown-instagrams-edits-takes-aim-at-tiktoks-capcut/",
+    "https://vidpros.com/video-editing-software-statistics/",
+    "https://www.waffle.ai"
   ]
 }
