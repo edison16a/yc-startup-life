@@ -1,49 +1,165 @@
 {
-  "slug": "decawork",
-  "depth": 2,
-  "confidence": "medium",
-  "target_customer": "Companies deploying internal AI agents, buyers in IT and security",
-  "problem": "Static access rules and manual approvals cannot judge whether an agent's action fits its current task.",
-  "business_model": "B2B software that trains company-specific approval models, pricing not found",
-  "product_category": "AI agent authorization and governance",
-  "founded_year": 2026,
-  "founders": [
-    {"name": "Aman Raj", "role": "CEO", "prior_employers": ["Barclays (AI compliance platform)"], "education": ["IIT Kharagpur"], "technical": null, "previous_startups": ["A fintech (name not given)"], "age_at_founding": null, "age_source": null, "background_notes": "Also led product at a consumer AI startup, per YC page."},
-    {"name": "Sarthak Aggarwal", "role": "CTO", "prior_employers": ["NVIDIA", "Ema"], "education": ["BITS Pilani"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "Led Conquest, described by the YC page as Asia's largest student-run accelerator."}
+ "slug": "decawork",
+ "depth": 2,
+ "confidence": "medium",
+ "target_customer": "Companies deploying internal AI agents, buyers in IT and security",
+ "problem": "Static access rules and manual approvals cannot judge whether an agent's action fits its current task.",
+ "business_model": "B2B software that trains company-specific approval models, pricing not found",
+ "product_category": "AI agent authorization and governance",
+ "founded_year": 2026,
+ "founders": [
+  {
+   "name": "Aman Raj",
+   "role": "CEO",
+   "prior_employers": [
+    "Barclays (AI compliance platform)"
+   ],
+   "education": [
+    "IIT Kharagpur"
+   ],
+   "technical": null,
+   "previous_startups": [
+    "A fintech (name not given)"
+   ],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Also led product at a consumer AI startup, per YC page."
+  },
+  {
+   "name": "Sarthak Aggarwal",
+   "role": "CTO",
+   "prior_employers": [
+    "NVIDIA",
+    "Ema"
+   ],
+   "education": [
+    "BITS Pilani"
+   ],
+   "technical": true,
+   "previous_startups": [],
+   "age_at_founding": null,
+   "age_source": null,
+   "background_notes": "Led Conquest, described by the YC page as Asia's largest student-run accelerator."
+  }
+ ],
+ "funding_data_coverage": "partial",
+ "rounds": [
+  {
+   "stage": "pre_seed",
+   "date": "2026-09",
+   "amount_usd": 500000,
+   "post_money_usd": null,
+   "valuation_basis": null,
+   "investors": [
+    "Y Combinator",
+    "Transpose Platform"
+   ],
+   "source_url": "https://www.vcbacked.co/company/decawork-ai"
+  }
+ ],
+ "exit": {
+  "type": "none",
+  "date": null,
+  "amount_usd": null,
+  "acquirer": null,
+  "reason": null,
+  "source_url": null
+ },
+ "competition_at_founding": {
+  "as_of": "2026-06",
+  "competitors": [
+   {
+    "name": "Delinea",
+    "what": "Runtime authorization for AI agents enforcing policy before execution",
+    "traction_then": "Established identity vendor",
+    "funding_then": "unknown",
+    "source_date": "2026-07",
+    "source_url": "https://www.channelinsider.com/ai/llms-chatbots-and-agents/delinea-ai-agent-runtime-authorization/"
+   },
+   {
+    "name": "Curity",
+    "what": "Access Intelligence issuing tokens per agent action with human approval for risky operations",
+    "traction_then": "Established IAM vendor",
+    "funding_then": "unknown",
+    "source_date": "2026-04",
+    "source_url": "https://www.infoworld.com/article/4158886/curity-looks-to-reinvent-iam-with-runtime-authorization-for-ai-agents-2.html"
+   },
+   {
+    "name": "Kontext Security",
+    "what": "Runtime enforcement evaluating AI agents in real time",
+    "traction_then": "unknown",
+    "funding_then": "Reported $4M",
+    "source_date": "2026",
+    "source_url": "https://www.securityweek.com/kontext-security-emerges-with-4-million-for-ai-agent-runtime-controls/amp/"
+   }
+  ]
+ },
+ "technical_complexity": {
+  "rating": 4,
+  "rationale": "Training small per-company models that make reliable allow or deny decisions needs ML and security rigor."
+ },
+ "defensibility": {
+  "rating": 2,
+  "moat_types": [
+   "proprietary_data"
   ],
-  "funding_data_coverage": "none_found",
-  "rounds": [],
-  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": null},
-  "competition_at_founding": {
-    "as_of": "2026-06",
-    "competitors": [
-      {"name": "Delinea", "what": "Runtime authorization for AI agents enforcing policy before execution", "traction_then": "Established identity vendor", "funding_then": "unknown", "source_date": "2026-07", "source_url": "https://www.channelinsider.com/ai/llms-chatbots-and-agents/delinea-ai-agent-runtime-authorization/"},
-      {"name": "Curity", "what": "Access Intelligence issuing tokens per agent action with human approval for risky operations", "traction_then": "Established IAM vendor", "funding_then": "unknown", "source_date": "2026-04", "source_url": "https://www.infoworld.com/article/4158886/curity-looks-to-reinvent-iam-with-runtime-authorization-for-ai-agents-2.html"},
-      {"name": "Kontext Security", "what": "Runtime enforcement evaluating AI agents in real time", "traction_then": "unknown", "funding_then": "Reported $4M", "source_date": "2026", "source_url": "https://www.securityweek.com/kontext-security-emerges-with-4-million-for-ai-agent-runtime-controls/amp/"}
-    ]
+  "rationale": "Per-customer models trained on action history can lock in, but large IAM vendors ship similar runtime authorization."
+ },
+ "takeover_risk_then": {
+  "rating": 5,
+  "incumbents": [
+   "Delinea",
+   "Okta",
+   "PlainID",
+   "Curity"
+  ],
+  "outcome": "Several incumbents launched runtime agent authorization in 2026, the same year Decawork launched."
+ },
+ "market_need_then": "Analysts expected a wave of agent runtime authorization products in 2026 as enterprise agents spread.",
+ "branding": {
+  "name_origin": null,
+  "name_type": "compound",
+  "name_qualities": [
+   "distinctive",
+   "easy_to_say"
+  ],
+  "name_problems": [
+   "confusable"
+  ],
+  "domain_note": "Uses decawork.ai.",
+  "identity": {
+   "logo": "unclear",
+   "mascot_or_character": null,
+   "visual_style": "unclear",
+   "voice_and_tone": "Confident and concise: 'Let agents work. Control every action.'"
   },
-  "technical_complexity": {"rating": 4, "rationale": "Training small per-company models that make reliable allow or deny decisions needs ML and security rigor."},
-  "defensibility": {"rating": 2, "moat_types": ["proprietary_data"], "rationale": "Per-customer models trained on action history can lock in, but large IAM vendors ship similar runtime authorization."},
-  "takeover_risk_then": {"rating": 5, "incumbents": ["Delinea", "Okta", "PlainID", "Curity"], "outcome": "Several incumbents launched runtime agent authorization in 2026, the same year Decawork launched."},
-  "market_need_then": "Analysts expected a wave of agent runtime authorization products in 2026 as enterprise agents spread.",
-  "branding": {
-    "name_origin": null,
-    "name_type": "compound",
-    "name_qualities": ["distinctive", "easy_to_say"],
-    "name_problems": ["confusable"],
-    "domain_note": "Uses decawork.ai.",
-    "identity": {"logo": "unclear", "mascot_or_character": null, "visual_style": "unclear", "voice_and_tone": "Confident and concise: 'Let agents work. Control every action.'"},
-    "brand_signature": "Let agents work. Control every action.",
-    "rebrands": [],
-    "community_and_virality": "Product Hunt featured badge on the site; no wider press found.",
-    "brand_strength": {"rating": 2, "rationale": "Short tagline and Product Hunt feature, but no press on the brand and a name that does not explain itself."},
-    "brand_effect_on_outcome": "unclear",
-    "sources": ["https://decawork.ai/", "https://www.ycombinator.com/companies/decawork"]
+  "brand_signature": "Let agents work. Control every action.",
+  "rebrands": [],
+  "community_and_virality": "Product Hunt featured badge on the site; no wider press found.",
+  "brand_strength": {
+   "rating": 2,
+   "rationale": "Short tagline and Product Hunt feature, but no press on the brand and a name that does not explain itself."
   },
-  "pivots": [],
-  "success_factors": ["timing_tailwind"],
-  "failure_factors": [],
-  "outcome_analysis": "Decawork is a months-old AI agent control startup with a clear thesis but heavy incumbent competition from identity vendors launching the same runtime authorization in 2026. No outcome events were found and funding is unconfirmed, so its result is unknown.",
-  "sources": ["https://www.ycombinator.com/companies/decawork", "https://decawork.ai/", "https://www.everydev.ai/developers/decawork", "https://www.vcbacked.co/company/decawork-ai", "https://www.channelinsider.com/ai/llms-chatbots-and-agents/delinea-ai-agent-runtime-authorization/", "https://www.infoworld.com/article/4158886/curity-looks-to-reinvent-iam-with-runtime-authorization-for-ai-agents-2.html", "https://www.securityweek.com/kontext-security-emerges-with-4-million-for-ai-agent-runtime-controls/amp/"],
-  "notes": "Unverified aggregator funding: VCBacked and EveryDev say $500K pre-seed (September or August 2026), Dealroom says $125K seed. None confirmed by company or press, so no round recorded. Competitor entries post-date the batch start in some cases (Delinea July 2026). Prior employer for Aman Raj's fintech and consumer AI startup not named."
+  "brand_effect_on_outcome": "unclear",
+  "sources": [
+   "https://decawork.ai/",
+   "https://www.ycombinator.com/companies/decawork"
+  ]
+ },
+ "pivots": [],
+ "success_factors": [
+  "timing_tailwind"
+ ],
+ "failure_factors": [],
+ "outcome_analysis": "Decawork is a months-old AI agent control startup with a clear thesis but heavy incumbent competition from identity vendors launching the same runtime authorization in 2026. No outcome events were found and funding is unconfirmed, so its result is unknown.",
+ "sources": [
+  "https://www.ycombinator.com/companies/decawork",
+  "https://decawork.ai/",
+  "https://www.everydev.ai/developers/decawork",
+  "https://www.vcbacked.co/company/decawork-ai",
+  "https://www.channelinsider.com/ai/llms-chatbots-and-agents/delinea-ai-agent-runtime-authorization/",
+  "https://www.infoworld.com/article/4158886/curity-looks-to-reinvent-iam-with-runtime-authorization-for-ai-agents-2.html",
+  "https://www.securityweek.com/kontext-security-emerges-with-4-million-for-ai-agent-runtime-controls/amp/"
+ ],
+ "notes": "Unverified aggregator funding: VCBacked and EveryDev say $500K pre-seed (September or August 2026), Dealroom says $125K seed. None confirmed by company or press, so no round recorded. Competitor entries post-date the batch start in some cases (Delinea July 2026). Prior employer for Aman Raj's fintech and consumer AI startup not named. Completeness pass 2026-11: the $500K pre-seed (2026-09) is now recorded; it rests on a single database (VCBacked). Dealroom instead lists a $125K seed, unreconciled. No press confirmation."
 }
