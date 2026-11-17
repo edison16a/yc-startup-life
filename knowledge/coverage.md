@@ -7,8 +7,8 @@ Generated 2026-11-17.
 - Marked unresearchable (with reason): 1
 - Remaining: 0
 - Calibration sample (unbiased base rates): 663/663 done
-- Funding data coverage among researched: complete 142, partial 4761, none found 1495
-- Funding rounds recorded: 7587; competitors at founding recorded: 6557
+- Funding data coverage among researched: complete 142, partial 4771, none found 1485
+- Funding rounds recorded: 7604; competitors at founding recorded: 6557
 - Founders with a publicly sourced age: 58
 - Confidence: high 430, medium 3992, low 1976
 - Invalid records: 0; warnings: 1463 (see data/merge_warnings.txt)
