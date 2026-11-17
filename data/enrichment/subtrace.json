@@ -1,0 +1,49 @@
+{
+  "slug": "subtrace",
+  "depth": 2,
+  "confidence": "medium",
+  "target_customer": "Backend and infrastructure engineers at software teams running Docker or Kubernetes services",
+  "problem": "Seeing the HTTP requests flowing in and out of a service normally requires code changes, sidecars or root-level packet capture setup. Subtrace offers a request inspector for a whole process without code changes.",
+  "business_model": "Open source tool with a hosted dashboard; paid tier details not confirmed",
+  "product_category": "Developer tools, network observability",
+  "founded_year": 2024,
+  "founders": [
+    {"name": "Adhityaa Chandrasekar", "role": "CEO", "prior_employers": ["Google"], "education": ["University of Waterloo", "IIT Madras"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he worked on Kubernetes internals and GKE infra monitoring at Google."},
+    {"name": "Sachin Sridhar", "role": "CTO", "prior_employers": ["Microsoft"], "education": ["IIT Madras, computer science"], "technical": true, "previous_startups": [], "age_at_founding": null, "age_source": null, "background_notes": "YC page says he worked on Power BI and Microsoft Fabric."}
+  ],
+  "funding_data_coverage": "none_found",
+  "rounds": [],
+  "exit": {"type": "none", "date": null, "amount_usd": null, "acquirer": null, "reason": null, "source_url": "https://www.ycombinator.com/companies/subtrace"},
+  "competition_at_founding": {
+    "as_of": "2025-02",
+    "competitors": [
+      {"name": "Pixie", "what": "Kubernetes-native observability using eBPF, supports many app protocols", "traction_then": "established open source project", "funding_then": "unknown", "source_date": "2025-07", "source_url": "https://www.infoq.com/news/2025/07/subtrace-network-analysis"},
+      {"name": "Cilium Hubble", "what": "Network flow observability, requires Cilium as the CNI", "traction_then": "widely used in Kubernetes shops", "funding_then": "unknown", "source_date": "2025-07", "source_url": "https://www.infoq.com/news/2025/07/subtrace-network-analysis"},
+      {"name": "Wireshark", "what": "General packet capture tool, needs manual setup for container namespaces", "traction_then": "standard tool", "funding_then": "not applicable", "source_date": "2025-02", "source_url": "https://hn.svelte.dev/item/43096477"}
+    ]
+  },
+  "technical_complexity": {"rating": 4, "rationale": "Tracing HTTP traffic with BPF and no root privileges or code changes needs deep kernel and networking knowledge, which two ex-Google and ex-Microsoft engineers brought."},
+  "defensibility": {"rating": 2, "moat_types": ["technical_depth"], "rationale": "It is open source with about 2.5k GitHub stars per the YC page, so copying is possible, and observability incumbents ship similar eBPF features."},
+  "takeover_risk_then": {"rating": 4, "incumbents": ["Pixie", "Cilium Hubble", "Microsoft Retina"], "outcome": "No acquisition or copying reported in the sources found up to late 2026."},
+  "market_need_then": "Developers regularly need request-level debugging in containers, and a Show HN post framed the tool as Wireshark for Docker containers in early 2025, drawing community discussion including privacy concerns.",
+  "branding": {
+    "name_origin": null,
+    "name_type": "compound",
+    "name_qualities": ["short", "easy_to_spell", "easy_to_say", "evocative"],
+    "name_problems": ["confusable"],
+    "domain_note": "Uses subtrace.dev, not a .com; no acquisition history found.",
+    "identity": {"logo": "not described in sources found", "mascot_or_character": null, "visual_style": "developer tool, minimal", "voice_and_tone": "technical and direct, framed as inspect element for infra"},
+    "brand_signature": "The phrase inspect element for your whole infra",
+    "rebrands": [],
+    "community_and_virality": "A Show HN post titled Wireshark for Docker Containers and a Product Hunt page exist; InfoQ covered the open source release in July 2025.",
+    "brand_strength": {"rating": 2, "rationale": "Descriptive name and a clear tagline, some press from InfoQ, but no mascot, merch or distinct identity found."},
+    "brand_effect_on_outcome": "unclear",
+    "sources": ["https://www.infoq.com/news/2025/07/subtrace-network-analysis", "https://hn.svelte.dev/item/43096477"]
+  },
+  "pivots": [],
+  "success_factors": [],
+  "failure_factors": [],
+  "outcome_analysis": "Subtrace is an active two person team that joined YC in Winter 2025. No outcome event was found in searches. It earned open source traction (about 2.5k GitHub stars per YC) and press from InfoQ, but the commercial path against eBPF observability incumbents is unproven, so no success or failure factors are assigned yet.",
+  "sources": ["https://www.ycombinator.com/companies/subtrace", "https://subtrace.dev", "https://www.infoq.com/news/2025/07/subtrace-network-analysis", "https://hn.svelte.dev/item/43096477"],
+  "notes": "Company website fetch returned only a title. Aggregators (Preqin, VCBacked, FundedIQ, ZoomInfo) claim about 500K USD from YC and Pioneer Fund, with seed versus pre-seed and Jan versus Mar 2025 dates disagreeing; no primary source, so it is unverified and not recorded as a round. Competitors listed are from a July 2025 article, close to the batch."
+}
