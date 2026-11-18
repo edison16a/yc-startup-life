@@ -16,16 +16,48 @@
 
 ## What it does
 
-Describe your startup to Claude and ask whether you will raise. The skill returns the chance of getting into YC, then the odds of reaching Seed, Series A, Series B and Series C or later, with a likely raise and valuation for each and a paragraph on why it fails at each step. It also finds startup ideas and names, and scores a name.
+Describe your startup to Claude and ask whether you will raise. The skill returns the chance of getting into YC, then the odds of reaching Seed, Series A, Series B and Series C or later, with a likely raise and valuation for each and a paragraph on why it fails at each step. It also finds startup ideas, names a startup, and makes logos.
 
 It does this by comparing you with the 6,399 companies in the public YC directory. Each one was researched for its timeline, funding rounds, founders, competitors at the time it started, how hard it was to build, why it won or failed, and how strong its name was. Where the data is missing, the answer says so.
 
-Four skills ship in `.claude/skills/`:
+Five skills ship in `.claude/skills/`:
 
 - **Evaluator.** Give it a startup. You get a short text answer and one standalone `report.html`.
 - **Creator.** Finds one startup idea and attacks it with an Investor, a Doubter and a Judge until the Judge would invest.
 - **Name creator.** Makes and scores startup names and rates the brand. The other two call it.
+- **Logo creator.** Give it a company name and it returns one HTML file with 100 freshly generated logo options and PNG export.
 - **Extractor.** Built the dataset. You only need it to refresh the data.
+
+## For AI agents: what each skill does and what it returns
+
+If you are an agent working in this repo, read `CLAUDE.md` first. Pick the skill by the user's request, run it as written in its `SKILL.md`, and hand back the files listed below. Run Python as `python3 -I scripts/<name>.py` (standard library only).
+
+| Skill | Use it when the user asks to | You return |
+|---|---|---|
+| `yc-startup-evaluator` | Evaluate a startup, forecast its YC chance, raises and valuations, or stress test it ("Will I raise?") | A short text summary and one standalone `evaluations/<name>/report.html` (also `EVALUATION.md`). Never hand edit these. Edit `evaluation_input.json` and re-render with `scripts/render_eval.py`. |
+| `yc-startup-creator` | Find or generate a startup idea | One idea that survived an Investor, a Doubter, a Judge and the evaluator, plus its evaluation report. |
+| `yc-name-creator` | Name a startup or judge a name | Ranked name options with a brand assessment. The evaluator and creator also call it. |
+| `yc-logo-creator` | Make a logo, logo ideas or a brand mark | One self contained `logo-studio.html` (see below). |
+| `yc-knowledge-extractor` | Refresh or finish the dataset | Nothing to the user until `python3 -I scripts/check_complete.py` exits 0. It resumes from files on disk. |
+
+On the first message in a fresh clone, run `python3 -I scripts/check_complete.py`. It currently reports the extraction as complete, so go straight to the user's request.
+
+### The logo creator in detail
+
+Run:
+
+```bash
+python3 -I scripts/build_logo_studio.py --name "Acme" --out logo-studio.html
+```
+
+Optional flags are `--fg "#14110F"` for the object color and `--bg "#FFFFFF"` for the background. The output is one HTML file of about 640 KB. It works offline, with 27 open licensed fonts embedded, and needs no server. Give that file to the user and tell them how to use it:
+
+- **Four tabs.** Object (one flat object, one color, one background). Object and name (the object beside or above the name). Name only (the name with a small object built into the type). Multicolor (objects with three preset colors; 20 presets, plus a picker for each single color).
+- **Controls.** Show 50 or 100 options. A Field switch (Any, Tech, Health, Consumer) changes which object styles come first. Shuffle makes a new set.
+- **Generated on the spot.** Every open and every Shuffle draws all the objects, name treatments and font pairings again from a random seed and the design rules. Nothing is a stored preset or image. The company name only sets the text and never changes the objects, because good logos rarely depend on the name.
+- **Export.** Click a logo, choose a transparent or colored background, set the size (default 1024 by 1024), then Download PNG. SVG saves one logo. All SVGs saves every option in the tab as a zip.
+
+The design rules come from `knowledge/logo_patterns.md`, a study of 490 YC logos and 108 big brand marks: most are one flat object, two colors or fewer, no gradient, with clean sans serif type. The labels come from a vision model, so treat the shares as rough. The skill does not check trademarks. To change the look, edit `scripts/logo_studio_template.html` or `scripts/logo_studio_engine.js` and rebuild. Do not hand edit the generated file.
 
 ## Screenshots
 
@@ -92,7 +124,7 @@ Coverage is in `knowledge/coverage.md`. Every company in the directory was resea
 
 ## How to start
 
-You need Python 3.9 or newer and [Claude Code](https://claude.com/claude-code).
+You need Python 3.9 or newer and [Claude Code](https://claude.com/claude-code). The logo studio also works in any browser.
 
 ```bash
 git clone https://github.com/edison16a/yc-startup-life
@@ -105,6 +137,7 @@ Then ask in plain words:
 - "Will I raise? My startup is ..." runs the evaluator and gives you the text answer plus `report.html`.
 - "Find me a startup idea." runs the creator.
 - "Name my startup" or "Is this a good name: ..." runs the name creator.
+- "Make me logos for Acme" runs the logo creator and gives you `logo-studio.html`.
 
 To open a report, double click `evaluations/<name>/report.html`. To refresh the dataset, ask Claude to run the extractor skill; it resumes from the files on disk.
 
