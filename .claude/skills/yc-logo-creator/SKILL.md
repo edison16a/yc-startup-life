@@ -35,7 +35,7 @@ Optional flags: `--fg "#14110F"` for the object color and `--bg "#FFFFFF"` for t
 
 ## Rules
 
-- The name only sets the text. Objects are generated from design rules and never depend on the name, so shuffling or renaming does not change them.
+- The name only sets the text. Objects are generated from scratch on every open and every Shuffle, from design rules and a random seed. Nothing is a stored preset or image, and the name never changes them.
 - Do not add gradients, drop shadows or more than three colors.
 - Do not claim a generated mark is unique or trademark safe. Say a trademark search is the user's job.
 - Never hand edit the generated HTML. Edit `scripts/logo_studio_template.html` or `scripts/logo_studio_engine.js` and rebuild.

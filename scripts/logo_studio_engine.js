@@ -69,7 +69,7 @@ const FAM = [
 const NFAM = FAM.length;
 
 const FIELDS = { any: null, tech: [1, 4, 5, 6, 14, 15, 17, 18, 19, 2, 8, 3], organic: [0, 9, 3, 11, 13, 16, 10, 8, 7, 12, 2, 4], consumer: [7, 0, 4, 14, 15, 19, 1, 12, 9, 10, 17, 5] };
-function markSpec(idx, salt) { const o = FIELDS[st.field], pool = o ? o.concat(Array.from({ length: NFAM }, (_, i) => i).filter(i => !o.includes(i))) : null, n = o ? 14 : NFAM; const fam = pool ? pool[idx % n] : idx % NFAM; return { fam, k: Math.floor(idx / n), salt: salt + "|" + st.seed + "|" + st.field + "|" + idx }; }
+function markSpec(idx, salt) { const o = FIELDS[st.field], pool = o ? o.concat(Array.from({ length: NFAM }, (_, i) => i).filter(i => !o.includes(i))) : null, n = o ? 14 : NFAM; const fam = pool ? pool[(idx + st.seed) % n] : (idx + st.seed) % NFAM; return { fam, k: Math.floor(idx / n), salt: salt + "|" + st.seed + "|" + st.field + "|" + idx }; }
 function markInner(spec, c, u, ctx) { const r = rng(hash(spec.salt) + spec.fam * 977 + spec.k * 131); return FAM[spec.fam](r, c, u, ctx); }
 
 /* ---------- layout builders ---------- */
@@ -85,7 +85,7 @@ function caseFor(f, idx) { if (f.cls === "mono") return "lower"; if (f.cls === "
 function lsFor(f, mode) { return mode === "upper" ? Math.round(.06 * 46) : f.cls === "mono" ? 0 : -1; }
 
 function buildLockup(idx, st, u) {
-  const used = new Set(), c = monoC(st.fg), spec = markSpec((idx * 7 + 3) % 100, "l"), f = FONTS[(idx * 5 + Math.floor(idx / 3)) % FONTS.length], cs = caseFor(f, idx), text = applyCase(st.name, cs), vert = idx % 3 === 2;
+  const used = new Set(), c = monoC(st.fg), spec = markSpec((idx * 7 + 3) % 100, "l"), f = FONTS[(idx * 5 + Math.floor(idx / 3) + st.seed) % FONTS.length], cs = caseFor(f, idx), text = applyCase(st.name, cs), vert = idx % 3 === 2;
   used.add(f.id);
   const mk = markInner(spec, c, u, {});
   const fs = vert ? 40 : 46, ls = lsFor(f, cs) * fs / 46, tw = measure(f, text, fs, ls);
@@ -95,7 +95,7 @@ function buildLockup(idx, st, u) {
 }
 
 function buildWord(idx, st, u) {
-  const used = new Set(), c = st.fg, T = idx % 6, f = FONTS[Math.floor(idx / 6) % FONTS.length], cs = caseFor(f, idx + (idx > 59 ? 1 : 0)), text = applyCase(st.name, cs), fs = 64, ls = lsFor(f, cs) * fs / 46;
+  const used = new Set(), c = st.fg, T = (idx + st.seed) % 6, f = FONTS[(Math.floor(idx / 6) + st.seed) % FONTS.length], cs = caseFor(f, idx + (idx > 59 ? 1 : 0)), text = applyCase(st.name, cs), fs = 64, ls = lsFor(f, cs) * fs / 46;
   used.add(f.id);
   const tw = measure(f, text, fs, ls), base = .8 * fs, att = `font-family="${f.family}" font-weight="${f.weight}" font-size="${fs}" letter-spacing="${N(ls)}"`;
   const txt = (x, fill) => `<text x="${N(x)}" y="${N(base)}" ${att} fill="${fill}">${esc(text)}</text>`, H = fs * 1.05;
@@ -121,7 +121,7 @@ const SECTIONS = {
 };
 
 /* ---------- state ---------- */
-const st = { name: DEFAULT_NAME, seed: 1, field: "any", sec: "mark", count: 100, fg: DEFAULT_FG, bg: DEFAULT_BG, pal: PRESETS[0].slice(0, 3), mbg: PRESETS[0][3], sel: { mark: 0, lockup: 0, word: 0, multi: 0 } };
+const st = { name: DEFAULT_NAME, seed: Math.floor(Math.random() * 1e9), field: "any", sec: "mark", count: 100, fg: DEFAULT_FG, bg: DEFAULT_BG, pal: PRESETS[0].slice(0, 3), mbg: PRESETS[0][3], sel: { mark: 0, lockup: 0, word: 0, multi: 0 } };
 
 function bgOf() { return st.sec === "multi" ? st.mbg : st.bg; }
 function cardSVG(logo) { const p = Math.max(logo.w, logo.h) * SECTIONS[st.sec].pad, w = logo.w + 2 * p, h = logo.h + 2 * p; return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${N(-p)} ${N(-p)} ${N(w)} ${N(h)}" aria-hidden="true">${logo.inner}</svg>`; }
@@ -160,7 +160,7 @@ function setSec(v) {
 }
 seg("tabs", setSec);
 seg("field", v => { st.field = v; render(); });
-$("shuffle").addEventListener("click", () => { st.seed = Math.floor(Math.random() * 1e6); render(); say("New set generated. The name does not change the objects."); });
+$("shuffle").addEventListener("click", () => { st.seed = Math.floor(Math.random() * 1e9); render(); say("New set generated from scratch. The name does not change the objects."); });
 seg("count", v => { st.count = +v; render(); });
 let tm; $("name").addEventListener("input", e => { st.name = e.target.value.trim() || DEFAULT_NAME; clearTimeout(tm); tm = setTimeout(render, 120); });
 $("grid").addEventListener("click", e => { const b = e.target.closest(".card"); if (!b) return; st.sel[st.sec] = +b.dataset.i; renderBig(); });
