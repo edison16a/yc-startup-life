@@ -52,7 +52,7 @@ The Funding tab also has a raise calculator. Type how much you want to raise and
 
 | Part | Where |
 |---|---|
-| Skills | `.claude/skills/` (`yc-startup-evaluator`, `yc-startup-creator`, `yc-name-creator`, `yc-knowledge-extractor`) |
+| Skills | `.claude/skills/` (`yc-startup-evaluator`, `yc-startup-creator`, `yc-name-creator`, `yc-logo-creator`, `yc-knowledge-extractor`) |
 | Company records | `data/enrichment/<slug>.json`, schema in `docs/schema.md` |
 | Directory snapshot | `data/raw/yc_all.json`, `data/companies.csv` |
 | Knowledge files and tables | `knowledge/` and `knowledge/tables/` |
@@ -60,6 +60,7 @@ The Funding tab also has a raise calculator. Type how much you want to raise and
 | Name features | `scripts/name_features.py`, `data/name_features.csv`, `knowledge/tables/name_outcomes.csv` |
 | Evaluation input and render | `scripts/evalcore.py`, `scripts/render_eval.py`, `scripts/check_eval.py` |
 | HTML report | `scripts/render_html.py`, `scripts/report_template.html` |
+| Logo studio | `python3 -I scripts/build_logo_studio.py --name "Acme"` builds one HTML file with 100 logo options and PNG export (research in `knowledge/logo_patterns.md`) |
 | Landing page | `site/index.html` (one file, open it in a browser; images in `site/img/`) |
 | Settings | `config.json` |
 
