@@ -1,6 +1,6 @@
 # Coverage report
 
-Generated 2026-11-17.
+Generated 2026-11-18.
 
 - Companies in directory: 6399
 - Depth 2 (fully researched): 6398 (100.0%)
