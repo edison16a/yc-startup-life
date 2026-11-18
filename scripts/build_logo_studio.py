@@ -27,11 +27,29 @@ def fonts():
     return out
 
 
+BAD = re.compile(r"<script|<foreignObject|<image|<use|\bon\w+\s*=|href\s*=|javascript:|url\((?!#|\\\"#|'#)|@import", re.I)
+
+
+def load_marks(path):
+    if not path:
+        return []
+    marks = json.loads(Path(path).read_text())
+    if not isinstance(marks, list) or not all(isinstance(m, str) for m in marks):
+        raise SystemExit("marks file must be a JSON list of SVG strings")
+    for i, m in enumerate(marks):
+        if BAD.search(m):
+            raise SystemExit(f"mark {i} uses a disallowed element or attribute")
+        if "{A}" not in m:
+            raise SystemExit(f"mark {i} must use the {{A}} color token")
+    return marks
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", default="Acme")
     ap.add_argument("--fg", default="#14110F")
     ap.add_argument("--bg", default="#FFFFFF")
+    ap.add_argument("--marks", help="JSON list of agent designed SVG marks (100 x 100 box, colors {A} {B} {C}, ids {U})")
     ap.add_argument("--out", default="logo-studio.html")
     a = ap.parse_args()
     here = Path(__file__).resolve().parent
@@ -40,7 +58,8 @@ def main():
     fs = fonts()
     if not fs:
         raise SystemExit("no fonts found in " + str(FONT_DIR))
-    html = (html.replace("__FONTS__", json.dumps(fs)).replace("__DEFAULT_NAME__", json.dumps(a.name))
+    marks = load_marks(a.marks)
+    html = (html.replace("__CUSTOM__", json.dumps(marks)).replace("__FONTS__", json.dumps(fs)).replace("__DEFAULT_NAME__", json.dumps(a.name))
             .replace("__DEFAULT_FG__", json.dumps(a.fg)).replace("__DEFAULT_BG__", json.dumps(a.bg)))
     html = html.replace("__ENGINE__", engine.replace("</script", "<\\/script"))
     Path(a.out).write_text(html)

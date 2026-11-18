@@ -69,8 +69,11 @@ const FAM = [
 const NFAM = FAM.length;
 
 const FIELDS = { any: null, tech: [1, 4, 5, 6, 14, 15, 17, 18, 19, 2, 8, 3], organic: [0, 9, 3, 11, 13, 16, 10, 8, 7, 12, 2, 4], consumer: [7, 0, 4, 14, 15, 19, 1, 12, 9, 10, 17, 5] };
-function markSpec(idx, salt) { const o = FIELDS[st.field], pool = o ? o.concat(Array.from({ length: NFAM }, (_, i) => i).filter(i => !o.includes(i))) : null, n = o ? 14 : NFAM; const fam = pool ? pool[(idx + st.seed) % n] : (idx + st.seed) % NFAM; return { fam, k: Math.floor(idx / n), salt: salt + "|" + st.seed + "|" + st.field + "|" + idx }; }
-function markInner(spec, c, u, ctx) { const r = rng(hash(spec.salt) + spec.fam * 977 + spec.k * 131); return FAM[spec.fam](r, c, u, ctx); }
+function markSpec(idx, salt) { if (CUSTOM.length && idx < CUSTOM.length) return { custom: idx }; const o = FIELDS[st.field], pool = o ? o.concat(Array.from({ length: NFAM }, (_, i) => i).filter(i => !o.includes(i))) : null, n = o ? 14 : NFAM; const fam = pool ? pool[(idx + st.seed) % n] : (idx + st.seed) % NFAM; return { fam, k: Math.floor(idx / n), salt: salt + "|" + st.seed + "|" + st.field + "|" + idx }; }
+const CUSTOM = typeof CUSTOM_MARKS !== "undefined" ? CUSTOM_MARKS : [];
+function customInner(i, c, u) { return CUSTOM[i].replace(/\{A\}/g, c.a).replace(/\{B\}/g, c.b).replace(/\{C\}/g, c.c).replace(/\{U\}/g, u); }
+function markInner(spec, c, u, ctx) {
+  if (spec.custom !== undefined) return customInner(spec.custom, c, u); const r = rng(hash(spec.salt) + spec.fam * 977 + spec.k * 131); return FAM[spec.fam](r, c, u, ctx); }
 
 /* ---------- layout builders ---------- */
 function monoC(fg) { return { a: fg, b: fg, c: fg }; }
