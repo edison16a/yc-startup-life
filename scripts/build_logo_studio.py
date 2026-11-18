@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build one self contained logo studio HTML file.
 
-Usage: python3 -I scripts/build_logo_studio.py --name "Acme" --out logo-studio.html
+Usage: python3 -I scripts/build_logo_studio.py --name "Acme" --marks marks.json --out logo-studio.html
 Stdlib only. Fonts (OFL licensed) are embedded as base64 so the file works offline.
 """
 import argparse, base64, json, re
@@ -32,7 +32,7 @@ BAD = re.compile(r"<script|<foreignObject|<image|<use|\bon\w+\s*=|href\s*=|javas
 
 def load_marks(path):
     if not path:
-        return []
+        raise SystemExit("--marks is required. The studio contains no built in logo templates: the AI must design the marks (see .claude/skills/yc-logo-creator/SKILL.md).")
     marks = json.loads(Path(path).read_text())
     if not isinstance(marks, list) or not all(isinstance(m, str) for m in marks):
         raise SystemExit("marks file must be a JSON list of SVG strings")
@@ -41,6 +41,10 @@ def load_marks(path):
             raise SystemExit(f"mark {i} uses a disallowed element or attribute")
         if "{A}" not in m:
             raise SystemExit(f"mark {i} must use the {{A}} color token")
+    if len(marks) < 12:
+        raise SystemExit(f"only {len(marks)} marks. Design at least 12, ideally 50 to 100.")
+    if len(marks) < 50:
+        print(f"warning: only {len(marks)} marks. The Object and Multicolor tabs will show {len(marks)} options.")
     return marks
 
 

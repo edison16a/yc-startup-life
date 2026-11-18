@@ -43,88 +43,58 @@ function quarter(x, y, s, k, fill) {
   return `<path d="${d}" fill="${fill}"/>`;
 }
 
-/* ---------- mark families (100 x 100 box) ---------- */
-const FAM = [
-  function petals(r, c) { const n = ri(r, 3, 8), ry = ri(r, 14, 20), rx = ri(r, 6, 12), cyc = r() < .5 ? 2 : 3, k = [c.a, c.b, c.c]; let s = ""; for (let i = 0; i < n; i++) s += `<ellipse cx="50" cy="${50 - ry - 2}" rx="${rx}" ry="${ry}" fill="${k[i % cyc]}" transform="rotate(${N(i * 360 / n)} 50 50)"/>`; return s; },
-  function bars(r, c) { const n = ri(r, 3, 5), bw = ri(r, 10, 15), gap = 6, tot = n * bw + (n - 1) * gap, x0 = 50 - tot / 2, rot = pick(r, [0, 0, 45, -45]), rad = r() < .6 ? bw / 2 : 3, base = r() < .5, k = [c.a, c.b, c.c], cyc = r() < .5 ? 1 : 3; let s = ""; for (let i = 0; i < n; i++) { const h = ri(r, 34, 80); const y = base ? 90 - h : 50 - h / 2; s += `<rect x="${N(x0 + i * (bw + gap))}" y="${y}" width="${bw}" height="${h}" rx="${rad}" fill="${k[i % cyc]}"/>`; } return `<g transform="rotate(${rot} 50 50)">${s}</g>`; },
-  function dots(r, c) { const keep = [[1, 1], ...[[0, 0], [1, 0], [0, 1], [0, 2], [1, 2]].filter(() => r() < .72)], rr = ri(r, 8, 11), k = [c.a, c.b, c.c], P = [20, 50, 80]; let s = "", m = new Set(); for (const [x, y] of keep) { m.add(x + "," + y); m.add((2 - x) + "," + y); } for (const q of m) { const [x, y] = q.split(",").map(Number); s += `<circle cx="${P[x]}" cy="${P[y]}" r="${rr}" fill="${k[(x + y) % 3]}"/>`; } return s; },
-  function orbit(r, c) { const R = ri(r, 28, 34), sw = ri(r, 8, 12), arc = r() < .5; const ring = arc ? `<path d="M${50 - R} 50A${R} ${R} 0 1 1 50 ${50 + R}" fill="none" stroke="${c.a}" stroke-width="${sw}" stroke-linecap="round"/>` : `<circle cx="50" cy="50" r="${R}" fill="none" stroke="${c.a}" stroke-width="${sw}"/>`; return ring + `<circle cx="50" cy="50" r="${ri(r, 10, 15)}" fill="${c.b}"/>` + (r() < .4 ? `<circle cx="${N(50 + R * .71)}" cy="${N(50 - R * .71)}" r="7" fill="${c.c}"/>` : ""); },
-  function tiles(r, c) { const k = [c.a, c.b, c.c], s = 41, O = [6, 53]; let out = ""; for (let i = 0; i < 4; i++) { const x = O[i % 2], y = O[i >> 1], t = ri(r, 0, 3), f = k[ri(r, 0, 2)]; if (t === 0) out += quarter(x, y, s, ri(r, 0, 3), f); else if (t === 1) out += `<circle cx="${x + s / 2}" cy="${y + s / 2}" r="${s / 2}" fill="${f}"/>`; else if (t === 2) out += `<rect x="${x}" y="${y}" width="${s}" height="${s}" rx="${r() < .5 ? 0 : 8}" fill="${f}"/>`; else out += quarter(x, y, s, ri(r, 0, 3), f); } return out; },
-  function chevrons(r, c) { const n = ri(r, 2, 4), sw = ri(r, 9, 12), g = 20, tot = (n - 1) * g + 24, y0 = 50 - tot / 2, k = [c.a, c.b, c.c], rot = pick(r, [0, 90, 180, 270]); let s = ""; for (let i = 0; i < n; i++) { const y = y0 + i * g; s += `<polyline points="18,${y + 24} 50,${y} 82,${y + 24}" fill="none" stroke="${k[i % 3]}" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round"/>`; } return `<g transform="rotate(${rot} 50 50)">${s}</g>`; },
-  function cube(r, c) { const T = [[50, 8], [86.4, 29], [50, 50], [13.6, 29]], L = [[13.6, 29], [50, 50], [50, 92], [13.6, 71]], R = [[50, 50], [86.4, 29], [86.4, 71], [50, 92]], g = .88 + r() * .04, open = r() < .3 ? ri(r, 0, 2) : -1, F = [[T, c.a], [L, c.b], [R, c.c]]; return F.map(([p, f], i) => i === open ? "" : poly(p, g, f)).join(""); },
-  function negative(r, c, u) { const shape = pick(r, ["circle", "round", "squircle"]), cut = pick(r, ["dot", "ring", "slit", "tri"]); const body = shape === "circle" ? `<circle cx="50" cy="50" r="42"` : shape === "round" ? `<rect x="10" y="10" width="80" height="80" rx="14"` : `<rect x="8" y="8" width="84" height="84" rx="30"`; const cf = col => cut === "dot" ? `<circle cx="50" cy="50" r="${ri(r, 14, 22)}" fill="${col}"/>` : cut === "ring" ? `<circle cx="50" cy="50" r="22" fill="none" stroke="${col}" stroke-width="9"/>` : cut === "slit" ? `<rect x="42" y="18" width="16" height="64" rx="8" fill="${col}" transform="rotate(${pick(r, [0, 45, 90])} 50 50)"/>` : `<polygon points="50,28 74,68 26,68" fill="${col}"/>`; if (c.a === c.b) return `<mask id="m${u}"><rect width="100" height="100" fill="#fff"/>${cf("#000")}</mask>${body} fill="${c.a}" mask="url(#m${u})"/>`; return `${body} fill="${c.a}"/>${cf(c.b)}`; },
-  function arcs(r, c) { const k = [c.a, c.b, c.c], cap = r() < .6 ? "round" : "butt", rot = pick(r, [0, 90, 180, 270]); let s = ""; [12, 25, 38].forEach((R, i) => s += `<path d="M${50 - R} 62A${R} ${R} 0 0 1 ${50 + R} 62" fill="none" stroke="${k[i]}" stroke-width="9" stroke-linecap="${cap}"/>`); return `<g transform="rotate(${rot} 50 50) translate(0 ${r() < .5 ? 0 : -6})">${s}</g>`; },
-  function leaves(r, c) { const n = ri(r, 2, 4), k = [c.a, c.b, c.c], d = "M50 50C50 24 70 12 88 12C88 30 76 50 50 50Z"; let s = ""; for (let i = 0; i < n; i++) s += `<path d="${d}" fill="${k[i % 3]}" transform="rotate(${N(i * 360 / n + (n === 2 ? 0 : 0))} 50 50)"/>`; return `<g transform="rotate(${pick(r, [0, 45, 90])} 50 50)">${s}</g>`; },
-  function asterisk(r, c) { const n = ri(r, 3, 6), k = [c.a, c.b]; let s = ""; for (let i = 0; i < n; i++) { const a = i * Math.PI / n; s += `<line x1="${N(50 - Math.cos(a) * 40)}" y1="${N(50 - Math.sin(a) * 40)}" x2="${N(50 + Math.cos(a) * 40)}" y2="${N(50 + Math.sin(a) * 40)}" stroke="${k[i % 2]}" stroke-width="${ri(r, 8, 11)}" stroke-linecap="round"/>`; } return s + `<circle cx="50" cy="50" r="7" fill="${c.c}"/>`; },
-  function waves(r, c) { const n = ri(r, 2, 4), k = [c.a, c.b, c.c], g = 100 / (n + 1); let s = ""; for (let i = 1; i <= n; i++) { const y = N(g * i), a = ri(r, 10, 16); s += `<path d="M12 ${y}Q31 ${y - a} 50 ${y}T88 ${y}" fill="none" stroke="${k[(i - 1) % 3]}" stroke-width="${n === 4 ? 7 : 9}" stroke-linecap="round"/>`; } return s; },
-  function pills(r, c) { const k = [c.a, c.b, c.c], w = ri(r, 18, 24), n = ri(r, 2, 3), rot = pick(r, [0, 45, 90, 135]); let s = ""; for (let i = 0; i < n; i++) { const h = ri(r, 46, 80), off = (i - (n - 1) / 2) * (w + 6); s += `<rect x="${N(50 + off - w / 2)}" y="${N(50 - h / 2 + (i % 2 ? 8 : -8))}" width="${w}" height="${h}" rx="${w / 2}" fill="${k[i]}"/>`; } return `<g transform="rotate(${rot} 50 50)">${s}</g>`; },
-  function split(r, c) { const R = 40, g = 3.5, ang = pick(r, [0, 45, 90, 135]), half = (col, s) => `<path d="M${50 - R} 50A${R} ${R} 0 0 1 ${50 + R} 50Z" fill="${col}" transform="translate(0 ${s * -g})"/>`; return `<g transform="rotate(${ang} 50 50)">${half(c.a, 1)}<g transform="rotate(180 50 50)">${half(c.b, 1)}</g></g>`; },
-  function triforce(r, c) { const T = [[50, 12], [70, 46.6], [30, 46.6]], BL = [[30, 46.6], [50, 81.2], [10, 81.2]], BR = [[70, 46.6], [90, 81.2], [50, 81.2]], g = .9, inv = r() < .4, s = [poly(T, g, c.a), poly(BL, g, c.b), poly(BR, g, c.c)].join(""); return inv ? `<g transform="rotate(180 50 50)">${s}</g>` : s; },
-  function steps(r, c) { const k = [c.a, c.b, c.c], circ = r() < .35, rad = circ ? 99 : pick(r, [0, 6, 12]), sz = [24, 30, 36]; let s = ""; [[12, 64], [36, 38], [60, 12]].forEach(([x, y], i) => { const z = sz[i]; s += `<rect x="${x}" y="${y + 24 - z + (i === 0 ? 0 : 0)}" width="${z}" height="${z}" rx="${Math.min(rad, z / 2)}" fill="${k[i]}"/>`; }); return s; },
-  function dotring(r, c) { const n = ri(r, 6, 10), R = 34; let s = ""; for (let i = 0; i < n; i++) { const a = i / n * Math.PI * 2 - Math.PI / 2, rr = 3.5 + 7 * i / n; s += `<circle cx="${N(50 + Math.cos(a) * R)}" cy="${N(50 + Math.sin(a) * R)}" r="${N(rr)}" fill="${i >= n - 2 ? c.b : c.a}"/>`; } return s; },
-  function diamonds(r, c) { const k = [c.a, c.b, c.c, c.b], C = [[50, 26], [74, 50], [50, 74], [26, 50]], R = 24, g = .88; return C.map(([x, y], i) => r() < .12 ? "" : poly([[x, y - R], [x + R, y], [x, y + R], [x - R, y]], g, k[i])).join(""); },
-  function slashes(r, c) { const n = ri(r, 3, 4), k = [c.a, c.b, c.c], w = 11, gap = 8, tot = n * w + (n - 1) * gap; let s = ""; for (let i = 0; i < n; i++) { const h = ri(r, 40, 76); s += `<rect x="${N(50 - tot / 2 + i * (w + gap))}" y="${50 - h / 2}" width="${w}" height="${h}" rx="5" fill="${k[i % 3]}"/>`; } return `<g transform="rotate(${pick(r, [30, 35, 40])} 50 50)">${s}</g>`; },
-  function layers(r, c) { const k = [c.a, c.b, c.c], n = ri(r, 2, 3), dy = n === 2 ? 22 : 18, y0 = n === 2 ? 24 : 18; let s = ""; for (let i = n - 1; i >= 0; i--) { const y = y0 + i * dy; s += poly([[50, y], [88, y + 20], [50, y + 40], [12, y + 20]], .92, k[i % 3]); } return s; }
-];
-const NFAM = FAM.length;
-
-const FIELDS = { any: null, tech: [1, 4, 5, 6, 14, 15, 17, 18, 19, 2, 8, 3], organic: [0, 9, 3, 11, 13, 16, 10, 8, 7, 12, 2, 4], consumer: [7, 0, 4, 14, 15, 19, 1, 12, 9, 10, 17, 5] };
-function markSpec(idx, salt) { if (CUSTOM.length && idx < CUSTOM.length) return { custom: idx }; const o = FIELDS[st.field], pool = o ? o.concat(Array.from({ length: NFAM }, (_, i) => i).filter(i => !o.includes(i))) : null, n = o ? 14 : NFAM; const fam = pool ? pool[(idx + st.seed) % n] : (idx + st.seed) % NFAM; return { fam, k: Math.floor(idx / n), salt: salt + "|" + st.seed + "|" + st.field + "|" + idx }; }
+/* ---------- marks: ONLY the AI designed marks passed in with --marks ---------- */
 const CUSTOM = typeof CUSTOM_MARKS !== "undefined" ? CUSTOM_MARKS : [];
-function customInner(i, c, u) { return CUSTOM[i].replace(/\{A\}/g, c.a).replace(/\{B\}/g, c.b).replace(/\{C\}/g, c.c).replace(/\{U\}/g, u); }
-function markInner(spec, c, u, ctx) {
-  if (spec.custom !== undefined) return customInner(spec.custom, c, u); const r = rng(hash(spec.salt) + spec.fam * 977 + spec.k * 131); return FAM[spec.fam](r, c, u, ctx); }
+function shuffled(seed) { const o = CUSTOM.map((_, i) => i), r = rng(seed); for (let i = o.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [o[i], o[j]] = [o[j], o[i]]; } return o; }
+let ORDER = [];
+function markInner(idx, c, u) { const i = ORDER[idx % ORDER.length]; return CUSTOM[i].replace(/\{A\}/g, c.a).replace(/\{B\}/g, c.b).replace(/\{C\}/g, c.c).replace(/\{U\}/g, u); }
 
 /* ---------- layout builders ---------- */
 function monoC(fg) { return { a: fg, b: fg, c: fg }; }
-function initial(name) { const m = name.match(/[A-Za-z0-9]/); return (m ? m[0] : "A").toUpperCase(); }
-
 function buildMark(idx, st, u, multi) {
-  const used = new Set(), ctx = {}, c = multi ? { a: st.pal[0], b: st.pal[1], c: st.pal[2] } : monoC(st.fg);
-  return { inner: markInner(markSpec(idx, (multi ? "m" : "o")), c, u, ctx), w: 100, h: 100, used };
+  const c = multi ? { a: st.pal[0], b: st.pal[1], c: st.pal[2] } : monoC(st.fg);
+  return { inner: markInner(idx, c, u), w: 100, h: 100, used: new Set() };
 }
-function fontFor(idx) { return FONTS[idx % FONTS.length]; }
 function caseFor(f, idx) { if (f.cls === "mono") return "lower"; if (f.cls === "serif") return ["title", "lower", "title"][idx % 3]; return ["lower", "title", "lower", "upper", "title"][idx % 5]; }
 function lsFor(f, mode) { return mode === "upper" ? Math.round(.06 * 46) : f.cls === "mono" ? 0 : -1; }
+const fontAt = idx => FONTS[(idx * 5 + Math.floor(idx / 3) + st.seed) % FONTS.length];
 
 function buildLockup(idx, st, u) {
-  const used = new Set(), c = monoC(st.fg), spec = markSpec((idx * 7 + 3) % 100, "l"), f = FONTS[(idx * 5 + Math.floor(idx / 3) + st.seed) % FONTS.length], cs = caseFor(f, idx), text = applyCase(st.name, cs), vert = idx % 3 === 2;
+  const used = new Set(), c = monoC(st.fg), f = fontAt(idx), cs = caseFor(f, idx), text = applyCase(st.name, cs), vert = idx % 3 === 2;
   used.add(f.id);
-  const mk = markInner(spec, c, u, {});
+  const mk = markInner(idx, c, u);
   const fs = vert ? 40 : 46, ls = lsFor(f, cs) * fs / 46, tw = measure(f, text, fs, ls);
   const tx = (x, y, anchor) => `<text x="${N(x)}" y="${N(y)}" text-anchor="${anchor}" font-family="${f.family}" font-weight="${f.weight}" font-size="${fs}" letter-spacing="${N(ls)}" fill="${c.a}">${esc(text)}</text>`;
   if (!vert) { const gap = 20, w = 100 + gap + tw; return { inner: mk + tx(100 + gap, 50 + .36 * fs, "start"), w, h: 100, used }; }
   const w = Math.max(100, tw), gap = 18; return { inner: `<g transform="translate(${N((w - 100) / 2)} 0)">${mk}</g>` + tx(w / 2, 100 + gap + .74 * fs, "middle"), w, h: 100 + gap + fs, used };
 }
 
+/* Name only: the name in a typeface with a small AI designed object built in (before, after, or in place of the first o). */
 function buildWord(idx, st, u) {
-  const used = new Set(), c = st.fg, T = (idx + st.seed) % 6, f = FONTS[(Math.floor(idx / 6) + st.seed) % FONTS.length], cs = caseFor(f, idx + (idx > 59 ? 1 : 0)), text = applyCase(st.name, cs), fs = 64, ls = lsFor(f, cs) * fs / 46;
+  const used = new Set(), c = monoC(st.fg), f = fontAt(idx), cs = caseFor(f, idx), text = applyCase(st.name, cs), fs = 64, ls = lsFor(f, cs) * fs / 46, P = idx % 3;
   used.add(f.id);
-  const tw = measure(f, text, fs, ls), base = .8 * fs, att = `font-family="${f.family}" font-weight="${f.weight}" font-size="${fs}" letter-spacing="${N(ls)}"`;
-  const txt = (x, fill) => `<text x="${N(x)}" y="${N(base)}" ${att} fill="${fill}">${esc(text)}</text>`, H = fs * 1.05;
-  const xh = cs === "upper" ? .36 * fs : .27 * fs;
-  if (T === 0) return { inner: txt(0, c), w: tw, h: H, used };
-  if (T === 1) { const r = fs * .09; return { inner: txt(0, c) + `<circle cx="${N(tw + r * 1.4)}" cy="${N(base - r)}" r="${N(r * 1.15)}" fill="${c}"/>`, w: tw + r * 3.4, h: H, used }; }
-  if (T === 2) { const px = fs * .5, py = fs * .26, w = tw + px * 2, h = fs * .8 + py * 2; return { inner: `<mask id="w${u}"><rect width="${N(w)}" height="${N(h)}" fill="#fff"/><text x="${N(px)}" y="${N(py + .8 * fs - fs * .03)}" ${att} fill="#000">${esc(text)}</text></mask><rect width="${N(w)}" height="${N(h)}" rx="${N(h / 2)}" fill="${c}" mask="url(#w${u})"/>`, w, h, used }; }
-  if (T === 3) { const th = fs * .09; return { inner: txt(0, c) + `<rect x="0" y="${N(base + fs * .1)}" width="${N(tw * .42)}" height="${N(th)}" rx="${N(th / 2)}" fill="${c}"/>`, w: tw, h: base + fs * .1 + th, used }; }
-  if (T === 4) {
-    const i = text.search(/[oO]/);
-    if (i < 0) { const sq = fs * .3; return { inner: `<rect x="0" y="${N(base - sq)}" width="${N(sq)}" height="${N(sq)}" rx="${N(sq * .3)}" fill="${c}"/>` + `<text x="${N(sq * 1.5)}" y="${N(base)}" ${att} fill="${c}">${esc(text)}</text>`, w: sq * 1.5 + tw, h: H, used }; }
-    const a = text.slice(0, i), b = text.slice(i + 1), wa = a ? measure(f, a, fs, ls) + ls : 0, wo = measure(f, text[i], fs, 0), rr = Math.min(wo * .44, xh * 1.0), sw = fs * .12, wb = b ? measure(f, b, fs, ls) : 0, ox = wa + wo / 2;
-    return { inner: (a ? `<text x="0" y="${N(base)}" ${att} fill="${c}">${esc(a)}</text>` : "") + `<circle cx="${N(ox)}" cy="${N(base - xh)}" r="${N(rr - sw / 2)}" fill="none" stroke="${c}" stroke-width="${N(sw)}"/>` + (b ? `<text x="${N(wa + wo + ls)}" y="${N(base)}" ${att} fill="${c}">${esc(b)}</text>` : ""), w: wa + wo + ls + wb, h: H, used };
+  const base = .8 * fs, H = fs * 1.05, att = `font-family="${f.family}" font-weight="${f.weight}" font-size="${fs}" letter-spacing="${N(ls)}" fill="${c.a}"`;
+  const T = (x, t) => `<text x="${N(x)}" y="${N(base)}" ${att}>${esc(t)}</text>`, tw = measure(f, text, fs, ls);
+  const ob = (x, size, cy) => `<g transform="translate(${N(x)} ${N(cy - size / 2)}) scale(${N(size / 100)})">${markInner(idx, c, u)}</g>`;
+  const mid = base - (cs === "upper" ? .36 : .3) * fs, i = text.search(/[oO]/);
+  if (P === 2 && i >= 0) {
+    const a = text.slice(0, i), b = text.slice(i + 1), wa = a ? measure(f, a, fs, ls) + ls : 0, wo = measure(f, text[i], fs, 0), sz = fs * (cs === "upper" ? .72 : .6), wb = b ? measure(f, b, fs, ls) : 0;
+    return { inner: (a ? T(0, a) : "") + ob(wa + (wo - sz) / 2, sz, mid) + (b ? T(wa + wo + ls, b) : ""), w: wa + wo + ls + wb, h: H, used };
   }
-  const sq = fs * .62, g = fs * .26; return { inner: `<rect x="0" y="${N(base - sq)}" width="${N(sq)}" height="${N(sq)}" rx="${N(sq * .5)}" fill="${c}"/>` + `<text x="${N(sq + g)}" y="${N(base)}" ${att} fill="${c}">${esc(text)}</text>`, w: sq + g + tw, h: H, used };
+  const sz = fs * .74, g = fs * .24;
+  if (P === 1) return { inner: T(0, text) + ob(tw + g, sz, mid), w: tw + g + sz, h: H, used };
+  return { inner: ob(0, sz, mid) + T(sz + g, text), w: sz + g + tw, h: H, used };
 }
 
 const SECTIONS = {
   mark: { title: "Object only", sub: "One flat object in one color. Pick the object color and the background.", build: (i, st, u) => buildMark(i, st, u, false), pad: .16, cls: "" },
   lockup: { title: "Object and name", sub: "A flat object beside or above the company name, set in a clean typeface.", build: buildLockup, pad: .1, cls: "wide" },
-  word: { title: "Name only", sub: "The name alone, with a small object built into the type.", build: buildWord, pad: .12, cls: "wide" },
+  word: { title: "Name only", sub: "The name with a small AI designed object built into the type: before, after, or in place of an o.", build: buildWord, pad: .12, cls: "wide" },
   multi: { title: "Multicolor object", sub: "Objects with up to three preset colors. Change any single color or pick a preset.", build: (i, st, u) => buildMark(i, st, u, true), pad: .16, cls: "" }
 };
 
 /* ---------- state ---------- */
-const st = { name: DEFAULT_NAME, seed: Math.floor(Math.random() * 1e9), field: "any", sec: "mark", count: 100, fg: DEFAULT_FG, bg: DEFAULT_BG, pal: PRESETS[0].slice(0, 3), mbg: PRESETS[0][3], sel: { mark: 0, lockup: 0, word: 0, multi: 0 } };
+const st = { name: DEFAULT_NAME, seed: Math.floor(Math.random() * 1e9), sec: "mark", count: 100, fg: DEFAULT_FG, bg: DEFAULT_BG, pal: PRESETS[0].slice(0, 3), mbg: PRESETS[0][3], sel: { mark: 0, lockup: 0, word: 0, multi: 0 } };
 
 function bgOf() { return st.sec === "multi" ? st.mbg : st.bg; }
 function cardSVG(logo) { const p = Math.max(logo.w, logo.h) * SECTIONS[st.sec].pad, w = logo.w + 2 * p, h = logo.h + 2 * p; return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${N(-p)} ${N(-p)} ${N(w)} ${N(h)}" aria-hidden="true">${logo.inner}</svg>`; }
@@ -138,9 +108,11 @@ function fullSVG(logo, W, H, bg, sec) {
 
 let logos = [];
 function render() {
-  const S = SECTIONS[st.sec], grid = $("grid"), n = st.count;
+  const S = SECTIONS[st.sec], grid = $("grid"), n = (st.sec === "mark" || st.sec === "multi") ? Math.min(st.count, CUSTOM.length) : st.count;
   $("title").textContent = S.title; $("sub").textContent = S.sub;
   grid.className = "grid " + S.cls; logos = []; let html = "";
+  if (!CUSTOM.length) { grid.innerHTML = '<p class="empty">No AI designed marks were supplied, so there is nothing to show. Rebuild with --marks.</p>'; $("big").innerHTML = ""; return; }
+  ORDER = shuffled(st.seed);
   for (let i = 0; i < n; i++) { const L = S.build(i, st, "c" + i); logos.push(L); html += `<button type="button" class="card" data-i="${i}" aria-pressed="${st.sel[st.sec] === i}" aria-label="Logo ${i + 1}" style="background:${bgOf()}"><span class="n" style="color:${bgOf()}">${i + 1}</span>${cardSVG(L)}</button>`; }
   grid.innerHTML = html;
   if (st.sel[st.sec] >= n) st.sel[st.sec] = 0;
@@ -162,8 +134,7 @@ function setSec(v) {
   render();
 }
 seg("tabs", setSec);
-seg("field", v => { st.field = v; render(); });
-$("shuffle").addEventListener("click", () => { st.seed = Math.floor(Math.random() * 1e9); render(); say("New set generated from scratch. The name does not change the objects."); });
+$("shuffle").addEventListener("click", () => { st.seed = Math.floor(Math.random() * 1e9); render(); say("Reordered the AI designed marks and paired them with new fonts."); });
 seg("count", v => { st.count = +v; render(); });
 let tm; $("name").addEventListener("input", e => { st.name = e.target.value.trim() || DEFAULT_NAME; clearTimeout(tm); tm = setTimeout(render, 120); });
 $("grid").addEventListener("click", e => { const b = e.target.closest(".card"); if (!b) return; st.sel[st.sec] = +b.dataset.i; renderBig(); });
@@ -220,6 +191,7 @@ $("dlall").addEventListener("click", () => {
 });
 
 /* ---------- start ---------- */
+$("nmarks").textContent = CUSTOM.length;
 $("name").value = DEFAULT_NAME; $("fg").value = st.fg; $("bgc").value = st.bg;
 syncMono(); syncMulti();
 fontsReady.then(() => { mcache.clear(); render(); });
