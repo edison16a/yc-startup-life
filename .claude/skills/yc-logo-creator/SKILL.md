@@ -21,7 +21,7 @@ Researched from 490 YC logos and 108 big brand marks.
 
 ## How to run it
 
-The agent designs the logos. The generator is only a fallback that fills the grid.
+The agent designs every logo. There is no generator and no fallback: the build fails without the agent's marks.
 
 1. Take the company name from the user. Optionally ask for the field and a preferred color. Ask nothing else.
 2. Study the examples. Read `knowledge/logo_patterns.md`. Open `knowledge/logo_examples.json` (598 labeled logos: composition, symbol kind, container, colors, complexity, a one line trait). Filter it to the user's field or to the strongest patterns, and read 30 or more rows. To look at an actual YC logo, fetch its `small_logo_thumb_url` from `data/raw/yc_all.json`. Learn the pattern, do not copy any one logo.
