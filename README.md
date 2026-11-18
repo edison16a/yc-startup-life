@@ -25,7 +25,7 @@ Five skills ship in `.claude/skills/`:
 - **Evaluator.** Give it a startup. You get a short text answer and one standalone `report.html`.
 - **Creator.** Finds one startup idea and attacks it with an Investor, a Doubter and a Judge until the Judge would invest.
 - **Name creator.** Makes and scores startup names and rates the brand. The other two call it.
-- **Logo creator.** Give it a company name and it returns one HTML file with 100 freshly generated logo options and PNG export.
+- **Logo creator.** Give it a company name and the AI designs original logos from the researched examples. You get one HTML file with PNG export. It contains no templates.
 - **Extractor.** Built the dataset. You only need it to refresh the data.
 
 ## For AI agents: what each skill does and what it returns
@@ -42,19 +42,21 @@ If you are an agent working in this repo, read `CLAUDE.md` first. Pick the skill
 
 On the first message in a fresh clone, run `python3 -I scripts/check_complete.py`. It currently reports the extraction as complete, so go straight to the user's request.
 
-### The logo creator in detail
+### The logo creator in detail (AI designed marks only, no templates)
 
-The agent designs the logos from the researched examples, then builds the file. First read `knowledge/logo_patterns.md` and sample `knowledge/logo_examples.json` (598 labeled YC and big brand logos). Then write 20 to 50 original marks as SVG into a `marks.json` list (100 by 100 box, color tokens `{A}` `{B}` `{C}`, no gradients, no text). Do not copy any one logo, and do not draw the company name. Build with:
+**Every logo in the final HTML is designed by the AI for that request. The file contains no templates, no preset shapes and no logo generator.** The builder refuses to run unless the agent supplies its own marks, and the studio only places those marks with fonts and colors and exports them.
+
+The agent studies the researched examples first. Read `knowledge/logo_patterns.md` and sample `knowledge/logo_examples.json` (598 labeled YC and big brand logos). Then write 50 to 100 original marks as SVG into a `marks.json` list (100 by 100 box, color tokens `{A}` `{B}` `{C}`, no gradients, no text, each mark must still read when all three tokens are one color). Do not copy any one logo, do not reuse marks from an earlier run, and do not draw the company name. Build with:
 
 ```bash
 python3 -I scripts/build_logo_studio.py --name "Acme" --marks marks.json --out logo-studio.html
 ```
 
-Your marks come first in every tab and the built in generator fills the rest. Without `--marks` the generator makes all 100. Look at a screenshot of each tab and drop weak marks before handing the file over. Optional flags are `--fg "#14110F"` for the object color and `--bg "#FFFFFF"` for the background. The output is one HTML file of about 640 KB. It works offline, with 27 open licensed fonts embedded, and needs no server. Give that file to the user and tell them how to use it:
+Without `--marks` the build fails on purpose. Look at a screenshot of each tab and drop weak marks before handing the file over. Optional flags are `--fg "#14110F"` for the object color and `--bg "#FFFFFF"` for the background. The output is one HTML file of about 640 KB. It works offline, with 27 open licensed fonts embedded, and needs no server. Give that file to the user and tell them how to use it:
 
-- **Four tabs.** Object (one flat object, one color, one background). Object and name (the object beside or above the name). Name only (the name with a small object built into the type). Multicolor (objects with three preset colors; 20 presets, plus a picker for each single color).
-- **Controls.** Show 50 or 100 options. A Field switch (Any, Tech, Health, Consumer) changes which object styles come first. Shuffle makes a new set.
-- **Generated on the spot.** The agent's own marks come from studying the examples. Every open and every Shuffle redraws the generator's objects, name treatments and font pairings from a random seed and the design rules. Nothing is a stored preset or image. The company name only sets the text and never changes the objects, because good logos rarely depend on the name.
+- **Four tabs.** Object (one flat object, one color, one background). Object and name (the object beside or above the name). Name only (the name with a small AI designed object built into the type). Multicolor (the AI's objects with three preset colors; 20 presets, plus a picker for each single color).
+- **Controls.** Show 50 or 100 options. Shuffle reorders the AI's marks and pairs them with new fonts.
+- **Original work only.** All objects come from the AI's own designs, informed by the examples. The company name only sets the text and never changes the objects.
 - **Export.** Click a logo, choose a transparent or colored background, set the size (default 1024 by 1024), then Download PNG. SVG saves one logo. All SVGs saves every option in the tab as a zip.
 
 The design rules come from `knowledge/logo_patterns.md`, a study of 490 YC logos and 108 big brand marks: most are one flat object, two colors or fewer, no gradient, with clean sans serif type. The labels come from a vision model, so treat the shares as rough. The skill does not check trademarks. To change the look, edit `scripts/logo_studio_template.html` or `scripts/logo_studio_engine.js` and rebuild. Do not hand edit the generated file.
@@ -92,7 +94,7 @@ The Funding tab also has a raise calculator. Type how much you want to raise and
 | Name features | `scripts/name_features.py`, `data/name_features.csv`, `knowledge/tables/name_outcomes.csv` |
 | Evaluation input and render | `scripts/evalcore.py`, `scripts/render_eval.py`, `scripts/check_eval.py` |
 | HTML report | `scripts/render_html.py`, `scripts/report_template.html` |
-| Logo studio | `python3 -I scripts/build_logo_studio.py --name "Acme"` builds one HTML file with 100 logo options and PNG export (research in `knowledge/logo_patterns.md`) |
+| Logo studio | `python3 -I scripts/build_logo_studio.py --name "Acme"` builds one HTML file from the AI's own marks (`--marks`) with PNG export (research in `knowledge/logo_patterns.md`) |
 | Landing page | `site/index.html` (one file, open it in a browser; images in `site/img/`) |
 | Settings | `config.json` |
 

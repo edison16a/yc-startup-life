@@ -1,9 +1,11 @@
 ---
 name: yc-logo-creator
-description: Create logo options for a startup from the user's company name. Builds one self contained HTML logo studio with 100 generated options in four sections (object only, object plus name, name only, multicolor object), color pickers, and PNG download at any size with a transparent or colored background. Use when asked for a logo, logo ideas, or a brand mark.
+description: Create logo options for a startup from the user's company name. The AI designs every mark from scratch, then builds one self contained HTML logo studio in four sections (object only, object plus name, name only, multicolor object), color pickers, and PNG download at any size with a transparent or colored background. Use when asked for a logo, logo ideas, or a brand mark.
 ---
 
 # YC logo creator
+
+**The final HTML contains no templates and no preset shapes. Every object in it was designed by the AI for this request.** The builder refuses to run without the AI's marks (`--marks`), and the file has no logo generator code in it. The studio only arranges the AI's marks with fonts and colors and exports them.
 
 Turn a company name into one HTML file full of simple, modern logo options, modeled on what successful YC companies and big brands actually use.
 
@@ -23,22 +25,24 @@ The agent designs the logos. The generator is only a fallback that fills the gri
 
 1. Take the company name from the user. Optionally ask for the field and a preferred color. Ask nothing else.
 2. Study the examples. Read `knowledge/logo_patterns.md`. Open `knowledge/logo_examples.json` (598 labeled logos: composition, symbol kind, container, colors, complexity, a one line trait). Filter it to the user's field or to the strongest patterns, and read 30 or more rows. To look at an actual YC logo, fetch its `small_logo_thumb_url` from `data/raw/yc_all.json`. Learn the pattern, do not copy any one logo.
-3. Design 20 to 50 original marks as SVG, using what you learned: one flat object, simple geometry, two or three colors, optional container, clean negative space. Vary the idea (letterform free abstracts, pictorial simplifications, negative space cuts, lines or bars, tiles). The object must not spell or depict the company name. Write them as a JSON list of strings:
+3. Design 50 to 100 original marks as SVG, using what you learned: one flat object, simple geometry, two or three colors, optional container, clean negative space. Vary the idea (abstract geometry, simplified pictorial, negative space cuts, lines or bars, tiles, letterforms that are not the company's initial). The object must not spell or depict the company name. Write them as a JSON list of strings in `marks.json`:
    - Draw in a 100 by 100 box.
-   - Use color tokens `{A}` (main), `{B}` and `{C}` (extra colors). Mono sections paint all three the same, so keep shapes from overlapping in `{A}` and `{B}`.
+   - Use color tokens `{A}` (main), `{B}` and `{C}` (extra colors). The Object and Object and name tabs paint all three tokens in one color, so a mark must still read when `{A}`, `{B}` and `{C}` are identical: leave gaps between shapes, or use a mask cut out, instead of drawing `{B}` on top of `{A}`. About half the marks should use `{B}` or `{C}` so the Multicolor tab has real color.
    - For a cut out, use a mask with the id `m{U}` (`{U}` becomes a unique id).
    - No gradients, text, images, scripts or external links. The builder rejects them.
+   - At least 12 marks are required, and 50 or more fill the Object and Multicolor tabs. The Object and name and the Name only tabs reuse your marks with different fonts, so they always show the full count.
 4. Build the file:
 
 ```bash
 python3 -I scripts/build_logo_studio.py --name "Acme" --marks marks.json --out logo-studio.html
 ```
 
-Your marks appear first in every tab (Object, Object and name, Multicolor). The generator fills the remaining slots and Shuffle changes only those. Without `--marks` the generator makes all 100. Optional flags: `--fg`, `--bg`.
-5. Check the result. Open the file in a browser (Playwright is available), look at a screenshot of each tab, and delete or redraw marks that look cluttered, lopsided or like a famous logo. Rebuild.
+Optional flags: `--fg`, `--bg`. Never copy marks from an earlier run or from a file in the repo: design new ones every time.
+5. Check the result. Open the file in a browser (Playwright is available), look at a screenshot of each tab, and delete or redraw marks that look cluttered, lopsided, collapse in one color, or look like a famous logo. Rebuild.
 6. Give the user `logo-studio.html`. It is one offline file with 27 open licensed fonts (SIL OFL, Fontsource) embedded. Explain, in plain sentences:
    - Four tabs: Object (one color on one background), Object and name, Name only (with a small object built into the type), Multicolor (three preset colors per object, 20 presets, a picker for each color).
-   - 50 or 100 options, a Field switch, and Shuffle.
+   - 50 or 100 options, and Shuffle, which reorders the AI's marks and pairs them with new fonts.
+   - Every logo in the file is original AI work for this request. There are no built in templates.
    - Click a logo, pick Transparent background or a color, set the size (default 1024 by 1024), then Download PNG. SVG saves one logo and All SVGs saves the tab as a zip.
 
 ## Rules
@@ -55,7 +59,7 @@ Your marks appear first in every tab (Object, Object and name, Multicolor). The 
 |---|---|
 | `scripts/build_logo_studio.py` | Builds the single HTML file (stdlib only) |
 | `scripts/logo_studio_template.html` | Layout and styling, same look as the report |
-| `scripts/logo_studio_engine.js` | 20 object families, wordmark treatments, lockups, export |
+| `scripts/logo_studio_engine.js` | Layout only: places the AI's marks with fonts and colors, and exports. Contains no logo shapes |
 | `assets/fonts/` | Embedded fonts, SIL Open Font License |
 | `knowledge/logo_patterns.md` | The research summary |
 | `knowledge/logo_examples.json` | The 598 labeled example logos the agent studies |
